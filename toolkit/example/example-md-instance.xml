@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="example-md-schema.xsd">
+    <Header>
+        <Description>Test instance of an MD description</Description>
+        <Creator></Creator>
+        <CreationDate></CreationDate>
+        <SelfLink></SelfLink>
+        <Profile></Profile>
+    </Header>
+    <Resources>
+        <ResourceProxyList>
+            <ResourceProxy id="a_text">
+                <ResourceType></ResourceType>
+                <ResourceRef>bla.txt</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="a_picture">
+                <ResourceType></ResourceType>
+                <ResourceRef></ResourceRef>
+            </ResourceProxy>
+        </ResourceProxyList>
+        <JournalFileProxyList></JournalFileProxyList>
+        <ResourceRelationList>
+            <ResourceRelation>
+                <RelationType>describes</RelationType>
+                <Res1 ref="a_text"/>
+                <Res2 ref="a_picture"/>
+            </ResourceRelation>
+        </ResourceRelationList>
+    </Resources>
+    <Components>
+        <TextTMD ref="a_text">
+            <Format>text/plain</Format>
+        </TextTMD>
+        <PhotoTMD ref="a_picture">
+            <Format>image/png</Format>
+        </PhotoTMD>
+        <Actor>
+            <firstName>Foo</firstName>
+            <lastName>Bar</lastName>
+            <sex>female</sex>
+            <age>22</age>
+            <ActorLanguage>
+                <ActorLanguageName>Some language name</ActorLanguageName>
+            </ActorLanguage>
+            <ActorLanguage>
+                <ActorLanguageName>Yet another language</ActorLanguageName>
+            </ActorLanguage>
+        </Actor>
+        <!-- Bob is depicted in a_picture -->
+        <Actor ref="a_picture">
+            <firstName nickname="bobby">Bob</firstName>
+            <lastName></lastName>
+            <sex>male</sex>
+            <age>33</age>
+        </Actor>
+    </Components>
+</CMD>

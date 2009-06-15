@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../general-component-schema.xsd" xmlns:xi="http://www.w3.org/2001/XInclude">
+    
+    <Header/>
+    
+    <CMD_Component name="TimePosition" CardinalityMin="1" CardinalityMax="1">
+        <CMD_Element name="Start">
+            <ValueScheme>
+                <pattern>[0-9][0-9]:[0-9][0-9]:[0-9][0-9]:?[0-9]*|Unknown|Unspecified</pattern>
+            </ValueScheme>
+        </CMD_Element>
+        <CMD_Element name="End">
+            <ValueScheme>
+                <pattern>[0-9][0-9]:[0-9][0-9]:[0-9][0-9]:?[0-9]*|Unknown|Unspecified</pattern>
+            </ValueScheme>        
+        </CMD_Element>
+        
+    </CMD_Component>
+
+</CMD_ComponentSpec>

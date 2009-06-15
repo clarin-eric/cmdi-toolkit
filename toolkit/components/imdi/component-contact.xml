@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../general-component-schema.xsd" xmlns:xi="http://www.w3.org/2001/XInclude">
+    
+    <Header/>
+    
+    <CMD_Component name="Contact" CardinalityMin="1" CardinalityMax="1">
+        
+        <CMD_Element name="Name" ValueScheme="string"/>
+        <CMD_Element name="Address" ValueScheme="string"/>
+        <CMD_Element name="Email" ValueScheme="string"/>
+        <!-- maybe a pattern instead but that could get nasty fast, see http://perlmonks.org/?node=email+regex -->
+        <CMD_Element name="Organisation" ValueScheme="string"/>
+        
+    </CMD_Component>
+    
+</CMD_ComponentSpec>

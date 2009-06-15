@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="general-component-schema.xsd" xmlns:xi="http://www.w3.org/2001/XInclude">
+    
+<Header>lorem ipsum dolor sit</Header>
+    <!-- import component defined elsewhere -->
+    
+    <!--Xerces (and thus Oxygen) does not support xpointers in xincludes, but this should be valid nevertheless:
+        http://www.oxygenxml.com/forum/topic3107.html
+        <xi:include href="cmd-profile-actorlanguage.xml" xpointer="xpointer(/CMD_ComponentSpec/CMD_Component)" />
+    -->
+
+    <!--<xi:include href="example-component-text.xml" xpointer="element(/1/2)" />-->
+    
+    <CMD_Component filename="example-component-text.xml" />
+    
+    <CMD_Component filename="example-component-photo.xml" />    
+    
+    <!--<xi:include href="example-component-photo.xml" xpointer="element(/1/2)" />-->
+
+    <!-- use a list of 0 to 4 actors, overriding the default cardinality for an Actor component -->
+    <CMD_Component filename="example-component-actor.xml" CardinalityMin="0" CardinalityMax="4"/>
+    
+    <!--<CMD_ComponentList CardinalityMin="0" CardinalityMax="4">
+        <xi:include href="example-component-actor.xml" xpointer="element(/1/2)" />
+    </CMD_ComponentList>
+-->
+ </CMD_ComponentSpec>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../general-component-schema.xsd" xmlns:xi="http://www.w3.org/2001/XInclude">
+    
+    <Header/>
+    
+    <CMD_Component name="Content" CardinalityMin="1" CardinalityMax="1">
+        
+        <CMD_Element name="Genre">
+            <ValueScheme>
+                <enumeration>
+                    <appinfo>Open Vocabulary, i.e. the items here are recommendations, write-ins are possible</appinfo>
+                    <item>Unknown</item>
+                    <item>Unspecified</item>
+                    <item>Discourse</item>
+                    <item>Ritual/religious texts</item>
+                    <item>Fiction</item>
+                    <item>Newspaper article</item>
+                    <item>Radio/TV feature</item>
+                    <item>Drama</item>
+                    <item>Singing</item>
+                    <item>Instrumental music</item>
+                    <item>Poetry</item>
+                    <item>Literature</item>
+                    <item>Secondary document</item>
+                    <item>Personal notes</item>
+                    <item>Stimuli</item>
+                </enumeration>
+            </ValueScheme>
+        </CMD_Element>
+        <CMD_Element name="SubGenre">
+            <ValueScheme>
+                <enumeration>
+                    <appinfo>Open Vocabulary, i.e. the items here are recommendations, write-ins are possible</appinfo>
+                    <appinfo>the following items are applicable if the value of Type is "Discourse"</appinfo>
+                    <item>Narrative</item>
+                    <item>Oratory</item>
+                    <item>Procedural</item>
+                    <item>Formulaic</item>
+                    <item>Language play</item>
+                    <item>Interview</item>
+                    <item>Conversation</item>
+                    <item>Description</item>
+                    <item>Unintelligeble speech</item>
+                    <appinfo>the following items are applicable if the value of Type is "Drama"</appinfo>
+                    <item>Film</item>
+                    <item>Play</item>
+                    <item>Opera</item>
+                    <item>Musical</item>
+                    <appinfo>the following items are applicable if the value of Type is "Singing"</appinfo>
+                    <item>Individual song</item>
+                    <item>Chorus</item>
+                    <item>Chant</item>
+                    <appinfo>the following items are applicable if the value of Type is "Poetry"</appinfo>
+                    <item>Epos</item>
+                    <appinfo>the following items are applicable if the value of Type is "Literature"</appinfo>
+                    <item>Matching game</item>
+                    <item>Act-out</item>
+                    <item>Picture book</item>
+                    <item>Story retelling</item>
+                    <appinfo>general items that are always applicable</appinfo>
+                    <item>Unspecified</item>
+                    <item>Unknown</item>
+                </enumeration>
+            </ValueScheme>
+        </CMD_Element>
+        <CMD_Element name="Task" ValueScheme="string"/>
+        <CMD_Element name="Modalities" ValueScheme="string"/>
+        <CMD_Element name="Subject" ValueScheme="string"/>
+        
+        <xi:include href="component-communication-context.xml" xpointer="element(/1/2)" />
+        <xi:include href="component-content-language-list.xml" xpointer="element(/1/2)" />
+        <xi:include href="component-keys.xml" xpointer="element(/1/2)" />
+        <xi:include href="component-descriptions.xml" xpointer="element(/1/2)" />
+    </CMD_Component>
+
+</CMD_ComponentSpec>

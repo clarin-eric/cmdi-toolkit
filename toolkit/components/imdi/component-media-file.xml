@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../general-component-schema.xsd" xmlns:xi="http://www.w3.org/2001/XInclude">
+    
+    <Header/>
+    
+    <CMD_Component name="Media_File" CardinalityMin="0" CardinalityMax="unbounded">
+        <CMD_Element name="ResourceLink" ValueScheme="string" />
+        <CMD_Element name="Type">
+            <ValueScheme>
+                <enumeration>
+                    <item>Unknown</item>
+                    <item>Unspecified</item>
+                    <item>audio</item>
+                    <item>video</item>
+                    <item>image</item>
+                    <item>document</item>
+                    <item>drawing</item>
+                    <item>text</item>
+                </enumeration>                
+            </ValueScheme>
+        </CMD_Element>
+        <CMD_Element name="Format">
+            <ValueScheme>
+                <enumeration>
+                    <item>application/pdf</item>
+                    <item>application/smil+xml</item>
+                    <item>audio/x-aiff</item>
+                    <item>audio/x-mp2</item>
+                    <item>audio/x-mp3</item>
+                    <item>audio/x-mpeg4</item>
+                    <item>audio/x-wav</item>
+                    <item>image/jpeg</item>
+                    <item>image/png</item>
+                    <item>image/tiff</item>
+                    <item>image/gif</item>
+                    <item>text/html</item>
+                    <item>video/x-mpeg1</item>
+                    <item>video/x-mpeg2</item>
+                    <item>video/x-mpeg4</item>
+                    <item>video/quicktime</item>
+                    <item>video/x-msvideo</item>
+                    <item>Unknown</item>
+                    <item>Unspecified</item>
+                </enumeration>                
+            </ValueScheme>
+        </CMD_Element>
+        <CMD_Element name="Size" ValueScheme="string"/>
+        <CMD_Element name="Quality">
+            <ValueScheme>
+                <enumeration>
+                    <item>1</item>
+                    <item>2</item>
+                    <item>3</item>
+                    <item>4</item>
+                    <item>5</item>
+                    <item>Unspecified</item>
+                    <item>Unknown</item>
+                </enumeration>               
+            </ValueScheme>
+        </CMD_Element>
+        <CMD_Element name="RecordingConditions" ValueScheme="string"/>
+        <xi:include href="component-time-position.xml" xpointer="element(/1/2)" />
+        <xi:include href="component-access.xml" xpointer="element(/1/2)" />
+        <xi:include href="component-descriptions.xml" xpointer="element(/1/2)" />
+        <xi:include href="component-keys.xml" xpointer="element(/1/2)" /> 
+        
+    </CMD_Component>
+
+</CMD_ComponentSpec>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    $Revision: 15119 $ 
+    $Date: 2009-05-26 18:00:29 +0200 (Tue, 26 May 2009) $ 
+-->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace"
+        schemaLocation="http://www.w3.org/2005/08/xml.xsd"/>
+
+    <!-- root element -->
+    <xs:element name="CMD_ComponentSpec">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Header"/>
+                <xs:group ref="group"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- recursive construction  -->
+    <xs:group name="group">
+        <xs:sequence>
+            <!-- from small (attribute) to big (componentList) -->
+            <xs:element name="AttributeList" type="AttributeList_type" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="CMD_Element" type="CMD_Element_type" minOccurs="0"
+                maxOccurs="unbounded"> </xs:element>
+            <xs:element name="CMD_Component" type="CMD_Component_type" minOccurs="0" maxOccurs="unbounded"/>
+            <!--<xs:element name="CMD_ComponentList" type="CMD_ComponentList_type"  minOccurs="0" maxOccurs="unbounded"/>-->
+        </xs:sequence>
+    </xs:group>
+
+    <!-- type definitions -->
+    <xs:complexType name="CMD_Element_type">
+        <xs:sequence>
+            <xs:element name="AttributeList" type="AttributeList_type" minOccurs="0" maxOccurs="1"/>
+            <xs:element minOccurs="0" maxOccurs="1" name="ValueScheme">
+                <xs:complexType>
+                    <xs:choice>
+                        <xs:element name="pattern" type="xs:string" maxOccurs="1"/>
+                        <xs:element name="enumeration" type="enumeration_type"> </xs:element>
+                    </xs:choice>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attributeGroup ref="clarin_element_attributes"/>
+    </xs:complexType>
+
+    <xs:complexType name="AttributeList_type"> 
+        <xs:sequence>
+            <xs:element name="Attribute" minOccurs="1" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Name" type="xs:string"/>
+                        <xs:element name="Type" type="allowed_attributetypes_type"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!--<xs:complexType name="CMD_ComponentList_type">
+        <xs:sequence>
+            <xs:element name="CMD_Component" type="CMD_Component_type" />
+        </xs:sequence>
+        <xs:attributeGroup ref="clarin_component_list_attributes"/>
+    </xs:complexType>
+    -->
+    <xs:complexType name="CMD_Component_type">
+        <xs:group ref="group" minOccurs="0"/>
+        <xs:attributeGroup ref="clarin_component_attributes"/>
+    </xs:complexType>
+
+
+    <!-- list of all attributes that can be bound to a cl_el -->
+    <xs:attributeGroup name="clarin_element_attributes">
+        <xs:attribute name="name" type="xs:token"/>
+        <xs:attribute name="ConceptLink" type="xs:anyURI"/>
+        <xs:attribute name="ValueScheme" type="allowed_attributetypes_type"/>
+        <xs:attribute name="CardinalityMin" type="cardinality_type"/>
+        <xs:attribute name="CardinalityMax" type="cardinality_type"/>
+    </xs:attributeGroup>
+
+    <!-- list of all attributes that can be bound to a cl_comp -->
+    <xs:attributeGroup name="clarin_component_attributes">
+        <xs:attribute name="name" type="xs:token"/>
+        <xs:attribute name="id" type="xs:ID"/>
+        <xs:attribute name="ConceptLink" type="xs:anyURI"/>
+        <xs:attribute name="filename" type="xs:anyURI"/>
+        <!--components cannot have a ValueScheme attribute -->
+        <!--<xs:attribute name="CardinalityMin" type="cardinality_type" use="required"/>
+        <xs:attribute name="CardinalityMax" type="cardinality_type" use="required"/>
+        -->
+        <xs:attribute name="CardinalityMin" type="cardinality_type" />
+        <xs:attribute name="CardinalityMax" type="cardinality_type"/>
+        <xs:attribute ref="xml:base"/>
+    </xs:attributeGroup>
+    
+    <!-- list of all attributes that can be bound to a cl_comp_list -->
+    <!--<xs:attributeGroup name="clarin_component_list_attributes">
+        <xs:attribute name="CardinalityMin" type="cardinality_type" use="required"/>
+        <xs:attribute name="CardinalityMax" type="cardinality_type" use="required"/>
+        <xs:attribute ref="xml:base"/>
+    </xs:attributeGroup>
+-->
+
+    <xs:simpleType name="cardinality_type">
+        <xs:annotation>
+            <xs:documentation>cardinality for elements and components</xs:documentation>
+        </xs:annotation>
+        <xs:union>
+            <xs:simpleType>
+                <xs:list itemType="xs:nonNegativeInteger"/>
+            </xs:simpleType>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="unbounded"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:union>
+    </xs:simpleType>    
+
+    <xs:simpleType name="allowed_attributetypes_type">
+        <xs:annotation>
+            <xs:documentation>Subset of XSD types that are allowed as CMD type</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:token">
+            <xs:enumeration value="boolean"/>
+            <xs:enumeration value="decimal"/>
+            <xs:enumeration value="float"/>
+            <xs:enumeration value="string"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="enumeration_type">
+        <xs:annotation>
+            <xs:documentation>controlled vocabularies</xs:documentation>
+        </xs:annotation>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="item" type="item_type" />
+            <xs:element name="appinfo" type="xs:string" />
+        </xs:choice>
+    </xs:complexType>
+
+    <xs:complexType name="item_type">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:anyURI" name="ConceptLink"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+</xs:schema>

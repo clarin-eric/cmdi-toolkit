@@ -129,6 +129,7 @@
             <xs:enumeration value="decimal"/>
             <xs:enumeration value="float"/>
             <xs:enumeration value="string"/>
+            <xs:enumeration value="anyURI"/>
         </xs:restriction>
     </xs:simpleType>
 

@@ -10,7 +10,42 @@ $Date: 2009-05-26 18:00:29 +0200 (Tue, 26 May 2009) $
     <xsl:strip-space elements="*"/>
     <xsl:include href="comp2schema-header.xsl"/>
     <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
-   
+
+    <!-- Start includes -->
+    
+    <!-- resolve includes -->
+    <xsl:template match="@*|node()" mode="include">
+        <xsl:copy>
+            <xsl:apply-templates select="@*|node()" mode="include"/>
+        </xsl:copy>
+    </xsl:template>
+
+    <xsl:template match="CMD_Component[@filename]" mode="include">
+        <!-- some of the outer CMD_Component attributes can overwrite the inner CMD_Component attributes -->
+        <xsl:variable name="outer-attr" select="@CardinalityMin|@CardinalityMax"/>
+        <xsl:for-each select="document(@filename)/CMD_ComponentSpec/CMD_Component">
+            <xsl:variable name="inner-attr" select="@*"/>
+            <xsl:copy>
+                <xsl:apply-templates select="$outer-attr" mode="include"/>
+                <xsl:apply-templates select="$inner-attr[not(node-name(.) = $outer-attr/node-name(.))]" mode="include"/>
+                <xsl:apply-templates select="node()" mode="include"/>
+            </xsl:copy>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <!-- Stop includes -->
+    
+    <!-- main -->
+    <xsl:template match="/">
+        <!-- Resolve all includes -->
+        <xsl:variable name="tree">
+            <xsl:apply-templates mode="include"/>
+        </xsl:variable>
+        <!-- Process the complete tree -->
+        <xsl:apply-templates select="$tree/*"/>
+    </xsl:template>
+
+    <!-- generate XSD -->
     <xsl:template match="/CMD_ComponentSpec">
 
         <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dcr="http://www.isocat.org">
@@ -22,12 +57,12 @@ $Date: 2009-05-26 18:00:29 +0200 (Tue, 26 May 2009) $
                 <xs:complexType>
                     <xs:sequence>
 
-                        <!--  Produce (fixed) header elements (description and resources)-->
+                        <!-- Produce (fixed) header elements (description and resources)-->
                         <xsl:call-template name="PrintHeader"/>
 
                         <!-- Then generate the components -->
-                        <xs:element name="Components">                            
-                            
+                        <xs:element name="Components">
+
                             <xs:complexType>
                                 <xs:sequence>
                                     <!--Start with processing the root component once and then process everything else recursively-->
@@ -47,29 +82,25 @@ $Date: 2009-05-26 18:00:29 +0200 (Tue, 26 May 2009) $
 
 
     <xsl:template name="CreateComplexTypes">
-        <xsl:apply-templates select=".//CMD_Component" mode="preProcess"/>
+        <xsl:apply-templates select="CMD_Component" mode="types"/>
     </xsl:template>
 
 
-    <!-- Start PreProcess --> 
+    <!-- Start types -->
 
-    <!-- search for valueschemes in the included components -->
-    <xsl:template match="CMD_Component[@filename]" mode="preProcess">
-        <!-- recursively inspect all CMD_Components that are included -->    
-        <xsl:apply-templates select="document(@filename)/CMD_ComponentSpec/CMD_Component/.//CMD_Component" mode="preProcess"/>    
-        <xsl:apply-templates select="document(@filename)/CMD_ComponentSpec/CMD_Component/.//ValueScheme" mode="preProcess"/>
-    </xsl:template>
-    
     <!-- workaround to prevent junk in complex type definitions -->
     <!--<xsl:template match="AttributeList" mode="preProcess"/>-->
-       
+    
+    <!-- skip all text nodes -->
+    <xsl:template match="text()" mode="types"/>
+
     <!-- first pass: create the complex types on top of the resulting XSD -->
-    <xsl:template match="ValueScheme" mode="preProcess">
+    <xsl:template match="ValueScheme" mode="types">
         <!-- create a unique suffix (the path to the element) to ensure the unicity of the types to be created -->
         <xsl:variable name="uniquePath">
             <xsl:call-template name="printUniquePath"/>
         </xsl:variable>
-        
+
         <!-- first auto-generate a name for the simpletype to be extended -->
         <xs:simpleType name="simpletype{$uniquePath}">
             <xs:restriction base="xs:string">
@@ -77,7 +108,7 @@ $Date: 2009-05-26 18:00:29 +0200 (Tue, 26 May 2009) $
                 <xsl:apply-templates select="enumeration"/>
             </xs:restriction>
         </xs:simpleType>
-        
+
         <!--  then auto-derive a complextype for the attributes -->
         <xs:complexType name="complextype{$uniquePath}">
             <xs:simpleContent>
@@ -89,41 +120,9 @@ $Date: 2009-05-26 18:00:29 +0200 (Tue, 26 May 2009) $
             </xs:simpleContent>
         </xs:complexType>
     </xsl:template>
-    
-    <!-- Stop PreProcess -->
-    
-    
-    <!-- Expand the included components (those with a filename attribute) and apply the default templates afterwards -->
-    <xsl:template match="CMD_Component[@filename]">
-        
-        <!-- TODO: look for more elegant construction -->
-        <xsl:choose>
-            <xsl:when test="@CardinalityMin and @CardinalityMax">
-                <xsl:apply-templates select="document(@filename)/CMD_ComponentSpec/CMD_Component">
-                    <xsl:with-param name="MinOccurs" select="@CardinalityMin"/>
-                    <xsl:with-param name="MaxOccurs" select="@CardinalityMax"/>
-                </xsl:apply-templates>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:choose>
-                    <xsl:when test="@CardinalityMin">
-                        <xsl:apply-templates select="document(@filename)/CMD_ComponentSpec/CMD_Component">
-                            <xsl:with-param name="MinOccurs" select="@CardinalityMin"/>
-                        </xsl:apply-templates>
-                    </xsl:when>
-                    <xsl:when test="@CardinalityMax">
-                        <xsl:apply-templates select="document(@filename)/CMD_ComponentSpec/CMD_Component">
-                            <xsl:with-param name="MinOccurs" select="@CardinalityMax"/>
-                        </xsl:apply-templates>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:apply-templates select="document(@filename)/CMD_ComponentSpec/CMD_Component"/>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:template>
-    
+
+    <!-- Stop types -->
+
     <!-- create a unique identifier (the path of the name of the ancestor elements) from the current ValueScheme element -->
     <xsl:template name="printUniquePath">
         <xsl:for-each select="ancestor::*">
@@ -139,7 +138,7 @@ $Date: 2009-05-26 18:00:29 +0200 (Tue, 26 May 2009) $
         <!--  use override values if specified in parent <CMD_Component filename=...> , otherwise use default cardinality for this component -->
         <xsl:param name="MinOccurs" select="@CardinalityMin"/>
         <xsl:param name="MaxOccurs" select="@CardinalityMax"/>
-        
+
         <xs:element name="{@name}">
             <xsl:if test="$MinOccurs">
                 <xsl:attribute name="minOccurs">
@@ -207,7 +206,7 @@ $Date: 2009-05-26 18:00:29 +0200 (Tue, 26 May 2009) $
             <xsl:text>complextype</xsl:text>
             <xsl:call-template name="printUniquePath"/>
         </xsl:attribute>
-        
+
     </xsl:template>
 
     <!-- Convert the AttributeList into real XSD attributes -->
@@ -222,7 +221,7 @@ $Date: 2009-05-26 18:00:29 +0200 (Tue, 26 May 2009) $
 
     <!-- Convert enumerations -->
     <xsl:template match="enumeration">
-        
+
         <xsl:for-each select="item">
             <xs:enumeration value="{node()}">
                 <!-- Add a dcr:datcat if a ConceptLink attribute is found -->
@@ -239,16 +238,16 @@ $Date: 2009-05-26 18:00:29 +0200 (Tue, 26 May 2009) $
 
     <!-- except for those attributes we want to be renamed -->
     <xsl:template match="@CardinalityMin">
-            <xsl:attribute name="minOccurs">
-                <xsl:value-of select="."/>
-            </xsl:attribute>
+        <xsl:attribute name="minOccurs">
+            <xsl:value-of select="."/>
+        </xsl:attribute>
     </xsl:template>
 
 
     <xsl:template match="@CardinalityMax">
-            <xsl:attribute name="maxOccurs">
-                <xsl:value-of select="."/>
-            </xsl:attribute>
+        <xsl:attribute name="maxOccurs">
+            <xsl:value-of select="."/>
+        </xsl:attribute>
     </xsl:template>
 
     <xsl:template match="@ConceptLink">

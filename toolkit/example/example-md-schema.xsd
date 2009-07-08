@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dcr="http://www.isocat.org">
-   <xs:simpleType name="simpletype-TextType-TextTypeDescription">
-      <xs:restriction base="xs:string">
-         <xs:enumeration value="print"/>
-         <xs:enumeration value="manuscript"/>
-      </xs:restriction>
-   </xs:simpleType>
-   <xs:complexType name="complextype-TextType-TextTypeDescription">
-      <xs:simpleContent>
-         <xs:extension base="simpletype-TextType-TextTypeDescription"/>
-      </xs:simpleContent>
-   </xs:complexType>
    <xs:simpleType name="simpletype-TextTMD-Format">
       <xs:restriction base="xs:string">
          <xs:enumeration value="text/plain" dcr:datcat="http://www.isocat.org/datcat/DC-000"/>
@@ -20,6 +9,17 @@
    <xs:complexType name="complextype-TextTMD-Format">
       <xs:simpleContent>
          <xs:extension base="simpletype-TextTMD-Format"/>
+      </xs:simpleContent>
+   </xs:complexType>
+   <xs:simpleType name="simpletype-TextTMD-TextType-TextTypeDescription">
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="print"/>
+         <xs:enumeration value="manuscript"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="complextype-TextTMD-TextType-TextTypeDescription">
+      <xs:simpleContent>
+         <xs:extension base="simpletype-TextTMD-TextType-TextTypeDescription"/>
       </xs:simpleContent>
    </xs:complexType>
    <xs:simpleType name="simpletype-PhotoTMD-Format">
@@ -140,7 +140,7 @@
                                        <xs:element name="TextTypeDescription" dcr:datcat="http://www.isocat.org/datcat/DC-1758"
                                                    minOccurs="0"
                                                    maxOccurs="1"
-                                                   type="complextype-TextType-TextTypeDescription"/>
+                                                   type="complextype-TextTMD-TextType-TextTypeDescription"/>
                                     </xs:sequence>
                                     <xs:attribute name="ref" type="xs:IDREF"/>
                                  </xs:complexType>

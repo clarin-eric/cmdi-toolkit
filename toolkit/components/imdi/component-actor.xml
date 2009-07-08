@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="../general-component-schema.xsd" xmlns:xi="http://www.w3.org/2001/XInclude">
+    xsi:noNamespaceSchemaLocation="../../general-component-schema.xsd">
     
     <Header/>
     
@@ -52,15 +52,14 @@
                 
 
                
-        <xi:include href="component-contact.xml" xpointer="element(/1/2)" />
+        <CMD_Component filename="component-contact.xml" />
         
-        <xi:include href="component-keys.xml" xpointer="element(/1/2)" />            
+        <CMD_Component filename="component-keys.xml" />            
             
-        <xi:include href="component-descriptions.xml" xpointer="element(/1/2)"  />      
+        <CMD_Component filename="component-description.xml" />      
         
-        <CMD_ComponentList CardinalityMin="0" CardinalityMax="unbounded">
-            <xi:include href="component-actor-language.xml" xpointer="element(/1/2)" />
-        </CMD_ComponentList>
+        <CMD_Component filename="component-actor-language.xml" />
+        
         
     </CMD_Component>
 

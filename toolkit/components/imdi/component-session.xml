@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="../general-component-schema.xsd" xmlns:xi="http://www.w3.org/2001/XInclude">
+    xsi:noNamespaceSchemaLocation="../../general-component-schema.xsd">
     
     <Header/>
     
@@ -14,10 +14,10 @@
                 <pattern>(1|2)\d{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])</pattern>                
             </ValueScheme>
         </CMD_Element>
-        <xi:include href="component-descriptions.xml" xpointer="element(/1/2)" />
-        <xi:include href="component-mdgroup.xml" xpointer="element(/1/2)" />
-        <xi:include href="component-resources.xml" xpointer="element(/1/2)" />
-        <xi:include href="component-references.xml" xpointer="element(/1/2)" />
+        <CMD_Component filename="component-description.xml" />
+        <CMD_Component filename="component-mdgroup.xml" />
+        <CMD_Component filename="component-resources.xml" />
+        <CMD_Component filename="component-references.xml" />
         
     </CMD_Component>
 

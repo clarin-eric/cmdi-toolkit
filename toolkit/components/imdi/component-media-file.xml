@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="../general-component-schema.xsd" xmlns:xi="http://www.w3.org/2001/XInclude">
+    xsi:noNamespaceSchemaLocation="../../general-component-schema.xsd">
     
     <Header/>
     
@@ -61,10 +61,11 @@
             </ValueScheme>
         </CMD_Element>
         <CMD_Element name="RecordingConditions" ValueScheme="string"/>
-        <xi:include href="component-time-position.xml" xpointer="element(/1/2)" />
-        <xi:include href="component-access.xml" xpointer="element(/1/2)" />
-        <xi:include href="component-descriptions.xml" xpointer="element(/1/2)" />
-        <xi:include href="component-keys.xml" xpointer="element(/1/2)" /> 
+
+        <CMD_Component filename="component-time-position.xml" />
+        <CMD_Component filename="component-access.xml" />
+        <CMD_Component filename="component-description.xml" />
+        <CMD_Component filename="component-keys.xml" /> 
         
     </CMD_Component>
 

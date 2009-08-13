@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="2009-08-13" FormatId="IMDI 3.0" Originator="admin" Type="CATALOGUE" Version="12" xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
+  <History>CLARIN to IMDI, DATE: 2009-08-13</History>
+  <Catalogue>
+    <Name>Homepage corpus</Name>
+    <Title>Homepage corpus</Title>
+    <Id/>
+    <Description LanguageId="Unspecified">Real homepeges of researchers manually annotated for their social inforamations</Description>
+    <DocumentLanguages/>
+    <SubjectLanguages>
+      <Language>
+        <Id>ISO639-3:eng</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">English</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+    </SubjectLanguages>
+    <Location>
+      <Continent Link="http://www.mpi.nl/IMDI/Schema/Continents.xml" Type="OpenVocabulary"/>
+      <Country Link="http://www.mpi.nl/IMDI/Schema/Countries.xml" Type="ClosedVocabulary">Hungary</Country>
+    </Location>
+    <ContentType>Written Corpus</ContentType>
+    <Format>
+      <Text>HTML</Text>
+    </Format>
+    <Quality/>
+    <SmallestAnnotationUnit/>
+    <Applications/>
+    <Date>2008/2008</Date>
+    <Project>
+      <Name/>
+      <Title/>
+      <Id/>
+      <Contact/>
+    </Project>
+    <Publisher>University of Szeged</Publisher>
+    <Author/>
+    <Size/>
+    <DistributionForm/>
+    <Access>
+      <Availability>available on the internet</Availability>
+      <Date/>
+      <Owner/>
+      <Publisher/>
+      <Contact/>
+    </Access>
+    <Pricing/>
+    <ContactPerson>Vincze Veronika (vinczev@inf.u-szeged)</ContactPerson>
+    <ReferenceLink>http://www.inf.u-szeged.hu/rgai/homepagecorpus</ReferenceLink>
+    <Publications>Farkas, R., Ormándi, R., Jelasity, M., Csirik, J.: A manually Annotated HTML Corpus for a Novel Scientific Trend Analysis, The Eighth IAPR Workshop on Document Analysis Systems, Nara (2008)</Publications>
+    <Keys>
+      <Key Name="NodeId">2348</Key>
+      <Key Name="VersionId">3750</Key>
+    </Keys>
+  </Catalogue>
+</METATRANSCRIPT>
+

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="2009-08-13" FormatId="IMDI 3.0" Originator="admin" Type="CATALOGUE" Version="12" xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
+  <History>CLARIN to IMDI, DATE: 2009-08-13</History>
+  <Catalogue>
+    <Name>Code-switching conversation corpus</Name>
+    <Title>Code-switching conversation corpus</Title>
+    <Id/>
+    <Description LanguageId="Unspecified">The code-switching corpus consists of 5x30-minute conversations between four speakers (i.e. a total of 20 speakers). The speakers are bilingual speakers of Papiamento (a creole langauge spoken in the Dutch Antilles) and Dutch. In the course of their free conversations, they engage in code-switching, that is, they use both languages within the same utterance in systematic ways. The corpus is fully transcribed and glossed, coded for language and word class, in ELAN.</Description>
+    <DocumentLanguages/>
+    <SubjectLanguages>
+      <Language>
+        <Id>ISO639-3:nld</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Dutch</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+    </SubjectLanguages>
+    <Location>
+      <Continent Link="http://www.mpi.nl/IMDI/Schema/Continents.xml" Type="OpenVocabulary"/>
+      <Country Link="http://www.mpi.nl/IMDI/Schema/Countries.xml" Type="ClosedVocabulary">Netherlands (the)</Country>
+    </Location>
+    <ContentType>Spoken Corpus</ContentType>
+    <Format>
+      <Text>video/mp4,video/x-mpeg1, audio/x-wav, text/x-eaf+xml</Text>
+    </Format>
+    <Quality/>
+    <SmallestAnnotationUnit/>
+    <Applications/>
+    <Date>2003/2007</Date>
+    <Project>
+      <Name/>
+      <Title/>
+      <Id/>
+      <Contact/>
+    </Project>
+    <Publisher>Max Planck Institute for Psycholinguistics</Publisher>
+    <Author/>
+    <Size/>
+    <DistributionForm/>
+    <Access>
+      <Availability/>
+      <Date/>
+      <Owner/>
+      <Publisher/>
+      <Contact/>
+    </Access>
+    <Pricing/>
+    <ContactPerson>Marianne Gullberg</ContactPerson>
+    <ReferenceLink>http://corpus1.mpi.nl/ds/imdi_browser/?openpath=MPI75934%23</ReferenceLink>
+    <Keys>
+      <Key Name="NodeId">837</Key>
+      <Key Name="VersionId">1717</Key>
+      <Key Name="OtherLanguages">Papiamento</Key>
+    </Keys>
+  </Catalogue>
+</METATRANSCRIPT>
+

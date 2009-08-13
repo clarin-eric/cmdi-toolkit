@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="2009-08-13" FormatId="IMDI 3.0" Originator="admin" Type="CATALOGUE" Version="12" xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
+  <History>CLARIN to IMDI, DATE: 2009-08-13</History>
+  <Catalogue>
+    <Name>Carib (Karinya) corpus</Name>
+    <Title>Carib (Karinya) corpus</Title>
+    <Id/>
+    <Description LanguageId="Unspecified">The data on the Carib language is collected by dr. Berend Hoff in the period 1955-1965. See: B.J. Hoff, The Carib Language, Phonology, Morphology, Text and Word Index. Verhandelingen van het Koninklijk Instituut voor Taal-, Land-, en Volkenkunde (Royal Institute of Linguistics and Anthropology) Vol. 55 (1968), Martinus Nijhoff: The Hague. </Description>
+    <DocumentLanguages/>
+    <SubjectLanguages>
+      <Language>
+        <Id>Unknown</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">-- language not in list --</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+    </SubjectLanguages>
+    <Location>
+      <Continent Link="http://www.mpi.nl/IMDI/Schema/Continents.xml" Type="OpenVocabulary"/>
+      <Country Link="http://www.mpi.nl/IMDI/Schema/Countries.xml" Type="ClosedVocabulary">Suriname</Country>
+    </Location>
+    <ContentType>Spoken Corpus</ContentType>
+    <Format>
+      <Text>audio/x-wav</Text>
+    </Format>
+    <Quality/>
+    <SmallestAnnotationUnit/>
+    <Applications/>
+    <Date/>
+    <Project>
+      <Name/>
+      <Title/>
+      <Id/>
+      <Contact/>
+    </Project>
+    <Publisher>Royal Institute of Linguistics and Anthropology, Leiden, The Netherlands</Publisher>
+    <Author/>
+    <Size/>
+    <DistributionForm/>
+    <Access>
+      <Availability>available on the internet</Availability>
+      <Date/>
+      <Owner/>
+      <Publisher/>
+      <Contact/>
+    </Access>
+    <Pricing/>
+    <ReferenceLink>http://corpus1.mpi.nl/ds/imdi_browser?openpath=MPI359273%23</ReferenceLink>
+    <MetadataLink>http://corpus1.mpi.nl/ds/imdi_browser?openpath=MPI359273%23</MetadataLink>
+    <Keys>
+      <Key Name="NodeId">1149</Key>
+      <Key Name="VersionId">2272</Key>
+      <Key Name="OtherLanguages">Carib (Karinya)</Key>
+    </Keys>
+  </Catalogue>
+</METATRANSCRIPT>
+

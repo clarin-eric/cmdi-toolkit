@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="2009-08-13" FormatId="IMDI 3.0" Originator="admin" Type="CATALOGUE" Version="12" xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
+  <History>CLARIN to IMDI, DATE: 2009-08-13</History>
+  <Catalogue>
+    <Name>JRC-Acquis</Name>
+    <Title>JRC-Acquis</Title>
+    <Id/>
+    <Description LanguageId="Unspecified">The largest parallel corpus, contains EU law, the Acquis Communautaire in 22 languages.</Description>
+    <DocumentLanguages/>
+    <SubjectLanguages>
+      <Language>
+        <Id>ISO639-3:bul</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Bulgarian</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+      <Language>
+        <Id>ISO639-3:ces</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Czech</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+      <Language>
+        <Id>ISO639-3:dan</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Danish</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+      <Language>
+        <Id>ISO639-3:nld</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Dutch</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+      <Language>
+        <Id>ISO639-3:eng</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">English</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+      <Language>
+        <Id>ISO639-3:est</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Estonian</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+      <Language>
+        <Id>ISO639-3:fin</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Finnish</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+      <Language>
+        <Id>ISO639-3:fra</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">French</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+      <Language>
+        <Id>ISO639-3:deu</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">German</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+      <Language>
+        <Id>Unknown</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Greek</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+      <Language>
+        <Id>ISO639-3:hun</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Hungarian</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+      <Language>
+        <Id>ISO639-3:ita</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Italian</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+      <Language>
+        <Id>ISO639-3:lav</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Latvian</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+      <Language>
+        <Id>ISO639-3:mlt</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Maltese</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+      <Language>
+        <Id>ISO639-3:nor</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Norwegian</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+      <Language>
+        <Id>ISO639-3:pol</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Polish</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+      <Language>
+        <Id>ISO639-3:por</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Portuguese</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+      <Language>
+        <Id>ISO639-3:ron</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Romanian</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+      <Language>
+        <Id>ISO639-3:slk</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Slovak</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+      <Language>
+        <Id>ISO639-3:slv</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Slovenian</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+      <Language>
+        <Id>ISO639-3:spa</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Spanish</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+      <Language>
+        <Id>ISO639-3:swe</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Swedish</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+    </SubjectLanguages>
+    <Location>
+      <Continent Link="http://www.mpi.nl/IMDI/Schema/Continents.xml" Type="OpenVocabulary"/>
+      <Country Link="http://www.mpi.nl/IMDI/Schema/Countries.xml" Type="ClosedVocabulary">Italy</Country>
+    </Location>
+    <ContentType>Aligned Corpus</ContentType>
+    <Format>
+      <Text>XML, TEI</Text>
+    </Format>
+    <Quality/>
+    <SmallestAnnotationUnit/>
+    <Applications/>
+    <Date>2006/2008</Date>
+    <Project>
+      <Name/>
+      <Title/>
+      <Id/>
+      <Contact/>
+    </Project>
+    <Publisher>Joint Research Centre of the EU</Publisher>
+    <Author/>
+    <Size/>
+    <DistributionForm/>
+    <Access>
+      <Availability>available on the internet</Availability>
+      <Date/>
+      <Owner/>
+      <Publisher/>
+      <Contact/>
+    </Access>
+    <Pricing/>
+    <ContactPerson>Ralf Steinberger,  Ralf.Steinberger@jrc.it</ContactPerson>
+    <ReferenceLink>http://langtech.jrc.it/JRC-Acquis.html</ReferenceLink>
+    <Publications>Steinberger Ralf,  Bruno Pouliquen, Anna Widiger, Camelia Ignat, Tomaž Erjavec, Dan Tufiş, Dániel Varga (2006). The JRC-Acquis: A multilingual aligned parallel corpus with 20+ languages. Proceedings of the 5th International Conference on Language Resources and Evaluation (LREC'2006). Genoa, Italy, 24-26 May 2006.</Publications>
+    <Keys>
+      <Key Name="NodeId">532</Key>
+      <Key Name="VersionId">1166</Key>
+    </Keys>
+  </Catalogue>
+</METATRANSCRIPT>
+

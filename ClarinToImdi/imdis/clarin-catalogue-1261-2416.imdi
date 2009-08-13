@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="2009-08-13" FormatId="IMDI 3.0" Originator="admin" Type="CATALOGUE" Version="12" xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
+  <History>CLARIN to IMDI, DATE: 2009-08-13</History>
+  <Catalogue>
+    <Name>Longi corpus</Name>
+    <Title>Longi corpus</Title>
+    <Id/>
+    <Description LanguageId="Unspecified">a longitudinal corpus Swedish language compositions written by Finnish-speaking upper secondary school (gymnasium) students in 1991-93; parts of speech tagged</Description>
+    <DocumentLanguages/>
+    <SubjectLanguages>
+      <Language>
+        <Id>ISO639-3:swe</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Swedish</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+    </SubjectLanguages>
+    <Location>
+      <Continent Link="http://www.mpi.nl/IMDI/Schema/Continents.xml" Type="OpenVocabulary"/>
+      <Country Link="http://www.mpi.nl/IMDI/Schema/Countries.xml" Type="ClosedVocabulary">Finland</Country>
+    </Location>
+    <ContentType>Written Corpus</ContentType>
+    <Format/>
+    <Quality/>
+    <SmallestAnnotationUnit/>
+    <Applications/>
+    <Date>1991</Date>
+    <Project>
+      <Name/>
+      <Title/>
+      <Id/>
+      <Contact/>
+    </Project>
+    <Publisher>Department of Languages, University of Jyv</Publisher>
+    <Author/>
+    <Size>Collection: 100 students, 8 compositions from each, a total of 150 000 words</Size>
+    <DistributionForm/>
+    <Access>
+      <Availability/>
+      <Date/>
+      <Owner/>
+      <Publisher/>
+      <Contact/>
+    </Access>
+    <Pricing/>
+    <ContactPerson>Matti Rahkonen mrahkone(at)campus.jyu.fi </ContactPerson>
+    <Keys>
+      <Key Name="NodeId">1261</Key>
+      <Key Name="VersionId">2416</Key>
+    </Keys>
+  </Catalogue>
+</METATRANSCRIPT>
+

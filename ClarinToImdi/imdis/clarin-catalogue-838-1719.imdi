@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="2009-08-13" FormatId="IMDI 3.0" Originator="admin" Type="CATALOGUE" Version="12" xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
+  <History>CLARIN to IMDI, DATE: 2009-08-13</History>
+  <Catalogue>
+    <Name>CORP-ORAL Spontaneous Speech Corpus</Name>
+    <Title>CORP-ORAL Spontaneous Speech Corpus</Title>
+    <Id/>
+    <Description LanguageId="Unspecified">The aim of the CORP-ORAL project is to build a corpus of spontaneous European Portuguese speech available for the training of speech synthesis and recognition systems as well as phonetic, phonological, lexical, morphological and syntactic studies. The corpus contains the recording of 60 hours of conversations between two European Portuguese speakers per conversation (at a time). The entire corpus will be completed with orthographic transcription and the prosodic marking of speech breaks/boundaries as well as phonetic transcription of a selection of chunks. CORP-ORAL is built from scratch with the explicit goal of becoming entirely available on the internet to the scientific community and the public in general.</Description>
+    <DocumentLanguages/>
+    <SubjectLanguages>
+      <Language>
+        <Id>ISO639-3:por</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Portuguese</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+    </SubjectLanguages>
+    <Location>
+      <Continent Link="http://www.mpi.nl/IMDI/Schema/Continents.xml" Type="OpenVocabulary"/>
+      <Country Link="http://www.mpi.nl/IMDI/Schema/Countries.xml" Type="ClosedVocabulary">Portugal</Country>
+    </Location>
+    <ContentType>Spoken Corpus</ContentType>
+    <Format>
+      <Text>audio/x-wav, text/x-eaf+xml</Text>
+    </Format>
+    <Quality/>
+    <SmallestAnnotationUnit/>
+    <Applications/>
+    <Date/>
+    <Project>
+      <Name/>
+      <Title/>
+      <Id/>
+      <Contact/>
+    </Project>
+    <Publisher>Instituto de Linguística Teórica e Computacional</Publisher>
+    <Author/>
+    <Size/>
+    <DistributionForm/>
+    <Access>
+      <Availability>available on the internet</Availability>
+      <Date/>
+      <Owner/>
+      <Publisher/>
+      <Contact/>
+    </Access>
+    <Pricing/>
+    <ContactPerson>Fabíola Santos</ContactPerson>
+    <ReferenceLink>http://corpus1.mpi.nl/ds/imdi_browser/?openpath=MPI556279%23</ReferenceLink>
+    <MetadataLink>http://corpus1.mpi.nl/ds/imdi_browser/?openpath=MPI556279%23</MetadataLink>
+    <Keys>
+      <Key Name="NodeId">838</Key>
+      <Key Name="VersionId">1719</Key>
+    </Keys>
+  </Catalogue>
+</METATRANSCRIPT>
+

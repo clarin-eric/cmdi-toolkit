@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="2009-08-13" FormatId="IMDI 3.0" Originator="admin" Type="CATALOGUE" Version="12" xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
+  <History>CLARIN to IMDI, DATE: 2009-08-13</History>
+  <Catalogue>
+    <Name>Morfeusz</Name>
+    <Title>Morfeusz</Title>
+    <Id/>
+    <Description LanguageId="Unspecified">115 000 lexemes (1 700 000 words), binary program</Description>
+    <DocumentLanguages/>
+    <SubjectLanguages>
+      <Language>
+        <Id>ISO639-3:pol</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Polish</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+    </SubjectLanguages>
+    <Location>
+      <Continent Link="http://www.mpi.nl/IMDI/Schema/Continents.xml" Type="OpenVocabulary"/>
+      <Country Link="http://www.mpi.nl/IMDI/Schema/Countries.xml" Type="ClosedVocabulary">Poland</Country>
+    </Location>
+    <ContentType>Lexicon / Knowledge Source</ContentType>
+    <Format>
+      <Text>dynamic library (binary only)</Text>
+    </Format>
+    <Quality/>
+    <SmallestAnnotationUnit/>
+    <Applications/>
+    <Date/>
+    <Project>
+      <Name/>
+      <Title/>
+      <Id/>
+      <Contact/>
+    </Project>
+    <Publisher/>
+    <Author/>
+    <Size/>
+    <DistributionForm/>
+    <Access>
+      <Availability>available on the internet</Availability>
+      <Date/>
+      <Owner/>
+      <Publisher/>
+      <Contact/>
+    </Access>
+    <Pricing/>
+    <ContactPerson>Marcin Woliński</ContactPerson>
+    <ReferenceLink>http://nlp.ipipan.waw.pl/~wolinski/morfeusz/</ReferenceLink>
+    <Publications>Marcin Woliński, Morfeusz — a Practical Tool for the Morphological Analysis of Polish, in: Mieczysław Kłopotek, Sławomir Wierzchoń, Krzysztof Trojanowski, red., Intelligent Information Processing and Web Mining, IIS:IIPWM'06 Proceedings, s. 503–512, Springer, 2006.</Publications>
+    <Keys>
+      <Key Name="NodeId">617</Key>
+      <Key Name="VersionId">1251</Key>
+      <Key Name="IPRLicenseType">Free for non-commercial use and research. Not open-source. Reverse-engineering forbidden.</Key>
+      <Key Name="IPRContactPerson">Marcin Woliński:  Marcin.Wolinski@ipipan.waw.pl</Key>
+    </Keys>
+  </Catalogue>
+</METATRANSCRIPT>
+

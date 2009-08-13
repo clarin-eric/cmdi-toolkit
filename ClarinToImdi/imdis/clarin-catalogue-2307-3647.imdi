@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="2009-08-13" FormatId="IMDI 3.0" Originator="admin" Type="CATALOGUE" Version="12" xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
+  <History>CLARIN to IMDI, DATE: 2009-08-13</History>
+  <Catalogue>
+    <Name>Svenska Akademiens ordbok (SAOB)</Name>
+    <Title>Svenska Akademiens ordbok (SAOB)</Title>
+    <Id/>
+    <Description LanguageId="Unspecified">Historical dictionary of the Swedish language. Includes information about pronunciation, inflexions, variant forms, etymologies, usages and definitions.</Description>
+    <DocumentLanguages/>
+    <SubjectLanguages>
+      <Language>
+        <Id>ISO639-3:swe</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Swedish</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+    </SubjectLanguages>
+    <Location>
+      <Continent Link="http://www.mpi.nl/IMDI/Schema/Continents.xml" Type="OpenVocabulary"/>
+      <Country Link="http://www.mpi.nl/IMDI/Schema/Countries.xml" Type="ClosedVocabulary">Sweden</Country>
+    </Location>
+    <ContentType>Lexicon / Knowledge Source</ContentType>
+    <Format/>
+    <Quality/>
+    <SmallestAnnotationUnit/>
+    <Applications/>
+    <Date>1787/2017</Date>
+    <Project>
+      <Name/>
+      <Title/>
+      <Id/>
+      <Contact/>
+    </Project>
+    <Publisher>Svenska Akademien</Publisher>
+    <Author/>
+    <Size/>
+    <DistributionForm/>
+    <Access>
+      <Availability>available on the internet</Availability>
+      <Date/>
+      <Owner/>
+      <Publisher/>
+      <Contact/>
+    </Access>
+    <Pricing/>
+    <ContactPerson>Anki Mattisson</ContactPerson>
+    <ReferenceLink>http://www.saob.se/</ReferenceLink>
+    <Keys>
+      <Key Name="NodeId">2307</Key>
+      <Key Name="VersionId">3647</Key>
+    </Keys>
+  </Catalogue>
+</METATRANSCRIPT>
+

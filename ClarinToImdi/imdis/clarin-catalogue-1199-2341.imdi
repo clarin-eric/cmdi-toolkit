@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="2009-08-13" FormatId="IMDI 3.0" Originator="admin" Type="CATALOGUE" Version="12" xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
+  <History>CLARIN to IMDI, DATE: 2009-08-13</History>
+  <Catalogue>
+    <Name>Icelandic Frequency Dictionary Corpus</Name>
+    <Title>Icelandic Frequency Dictionary Corpus</Title>
+    <Id/>
+    <Description LanguageId="Unspecified">500,000 words morphosyntactically tagged corpus of Icelandic written language from the 1980s</Description>
+    <DocumentLanguages/>
+    <SubjectLanguages>
+      <Language>
+        <Id>ISO639-3:isl</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Icelandic</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+    </SubjectLanguages>
+    <Location>
+      <Continent Link="http://www.mpi.nl/IMDI/Schema/Continents.xml" Type="OpenVocabulary"/>
+      <Country Link="http://www.mpi.nl/IMDI/Schema/Countries.xml" Type="ClosedVocabulary">Iceland</Country>
+    </Location>
+    <ContentType>Written Corpus</ContentType>
+    <Format>
+      <Text>Text file</Text>
+    </Format>
+    <Quality/>
+    <SmallestAnnotationUnit/>
+    <Applications/>
+    <Date>2004</Date>
+    <Project>
+      <Name/>
+      <Title/>
+      <Id/>
+      <Contact/>
+    </Project>
+    <Publisher>Institute of Lexicography, University of Iceland</Publisher>
+    <Author/>
+    <Size/>
+    <DistributionForm/>
+    <Access>
+      <Availability/>
+      <Date/>
+      <Owner/>
+      <Publisher/>
+      <Contact/>
+    </Access>
+    <Pricing/>
+    <ContactPerson>Sigrún Helgadóttir - sigruhel@hi.is</ContactPerson>
+    <Publications>Íslensk orðtíðnibók (Icelandic Frequency Dictionary), 1991</Publications>
+    <Keys>
+      <Key Name="NodeId">1199</Key>
+      <Key Name="VersionId">2341</Key>
+      <Key Name="IPRLicenseType">Available for research purposes after signing of a special license agreement</Key>
+      <Key Name="IPRContactPerson">Sigrún Helgadóttir - sigruhel@hi.is</Key>
+    </Keys>
+  </Catalogue>
+</METATRANSCRIPT>
+

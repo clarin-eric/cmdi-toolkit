@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="2009-08-13" FormatId="IMDI 3.0" Originator="admin" Type="CATALOGUE" Version="12" xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
+  <History>CLARIN to IMDI, DATE: 2009-08-13</History>
+  <Catalogue>
+    <Name>Croatian-English Parallel Corpus</Name>
+    <Title>Croatian-English Parallel Corpus</Title>
+    <Id/>
+    <Description LanguageId="Unspecified">written; domain-specific (newspaper); synchronic; bilingual; parallel; unidirectional; XML; S-alignment</Description>
+    <DocumentLanguages/>
+    <SubjectLanguages>
+      <Language>
+        <Id>ISO639-3:hrv</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Croatian</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+      <Language>
+        <Id>ISO639-3:eng</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">English</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+    </SubjectLanguages>
+    <Location>
+      <Continent Link="http://www.mpi.nl/IMDI/Schema/Continents.xml" Type="OpenVocabulary"/>
+      <Country Link="http://www.mpi.nl/IMDI/Schema/Countries.xml" Type="ClosedVocabulary">Croatia</Country>
+    </Location>
+    <ContentType>Aligned Corpus</ContentType>
+    <ContentType>Written Corpus</ContentType>
+    <Format>
+      <Text>XML, sentence aligned</Text>
+    </Format>
+    <Quality/>
+    <SmallestAnnotationUnit/>
+    <Applications/>
+    <Date>2000/2010</Date>
+    <Project>
+      <Name/>
+      <Title/>
+      <Id/>
+      <Contact/>
+    </Project>
+    <Publisher>University of Zagreb, Faculty of Humanities and Social Sciences</Publisher>
+    <Author/>
+    <Size/>
+    <DistributionForm/>
+    <Access>
+      <Availability/>
+      <Date/>
+      <Owner/>
+      <Publisher/>
+      <Contact/>
+    </Access>
+    <Pricing/>
+    <ContactPerson>Marko Tadić (marko.tadic@ffzg.hr)</ContactPerson>
+    <ReferenceLink>http://hnk.ffzg.hr</ReferenceLink>
+    <Publications>Tadić, Marko (2000) Building the Croatian-English Parallel Corpus. In: LREC2000 Proceedings, Athens-Paris 2000, Vol. I, pp. 523-530</Publications>
+    <Keys>
+      <Key Name="NodeId">420</Key>
+      <Key Name="VersionId">1053</Key>
+    </Keys>
+  </Catalogue>
+</METATRANSCRIPT>
+

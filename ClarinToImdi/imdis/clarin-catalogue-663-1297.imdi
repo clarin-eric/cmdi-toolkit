@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="2009-08-13" FormatId="IMDI 3.0" Originator="admin" Type="CATALOGUE" Version="12" xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
+  <History>CLARIN to IMDI, DATE: 2009-08-13</History>
+  <Catalogue>
+    <Name>HAMSA</Name>
+    <Title>HAMSA</Title>
+    <Id/>
+    <Description LanguageId="Unspecified">Morphological Analyzer</Description>
+    <DocumentLanguages/>
+    <SubjectLanguages>
+      <Language>
+        <Id>ISO639-3:heb</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Hebrew</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+    </SubjectLanguages>
+    <Location>
+      <Continent Link="http://www.mpi.nl/IMDI/Schema/Continents.xml" Type="OpenVocabulary">Unknown</Continent>
+      <Country Link="http://www.mpi.nl/IMDI/Schema/Countries.xml" Type="ClosedVocabulary">Israel</Country>
+    </Location>
+    <ContentType>Grammar</ContentType>
+    <Format/>
+    <Quality/>
+    <SmallestAnnotationUnit/>
+    <Applications/>
+    <Date/>
+    <Project>
+      <Name/>
+      <Title/>
+      <Id/>
+      <Contact/>
+    </Project>
+    <Publisher/>
+    <Author/>
+    <Size/>
+    <DistributionForm/>
+    <Access>
+      <Availability/>
+      <Date/>
+      <Owner/>
+      <Publisher/>
+      <Contact/>
+    </Access>
+    <Pricing/>
+    <ContactPerson>Alon Itai</ContactPerson>
+    <Keys>
+      <Key Name="NodeId">663</Key>
+      <Key Name="VersionId">1297</Key>
+    </Keys>
+  </Catalogue>
+</METATRANSCRIPT>
+

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="2009-08-13" FormatId="IMDI 3.0" Originator="admin" Type="CATALOGUE" Version="12" xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
+  <History>CLARIN to IMDI, DATE: 2009-08-13</History>
+  <Catalogue>
+    <Name>FISC</Name>
+    <Title>FISC</Title>
+    <Id/>
+    <Description LanguageId="Unspecified">Written Swedish from the beginning of 1990s; four major sections: journalese, novels, fact prose, administrative prose; a minor section of spoken language transcriptions of Helsinki Swedish</Description>
+    <DocumentLanguages/>
+    <SubjectLanguages>
+      <Language>
+        <Id>ISO639-3:swe</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Swedish</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+    </SubjectLanguages>
+    <Location>
+      <Continent Link="http://www.mpi.nl/IMDI/Schema/Continents.xml" Type="OpenVocabulary"/>
+      <Country Link="http://www.mpi.nl/IMDI/Schema/Countries.xml" Type="ClosedVocabulary">Finland</Country>
+    </Location>
+    <ContentType>Written Corpus</ContentType>
+    <Format>
+      <Text>Electronic (plain text)</Text>
+    </Format>
+    <Quality/>
+    <SmallestAnnotationUnit/>
+    <Applications/>
+    <Date/>
+    <Project>
+      <Name/>
+      <Title/>
+      <Id/>
+      <Contact/>
+    </Project>
+    <Publisher>Department of Scandinavian languages and literature, University of Helsinki</Publisher>
+    <Author/>
+    <Size>Collection: 2,6 million words</Size>
+    <DistributionForm/>
+    <Access>
+      <Availability/>
+      <Date/>
+      <Owner/>
+      <Publisher/>
+      <Contact/>
+    </Access>
+    <Pricing/>
+    <ContactPerson>Jan Lindstr</ContactPerson>
+    <Publications>Lindstr</Publications>
+    <Keys>
+      <Key Name="NodeId">1184</Key>
+      <Key Name="VersionId">2325</Key>
+      <Key Name="CollectionLocation">Language bank at CSC</Key>
+    </Keys>
+  </Catalogue>
+</METATRANSCRIPT>
+

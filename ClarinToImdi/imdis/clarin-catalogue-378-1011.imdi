@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="2009-08-13" FormatId="IMDI 3.0" Originator="admin" Type="CATALOGUE" Version="12" xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
+  <History>CLARIN to IMDI, DATE: 2009-08-13</History>
+  <Catalogue>
+    <Name>Tübingen Treebank of Spoken German - TüBa-D/S</Name>
+    <Title>Tübingen Treebank of Spoken German - TüBa-D/S</Title>
+    <Id/>
+    <Description LanguageId="Unspecified">380000 Tokens, Morphology, part of speech, syntax (functional and dependency information), topological fields, named entities, coreference relations</Description>
+    <DocumentLanguages/>
+    <SubjectLanguages>
+      <Language>
+        <Id>ISO639-3:deu</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">German</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+    </SubjectLanguages>
+    <Location>
+      <Continent Link="http://www.mpi.nl/IMDI/Schema/Continents.xml" Type="OpenVocabulary"/>
+      <Country Link="http://www.mpi.nl/IMDI/Schema/Countries.xml" Type="ClosedVocabulary">Germany</Country>
+    </Location>
+    <ContentType>Treebank</ContentType>
+    <Format/>
+    <Quality/>
+    <SmallestAnnotationUnit/>
+    <Applications/>
+    <Date/>
+    <Project>
+      <Name/>
+      <Title/>
+      <Id/>
+      <Contact/>
+    </Project>
+    <Publisher/>
+    <Author/>
+    <Size/>
+    <DistributionForm/>
+    <Access>
+      <Availability>available on the internet</Availability>
+      <Date/>
+      <Owner/>
+      <Publisher/>
+      <Contact/>
+    </Access>
+    <Pricing/>
+    <ContactPerson>Erhard Hinrichs (eh@sfs.uni-tuebingen.de)</ContactPerson>
+    <ReferenceLink>Www.sfs.uni-tuebingen.de/en_nf_asc_resources.shtml</ReferenceLink>
+    <Keys>
+      <Key Name="NodeId">378</Key>
+      <Key Name="VersionId">1011</Key>
+    </Keys>
+  </Catalogue>
+</METATRANSCRIPT>
+

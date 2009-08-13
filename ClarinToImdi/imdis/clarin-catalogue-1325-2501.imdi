@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="2009-08-13" FormatId="IMDI 3.0" Originator="admin" Type="CATALOGUE" Version="12" xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
+  <History>CLARIN to IMDI, DATE: 2009-08-13</History>
+  <Catalogue>
+    <Name>TAK - Taaltoets Alle Kinderen</Name>
+    <Title>TAK - Taaltoets Alle Kinderen</Title>
+    <Id/>
+    <Description LanguageId="Unspecified">spoken corpora of dutch L1 and L2 children, 4-9 years old, crossectional and longitudinal</Description>
+    <DocumentLanguages/>
+    <SubjectLanguages>
+      <Language>
+        <Id>ISO639-3:nld</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Dutch</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+    </SubjectLanguages>
+    <Location>
+      <Continent Link="http://www.mpi.nl/IMDI/Schema/Continents.xml" Type="OpenVocabulary"/>
+      <Country Link="http://www.mpi.nl/IMDI/Schema/Countries.xml" Type="ClosedVocabulary">Netherlands (the)</Country>
+    </Location>
+    <ContentType>Spoken Corpus</ContentType>
+    <Format>
+      <Text>chat</Text>
+    </Format>
+    <Quality/>
+    <SmallestAnnotationUnit/>
+    <Applications>a.o. test validation; development measure of lexical richness</Applications>
+    <Date>1996/2009</Date>
+    <Project>
+      <Name>TAK (Verhoeven/Vermeer 2001), see www.annevermeer.com </Name>
+      <Title>TAK (Verhoeven/Vermeer 2001), see www.annevermeer.com </Title>
+      <Id/>
+      <Contact/>
+    </Project>
+    <Publisher>Tilburg University</Publisher>
+    <Author/>
+    <Size/>
+    <DistributionForm>contact anne.vermeer@uvt.nl</DistributionForm>
+    <Access>
+      <Availability/>
+      <Date/>
+      <Owner/>
+      <Publisher/>
+      <Contact/>
+    </Access>
+    <Pricing/>
+    <ContactPerson>Anne Vermeer</ContactPerson>
+    <Publications>Verhoeven/Vermeer publications, see www.annevermeer.com &gt; publications</Publications>
+    <Keys>
+      <Key Name="NodeId">1325</Key>
+      <Key Name="VersionId">2501</Key>
+      <Key Name="CollectionLongtermPreservationBy">Anne Vermeer, Communication and Information Sciences, Tilburg University</Key>
+      <Key Name="CollectionLocation">Tilburg University</Key>
+      <Key Name="CollectionContentType">Dutch L1/L2-acquisition of children alongside test data (TAK, DDT, Rakit, reading)</Key>
+      <Key Name="CollectionFormatDetailed">mostly in chat-format</Key>
+      <Key Name="CollectionQuality">audio</Key>
+      <Key Name="CollectionAccess">a.o. test validation; development measure of lexical richness</Key>
+      <Key Name="CollectionSource">TAK (Verhoeven/Vermeer 2001), see www.annevermeer.com </Key>
+    </Keys>
+  </Catalogue>
+</METATRANSCRIPT>
+

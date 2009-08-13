@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="2009-08-13" FormatId="IMDI 3.0" Originator="admin" Type="CATALOGUE" Version="12" xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
+  <History>CLARIN to IMDI, DATE: 2009-08-13</History>
+  <Catalogue>
+    <Name>Annotation of EuroWordNet's Interlingual Index with the Top Concept Ontology 2.3</Name>
+    <Title>Annotation of EuroWordNet's Interlingual Index with the Top Concept Ontology 2.3</Title>
+    <Id/>
+    <Description LanguageId="Unspecified">About 65.000 language-independent lexical concepts (the so-called ILI, based on WordNet 1.6)  connected to  an ontolgy consisting on about 30 semantic features, the Top Concept Ontology developed during the EuroWordNet Project.</Description>
+    <DocumentLanguages/>
+    <SubjectLanguages>
+      <Language>
+        <Id>Unknown</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">-- language not in list --</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+    </SubjectLanguages>
+    <Location>
+      <Continent Link="http://www.mpi.nl/IMDI/Schema/Continents.xml" Type="OpenVocabulary"/>
+      <Country Link="http://www.mpi.nl/IMDI/Schema/Countries.xml" Type="ClosedVocabulary">Spain</Country>
+    </Location>
+    <ContentType>Lexicon / Knowledge Source</ContentType>
+    <Format>
+      <Text>plain text</Text>
+    </Format>
+    <Quality/>
+    <SmallestAnnotationUnit/>
+    <Applications/>
+    <Date>2004/2008</Date>
+    <Project>
+      <Name/>
+      <Title/>
+      <Id/>
+      <Contact/>
+    </Project>
+    <Publisher>Universitat Oberta de Catalunya, Euskal Herriko Unibersitatea, Universitat Politècnica de Catalunya</Publisher>
+    <Author/>
+    <Size/>
+    <DistributionForm/>
+    <Access>
+      <Availability>available on the internet</Availability>
+      <Date/>
+      <Owner/>
+      <Publisher/>
+      <Contact/>
+    </Access>
+    <Pricing/>
+    <ContactPerson>Salvador Climent</ContactPerson>
+    <ReferenceLink>http://lpg.uoc.edu/ewntco-wordnet-mapping.htm</ReferenceLink>
+    <Publications>Álvez J., J. Atserias, J. Carrera, S. Climent, E. Laparra, A. Oliver and G. Rigau (2008) Complete and Consistent Annotation of WordNet Using the Top Concept Ontology. In Proceedings of the 6th Language Resources and Evaluation Conference (LREC 2008) Marrakech. Morocco.</Publications>
+    <Keys>
+      <Key Name="NodeId">977</Key>
+      <Key Name="VersionId">2001</Key>
+      <Key Name="OtherLanguages">The resource is language-independent</Key>
+    </Keys>
+  </Catalogue>
+</METATRANSCRIPT>
+

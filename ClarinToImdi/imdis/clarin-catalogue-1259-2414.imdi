@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="2009-08-13" FormatId="IMDI 3.0" Originator="admin" Type="CATALOGUE" Version="12" xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
+  <History>CLARIN to IMDI, DATE: 2009-08-13</History>
+  <Catalogue>
+    <Name>Joensuu Wernicke Aphasia Corpora</Name>
+    <Title>Joensuu Wernicke Aphasia Corpora</Title>
+    <Id/>
+    <Description LanguageId="Unspecified">computer corpora of semi-spontaneous speech of two Finnish Wernicke aphasics (one's transcriptions with English morphological interlinears and translations)</Description>
+    <DocumentLanguages/>
+    <SubjectLanguages>
+      <Language>
+        <Id>ISO639-3:fin</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Finnish</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+    </SubjectLanguages>
+    <Location>
+      <Continent Link="http://www.mpi.nl/IMDI/Schema/Continents.xml" Type="OpenVocabulary"/>
+      <Country Link="http://www.mpi.nl/IMDI/Schema/Countries.xml" Type="ClosedVocabulary">Finland</Country>
+    </Location>
+    <ContentType>Spoken Corpus</ContentType>
+    <Format/>
+    <Quality/>
+    <SmallestAnnotationUnit/>
+    <Applications/>
+    <Date/>
+    <Project>
+      <Name/>
+      <Title/>
+      <Id/>
+      <Contact/>
+    </Project>
+    <Publisher>Department of Linguistics, University of Joensuu</Publisher>
+    <Author/>
+    <Size>Collection: about 20000 word tokens in total</Size>
+    <DistributionForm/>
+    <Access>
+      <Availability/>
+      <Date/>
+      <Owner/>
+      <Publisher/>
+      <Contact/>
+    </Access>
+    <Pricing/>
+    <ContactPerson>jussi.niemi (</ContactPerson>
+    <Publications>Niemi, Jussi &amp; Matti Laine: Syntax and Inflectional Morphology in Aphasia: Quantitative Aspects of Wernicke Speakers' Narratives. Journal of Quantitative Linguistics 4: 181- 189 (1997).</Publications>
+    <Keys>
+      <Key Name="NodeId">1259</Key>
+      <Key Name="VersionId">2414</Key>
+    </Keys>
+  </Catalogue>
+</METATRANSCRIPT>
+

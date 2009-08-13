@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="2009-08-13" FormatId="IMDI 3.0" Originator="admin" Type="CATALOGUE" Version="12" xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
+  <History>CLARIN to IMDI, DATE: 2009-08-13</History>
+  <Catalogue>
+    <Name>Newcastle electronic corpus of Tyneside English (NECTE)</Name>
+    <Title>Newcastle electronic corpus of Tyneside English (NECTE)</Title>
+    <Id/>
+    <Description LanguageId="Unspecified">A corpus of dialect speech from Tyneside in North-East England. digitized audio, standard orthographic transcription, phonetic transcription, and part-of-speech tagged</Description>
+    <DocumentLanguages/>
+    <SubjectLanguages>
+      <Language>
+        <Id>ISO639-3:eng</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">English</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+    </SubjectLanguages>
+    <Location>
+      <Continent Link="http://www.mpi.nl/IMDI/Schema/Continents.xml" Type="OpenVocabulary"/>
+      <Country Link="http://www.mpi.nl/IMDI/Schema/Countries.xml" Type="ClosedVocabulary">United Kingdom</Country>
+    </Location>
+    <ContentType>Multimodal Corpus</ContentType>
+    <ContentType>Spoken Corpus</ContentType>
+    <Format>
+      <Text>TEI XML, .waw, </Text>
+    </Format>
+    <Quality/>
+    <SmallestAnnotationUnit/>
+    <Applications/>
+    <Date/>
+    <Project>
+      <Name/>
+      <Title/>
+      <Id/>
+      <Contact/>
+    </Project>
+    <Publisher>Newcastle University</Publisher>
+    <Author/>
+    <Size/>
+    <DistributionForm/>
+    <Access>
+      <Availability>available on the internet</Availability>
+      <Date/>
+      <Owner/>
+      <Publisher/>
+      <Contact/>
+    </Access>
+    <Pricing/>
+    <ContactPerson>Karen Corrigan</ContactPerson>
+    <ReferenceLink>http://www.ncl.ac.uk/necte/</ReferenceLink>
+    <Publications>See http://www.ncl.ac.uk/necte/publications.htm</Publications>
+    <Keys>
+      <Key Name="NodeId">1420</Key>
+      <Key Name="VersionId">2656</Key>
+    </Keys>
+  </Catalogue>
+</METATRANSCRIPT>
+

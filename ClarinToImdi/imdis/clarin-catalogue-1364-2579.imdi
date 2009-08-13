@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="2009-08-13" FormatId="IMDI 3.0" Originator="admin" Type="CATALOGUE" Version="12" xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
+  <History>CLARIN to IMDI, DATE: 2009-08-13</History>
+  <Catalogue>
+    <Name>Eurotermbank</Name>
+    <Title>Eurotermbank</Title>
+    <Id/>
+    <Description LanguageId="Unspecified">EuroTermBank is single access point to European multilingual terminology resources. It contains more than 1.9 million terms over 25 languages</Description>
+    <DocumentLanguages/>
+    <SubjectLanguages>
+      <Language>
+        <Id>ISO639-3:eng</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">English</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+      <Language>
+        <Id>ISO639-3:est</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Estonian</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+      <Language>
+        <Id>ISO639-3:fra</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">French</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+      <Language>
+        <Id>ISO639-3:deu</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">German</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+      <Language>
+        <Id>ISO639-3:hun</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Hungarian</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+      <Language>
+        <Id>ISO639-3:lav</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Latvian</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+      <Language>
+        <Id>ISO639-3:lit</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Lithuanian</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+    </SubjectLanguages>
+    <Location>
+      <Continent Link="http://www.mpi.nl/IMDI/Schema/Continents.xml" Type="OpenVocabulary"/>
+      <Country Link="http://www.mpi.nl/IMDI/Schema/Countries.xml" Type="ClosedVocabulary"/>
+    </Location>
+    <ContentType>Terminological Resource</ContentType>
+    <Format>
+      <Text>Web application</Text>
+    </Format>
+    <Quality/>
+    <SmallestAnnotationUnit/>
+    <Applications/>
+    <Date>2005/2006</Date>
+    <Project>
+      <Name/>
+      <Title/>
+      <Id/>
+      <Contact/>
+    </Project>
+    <Publisher>Tilde as coordinator, Eurotermbank consortium; </Publisher>
+    <Author/>
+    <Size>Lexicon: 1.9 million terms</Size>
+    <DistributionForm/>
+    <Access>
+      <Availability>available on the internet</Availability>
+      <Date/>
+      <Owner/>
+      <Publisher/>
+      <Contact/>
+    </Access>
+    <Pricing/>
+    <ContactPerson>Andrejs Vasiljevs</ContactPerson>
+    <ReferenceLink>http://www.eurotermbank.com/</ReferenceLink>
+    <Publications>A.Auksoriute, I.Belogrīvs, A.Bielevičiene, A.Blaudums, J.Bordāns, T.Borkowski, J.Borzovs, A.Braasch, E.Cauna, A.Dravniece, N.Dudlauskiene, C.Galinski, L.Henriksen, H.-J. Kaalep, A.Kalniņš, D.Kierzkowska, H.Kilgi, B.Kis, A.Liedskalniņš, B.Maegaard, A.Mitkevičiene, S.Olsen, C.Povlsen, U.Priede, G.Proszeky, I.Puksts, M.Raguz, I.Raupach, R.Salupere, K.-D.Schmitz, K.Siwek, R.Skadiņš, V.Skujiņa, R.Stunžinas, G.Tardy, A.Uritam, A.Vasiļjevs, J.Zabielaite. Towards Consolidation of European Terminology Resources: Experience and Recommendations from EuroTermBank Project._ Riga, 2006, 118 pp. </Publications>
+    <Keys>
+      <Key Name="LexiconType">terminology database</Key>
+      <Key Name="VersionId">2579</Key>
+      <Key Name="IPRContactPerson">Andrejs Vasiljevs</Key>
+    </Keys>
+  </Catalogue>
+</METATRANSCRIPT>
+

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="2009-08-13" FormatId="IMDI 3.0" Originator="admin" Type="CATALOGUE" Version="12" xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
+  <History>CLARIN to IMDI, DATE: 2009-08-13</History>
+  <Catalogue>
+    <Name>Croatian Language Corpus</Name>
+    <Title>Croatian Language Corpus</Title>
+    <Id/>
+    <Description LanguageId="Unspecified">This is a corpus of diachronic and synchronic Croatian, including dialectal variants. Its annotation is expanding to a multi-tier annotation, offering phonological, morphological, syntactic and semantic properties. There is a frequency profile of tokens available, being expanded to frequency profiles at all linguistic levels, n-gram and multi-gram models.</Description>
+    <DocumentLanguages>
+      <Language>
+        <Id>ISO639-3:hrv</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Croatian</Name>
+      </Language>
+      <Language>
+        <Id>ISO639-3:eng</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">English</Name>
+      </Language>
+    </DocumentLanguages>
+    <SubjectLanguages>
+      <Language>
+        <Id>ISO639-3:hrv</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Croatian</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+    </SubjectLanguages>
+    <Location>
+      <Continent Link="http://www.mpi.nl/IMDI/Schema/Continents.xml" Type="OpenVocabulary"/>
+      <Country Link="http://www.mpi.nl/IMDI/Schema/Countries.xml" Type="ClosedVocabulary">Croatia</Country>
+    </Location>
+    <ContentType>Written Corpus</ContentType>
+    <Format>
+      <Text>XML TEI</Text>
+    </Format>
+    <Quality/>
+    <SmallestAnnotationUnit/>
+    <Applications/>
+    <Date>2005</Date>
+    <Project>
+      <Name>Croatian Language Repository</Name>
+      <Title>Croatian Language Repository</Title>
+      <Id/>
+      <Contact/>
+    </Project>
+    <Publisher>Institute of Croatian Language and Linguistics</Publisher>
+    <Author/>
+    <Size>Collection: 100 mil. tokens (continued development)</Size>
+    <DistributionForm/>
+    <Access>
+      <Availability/>
+      <Date/>
+      <Owner/>
+      <Publisher/>
+      <Contact/>
+    </Access>
+    <Pricing/>
+    <ContactPerson><![CDATA[Damir Cavar <dcavar@ihjj.hr>]]></ContactPerson>
+    <Keys>
+      <Key Name="NodeId">729</Key>
+      <Key Name="VersionId">1469</Key>
+      <Key Name="CollectionLongtermPreservationBy">Institute of Croatian Language and Linguistics</Key>
+      <Key Name="CollectionLocation">Zagreb, Croatia</Key>
+      <Key Name="CollectionFormatDetailed">Scanned text in TIFF and PDF, Raw text annotations are 100% pure XML TEI P5 using multi-tier annotation for phonemic, morphological, syntactic and semantic annotation.</Key>
+      <Key Name="CollectionQuality">high-quality, multi-checked process output for digitization and annotation</Key>
+      <Key Name="CollectionAccess"/>
+      <Key Name="CollectionSource">Croatian Language Repository</Key>
+    </Keys>
+  </Catalogue>
+</METATRANSCRIPT>
+

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="2009-08-13" FormatId="IMDI 3.0" Originator="admin" Type="CATALOGUE" Version="12" xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
+  <History>CLARIN to IMDI, DATE: 2009-08-13</History>
+  <Catalogue>
+    <Name>Wa Language Corpus</Name>
+    <Title>Wa Language Corpus</Title>
+    <Id/>
+    <Description LanguageId="Unspecified">Corpus of Wa language material. maily written (about 7-8,000 pages) but also comprising some transcribed interviews. Different orthograpies. Some text aavilable in multiple orthographies or aligned with translations.</Description>
+    <DocumentLanguages/>
+    <SubjectLanguages>
+      <Language>
+        <Id>Unknown</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">-- language not in list --</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+    </SubjectLanguages>
+    <Location>
+      <Continent Link="http://www.mpi.nl/IMDI/Schema/Continents.xml" Type="OpenVocabulary"/>
+      <Country Link="http://www.mpi.nl/IMDI/Schema/Countries.xml" Type="ClosedVocabulary">United Kingdom</Country>
+    </Location>
+    <ContentType>Spoken Corpus</ContentType>
+    <ContentType>Written Corpus</ContentType>
+    <Format>
+      <Text>some available in TEI XML; sample texts in XHTML and pdf </Text>
+    </Format>
+    <Quality/>
+    <SmallestAnnotationUnit/>
+    <Applications/>
+    <Date/>
+    <Project>
+      <Name/>
+      <Title/>
+      <Id/>
+      <Contact/>
+    </Project>
+    <Publisher>SOAS (School of Oriental and African Studies), University of London</Publisher>
+    <Author/>
+    <Size/>
+    <DistributionForm/>
+    <Access>
+      <Availability>available on the internet</Availability>
+      <Date/>
+      <Owner/>
+      <Publisher/>
+      <Contact/>
+    </Access>
+    <Pricing/>
+    <ContactPerson>Justin Watkins and Richard Kunst</ContactPerson>
+    <ReferenceLink>http://mercury.soas.ac.uk/wadict/wa_corpus.html</ReferenceLink>
+    <Keys>
+      <Key Name="NodeId">2310</Key>
+      <Key Name="VersionId">3651</Key>
+      <Key Name="OtherLanguages">Wa</Key>
+    </Keys>
+  </Catalogue>
+</METATRANSCRIPT>
+

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="2009-08-13" FormatId="IMDI 3.0" Originator="admin" Type="CATALOGUE" Version="12" xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
+  <History>CLARIN to IMDI, DATE: 2009-08-13</History>
+  <Catalogue>
+    <Name>Groningen Corpus</Name>
+    <Title>Groningen Corpus</Title>
+    <Id/>
+    <Description LanguageId="Unspecified">238 speakers read out phonetically rich texts, including elicitations of emotional speech. Orthographically transcribed. Abundant speaker information and voice assessments.</Description>
+    <DocumentLanguages/>
+    <SubjectLanguages>
+      <Language>
+        <Id>ISO639-3:nld</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Dutch</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+    </SubjectLanguages>
+    <Location>
+      <Continent Link="http://www.mpi.nl/IMDI/Schema/Continents.xml" Type="OpenVocabulary"/>
+      <Country Link="http://www.mpi.nl/IMDI/Schema/Countries.xml" Type="ClosedVocabulary">Netherlands (the)</Country>
+    </Location>
+    <ContentType>Spoken Corpus</ContentType>
+    <Format/>
+    <Quality/>
+    <SmallestAnnotationUnit/>
+    <Applications/>
+    <Date>1996</Date>
+    <Project>
+      <Name/>
+      <Title/>
+      <Id/>
+      <Contact/>
+    </Project>
+    <Publisher>SPEX, Radboud University Nijmegen, the Netherlands</Publisher>
+    <Author/>
+    <Size>Collection: Over 20 hours of speech</Size>
+    <DistributionForm>CD</DistributionForm>
+    <Access>
+      <Availability/>
+      <Date/>
+      <Owner/>
+      <Publisher/>
+      <Contact/>
+    </Access>
+    <Pricing/>
+    <ContactPerson>Henk van den Heuvel, H.vandenHeuvel@let.ru.nl</ContactPerson>
+    <Keys>
+      <Key Name="NodeId">763</Key>
+      <Key Name="VersionId">1512</Key>
+      <Key Name="CollectionAccess"/>
+    </Keys>
+  </Catalogue>
+</METATRANSCRIPT>
+

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="2009-08-13" FormatId="IMDI 3.0" Originator="admin" Type="CATALOGUE" Version="12" xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
+  <History>CLARIN to IMDI, DATE: 2009-08-13</History>
+  <Catalogue>
+    <Name>The World Atlas of Language Structures Online</Name>
+    <Title>The World Atlas of Language Structures Online</Title>
+    <Id/>
+    <Description LanguageId="Unspecified">WALS is a large database of structural (phonological, grammatical, lexical) properties of languages gathered from descriptive materials (such as reference grammars) by a team of more than 40 authors  (many of them the leading authorities on the subject). </Description>
+    <DocumentLanguages/>
+    <SubjectLanguages>
+      <Language>
+        <Id>Unknown</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">-- language not in list --</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+    </SubjectLanguages>
+    <Location>
+      <Continent Link="http://www.mpi.nl/IMDI/Schema/Continents.xml" Type="OpenVocabulary"/>
+      <Country Link="http://www.mpi.nl/IMDI/Schema/Countries.xml" Type="ClosedVocabulary"/>
+    </Location>
+    <ContentType>other</ContentType>
+    <Format/>
+    <Quality/>
+    <SmallestAnnotationUnit/>
+    <Applications/>
+    <Date/>
+    <Project>
+      <Name/>
+      <Title/>
+      <Id/>
+      <Contact/>
+    </Project>
+    <Publisher>Max Planck Digital Library, http://wals.info/author</Publisher>
+    <Author/>
+    <Size/>
+    <DistributionForm/>
+    <Access>
+      <Availability/>
+      <Date/>
+      <Owner/>
+      <Publisher/>
+      <Contact/>
+    </Access>
+    <Pricing/>
+    <ContactPerson>https://dev.livingreviews.org/projects/wals/wiki/WalsPeople</ContactPerson>
+    <ReferenceLink>http://wals.info/</ReferenceLink>
+    <MetadataLink>http://wals.info/export</MetadataLink>
+    <Publications>http://wals.info/author</Publications>
+    <Keys>
+      <Key Name="NodeId">1360</Key>
+      <Key Name="VersionId">2573</Key>
+      <Key Name="OtherLanguages">http://wals.info/languoid</Key>
+      <Key Name="IPRLegalReference">http://wals.info/about/legal</Key>
+      <Key Name="IPRLicenseType">Creative Commons Attribution-Noncommercial-No Derivative Works 2.0 Germany - http://creativecommons.org/licenses/by-nc-nd/2.0/de/deed.en</Key>
+      <Key Name="IPRDescription">Use of the Google base maps is subject to Google's permission guidelines.</Key>
+    </Keys>
+  </Catalogue>
+</METATRANSCRIPT>
+

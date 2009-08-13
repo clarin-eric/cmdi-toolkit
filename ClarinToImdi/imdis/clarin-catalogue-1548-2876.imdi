@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="2009-08-13" FormatId="IMDI 3.0" Originator="admin" Type="CATALOGUE" Version="12" xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
+  <History>CLARIN to IMDI, DATE: 2009-08-13</History>
+  <Catalogue>
+    <Name>Berliner Wendecorpus</Name>
+    <Title>Berliner Wendecorpus</Title>
+    <Id/>
+    <Description LanguageId="Unspecified">Transcribed narrative interviews with people from East and West Berlin about the events of November 9. 282,000 tokens. TEI XML, lemma and POS. Normalized version also available.</Description>
+    <DocumentLanguages/>
+    <SubjectLanguages>
+      <Language>
+        <Id>ISO639-3:deu</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">German</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+    </SubjectLanguages>
+    <Location>
+      <Continent Link="http://www.mpi.nl/IMDI/Schema/Continents.xml" Type="OpenVocabulary"/>
+      <Country Link="http://www.mpi.nl/IMDI/Schema/Countries.xml" Type="ClosedVocabulary">Germany</Country>
+    </Location>
+    <ContentType>Spoken Corpus</ContentType>
+    <Format>
+      <Text>TEI XML</Text>
+    </Format>
+    <Quality/>
+    <SmallestAnnotationUnit/>
+    <Applications/>
+    <Date>1993/2006</Date>
+    <Project>
+      <Name/>
+      <Title/>
+      <Id/>
+      <Contact/>
+    </Project>
+    <Publisher/>
+    <Author/>
+    <Size/>
+    <DistributionForm/>
+    <Access>
+      <Availability>available on the internet</Availability>
+      <Date/>
+      <Owner/>
+      <Publisher/>
+      <Contact/>
+    </Access>
+    <Pricing/>
+    <ContactPerson>Norbert Dittmar</ContactPerson>
+    <ReferenceLink>http://www.dwds.de/textbasis/Berliner_Wendecorpus</ReferenceLink>
+    <Publications>Dittmar, N./ Bredel, U. (1999). Die Sprachmauer: Die Verarbeitung der Wende und ihrer Folgen in Gesprächen mit Ost-und WestberlinerInnen. Berlin: Weidler Buchverlag.</Publications>
+    <Keys>
+      <Key Name="NodeId">1548</Key>
+      <Key Name="VersionId">2876</Key>
+    </Keys>
+  </Catalogue>
+</METATRANSCRIPT>
+

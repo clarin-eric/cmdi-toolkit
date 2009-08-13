@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="2009-08-13" FormatId="IMDI 3.0" Originator="admin" Type="CATALOGUE" Version="12" xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
+  <History>CLARIN to IMDI, DATE: 2009-08-13</History>
+  <Catalogue>
+    <Name>Lithuanian-Latvian dictionary</Name>
+    <Title>Lithuanian-Latvian dictionary</Title>
+    <Id/>
+    <Description LanguageId="Unspecified">The dictionary is based on Lithuanian-Latvian dictionary (1995) by Jons Balkevičs, Laimute Balode, Apolonija Bojāte, Valters Subatnieks, ed. by Alberts Sarkanis. It contains ca. 60 00 lexical entries, inclusion of morphlogical analysis tools allows search for word forms.</Description>
+    <DocumentLanguages/>
+    <SubjectLanguages>
+      <Language>
+        <Id>ISO639-3:lav</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Latvian</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+      <Language>
+        <Id>ISO639-3:lit</Id>
+        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Lithuanian</Name>
+        <Dominant>Unknown</Dominant>
+        <SourceLanguage>Unknown</SourceLanguage>
+        <TargetLanguage>Unknown</TargetLanguage>
+      </Language>
+    </SubjectLanguages>
+    <Location>
+      <Continent Link="http://www.mpi.nl/IMDI/Schema/Continents.xml" Type="OpenVocabulary"/>
+      <Country Link="http://www.mpi.nl/IMDI/Schema/Countries.xml" Type="ClosedVocabulary">Latvia</Country>
+    </Location>
+    <ContentType>Lexicon / Knowledge Source</ContentType>
+    <Format>
+      <Text>Web application</Text>
+    </Format>
+    <Quality/>
+    <SmallestAnnotationUnit/>
+    <Applications/>
+    <Date>2007/2007</Date>
+    <Project>
+      <Name/>
+      <Title/>
+      <Id/>
+      <Contact/>
+    </Project>
+    <Publisher>Tilde</Publisher>
+    <Author/>
+    <Size/>
+    <DistributionForm/>
+    <Access>
+      <Availability>available on the internet</Availability>
+      <Date/>
+      <Owner/>
+      <Publisher/>
+      <Contact/>
+    </Access>
+    <Pricing/>
+    <ContactPerson>raivis.skadins@tilde.lv</ContactPerson>
+    <ReferenceLink>http://lietuviu.letonika.lv</ReferenceLink>
+    <Keys>
+      <Key Name="NodeId">1130</Key>
+      <Key Name="VersionId">2245</Key>
+    </Keys>
+  </Catalogue>
+</METATRANSCRIPT>
+

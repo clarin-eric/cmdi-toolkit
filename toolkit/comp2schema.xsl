@@ -97,10 +97,18 @@ $Date: 2009-05-26 18:00:29 +0200 (Tue, 26 May 2009) $
     <!-- first pass: create the complex types on top of the resulting XSD -->
     <xsl:template match="ValueScheme" mode="types">
         <!-- create a unique suffix (the path to the element) to ensure the unicity of the types to be created -->
-        <xsl:variable name="uniquePath">
-            <xsl:call-template name="printUniquePath"/>
-        </xsl:variable>
-
+        
+        
+        
+        <!-- ignore when this ValueScheme is descendant of an Attribute as we do not allow  CV-attributes in a CV-list -->
+        <xsl:if test="not(../../Attribute)">
+        
+            <xsl:variable name="uniquePath">
+                <xsl:call-template name="printUniquePath"/>
+            </xsl:variable>
+        
+        
+        
         <!-- first auto-generate a name for the simpletype to be extended -->
         <xs:simpleType name="simpletype{$uniquePath}">
             <xs:restriction base="xs:string">
@@ -119,7 +127,13 @@ $Date: 2009-05-26 18:00:29 +0200 (Tue, 26 May 2009) $
                 </xs:extension>
             </xs:simpleContent>
         </xs:complexType>
+
+    
+        </xsl:if>
+    
     </xsl:template>
+
+
 
     <!-- Stop types -->
 
@@ -211,7 +225,35 @@ $Date: 2009-05-26 18:00:29 +0200 (Tue, 26 May 2009) $
 
     <!-- Convert the AttributeList into real XSD attributes -->
     <xsl:template match="AttributeList/Attribute">
-        <xs:attribute name="{./Name}" type="xs:{./Type}"/>
+        <xs:attribute name="{./Name}">
+            
+            <!-- add some extra stuff if we have a CV attribute -->
+            <xsl:choose>
+                
+                <!-- complex situation: CV or regex -->
+                <xsl:when test="./ValueScheme">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">                       
+                            <!-- now use general rules for enumeration or pattern -->
+                            <xsl:apply-templates select="./ValueScheme/*" />
+                        </xs:restriction>
+                    </xs:simpleType>                    
+                </xsl:when>
+                
+                <!-- simple situation: just a basic type -->
+                <xsl:otherwise>
+                    <xsl:attribute name="type"><xsl:value-of select="concat('xs:',./Type)"/></xsl:attribute>
+                </xsl:otherwise>
+            
+            </xsl:choose>
+            
+            
+               
+                     
+            
+            
+            
+        </xs:attribute>
     </xsl:template>
 
     <!-- Convert patterns -->

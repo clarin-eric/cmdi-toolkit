@@ -168,6 +168,14 @@
                                     <xs:simpleContent>
                                        <xs:extension base="xs:string">
                                           <xs:attribute name="nickname" type="xs:string"/>
+                                          <xs:attribute name="suffix">
+                                             <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                   <xs:enumeration value="senior" dcr:datcat="http://www.isocat.org/datcat/CMD-001"/>
+                                                   <xs:enumeration value="junior" dcr:datcat="http://www.isocat.org/datcat/CMD-002"/>
+                                                </xs:restriction>
+                                             </xs:simpleType>
+                                          </xs:attribute>
                                        </xs:extension>
                                     </xs:simpleContent>
                                  </xs:complexType>

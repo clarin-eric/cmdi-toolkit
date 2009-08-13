@@ -34,17 +34,21 @@
     <xs:complexType name="CMD_Element_type">
         <xs:sequence>
             <xs:element name="AttributeList" type="AttributeList_type" minOccurs="0" maxOccurs="1"/>
-            <xs:element minOccurs="0" maxOccurs="1" name="ValueScheme">
-                <xs:complexType>
-                    <xs:choice>
-                        <xs:element name="pattern" type="xs:string" maxOccurs="1"/>
-                        <xs:element name="enumeration" type="enumeration_type"> </xs:element>
-                    </xs:choice>
-                </xs:complexType>
+            <xs:element minOccurs="0" maxOccurs="1" name="ValueScheme" type="ValueScheme_type">
+                
             </xs:element>
         </xs:sequence>
         <xs:attributeGroup ref="clarin_element_attributes"/>
     </xs:complexType>
+
+
+    <xs:complexType name="ValueScheme_type">
+        <xs:choice>
+            <xs:element name="pattern" type="xs:string" maxOccurs="1"/>
+            <xs:element name="enumeration" type="enumeration_type"> </xs:element>
+        </xs:choice>
+    </xs:complexType>
+
 
     <xs:complexType name="AttributeList_type"> 
         <xs:sequence>
@@ -52,7 +56,11 @@
                 <xs:complexType>
                     <xs:sequence>
                         <xs:element name="Name" type="xs:string"/>
-                        <xs:element name="Type" type="allowed_attributetypes_type"/>
+                        <xs:choice>
+                            <xs:element name="Type" type="allowed_attributetypes_type"/>
+                            <xs:element name="ValueScheme" type="ValueScheme_type"/>
+                        </xs:choice>
+                        
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -124,6 +132,7 @@
         <xs:annotation>
             <xs:documentation>Subset of XSD types that are allowed as CMD type</xs:documentation>
         </xs:annotation>
+        
         <xs:restriction base="xs:token">
             <xs:enumeration value="boolean"/>
             <xs:enumeration value="decimal"/>

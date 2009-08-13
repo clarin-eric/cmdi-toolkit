@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="general-component-schema.xsd">
+    xsi:noNamespaceSchemaLocation="../general-component-schema.xsd">
     
     <Header/>
     
@@ -10,16 +10,27 @@
         <CMD_Element name="firstName" ValueScheme="string">
             <!-- provide a nickname attribute for the firstName element -->
             <AttributeList>
+                <!-- example of an attribute using a simple type -->
                 <Attribute>
                     <Name>nickname</Name>
                     <Type>string</Type>
+                </Attribute>
+                <!-- example of an attribute using an enumeration  (could also be a pattern) -->
+                <Attribute >
+                    <Name>suffix</Name>
+                    <ValueScheme>
+                        <enumeration>
+                            <item ConceptLink="http://www.isocat.org/datcat/CMD-001">senior</item>
+                            <item ConceptLink="http://www.isocat.org/datcat/CMD-002">junior</item>
+                        </enumeration>
+                    </ValueScheme>
                 </Attribute>
             </AttributeList>
         </CMD_Element>
         
         <CMD_Element name="lastName" ValueScheme="string"/>
         
-        <CMD_Element name="sex" ConceptLink="http://www.isocat.org/datcat/CMD-000">
+        <CMD_Element name="sex" ConceptLink="http://www.isocat.org/datcat/CMD-000" ValueScheme="anyURI">
             <ValueScheme>
                 <enumeration>
                     <item ConceptLink="http://www.isocat.org/datcat/CMD-0010">male</item>

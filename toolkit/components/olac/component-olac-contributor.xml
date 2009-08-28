@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../general-component-schema.xsd">
+    
+    <Header/>
+    
+    <CMD_Component name="olac-contributor" CardinalityMin="0" CardinalityMax="unbounded">
+         <CMD_Element name="contributor" CardinalityMin="0" CardinalityMax="unbounded" ValueScheme="string" >
+            <AttributeList>
+                <Attribute>
+                    <Name>olac-role</Name>
+                    <ValueScheme>
+                        <enumeration>
+                            <item>annotator</item>
+                            <item>author</item>
+                            <item>compiler</item>
+                            <item>consultant</item>
+                            <item>data_inputter</item>
+                            <item>depositor</item>
+                            <item>developer</item>
+                            <item>editor</item>
+                            <item>illustrator</item>
+                            <item>interpreter</item>
+                            <item>interviewer</item>
+                            <item>participant</item>
+                            <item>performer</item>
+                            <item>photographer</item>
+                            <item>recorder</item>
+                            <item>researcher</item>
+                            <item>research_participant</item>
+                            <item>responder</item>
+                            <item>signer</item>
+                            <item>singer</item>
+                            <item>speaker</item>
+                            <item>sponsor</item>
+                            <item>transcriber</item>
+                            <item>translator</item>
+                        </enumeration>
+                    </ValueScheme>
+                </Attribute>
+            </AttributeList>
+        </CMD_Element>
+ </CMD_Component>   
+</CMD_ComponentSpec>
+

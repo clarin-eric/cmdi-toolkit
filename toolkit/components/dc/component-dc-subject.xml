@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../general-component-schema.xsd">
+    
+    <Header/>
+    
+    <CMD_Component name="dc-subject" ConceptLink="http://purl.org/dc/elements/1.1/subject" CardinalityMin="0" CardinalityMax="unbounded">
+        <CMD_Element name="subject" ValueScheme="string"/>
+    </CMD_Component>
+    
+</CMD_ComponentSpec>
+

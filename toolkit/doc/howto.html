@@ -47,8 +47,11 @@
 
 <p>Additionally there are the attributes <em>id</em> and <em>ConceptLink</em>.
 
-<p><em>ConceptLink</em> is used to link a CMD_Component (or a CMD_Element) to a definition in a data category repository like <a href="http://www.isocat.org/">isocat</a>. Because of the isocat concept registry not being completely finished yet, this attribute has no effect at the moment and is therefore optional.</P>
+<p><em>ConceptLink</em> is used to link a CMD_Component (or a CMD_Element) to a definition in a data category repository like <a href="http://www.isocat.org/">isocat</a>. It is not always possible to find a suitable concept to link to, therefore this attribute is optional. It should, however, be filled as often as possible. To use the attribute you simply link to the appropriate concept in the data category repository, for example like this</p>
 
+
+<pre>&lt;CMD_Component name="TextTMD" ConceptLink="http://www.isocat.org/datcat/CMD-000"&gt;</pre>
+        
 <p><em>id</em> is used to link a component to a specific resource. See <a href="#resources">below</a> for how exactly this works.</p>
 
 <p>A component has four different kinds of child elements: 
@@ -76,7 +79,23 @@ Please note, that you have to use these child elements <strong>exactly</strong> 
 </pre>
 </p>
 
-<p>As you can see, all attributes for a CMD_Element (or a CMD_Component - they both work the same in this regard) are part of the wrapper element <em>AttributeList</em>. The AttributeList can include as many attributes as you like. Each attribute has to have a name, which can be any string of alphanumeric characters, and a type. The type has to be one of <em>boolean</em>, <em>decimal</em>, <em>float</em> or <em>string</em>. Please note, that case does matter here, so a type of, for example, <em>String</em> or <em>FLOAT</em> is not acceptable. (Please see the <a href="http://www.w3.org/TR/xmlschema-2/#built-in-primitive-datatypes">XML Schema specification</a> for more information about these types.)</p>
+<p>As you can see, all attributes for a CMD_Element (or a CMD_Component - they both work the same in this regard) are part of the wrapper element <em>AttributeList</em>. The AttributeList can include as many attributes as you like. Each attribute has to have a name, which can be any string of alphanumeric characters, and a type. The type has to be one of <em>boolean</em>, <em>decimal</em>, <em>float</em>, <em>string</em> or <em>anyURI</em>. Please note, that case does matter here, so a type of, for example, <em>String</em> or <em>FLOAT</em> is not acceptable. (Please see the <a href="http://www.w3.org/TR/xmlschema-2/#built-in-primitive-datatypes">XML Schema specification</a> for more information about these types.)</p>
+
+<p>As an alternative to the five built-in types mentioned in the previous paragraph it is also possible to define your own types. To do this you use the child element &lt;ValueScheme&gt; instead of &lt;Type&gt;>:
+<pre>
+&lt;AttributeList&gt;
+    &lt;Attribute&gt;
+        &lt;Name&gt;sex&lt;/Name&gt;
+        &lt;ValueScheme&gt;
+            &lt;enumeration&gt;
+                &lt;item&gt;male&lt;/item&gt;
+                &lt;item&gt;female&lt;/item&gt;
+            &lt;enumeration&gt;
+        &lt;/ValueScheme&gt;
+    &lt;/Attribute&gt;
+&lt;/AttributeList&gt;
+</pre>
+How exactly the element &lt;ValueScheme&gt; works is described in detail <a href="#valuescheme">below</a>.</p>
 
 <h2>CMD_Element</h2>
 
@@ -84,7 +103,7 @@ Please note, that you have to use these child elements <strong>exactly</strong> 
 
 <pre>&lt;CMD_Element name="EthnicGroup" ValueScheme="string"/&gt;</pre>
 
-There are four simple data types defined for such a use: <em>boolean</em>, <em>decimal</em>, <em>float</em> and <em>string</em>. (Please see the <a href="http://www.w3.org/TR/xmlschema-2/#built-in-primitive-datatypes">XML Schema specification</a> for more information about these types.)</p>
+<a name="valuescheme"></a>There are five simple data types defined for such a use: <em>boolean</em>, <em>decimal</em>, <em>float</em>, <em>string</em> and <em>anyURI</em>. (Please see the <a href="http://www.w3.org/TR/xmlschema-2/#built-in-primitive-datatypes">XML Schema specification</a> for more information about these types.)</p>
 
 <p>Alternatively you can enter a more complex, i.e. restrictive ValueScheme, by not using the attribute <em>ValueScheme</em> but instead using the sub element <em>&lt;ValueScheme&gt;</em> like in the following two examples:<br />
 <ol>

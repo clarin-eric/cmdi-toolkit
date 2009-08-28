@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../general-component-schema.xsd">
+    
+    <Header/>
+    
+    <CMD_Component name="dc-terms" CardinalityMin="1" CardinalityMax="1">
+        
+        <CMD_Element name="contributor" ConceptLink="http://purl.org/dc/elements/1.1/contributor" CardinalityMin="0" CardinalityMax="unbounded" ValueScheme="string" />
+        
+        <CMD_Element name="coverage" ConceptLink="http://purl.org/dc/elements/1.1/coverage" CardinalityMin="0" CardinalityMax="unbounded" ValueScheme="string" />
+        
+        <CMD_Element name="creator" ConceptLink="http://purl.org/dc/elements/1.1/creator" CardinalityMin="0" CardinalityMax="unbounded" ValueScheme="string" />
+        
+        <CMD_Element name="date" ConceptLink="http://purl.org/dc/elements/1.1/date" CardinalityMin="0" CardinalityMax="unbounded" ValueScheme="string" />
+        
+        <CMD_Element name="description" ConceptLink="http://purl.org/dc/elements/1.1/description" CardinalityMin="0" CardinalityMax="unbounded" ValueScheme="string" />
+        
+        <CMD_Element name="format" ConceptLink="http://purl.org/dc/elements/1.1/format" CardinalityMin="0" CardinalityMax="unbounded" ValueScheme="string" />
+        
+        <CMD_Element name="identifier" ConceptLink="http://purl.org/dc/elements/1.1/identifier" CardinalityMin="0" CardinalityMax="unbounded" ValueScheme="string" />
+        
+        <CMD_Element name="language" ConceptLink="http://purl.org/dc/elements/1.1/language" CardinalityMin="0" CardinalityMax="unbounded" ValueScheme="string" />
+        
+        <CMD_Element name="publisher" ConceptLink="http://purl.org/dc/elements/1.1/publisher" CardinalityMin="0" CardinalityMax="unbounded" ValueScheme="string" />
+        
+        <CMD_Element name="relation" ConceptLink="http://purl.org/dc/elements/1.1/relation" CardinalityMin="0" CardinalityMax="unbounded" ValueScheme="string" />
+        
+        <CMD_Element name="rights" ConceptLink="http://purl.org/dc/elements/1.1/rights" CardinalityMin="0" CardinalityMax="unbounded" ValueScheme="string" />
+        
+        <CMD_Element name="source" ConceptLink="http://purl.org/dc/elements/1.1/source" CardinalityMin="0" CardinalityMax="unbounded" ValueScheme="string" />
+        
+        <CMD_Element name="subject" ConceptLink="http://purl.org/dc/elements/1.1/subject" CardinalityMin="0" CardinalityMax="unbounded" ValueScheme="string" />
+        
+        <CMD_Element name="title" ConceptLink="http://purl.org/dc/elements/1.1/title" CardinalityMin="0" CardinalityMax="unbounded" ValueScheme="string" />
+        
+        <CMD_Element name="type" ConceptLink="http://purl.org/dc/elements/1.1/type" CardinalityMin="0" CardinalityMax="unbounded" ValueScheme="string" />
+        
+    </CMD_Component>
+        
+
+    
+</CMD_ComponentSpec>

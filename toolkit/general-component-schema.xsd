@@ -82,7 +82,7 @@
 
     <!-- list of all attributes that can be bound to a cl_el -->
     <xs:attributeGroup name="clarin_element_attributes">
-        <xs:attribute name="name" type="xs:token"/>
+        <xs:attribute name="name" type="xs:token" use="required"/>
         <xs:attribute name="ConceptLink" type="xs:anyURI"/>
         <xs:attribute name="ValueScheme" type="allowed_attributetypes_type"/>
         <xs:attribute name="CardinalityMin" type="cardinality_type"/>
@@ -91,7 +91,7 @@
 
     <!-- list of all attributes that can be bound to a cl_comp -->
     <xs:attributeGroup name="clarin_component_attributes">
-        <xs:attribute name="name" type="xs:token"/>
+        <xs:attribute name="name" type="xs:token" use="required"/>
         <xs:attribute name="id" type="xs:ID"/>
         <xs:attribute name="ConceptLink" type="xs:anyURI"/>
         <xs:attribute name="filename" type="xs:anyURI"/>

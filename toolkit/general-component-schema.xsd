@@ -147,8 +147,7 @@
             <xs:documentation>controlled vocabularies</xs:documentation>
         </xs:annotation>
         <xs:choice minOccurs="0" maxOccurs="unbounded">
-            <xs:element name="item" type="item_type" />
-            <xs:element name="appinfo" type="xs:string" />
+            <xs:element name="item" type="item_type" ></xs:element>
         </xs:choice>
     </xs:complexType>
 
@@ -156,6 +155,7 @@
         <xs:simpleContent>
             <xs:extension base="xs:string">
                 <xs:attribute type="xs:anyURI" name="ConceptLink"/>
+                <xs:attribute type="xs:string" name="AppInfo"/>
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>

@@ -248,11 +248,6 @@ $Date: 2009-05-26 18:00:29 +0200 (Tue, 26 May 2009) $
             </xsl:choose>
             
             
-               
-                     
-            
-            
-            
         </xs:attribute>
     </xsl:template>
 
@@ -268,6 +263,7 @@ $Date: 2009-05-26 18:00:29 +0200 (Tue, 26 May 2009) $
             <xs:enumeration value="{node()}">
                 <!-- Add a dcr:datcat if a ConceptLink attribute is found -->
                 <xsl:apply-templates select="./@ConceptLink"/>
+                <xsl:apply-templates select="./@AppInfo"/>
             </xs:enumeration>
             <!-- dcr:datcat="{@ConceptLink}"/>-->
         </xsl:for-each>
@@ -285,7 +281,6 @@ $Date: 2009-05-26 18:00:29 +0200 (Tue, 26 May 2009) $
         </xsl:attribute>
     </xsl:template>
 
-
     <xsl:template match="@CardinalityMax">
         <xsl:attribute name="maxOccurs">
             <xsl:value-of select="."/>
@@ -296,6 +291,12 @@ $Date: 2009-05-26 18:00:29 +0200 (Tue, 26 May 2009) $
         <xsl:attribute name="dcr:datcat">
             <xsl:value-of select="."/>
         </xsl:attribute>
+    </xsl:template>
+
+    <xsl:template match="@AppInfo">
+        <xs:annotation>
+            <xs:appinfo><xsl:value-of select="."/></xs:appinfo>
+        </xs:annotation>
     </xsl:template>
 
     <xsl:template match="@ValueScheme">

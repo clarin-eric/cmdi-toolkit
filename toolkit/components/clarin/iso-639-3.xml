@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="file:/home/dietuyt/svn/clarin/metadata/trunk/toolkit/general-component-schema.xsd">
+    xsi:noNamespaceSchemaLocation="file:../../general-component-schema.xsd">
     <Header>
         <Description>The list of ISO-639-3 language families.</Description>
         <Source>Based on: http://www.sil.org/iso639-3</Source>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="file:/home/dietuyt/svn/clarin/metadata/trunk/toolkit/general-component-schema.xsd">
+    <Header>
+        <Description>The list of ISO-639-5 language families.</Description>
+        <Source>Based on: http://en.wikipedia.org/wiki/List_of_ISO_639-5_codes</Source>
+        <Author>
+            <Name>Dieter Van Uytvanck</Name>
+            <Email>dieter.vanuytvanck@mpi.nl</Email>
+        </Author>
+    </Header>
+
+    <CMD_Component name="ISO635">
+        <CMD_Element name="iso-639-5-code">
+            <ValueScheme>
+                <enumeration>
+
+                    <item AppInfo="Austro-Asiatic languages">aav</item>
+                    <item AppInfo="Afro-Asiatic languages">afa</item>
+                    <item AppInfo="Algonquian languages">alg</item>
+                    <item AppInfo="Atlantic-Congo languages">alv</item>
+                    <item AppInfo="Apache languages">apa</item>
+                    <item AppInfo="Alacalufan languages">aqa</item>
+                    <item AppInfo="Algic languages">aql</item>
+                    <item AppInfo="Artificial languages">art</item>
+                    <item AppInfo="Athapascan languages">ath</item>
+                    <item AppInfo="Arauan languages">auf</item>
+                    <item AppInfo="Australian languages">aus</item>
+                    <item AppInfo="Arawakan languages">awd</item>
+                    <item AppInfo="Uto-Aztecan languages">azc</item>
+                    <item AppInfo="Banda languages">bad</item>
+                    <item AppInfo="Bamileke languages">bai</item>
+                    <item AppInfo="Baltic languages">bat</item>
+                    <item AppInfo="Berber languages">ber</item>
+                    <item AppInfo="Bantu languages">bnt</item>
+                    <item AppInfo="Batak languages">btk</item>
+                    <item AppInfo="Central American Indian languages">cai</item>
+                    <item AppInfo="Caucasian languages">cau</item>
+                    <item AppInfo="Chibchan languages">cba</item>
+                    <item AppInfo="North Caucasian languages">ccn</item>
+                    <item AppInfo="South Caucasian languages">ccs</item>
+                    <item AppInfo="Chadic languages">cdc</item>
+                    <item AppInfo="Caddoan languages">cdd</item>
+                    <item AppInfo="Celtic languages">cel</item>
+                    <item AppInfo="Chamic languages">cmc</item>
+                    <item AppInfo="creoles and pidgins">cpe</item>
+                    <item AppInfo="creoles and pidgins">cpf</item>
+                    <item AppInfo="creoles and pidgins">cpp</item>
+                    <item AppInfo="creoles and pidgins">crp</item>
+                    <item AppInfo="Central Sudanic languages">csu</item>
+                    <item AppInfo="Cushitic languages">cus</item>
+                    <item AppInfo="Land Dayak languages">day</item>
+                    <item AppInfo="Mande languages">dmn</item>
+                    <item AppInfo="Dravidian languages">dra</item>
+                    <item AppInfo="Egyptian languages">egx</item>
+                    <item AppInfo="Eskimo-Aleut languages">esx</item>
+                    <item AppInfo="Basque (family)">euq</item>
+                    <item AppInfo="Finno-Ugrian languages">fiu</item>
+                    <item AppInfo="Formosan languages">fox</item>
+                    <item AppInfo="Germanic languages">gem</item>
+                    <item AppInfo="East Germanic languages">gme</item>
+                    <item AppInfo="North Germanic languages">gmq</item>
+                    <item AppInfo="West Germanic languages">gmw</item>
+                    <item AppInfo="Greek languages">grk</item>
+                    <item AppInfo="Hmong-Mien languages">hmx</item>
+                    <item AppInfo="Hokan languages">hok</item>
+                    <item AppInfo="Armenian (family)">hyx</item>
+                    <item AppInfo="Indo-Iranian languages">iir</item>
+                    <item AppInfo="Ijo languages">ijo</item>
+                    <item AppInfo="Indic languages">inc</item>
+                    <item AppInfo="Indo-European languages">ine</item>
+                    <item AppInfo="Iranian languages">ira</item>
+                    <item AppInfo="Iroquoian languages">iro</item>
+                    <item AppInfo="Italic languages">itc</item>
+                    <item AppInfo="Japanese (family)">jpx</item>
+                    <item AppInfo="Karen languages">kar</item>
+                    <item AppInfo="Kordofanian languages">kdo</item>
+                    <item AppInfo="Khoisan languages">khi</item>
+                    <item AppInfo="Kru languages">kro</item>
+                    <item AppInfo="Austronesian languages">map</item>
+                    <item AppInfo="Mon-Khmer languages">mkh</item>
+                    <item AppInfo="Manobo languages">mno</item>
+                    <item AppInfo="Munda languages">mun</item>
+                    <item AppInfo="Mayan languages">myn</item>
+                    <item AppInfo="Nahuatl languages">nah</item>
+                    <item AppInfo="North American Indian languages">nai</item>
+                    <item AppInfo="Trans-New Guinea languages">ngf</item>
+                    <item AppInfo="Niger-Kordofanian languages">nic</item>
+                    <item AppInfo="Nubian languages">nub</item>
+                    <item AppInfo="Oto-Manguean languages">omq</item>
+                    <item AppInfo="Omotic languages">omv</item>
+                    <item AppInfo="Otomian languages">oto</item>
+                    <item AppInfo="Papuan languages">paa</item>
+                    <item AppInfo="Philippine languages">phi</item>
+                    <item AppInfo="Central Malayo-Polynesian languages">plf</item>
+                    <item AppInfo="Malayo-Polynesian languages">poz</item>
+                    <item AppInfo="Eastern Malayo-Polynesian languages">pqe</item>
+                    <item AppInfo="Western Malayo-Polynesian languages">pqw</item>
+                    <item AppInfo="Prakrit languages">pra</item>
+                    <item AppInfo="Quechuan (family)">qwe</item>
+                    <item AppInfo="Romance languages">roa</item>
+                    <item AppInfo="South American Indian languages">sai</item>
+                    <item AppInfo="Salishan languages">sal</item>
+                    <item AppInfo="Eastern Sudanic languages">sdv</item>
+                    <item AppInfo="Semitic languages">sem</item>
+                    <item AppInfo="sign languages">sgn</item>
+                    <item AppInfo="Siouan languages">sio</item>
+                    <item AppInfo="Sino-Tibetan languages">sit</item>
+                    <item AppInfo="Slavic languages">sla</item>
+                    <item AppInfo="Sami languages">smi</item>
+                    <item AppInfo="Songhai languages">son</item>
+                    <item AppInfo="Albanian languages">sqj</item>
+                    <item AppInfo="Nilo-Saharan languages">ssa</item>
+                    <item AppInfo="Samoyedic languages">syd</item>
+                    <item AppInfo="Tai languages">tai</item>
+                    <item AppInfo="Tibeto-Burman languages">tbq</item>
+                    <item AppInfo="Turkic languages">trk</item>
+                    <item AppInfo="Tupi languages">tup</item>
+                    <item AppInfo="Altaic languages">tut</item>
+                    <item AppInfo="Tungus languages">tuw</item>
+                    <item AppInfo="Uralic languages">urj</item>
+                    <item AppInfo="Wakashan languages">wak</item>
+                    <item AppInfo="Sorbian languages">wen</item>
+                    <item AppInfo="Mongolian languages">xgn</item>
+                    <item AppInfo="Na-Dene languages">xnd</item>
+                    <item AppInfo="Yupik languages">ypk</item>
+                    <item AppInfo="Chinese (family)">zhx</item>
+                    <item AppInfo="East Slavic languages">zle</item>
+                    <item AppInfo="South Slavic languages">zls</item>
+                    <item AppInfo="West Slavic languages">zlw</item>
+                    <item AppInfo="Zande languages">znd</item>
+
+                </enumeration>
+            </ValueScheme>
+        </CMD_Element>
+    </CMD_Component>
+</CMD_ComponentSpec>

@@ -91,10 +91,12 @@
 
     <!-- list of all attributes that can be bound to a cl_comp -->
     <xs:attributeGroup name="clarin_component_attributes">
-        <xs:attribute name="name" type="xs:token" use="required"/>
+        <xs:attribute name="name" type="xs:token"/>
         <xs:attribute name="id" type="xs:ID"/>
         <xs:attribute name="ConceptLink" type="xs:anyURI"/>
+        
         <xs:attribute name="filename" type="xs:anyURI"/>
+        
         <!--components cannot have a ValueScheme attribute -->
         <!--<xs:attribute name="CardinalityMin" type="cardinality_type" use="required"/>
         <xs:attribute name="CardinalityMax" type="cardinality_type" use="required"/>
@@ -110,7 +112,7 @@
         <xs:attribute name="CardinalityMax" type="cardinality_type" use="required"/>
         <xs:attribute ref="xml:base"/>
     </xs:attributeGroup>
--->
+    -->
 
     <xs:simpleType name="cardinality_type">
         <xs:annotation>
@@ -147,7 +149,8 @@
             <xs:documentation>controlled vocabularies</xs:documentation>
         </xs:annotation>
         <xs:choice minOccurs="0" maxOccurs="unbounded">
-            <xs:element name="item" type="item_type" ></xs:element>
+            <xs:element name="item" type="item_type" />
+            <xs:element name="appinfo" type="xs:string" />
         </xs:choice>
     </xs:complexType>
 

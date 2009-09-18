@@ -6,11 +6,11 @@
     
     <CMD_Component name="Contact" CardinalityMin="1" CardinalityMax="1">
         
-        <CMD_Element name="Name" ValueScheme="string"/>
-        <CMD_Element name="Address" ValueScheme="string"/>
-        <CMD_Element name="Email" ValueScheme="string"/>
+        <CMD_Element name="Name" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2454"/>
+        <CMD_Element name="Address" ValueScheme="string" />
+        <CMD_Element name="Email" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2521"/>
         <!-- maybe a pattern instead but that could get nasty fast, see http://perlmonks.org/?node=email+regex -->
-        <CMD_Element name="Organisation" ValueScheme="string"/>
+        <CMD_Element name="Organisation" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2459"/>
         
     </CMD_Component>
     

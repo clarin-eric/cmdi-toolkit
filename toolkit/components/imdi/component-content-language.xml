@@ -7,13 +7,14 @@
     
     <CMD_Component name="Content_Language" CardinalityMin="0" CardinalityMax="unbounded">
         
-        <CMD_Element name="ID">
+        <CMD_Element name="ID" ConceptLink="http://www.isocat.org/datcat/DC-2482">
             <ValueScheme>
                 <pattern>(ISO639(-1|-2)?:.*)?|(RFC3066:.*)?|(RFC1766:.*)?|(SIL:.*)?|Unknown|Unspecified</pattern>                
             </ValueScheme>
         </CMD_Element>
-        <CMD_Element name="Name" ValueScheme="string"/>
-        <CMD_Element name="Dominant">
+        <!-- TODO: add the datcat for language name  -->
+        <CMD_Element name="Name" ValueScheme="string" />
+        <CMD_Element name="Dominant" ConceptLink="http://www.isocat.org/datcat/DC-2468">
             <ValueScheme>
                 <enumeration>
                     <item>Unspecified</item>
@@ -23,7 +24,7 @@
                 </enumeration>                
             </ValueScheme>
         </CMD_Element>
-        <CMD_Element name="SourceLanguage">
+        <CMD_Element name="SourceLanguage" ConceptLink="http://www.isocat.org/datcat/DC-2494">
             <ValueScheme>
                 <enumeration>
                     <item>Unspecified</item>
@@ -33,7 +34,7 @@
                 </enumeration>                
             </ValueScheme>
         </CMD_Element>
-        <CMD_Element name="TargetLanguage">
+        <CMD_Element name="TargetLanguage" ConceptLink="http://www.isocat.org/datcat/DC-2499">
             <ValueScheme>
                 <enumeration>
                     <item>Unspecified</item>

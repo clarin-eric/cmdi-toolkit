@@ -7,27 +7,27 @@
     
     <CMD_Component name="Actor" CardinalityMin="0" CardinalityMax="unbounded">
 
-        <CMD_Element name="Role" ValueScheme="string"/>
-        <CMD_Element name="Name" ValueScheme="string"/>
-        <CMD_Element name="FullName" ValueScheme="string"/>
-        <CMD_Element name="Code" ValueScheme="string"/>
-        <CMD_Element name="FamilySocialRole" ValueScheme="string"/>
+        <CMD_Element name="Role" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2559"/>
+        <CMD_Element name="Name" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2557"/>
+        <CMD_Element name="FullName" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2556"/>
+        <CMD_Element name="Code" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2552"/>
+        <CMD_Element name="FamilySocialRole" ValueScheme="string" />
         
         <!-- in the imdi schema these elements come after languages -->
-        <CMD_Element name="EthnicGroup" ValueScheme="string"/>
-        <CMD_Element name="Age">
+        <CMD_Element name="EthnicGroup" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2555"/>
+        <CMD_Element name="Age" ConceptLink="http://www.isocat.org/datcat/DC-2550">
             <ValueScheme>
                 <!-- copied from the imdi schema -->
                 <pattern>([0-9]+)?(;[0-9]+)?(.[0-9]+)?(/([0-9]+)?(;[0-9]+)?(.[0-9]+)?)?|Unknown|Unspecified</pattern>
             </ValueScheme>
         </CMD_Element>
-        <CMD_Element name="BirthDate">
+        <CMD_Element name="BirthDate" ConceptLink="http://www.isocat.org/datcat/DC-2551">
             <ValueScheme>
                 <!-- matching dates of the pattern yyyy-mm-dd (ISO 8601); this only matches dates from the years 1000 through 2999 and does allow some invalid dates (e.g. February, the 30th) -->
                 <pattern>(1|2)\d{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])</pattern>
             </ValueScheme>
         </CMD_Element>
-        <CMD_Element name="Sex">
+        <CMD_Element name="Sex" ConceptLink="http://www.isocat.org/datcat/DC-2560">
             <ValueScheme>
                 <enumeration>
                     <item>Male</item>
@@ -38,8 +38,8 @@
                 </enumeration>                
             </ValueScheme>
         </CMD_Element>
-        <CMD_Element name="Education" ValueScheme="string"/>
-        <CMD_Element name="Anonymized">
+        <CMD_Element name="Education" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2554"/>
+        <CMD_Element name="Anonymized" ConceptLink="http://www.isocat.org/datcat/DC-2548">
             <ValueScheme>
                 <enumeration>
                     <item>true</item>

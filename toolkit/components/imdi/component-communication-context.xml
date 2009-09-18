@@ -6,7 +6,7 @@
     
     <CMD_Component name="CommunicationContext" CardinalityMin="1" CardinalityMax="1">
         
-        <CMD_Element name="Interactivity">
+        <CMD_Element name="Interactivity" ConceptLink="http://www.isocat.org/datcat/DC-2476">
             <ValueScheme>
                 <enumeration>
                     <item>Unknown</item>
@@ -18,7 +18,7 @@
             </ValueScheme>
         </CMD_Element>
         
-        <CMD_Element name="PlanningType">
+        <CMD_Element name="PlanningType" ConceptLink="http://www.isocat.org/datcat/DC-2492">
             <ValueScheme>
                 <enumeration>
                     <item>Unknown</item>
@@ -30,7 +30,7 @@
             </ValueScheme>
         </CMD_Element>      
         
-        <CMD_Element name="Involvement">
+        <CMD_Element name="Involvement" ConceptLink="http://www.isocat.org/datcat/DC-2477">
             <ValueScheme>
                 <enumeration>
                     <item>Unknown</item>
@@ -42,7 +42,7 @@
             </ValueScheme>
         </CMD_Element>
         
-        <CMD_Element name="SocialContext">
+        <CMD_Element name="SocialContext" ConceptLink="http://www.isocat.org/datcat/DC-2493">
             <ValueScheme>
                 <enumeration>
                     <item>Unknown</item>
@@ -55,7 +55,7 @@
             </ValueScheme>
         </CMD_Element>
         
-        <CMD_Element name="EventStructure">
+        <CMD_Element name="EventStructure" ConceptLink="http://www.isocat.org/datcat/DC-2469">
             <ValueScheme>
                 <enumeration>
                     <item>Unknown</item>
@@ -68,7 +68,7 @@
             </ValueScheme>
         </CMD_Element>
         
-        <CMD_Element name="Channel">
+        <CMD_Element name="Channel" ConceptLink="http://www.isocat.org/datcat/DC-2464">
             <ValueScheme>
                 <enumeration>
                     <item>Unknown</item>

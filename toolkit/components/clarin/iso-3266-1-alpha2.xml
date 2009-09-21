@@ -10,8 +10,8 @@
         </Author>
     </Header>
 
-    <CMD_Component name="ISO3266-1-alpha2">
-        <CMD_Element name="iso-3166-1-alpha2">
+    <CMD_Component name="ISO3266-1-alpha2" ConceptLink="http://www.isocat.org/datcat/DC-2532">
+        <CMD_Element name="iso-3166-1-alpha2" ConceptLink="http://www.isocat.org/datcat/DC-2532">
             <ValueScheme>
                 <enumeration>
                     

@@ -6,11 +6,11 @@
     
     <CMD_Component name="Location" CardinalityMin="1" CardinalityMax="1">
         
-        <CMD_Element name="Continent">
+        <CMD_Element name="Continent" ConceptLink="http://www.isocat.org/datcat/DC-2531">
             <ValueScheme>      
                 <enumeration>
-                    <item>Unknown</item>
-                    <item>Unspecified</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2591">Unknown</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2592">Unspecified</item>
                     <item>Africa</item>
                     <item>Asia</item>
                     <item>Europe</item>
@@ -22,9 +22,9 @@
                 </enumeration>
             </ValueScheme>
         </CMD_Element>
-        <CMD_Element name="Country" ValueScheme="string"/>
-        <CMD_Element name="Region" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded"/>
-        <CMD_Element name="Address" ValueScheme="string" CardinalityMin="0"/>
+        <CMD_Element name="Country" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2532"/>
+        <CMD_Element name="Region" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" ConceptLink="http://www.isocat.org/datcat/DC-2533"/>
+        <CMD_Element name="Address" ValueScheme="string" CardinalityMin="0" ConceptLink="http://www.isocat.org/datcat/DC-2528"/>
         
     </CMD_Component>
     

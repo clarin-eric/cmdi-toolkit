@@ -6,9 +6,9 @@
     <Header/>
     
     <CMD_Component name="Session" CardinalityMin="1" CardinalityMax="1">
-        <CMD_Element name="Name" ValueScheme="string"/>
-        <CMD_Element name="Title" ValueScheme="string"/>
-        <CMD_Element name="Date">
+        <CMD_Element name="Name" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2544"/>
+        <CMD_Element name="Title" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2545"/>
+        <CMD_Element name="Date" ConceptLink="http://www.isocat.org/datcat/DC-2510">
             <ValueScheme>
                 <!-- matching dates of the pattern yyyy-mm-dd (ISO 8601); this only matches dates from the years 1000 through 2999 and does allow some invalid dates (e.g. February, the 30th) -->
                 <pattern>(1|2)\d{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])</pattern>                

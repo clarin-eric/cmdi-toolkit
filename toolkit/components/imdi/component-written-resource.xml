@@ -6,8 +6,8 @@
     <Header/>
     
     <CMD_Component name="Written_Resource" CardinalityMin="0" CardinalityMax="unbounded">
-        <CMD_Element name="ResourceLink" ValueScheme="string"/>
-        <CMD_Element name="MediaResourceLink" ValueScheme="string"/>
+        <CMD_Element name="ResourceLink" ValueScheme="string"  ConceptLink="http://www.isocat.org/datcat/DC-2546"/>
+        <CMD_Element name="MediaResourceLink" ValueScheme="string" />
         <CMD_Element name="Date">
             <ValueScheme>
                 <!-- matching dates of the pattern yyyy-mm-dd (ISO 8601); this only matches dates from the years 1000 through 2999 and does allow some invalid dates (e.g. February, the 30th) -->
@@ -31,15 +31,14 @@
         <CMD_Element name="SubType">
             <ValueScheme>
                 <enumeration>
+                    <!-- Unkown and Unspecified apply to all following sub-categories -->
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2591">Unknown</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2592">Unspecified</item>
                     <appinfo>Open Vocabulary, i.e. the items here are recommendations, write-ins are possible</appinfo>
-                    <appinfo>the following items are applicable if the value of Type is "Primary Text"</appinfo>
-                    <item>Unknown</item>
-                    <item>Unspecified</item>
+                    <appinfo>the following items are applicable if the value of Type is "Primary Text"</appinfo>             
                     <item>documentary</item>
                     <item>fiction</item>
                     <appinfo>the following items are applicable if the value of Type is "Annotation"</appinfo>
-                    <item>Unknown</item>
-                    <item>Unspecified</item>
                     <item>Gesture</item>
                     <item>Orthography</item>
                     <item>Phonetic</item>
@@ -51,18 +50,13 @@
                     <item>Pragmatics</item>
                     <item>Typology</item>
                     <appinfo>the following items are applicable if the value of Type is "Lexical Analysis"</appinfo>
-                    <item>Unknown</item>
-                    <item>Unspecified</item>
                     <item>Dictionary</item>
                     <item>Terminology</item>
                     <item>Wordlist</item>
                     <item>Lexicon</item>
                     <appinfo>the following items are applicable if the value of Type is "Ethnography"</appinfo>
-                    <item>Unknown</item>
-                    <item>Unspecified</item>
+                    <!-- no suggestions here apart from Unkown and Unspecified -->
                     <appinfo>the following items are applicable if the value of Type is "Study"</appinfo>                    
-                    <item>Unknown</item>
-                    <item>Unspecified</item>
                     <item>anthropological_linguistics</item>
                     <item>applied_linguistics</item>
                     <item>cognitive_science</item>
@@ -92,9 +86,6 @@
                     <item>translating_and_interpreting</item>
                     <item>typology</item>
                     <item>writing_systems</item>
-                    <appinfo>general items that are always applicable</appinfo>
-                    <item>Unspecified</item>
-                    <item>Unknown</item>
                 </enumeration>                
             </ValueScheme>
         </CMD_Element>
@@ -129,19 +120,19 @@
                     <item>BAS</item>
                     <item>MT</item>
                     <item>TRS</item>
-                    <item>Unknown</item>
-                    <item>Unspecified</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2591">Unknown</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2592">Unspecified</item>
                 </enumeration>
             </ValueScheme>
         </CMD_Element>
         <CMD_Element name="Size" ValueScheme="string"/>
         
         <!-- these elements come after validation in the imdi schema -->
-        <CMD_Element name="Derivation">
+        <CMD_Element name="Derivation" ConceptLink="http://www.isocat.org/datcat/DC-2518">
             <ValueScheme>
                 <enumeration>
-                    <item>Unknown</item>
-                    <item>Unspecified</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2591">Unknown</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2592">Unspecified</item>
                     <item>Original</item>
                     <item>Analysis</item>
                     <item>Translation</item>
@@ -151,16 +142,16 @@
                 </enumeration>                
             </ValueScheme>
         </CMD_Element>
-        <CMD_Element name="CharacterEncoding" ValueScheme="string"/>
+        <CMD_Element name="CharacterEncoding" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2564"/>
         <CMD_Element name="ContentEncoding" ValueScheme="string"/>
-        <CMD_Element name="LanguageId" ValueScheme="string"/>
-        <CMD_Element name="Anonymized">
+        <CMD_Element name="LanguageId" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2482"/>
+        <CMD_Element name="Anonymized" ConceptLink="http://www.isocat.org/datcat/DC-2548">
             <ValueScheme>
                 <enumeration>
                     <item>true</item>
                     <item>false</item>
-                    <item>Unknown</item>
-                    <item>Unspecified</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2591">Unknown</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2592">Unspecified</item>
                 </enumeration>                
             </ValueScheme>        
         </CMD_Element>

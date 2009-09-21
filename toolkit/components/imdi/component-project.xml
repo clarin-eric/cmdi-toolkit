@@ -6,9 +6,9 @@
     
     <CMD_Component name="Project" CardinalityMin="1" CardinalityMax="1">
         
-        <CMD_Element name="Name" ValueScheme="string"/>
-        <CMD_Element name="Title" ValueScheme="string"/>
-        <CMD_Element name="Id" ValueScheme="string" />
+        <CMD_Element name="Name" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2536"/>
+        <CMD_Element name="Title" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2537"/>
+        <CMD_Element name="Id" ValueScheme="string"  ConceptLink="http://www.isocat.org/datcat/DC-2535"/>
         <CMD_Component filename="component-contact.xml" />
         <CMD_Component filename="component-description.xml" />
         

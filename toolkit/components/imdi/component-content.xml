@@ -7,25 +7,25 @@
     
     <CMD_Component name="Content" CardinalityMin="1" CardinalityMax="1">
         
-        <CMD_Element name="Genre">
+        <CMD_Element name="Genre" ConceptLink="http://www.isocat.org/datcat/DC-2470">
             <ValueScheme>
                 <enumeration>
                     <appinfo>Open Vocabulary, i.e. the items here are recommendations, write-ins are possible</appinfo>
-                    <item>Unknown</item>
-                    <item>Unspecified</item>
-                    <item>Discourse</item>
-                    <item>Ritual/religious texts</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2591">Unknown</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2592">Unspecified</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2608">Discourse</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2605">Ritual/religious texts</item>
                     <item>Fiction</item>
-                    <item>Newspaper article</item>
-                    <item>Radio/TV feature</item>
-                    <item>Drama</item>
-                    <item>Singing</item>
-                    <item>Instrumental music</item>
-                    <item>Poetry</item>
-                    <item>Literature</item>
-                    <item>Secondary document</item>
-                    <item>Personal notes</item>
-                    <item>Stimuli</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2606">Newspaper article</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2607">Radio/TV feature</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2609">Drama</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2603">Singing</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2611">Instrumental music</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2602">Poetry</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2601">Literature</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2600">Secondary document</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2610">Personal notes</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2612">Stimuli</item>
                 </enumeration>
             </ValueScheme>
         </CMD_Element>
@@ -65,9 +65,9 @@
                 </enumeration>
             </ValueScheme>
         </CMD_Element>
-        <CMD_Element name="Task" ValueScheme="string"/>
-        <CMD_Element name="Modalities" ValueScheme="string"/>
-        <CMD_Element name="Subject" ValueScheme="string"/>
+        <CMD_Element name="Task" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2500"/>
+        <CMD_Element name="Modalities" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2490"/>
+        <CMD_Element name="Subject" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2591"/>
         
         <CMD_Component filename="component-communication-context.xml" />
         <CMD_Component filename="component-content-languages.xml" />

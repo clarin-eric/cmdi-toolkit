@@ -16,11 +16,11 @@
 
 <a name="preface"></a><h1>Preface</h1>
 
-<p>The idea of the CLARIN metadata components is to modularise metadata information so that it is easy for researchers to build their own metadata schema that exactly suits their needs. There is a number of existing components (mostly based on the <a href="http://www.mpi.nl/IMDI/">IMDI schema</a>) which can be found on the <a href="http://www.clarin.eu/wp2/wg-24/wg-24-documents/component-xml-toolkit">CLARIN web site</a>, but if you don't find the one you need there, you can easily create your own component.</p>
+<p>The idea of the CLARIN metadata components is to modularise metadata information so that it is easy for researchers to build their own metadata schema that exactly suits their needs. There is a number of existing components which can be found on the <a href="http://www.clarin.eu/wp2/wg-24/wg-24-documents/component-xml-toolkit">CLARIN web site</a>, but if you don't find the one you need there, you can easily create your own component.</p>
 
 <a name="audience"></a><h1>Intended "Audience"</h1>
 
-<p>At the moment, there are no special tools for creating or using the CLARIN metadata components. This means that to use the system you have to be XML savvy enough to be able to edit XML files by hand (or using an XML editor like Oxygen). The following instructions assume that you have a working knowledge of XML documents and XML Schemas.</p>
+<p>At the moment, there are no special tools for creating or using the CLARIN metadata components. This means that to use the system you have to be XML savvy enough to be able to edit XML files by hand (or using an XML editor like <a href="http://www.oxygenxml.com/">&lt;oXygen/&gt;</a>). The following instructions assume that you have a working knowledge of XML documents and XML Schemas.</p>
 
 <a name="creation"></a><h1>Creating a CLARIN metadata component</h1>
 
@@ -34,7 +34,7 @@
 &lt;CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="general-component-schema.xsd"&gt;
 </pre>
 
-<p>If you keep the general-component-schema.xsd not in the same folder as your new component, you have to modify the path for the schema location accordingly.</p>
+<p>If you do not keep the <em>general-component-schema.xsd</em> in the same folder as your new component, you have to modify the path for the schema location accordingly.</p>
 
 <p>The new component then starts with a <em>&lt;Header&gt;</em> element. This element has no function yet, so you can leave it empty for the time being, like this <em>&lt;Header /&gt;</em>.</p>
 
@@ -43,12 +43,11 @@
 <pre>&lt;CMD_Component name="Actor" CardinalityMin="0" CardinalityMax="unbounded"&gt;</pre>
 </p>
 
-<p>The component has a name (<em>Actor</em> in this example) and two (optional) attributes that determine how often it may appear in components or profiles (see <a href="#profiles">below</a>) that use it. The example component <em>Actor</em> above can appear as often as you like (because the maximum cardinality is <em>unbounded</em>), but on the other extreme, it does not have to appear at all (because the minimal number of occurences is zero). You can enter any non-negative integer value for these attributes, with the lower bound being <em>0</em> and the upper bound being <em>unbounded</em>. It should be obvious that the value for CardinalityMax should be at least as high as the value for CardinalityMin.</p>
+<p>The component has a name (<em>Actor</em> in this example) and two (optional) attributes that determine how often it may appear in components or profiles (see <a href="#profiles">below</a>) that use it. The example component <em>Actor</em> above can appear as often as you like (because the maximum cardinality is <em>unbounded</em>), but on the other extreme, it does not have to appear at all (because the minimal number of occurences is zero). You can enter any non-negative integer value for these attributes, with the lower bound being <em>0</em> and the upper bound being <em>unbounded</em>. It should be obvious that the value for <em>CardinalityMax</em> should be at least as high as the value for <em>CardinalityMin</em>.</p>
 
 <p>Additionally there are the attributes <em>id</em> and <em>ConceptLink</em>.
 
-<p><em>ConceptLink</em> is used to link a CMD_Component (or a CMD_Element) to a definition in a data category repository like <a href="http://www.isocat.org/">isocat</a>. It is not always possible to find a suitable concept to link to, therefore this attribute is optional. It should, however, be filled as often as possible. To use the attribute you simply link to the appropriate concept in the data category repository, for example like this</p>
-
+<a name="conceptlink"></a><p><em>ConceptLink</em> is used to link a CMD_Component (or a CMD_Element) to a definition in a data category repository like <a href="http://www.isocat.org/">isocat</a>. It is not always possible to find a suitable concept to link to, therefore this attribute is optional. It should, however, be used as often as possible. To use the attribute you simply link to the appropriate concept in the data category repository, for example like this</p>
 
 <pre>&lt;CMD_Component name="TextTMD" ConceptLink="http://www.isocat.org/datcat/CMD-000"&gt;</pre>
         
@@ -79,9 +78,9 @@ Please note, that you have to use these child elements <strong>exactly</strong> 
 </pre>
 </p>
 
-<p>As you can see, all attributes for a CMD_Element (or a CMD_Component - they both work the same in this regard) are part of the wrapper element <em>AttributeList</em>. The AttributeList can include as many attributes as you like. Each attribute has to have a name, which can be any string of alphanumeric characters, and a type. The type has to be one of <em>boolean</em>, <em>decimal</em>, <em>float</em>, <em>string</em> or <em>anyURI</em>. Please note, that case does matter here, so a type of, for example, <em>String</em> or <em>FLOAT</em> is not acceptable. (Please see the <a href="http://www.w3.org/TR/xmlschema-2/#built-in-primitive-datatypes">XML Schema specification</a> for more information about these types.)</p>
+<p>As you can see, all attributes for a CMD_Component (or a CMD_Element - they both work the same way in this regard) are part of the wrapper element <em>AttributeList</em>. The AttributeList can include as many attributes as you like. Each attribute has to have a name, which can be any string of alphanumeric characters, and a type. The type has to be one of <em>boolean</em>, <em>decimal</em>, <em>float</em>, <em>string</em> or <em>anyURI</em>. Please note, that case does matter here, so a type of, for example, <em>String</em> or <em>FLOAT</em> is not acceptable. (Please see the <a href="http://www.w3.org/TR/xmlschema-2/#built-in-primitive-datatypes">XML Schema specification</a> for more information about these types.)</p>
 
-<p>As an alternative to the five built-in types mentioned in the previous paragraph it is also possible to define your own types. To do this you use the child element &lt;ValueScheme&gt; instead of &lt;Type&gt;>:
+<p>As an alternative to the five built-in types mentioned in the previous paragraph it is also possible to define your own types. To do this you use the child element &lt;ValueScheme&gt; instead of &lt;Type&gt;:
 <pre>
 &lt;AttributeList&gt;
     &lt;Attribute&gt;
@@ -134,7 +133,7 @@ How exactly the element &lt;ValueScheme&gt; works is described in detail <a href
 <p>As you can see from the examples, there are two ways to restrict the possible values for a CMD_Element. You can either define a pattern (example 1) that the values for your element must confirm to. The pattern is defined using <a href="http://www.regular-expressions.info/xml.html">XML style regular expressions</a>. You can use it for cases where you know that your element values will have (and should have) a certain shape, like dates as in the example.</p>
 <p>The other option is to define a list of possible values for your element. If you know that only a (reasonably low) number of values can occur for this element, you can list them all in the ValueScheme like in example 2 above.</p>
 
-<p>A CMD_Element can also have a <em>ConceptLink</em> attribute, which is used to link it to a definition in a data category repository like <a href="http://www.isocat.org/">isocat</a>. Because of the isocat concept registry not being completely finished yet, this attribute has no effect at the moment and is therefore optional.</P>
+<p>A CMD_Element can also have a <em>ConceptLink</em> attribute, which is used to link it to a definition in a data category repository like <a href="http://www.isocat.org/">isocat</a>. This works the same way here as it does for Components, so see the description <a href="#conceptlink">above</a> for details.</p>
 
 <p>Additionally, you can also add an attribute list to elements. It works the same way here as it works for components, so see <a href="#attributes">above</a> for more specific instructions on how to do it.</p>
 
@@ -166,7 +165,7 @@ You have to enter the (absolute or relative) path to the included component, if 
 
 <a name="profiles"></a><h1>Using a CLARIN metadata component</h1>
 
-<p>When all the components you want to use are defined (or have been defined by you like has been described above), you can now put them together into a so-called profile. A profile consists of a number of <em>CMD_Component</em>s and/or <em>CMD_ComponentList</em>s. It could look like this:
+<p>When all the components you want to use are defined (or have been defined by you like has been described above), you can now put them together into a Clarin metadata profile. A profile consists of a number of <em>CMD_Component</em>s. It could look like this:
 
 <pre>
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;

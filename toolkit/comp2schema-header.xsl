@@ -2,7 +2,7 @@
 
 <!-- 
     $Rev$ 
-    $Date$ 
+    $Date: 2009-10-26 17:46:27 +0100 (Mon, 26 Oct 2009) $ 
 -->
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"

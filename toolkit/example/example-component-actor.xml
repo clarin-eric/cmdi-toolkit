@@ -5,7 +5,7 @@
     
     <Header/>
     
-    <CMD_Component name="Actor" CardinalityMin="0" CardinalityMax="unbounded">
+    <CMD_Component name="Actor" CardinalityMin="0" CardinalityMax="unbounded" ComponentId="eu.clarin.mdcomponent.actor">
         
         <CMD_Element name="firstName" ValueScheme="string">
             <!-- provide a nickname attribute for the firstName element -->
@@ -44,8 +44,7 @@
             </ValueScheme>
         </CMD_Element>
 
-        <CMD_Component ConceptLink="http://www.isocat.org/datcat/CMD-000" name="ActorLanguage"
-            id="ActorLanguage" CardinalityMin="0" CardinalityMax="unbounded">
+        <CMD_Component ConceptLink="http://www.isocat.org/datcat/CMD-000" name="ActorLanguage" CardinalityMin="0" CardinalityMax="unbounded">
             <!-- inline element definitions -->
             <CMD_Element name="ActorLanguageName" ValueScheme="string"
                 ConceptLink="http://www.isocat.org/datcat/DC-1766"/>

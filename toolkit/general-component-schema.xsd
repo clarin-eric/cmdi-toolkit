@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 
-    $Revision: 15119 $ 
-    $Date: 2009-05-26 18:00:29 +0200 (Tue, 26 May 2009) $ 
+    $Revision$ 
+    $Date$ 
 -->
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
@@ -92,9 +92,8 @@
     <!-- list of all attributes that can be bound to a cl_comp -->
     <xs:attributeGroup name="clarin_component_attributes">
         <xs:attribute name="name" type="xs:token"/>
-        <xs:attribute name="id" type="xs:ID"/>
+        <xs:attribute name="ComponentId" type="xs:anyURI"/>
         <xs:attribute name="ConceptLink" type="xs:anyURI"/>
-        
         <xs:attribute name="filename" type="xs:anyURI"/>
         
         <!--components cannot have a ValueScheme attribute -->

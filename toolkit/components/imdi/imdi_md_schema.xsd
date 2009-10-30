@@ -683,7 +683,7 @@
                               <xs:element name="descriptions" minOccurs="1" maxOccurs="1">
                                  <xs:complexType>
                                     <xs:sequence>
-                                       <xs:element name="description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
+                                       <xs:element name="Description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
                                                    minOccurs="0"
                                                    maxOccurs="unbounded">
                                           <xs:complexType>
@@ -737,7 +737,7 @@
                                                 <xs:element name="descriptions" minOccurs="1" maxOccurs="1">
                                                    <xs:complexType>
                                                       <xs:sequence>
-                                                         <xs:element name="description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
+                                                         <xs:element name="Description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
                                                                      minOccurs="0"
                                                                      maxOccurs="unbounded">
                                                             <xs:complexType>
@@ -800,7 +800,7 @@
                                                          <xs:element name="descriptions" minOccurs="1" maxOccurs="1">
                                                             <xs:complexType>
                                                                <xs:sequence>
-                                                                  <xs:element name="description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
+                                                                  <xs:element name="Description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
                                                                               minOccurs="0"
                                                                               maxOccurs="unbounded">
                                                                      <xs:complexType>
@@ -830,7 +830,7 @@
                                                                   <xs:element name="descriptions" minOccurs="1" maxOccurs="1">
                                                                      <xs:complexType>
                                                                         <xs:sequence>
-                                                                           <xs:element name="description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
+                                                                           <xs:element name="Description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
                                                                                        minOccurs="0"
                                                                                        maxOccurs="unbounded">
                                                                               <xs:complexType>
@@ -864,7 +864,7 @@
                                                 <xs:element name="descriptions" minOccurs="1" maxOccurs="1">
                                                    <xs:complexType>
                                                       <xs:sequence>
-                                                         <xs:element name="description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
+                                                         <xs:element name="Description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
                                                                      minOccurs="0"
                                                                      maxOccurs="unbounded">
                                                             <xs:complexType>
@@ -889,7 +889,7 @@
                                                 <xs:element name="descriptions" minOccurs="1" maxOccurs="1">
                                                    <xs:complexType>
                                                       <xs:sequence>
-                                                         <xs:element name="description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
+                                                         <xs:element name="Description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
                                                                      minOccurs="0"
                                                                      maxOccurs="unbounded">
                                                             <xs:complexType>
@@ -948,7 +948,7 @@
                                                          <xs:element name="descriptions" minOccurs="1" maxOccurs="1">
                                                             <xs:complexType>
                                                                <xs:sequence>
-                                                                  <xs:element name="description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
+                                                                  <xs:element name="Description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
                                                                               minOccurs="0"
                                                                               maxOccurs="unbounded">
                                                                      <xs:complexType>
@@ -976,7 +976,7 @@
                                                                   <xs:element name="descriptions" minOccurs="1" maxOccurs="1">
                                                                      <xs:complexType>
                                                                         <xs:sequence>
-                                                                           <xs:element name="description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
+                                                                           <xs:element name="Description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
                                                                                        minOccurs="0"
                                                                                        maxOccurs="unbounded">
                                                                               <xs:complexType>
@@ -1054,7 +1054,7 @@
                                                          <xs:element name="descriptions" minOccurs="1" maxOccurs="1">
                                                             <xs:complexType>
                                                                <xs:sequence>
-                                                                  <xs:element name="description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
+                                                                  <xs:element name="Description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
                                                                               minOccurs="0"
                                                                               maxOccurs="unbounded">
                                                                      <xs:complexType>
@@ -1076,7 +1076,7 @@
                                                 <xs:element name="descriptions" minOccurs="1" maxOccurs="1">
                                                    <xs:complexType>
                                                       <xs:sequence>
-                                                         <xs:element name="description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
+                                                         <xs:element name="Description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
                                                                      minOccurs="0"
                                                                      maxOccurs="unbounded">
                                                             <xs:complexType>
@@ -1134,7 +1134,7 @@
                                                          <xs:element name="descriptions" minOccurs="1" maxOccurs="1">
                                                             <xs:complexType>
                                                                <xs:sequence>
-                                                                  <xs:element name="description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
+                                                                  <xs:element name="Description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
                                                                               minOccurs="0"
                                                                               maxOccurs="unbounded">
                                                                      <xs:complexType>
@@ -1175,7 +1175,7 @@
                                                          <xs:element name="descriptions" minOccurs="1" maxOccurs="1">
                                                             <xs:complexType>
                                                                <xs:sequence>
-                                                                  <xs:element name="description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
+                                                                  <xs:element name="Description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
                                                                               minOccurs="0"
                                                                               maxOccurs="unbounded">
                                                                      <xs:complexType>
@@ -1197,7 +1197,7 @@
                                                 <xs:element name="descriptions" minOccurs="1" maxOccurs="1">
                                                    <xs:complexType>
                                                       <xs:sequence>
-                                                         <xs:element name="description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
+                                                         <xs:element name="Description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
                                                                      minOccurs="0"
                                                                      maxOccurs="unbounded">
                                                             <xs:complexType>
@@ -1250,7 +1250,7 @@
                                                          <xs:element name="descriptions" minOccurs="1" maxOccurs="1">
                                                             <xs:complexType>
                                                                <xs:sequence>
-                                                                  <xs:element name="description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
+                                                                  <xs:element name="Description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
                                                                               minOccurs="0"
                                                                               maxOccurs="unbounded">
                                                                      <xs:complexType>
@@ -1283,7 +1283,7 @@
                                        <xs:element name="descriptions" minOccurs="1" maxOccurs="1">
                                           <xs:complexType>
                                              <xs:sequence>
-                                                <xs:element name="description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
+                                                <xs:element name="Description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
                                                             minOccurs="0"
                                                             maxOccurs="unbounded">
                                                    <xs:complexType>

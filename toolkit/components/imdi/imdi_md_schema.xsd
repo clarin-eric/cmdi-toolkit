@@ -12,8 +12,8 @@
    </xs:complexType>
    <xs:simpleType name="simpletype-Session-MDGroup-Location-Continent">
       <xs:restriction base="xs:string">
-         <xs:enumeration value="Unknown"/>
-         <xs:enumeration value="Unspecified"/>
+         <xs:enumeration value="Unknown" dcr:datcat="http://www.isocat.org/datcat/DC-2591"/>
+         <xs:enumeration value="Unspecified" dcr:datcat="http://www.isocat.org/datcat/DC-2592"/>
          <xs:enumeration value="Africa"/>
          <xs:enumeration value="Asia"/>
          <xs:enumeration value="Europe"/>
@@ -31,21 +31,22 @@
    </xs:complexType>
    <xs:simpleType name="simpletype-Session-MDGroup-Content-Genre">
       <xs:restriction base="xs:string">
-         <xs:enumeration value="Unknown"/>
-         <xs:enumeration value="Unspecified"/>
-         <xs:enumeration value="Discourse"/>
-         <xs:enumeration value="Ritual/religious texts"/>
+         <xs:enumeration value="Unknown" dcr:datcat="http://www.isocat.org/datcat/DC-2591"/>
+         <xs:enumeration value="Unspecified" dcr:datcat="http://www.isocat.org/datcat/DC-2592"/>
+         <xs:enumeration value="Discourse" dcr:datcat="http://www.isocat.org/datcat/DC-2608"/>
+         <xs:enumeration value="Ritual/religious texts"
+                         dcr:datcat="http://www.isocat.org/datcat/DC-2605"/>
          <xs:enumeration value="Fiction"/>
-         <xs:enumeration value="Newspaper article"/>
-         <xs:enumeration value="Radio/TV feature"/>
-         <xs:enumeration value="Drama"/>
-         <xs:enumeration value="Singing"/>
-         <xs:enumeration value="Instrumental music"/>
-         <xs:enumeration value="Poetry"/>
-         <xs:enumeration value="Literature"/>
-         <xs:enumeration value="Secondary document"/>
-         <xs:enumeration value="Personal notes"/>
-         <xs:enumeration value="Stimuli"/>
+         <xs:enumeration value="Newspaper article" dcr:datcat="http://www.isocat.org/datcat/DC-2606"/>
+         <xs:enumeration value="Radio/TV feature" dcr:datcat="http://www.isocat.org/datcat/DC-2607"/>
+         <xs:enumeration value="Drama" dcr:datcat="http://www.isocat.org/datcat/DC-2609"/>
+         <xs:enumeration value="Singing" dcr:datcat="http://www.isocat.org/datcat/DC-2603"/>
+         <xs:enumeration value="Instrumental music" dcr:datcat="http://www.isocat.org/datcat/DC-2611"/>
+         <xs:enumeration value="Poetry" dcr:datcat="http://www.isocat.org/datcat/DC-2602"/>
+         <xs:enumeration value="Literature" dcr:datcat="http://www.isocat.org/datcat/DC-2601"/>
+         <xs:enumeration value="Secondary document" dcr:datcat="http://www.isocat.org/datcat/DC-2600"/>
+         <xs:enumeration value="Personal notes" dcr:datcat="http://www.isocat.org/datcat/DC-2610"/>
+         <xs:enumeration value="Stimuli" dcr:datcat="http://www.isocat.org/datcat/DC-2612"/>
       </xs:restriction>
    </xs:simpleType>
    <xs:complexType name="complextype-Session-MDGroup-Content-Genre">
@@ -309,14 +310,14 @@
    </xs:complexType>
    <xs:simpleType name="simpletype-Session-Resources-Media_File-Type">
       <xs:restriction base="xs:string">
-         <xs:enumeration value="Unknown"/>
-         <xs:enumeration value="Unspecified"/>
-         <xs:enumeration value="audio"/>
-         <xs:enumeration value="video"/>
-         <xs:enumeration value="image"/>
-         <xs:enumeration value="document"/>
-         <xs:enumeration value="drawing"/>
-         <xs:enumeration value="text"/>
+         <xs:enumeration value="Unknown" dcr:datcat="http://www.isocat.org/datcat/DC-2591"/>
+         <xs:enumeration value="Unspecified" dcr:datcat="http://www.isocat.org/datcat/DC-2592"/>
+         <xs:enumeration value="audio" dcr:datcat="http://www.isocat.org/datcat/DC-2653"/>
+         <xs:enumeration value="video" dcr:datcat="http://www.isocat.org/datcat/DC-2654"/>
+         <xs:enumeration value="image" dcr:datcat="http://www.isocat.org/datcat/DC-2655"/>
+         <xs:enumeration value="document" dcr:datcat="http://www.isocat.org/datcat/DC-2656"/>
+         <xs:enumeration value="drawing" dcr:datcat="http://www.isocat.org/datcat/DC-2657"/>
+         <xs:enumeration value="text" dcr:datcat="http://www.isocat.org/datcat/DC-2658"/>
       </xs:restriction>
    </xs:simpleType>
    <xs:complexType name="complextype-Session-Resources-Media_File-Type">
@@ -343,8 +344,8 @@
          <xs:enumeration value="video/x-mpeg4"/>
          <xs:enumeration value="video/quicktime"/>
          <xs:enumeration value="video/x-msvideo"/>
-         <xs:enumeration value="Unknown"/>
-         <xs:enumeration value="Unspecified"/>
+         <xs:enumeration value="Unknown" dcr:datcat="http://www.isocat.org/datcat/DC-2591"/>
+         <xs:enumeration value="Unspecified" dcr:datcat="http://www.isocat.org/datcat/DC-2592"/>
       </xs:restriction>
    </xs:simpleType>
    <xs:complexType name="complextype-Session-Resources-Media_File-Format">
@@ -354,13 +355,13 @@
    </xs:complexType>
    <xs:simpleType name="simpletype-Session-Resources-Media_File-Quality">
       <xs:restriction base="xs:string">
-         <xs:enumeration value="1"/>
-         <xs:enumeration value="2"/>
-         <xs:enumeration value="3"/>
-         <xs:enumeration value="4"/>
-         <xs:enumeration value="5"/>
-         <xs:enumeration value="Unspecified"/>
-         <xs:enumeration value="Unknown"/>
+         <xs:enumeration value="1" dcr:datcat="http://www.isocat.org/datcat/DC-2666"/>
+         <xs:enumeration value="2" dcr:datcat="http://www.isocat.org/datcat/DC-2667"/>
+         <xs:enumeration value="3" dcr:datcat="http://www.isocat.org/datcat/DC-2668"/>
+         <xs:enumeration value="4" dcr:datcat="http://www.isocat.org/datcat/DC-2669"/>
+         <xs:enumeration value="5" dcr:datcat="http://www.isocat.org/datcat/DC-2670"/>
+         <xs:enumeration value="Unknown" dcr:datcat="http://www.isocat.org/datcat/DC-2591"/>
+         <xs:enumeration value="Unspecified" dcr:datcat="http://www.isocat.org/datcat/DC-2592"/>
       </xs:restriction>
    </xs:simpleType>
    <xs:complexType name="complextype-Session-Resources-Media_File-Quality">
@@ -426,12 +427,10 @@
    </xs:complexType>
    <xs:simpleType name="simpletype-Session-Resources-Written_Resource-SubType">
       <xs:restriction base="xs:string">
-         <xs:enumeration value="Unknown"/>
-         <xs:enumeration value="Unspecified"/>
+         <xs:enumeration value="Unknown" dcr:datcat="http://www.isocat.org/datcat/DC-2591"/>
+         <xs:enumeration value="Unspecified" dcr:datcat="http://www.isocat.org/datcat/DC-2592"/>
          <xs:enumeration value="documentary"/>
          <xs:enumeration value="fiction"/>
-         <xs:enumeration value="Unknown"/>
-         <xs:enumeration value="Unspecified"/>
          <xs:enumeration value="Gesture"/>
          <xs:enumeration value="Orthography"/>
          <xs:enumeration value="Phonetic"/>
@@ -442,16 +441,10 @@
          <xs:enumeration value="Semantics"/>
          <xs:enumeration value="Pragmatics"/>
          <xs:enumeration value="Typology"/>
-         <xs:enumeration value="Unknown"/>
-         <xs:enumeration value="Unspecified"/>
          <xs:enumeration value="Dictionary"/>
          <xs:enumeration value="Terminology"/>
          <xs:enumeration value="Wordlist"/>
          <xs:enumeration value="Lexicon"/>
-         <xs:enumeration value="Unknown"/>
-         <xs:enumeration value="Unspecified"/>
-         <xs:enumeration value="Unknown"/>
-         <xs:enumeration value="Unspecified"/>
          <xs:enumeration value="anthropological_linguistics"/>
          <xs:enumeration value="applied_linguistics"/>
          <xs:enumeration value="cognitive_science"/>
@@ -481,8 +474,6 @@
          <xs:enumeration value="translating_and_interpreting"/>
          <xs:enumeration value="typology"/>
          <xs:enumeration value="writing_systems"/>
-         <xs:enumeration value="Unspecified"/>
-         <xs:enumeration value="Unknown"/>
       </xs:restriction>
    </xs:simpleType>
    <xs:complexType name="complextype-Session-Resources-Written_Resource-SubType">
@@ -520,8 +511,8 @@
          <xs:enumeration value="BAS"/>
          <xs:enumeration value="MT"/>
          <xs:enumeration value="TRS"/>
-         <xs:enumeration value="Unknown"/>
-         <xs:enumeration value="Unspecified"/>
+         <xs:enumeration value="Unknown" dcr:datcat="http://www.isocat.org/datcat/DC-2591"/>
+         <xs:enumeration value="Unspecified" dcr:datcat="http://www.isocat.org/datcat/DC-2592"/>
       </xs:restriction>
    </xs:simpleType>
    <xs:complexType name="complextype-Session-Resources-Written_Resource-Format">
@@ -531,8 +522,8 @@
    </xs:complexType>
    <xs:simpleType name="simpletype-Session-Resources-Written_Resource-Derivation">
       <xs:restriction base="xs:string">
-         <xs:enumeration value="Unknown"/>
-         <xs:enumeration value="Unspecified"/>
+         <xs:enumeration value="Unknown" dcr:datcat="http://www.isocat.org/datcat/DC-2591"/>
+         <xs:enumeration value="Unspecified" dcr:datcat="http://www.isocat.org/datcat/DC-2592"/>
          <xs:enumeration value="Original"/>
          <xs:enumeration value="Analysis"/>
          <xs:enumeration value="Translation"/>
@@ -550,8 +541,8 @@
       <xs:restriction base="xs:string">
          <xs:enumeration value="true"/>
          <xs:enumeration value="false"/>
-         <xs:enumeration value="Unknown"/>
-         <xs:enumeration value="Unspecified"/>
+         <xs:enumeration value="Unknown" dcr:datcat="http://www.isocat.org/datcat/DC-2591"/>
+         <xs:enumeration value="Unspecified" dcr:datcat="http://www.isocat.org/datcat/DC-2592"/>
       </xs:restriction>
    </xs:simpleType>
    <xs:complexType name="complextype-Session-Resources-Written_Resource-Anonymized">
@@ -561,8 +552,8 @@
    </xs:complexType>
    <xs:simpleType name="simpletype-Session-Resources-Written_Resource-Validation-Type">
       <xs:restriction base="xs:string">
-         <xs:enumeration value="Unknown"/>
-         <xs:enumeration value="Unspecified"/>
+         <xs:enumeration value="Unknown" dcr:datcat="http://www.isocat.org/datcat/DC-2591"/>
+         <xs:enumeration value="Unspecified" dcr:datcat="http://www.isocat.org/datcat/DC-2592"/>
          <xs:enumeration value="None"/>
          <xs:enumeration value="Formal"/>
          <xs:enumeration value="Content"/>
@@ -576,8 +567,8 @@
    </xs:complexType>
    <xs:simpleType name="simpletype-Session-Resources-Written_Resource-Validation-Methodology">
       <xs:restriction base="xs:string">
-         <xs:enumeration value="Unknown"/>
-         <xs:enumeration value="Unspecified"/>
+         <xs:enumeration value="Unknown" dcr:datcat="http://www.isocat.org/datcat/DC-2591"/>
+         <xs:enumeration value="Unspecified" dcr:datcat="http://www.isocat.org/datcat/DC-2592"/>
          <xs:enumeration value="Hand"/>
          <xs:enumeration value="Automatic"/>
          <xs:enumeration value="Semi-Automatic"/>
@@ -685,13 +676,16 @@
                      <xs:element name="Session" minOccurs="1" maxOccurs="1">
                         <xs:complexType>
                            <xs:sequence>
-                              <xs:element name="Name" type="xs:string"/>
-                              <xs:element name="Title" type="xs:string"/>
-                              <xs:element name="Date" type="complextype-Session-Date"/>
+                              <xs:element name="Name" type="xs:string" dcr:datcat="http://www.isocat.org/datcat/DC-2544"/>
+                              <xs:element name="Title" type="xs:string" dcr:datcat="http://www.isocat.org/datcat/DC-2545"/>
+                              <xs:element name="Date" dcr:datcat="http://www.isocat.org/datcat/DC-2510"
+                                          type="complextype-Session-Date"/>
                               <xs:element name="descriptions" minOccurs="1" maxOccurs="1">
                                  <xs:complexType>
                                     <xs:sequence>
-                                       <xs:element name="description">
+                                       <xs:element name="description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
+                                                   minOccurs="0"
+                                                   maxOccurs="unbounded">
                                           <xs:complexType>
                                              <xs:simpleContent>
                                                 <xs:extension base="xs:string">
@@ -710,10 +704,14 @@
                                        <xs:element name="Location" minOccurs="1" maxOccurs="1">
                                           <xs:complexType>
                                              <xs:sequence>
-                                                <xs:element name="Continent" type="complextype-Session-MDGroup-Location-Continent"/>
-                                                <xs:element name="Country" type="xs:string"/>
-                                                <xs:element name="Region" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
-                                                <xs:element name="Address" type="xs:string" minOccurs="0"/>
+                                                <xs:element name="Continent" dcr:datcat="http://www.isocat.org/datcat/DC-2531"
+                                                            type="complextype-Session-MDGroup-Location-Continent"/>
+                                                <xs:element name="Country" type="xs:string"
+                                                            dcr:datcat="http://www.isocat.org/datcat/DC-2532"/>
+                                                <xs:element name="Region" type="xs:string" minOccurs="0" maxOccurs="unbounded"
+                                                            dcr:datcat="http://www.isocat.org/datcat/DC-2533"/>
+                                                <xs:element name="Address" type="xs:string" minOccurs="0"
+                                                            dcr:datcat="http://www.isocat.org/datcat/DC-2528"/>
                                              </xs:sequence>
                                              <xs:attribute name="ref" type="xs:IDREF"/>
                                           </xs:complexType>
@@ -721,16 +719,17 @@
                                        <xs:element name="Project" minOccurs="1" maxOccurs="1">
                                           <xs:complexType>
                                              <xs:sequence>
-                                                <xs:element name="Name" type="xs:string"/>
-                                                <xs:element name="Title" type="xs:string"/>
-                                                <xs:element name="Id" type="xs:string"/>
+                                                <xs:element name="Name" type="xs:string" dcr:datcat="http://www.isocat.org/datcat/DC-2536"/>
+                                                <xs:element name="Title" type="xs:string" dcr:datcat="http://www.isocat.org/datcat/DC-2537"/>
+                                                <xs:element name="Id" type="xs:string" dcr:datcat="http://www.isocat.org/datcat/DC-2535"/>
                                                 <xs:element name="Contact" minOccurs="1" maxOccurs="1">
                                                    <xs:complexType>
                                                       <xs:sequence>
-                                                         <xs:element name="Name" type="xs:string"/>
+                                                         <xs:element name="Name" type="xs:string" dcr:datcat="http://www.isocat.org/datcat/DC-2454"/>
                                                          <xs:element name="Address" type="xs:string"/>
-                                                         <xs:element name="Email" type="xs:string"/>
-                                                         <xs:element name="Organisation" type="xs:string"/>
+                                                         <xs:element name="Email" type="xs:string" dcr:datcat="http://www.isocat.org/datcat/DC-2521"/>
+                                                         <xs:element name="Organisation" type="xs:string"
+                                                                     dcr:datcat="http://www.isocat.org/datcat/DC-2459"/>
                                                       </xs:sequence>
                                                       <xs:attribute name="ref" type="xs:IDREF"/>
                                                    </xs:complexType>
@@ -738,7 +737,9 @@
                                                 <xs:element name="descriptions" minOccurs="1" maxOccurs="1">
                                                    <xs:complexType>
                                                       <xs:sequence>
-                                                         <xs:element name="description">
+                                                         <xs:element name="description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
+                                                                     minOccurs="0"
+                                                                     maxOccurs="unbounded">
                                                             <xs:complexType>
                                                                <xs:simpleContent>
                                                                   <xs:extension base="xs:string">
@@ -766,25 +767,28 @@
                                        <xs:element name="Content" minOccurs="1" maxOccurs="1">
                                           <xs:complexType>
                                              <xs:sequence>
-                                                <xs:element name="Genre" type="complextype-Session-MDGroup-Content-Genre"/>
+                                                <xs:element name="Genre" dcr:datcat="http://www.isocat.org/datcat/DC-2470"
+                                                            type="complextype-Session-MDGroup-Content-Genre"/>
                                                 <xs:element name="SubGenre" type="complextype-Session-MDGroup-Content-SubGenre"/>
-                                                <xs:element name="Task" type="xs:string"/>
-                                                <xs:element name="Modalities" type="xs:string"/>
-                                                <xs:element name="Subject" type="xs:string"/>
+                                                <xs:element name="Task" type="xs:string" dcr:datcat="http://www.isocat.org/datcat/DC-2500"/>
+                                                <xs:element name="Modalities" type="xs:string"
+                                                            dcr:datcat="http://www.isocat.org/datcat/DC-2490"/>
+                                                <xs:element name="Subject" type="xs:string"
+                                                            dcr:datcat="http://www.isocat.org/datcat/DC-2591"/>
                                                 <xs:element name="CommunicationContext" minOccurs="1" maxOccurs="1">
                                                    <xs:complexType>
                                                       <xs:sequence>
-                                                         <xs:element name="Interactivity"
+                                                         <xs:element name="Interactivity" dcr:datcat="http://www.isocat.org/datcat/DC-2476"
                                                                      type="complextype-Session-MDGroup-Content-CommunicationContext-Interactivity"/>
-                                                         <xs:element name="PlanningType"
+                                                         <xs:element name="PlanningType" dcr:datcat="http://www.isocat.org/datcat/DC-2492"
                                                                      type="complextype-Session-MDGroup-Content-CommunicationContext-PlanningType"/>
-                                                         <xs:element name="Involvement"
+                                                         <xs:element name="Involvement" dcr:datcat="http://www.isocat.org/datcat/DC-2477"
                                                                      type="complextype-Session-MDGroup-Content-CommunicationContext-Involvement"/>
-                                                         <xs:element name="SocialContext"
+                                                         <xs:element name="SocialContext" dcr:datcat="http://www.isocat.org/datcat/DC-2493"
                                                                      type="complextype-Session-MDGroup-Content-CommunicationContext-SocialContext"/>
-                                                         <xs:element name="EventStructure"
+                                                         <xs:element name="EventStructure" dcr:datcat="http://www.isocat.org/datcat/DC-2469"
                                                                      type="complextype-Session-MDGroup-Content-CommunicationContext-EventStructure"/>
-                                                         <xs:element name="Channel"
+                                                         <xs:element name="Channel" dcr:datcat="http://www.isocat.org/datcat/DC-2464"
                                                                      type="complextype-Session-MDGroup-Content-CommunicationContext-Channel"/>
                                                       </xs:sequence>
                                                       <xs:attribute name="ref" type="xs:IDREF"/>
@@ -796,7 +800,9 @@
                                                          <xs:element name="descriptions" minOccurs="1" maxOccurs="1">
                                                             <xs:complexType>
                                                                <xs:sequence>
-                                                                  <xs:element name="description">
+                                                                  <xs:element name="description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
+                                                                              minOccurs="0"
+                                                                              maxOccurs="unbounded">
                                                                      <xs:complexType>
                                                                         <xs:simpleContent>
                                                                            <xs:extension base="xs:string">
@@ -812,19 +818,21 @@
                                                          <xs:element name="Content_Language" minOccurs="0" maxOccurs="unbounded">
                                                             <xs:complexType>
                                                                <xs:sequence>
-                                                                  <xs:element name="ID"
+                                                                  <xs:element name="ID" dcr:datcat="http://www.isocat.org/datcat/DC-2482"
                                                                               type="complextype-Session-MDGroup-Content-Languages-Content_Language-ID"/>
                                                                   <xs:element name="Name" type="xs:string"/>
-                                                                  <xs:element name="Dominant"
+                                                                  <xs:element name="Dominant" dcr:datcat="http://www.isocat.org/datcat/DC-2468"
                                                                               type="complextype-Session-MDGroup-Content-Languages-Content_Language-Dominant"/>
-                                                                  <xs:element name="SourceLanguage"
+                                                                  <xs:element name="SourceLanguage" dcr:datcat="http://www.isocat.org/datcat/DC-2494"
                                                                               type="complextype-Session-MDGroup-Content-Languages-Content_Language-SourceLanguage"/>
-                                                                  <xs:element name="TargetLanguage"
+                                                                  <xs:element name="TargetLanguage" dcr:datcat="http://www.isocat.org/datcat/DC-2499"
                                                                               type="complextype-Session-MDGroup-Content-Languages-Content_Language-TargetLanguage"/>
                                                                   <xs:element name="descriptions" minOccurs="1" maxOccurs="1">
                                                                      <xs:complexType>
                                                                         <xs:sequence>
-                                                                           <xs:element name="description">
+                                                                           <xs:element name="description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
+                                                                                       minOccurs="0"
+                                                                                       maxOccurs="unbounded">
                                                                               <xs:complexType>
                                                                                  <xs:simpleContent>
                                                                                     <xs:extension base="xs:string">
@@ -856,7 +864,9 @@
                                                 <xs:element name="descriptions" minOccurs="1" maxOccurs="1">
                                                    <xs:complexType>
                                                       <xs:sequence>
-                                                         <xs:element name="description">
+                                                         <xs:element name="description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
+                                                                     minOccurs="0"
+                                                                     maxOccurs="unbounded">
                                                             <xs:complexType>
                                                                <xs:simpleContent>
                                                                   <xs:extension base="xs:string">
@@ -879,7 +889,9 @@
                                                 <xs:element name="descriptions" minOccurs="1" maxOccurs="1">
                                                    <xs:complexType>
                                                       <xs:sequence>
-                                                         <xs:element name="description">
+                                                         <xs:element name="description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
+                                                                     minOccurs="0"
+                                                                     maxOccurs="unbounded">
                                                             <xs:complexType>
                                                                <xs:simpleContent>
                                                                   <xs:extension base="xs:string">
@@ -895,24 +907,32 @@
                                                 <xs:element name="Actor" minOccurs="0" maxOccurs="unbounded">
                                                    <xs:complexType>
                                                       <xs:sequence>
-                                                         <xs:element name="Role" type="xs:string"/>
-                                                         <xs:element name="Name" type="xs:string"/>
-                                                         <xs:element name="FullName" type="xs:string"/>
-                                                         <xs:element name="Code" type="xs:string"/>
+                                                         <xs:element name="Role" type="xs:string" dcr:datcat="http://www.isocat.org/datcat/DC-2559"/>
+                                                         <xs:element name="Name" type="xs:string" dcr:datcat="http://www.isocat.org/datcat/DC-2557"/>
+                                                         <xs:element name="FullName" type="xs:string"
+                                                                     dcr:datcat="http://www.isocat.org/datcat/DC-2556"/>
+                                                         <xs:element name="Code" type="xs:string" dcr:datcat="http://www.isocat.org/datcat/DC-2552"/>
                                                          <xs:element name="FamilySocialRole" type="xs:string"/>
-                                                         <xs:element name="EthnicGroup" type="xs:string"/>
-                                                         <xs:element name="Age" type="complextype-Session-MDGroup-Actors-Actor-Age"/>
-                                                         <xs:element name="BirthDate" type="complextype-Session-MDGroup-Actors-Actor-BirthDate"/>
-                                                         <xs:element name="Sex" type="complextype-Session-MDGroup-Actors-Actor-Sex"/>
-                                                         <xs:element name="Education" type="xs:string"/>
-                                                         <xs:element name="Anonymized" type="complextype-Session-MDGroup-Actors-Actor-Anonymized"/>
+                                                         <xs:element name="EthnicGroup" type="xs:string"
+                                                                     dcr:datcat="http://www.isocat.org/datcat/DC-2555"/>
+                                                         <xs:element name="Age" dcr:datcat="http://www.isocat.org/datcat/DC-2550"
+                                                                     type="complextype-Session-MDGroup-Actors-Actor-Age"/>
+                                                         <xs:element name="BirthDate" dcr:datcat="http://www.isocat.org/datcat/DC-2551"
+                                                                     type="complextype-Session-MDGroup-Actors-Actor-BirthDate"/>
+                                                         <xs:element name="Sex" dcr:datcat="http://www.isocat.org/datcat/DC-2560"
+                                                                     type="complextype-Session-MDGroup-Actors-Actor-Sex"/>
+                                                         <xs:element name="Education" type="xs:string"
+                                                                     dcr:datcat="http://www.isocat.org/datcat/DC-2554"/>
+                                                         <xs:element name="Anonymized" dcr:datcat="http://www.isocat.org/datcat/DC-2548"
+                                                                     type="complextype-Session-MDGroup-Actors-Actor-Anonymized"/>
                                                          <xs:element name="Contact" minOccurs="1" maxOccurs="1">
                                                             <xs:complexType>
                                                                <xs:sequence>
-                                                                  <xs:element name="Name" type="xs:string"/>
+                                                                  <xs:element name="Name" type="xs:string" dcr:datcat="http://www.isocat.org/datcat/DC-2454"/>
                                                                   <xs:element name="Address" type="xs:string"/>
-                                                                  <xs:element name="Email" type="xs:string"/>
-                                                                  <xs:element name="Organisation" type="xs:string"/>
+                                                                  <xs:element name="Email" type="xs:string" dcr:datcat="http://www.isocat.org/datcat/DC-2521"/>
+                                                                  <xs:element name="Organisation" type="xs:string"
+                                                                              dcr:datcat="http://www.isocat.org/datcat/DC-2459"/>
                                                                </xs:sequence>
                                                                <xs:attribute name="ref" type="xs:IDREF"/>
                                                             </xs:complexType>
@@ -928,7 +948,9 @@
                                                          <xs:element name="descriptions" minOccurs="1" maxOccurs="1">
                                                             <xs:complexType>
                                                                <xs:sequence>
-                                                                  <xs:element name="description">
+                                                                  <xs:element name="description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
+                                                                              minOccurs="0"
+                                                                              maxOccurs="unbounded">
                                                                      <xs:complexType>
                                                                         <xs:simpleContent>
                                                                            <xs:extension base="xs:string">
@@ -945,7 +967,8 @@
                                                             <xs:complexType>
                                                                <xs:sequence>
                                                                   <xs:element name="Name" type="xs:string"/>
-                                                                  <xs:element name="ID" type="complextype-Session-MDGroup-Actors-Actor-Actor_Language-ID"/>
+                                                                  <xs:element name="ID" dcr:datcat="http://www.isocat.org/datcat/DC-2482"
+                                                                              type="complextype-Session-MDGroup-Actors-Actor-Actor_Language-ID"/>
                                                                   <xs:element name="Mother_Tongue"
                                                                               type="complextype-Session-MDGroup-Actors-Actor-Actor_Language-Mother_Tongue"/>
                                                                   <xs:element name="Primary_Language"
@@ -953,7 +976,9 @@
                                                                   <xs:element name="descriptions" minOccurs="1" maxOccurs="1">
                                                                      <xs:complexType>
                                                                         <xs:sequence>
-                                                                           <xs:element name="description">
+                                                                           <xs:element name="description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
+                                                                                       minOccurs="0"
+                                                                                       maxOccurs="unbounded">
                                                                               <xs:complexType>
                                                                                  <xs:simpleContent>
                                                                                     <xs:extension base="xs:string">
@@ -988,11 +1013,15 @@
                                        <xs:element name="Media_File" minOccurs="0" maxOccurs="unbounded">
                                           <xs:complexType>
                                              <xs:sequence>
-                                                <xs:element name="ResourceLink" type="xs:string"/>
-                                                <xs:element name="Type" type="complextype-Session-Resources-Media_File-Type"/>
-                                                <xs:element name="Format" type="complextype-Session-Resources-Media_File-Format"/>
-                                                <xs:element name="Size" type="xs:string"/>
-                                                <xs:element name="Quality" type="complextype-Session-Resources-Media_File-Quality"/>
+                                                <xs:element name="ResourceLink" type="xs:string"
+                                                            dcr:datcat="http://www.isocat.org/datcat/DC-2546"/>
+                                                <xs:element name="Type" dcr:datcat="http://www.isocat.org/datcat/DC-2570"
+                                                            type="complextype-Session-Resources-Media_File-Type"/>
+                                                <xs:element name="Format" dcr:datcat="http://www.isocat.org/datcat/DC-2571"
+                                                            type="complextype-Session-Resources-Media_File-Format"/>
+                                                <xs:element name="Size" type="xs:string" dcr:datcat="http://www.isocat.org/datcat/DC-2580"/>
+                                                <xs:element name="Quality" dcr:datcat="http://www.isocat.org/datcat/DC-2574"
+                                                            type="complextype-Session-Resources-Media_File-Quality"/>
                                                 <xs:element name="RecordingConditions" type="xs:string"/>
                                                 <xs:element name="TimePosition" minOccurs="1" maxOccurs="1">
                                                    <xs:complexType>
@@ -1013,10 +1042,11 @@
                                                          <xs:element name="Contact" minOccurs="1" maxOccurs="1">
                                                             <xs:complexType>
                                                                <xs:sequence>
-                                                                  <xs:element name="Name" type="xs:string"/>
+                                                                  <xs:element name="Name" type="xs:string" dcr:datcat="http://www.isocat.org/datcat/DC-2454"/>
                                                                   <xs:element name="Address" type="xs:string"/>
-                                                                  <xs:element name="Email" type="xs:string"/>
-                                                                  <xs:element name="Organisation" type="xs:string"/>
+                                                                  <xs:element name="Email" type="xs:string" dcr:datcat="http://www.isocat.org/datcat/DC-2521"/>
+                                                                  <xs:element name="Organisation" type="xs:string"
+                                                                              dcr:datcat="http://www.isocat.org/datcat/DC-2459"/>
                                                                </xs:sequence>
                                                                <xs:attribute name="ref" type="xs:IDREF"/>
                                                             </xs:complexType>
@@ -1024,7 +1054,9 @@
                                                          <xs:element name="descriptions" minOccurs="1" maxOccurs="1">
                                                             <xs:complexType>
                                                                <xs:sequence>
-                                                                  <xs:element name="description">
+                                                                  <xs:element name="description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
+                                                                              minOccurs="0"
+                                                                              maxOccurs="unbounded">
                                                                      <xs:complexType>
                                                                         <xs:simpleContent>
                                                                            <xs:extension base="xs:string">
@@ -1044,7 +1076,9 @@
                                                 <xs:element name="descriptions" minOccurs="1" maxOccurs="1">
                                                    <xs:complexType>
                                                       <xs:sequence>
-                                                         <xs:element name="description">
+                                                         <xs:element name="description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
+                                                                     minOccurs="0"
+                                                                     maxOccurs="unbounded">
                                                             <xs:complexType>
                                                                <xs:simpleContent>
                                                                   <xs:extension base="xs:string">
@@ -1072,32 +1106,37 @@
                                        <xs:element name="Written_Resource" minOccurs="0" maxOccurs="unbounded">
                                           <xs:complexType>
                                              <xs:sequence>
-                                                <xs:element name="ResourceLink" type="xs:string"/>
+                                                <xs:element name="ResourceLink" type="xs:string"
+                                                            dcr:datcat="http://www.isocat.org/datcat/DC-2546"/>
                                                 <xs:element name="MediaResourceLink" type="xs:string"/>
                                                 <xs:element name="Date" type="complextype-Session-Resources-Written_Resource-Date"/>
                                                 <xs:element name="Type" type="complextype-Session-Resources-Written_Resource-Type"/>
                                                 <xs:element name="SubType" type="complextype-Session-Resources-Written_Resource-SubType"/>
                                                 <xs:element name="Format" type="complextype-Session-Resources-Written_Resource-Format"/>
                                                 <xs:element name="Size" type="xs:string"/>
-                                                <xs:element name="Derivation"
+                                                <xs:element name="Derivation" dcr:datcat="http://www.isocat.org/datcat/DC-2518"
                                                             type="complextype-Session-Resources-Written_Resource-Derivation"/>
-                                                <xs:element name="CharacterEncoding" type="xs:string"/>
+                                                <xs:element name="CharacterEncoding" type="xs:string"
+                                                            dcr:datcat="http://www.isocat.org/datcat/DC-2564"/>
                                                 <xs:element name="ContentEncoding" type="xs:string"/>
-                                                <xs:element name="LanguageId" type="xs:string"/>
-                                                <xs:element name="Anonymized"
+                                                <xs:element name="LanguageId" type="xs:string"
+                                                            dcr:datcat="http://www.isocat.org/datcat/DC-2482"/>
+                                                <xs:element name="Anonymized" dcr:datcat="http://www.isocat.org/datcat/DC-2548"
                                                             type="complextype-Session-Resources-Written_Resource-Anonymized"/>
                                                 <xs:element name="Validation" minOccurs="1" maxOccurs="1">
                                                    <xs:complexType>
                                                       <xs:sequence>
-                                                         <xs:element name="Type"
+                                                         <xs:element name="Type" dcr:datcat="http://www.isocat.org/datcat/DC-2587"
                                                                      type="complextype-Session-Resources-Written_Resource-Validation-Type"/>
-                                                         <xs:element name="Methodology"
+                                                         <xs:element name="Methodology" dcr:datcat="http://www.isocat.org/datcat/DC-2586"
                                                                      type="complextype-Session-Resources-Written_Resource-Validation-Methodology"/>
-                                                         <xs:element name="Level" type="xs:string"/>
+                                                         <xs:element name="Level" type="xs:string" dcr:datcat="http://www.isocat.org/datcat/DC-2585"/>
                                                          <xs:element name="descriptions" minOccurs="1" maxOccurs="1">
                                                             <xs:complexType>
                                                                <xs:sequence>
-                                                                  <xs:element name="description">
+                                                                  <xs:element name="description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
+                                                                              minOccurs="0"
+                                                                              maxOccurs="unbounded">
                                                                      <xs:complexType>
                                                                         <xs:simpleContent>
                                                                            <xs:extension base="xs:string">
@@ -1124,10 +1163,11 @@
                                                          <xs:element name="Contact" minOccurs="1" maxOccurs="1">
                                                             <xs:complexType>
                                                                <xs:sequence>
-                                                                  <xs:element name="Name" type="xs:string"/>
+                                                                  <xs:element name="Name" type="xs:string" dcr:datcat="http://www.isocat.org/datcat/DC-2454"/>
                                                                   <xs:element name="Address" type="xs:string"/>
-                                                                  <xs:element name="Email" type="xs:string"/>
-                                                                  <xs:element name="Organisation" type="xs:string"/>
+                                                                  <xs:element name="Email" type="xs:string" dcr:datcat="http://www.isocat.org/datcat/DC-2521"/>
+                                                                  <xs:element name="Organisation" type="xs:string"
+                                                                              dcr:datcat="http://www.isocat.org/datcat/DC-2459"/>
                                                                </xs:sequence>
                                                                <xs:attribute name="ref" type="xs:IDREF"/>
                                                             </xs:complexType>
@@ -1135,7 +1175,9 @@
                                                          <xs:element name="descriptions" minOccurs="1" maxOccurs="1">
                                                             <xs:complexType>
                                                                <xs:sequence>
-                                                                  <xs:element name="description">
+                                                                  <xs:element name="description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
+                                                                              minOccurs="0"
+                                                                              maxOccurs="unbounded">
                                                                      <xs:complexType>
                                                                         <xs:simpleContent>
                                                                            <xs:extension base="xs:string">
@@ -1155,7 +1197,9 @@
                                                 <xs:element name="descriptions" minOccurs="1" maxOccurs="1">
                                                    <xs:complexType>
                                                       <xs:sequence>
-                                                         <xs:element name="description">
+                                                         <xs:element name="description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
+                                                                     minOccurs="0"
+                                                                     maxOccurs="unbounded">
                                                             <xs:complexType>
                                                                <xs:simpleContent>
                                                                   <xs:extension base="xs:string">
@@ -1194,10 +1238,11 @@
                                                          <xs:element name="Contact" minOccurs="1" maxOccurs="1">
                                                             <xs:complexType>
                                                                <xs:sequence>
-                                                                  <xs:element name="Name" type="xs:string"/>
+                                                                  <xs:element name="Name" type="xs:string" dcr:datcat="http://www.isocat.org/datcat/DC-2454"/>
                                                                   <xs:element name="Address" type="xs:string"/>
-                                                                  <xs:element name="Email" type="xs:string"/>
-                                                                  <xs:element name="Organisation" type="xs:string"/>
+                                                                  <xs:element name="Email" type="xs:string" dcr:datcat="http://www.isocat.org/datcat/DC-2521"/>
+                                                                  <xs:element name="Organisation" type="xs:string"
+                                                                              dcr:datcat="http://www.isocat.org/datcat/DC-2459"/>
                                                                </xs:sequence>
                                                                <xs:attribute name="ref" type="xs:IDREF"/>
                                                             </xs:complexType>
@@ -1205,7 +1250,9 @@
                                                          <xs:element name="descriptions" minOccurs="1" maxOccurs="1">
                                                             <xs:complexType>
                                                                <xs:sequence>
-                                                                  <xs:element name="description">
+                                                                  <xs:element name="description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
+                                                                              minOccurs="0"
+                                                                              maxOccurs="unbounded">
                                                                      <xs:complexType>
                                                                         <xs:simpleContent>
                                                                            <xs:extension base="xs:string">
@@ -1236,7 +1283,9 @@
                                        <xs:element name="descriptions" minOccurs="1" maxOccurs="1">
                                           <xs:complexType>
                                              <xs:sequence>
-                                                <xs:element name="description">
+                                                <xs:element name="description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
+                                                            minOccurs="0"
+                                                            maxOccurs="unbounded">
                                                    <xs:complexType>
                                                       <xs:simpleContent>
                                                          <xs:extension base="xs:string">

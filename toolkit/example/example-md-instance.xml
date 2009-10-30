@@ -31,6 +31,7 @@
     <Components>
         <TextTMD ref="a_text">
             <Format>text/plain</Format>
+            <TextType></TextType>
         </TextTMD>
         <PhotoTMD ref="a_picture">
             <Format>image/png</Format>

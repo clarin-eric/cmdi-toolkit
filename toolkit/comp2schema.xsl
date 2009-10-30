@@ -193,6 +193,10 @@
             <!-- Medium complexity: attributes but no valuescheme, can be arranged inline -->
             <xsl:when test="./AttributeList and not(./ValueScheme)">
                 <xs:element name="{@name}">
+                    <xsl:apply-templates select= "@ConceptLink"/>
+                    <xsl:apply-templates select= "@CardinalityMin"/>
+                    <xsl:apply-templates select= "@CardinalityMax"/>
+                    <!-- <xsl:apply-templates select= "and(not(@type) and @*)"/> -->
                     <xs:complexType>
                         <xs:simpleContent>
                             <xs:extension base="{concat('xs:',@ValueScheme)}">

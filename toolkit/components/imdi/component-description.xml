@@ -8,7 +8,7 @@
         <CMD_Element name="Description" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" ConceptLink="http://www.isocat.org/datcat/DC-2520">
             <AttributeList>
                 <Attribute>
-                    <Name>LanguageID</Name>
+                    <Name>LanguageId</Name>
                     <Type>string</Type>
                 </Attribute>
             </AttributeList>            

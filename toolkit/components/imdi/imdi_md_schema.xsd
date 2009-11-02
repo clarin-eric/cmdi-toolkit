@@ -689,7 +689,7 @@
                                           <xs:complexType>
                                              <xs:simpleContent>
                                                 <xs:extension base="xs:string">
-                                                   <xs:attribute name="LanguageID" type="xs:string"/>
+                                                   <xs:attribute name="LanguageId" type="xs:string"/>
                                                 </xs:extension>
                                              </xs:simpleContent>
                                           </xs:complexType>
@@ -743,7 +743,7 @@
                                                             <xs:complexType>
                                                                <xs:simpleContent>
                                                                   <xs:extension base="xs:string">
-                                                                     <xs:attribute name="LanguageID" type="xs:string"/>
+                                                                     <xs:attribute name="LanguageId" type="xs:string"/>
                                                                   </xs:extension>
                                                                </xs:simpleContent>
                                                             </xs:complexType>
@@ -806,7 +806,7 @@
                                                                      <xs:complexType>
                                                                         <xs:simpleContent>
                                                                            <xs:extension base="xs:string">
-                                                                              <xs:attribute name="LanguageID" type="xs:string"/>
+                                                                              <xs:attribute name="LanguageId" type="xs:string"/>
                                                                            </xs:extension>
                                                                         </xs:simpleContent>
                                                                      </xs:complexType>
@@ -836,7 +836,7 @@
                                                                               <xs:complexType>
                                                                                  <xs:simpleContent>
                                                                                     <xs:extension base="xs:string">
-                                                                                       <xs:attribute name="LanguageID" type="xs:string"/>
+                                                                                       <xs:attribute name="LanguageId" type="xs:string"/>
                                                                                     </xs:extension>
                                                                                  </xs:simpleContent>
                                                                               </xs:complexType>
@@ -870,7 +870,7 @@
                                                             <xs:complexType>
                                                                <xs:simpleContent>
                                                                   <xs:extension base="xs:string">
-                                                                     <xs:attribute name="LanguageID" type="xs:string"/>
+                                                                     <xs:attribute name="LanguageId" type="xs:string"/>
                                                                   </xs:extension>
                                                                </xs:simpleContent>
                                                             </xs:complexType>
@@ -895,7 +895,7 @@
                                                             <xs:complexType>
                                                                <xs:simpleContent>
                                                                   <xs:extension base="xs:string">
-                                                                     <xs:attribute name="LanguageID" type="xs:string"/>
+                                                                     <xs:attribute name="LanguageId" type="xs:string"/>
                                                                   </xs:extension>
                                                                </xs:simpleContent>
                                                             </xs:complexType>
@@ -954,7 +954,7 @@
                                                                      <xs:complexType>
                                                                         <xs:simpleContent>
                                                                            <xs:extension base="xs:string">
-                                                                              <xs:attribute name="LanguageID" type="xs:string"/>
+                                                                              <xs:attribute name="LanguageId" type="xs:string"/>
                                                                            </xs:extension>
                                                                         </xs:simpleContent>
                                                                      </xs:complexType>
@@ -982,7 +982,7 @@
                                                                               <xs:complexType>
                                                                                  <xs:simpleContent>
                                                                                     <xs:extension base="xs:string">
-                                                                                       <xs:attribute name="LanguageID" type="xs:string"/>
+                                                                                       <xs:attribute name="LanguageId" type="xs:string"/>
                                                                                     </xs:extension>
                                                                                  </xs:simpleContent>
                                                                               </xs:complexType>
@@ -1060,7 +1060,7 @@
                                                                      <xs:complexType>
                                                                         <xs:simpleContent>
                                                                            <xs:extension base="xs:string">
-                                                                              <xs:attribute name="LanguageID" type="xs:string"/>
+                                                                              <xs:attribute name="LanguageId" type="xs:string"/>
                                                                            </xs:extension>
                                                                         </xs:simpleContent>
                                                                      </xs:complexType>
@@ -1082,7 +1082,7 @@
                                                             <xs:complexType>
                                                                <xs:simpleContent>
                                                                   <xs:extension base="xs:string">
-                                                                     <xs:attribute name="LanguageID" type="xs:string"/>
+                                                                     <xs:attribute name="LanguageId" type="xs:string"/>
                                                                   </xs:extension>
                                                                </xs:simpleContent>
                                                             </xs:complexType>
@@ -1140,7 +1140,7 @@
                                                                      <xs:complexType>
                                                                         <xs:simpleContent>
                                                                            <xs:extension base="xs:string">
-                                                                              <xs:attribute name="LanguageID" type="xs:string"/>
+                                                                              <xs:attribute name="LanguageId" type="xs:string"/>
                                                                            </xs:extension>
                                                                         </xs:simpleContent>
                                                                      </xs:complexType>
@@ -1181,7 +1181,7 @@
                                                                      <xs:complexType>
                                                                         <xs:simpleContent>
                                                                            <xs:extension base="xs:string">
-                                                                              <xs:attribute name="LanguageID" type="xs:string"/>
+                                                                              <xs:attribute name="LanguageId" type="xs:string"/>
                                                                            </xs:extension>
                                                                         </xs:simpleContent>
                                                                      </xs:complexType>
@@ -1203,7 +1203,7 @@
                                                             <xs:complexType>
                                                                <xs:simpleContent>
                                                                   <xs:extension base="xs:string">
-                                                                     <xs:attribute name="LanguageID" type="xs:string"/>
+                                                                     <xs:attribute name="LanguageId" type="xs:string"/>
                                                                   </xs:extension>
                                                                </xs:simpleContent>
                                                             </xs:complexType>
@@ -1256,7 +1256,7 @@
                                                                      <xs:complexType>
                                                                         <xs:simpleContent>
                                                                            <xs:extension base="xs:string">
-                                                                              <xs:attribute name="LanguageID" type="xs:string"/>
+                                                                              <xs:attribute name="LanguageId" type="xs:string"/>
                                                                            </xs:extension>
                                                                         </xs:simpleContent>
                                                                      </xs:complexType>
@@ -1289,7 +1289,7 @@
                                                    <xs:complexType>
                                                       <xs:simpleContent>
                                                          <xs:extension base="xs:string">
-                                                            <xs:attribute name="LanguageID" type="xs:string"/>
+                                                            <xs:attribute name="LanguageId" type="xs:string"/>
                                                          </xs:extension>
                                                       </xs:simpleContent>
                                                    </xs:complexType>

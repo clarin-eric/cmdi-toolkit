@@ -4,7 +4,7 @@
     
     <Header/>
     
-    <CMD_Component name="descriptions" CardinalityMin="1" CardinalityMax="1">        
+    <CMD_Component name="descriptions" CardinalityMin="0" CardinalityMax="1">        
         <CMD_Element name="Description" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" ConceptLink="http://www.isocat.org/datcat/DC-2520">
             <AttributeList>
                 <Attribute>

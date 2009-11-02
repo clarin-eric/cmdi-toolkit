@@ -5,9 +5,9 @@
     
     <Header/>
     
-    <CMD_Component name="Content_Languages" CardinalityMin="1" CardinalityMax="1">
+    <CMD_Component name="Actor_Languages" CardinalityMin="1" CardinalityMax="1">
         <CMD_Component filename="component-description.xml" />
-        <CMD_Component filename="component-content-language.xml" />
+        <CMD_Component filename="component-actor-language.xml" />
     </CMD_Component>
 
 </CMD_ComponentSpec>

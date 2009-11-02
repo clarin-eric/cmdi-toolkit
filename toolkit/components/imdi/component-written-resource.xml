@@ -5,7 +5,7 @@
     
     <Header/>
     
-    <CMD_Component name="Written_Resource" CardinalityMin="0" CardinalityMax="unbounded">
+    <CMD_Component name="WrittenResource" CardinalityMin="0" CardinalityMax="unbounded">
         <CMD_Element name="ResourceLink" ValueScheme="string"  ConceptLink="http://www.isocat.org/datcat/DC-2546"/>
         <CMD_Element name="MediaResourceLink" ValueScheme="string" />
         <CMD_Element name="Date">

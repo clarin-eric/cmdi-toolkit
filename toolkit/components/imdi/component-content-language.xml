@@ -7,9 +7,9 @@
     
     <CMD_Component name="Content_Language" CardinalityMin="0" CardinalityMax="unbounded">
         
-        <CMD_Element name="ID" ConceptLink="http://www.isocat.org/datcat/DC-2482">
+        <CMD_Element name="Id" ConceptLink="http://www.isocat.org/datcat/DC-2482">
             <ValueScheme>
-                <pattern>(ISO639(-1|-2)?:.*)?|(RFC3066:.*)?|(RFC1766:.*)?|(SIL:.*)?|Unknown|Unspecified</pattern>                
+                <pattern>(ISO639(-1|-2|-3)?:.*)?|(RFC3066:.*)?|(RFC1766:.*)?|(SIL:.*)?|Unknown|Unspecified</pattern>                
             </ValueScheme>
         </CMD_Element>
         <!-- TODO: add the datcat for language name  -->

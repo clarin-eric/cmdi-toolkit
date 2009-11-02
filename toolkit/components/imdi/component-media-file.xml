@@ -5,7 +5,7 @@
     
     <Header/>
     
-    <CMD_Component name="Media_File" CardinalityMin="0" CardinalityMax="unbounded">
+    <CMD_Component name="MediaFile" CardinalityMin="0" CardinalityMax="unbounded">
         <CMD_Element name="ResourceLink" ValueScheme="string"  ConceptLink="http://www.isocat.org/datcat/DC-2546"/>
         <CMD_Element name="Type" ConceptLink="http://www.isocat.org/datcat/DC-2570">
             <ValueScheme>
@@ -30,6 +30,7 @@
                     <item>audio/x-mp2</item>
                     <item>audio/x-mp3</item>
                     <item>audio/x-mpeg4</item>
+                    <item>audio/mp4</item>
                     <item>audio/x-wav</item>
                     <item>image/jpeg</item>
                     <item>image/png</item>

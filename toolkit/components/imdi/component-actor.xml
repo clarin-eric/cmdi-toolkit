@@ -24,7 +24,7 @@
         <CMD_Element name="BirthDate" ConceptLink="http://www.isocat.org/datcat/DC-2551">
             <ValueScheme>
                 <!-- matching dates of the pattern yyyy-mm-dd (ISO 8601); this only matches dates from the years 1000 through 2999 and does allow some invalid dates (e.g. February, the 30th) -->
-                <pattern>(1|2)\d{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])</pattern>
+                <pattern>(1|2)\d{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])|Unknown|Unspecified</pattern>
             </ValueScheme>
         </CMD_Element>
         <CMD_Element name="Sex" ConceptLink="http://www.isocat.org/datcat/DC-2560">
@@ -58,7 +58,7 @@
             
         <CMD_Component filename="component-description.xml" />      
         
-        <CMD_Component filename="component-actor-language.xml" />
+        <CMD_Component filename="component-actor-languages.xml" />
         
         
     </CMD_Component>

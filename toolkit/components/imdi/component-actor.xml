@@ -52,7 +52,7 @@
                 
 
                
-        <CMD_Component filename="component-contact.xml" />
+        <CMD_Component filename="component-contact.xml"  CardinalityMin="0" CardinalityMax="1" />
         
         <CMD_Component filename="component-keys.xml" />            
             

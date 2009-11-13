@@ -814,10 +814,12 @@
                                                 <xs:element name="Contact" minOccurs="1" maxOccurs="1">
                                                    <xs:complexType>
                                                       <xs:sequence>
-                                                         <xs:element name="Name" type="xs:string" dcr:datcat="http://www.isocat.org/datcat/DC-2454"/>
-                                                         <xs:element name="Address" type="xs:string"/>
-                                                         <xs:element name="Email" type="xs:string" dcr:datcat="http://www.isocat.org/datcat/DC-2521"/>
-                                                         <xs:element name="Organisation" type="xs:string"
+                                                         <xs:element name="Name" type="xs:string" minOccurs="0" maxOccurs="1"
+                                                                     dcr:datcat="http://www.isocat.org/datcat/DC-2454"/>
+                                                         <xs:element name="Address" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                                                         <xs:element name="Email" type="xs:string" minOccurs="0" maxOccurs="1"
+                                                                     dcr:datcat="http://www.isocat.org/datcat/DC-2521"/>
+                                                         <xs:element name="Organisation" type="xs:string" minOccurs="0" maxOccurs="1"
                                                                      dcr:datcat="http://www.isocat.org/datcat/DC-2459"/>
                                                       </xs:sequence>
                                                       <xs:attribute name="ref" type="xs:IDREF"/>
@@ -1041,13 +1043,15 @@
                                                                      dcr:datcat="http://www.isocat.org/datcat/DC-2554"/>
                                                          <xs:element name="Anonymized" dcr:datcat="http://www.isocat.org/datcat/DC-2548"
                                                                      type="complextype-Session-MDGroup-Actors-Actor-Anonymized"/>
-                                                         <xs:element name="Contact" minOccurs="1" maxOccurs="1">
+                                                         <xs:element name="Contact" minOccurs="0" maxOccurs="1">
                                                             <xs:complexType>
                                                                <xs:sequence>
-                                                                  <xs:element name="Name" type="xs:string" dcr:datcat="http://www.isocat.org/datcat/DC-2454"/>
-                                                                  <xs:element name="Address" type="xs:string"/>
-                                                                  <xs:element name="Email" type="xs:string" dcr:datcat="http://www.isocat.org/datcat/DC-2521"/>
-                                                                  <xs:element name="Organisation" type="xs:string"
+                                                                  <xs:element name="Name" type="xs:string" minOccurs="0" maxOccurs="1"
+                                                                              dcr:datcat="http://www.isocat.org/datcat/DC-2454"/>
+                                                                  <xs:element name="Address" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                                                                  <xs:element name="Email" type="xs:string" minOccurs="0" maxOccurs="1"
+                                                                              dcr:datcat="http://www.isocat.org/datcat/DC-2521"/>
+                                                                  <xs:element name="Organisation" type="xs:string" minOccurs="0" maxOccurs="1"
                                                                               dcr:datcat="http://www.isocat.org/datcat/DC-2459"/>
                                                                </xs:sequence>
                                                                <xs:attribute name="ref" type="xs:IDREF"/>
@@ -1191,10 +1195,12 @@
                                                          <xs:element name="Contact" minOccurs="1" maxOccurs="1">
                                                             <xs:complexType>
                                                                <xs:sequence>
-                                                                  <xs:element name="Name" type="xs:string" dcr:datcat="http://www.isocat.org/datcat/DC-2454"/>
-                                                                  <xs:element name="Address" type="xs:string"/>
-                                                                  <xs:element name="Email" type="xs:string" dcr:datcat="http://www.isocat.org/datcat/DC-2521"/>
-                                                                  <xs:element name="Organisation" type="xs:string"
+                                                                  <xs:element name="Name" type="xs:string" minOccurs="0" maxOccurs="1"
+                                                                              dcr:datcat="http://www.isocat.org/datcat/DC-2454"/>
+                                                                  <xs:element name="Address" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                                                                  <xs:element name="Email" type="xs:string" minOccurs="0" maxOccurs="1"
+                                                                              dcr:datcat="http://www.isocat.org/datcat/DC-2521"/>
+                                                                  <xs:element name="Organisation" type="xs:string" minOccurs="0" maxOccurs="1"
                                                                               dcr:datcat="http://www.isocat.org/datcat/DC-2459"/>
                                                                </xs:sequence>
                                                                <xs:attribute name="ref" type="xs:IDREF"/>
@@ -1320,10 +1326,12 @@
                                                          <xs:element name="Contact" minOccurs="1" maxOccurs="1">
                                                             <xs:complexType>
                                                                <xs:sequence>
-                                                                  <xs:element name="Name" type="xs:string" dcr:datcat="http://www.isocat.org/datcat/DC-2454"/>
-                                                                  <xs:element name="Address" type="xs:string"/>
-                                                                  <xs:element name="Email" type="xs:string" dcr:datcat="http://www.isocat.org/datcat/DC-2521"/>
-                                                                  <xs:element name="Organisation" type="xs:string"
+                                                                  <xs:element name="Name" type="xs:string" minOccurs="0" maxOccurs="1"
+                                                                              dcr:datcat="http://www.isocat.org/datcat/DC-2454"/>
+                                                                  <xs:element name="Address" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                                                                  <xs:element name="Email" type="xs:string" minOccurs="0" maxOccurs="1"
+                                                                              dcr:datcat="http://www.isocat.org/datcat/DC-2521"/>
+                                                                  <xs:element name="Organisation" type="xs:string" minOccurs="0" maxOccurs="1"
                                                                               dcr:datcat="http://www.isocat.org/datcat/DC-2459"/>
                                                                </xs:sequence>
                                                                <xs:attribute name="ref" type="xs:IDREF"/>
@@ -1423,10 +1431,12 @@
                                                          <xs:element name="Contact" minOccurs="1" maxOccurs="1">
                                                             <xs:complexType>
                                                                <xs:sequence>
-                                                                  <xs:element name="Name" type="xs:string" dcr:datcat="http://www.isocat.org/datcat/DC-2454"/>
-                                                                  <xs:element name="Address" type="xs:string"/>
-                                                                  <xs:element name="Email" type="xs:string" dcr:datcat="http://www.isocat.org/datcat/DC-2521"/>
-                                                                  <xs:element name="Organisation" type="xs:string"
+                                                                  <xs:element name="Name" type="xs:string" minOccurs="0" maxOccurs="1"
+                                                                              dcr:datcat="http://www.isocat.org/datcat/DC-2454"/>
+                                                                  <xs:element name="Address" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                                                                  <xs:element name="Email" type="xs:string" minOccurs="0" maxOccurs="1"
+                                                                              dcr:datcat="http://www.isocat.org/datcat/DC-2521"/>
+                                                                  <xs:element name="Organisation" type="xs:string" minOccurs="0" maxOccurs="1"
                                                                               dcr:datcat="http://www.isocat.org/datcat/DC-2459"/>
                                                                </xs:sequence>
                                                                <xs:attribute name="ref" type="xs:IDREF"/>
@@ -1506,10 +1516,12 @@
                                                          <xs:element name="Contact" minOccurs="1" maxOccurs="1">
                                                             <xs:complexType>
                                                                <xs:sequence>
-                                                                  <xs:element name="Name" type="xs:string" dcr:datcat="http://www.isocat.org/datcat/DC-2454"/>
-                                                                  <xs:element name="Address" type="xs:string"/>
-                                                                  <xs:element name="Email" type="xs:string" dcr:datcat="http://www.isocat.org/datcat/DC-2521"/>
-                                                                  <xs:element name="Organisation" type="xs:string"
+                                                                  <xs:element name="Name" type="xs:string" minOccurs="0" maxOccurs="1"
+                                                                              dcr:datcat="http://www.isocat.org/datcat/DC-2454"/>
+                                                                  <xs:element name="Address" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                                                                  <xs:element name="Email" type="xs:string" minOccurs="0" maxOccurs="1"
+                                                                              dcr:datcat="http://www.isocat.org/datcat/DC-2521"/>
+                                                                  <xs:element name="Organisation" type="xs:string" minOccurs="0" maxOccurs="1"
                                                                               dcr:datcat="http://www.isocat.org/datcat/DC-2459"/>
                                                                </xs:sequence>
                                                                <xs:attribute name="ref" type="xs:IDREF"/>

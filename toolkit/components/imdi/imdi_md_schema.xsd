@@ -926,11 +926,14 @@
                                                                   <xs:element name="Id" dcr:datcat="http://www.isocat.org/datcat/DC-2482"
                                                                               type="complextype-Session-MDGroup-Content-Content_Languages-Content_Language-Id"/>
                                                                   <xs:element name="Name" type="xs:string"/>
-                                                                  <xs:element name="Dominant" dcr:datcat="http://www.isocat.org/datcat/DC-2468"
+                                                                  <xs:element name="Dominant" minOccurs="0" maxOccurs="1"
+                                                                              dcr:datcat="http://www.isocat.org/datcat/DC-2468"
                                                                               type="complextype-Session-MDGroup-Content-Content_Languages-Content_Language-Dominant"/>
-                                                                  <xs:element name="SourceLanguage" dcr:datcat="http://www.isocat.org/datcat/DC-2494"
+                                                                  <xs:element name="SourceLanguage" minOccurs="0" maxOccurs="1"
+                                                                              dcr:datcat="http://www.isocat.org/datcat/DC-2494"
                                                                               type="complextype-Session-MDGroup-Content-Content_Languages-Content_Language-SourceLanguage"/>
-                                                                  <xs:element name="TargetLanguage" dcr:datcat="http://www.isocat.org/datcat/DC-2499"
+                                                                  <xs:element name="TargetLanguage" minOccurs="0" maxOccurs="1"
+                                                                              dcr:datcat="http://www.isocat.org/datcat/DC-2499"
                                                                               type="complextype-Session-MDGroup-Content-Content_Languages-Content_Language-TargetLanguage"/>
                                                                   <xs:element name="descriptions" minOccurs="0" maxOccurs="1">
                                                                      <xs:complexType>
@@ -1111,9 +1114,9 @@
                                                                            <xs:element name="Id" dcr:datcat="http://www.isocat.org/datcat/DC-2482"
                                                                                        type="complextype-Session-MDGroup-Actors-Actor-Actor_Languages-Actor_Language-Id"/>
                                                                            <xs:element name="Name" type="xs:string"/>
-                                                                           <xs:element name="MotherTongue"
+                                                                           <xs:element name="MotherTongue" minOccurs="0" maxOccurs="1"
                                                                                        type="complextype-Session-MDGroup-Actors-Actor-Actor_Languages-Actor_Language-MotherTongue"/>
-                                                                           <xs:element name="PrimaryLanguage"
+                                                                           <xs:element name="PrimaryLanguage" minOccurs="0" maxOccurs="1"
                                                                                        type="complextype-Session-MDGroup-Actors-Actor-Actor_Languages-Actor_Language-PrimaryLanguage"/>
                                                                            <xs:element name="descriptions" minOccurs="0" maxOccurs="1">
                                                                               <xs:complexType>

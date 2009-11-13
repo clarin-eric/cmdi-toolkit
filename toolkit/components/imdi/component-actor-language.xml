@@ -12,7 +12,7 @@
             </ValueScheme>
         </CMD_Element>
         <CMD_Element name="Name" ValueScheme="string"/>
-        <CMD_Element name="MotherTongue">
+        <CMD_Element name="MotherTongue" CardinalityMin="0" CardinalityMax="1">
             <ValueScheme>
                 <enumeration>
                     <item>Unspecified</item>
@@ -22,7 +22,7 @@
                 </enumeration>                
             </ValueScheme>
         </CMD_Element>
-        <CMD_Element name="PrimaryLanguage">
+        <CMD_Element name="PrimaryLanguage" CardinalityMin="0" CardinalityMax="1">
             <ValueScheme>
                 <enumeration>
                     <item>Unspecified</item>

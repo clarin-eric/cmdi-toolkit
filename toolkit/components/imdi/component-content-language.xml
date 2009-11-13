@@ -14,7 +14,7 @@
         </CMD_Element>
         <!-- TODO: add the datcat for language name  -->
         <CMD_Element name="Name" ValueScheme="string" />
-        <CMD_Element name="Dominant" ConceptLink="http://www.isocat.org/datcat/DC-2468">
+        <CMD_Element name="Dominant" CardinalityMin="0" CardinalityMax="1" ConceptLink="http://www.isocat.org/datcat/DC-2468">
             <ValueScheme>
                 <enumeration>
                     <item>Unspecified</item>
@@ -24,7 +24,7 @@
                 </enumeration>                
             </ValueScheme>
         </CMD_Element>
-        <CMD_Element name="SourceLanguage" ConceptLink="http://www.isocat.org/datcat/DC-2494">
+        <CMD_Element name="SourceLanguage" CardinalityMin="0" CardinalityMax="1" ConceptLink="http://www.isocat.org/datcat/DC-2494">
             <ValueScheme>
                 <enumeration>
                     <item>Unspecified</item>
@@ -34,7 +34,7 @@
                 </enumeration>                
             </ValueScheme>
         </CMD_Element>
-        <CMD_Element name="TargetLanguage" ConceptLink="http://www.isocat.org/datcat/DC-2499">
+        <CMD_Element name="TargetLanguage" CardinalityMin="0" CardinalityMax="1" ConceptLink="http://www.isocat.org/datcat/DC-2499">
             <ValueScheme>
                 <enumeration>
                     <item>Unspecified</item>

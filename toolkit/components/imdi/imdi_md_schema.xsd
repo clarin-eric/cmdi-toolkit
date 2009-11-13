@@ -1502,7 +1502,7 @@
                                              <xs:attribute name="ref" type="xs:IDREF"/>
                                           </xs:complexType>
                                        </xs:element>
-                                       <xs:element name="Anonyms" minOccurs="1" maxOccurs="1">
+                                       <xs:element name="Anonyms" minOccurs="0" maxOccurs="1">
                                           <xs:complexType>
                                              <xs:sequence>
                                                 <xs:element name="ResourceLink" type="xs:string"/>

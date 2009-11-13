@@ -11,7 +11,7 @@
                 <pattern>[0-9][0-9]:[0-9][0-9]:[0-9][0-9]:?[0-9]*|Unknown|Unspecified</pattern>
             </ValueScheme>
         </CMD_Element>
-        <CMD_Element name="End">
+        <CMD_Element name="End" CardinalityMin="0" CardinalityMax="1">
             <ValueScheme>
                 <pattern>[0-9][0-9]:[0-9][0-9]:[0-9][0-9]:?[0-9]*|Unknown|Unspecified</pattern>
             </ValueScheme>        

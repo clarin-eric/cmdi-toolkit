@@ -5,7 +5,7 @@
     
     <Header/>
     
-    <CMD_Component name="Anonyms" CardinalityMin="1" CardinalityMax="1">
+    <CMD_Component name="Anonyms" CardinalityMin="0" CardinalityMax="1">
         <CMD_Element name="ResourceLink" ValueScheme="string" />
         
         <CMD_Component filename="component-access.xml" /> 

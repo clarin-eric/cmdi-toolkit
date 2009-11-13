@@ -6,7 +6,15 @@
     <Header/>
     
     <CMD_Component name="Keys" CardinalityMin="1" CardinalityMax="1">
-        <CMD_Element name="key" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded"/>
+        <CMD_Element name="Key" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded">
+            <AttributeList>
+                <Attribute>
+                    <Name>Name</Name>
+                    <Type>string</Type>
+                </Attribute>
+            </AttributeList>
+            
+        </CMD_Element>
         
     </CMD_Component>
 

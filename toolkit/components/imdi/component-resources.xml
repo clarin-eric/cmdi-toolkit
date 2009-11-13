@@ -8,6 +8,7 @@
     <CMD_Component name="Resources" CardinalityMin="1" CardinalityMax="1">
         <CMD_Component filename="component-media-file.xml" />
         <CMD_Component filename="component-written-resource.xml" />
+        <CMD_Component filename="component-source.xml" />
         <CMD_Component filename="component-anonyms.xml" />
     </CMD_Component>
 

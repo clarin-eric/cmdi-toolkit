@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../general-component-schema.xsd">
+    
+    <Header/>
+    
+    <CMD_Component name="Source" CardinalityMin="0" CardinalityMax="unbounded">
+        <CMD_Element name="Id" ValueScheme="string"/>
+        <CMD_Element name="Format">
+            <ValueScheme>
+                <enumeration>
+                    <item>Unknown</item>
+                    <item>Unspecified</item>
+                    <item>CC</item>
+                    <item>CD</item>
+                    <item>CDROM</item>
+                    <item>DAT</item>
+                    <item>Digital-8</item>
+                    <item>DV</item>
+                    <item>DVD</item>
+                    <item>DVDROM</item>
+                    <item>FlashRam</item>
+                    <item>Hi8</item>
+                    <item>MD</item>
+                    <item>MiniDV</item>	
+                    <item>Reel</item>
+                    <item>U-matic</item>
+                    <item>VHS</item>
+                </enumeration>
+            </ValueScheme>
+        </CMD_Element>
+        <CMD_Element name="Quality">
+            <ValueScheme>
+                <enumeration>
+                    <item>1</item>
+                    <item>2</item>
+                    <item>3</item>
+                    <item>4</item>
+                    <item>5</item>
+                    <item>Unknown</item>
+                    <item>Unspecified</item>
+                </enumeration>
+            </ValueScheme>
+        </CMD_Element>
+        <CMD_Component filename="component-counter-position.xml" CardinalityMin="0" CardinalityMax="1"/>
+        <CMD_Component filename="component-time-position.xml" CardinalityMin="0" CardinalityMax="1"/>                    
+        <CMD_Component filename="component-access.xml" />
+        <CMD_Component filename="component-description.xml" />
+        <CMD_Component filename="component-keys.xml" />        
+    </CMD_Component>
+
+</CMD_ComponentSpec>

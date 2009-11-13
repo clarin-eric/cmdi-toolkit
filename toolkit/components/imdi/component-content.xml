@@ -29,7 +29,7 @@
                 </enumeration>
             </ValueScheme>
         </CMD_Element>
-        <CMD_Element name="SubGenre">
+        <CMD_Element name="SubGenre" CardinalityMin="0" CardinalityMax="1">
             <ValueScheme>
                 <enumeration>
                     <appinfo>Open Vocabulary, i.e. the items here are recommendations, write-ins are possible</appinfo>
@@ -65,9 +65,9 @@
                 </enumeration>
             </ValueScheme>
         </CMD_Element>
-        <CMD_Element name="Task" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2500"/>
-        <CMD_Element name="Modalities" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2490"/>
-        <CMD_Element name="Subject" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2591"/>
+        <CMD_Element name="Task" ValueScheme="string"  CardinalityMin="0" CardinalityMax="1" ConceptLink="http://www.isocat.org/datcat/DC-2500"/>
+        <CMD_Element name="Modalities" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" ConceptLink="http://www.isocat.org/datcat/DC-2490"/>
+        <CMD_Element name="Subject" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" ConceptLink="http://www.isocat.org/datcat/DC-2591"/>
         
         <CMD_Component filename="component-communication-context.xml" />
         <CMD_Component filename="component-content-languages.xml" />

@@ -330,9 +330,7 @@
          <xs:enumeration value="application/pdf"/>
          <xs:enumeration value="application/smil+xml"/>
          <xs:enumeration value="audio/x-aiff"/>
-         <xs:enumeration value="audio/x-mp2"/>
-         <xs:enumeration value="audio/x-mp3"/>
-         <xs:enumeration value="audio/x-mpeg4"/>
+         <xs:enumeration value="audio/mp4"/>
          <xs:enumeration value="audio/x-wav"/>
          <xs:enumeration value="image/jpeg"/>
          <xs:enumeration value="image/png"/>
@@ -341,9 +339,8 @@
          <xs:enumeration value="text/html"/>
          <xs:enumeration value="video/x-mpeg1"/>
          <xs:enumeration value="video/x-mpeg2"/>
-         <xs:enumeration value="video/x-mpeg4"/>
+         <xs:enumeration value="video/mp4"/>
          <xs:enumeration value="video/quicktime"/>
-         <xs:enumeration value="video/x-msvideo"/>
          <xs:enumeration value="Unknown" dcr:datcat="http://www.isocat.org/datcat/DC-2591"/>
          <xs:enumeration value="Unspecified" dcr:datcat="http://www.isocat.org/datcat/DC-2592"/>
       </xs:restriction>
@@ -391,7 +388,7 @@
    </xs:complexType>
    <xs:simpleType name="simpletype-Session-Resources-MediaFile-Access-Date">
       <xs:restriction base="xs:string">
-         <xs:pattern value="(1|2)\d{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])"/>
+         <xs:pattern value="(1|2)\d{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])|Unknown|Unspecified"/>
       </xs:restriction>
    </xs:simpleType>
    <xs:complexType name="complextype-Session-Resources-MediaFile-Access-Date">
@@ -401,7 +398,7 @@
    </xs:complexType>
    <xs:simpleType name="simpletype-Session-Resources-WrittenResource-Date">
       <xs:restriction base="xs:string">
-         <xs:pattern value="(1|2)\d{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])"/>
+         <xs:pattern value="(1|2)\d{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])|Unknown|Unspecified"/>
       </xs:restriction>
    </xs:simpleType>
    <xs:complexType name="complextype-Session-Resources-WrittenResource-Date">
@@ -581,7 +578,7 @@
    </xs:complexType>
    <xs:simpleType name="simpletype-Session-Resources-WrittenResource-Access-Date">
       <xs:restriction base="xs:string">
-         <xs:pattern value="(1|2)\d{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])"/>
+         <xs:pattern value="(1|2)\d{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])|Unknown|Unspecified"/>
       </xs:restriction>
    </xs:simpleType>
    <xs:complexType name="complextype-Session-Resources-WrittenResource-Access-Date">
@@ -589,9 +586,101 @@
          <xs:extension base="simpletype-Session-Resources-WrittenResource-Access-Date"/>
       </xs:simpleContent>
    </xs:complexType>
+   <xs:simpleType name="simpletype-Session-Resources-Source-Format">
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="Unknown"/>
+         <xs:enumeration value="Unspecified"/>
+         <xs:enumeration value="CC"/>
+         <xs:enumeration value="CD"/>
+         <xs:enumeration value="CDROM"/>
+         <xs:enumeration value="DAT"/>
+         <xs:enumeration value="Digital-8"/>
+         <xs:enumeration value="DV"/>
+         <xs:enumeration value="DVD"/>
+         <xs:enumeration value="DVDROM"/>
+         <xs:enumeration value="FlashRam"/>
+         <xs:enumeration value="Hi8"/>
+         <xs:enumeration value="MD"/>
+         <xs:enumeration value="MiniDV"/>
+         <xs:enumeration value="Reel"/>
+         <xs:enumeration value="U-matic"/>
+         <xs:enumeration value="VHS"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="complextype-Session-Resources-Source-Format">
+      <xs:simpleContent>
+         <xs:extension base="simpletype-Session-Resources-Source-Format"/>
+      </xs:simpleContent>
+   </xs:complexType>
+   <xs:simpleType name="simpletype-Session-Resources-Source-Quality">
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="1"/>
+         <xs:enumeration value="2"/>
+         <xs:enumeration value="3"/>
+         <xs:enumeration value="4"/>
+         <xs:enumeration value="5"/>
+         <xs:enumeration value="Unknown"/>
+         <xs:enumeration value="Unspecified"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="complextype-Session-Resources-Source-Quality">
+      <xs:simpleContent>
+         <xs:extension base="simpletype-Session-Resources-Source-Quality"/>
+      </xs:simpleContent>
+   </xs:complexType>
+   <xs:simpleType name="simpletype-Session-Resources-Source-CounterPosition-Start">
+      <xs:restriction base="xs:string">
+         <xs:pattern value="[0-9]+|Unknown|Unspecified"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="complextype-Session-Resources-Source-CounterPosition-Start">
+      <xs:simpleContent>
+         <xs:extension base="simpletype-Session-Resources-Source-CounterPosition-Start"/>
+      </xs:simpleContent>
+   </xs:complexType>
+   <xs:simpleType name="simpletype-Session-Resources-Source-CounterPosition-End">
+      <xs:restriction base="xs:string">
+         <xs:pattern value="[0-9]+|Unknown|Unspecified"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="complextype-Session-Resources-Source-CounterPosition-End">
+      <xs:simpleContent>
+         <xs:extension base="simpletype-Session-Resources-Source-CounterPosition-End"/>
+      </xs:simpleContent>
+   </xs:complexType>
+   <xs:simpleType name="simpletype-Session-Resources-Source-TimePosition-Start">
+      <xs:restriction base="xs:string">
+         <xs:pattern value="[0-9][0-9]:[0-9][0-9]:[0-9][0-9]:?[0-9]*|Unknown|Unspecified"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="complextype-Session-Resources-Source-TimePosition-Start">
+      <xs:simpleContent>
+         <xs:extension base="simpletype-Session-Resources-Source-TimePosition-Start"/>
+      </xs:simpleContent>
+   </xs:complexType>
+   <xs:simpleType name="simpletype-Session-Resources-Source-TimePosition-End">
+      <xs:restriction base="xs:string">
+         <xs:pattern value="[0-9][0-9]:[0-9][0-9]:[0-9][0-9]:?[0-9]*|Unknown|Unspecified"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="complextype-Session-Resources-Source-TimePosition-End">
+      <xs:simpleContent>
+         <xs:extension base="simpletype-Session-Resources-Source-TimePosition-End"/>
+      </xs:simpleContent>
+   </xs:complexType>
+   <xs:simpleType name="simpletype-Session-Resources-Source-Access-Date">
+      <xs:restriction base="xs:string">
+         <xs:pattern value="(1|2)\d{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])|Unknown|Unspecified"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="complextype-Session-Resources-Source-Access-Date">
+      <xs:simpleContent>
+         <xs:extension base="simpletype-Session-Resources-Source-Access-Date"/>
+      </xs:simpleContent>
+   </xs:complexType>
    <xs:simpleType name="simpletype-Session-Resources-Anonyms-Access-Date">
       <xs:restriction base="xs:string">
-         <xs:pattern value="(1|2)\d{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])"/>
+         <xs:pattern value="(1|2)\d{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])|Unknown|Unspecified"/>
       </xs:restriction>
    </xs:simpleType>
    <xs:complexType name="complextype-Session-Resources-Anonyms-Access-Date">
@@ -759,7 +848,15 @@
                                        <xs:element name="Keys" minOccurs="1" maxOccurs="1">
                                           <xs:complexType>
                                              <xs:sequence>
-                                                <xs:element name="key" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                                                <xs:element name="Key" minOccurs="0" maxOccurs="unbounded">
+                                                   <xs:complexType>
+                                                      <xs:simpleContent>
+                                                         <xs:extension base="xs:string">
+                                                            <xs:attribute name="Name" type="xs:string"/>
+                                                         </xs:extension>
+                                                      </xs:simpleContent>
+                                                   </xs:complexType>
+                                                </xs:element>
                                              </xs:sequence>
                                              <xs:attribute name="ref" type="xs:IDREF"/>
                                           </xs:complexType>
@@ -769,26 +866,34 @@
                                              <xs:sequence>
                                                 <xs:element name="Genre" dcr:datcat="http://www.isocat.org/datcat/DC-2470"
                                                             type="complextype-Session-MDGroup-Content-Genre"/>
-                                                <xs:element name="SubGenre" type="complextype-Session-MDGroup-Content-SubGenre"/>
-                                                <xs:element name="Task" type="xs:string" dcr:datcat="http://www.isocat.org/datcat/DC-2500"/>
-                                                <xs:element name="Modalities" type="xs:string"
+                                                <xs:element name="SubGenre" minOccurs="0" maxOccurs="1"
+                                                            type="complextype-Session-MDGroup-Content-SubGenre"/>
+                                                <xs:element name="Task" type="xs:string" minOccurs="0" maxOccurs="1"
+                                                            dcr:datcat="http://www.isocat.org/datcat/DC-2500"/>
+                                                <xs:element name="Modalities" type="xs:string" minOccurs="0" maxOccurs="1"
                                                             dcr:datcat="http://www.isocat.org/datcat/DC-2490"/>
-                                                <xs:element name="Subject" type="xs:string"
+                                                <xs:element name="Subject" type="xs:string" minOccurs="0" maxOccurs="1"
                                                             dcr:datcat="http://www.isocat.org/datcat/DC-2591"/>
                                                 <xs:element name="CommunicationContext" minOccurs="1" maxOccurs="1">
                                                    <xs:complexType>
                                                       <xs:sequence>
-                                                         <xs:element name="Interactivity" dcr:datcat="http://www.isocat.org/datcat/DC-2476"
+                                                         <xs:element name="Interactivity" minOccurs="0" maxOccurs="1"
+                                                                     dcr:datcat="http://www.isocat.org/datcat/DC-2476"
                                                                      type="complextype-Session-MDGroup-Content-CommunicationContext-Interactivity"/>
-                                                         <xs:element name="PlanningType" dcr:datcat="http://www.isocat.org/datcat/DC-2492"
+                                                         <xs:element name="PlanningType" minOccurs="0" maxOccurs="1"
+                                                                     dcr:datcat="http://www.isocat.org/datcat/DC-2492"
                                                                      type="complextype-Session-MDGroup-Content-CommunicationContext-PlanningType"/>
-                                                         <xs:element name="Involvement" dcr:datcat="http://www.isocat.org/datcat/DC-2477"
+                                                         <xs:element name="Involvement" minOccurs="0" maxOccurs="1"
+                                                                     dcr:datcat="http://www.isocat.org/datcat/DC-2477"
                                                                      type="complextype-Session-MDGroup-Content-CommunicationContext-Involvement"/>
-                                                         <xs:element name="SocialContext" dcr:datcat="http://www.isocat.org/datcat/DC-2493"
+                                                         <xs:element name="SocialContext" minOccurs="0" maxOccurs="1"
+                                                                     dcr:datcat="http://www.isocat.org/datcat/DC-2493"
                                                                      type="complextype-Session-MDGroup-Content-CommunicationContext-SocialContext"/>
-                                                         <xs:element name="EventStructure" dcr:datcat="http://www.isocat.org/datcat/DC-2469"
+                                                         <xs:element name="EventStructure" minOccurs="0" maxOccurs="1"
+                                                                     dcr:datcat="http://www.isocat.org/datcat/DC-2469"
                                                                      type="complextype-Session-MDGroup-Content-CommunicationContext-EventStructure"/>
-                                                         <xs:element name="Channel" dcr:datcat="http://www.isocat.org/datcat/DC-2464"
+                                                         <xs:element name="Channel" minOccurs="0" maxOccurs="1"
+                                                                     dcr:datcat="http://www.isocat.org/datcat/DC-2464"
                                                                      type="complextype-Session-MDGroup-Content-CommunicationContext-Channel"/>
                                                       </xs:sequence>
                                                       <xs:attribute name="ref" type="xs:IDREF"/>
@@ -856,7 +961,15 @@
                                                 <xs:element name="Keys" minOccurs="1" maxOccurs="1">
                                                    <xs:complexType>
                                                       <xs:sequence>
-                                                         <xs:element name="key" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                                                         <xs:element name="Key" minOccurs="0" maxOccurs="unbounded">
+                                                            <xs:complexType>
+                                                               <xs:simpleContent>
+                                                                  <xs:extension base="xs:string">
+                                                                     <xs:attribute name="Name" type="xs:string"/>
+                                                                  </xs:extension>
+                                                               </xs:simpleContent>
+                                                            </xs:complexType>
+                                                         </xs:element>
                                                       </xs:sequence>
                                                       <xs:attribute name="ref" type="xs:IDREF"/>
                                                    </xs:complexType>
@@ -940,7 +1053,15 @@
                                                          <xs:element name="Keys" minOccurs="1" maxOccurs="1">
                                                             <xs:complexType>
                                                                <xs:sequence>
-                                                                  <xs:element name="key" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                                                                  <xs:element name="Key" minOccurs="0" maxOccurs="unbounded">
+                                                                     <xs:complexType>
+                                                                        <xs:simpleContent>
+                                                                           <xs:extension base="xs:string">
+                                                                              <xs:attribute name="Name" type="xs:string"/>
+                                                                           </xs:extension>
+                                                                        </xs:simpleContent>
+                                                                     </xs:complexType>
+                                                                  </xs:element>
                                                                </xs:sequence>
                                                                <xs:attribute name="ref" type="xs:IDREF"/>
                                                             </xs:complexType>
@@ -1119,7 +1240,15 @@
                                                 <xs:element name="Keys" minOccurs="1" maxOccurs="1">
                                                    <xs:complexType>
                                                       <xs:sequence>
-                                                         <xs:element name="key" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                                                         <xs:element name="Key" minOccurs="0" maxOccurs="unbounded">
+                                                            <xs:complexType>
+                                                               <xs:simpleContent>
+                                                                  <xs:extension base="xs:string">
+                                                                     <xs:attribute name="Name" type="xs:string"/>
+                                                                  </xs:extension>
+                                                               </xs:simpleContent>
+                                                            </xs:complexType>
+                                                         </xs:element>
                                                       </xs:sequence>
                                                       <xs:attribute name="ref" type="xs:IDREF"/>
                                                    </xs:complexType>
@@ -1240,7 +1369,118 @@
                                                 <xs:element name="Keys" minOccurs="1" maxOccurs="1">
                                                    <xs:complexType>
                                                       <xs:sequence>
-                                                         <xs:element name="key" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                                                         <xs:element name="Key" minOccurs="0" maxOccurs="unbounded">
+                                                            <xs:complexType>
+                                                               <xs:simpleContent>
+                                                                  <xs:extension base="xs:string">
+                                                                     <xs:attribute name="Name" type="xs:string"/>
+                                                                  </xs:extension>
+                                                               </xs:simpleContent>
+                                                            </xs:complexType>
+                                                         </xs:element>
+                                                      </xs:sequence>
+                                                      <xs:attribute name="ref" type="xs:IDREF"/>
+                                                   </xs:complexType>
+                                                </xs:element>
+                                             </xs:sequence>
+                                             <xs:attribute name="ref" type="xs:IDREF"/>
+                                          </xs:complexType>
+                                       </xs:element>
+                                       <xs:element name="Source" minOccurs="0" maxOccurs="unbounded">
+                                          <xs:complexType>
+                                             <xs:sequence>
+                                                <xs:element name="Id" type="xs:string"/>
+                                                <xs:element name="Format" type="complextype-Session-Resources-Source-Format"/>
+                                                <xs:element name="Quality" type="complextype-Session-Resources-Source-Quality"/>
+                                                <xs:element name="CounterPosition" minOccurs="0" maxOccurs="1">
+                                                   <xs:complexType>
+                                                      <xs:sequence>
+                                                         <xs:element name="Start" type="complextype-Session-Resources-Source-CounterPosition-Start"/>
+                                                         <xs:element name="End" type="complextype-Session-Resources-Source-CounterPosition-End"/>
+                                                      </xs:sequence>
+                                                      <xs:attribute name="ref" type="xs:IDREF"/>
+                                                   </xs:complexType>
+                                                </xs:element>
+                                                <xs:element name="TimePosition" minOccurs="0" maxOccurs="1">
+                                                   <xs:complexType>
+                                                      <xs:sequence>
+                                                         <xs:element name="Start" type="complextype-Session-Resources-Source-TimePosition-Start"/>
+                                                         <xs:element name="End" type="complextype-Session-Resources-Source-TimePosition-End"/>
+                                                      </xs:sequence>
+                                                      <xs:attribute name="ref" type="xs:IDREF"/>
+                                                   </xs:complexType>
+                                                </xs:element>
+                                                <xs:element name="Access" minOccurs="1" maxOccurs="1">
+                                                   <xs:complexType>
+                                                      <xs:sequence>
+                                                         <xs:element name="Availability" type="xs:string"/>
+                                                         <xs:element name="Date" type="complextype-Session-Resources-Source-Access-Date"/>
+                                                         <xs:element name="Owner" type="xs:string"/>
+                                                         <xs:element name="Publisher" type="xs:string"/>
+                                                         <xs:element name="Contact" minOccurs="1" maxOccurs="1">
+                                                            <xs:complexType>
+                                                               <xs:sequence>
+                                                                  <xs:element name="Name" type="xs:string" dcr:datcat="http://www.isocat.org/datcat/DC-2454"/>
+                                                                  <xs:element name="Address" type="xs:string"/>
+                                                                  <xs:element name="Email" type="xs:string" dcr:datcat="http://www.isocat.org/datcat/DC-2521"/>
+                                                                  <xs:element name="Organisation" type="xs:string"
+                                                                              dcr:datcat="http://www.isocat.org/datcat/DC-2459"/>
+                                                               </xs:sequence>
+                                                               <xs:attribute name="ref" type="xs:IDREF"/>
+                                                            </xs:complexType>
+                                                         </xs:element>
+                                                         <xs:element name="descriptions" minOccurs="0" maxOccurs="1">
+                                                            <xs:complexType>
+                                                               <xs:sequence>
+                                                                  <xs:element name="Description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
+                                                                              minOccurs="0"
+                                                                              maxOccurs="unbounded">
+                                                                     <xs:complexType>
+                                                                        <xs:simpleContent>
+                                                                           <xs:extension base="xs:string">
+                                                                              <xs:attribute name="LanguageId" type="xs:string"/>
+                                                                           </xs:extension>
+                                                                        </xs:simpleContent>
+                                                                     </xs:complexType>
+                                                                  </xs:element>
+                                                               </xs:sequence>
+                                                               <xs:attribute name="ref" type="xs:IDREF"/>
+                                                            </xs:complexType>
+                                                         </xs:element>
+                                                      </xs:sequence>
+                                                      <xs:attribute name="ref" type="xs:IDREF"/>
+                                                   </xs:complexType>
+                                                </xs:element>
+                                                <xs:element name="descriptions" minOccurs="0" maxOccurs="1">
+                                                   <xs:complexType>
+                                                      <xs:sequence>
+                                                         <xs:element name="Description" dcr:datcat="http://www.isocat.org/datcat/DC-2520"
+                                                                     minOccurs="0"
+                                                                     maxOccurs="unbounded">
+                                                            <xs:complexType>
+                                                               <xs:simpleContent>
+                                                                  <xs:extension base="xs:string">
+                                                                     <xs:attribute name="LanguageId" type="xs:string"/>
+                                                                  </xs:extension>
+                                                               </xs:simpleContent>
+                                                            </xs:complexType>
+                                                         </xs:element>
+                                                      </xs:sequence>
+                                                      <xs:attribute name="ref" type="xs:IDREF"/>
+                                                   </xs:complexType>
+                                                </xs:element>
+                                                <xs:element name="Keys" minOccurs="1" maxOccurs="1">
+                                                   <xs:complexType>
+                                                      <xs:sequence>
+                                                         <xs:element name="Key" minOccurs="0" maxOccurs="unbounded">
+                                                            <xs:complexType>
+                                                               <xs:simpleContent>
+                                                                  <xs:extension base="xs:string">
+                                                                     <xs:attribute name="Name" type="xs:string"/>
+                                                                  </xs:extension>
+                                                               </xs:simpleContent>
+                                                            </xs:complexType>
+                                                         </xs:element>
                                                       </xs:sequence>
                                                       <xs:attribute name="ref" type="xs:IDREF"/>
                                                    </xs:complexType>

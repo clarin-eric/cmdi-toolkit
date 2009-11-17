@@ -7,29 +7,7 @@
     
     <CMD_Component name="Source" CardinalityMin="0" CardinalityMax="unbounded">
         <CMD_Element name="Id" ValueScheme="string"/>
-        <CMD_Element name="Format">
-            <ValueScheme>
-                <enumeration>
-                    <item>Unknown</item>
-                    <item>Unspecified</item>
-                    <item>CC</item>
-                    <item>CD</item>
-                    <item>CDROM</item>
-                    <item>DAT</item>
-                    <item>Digital-8</item>
-                    <item>DV</item>
-                    <item>DVD</item>
-                    <item>DVDROM</item>
-                    <item>FlashRam</item>
-                    <item>Hi8</item>
-                    <item>MD</item>
-                    <item>MiniDV</item>	
-                    <item>Reel</item>
-                    <item>U-matic</item>
-                    <item>VHS</item>
-                </enumeration>
-            </ValueScheme>
-        </CMD_Element>
+        <CMD_Element name="Format" ValueScheme="string"/>
         <CMD_Element name="Quality">
             <ValueScheme>
                 <enumeration>

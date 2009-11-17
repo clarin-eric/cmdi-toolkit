@@ -2,7 +2,7 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dcr="http://www.isocat.org">
    <xs:simpleType name="simpletype-Session-Date">
       <xs:restriction base="xs:string">
-         <xs:pattern value="(1|2)\d{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])|Unknown|Unspecified"/>
+         <xs:pattern value="([0-9]+)((-[0-9]+)(-[0-9]+)?)?(/([0-9]+)((-[0-9]+)(-[0-9]+)?)?)?|Unknown|Unspecified"/>
       </xs:restriction>
    </xs:simpleType>
    <xs:complexType name="complextype-Session-Date">
@@ -237,7 +237,7 @@
    </xs:complexType>
    <xs:simpleType name="simpletype-Session-MDGroup-Actors-Actor-BirthDate">
       <xs:restriction base="xs:string">
-         <xs:pattern value="(1|2)\d{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])|Unknown|Unspecified"/>
+         <xs:pattern value="([0-9]+)((-[0-9]+)(-[0-9]+)?)?(/([0-9]+)((-[0-9]+)(-[0-9]+)?)?)?|Unknown|Unspecified"/>
       </xs:restriction>
    </xs:simpleType>
    <xs:complexType name="complextype-Session-MDGroup-Actors-Actor-BirthDate">
@@ -388,7 +388,7 @@
    </xs:complexType>
    <xs:simpleType name="simpletype-Session-Resources-MediaFile-Access-Date">
       <xs:restriction base="xs:string">
-         <xs:pattern value="(1|2)\d{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])|Unknown|Unspecified"/>
+         <xs:pattern value="([0-9]+)((-[0-9]+)(-[0-9]+)?)?(/([0-9]+)((-[0-9]+)(-[0-9]+)?)?)?|Unknown|Unspecified"/>
       </xs:restriction>
    </xs:simpleType>
    <xs:complexType name="complextype-Session-Resources-MediaFile-Access-Date">
@@ -398,7 +398,7 @@
    </xs:complexType>
    <xs:simpleType name="simpletype-Session-Resources-WrittenResource-Date">
       <xs:restriction base="xs:string">
-         <xs:pattern value="(1|2)\d{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])|Unknown|Unspecified"/>
+         <xs:pattern value="([0-9]+)((-[0-9]+)(-[0-9]+)?)?(/([0-9]+)((-[0-9]+)(-[0-9]+)?)?)?|Unknown|Unspecified"/>
       </xs:restriction>
    </xs:simpleType>
    <xs:complexType name="complextype-Session-Resources-WrittenResource-Date">
@@ -578,38 +578,12 @@
    </xs:complexType>
    <xs:simpleType name="simpletype-Session-Resources-WrittenResource-Access-Date">
       <xs:restriction base="xs:string">
-         <xs:pattern value="(1|2)\d{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])|Unknown|Unspecified"/>
+         <xs:pattern value="([0-9]+)((-[0-9]+)(-[0-9]+)?)?(/([0-9]+)((-[0-9]+)(-[0-9]+)?)?)?|Unknown|Unspecified"/>
       </xs:restriction>
    </xs:simpleType>
    <xs:complexType name="complextype-Session-Resources-WrittenResource-Access-Date">
       <xs:simpleContent>
          <xs:extension base="simpletype-Session-Resources-WrittenResource-Access-Date"/>
-      </xs:simpleContent>
-   </xs:complexType>
-   <xs:simpleType name="simpletype-Session-Resources-Source-Format">
-      <xs:restriction base="xs:string">
-         <xs:enumeration value="Unknown"/>
-         <xs:enumeration value="Unspecified"/>
-         <xs:enumeration value="CC"/>
-         <xs:enumeration value="CD"/>
-         <xs:enumeration value="CDROM"/>
-         <xs:enumeration value="DAT"/>
-         <xs:enumeration value="Digital-8"/>
-         <xs:enumeration value="DV"/>
-         <xs:enumeration value="DVD"/>
-         <xs:enumeration value="DVDROM"/>
-         <xs:enumeration value="FlashRam"/>
-         <xs:enumeration value="Hi8"/>
-         <xs:enumeration value="MD"/>
-         <xs:enumeration value="MiniDV"/>
-         <xs:enumeration value="Reel"/>
-         <xs:enumeration value="U-matic"/>
-         <xs:enumeration value="VHS"/>
-      </xs:restriction>
-   </xs:simpleType>
-   <xs:complexType name="complextype-Session-Resources-Source-Format">
-      <xs:simpleContent>
-         <xs:extension base="simpletype-Session-Resources-Source-Format"/>
       </xs:simpleContent>
    </xs:complexType>
    <xs:simpleType name="simpletype-Session-Resources-Source-Quality">
@@ -670,7 +644,7 @@
    </xs:complexType>
    <xs:simpleType name="simpletype-Session-Resources-Source-Access-Date">
       <xs:restriction base="xs:string">
-         <xs:pattern value="(1|2)\d{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])|Unknown|Unspecified"/>
+         <xs:pattern value="([0-9]+)((-[0-9]+)(-[0-9]+)?)?(/([0-9]+)((-[0-9]+)(-[0-9]+)?)?)?|Unknown|Unspecified"/>
       </xs:restriction>
    </xs:simpleType>
    <xs:complexType name="complextype-Session-Resources-Source-Access-Date">
@@ -680,7 +654,7 @@
    </xs:complexType>
    <xs:simpleType name="simpletype-Session-Resources-Anonyms-Access-Date">
       <xs:restriction base="xs:string">
-         <xs:pattern value="(1|2)\d{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])|Unknown|Unspecified"/>
+         <xs:pattern value="([0-9]+)((-[0-9]+)(-[0-9]+)?)?(/([0-9]+)((-[0-9]+)(-[0-9]+)?)?)?|Unknown|Unspecified"/>
       </xs:restriction>
    </xs:simpleType>
    <xs:complexType name="complextype-Session-Resources-Anonyms-Access-Date">
@@ -1180,7 +1154,8 @@
                                                    <xs:complexType>
                                                       <xs:sequence>
                                                          <xs:element name="Start" type="complextype-Session-Resources-MediaFile-TimePosition-Start"/>
-                                                         <xs:element name="End" type="complextype-Session-Resources-MediaFile-TimePosition-End"/>
+                                                         <xs:element name="End" minOccurs="0" maxOccurs="1"
+                                                                     type="complextype-Session-Resources-MediaFile-TimePosition-End"/>
                                                       </xs:sequence>
                                                       <xs:attribute name="ref" type="xs:IDREF"/>
                                                    </xs:complexType>
@@ -1401,7 +1376,7 @@
                                           <xs:complexType>
                                              <xs:sequence>
                                                 <xs:element name="Id" type="xs:string"/>
-                                                <xs:element name="Format" type="complextype-Session-Resources-Source-Format"/>
+                                                <xs:element name="Format" type="xs:string"/>
                                                 <xs:element name="Quality" type="complextype-Session-Resources-Source-Quality"/>
                                                 <xs:element name="CounterPosition" minOccurs="0" maxOccurs="1">
                                                    <xs:complexType>
@@ -1416,7 +1391,8 @@
                                                    <xs:complexType>
                                                       <xs:sequence>
                                                          <xs:element name="Start" type="complextype-Session-Resources-Source-TimePosition-Start"/>
-                                                         <xs:element name="End" type="complextype-Session-Resources-Source-TimePosition-End"/>
+                                                         <xs:element name="End" minOccurs="0" maxOccurs="1"
+                                                                     type="complextype-Session-Resources-Source-TimePosition-End"/>
                                                       </xs:sequence>
                                                       <xs:attribute name="ref" type="xs:IDREF"/>
                                                    </xs:complexType>

@@ -7,64 +7,8 @@
     
     <CMD_Component name="Content" CardinalityMin="1" CardinalityMax="1">
         
-        <CMD_Element name="Genre" ConceptLink="http://www.isocat.org/datcat/DC-2470">
-            <ValueScheme>
-                <enumeration>
-                    <appinfo>Open Vocabulary, i.e. the items here are recommendations, write-ins are possible</appinfo>
-                    <item ConceptLink="http://www.isocat.org/datcat/DC-2591">Unknown</item>
-                    <item ConceptLink="http://www.isocat.org/datcat/DC-2592">Unspecified</item>
-                    <item ConceptLink="http://www.isocat.org/datcat/DC-2608">Discourse</item>
-                    <item ConceptLink="http://www.isocat.org/datcat/DC-2605">Ritual/religious texts</item>
-                    <item>Fiction</item>
-                    <item ConceptLink="http://www.isocat.org/datcat/DC-2606">Newspaper article</item>
-                    <item ConceptLink="http://www.isocat.org/datcat/DC-2607">Radio/TV feature</item>
-                    <item ConceptLink="http://www.isocat.org/datcat/DC-2609">Drama</item>
-                    <item ConceptLink="http://www.isocat.org/datcat/DC-2603">Singing</item>
-                    <item ConceptLink="http://www.isocat.org/datcat/DC-2611">Instrumental music</item>
-                    <item ConceptLink="http://www.isocat.org/datcat/DC-2602">Poetry</item>
-                    <item ConceptLink="http://www.isocat.org/datcat/DC-2601">Literature</item>
-                    <item ConceptLink="http://www.isocat.org/datcat/DC-2600">Secondary document</item>
-                    <item ConceptLink="http://www.isocat.org/datcat/DC-2610">Personal notes</item>
-                    <item ConceptLink="http://www.isocat.org/datcat/DC-2612">Stimuli</item>
-                </enumeration>
-            </ValueScheme>
-        </CMD_Element>
-        <CMD_Element name="SubGenre" CardinalityMin="0" CardinalityMax="1">
-            <ValueScheme>
-                <enumeration>
-                    <appinfo>Open Vocabulary, i.e. the items here are recommendations, write-ins are possible</appinfo>
-                    <appinfo>the following items are applicable if the value of Type is "Discourse"</appinfo>
-                    <item>Narrative</item>
-                    <item>Oratory</item>
-                    <item>Procedural</item>
-                    <item>Formulaic</item>
-                    <item>Language play</item>
-                    <item>Interview</item>
-                    <item>Conversation</item>
-                    <item>Description</item>
-                    <item>Unintelligeble speech</item>
-                    <appinfo>the following items are applicable if the value of Type is "Drama"</appinfo>
-                    <item>Film</item>
-                    <item>Play</item>
-                    <item>Opera</item>
-                    <item>Musical</item>
-                    <appinfo>the following items are applicable if the value of Type is "Singing"</appinfo>
-                    <item>Individual song</item>
-                    <item>Chorus</item>
-                    <item>Chant</item>
-                    <appinfo>the following items are applicable if the value of Type is "Poetry"</appinfo>
-                    <item>Epos</item>
-                    <appinfo>the following items are applicable if the value of Type is "Literature"</appinfo>
-                    <item>Matching game</item>
-                    <item>Act-out</item>
-                    <item>Picture book</item>
-                    <item>Story retelling</item>
-                    <appinfo>general items that are always applicable</appinfo>
-                    <item>Unspecified</item>
-                    <item>Unknown</item>
-                </enumeration>
-            </ValueScheme>
-        </CMD_Element>
+        <CMD_Element name="Genre" ConceptLink="http://www.isocat.org/datcat/DC-2470" ValueScheme="string"/>            
+        <CMD_Element name="SubGenre" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
         <CMD_Element name="Task" ValueScheme="string"  CardinalityMin="0" CardinalityMax="1" ConceptLink="http://www.isocat.org/datcat/DC-2500"/>
         <CMD_Element name="Modalities" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" ConceptLink="http://www.isocat.org/datcat/DC-2490"/>
         <CMD_Element name="Subject" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" ConceptLink="http://www.isocat.org/datcat/DC-2591"/>

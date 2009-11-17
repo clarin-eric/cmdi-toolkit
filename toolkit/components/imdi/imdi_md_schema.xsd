@@ -29,63 +29,6 @@
          <xs:extension base="simpletype-Session-MDGroup-Location-Continent"/>
       </xs:simpleContent>
    </xs:complexType>
-   <xs:simpleType name="simpletype-Session-MDGroup-Content-Genre">
-      <xs:restriction base="xs:string">
-         <xs:enumeration value="Unknown" dcr:datcat="http://www.isocat.org/datcat/DC-2591"/>
-         <xs:enumeration value="Unspecified" dcr:datcat="http://www.isocat.org/datcat/DC-2592"/>
-         <xs:enumeration value="Discourse" dcr:datcat="http://www.isocat.org/datcat/DC-2608"/>
-         <xs:enumeration value="Ritual/religious texts"
-                         dcr:datcat="http://www.isocat.org/datcat/DC-2605"/>
-         <xs:enumeration value="Fiction"/>
-         <xs:enumeration value="Newspaper article" dcr:datcat="http://www.isocat.org/datcat/DC-2606"/>
-         <xs:enumeration value="Radio/TV feature" dcr:datcat="http://www.isocat.org/datcat/DC-2607"/>
-         <xs:enumeration value="Drama" dcr:datcat="http://www.isocat.org/datcat/DC-2609"/>
-         <xs:enumeration value="Singing" dcr:datcat="http://www.isocat.org/datcat/DC-2603"/>
-         <xs:enumeration value="Instrumental music" dcr:datcat="http://www.isocat.org/datcat/DC-2611"/>
-         <xs:enumeration value="Poetry" dcr:datcat="http://www.isocat.org/datcat/DC-2602"/>
-         <xs:enumeration value="Literature" dcr:datcat="http://www.isocat.org/datcat/DC-2601"/>
-         <xs:enumeration value="Secondary document" dcr:datcat="http://www.isocat.org/datcat/DC-2600"/>
-         <xs:enumeration value="Personal notes" dcr:datcat="http://www.isocat.org/datcat/DC-2610"/>
-         <xs:enumeration value="Stimuli" dcr:datcat="http://www.isocat.org/datcat/DC-2612"/>
-      </xs:restriction>
-   </xs:simpleType>
-   <xs:complexType name="complextype-Session-MDGroup-Content-Genre">
-      <xs:simpleContent>
-         <xs:extension base="simpletype-Session-MDGroup-Content-Genre"/>
-      </xs:simpleContent>
-   </xs:complexType>
-   <xs:simpleType name="simpletype-Session-MDGroup-Content-SubGenre">
-      <xs:restriction base="xs:string">
-         <xs:enumeration value="Narrative"/>
-         <xs:enumeration value="Oratory"/>
-         <xs:enumeration value="Procedural"/>
-         <xs:enumeration value="Formulaic"/>
-         <xs:enumeration value="Language play"/>
-         <xs:enumeration value="Interview"/>
-         <xs:enumeration value="Conversation"/>
-         <xs:enumeration value="Description"/>
-         <xs:enumeration value="Unintelligeble speech"/>
-         <xs:enumeration value="Film"/>
-         <xs:enumeration value="Play"/>
-         <xs:enumeration value="Opera"/>
-         <xs:enumeration value="Musical"/>
-         <xs:enumeration value="Individual song"/>
-         <xs:enumeration value="Chorus"/>
-         <xs:enumeration value="Chant"/>
-         <xs:enumeration value="Epos"/>
-         <xs:enumeration value="Matching game"/>
-         <xs:enumeration value="Act-out"/>
-         <xs:enumeration value="Picture book"/>
-         <xs:enumeration value="Story retelling"/>
-         <xs:enumeration value="Unspecified"/>
-         <xs:enumeration value="Unknown"/>
-      </xs:restriction>
-   </xs:simpleType>
-   <xs:complexType name="complextype-Session-MDGroup-Content-SubGenre">
-      <xs:simpleContent>
-         <xs:extension base="simpletype-Session-MDGroup-Content-SubGenre"/>
-      </xs:simpleContent>
-   </xs:complexType>
    <xs:simpleType name="simpletype-Session-MDGroup-Content-CommunicationContext-Interactivity">
       <xs:restriction base="xs:string">
          <xs:enumeration value="Unknown"/>
@@ -227,7 +170,7 @@
    </xs:complexType>
    <xs:simpleType name="simpletype-Session-MDGroup-Actors-Actor-Age">
       <xs:restriction base="xs:string">
-         <xs:pattern value="([0-9]+)?(;[0-9]+)?(.[0-9]+)?(/([0-9]+)?(;[0-9]+)?(.[0-9]+)?)?|Unknown|Unspecified"/>
+         <xs:pattern value="([0-9]+)?(;[0-9]+)?(.[0-9]+)?(/([0-9]+)?(;[0-9]+)?(.[0-9]+)?)?|Unknown|Unspecified|"/>
       </xs:restriction>
    </xs:simpleType>
    <xs:complexType name="complextype-Session-MDGroup-Actors-Actor-Age">
@@ -363,7 +306,7 @@
    </xs:complexType>
    <xs:simpleType name="simpletype-Session-Resources-MediaFile-Access-Date">
       <xs:restriction base="xs:string">
-         <xs:pattern value="([0-9]+)((-[0-9]+)(-[0-9]+)?)?(/([0-9]+)((-[0-9]+)(-[0-9]+)?)?)?|Unknown|Unspecified"/>
+         <xs:pattern value="([0-9]+)((-[0-9]+)(-[0-9]+)?)?(/([0-9]+)((-[0-9]+)(-[0-9]+)?)?)?|Unknown|Unspecified|"/>
       </xs:restriction>
    </xs:simpleType>
    <xs:complexType name="complextype-Session-Resources-MediaFile-Access-Date">
@@ -373,7 +316,7 @@
    </xs:complexType>
    <xs:simpleType name="simpletype-Session-Resources-WrittenResource-Date">
       <xs:restriction base="xs:string">
-         <xs:pattern value="([0-9]+)((-[0-9]+)(-[0-9]+)?)?(/([0-9]+)((-[0-9]+)(-[0-9]+)?)?)?|Unknown|Unspecified"/>
+         <xs:pattern value="([0-9]+)((-[0-9]+)(-[0-9]+)?)?(/([0-9]+)((-[0-9]+)(-[0-9]+)?)?)?|Unknown|Unspecified|"/>
       </xs:restriction>
    </xs:simpleType>
    <xs:complexType name="complextype-Session-Resources-WrittenResource-Date">
@@ -442,7 +385,7 @@
    </xs:complexType>
    <xs:simpleType name="simpletype-Session-Resources-WrittenResource-Access-Date">
       <xs:restriction base="xs:string">
-         <xs:pattern value="([0-9]+)((-[0-9]+)(-[0-9]+)?)?(/([0-9]+)((-[0-9]+)(-[0-9]+)?)?)?|Unknown|Unspecified"/>
+         <xs:pattern value="([0-9]+)((-[0-9]+)(-[0-9]+)?)?(/([0-9]+)((-[0-9]+)(-[0-9]+)?)?)?|Unknown|Unspecified|"/>
       </xs:restriction>
    </xs:simpleType>
    <xs:complexType name="complextype-Session-Resources-WrittenResource-Access-Date">
@@ -508,7 +451,7 @@
    </xs:complexType>
    <xs:simpleType name="simpletype-Session-Resources-Source-Access-Date">
       <xs:restriction base="xs:string">
-         <xs:pattern value="([0-9]+)((-[0-9]+)(-[0-9]+)?)?(/([0-9]+)((-[0-9]+)(-[0-9]+)?)?)?|Unknown|Unspecified"/>
+         <xs:pattern value="([0-9]+)((-[0-9]+)(-[0-9]+)?)?(/([0-9]+)((-[0-9]+)(-[0-9]+)?)?)?|Unknown|Unspecified|"/>
       </xs:restriction>
    </xs:simpleType>
    <xs:complexType name="complextype-Session-Resources-Source-Access-Date">
@@ -518,7 +461,7 @@
    </xs:complexType>
    <xs:simpleType name="simpletype-Session-Resources-Anonyms-Access-Date">
       <xs:restriction base="xs:string">
-         <xs:pattern value="([0-9]+)((-[0-9]+)(-[0-9]+)?)?(/([0-9]+)((-[0-9]+)(-[0-9]+)?)?)?|Unknown|Unspecified"/>
+         <xs:pattern value="([0-9]+)((-[0-9]+)(-[0-9]+)?)?(/([0-9]+)((-[0-9]+)(-[0-9]+)?)?)?|Unknown|Unspecified|"/>
       </xs:restriction>
    </xs:simpleType>
    <xs:complexType name="complextype-Session-Resources-Anonyms-Access-Date">
@@ -704,10 +647,8 @@
                                        <xs:element name="Content" minOccurs="1" maxOccurs="1">
                                           <xs:complexType>
                                              <xs:sequence>
-                                                <xs:element name="Genre" dcr:datcat="http://www.isocat.org/datcat/DC-2470"
-                                                            type="complextype-Session-MDGroup-Content-Genre"/>
-                                                <xs:element name="SubGenre" minOccurs="0" maxOccurs="1"
-                                                            type="complextype-Session-MDGroup-Content-SubGenre"/>
+                                                <xs:element name="Genre" dcr:datcat="http://www.isocat.org/datcat/DC-2470" type="xs:string"/>
+                                                <xs:element name="SubGenre" type="xs:string" minOccurs="0" maxOccurs="1"/>
                                                 <xs:element name="Task" type="xs:string" minOccurs="0" maxOccurs="1"
                                                             dcr:datcat="http://www.isocat.org/datcat/DC-2500"/>
                                                 <xs:element name="Modalities" type="xs:string" minOccurs="0" maxOccurs="1"
@@ -1397,7 +1338,7 @@
                                     <xs:attribute name="ref" type="xs:IDREF"/>
                                  </xs:complexType>
                               </xs:element>
-                              <xs:element name="References" minOccurs="1" maxOccurs="1">
+                              <xs:element name="References" minOccurs="0" maxOccurs="1">
                                  <xs:complexType>
                                     <xs:sequence>
                                        <xs:element name="descriptions" minOccurs="0" maxOccurs="1">

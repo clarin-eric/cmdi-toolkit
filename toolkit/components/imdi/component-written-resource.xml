@@ -11,7 +11,7 @@
         <CMD_Element name="Date">
             <ValueScheme>
                 <!-- matching dates of the pattern yyyy-mm-dd (ISO 8601); copied from the IMDI schema -->
-                <pattern>([0-9]+)((-[0-9]+)(-[0-9]+)?)?(/([0-9]+)((-[0-9]+)(-[0-9]+)?)?)?|Unknown|Unspecified</pattern>                
+                <pattern>([0-9]+)((-[0-9]+)(-[0-9]+)?)?(/([0-9]+)((-[0-9]+)(-[0-9]+)?)?)?|Unknown|Unspecified|</pattern>                
             </ValueScheme>
         </CMD_Element>
         <CMD_Element name="Type" ValueScheme="string"/>

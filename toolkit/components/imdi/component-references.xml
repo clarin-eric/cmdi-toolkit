@@ -5,7 +5,7 @@
     
     <Header/>
     
-    <CMD_Component name="References" CardinalityMin="1" CardinalityMax="1">
+    <CMD_Component name="References" CardinalityMin="0" CardinalityMax="1">
         <CMD_Component filename="component-description.xml" />
     </CMD_Component>
 

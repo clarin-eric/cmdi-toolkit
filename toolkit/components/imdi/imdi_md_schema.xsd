@@ -325,31 +325,6 @@
          <xs:extension base="simpletype-Session-Resources-MediaFile-Type"/>
       </xs:simpleContent>
    </xs:complexType>
-   <xs:simpleType name="simpletype-Session-Resources-MediaFile-Format">
-      <xs:restriction base="xs:string">
-         <xs:enumeration value="application/pdf"/>
-         <xs:enumeration value="application/smil+xml"/>
-         <xs:enumeration value="audio/x-aiff"/>
-         <xs:enumeration value="audio/mp4"/>
-         <xs:enumeration value="audio/x-wav"/>
-         <xs:enumeration value="image/jpeg"/>
-         <xs:enumeration value="image/png"/>
-         <xs:enumeration value="image/tiff"/>
-         <xs:enumeration value="image/gif"/>
-         <xs:enumeration value="text/html"/>
-         <xs:enumeration value="video/x-mpeg1"/>
-         <xs:enumeration value="video/x-mpeg2"/>
-         <xs:enumeration value="video/mp4"/>
-         <xs:enumeration value="video/quicktime"/>
-         <xs:enumeration value="Unknown" dcr:datcat="http://www.isocat.org/datcat/DC-2591"/>
-         <xs:enumeration value="Unspecified" dcr:datcat="http://www.isocat.org/datcat/DC-2592"/>
-      </xs:restriction>
-   </xs:simpleType>
-   <xs:complexType name="complextype-Session-Resources-MediaFile-Format">
-      <xs:simpleContent>
-         <xs:extension base="simpletype-Session-Resources-MediaFile-Format"/>
-      </xs:simpleContent>
-   </xs:complexType>
    <xs:simpleType name="simpletype-Session-Resources-MediaFile-Quality">
       <xs:restriction base="xs:string">
          <xs:enumeration value="1" dcr:datcat="http://www.isocat.org/datcat/DC-2666"/>
@@ -404,117 +379,6 @@
    <xs:complexType name="complextype-Session-Resources-WrittenResource-Date">
       <xs:simpleContent>
          <xs:extension base="simpletype-Session-Resources-WrittenResource-Date"/>
-      </xs:simpleContent>
-   </xs:complexType>
-   <xs:simpleType name="simpletype-Session-Resources-WrittenResource-Type">
-      <xs:restriction base="xs:string">
-         <xs:enumeration value="Unknown"/>
-         <xs:enumeration value="Unspecified"/>
-         <xs:enumeration value="Primary Text"/>
-         <xs:enumeration value="Annotation"/>
-         <xs:enumeration value="Lexical Analysis"/>
-         <xs:enumeration value="Ethnography"/>
-         <xs:enumeration value="Study"/>
-      </xs:restriction>
-   </xs:simpleType>
-   <xs:complexType name="complextype-Session-Resources-WrittenResource-Type">
-      <xs:simpleContent>
-         <xs:extension base="simpletype-Session-Resources-WrittenResource-Type"/>
-      </xs:simpleContent>
-   </xs:complexType>
-   <xs:simpleType name="simpletype-Session-Resources-WrittenResource-SubType">
-      <xs:restriction base="xs:string">
-         <xs:enumeration value="Unknown" dcr:datcat="http://www.isocat.org/datcat/DC-2591"/>
-         <xs:enumeration value="Unspecified" dcr:datcat="http://www.isocat.org/datcat/DC-2592"/>
-         <xs:enumeration value="documentary"/>
-         <xs:enumeration value="fiction"/>
-         <xs:enumeration value="Gesture"/>
-         <xs:enumeration value="Orthography"/>
-         <xs:enumeration value="Phonetic"/>
-         <xs:enumeration value="Phonology"/>
-         <xs:enumeration value="Morphology"/>
-         <xs:enumeration value="Morphosyntax"/>
-         <xs:enumeration value="Syntax"/>
-         <xs:enumeration value="Semantics"/>
-         <xs:enumeration value="Pragmatics"/>
-         <xs:enumeration value="Typology"/>
-         <xs:enumeration value="Dictionary"/>
-         <xs:enumeration value="Terminology"/>
-         <xs:enumeration value="Wordlist"/>
-         <xs:enumeration value="Lexicon"/>
-         <xs:enumeration value="anthropological_linguistics"/>
-         <xs:enumeration value="applied_linguistics"/>
-         <xs:enumeration value="cognitive_science"/>
-         <xs:enumeration value="computational_linguistics"/>
-         <xs:enumeration value="discourse_analysis"/>
-         <xs:enumeration value="forensic_linguistics"/>
-         <xs:enumeration value="general_linguistics"/>
-         <xs:enumeration value="historical_linguistics"/>
-         <xs:enumeration value="history_of_linguistics"/>
-         <xs:enumeration value="language_acquisition"/>
-         <xs:enumeration value="language_documentation"/>
-         <xs:enumeration value="lexicography"/>
-         <xs:enumeration value="linguistics_and_literature"/>
-         <xs:enumeration value="linguistic_theories"/>
-         <xs:enumeration value="mathematical_linguistics"/>
-         <xs:enumeration value="morphology"/>
-         <xs:enumeration value="neurolinguistics"/>
-         <xs:enumeration value="philosophy_of_language"/>
-         <xs:enumeration value="phonetics"/>
-         <xs:enumeration value="phonology"/>
-         <xs:enumeration value="pragmatics"/>
-         <xs:enumeration value="psycholinguistics"/>
-         <xs:enumeration value="semantics"/>
-         <xs:enumeration value="sociolinguistics"/>
-         <xs:enumeration value="syntax"/>
-         <xs:enumeration value="text_and_corpus_linguistics"/>
-         <xs:enumeration value="translating_and_interpreting"/>
-         <xs:enumeration value="typology"/>
-         <xs:enumeration value="writing_systems"/>
-      </xs:restriction>
-   </xs:simpleType>
-   <xs:complexType name="complextype-Session-Resources-WrittenResource-SubType">
-      <xs:simpleContent>
-         <xs:extension base="simpletype-Session-Resources-WrittenResource-SubType"/>
-      </xs:simpleContent>
-   </xs:complexType>
-   <xs:simpleType name="simpletype-Session-Resources-WrittenResource-Format">
-      <xs:restriction base="xs:string">
-         <xs:enumeration value="application/pdf"/>
-         <xs:enumeration value="text/html"/>
-         <xs:enumeration value="text/plain"/>
-         <xs:enumeration value="text/xml"/>
-         <xs:enumeration value="text/x-chat"/>
-         <xs:enumeration value="text/x-cut"/>
-         <xs:enumeration value="text/x-eaf+xml"/>
-         <xs:enumeration value="text/x-esf"/>
-         <xs:enumeration value="text/x-lexus-config+xml"/>
-         <xs:enumeration value="text/x-lexus-resource+xml"/>
-         <xs:enumeration value="text/x-lmf+xml"/>
-         <xs:enumeration value="text/x-shoebox-language"/>
-         <xs:enumeration value="text/x-shoebox-text"/>
-         <xs:enumeration value="text/x-shoebox-type"/>
-         <xs:enumeration value="text/x-shoebox-lexicon"/>
-         <xs:enumeration value="text/x-toolbox-text"/>
-         <xs:enumeration value="text/x-toolbox-lexicon"/>
-         <xs:enumeration value="text/x-cgn-bpt+xml"/>
-         <xs:enumeration value="text/x-cgn-lxk+xml"/>
-         <xs:enumeration value="text/x-cgn-pri+xml"/>
-         <xs:enumeration value="text/x-cgn-prx+xml"/>
-         <xs:enumeration value="text/x-cgn-skp+xml"/>
-         <xs:enumeration value="text/x-cgn-tag+xml"/>
-         <xs:enumeration value="text/x-cgn-tig+xml"/>
-         <xs:enumeration value="AIF"/>
-         <xs:enumeration value="BAS"/>
-         <xs:enumeration value="MT"/>
-         <xs:enumeration value="TRS"/>
-         <xs:enumeration value="Unknown" dcr:datcat="http://www.isocat.org/datcat/DC-2591"/>
-         <xs:enumeration value="Unspecified" dcr:datcat="http://www.isocat.org/datcat/DC-2592"/>
-      </xs:restriction>
-   </xs:simpleType>
-   <xs:complexType name="complextype-Session-Resources-WrittenResource-Format">
-      <xs:simpleContent>
-         <xs:extension base="simpletype-Session-Resources-WrittenResource-Format"/>
       </xs:simpleContent>
    </xs:complexType>
    <xs:simpleType name="simpletype-Session-Resources-WrittenResource-Derivation">
@@ -1145,7 +1009,7 @@
                                                 <xs:element name="Type" dcr:datcat="http://www.isocat.org/datcat/DC-2570"
                                                             type="complextype-Session-Resources-MediaFile-Type"/>
                                                 <xs:element name="Format" dcr:datcat="http://www.isocat.org/datcat/DC-2571"
-                                                            type="complextype-Session-Resources-MediaFile-Format"/>
+                                                            type="xs:string"/>
                                                 <xs:element name="Size" type="xs:string" dcr:datcat="http://www.isocat.org/datcat/DC-2580"/>
                                                 <xs:element name="Quality" dcr:datcat="http://www.isocat.org/datcat/DC-2574"
                                                             type="complextype-Session-Resources-MediaFile-Quality"/>
@@ -1248,9 +1112,9 @@
                                                             dcr:datcat="http://www.isocat.org/datcat/DC-2546"/>
                                                 <xs:element name="MediaResourceLink" type="xs:string"/>
                                                 <xs:element name="Date" type="complextype-Session-Resources-WrittenResource-Date"/>
-                                                <xs:element name="Type" type="complextype-Session-Resources-WrittenResource-Type"/>
-                                                <xs:element name="SubType" type="complextype-Session-Resources-WrittenResource-SubType"/>
-                                                <xs:element name="Format" type="complextype-Session-Resources-WrittenResource-Format"/>
+                                                <xs:element name="Type" type="xs:string"/>
+                                                <xs:element name="SubType" type="xs:string"/>
+                                                <xs:element name="Format" type="xs:string"/>
                                                 <xs:element name="Size" type="xs:string"/>
                                                 <xs:element name="Derivation" dcr:datcat="http://www.isocat.org/datcat/DC-2518"
                                                             type="complextype-Session-Resources-WrittenResource-Derivation"/>

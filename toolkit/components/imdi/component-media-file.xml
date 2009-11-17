@@ -21,28 +21,7 @@
                 </enumeration>                
             </ValueScheme>
         </CMD_Element>
-        <CMD_Element name="Format" ConceptLink="http://www.isocat.org/datcat/DC-2571">
-            <ValueScheme>
-                <enumeration>
-                    <item>application/pdf</item>
-                    <item>application/smil+xml</item>
-                    <item>audio/x-aiff</item>
-                    <item>audio/mp4</item>
-                    <item>audio/x-wav</item>
-                    <item>image/jpeg</item>
-                    <item>image/png</item>
-                    <item>image/tiff</item>
-                    <item>image/gif</item>
-                    <item>text/html</item>
-                    <item>video/x-mpeg1</item>
-                    <item>video/x-mpeg2</item>
-                    <item>video/mp4</item>
-                    <item>video/quicktime</item>
-                    <item ConceptLink="http://www.isocat.org/datcat/DC-2591">Unknown</item>
-                    <item ConceptLink="http://www.isocat.org/datcat/DC-2592">Unspecified</item>
-                </enumeration>                
-            </ValueScheme>
-        </CMD_Element>
+        <CMD_Element name="Format" ConceptLink="http://www.isocat.org/datcat/DC-2571" ValueScheme="string"/>            
         <CMD_Element name="Size" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2580"/>
         <CMD_Element name="Quality" ConceptLink="http://www.isocat.org/datcat/DC-2574">
             <ValueScheme>

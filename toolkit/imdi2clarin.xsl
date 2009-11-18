@@ -20,6 +20,7 @@
             </Header>
             <Resources>
                 <ResourceProxyList>
+                    <xsl:apply-templates select="//Resources" mode="linking"/>
                 </ResourceProxyList>
                 <JournalFileProxyList>
                 </JournalFileProxyList>
@@ -33,9 +34,39 @@
         
     </xsl:template>
     
+    <xsl:template match="Resources" mode="linking">
+        <xsl:for-each select="MediaFile">
+            <ResourceProxy id="{generate-id()}">                
+                <ResourceType>Resource</ResourceType>
+                <ResourceRef><xsl:value-of select="ResourceLink"/></ResourceRef>
+            </ResourceProxy>
+        </xsl:for-each>
+        <xsl:for-each select="WrittenResource">
+            <ResourceProxy id="{generate-id()}">                
+                <ResourceType>Resource</ResourceType>
+                <ResourceRef><xsl:value-of select="ResourceLink"/></ResourceRef>
+            </ResourceProxy>
+        </xsl:for-each>
+    </xsl:template>
+    
     <xsl:template match="Session">
         <Session>
-            <xsl:apply-templates/>
+            <xsl:apply-templates select="child::Name"/>
+            <xsl:apply-templates select="child::Title"/>
+            <xsl:apply-templates select="child::Date"/>
+            <xsl:if test="exists(child::Description)">
+                <descriptions>
+                    <xsl:for-each select="Description">
+                        <Description>
+                            <xsl:attribute name="LanguageId" select="@LanguageId"/>
+                            <xsl:value-of select="."/>
+                        </Description>
+                    </xsl:for-each>
+                </descriptions>                
+            </xsl:if>            
+            <xsl:apply-templates select="child::MDGroup"/>
+            <xsl:apply-templates select="child::Resources" mode="regular"/>
+            <xsl:apply-templates select="child::References"/>
         </Session>
     </xsl:template>
     
@@ -57,7 +88,7 @@
         </Date>
     </xsl:template>
     
-    <xsl:template match="//Description">
+<!--    <xsl:template match="//Description">
         <descriptions>            
             <Description>
                 <xsl:attribute name="LanguageId" select="@LanguageId"/>
@@ -65,6 +96,7 @@
             </Description>
         </descriptions>
     </xsl:template>
+-->
     
     <xsl:template match="child::MDGroup">
         <MDGroup>
@@ -95,7 +127,16 @@
             <Title><xsl:value-of select="child::Title"/></Title>
             <Id><xsl:value-of select="child::Id"/></Id>
             <xsl:apply-templates select="Contact"/>
-            <xsl:apply-templates select="Description"/>
+            <xsl:if test="exists(child::Description)">
+                <descriptions>
+                    <xsl:for-each select="Description">
+                        <Description>
+                            <xsl:attribute name="LanguageId" select="@LanguageId"/>
+                            <xsl:value-of select="."/>
+                        </Description>
+                    </xsl:for-each>
+                </descriptions>                
+            </xsl:if>
         </Project>
     </xsl:template>
     
@@ -134,7 +175,16 @@
             <xsl:apply-templates select="child::CommunicationContext"/>
             <xsl:apply-templates select="child::Languages" mode="content"/>
             <xsl:apply-templates select="child::Keys"/>
-            <xsl:apply-templates select="child::Description"/>
+            <xsl:if test="exists(child::Description)">
+                <descriptions>
+                    <xsl:for-each select="Description">
+                        <Description>
+                            <xsl:attribute name="LanguageId" select="@LanguageId"/>
+                            <xsl:value-of select="."/>
+                        </Description>
+                    </xsl:for-each>
+                </descriptions>                
+            </xsl:if>
         </Content>
         
     </xsl:template>
@@ -164,7 +214,16 @@
     
     <xsl:template match="Languages" mode="content">
         <Content_Languages>
-            <xsl:apply-templates select="child::Description"/>
+            <xsl:if test="exists(child::Description)">
+                <descriptions>
+                    <xsl:for-each select="Description">
+                        <Description>
+                            <xsl:attribute name="LanguageId" select="@LanguageId"/>
+                            <xsl:value-of select="."/>
+                        </Description>
+                    </xsl:for-each>
+                </descriptions>                
+            </xsl:if>
             <xsl:for-each select="Language">
                 <Content_Language>
                     <Id><xsl:value-of select=" ./Id"/></Id>
@@ -178,7 +237,16 @@
                     <xsl:if test="exists(child::TargetLanguage)">
                         <TargetLanguage><xsl:value-of select=" ./TargetLanguage"/></TargetLanguage>
                     </xsl:if>
-                    <xsl:apply-templates select="child::Description" />
+                    <xsl:if test="exists(child::Description)">
+                        <descriptions>
+                            <xsl:for-each select="Description">
+                                <Description>
+                                    <xsl:attribute name="LanguageId" select="@LanguageId"/>
+                                    <xsl:value-of select="."/>
+                                </Description>
+                            </xsl:for-each>
+                        </descriptions>                
+                    </xsl:if>
                 </Content_Language>
             </xsl:for-each>
         </Content_Languages>
@@ -186,7 +254,16 @@
 
     <xsl:template match="Actors">
         <Actors>
-            <xsl:apply-templates select="Description" />
+            <xsl:if test="exists(child::Description)">
+                <descriptions>
+                    <xsl:for-each select="Description">
+                        <Description>
+                            <xsl:attribute name="LanguageId" select="@LanguageId"/>
+                            <xsl:value-of select="."/>
+                        </Description>
+                    </xsl:for-each>
+                </descriptions>                
+            </xsl:if>
             <xsl:for-each select="Actor">
                 <Actor>
                     <Role><xsl:value-of select=" ./Role"/></Role>
@@ -202,7 +279,16 @@
                     <Anonymized><xsl:value-of select=" ./Anonymized"/></Anonymized>
                     <xsl:apply-templates select="Contact" />
                     <xsl:apply-templates select="child::Keys"/>
-                    <xsl:apply-templates select="child::Description" /> 
+                    <xsl:if test="exists(child::Description)">
+                        <descriptions>
+                            <xsl:for-each select="Description">
+                                <Description>
+                                    <xsl:attribute name="LanguageId" select="@LanguageId"/>
+                                    <xsl:value-of select="."/>
+                                </Description>
+                            </xsl:for-each>
+                        </descriptions>                
+                    </xsl:if>
                     <xsl:apply-templates select="child::Languages" mode="actor" />
                 </Actor>
             </xsl:for-each>
@@ -211,7 +297,16 @@
 
     <xsl:template match="Languages" mode="actor">
         <Actor_Languages>
-            <xsl:apply-templates select="child::Description"/>
+            <xsl:if test="exists(child::Description)">
+                <descriptions>
+                    <xsl:for-each select="Description">
+                        <Description>
+                            <xsl:attribute name="LanguageId" select="@LanguageId"/>
+                            <xsl:value-of select="."/>
+                        </Description>
+                    </xsl:for-each>
+                </descriptions>                
+            </xsl:if>
             <xsl:for-each select="Language">
                 <Actor_Language>
                     <Id><xsl:value-of select=" ./Id"/></Id>
@@ -222,14 +317,23 @@
                     <xsl:if test="exists(child::PrimaryLanguage)">
                         <PrimaryLanguage><xsl:value-of select=" ./PrimaryLanguage"/></PrimaryLanguage>
                     </xsl:if>
-                    <xsl:apply-templates select="child::Description" />
+                    <xsl:if test="exists(child::Description)">
+                        <descriptions>
+                            <xsl:for-each select="Description">
+                                <Description>
+                                    <xsl:attribute name="LanguageId" select="@LanguageId"/>
+                                    <xsl:value-of select="."/>
+                                </Description>
+                            </xsl:for-each>
+                        </descriptions>                
+                    </xsl:if>
                 </Actor_Language>
             </xsl:for-each>            
         </Actor_Languages>
     </xsl:template>
     
 
-    <xsl:template match="child::Resources">
+    <xsl:template match="child::Resources" mode="regular">
         <Resources>
             <xsl:apply-templates select="MediaFile"/>
             <xsl:apply-templates select="WrittenResource"/>
@@ -239,7 +343,7 @@
     </xsl:template>
     
     <xsl:template match="MediaFile">
-        <MediaFile>
+        <MediaFile ref="{generate-id()}">
             <ResourceLink><xsl:value-of select=" ./ResourceLink"/></ResourceLink>
             <Type><xsl:value-of select=" ./Type"/></Type>
             <Format><xsl:value-of select=" ./Format"/></Format>
@@ -253,7 +357,16 @@
                 </xsl:if>
             </TimePosition>
             <xsl:apply-templates select="Access"/>
-            <xsl:apply-templates select="Description"/>
+            <xsl:if test="exists(child::Description)">
+                <descriptions>
+                    <xsl:for-each select="Description">
+                        <Description>
+                            <xsl:attribute name="LanguageId" select="@LanguageId"/>
+                            <xsl:value-of select="."/>
+                        </Description>
+                    </xsl:for-each>
+                </descriptions>                
+            </xsl:if>
             <xsl:apply-templates select="child::Keys"/>            
         </MediaFile>        
     </xsl:template>
@@ -265,32 +378,65 @@
             <Owner><xsl:value-of select=" ./Owner"/></Owner>
             <Publisher><xsl:value-of select=" ./Publisher"/></Publisher>
             <xsl:apply-templates select="Contact" />
-            <xsl:apply-templates select="Description"/>
+            <xsl:if test="exists(child::Description)">
+                <descriptions>
+                    <xsl:for-each select="Description">
+                        <Description>
+                            <xsl:attribute name="LanguageId" select="@LanguageId"/>
+                            <xsl:value-of select="."/>
+                        </Description>
+                    </xsl:for-each>
+                </descriptions>                
+            </xsl:if>
         </Access>
     </xsl:template>
     
     <xsl:template match="WrittenResource">
-        <ResourceLink><xsl:value-of select=" ./ResourceLink"/></ResourceLink>
-        <MediaResourceLink><xsl:value-of select=" ./MediaResourceLink"/></MediaResourceLink>
-        <Date><xsl:value-of select=" ./Date"/></Date>
-        <Type><xsl:value-of select=" ./Type"/></Type>
-        <SubType><xsl:value-of select=" ./SubType"/></SubType>
-        <Format><xsl:value-of select=" ./Format"/></Format>            
-        <Size><xsl:value-of select=" ./Size"/></Size>
-        <Derivation><xsl:value-of select=" ./Derivation"/></Derivation>            
-        <CharacterEncoding><xsl:value-of select=" ./CharacterEncoding"/></CharacterEncoding>
-        <ContentEncoding><xsl:value-of select=" ./ContentEncoding"/></ContentEncoding>
-        <LanguageId><xsl:value-of select=" ./LanguageId"/></LanguageId>
-        <Anonymized><xsl:value-of select=" ./Anonymized"/></Anonymized>
+        <WrittenResource ref="{generate-id()}">
+            <ResourceLink><xsl:value-of select=" ./ResourceLink"/></ResourceLink>
+            <MediaResourceLink><xsl:value-of select=" ./MediaResourceLink"/></MediaResourceLink>
+            <Date><xsl:value-of select=" ./Date"/></Date>
+            <Type><xsl:value-of select=" ./Type"/></Type>
+            <SubType><xsl:value-of select=" ./SubType"/></SubType>
+            <Format><xsl:value-of select=" ./Format"/></Format>            
+            <Size><xsl:value-of select=" ./Size"/></Size>
+            <Derivation><xsl:value-of select=" ./Derivation"/></Derivation>            
+            <CharacterEncoding><xsl:value-of select=" ./CharacterEncoding"/></CharacterEncoding>
+            <ContentEncoding><xsl:value-of select=" ./ContentEncoding"/></ContentEncoding>
+            <LanguageId><xsl:value-of select=" ./LanguageId"/></LanguageId>
+            <Anonymized><xsl:value-of select=" ./Anonymized"/></Anonymized>
+            <xsl:apply-templates select="Validation"/>    
+            <xsl:apply-templates select="Access"/>
+            <xsl:if test="exists(child::Description)">
+                <descriptions>
+                    <xsl:for-each select="Description">
+                        <Description>
+                            <xsl:attribute name="LanguageId" select="@LanguageId"/>
+                            <xsl:value-of select="."/>
+                        </Description>
+                    </xsl:for-each>
+                </descriptions>                
+            </xsl:if>
+            <xsl:apply-templates select="Keys"/>        
+        </WrittenResource>
+    </xsl:template>
+    
+    <xsl:template match="Validation">
         <Validation>
             <Type><xsl:value-of select=" ./Type"/></Type>
             <Methodology><xsl:value-of select=" ./Methodology"/></Methodology>
             <Level><xsl:value-of select=" ./Level"/></Level>
-            <xsl:apply-templates select="Description"/>
-        </Validation>    
-        <xsl:apply-templates select="Access"/>
-        <xsl:apply-templates select="Description"/>
-        <xsl:apply-templates select="Keys"/>        
+            <xsl:if test="exists(child::Description)">
+                <descriptions>
+                    <xsl:for-each select="Description">
+                        <Description>
+                            <xsl:attribute name="LanguageId" select="@LanguageId"/>
+                            <xsl:value-of select="."/>
+                        </Description>
+                    </xsl:for-each>
+                </descriptions>                
+            </xsl:if>
+        </Validation>
     </xsl:template>
     
     <xsl:template match="Source">
@@ -315,7 +461,16 @@
                 </TimePosition>
             </xsl:if>
             <xsl:apply-templates select="Access"/>
-            <xsl:apply-templates select="Description"/>
+            <xsl:if test="exists(child::Description)">
+                <descriptions>
+                    <xsl:for-each select="Description">
+                        <Description>
+                            <xsl:attribute name="LanguageId" select="@LanguageId"/>
+                            <xsl:value-of select="."/>
+                        </Description>
+                    </xsl:for-each>
+                </descriptions>                
+            </xsl:if>
             <xsl:apply-templates select="child::Keys"/>
         </Source>
     </xsl:template>
@@ -328,7 +483,18 @@
     </xsl:template>
     
     <xsl:template match="child::References">
-        <References/>
+        <References>
+            <xsl:if test="exists(child::Description)">
+                <descriptions>
+                    <xsl:for-each select="Description">
+                        <Description>
+                            <xsl:attribute name="LanguageId" select="@LanguageId"/>
+                            <xsl:value-of select="."/>
+                        </Description>
+                    </xsl:for-each>
+                </descriptions>                
+            </xsl:if>
+        </References>
     </xsl:template>
     
     

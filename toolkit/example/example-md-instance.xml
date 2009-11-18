@@ -2,20 +2,19 @@
 <CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="example-md-schema.xsd">
     <Header>
-        <Description>Test instance of an MD description</Description>
-        <Creator></Creator>
-        <CreationDate></CreationDate>
-        <SelfLink></SelfLink>
-        <Profile></Profile>
+        <MdCreator>Dieter Van Uytvanck</MdCreator>
+        <MdCreationDate>2009-11-18</MdCreationDate>
+        <MdSelfLink>http://www.clarin.eu/cmd/example/example-md-instance.xml</MdSelfLink>
+        <MdProfile>http://www.clarin.eu/cmd/example/example-profile-instance.xml</MdProfile>
     </Header>
     <Resources>
         <ResourceProxyList>
             <ResourceProxy id="a_text">
-                <ResourceType></ResourceType>
+                <ResourceType>Resource</ResourceType>
                 <ResourceRef>bla.txt</ResourceRef>
             </ResourceProxy>
             <ResourceProxy id="a_picture">
-                <ResourceType></ResourceType>
+                <ResourceType>Resource</ResourceType>
                 <ResourceRef></ResourceRef>
             </ResourceProxy>
         </ResourceProxyList>
@@ -29,14 +28,14 @@
         </ResourceRelationList>
     </Resources>
     <Components>
-        <TextTMD ref="a_text">
+        <TextTMD ref="a_text" ComponentId="http://www.clarin.eu/cmd/example/example-component-text.xml">
             <Format>text/plain</Format>
             <TextType></TextType>
         </TextTMD>
         <PhotoTMD ref="a_picture">
             <Format>image/png</Format>
         </PhotoTMD>
-        <Actor>
+        <Actor ComponentId="eu.clarin.mdcomponent.actor">
             <firstName>Foo</firstName>
             <lastName>Bar</lastName>
             <sex>female</sex>
@@ -49,7 +48,7 @@
             </ActorLanguage>
         </Actor>
         <!-- Bob is depicted in a_picture -->
-        <Actor ref="a_picture">
+        <Actor ref="a_picture" ComponentId="eu.clarin.mdcomponent.actor">
             <firstName nickname="bobby">Bob</firstName>
             <lastName></lastName>
             <sex>male</sex>

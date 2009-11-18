@@ -11,12 +11,10 @@
         <xs:element name="Header">
             <xs:complexType>
                 <xs:sequence>
-                    <!-- TODO: select specific types -->
-                    <xs:element name="Description"/> 
-                    <xs:element name="Creator"/>
-                    <xs:element name="CreationDate"/>
-                    <xs:element name="SelfLink"/>
-                    <xs:element name="Profile"/>
+                    <xs:element name="MdCreator" type="xs:string" minOccurs="0"/>
+                    <xs:element name="MdCreationDate" type="xs:date" minOccurs="0"/>
+                    <xs:element name="MdSelfLink" type="xs:anyURI" minOccurs="0"/>
+                    <xs:element name="MdProfile" type="xs:anyURI" minOccurs="0"/>
                 </xs:sequence>
             </xs:complexType>
         </xs:element>
@@ -30,7 +28,30 @@
                                     <xs:complexType>
                                         <xs:sequence>
                                             <xs:element maxOccurs="1" minOccurs="1"
-                                                name="ResourceType"/>
+                                                name="ResourceType">
+                                                <xs:simpleType>
+                                                  <xs:restriction base="xs:string">
+                                                  <xs:enumeration value="Metadata">
+                                                  <xs:annotation>
+                                                  <xs:documentation>The ResourceProxy
+                                                  refers to another component
+                                                  metadata instance (e.g. for
+                                                  grouping metadata descriptions
+                                                  into
+                                                  collections)</xs:documentation>
+                                                  </xs:annotation>
+                                                  </xs:enumeration>
+                                                  <xs:enumeration value="Resource">
+                                                  <xs:annotation>
+                                                  <xs:documentation>The ResourceProxy
+                                                  refers to a file that is not a
+                                                  metadata instance (e.g. a text
+                                                  document)</xs:documentation>
+                                                  </xs:annotation>
+                                                  </xs:enumeration>
+                                                  </xs:restriction>
+                                                </xs:simpleType>
+                                            </xs:element>
                                             <xs:element maxOccurs="1" minOccurs="1"
                                                 name="ResourceRef" type="xs:anyURI"/>
                                         </xs:sequence>

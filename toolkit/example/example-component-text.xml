@@ -4,7 +4,7 @@
     
     <Header/>
     
-    <CMD_Component name="TextTMD" ConceptLink="http://www.isocat.org/datcat/CMD-000">
+    <CMD_Component name="TextTMD" ConceptLink="http://www.isocat.org/datcat/CMD-000" ComponentId="http://www.clarin.eu/cmd/example/example-component-text.xml">
         
         <CMD_Element name="Format" ConceptLink="http://www.isocat.org/datcat/DC-1758"
             CardinalityMin="0" CardinalityMax="1">

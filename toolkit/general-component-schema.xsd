@@ -12,21 +12,29 @@
     <xs:element name="CMD_ComponentSpec">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="Header"/>
+                <xs:element name="Header">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="ID" type="xs:anyURI" minOccurs="0"/>
+                            <xs:element name="Name" type="xs:string" minOccurs="0"/>
+                            <xs:element name="Description" type="xs:string" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
                 <xs:group ref="group"/>
             </xs:sequence>
+            <xs:attribute name="isProfile" type="xs:boolean"/>
         </xs:complexType>
     </xs:element>
 
     <!-- recursive construction  -->
     <xs:group name="group">
         <xs:sequence>
-            <!-- from small (attribute) to big (componentList) -->
+            <!-- from small (attribute) to big (component) -->
             <xs:element name="AttributeList" type="AttributeList_type" minOccurs="0" maxOccurs="1"/>
             <xs:element name="CMD_Element" type="CMD_Element_type" minOccurs="0"
                 maxOccurs="unbounded"> </xs:element>
             <xs:element name="CMD_Component" type="CMD_Component_type" minOccurs="0" maxOccurs="unbounded"/>
-            <!--<xs:element name="CMD_ComponentList" type="CMD_ComponentList_type"  minOccurs="0" maxOccurs="unbounded"/>-->
         </xs:sequence>
     </xs:group>
 
@@ -59,21 +67,13 @@
                         <xs:choice>
                             <xs:element name="Type" type="allowed_attributetypes_type"/>
                             <xs:element name="ValueScheme" type="ValueScheme_type"/>
-                        </xs:choice>
-                        
+                        </xs:choice>                       
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
         </xs:sequence>
     </xs:complexType>
 
-    <!--<xs:complexType name="CMD_ComponentList_type">
-        <xs:sequence>
-            <xs:element name="CMD_Component" type="CMD_Component_type" />
-        </xs:sequence>
-        <xs:attributeGroup ref="clarin_component_list_attributes"/>
-    </xs:complexType>
-    -->
     <xs:complexType name="CMD_Component_type">
         <xs:group ref="group" minOccurs="0"/>
         <xs:attributeGroup ref="clarin_component_attributes"/>
@@ -82,7 +82,7 @@
 
     <!-- list of all attributes that can be bound to a cl_el -->
     <xs:attributeGroup name="clarin_element_attributes">
-        <xs:attribute name="name" type="xs:token" use="required"/>
+        <xs:attribute name="name" type="xs:Name" use="required"/>
         <xs:attribute name="ConceptLink" type="xs:anyURI"/>
         <xs:attribute name="ValueScheme" type="allowed_attributetypes_type"/>
         <xs:attribute name="CardinalityMin" type="cardinality_type"/>
@@ -91,28 +91,19 @@
 
     <!-- list of all attributes that can be bound to a cl_comp -->
     <xs:attributeGroup name="clarin_component_attributes">
-        <xs:attribute name="name" type="xs:token"/>
+        <xs:attribute name="name" type="xs:Name"/>
         <xs:attribute name="ComponentId" type="xs:anyURI"/>
         <xs:attribute name="ConceptLink" type="xs:anyURI"/>
         <xs:attribute name="filename" type="xs:anyURI"/>
         
-        <!--components cannot have a ValueScheme attribute -->
-        <!--<xs:attribute name="CardinalityMin" type="cardinality_type" use="required"/>
-        <xs:attribute name="CardinalityMax" type="cardinality_type" use="required"/>
-        -->
+        <!-- (components cannot have a ValueScheme attribute) -->
+        
         <xs:attribute name="CardinalityMin" type="cardinality_type" />
         <xs:attribute name="CardinalityMax" type="cardinality_type"/>
         <xs:attribute ref="xml:base"/>
     </xs:attributeGroup>
     
-    <!-- list of all attributes that can be bound to a cl_comp_list -->
-    <!--<xs:attributeGroup name="clarin_component_list_attributes">
-        <xs:attribute name="CardinalityMin" type="cardinality_type" use="required"/>
-        <xs:attribute name="CardinalityMax" type="cardinality_type" use="required"/>
-        <xs:attribute ref="xml:base"/>
-    </xs:attributeGroup>
-    -->
-
+    
     <xs:simpleType name="cardinality_type">
         <xs:annotation>
             <xs:documentation>cardinality for elements and components</xs:documentation>
@@ -140,6 +131,11 @@
             <xs:enumeration value="float"/>
             <xs:enumeration value="string"/>
             <xs:enumeration value="anyURI"/>
+            <xs:enumeration value="date"/>
+            <xs:enumeration value="gDay"/>
+            <xs:enumeration value="gMonth"/>
+            <xs:enumeration value="gYear"/>
+            <xs:enumeration value="time"/>
         </xs:restriction>
     </xs:simpleType>
 

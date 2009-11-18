@@ -60,11 +60,10 @@
             <xs:element name="Header">
                <xs:complexType>
                   <xs:sequence>
-                     <xs:element name="Description"/>
-                     <xs:element name="Creator"/>
-                     <xs:element name="CreationDate"/>
-                     <xs:element name="SelfLink"/>
-                     <xs:element name="Profile"/>
+                     <xs:element name="MdCreator" type="xs:string" minOccurs="0"/>
+                     <xs:element name="MdCreationDate" type="xs:date" minOccurs="0"/>
+                     <xs:element name="MdSelfLink" type="xs:anyURI" minOccurs="0"/>
+                     <xs:element name="MdProfile" type="xs:anyURI" minOccurs="0"/>
                   </xs:sequence>
                </xs:complexType>
             </xs:element>
@@ -77,7 +76,30 @@
                               <xs:element maxOccurs="unbounded" minOccurs="0" name="ResourceProxy">
                                  <xs:complexType>
                                     <xs:sequence>
-                                       <xs:element maxOccurs="1" minOccurs="1" name="ResourceType"/>
+                                       <xs:element maxOccurs="1" minOccurs="1" name="ResourceType">
+                                          <xs:simpleType>
+                                             <xs:restriction base="xs:string">
+                                                <xs:enumeration value="Metadata">
+                                                   <xs:annotation>
+                                                      <xs:documentation>The ResourceProxy
+                                                  refers to another component
+                                                  metadata instance (e.g. for
+                                                  grouping metadata descriptions
+                                                  into
+                                                  collections)</xs:documentation>
+                                                   </xs:annotation>
+                                                </xs:enumeration>
+                                                <xs:enumeration value="Resource">
+                                                   <xs:annotation>
+                                                      <xs:documentation>The ResourceProxy
+                                                  refers to a file that is not a
+                                                  metadata instance (e.g. a text
+                                                  document)</xs:documentation>
+                                                   </xs:annotation>
+                                                </xs:enumeration>
+                                             </xs:restriction>
+                                          </xs:simpleType>
+                                       </xs:element>
                                        <xs:element maxOccurs="1" minOccurs="1" name="ResourceRef" type="xs:anyURI"/>
                                     </xs:sequence>
                                     <xs:attribute name="id" type="xs:ID" use="required"/>
@@ -147,6 +169,8 @@
                               </xs:element>
                            </xs:sequence>
                            <xs:attribute name="ref" type="xs:IDREF"/>
+                           <xs:attribute name="ComponentId" type="xs:anyURI"
+                                         fixed="http://www.clarin.eu/cmd/example/example-component-text.xml"/>
                         </xs:complexType>
                      </xs:element>
                      <xs:element name="PhotoTMD" minOccurs="1" maxOccurs="unbounded"
@@ -197,6 +221,7 @@
                               </xs:element>
                            </xs:sequence>
                            <xs:attribute name="ref" type="xs:IDREF"/>
+                           <xs:attribute name="ComponentId" type="xs:anyURI" fixed="eu.clarin.mdcomponent.actor"/>
                         </xs:complexType>
                      </xs:element>
                   </xs:sequence>

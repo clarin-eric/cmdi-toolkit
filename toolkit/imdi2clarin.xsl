@@ -38,13 +38,13 @@
         <xsl:for-each select="MediaFile">
             <ResourceProxy id="{generate-id()}">                
                 <ResourceType>Resource</ResourceType>
-                <ResourceRef><xsl:value-of select="ResourceLink"/></ResourceRef>
+                <ResourceRef><xsl:value-of select="replace(ResourceLink,'file:/data/corpora','http://corpus1.mpi.nl')"/></ResourceRef>
             </ResourceProxy>
         </xsl:for-each>
         <xsl:for-each select="WrittenResource">
             <ResourceProxy id="{generate-id()}">                
                 <ResourceType>Resource</ResourceType>
-                <ResourceRef><xsl:value-of select="ResourceLink"/></ResourceRef>
+                <ResourceRef><xsl:value-of select="replace(ResourceLink,'file:/data/corpora','http://corpus1.mpi.nl')"/></ResourceRef>
             </ResourceProxy>
         </xsl:for-each>
     </xsl:template>

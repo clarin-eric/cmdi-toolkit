@@ -3,13 +3,19 @@
     xsi:noNamespaceSchemaLocation="file:/home/dietuyt/svn/clarin/metadata/trunk/toolkit/components/tei/tei-textDesc-schema.xsd">
     <Header></Header>
     <Resources>
-        <ResourceProxyList></ResourceProxyList>
+        <ResourceProxyList>
+            <ResourceProxy id="test">
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef></ResourceRef>
+            </ResourceProxy>
+            
+        </ResourceProxyList>
         <JournalFileProxyList></JournalFileProxyList>
         <ResourceRelationList></ResourceRelationList>
     </Resources>
     <Components>
                  
-        <textDesc n="Informal_domestic_conversation">
+        <textDesc n="Informal domestic conversation">
             <channel mode="s"></channel>
             <constitution type="single"></constitution>
             <derivation type="original"></derivation>

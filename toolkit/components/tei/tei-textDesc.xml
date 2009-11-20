@@ -17,13 +17,13 @@
             <Attribute>
                 <Name>n</Name>
                 <ValueScheme>
-                    <pattern>(\p{L}|\p{N}|\p{P}|\p{S})+</pattern>
+                    <pattern>((\p{L}|\p{N}|\p{P}|\p{S})+|\s)+</pattern>
                 </ValueScheme>
             </Attribute>
             <Attribute>
                 <Name>rend</Name>
                 <ValueScheme>
-                    <pattern>(\p{L}|\p{N}|\p{P}|\p{S})+</pattern>
+                    <pattern>((\p{L}|\p{N}|\p{P}|\p{S})+|\s)+</pattern>
                 </ValueScheme>
             </Attribute>
             <Attribute>
@@ -100,15 +100,15 @@
             </AttributeList>
         </CMD_Element>
 
-        <CMD_Element name="interaction" ValueScheme="string" CardinalityMin="0">
+        <CMD_Element name="interaction" ValueScheme="string" CardinalityMin="0" ConceptLink="http://www.isocat.org/datcat/DC-2476">
             <AttributeList>
                 <Attribute>
                     <Name>type</Name>
                     <ValueScheme>
                         <enumeration>
-                            <item AppInfo="no interaction of any kind, e.g. a monologue">none</item>
-                            <item AppInfo="some degree of interaction, e.g. a monologue with set responses">partial</item>
-                            <item AppInfo="complete interaction, e.g. a face to face conversation">complete</item>
+                            <item AppInfo="no interaction of any kind, e.g. a monologue" ConceptLink="http://www.isocat.org/datcat/DC-2614">none</item>
+                            <item AppInfo="some degree of interaction, e.g. a monologue with set responses" ConceptLink="http://www.isocat.org/datcat/DC-2615">partial</item>
+                            <item AppInfo="complete interaction, e.g. a face to face conversation" ConceptLink="http://www.isocat.org/datcat/DC-2613">complete</item>
                             <item AppInfo="this parameter is inappropriate or inapplicable in this case">inapplicable</item>
                         </enumeration>
                     </ValueScheme>

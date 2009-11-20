@@ -230,24 +230,25 @@
                                     </xs:simpleContent>
                                  </xs:complexType>
                               </xs:element>
-                              <xs:element name="interaction" minOccurs="0">
+                              <xs:element name="interaction" dcr:datcat="http://www.isocat.org/datcat/DC-2476"
+                                          minOccurs="0">
                                  <xs:complexType>
                                     <xs:simpleContent>
                                        <xs:extension base="xs:string">
                                           <xs:attribute name="type">
                                              <xs:simpleType>
                                                 <xs:restriction base="xs:string">
-                                                   <xs:enumeration value="none">
+                                                   <xs:enumeration value="none" dcr:datcat="http://www.isocat.org/datcat/DC-2614">
                                                       <xs:annotation>
                                                          <xs:appinfo>no interaction of any kind, e.g. a monologue</xs:appinfo>
                                                       </xs:annotation>
                                                    </xs:enumeration>
-                                                   <xs:enumeration value="partial">
+                                                   <xs:enumeration value="partial" dcr:datcat="http://www.isocat.org/datcat/DC-2615">
                                                       <xs:annotation>
                                                          <xs:appinfo>some degree of interaction, e.g. a monologue with set responses</xs:appinfo>
                                                       </xs:annotation>
                                                    </xs:enumeration>
-                                                   <xs:enumeration value="complete">
+                                                   <xs:enumeration value="complete" dcr:datcat="http://www.isocat.org/datcat/DC-2613">
                                                       <xs:annotation>
                                                          <xs:appinfo>complete interaction, e.g. a face to face conversation</xs:appinfo>
                                                       </xs:annotation>
@@ -290,7 +291,7 @@
                            <xs:attribute name="n">
                               <xs:simpleType>
                                  <xs:restriction base="xs:string">
-                                    <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                                    <xs:pattern value="((\p{L}|\p{N}|\p{P}|\p{S})+|\s)+"/>
                                  </xs:restriction>
                               </xs:simpleType>
                            </xs:attribute>

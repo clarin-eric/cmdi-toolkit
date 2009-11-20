@@ -5,7 +5,7 @@
     
     <xsl:template match="METATRANSCRIPT">
         <CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-            xsi:noNamespaceSchemaLocation="file:/home/alekoe/projects/clarin/svn/metadata/trunk/toolkit/components/imdi/imdi_md_schema.xsd">
+            xsi:noNamespaceSchemaLocation="http://www.clarin.eu/cmd/components/imdi/imdi_md_schema.xsd">
             <Header>
                 <Description>
                 </Description>

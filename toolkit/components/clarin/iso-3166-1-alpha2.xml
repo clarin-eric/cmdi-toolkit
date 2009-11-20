@@ -2,16 +2,13 @@
 <CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="file:../../general-component-schema.xsd">
     <Header>
-        <Description>The list of ISO3166-1 country names, using 2 alphabetical characters.</Description>        
-        <Source>Based on: http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2</Source>
-        <Author>
-            <Name>Dieter Van Uytvanck</Name>
-            <Email>dieter.vanuytvanck@mpi.nl</Email>
-        </Author>
+        <ID>eu.clarin.cmdi.country</ID>
+        <Name>Country Codes</Name>
+        <Description>The list of ISO3166-1 country names, using 2 alphabetical characters. Based on: http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2</Description>        
     </Header>
 
-    <CMD_Component name="ISO3166-1-alpha2" ConceptLink="http://www.isocat.org/datcat/DC-2532">
-        <CMD_Element name="iso-3166-1-alpha2" ConceptLink="http://www.isocat.org/datcat/DC-2532">
+    <CMD_Component name="country" ConceptLink="http://www.isocat.org/datcat/DC-2532">
+        <CMD_Element name="code" ConceptLink="http://www.isocat.org/datcat/DC-2532">
             <ValueScheme>
                 <enumeration>
                     

@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dcr="http://www.isocat.org">
+   <xs:element name="CMD">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="Header">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="MdCreator" type="xs:string" minOccurs="0"/>
+                     <xs:element name="MdCreationDate" type="xs:date" minOccurs="0"/>
+                     <xs:element name="MdSelfLink" type="xs:anyURI" minOccurs="0"/>
+                     <xs:element name="MdProfile" type="xs:anyURI" minOccurs="0"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element name="Resources">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="ResourceProxyList">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element maxOccurs="unbounded" minOccurs="0" name="ResourceProxy">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element maxOccurs="1" minOccurs="1" name="ResourceType">
+                                          <xs:simpleType>
+                                             <xs:restriction base="xs:string">
+                                                <xs:enumeration value="Metadata">
+                                                   <xs:annotation>
+                                                      <xs:documentation>The ResourceProxy
+                                                  refers to another component
+                                                  metadata instance (e.g. for
+                                                  grouping metadata descriptions
+                                                  into
+                                                  collections)</xs:documentation>
+                                                   </xs:annotation>
+                                                </xs:enumeration>
+                                                <xs:enumeration value="Resource">
+                                                   <xs:annotation>
+                                                      <xs:documentation>The ResourceProxy
+                                                  refers to a file that is not a
+                                                  metadata instance (e.g. a text
+                                                  document)</xs:documentation>
+                                                   </xs:annotation>
+                                                </xs:enumeration>
+                                             </xs:restriction>
+                                          </xs:simpleType>
+                                       </xs:element>
+                                       <xs:element maxOccurs="1" minOccurs="1" name="ResourceRef" type="xs:anyURI"/>
+                                    </xs:sequence>
+                                    <xs:attribute name="id" type="xs:ID" use="required"/>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+                     <xs:element name="JournalFileProxyList">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element maxOccurs="unbounded" minOccurs="0" name="JournalFileProxy">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element maxOccurs="1" minOccurs="1" name="JournalFileRef" type="xs:anyURI"/>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+                     <xs:element name="ResourceRelationList">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element maxOccurs="unbounded" minOccurs="0" name="ResourceRelation">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element maxOccurs="1" minOccurs="1" name="RelationType"/>
+                                       <xs:element maxOccurs="1" minOccurs="1" name="Res1">
+                                          <xs:complexType>
+                                             <xs:attribute name="ref" type="xs:IDREF"/>
+                                          </xs:complexType>
+                                       </xs:element>
+                                       <xs:element maxOccurs="1" minOccurs="1" name="Res2">
+                                          <xs:complexType>
+                                             <xs:attribute name="ref" type="xs:IDREF"/>
+                                          </xs:complexType>
+                                       </xs:element>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element name="Components">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="textDesc">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element name="channel" dcr:datcat="http://www.isocat.org/datcat/DC-2464" minOccurs="0">
+                                 <xs:complexType>
+                                    <xs:simpleContent>
+                                       <xs:extension base="xs:string">
+                                          <xs:attribute name="mode">
+                                             <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                   <xs:enumeration value="x">
+                                                      <xs:annotation>
+                                                         <xs:appinfo>unknown or inapplicable [default]</xs:appinfo>
+                                                      </xs:annotation>
+                                                   </xs:enumeration>
+                                                   <xs:enumeration value="s">
+                                                      <xs:annotation>
+                                                         <xs:appinfo>spoken</xs:appinfo>
+                                                      </xs:annotation>
+                                                   </xs:enumeration>
+                                                   <xs:enumeration value="w">
+                                                      <xs:annotation>
+                                                         <xs:appinfo>written</xs:appinfo>
+                                                      </xs:annotation>
+                                                   </xs:enumeration>
+                                                   <xs:enumeration value="sw">
+                                                      <xs:annotation>
+                                                         <xs:appinfo>spoken to be written, e.g. dictation</xs:appinfo>
+                                                      </xs:annotation>
+                                                   </xs:enumeration>
+                                                   <xs:enumeration value="ws">
+                                                      <xs:annotation>
+                                                         <xs:appinfo>written to be spoken, e.g. a script</xs:appinfo>
+                                                      </xs:annotation>
+                                                   </xs:enumeration>
+                                                   <xs:enumeration value="m">
+                                                      <xs:annotation>
+                                                         <xs:appinfo>mixed</xs:appinfo>
+                                                      </xs:annotation>
+                                                   </xs:enumeration>
+                                                </xs:restriction>
+                                             </xs:simpleType>
+                                          </xs:attribute>
+                                       </xs:extension>
+                                    </xs:simpleContent>
+                                 </xs:complexType>
+                              </xs:element>
+                              <xs:element name="constitution" minOccurs="0">
+                                 <xs:complexType>
+                                    <xs:simpleContent>
+                                       <xs:extension base="xs:string">
+                                          <xs:attribute name="type">
+                                             <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                   <xs:enumeration value="single">
+                                                      <xs:annotation>
+                                                         <xs:appinfo>a single complete text  [Default]</xs:appinfo>
+                                                      </xs:annotation>
+                                                   </xs:enumeration>
+                                                   <xs:enumeration value="composite">
+                                                      <xs:annotation>
+                                                         <xs:appinfo>a text made by combining several smaller items, each individually complete</xs:appinfo>
+                                                      </xs:annotation>
+                                                   </xs:enumeration>
+                                                   <xs:enumeration value="frags">
+                                                      <xs:annotation>
+                                                         <xs:appinfo>(fragments) a text made by combining several smaller, not necessarily complete, items</xs:appinfo>
+                                                      </xs:annotation>
+                                                   </xs:enumeration>
+                                                   <xs:enumeration value="unknown">
+                                                      <xs:annotation>
+                                                         <xs:appinfo>composition unknown or unspecified </xs:appinfo>
+                                                      </xs:annotation>
+                                                   </xs:enumeration>
+                                                </xs:restriction>
+                                             </xs:simpleType>
+                                          </xs:attribute>
+                                       </xs:extension>
+                                    </xs:simpleContent>
+                                 </xs:complexType>
+                              </xs:element>
+                              <xs:element name="derivation" dcr:datcat="http://www.isocat.org/datcat/DC-2518"
+                                          minOccurs="0">
+                                 <xs:complexType>
+                                    <xs:simpleContent>
+                                       <xs:extension base="xs:string">
+                                          <xs:attribute name="type" type="xs:string"/>
+                                       </xs:extension>
+                                    </xs:simpleContent>
+                                 </xs:complexType>
+                              </xs:element>
+                              <xs:element name="domain" dcr:datcat="http://www.isocat.org/datcat/DC-2467" minOccurs="0">
+                                 <xs:complexType>
+                                    <xs:simpleContent>
+                                       <xs:extension base="xs:string">
+                                          <xs:attribute name="type" type="xs:string"/>
+                                       </xs:extension>
+                                    </xs:simpleContent>
+                                 </xs:complexType>
+                              </xs:element>
+                              <xs:element name="factuality" minOccurs="0">
+                                 <xs:complexType>
+                                    <xs:simpleContent>
+                                       <xs:extension base="xs:string">
+                                          <xs:attribute name="type">
+                                             <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                   <xs:enumeration value="fiction">
+                                                      <xs:annotation>
+                                                         <xs:appinfo>the text is to be regarded as entirely imaginative</xs:appinfo>
+                                                      </xs:annotation>
+                                                   </xs:enumeration>
+                                                   <xs:enumeration value="fact">
+                                                      <xs:annotation>
+                                                         <xs:appinfo>the text is to be regarded as entirely informative or factual</xs:appinfo>
+                                                      </xs:annotation>
+                                                   </xs:enumeration>
+                                                   <xs:enumeration value="mixed">
+                                                      <xs:annotation>
+                                                         <xs:appinfo>the text contains a mixture of fact and fiction</xs:appinfo>
+                                                      </xs:annotation>
+                                                   </xs:enumeration>
+                                                   <xs:enumeration value="inapplicable">
+                                                      <xs:annotation>
+                                                         <xs:appinfo>the fiction/fact distinction is not regarded as helpful or appropriate to this text </xs:appinfo>
+                                                      </xs:annotation>
+                                                   </xs:enumeration>
+                                                </xs:restriction>
+                                             </xs:simpleType>
+                                          </xs:attribute>
+                                       </xs:extension>
+                                    </xs:simpleContent>
+                                 </xs:complexType>
+                              </xs:element>
+                              <xs:element name="interaction" minOccurs="0">
+                                 <xs:complexType>
+                                    <xs:simpleContent>
+                                       <xs:extension base="xs:string">
+                                          <xs:attribute name="type">
+                                             <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                   <xs:enumeration value="none">
+                                                      <xs:annotation>
+                                                         <xs:appinfo>no interaction of any kind, e.g. a monologue</xs:appinfo>
+                                                      </xs:annotation>
+                                                   </xs:enumeration>
+                                                   <xs:enumeration value="partial">
+                                                      <xs:annotation>
+                                                         <xs:appinfo>some degree of interaction, e.g. a monologue with set responses</xs:appinfo>
+                                                      </xs:annotation>
+                                                   </xs:enumeration>
+                                                   <xs:enumeration value="complete">
+                                                      <xs:annotation>
+                                                         <xs:appinfo>complete interaction, e.g. a face to face conversation</xs:appinfo>
+                                                      </xs:annotation>
+                                                   </xs:enumeration>
+                                                   <xs:enumeration value="inapplicable">
+                                                      <xs:annotation>
+                                                         <xs:appinfo>this parameter is inappropriate or inapplicable in this case</xs:appinfo>
+                                                      </xs:annotation>
+                                                   </xs:enumeration>
+                                                </xs:restriction>
+                                             </xs:simpleType>
+                                          </xs:attribute>
+                                          <xs:attribute name="active" type="xs:string"/>
+                                          <xs:attribute name="passive" type="xs:string"/>
+                                       </xs:extension>
+                                    </xs:simpleContent>
+                                 </xs:complexType>
+                              </xs:element>
+                              <xs:element name="preparedness" minOccurs="0">
+                                 <xs:complexType>
+                                    <xs:simpleContent>
+                                       <xs:extension base="xs:string">
+                                          <xs:attribute name="type" type="xs:string"/>
+                                       </xs:extension>
+                                    </xs:simpleContent>
+                                 </xs:complexType>
+                              </xs:element>
+                              <xs:element name="purpose" minOccurs="0" maxOccurs="unbounded">
+                                 <xs:complexType>
+                                    <xs:simpleContent>
+                                       <xs:extension base="xs:string">
+                                          <xs:attribute name="type" type="xs:string"/>
+                                          <xs:attribute name="degree" type="xs:string"/>
+                                       </xs:extension>
+                                    </xs:simpleContent>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                           <xs:attribute name="ref" type="xs:IDREF"/>
+                           <xs:attribute name="n">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:string">
+                                    <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:attribute>
+                           <xs:attribute name="rend">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:string">
+                                    <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:attribute>
+                           <xs:attribute name="rendition" type="xs:anyURI"/>
+                        </xs:complexType>
+                     </xs:element>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+</xs:schema>

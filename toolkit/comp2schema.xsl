@@ -174,6 +174,7 @@
                     <xsl:apply-templates select="./CMD_Component"/>
                 </xs:sequence>
                 <xs:attribute name="ref" type="xs:IDREF"/>
+                <xsl:apply-templates select="./AttributeList/Attribute"/>
                 <xsl:if test="@ComponentId">
                     <xs:attribute name="ComponentId" type="xs:anyURI" fixed="{@ComponentId}"/>
                 </xsl:if>

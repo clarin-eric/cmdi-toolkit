@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="file:/home/dietuyt/svn/clarin/metadata/trunk/toolkit/components/tei/tei-textDesc-schema.xsd">
+    <Header></Header>
+    <Resources>
+        <ResourceProxyList></ResourceProxyList>
+        <JournalFileProxyList></JournalFileProxyList>
+        <ResourceRelationList></ResourceRelationList>
+    </Resources>
+    <Components>
+                 
+        <textDesc n="Informal_domestic_conversation">
+            <channel mode="s"></channel>
+            <constitution type="single"></constitution>
+            <derivation type="original"></derivation>
+            <domain type="domestic"></domain>
+            <factuality type="mixed"></factuality>
+            <interaction type="complete" active="plural" passive="many" ></interaction>
+            <purpose type="entertain" degree="high"></purpose>
+            <purpose type="inform" degree="medium"></purpose>
+        </textDesc>
+        
+    </Components>
+</CMD>

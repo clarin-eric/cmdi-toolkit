@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="file:/home/dietuyt/svn/clarin/metadata/trunk/toolkit/general-component-schema.xsd">
+    
+    <Header>
+        <ID>eu.clarin.tei.textDesc</ID>
+        <Name>TEI header Text Description</Name>
+        <Description>A component for the textDesc element in the TEI P5 header element. Please note
+            that because of the freedom provided by the TEI this module will generate compatible
+            descriptions, but not each existing TEI textDesc element will necessarily comply to it.</Description>
+    </Header>
+
+    <CMD_Component name="textDesc">
+        
+        <!-- attributes taken from http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.global.html -->
+        <AttributeList>
+            <Attribute>
+                <Name>n</Name>
+                <ValueScheme>
+                    <pattern>(\p{L}|\p{N}|\p{P}|\p{S})+</pattern>
+                </ValueScheme>
+            </Attribute>
+            <Attribute>
+                <Name>rend</Name>
+                <ValueScheme>
+                    <pattern>(\p{L}|\p{N}|\p{P}|\p{S})+</pattern>
+                </ValueScheme>
+            </Attribute>
+            <Attribute>
+                <Name>rendition</Name>
+                <Type>anyURI</Type>
+            </Attribute>
+        </AttributeList>
+    
+        <!-- correct link to (complex!) channel datcat??? -->
+        <CMD_Element name="channel" ValueScheme="string" CardinalityMin="0" ConceptLink="http://www.isocat.org/datcat/DC-2464">
+        <AttributeList>
+            <Attribute>
+                <Name>mode</Name>
+                <ValueScheme><enumeration>
+                    <item AppInfo="unknown or inapplicable [default]">x</item>
+                    <item AppInfo="spoken">s</item>
+                    <item AppInfo="written">w</item>
+                    <item AppInfo="spoken to be written, e.g. dictation">sw</item>
+                    <item AppInfo="written to be spoken, e.g. a script">ws</item>
+                    <item AppInfo="mixed">m</item>
+                </enumeration></ValueScheme>
+            </Attribute>
+        </AttributeList>
+    </CMD_Element>
+
+
+        <CMD_Element name="constitution" ValueScheme="string" CardinalityMin="0">
+            <AttributeList>
+                <Attribute>
+                    <Name>type</Name>
+                    <ValueScheme>
+                        <enumeration>
+                            <item AppInfo="a single complete text  [Default]">single</item>
+                            <item AppInfo="a text made by combining several smaller items, each individually complete">composite</item>
+                            <item AppInfo="(fragments) a text made by combining several smaller, not necessarily complete, items">frags</item>
+                            <item AppInfo="composition unknown or unspecified ">unknown</item>
+                        </enumeration>
+                    </ValueScheme>
+                </Attribute>
+            </AttributeList>
+        </CMD_Element>
+
+        <CMD_Element name="derivation" ValueScheme="string" CardinalityMin="0" ConceptLink="http://www.isocat.org/datcat/DC-2518">
+            <AttributeList>
+                <Attribute>
+                    <Name>type</Name>
+                    <Type>string</Type>
+                </Attribute>
+            </AttributeList>
+        </CMD_Element>
+
+        <CMD_Element name="domain" ValueScheme="string" CardinalityMin="0" ConceptLink="http://www.isocat.org/datcat/DC-2467">
+            <AttributeList>
+                <Attribute>
+                    <Name>type</Name>
+                    <Type>string</Type>
+                </Attribute>
+            </AttributeList>
+        </CMD_Element>
+
+        <CMD_Element name="factuality" ValueScheme="string" CardinalityMin="0">
+            <AttributeList>
+                <Attribute>
+                    <Name>type</Name>
+                    <ValueScheme>
+                        <enumeration>
+                            <item AppInfo="the text is to be regarded as entirely imaginative">fiction</item>
+                            <item AppInfo="the text is to be regarded as entirely informative or factual">fact</item>
+                            <item AppInfo="the text contains a mixture of fact and fiction">mixed</item>
+                            <item AppInfo="the fiction/fact distinction is not regarded as helpful or appropriate to this text ">inapplicable</item>
+                        </enumeration>
+                    </ValueScheme>
+                </Attribute>
+            </AttributeList>
+        </CMD_Element>
+
+        <CMD_Element name="interaction" ValueScheme="string" CardinalityMin="0">
+            <AttributeList>
+                <Attribute>
+                    <Name>type</Name>
+                    <ValueScheme>
+                        <enumeration>
+                            <item AppInfo="no interaction of any kind, e.g. a monologue">none</item>
+                            <item AppInfo="some degree of interaction, e.g. a monologue with set responses">partial</item>
+                            <item AppInfo="complete interaction, e.g. a face to face conversation">complete</item>
+                            <item AppInfo="this parameter is inappropriate or inapplicable in this case">inapplicable</item>
+                        </enumeration>
+                    </ValueScheme>
+                </Attribute>
+                <Attribute>
+                    <Name>active</Name>
+                    <Type>string</Type>
+                </Attribute>
+                <Attribute>
+                    <Name>passive</Name>
+                    <Type>string</Type>
+                </Attribute>
+            </AttributeList>
+        </CMD_Element>
+        
+        <CMD_Element name="preparedness" ValueScheme="string" CardinalityMin="0" >
+            <AttributeList>
+                <Attribute>
+                    <Name>type</Name>
+                    <Type>string</Type>
+                </Attribute>
+            </AttributeList>
+        </CMD_Element>
+        
+        <CMD_Element name="purpose" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded">
+            <AttributeList>
+                <Attribute>
+                    <Name>type</Name>
+                    <Type>string</Type>
+                </Attribute>
+                <Attribute>
+                    <Name>degree</Name>
+                    <Type>string</Type>
+                </Attribute>
+            </AttributeList>
+        </CMD_Element>
+
+    </CMD_Component>
+
+</CMD_ComponentSpec>

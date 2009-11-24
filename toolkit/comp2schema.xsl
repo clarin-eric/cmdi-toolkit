@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- 
-    $Rev$ 
-    $Date: 2009-10-26 17:46:27 +0100 (Mon, 26 Oct 2009) $ 
+    $Rev: 74 $ 
+    $Date$ 
 -->
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"

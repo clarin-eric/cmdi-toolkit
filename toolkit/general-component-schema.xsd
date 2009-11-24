@@ -21,7 +21,9 @@
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-                <xs:group ref="group"/>
+                <xs:element name="CMD_Component" type="CMD_Component_type" maxOccurs="unbounded"/>
+                <!-- changed: no CMD_Elements allowed anymore at the top level! 
+                    <xs:group ref="group"/> -->
             </xs:sequence>
             <xs:attribute name="isProfile" type="xs:boolean"/>
         </xs:complexType>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="file:/home/dietuyt/svn/clarin/metadata/trunk/toolkit/general-component-schema.xsd">
+    <Header>
+        <ID>eu.clarin.cmdi.continent</ID>
+        <Name>Continent</Name>
+        <Description>Component listing all continents using their ISO code</Description>
+    </Header>
+    <CMD_Component name="continent"  ConceptLink="http://www.isocat.org/datcat/DC-2531">
+        <CMD_Element name="code">
+            <ValueScheme>
+                <enumeration>
+                    <item AppInfo="Africa">AF</item>
+                    <item AppInfo="Asia">AS</item>
+                    <item AppInfo="Europe">EU</item>
+                    <item AppInfo="North America">NA</item>
+                    <item AppInfo="South America">SA</item>
+                    <item AppInfo="Oceania">OC</item>
+                    <item AppInfo="Antartica">AN</item>
+                </enumeration>
+            </ValueScheme>
+        </CMD_Element>
+    </CMD_Component>
+</CMD_ComponentSpec>

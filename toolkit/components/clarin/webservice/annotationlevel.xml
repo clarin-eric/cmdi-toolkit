@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../general-component-schema.xsd" isProfile="false">
+    <Header>
+        <ID>eu.clarin.cmdi.webservice.annotationlevel</ID>
+        <Name>Annotation Level</Name>
+        <Description>The AnnotationLevel component describes the characteristics of a specific annotation present in the resource.</Description>
+    </Header>
+    
+    <CMD_Component name="annotationLevel">
+                
+        <CMD_Element name="AnnotationLevelType" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2462"/>
+        <CMD_Element name="TagSet" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2497"/>
+        
+        <!-- include ISO 639-1 language codes -->
+        <CMD_Component filename="../iso-639-1.xml" name="TagSetLanguage" ConceptLink="http://www.isocat.org/datcat/DC-2498"/>
+                
+    </CMD_Component>
+</CMD_ComponentSpec>

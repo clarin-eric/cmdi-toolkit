@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../general-component-schema.xsd" isProfile="true">
+    <Header>
+        <ID>eu.clarin.cmdi.webservice.contentencoding</ID>
+        <Name>Content Encoding</Name>
+        <Description>The ContentEncoding component describes the content characteristics of a resource.  It consists of a URL (referring to the schema location), the resourceFormat and a list of AnnotationLevel elements which describe the specific annotation levels supported by the resource.</Description>
+    </Header>
+    
+    <CMD_Component name="contentEncoding">
+                
+        <CMD_Element name="URL" ValueScheme="anyURI" ConceptLink="http://www.isocat.org/datcat/DC-2546"/>
+        
+        <CMD_Element name="ResourceFormat" ValueScheme="string" />
+        
+        <CMD_Component filename="annotationlevel.xml" CardinalityMax="unbounded"/>
+        
+    </CMD_Component>
+</CMD_ComponentSpec>

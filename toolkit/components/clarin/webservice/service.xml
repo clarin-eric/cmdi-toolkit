@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../general-component-schema.xsd" isProfile="true">
+    <Header>
+        <ID>eu.clarin.cmdi.webservice</ID>
+        <Name>Web Service</Name>
+        <Description>The Service Component describes a service and its capabilities. The Service component for this proposal currently only covers the technical metadata required to support the process of profile matching and will need to be extended with descriptive components, like documentation, organizational information, contact etc intended for human end users.</Description>
+    </Header>
+    
+    <CMD_Component name="service">
+        <!--  the datcat mentioned in the document (DC-1971) is not intended for web services -->
+        <CMD_Element name="Type">
+            <ValueScheme>
+                <enumeration>
+                    <item>REST</item>
+                    <item>SOAP</item>
+                    <item>XML-RPC</item>
+                </enumeration>
+            </ValueScheme>
+        </CMD_Element>
+        <CMD_Element name="PersistentIdentifier" ValueScheme="anyURI" ConceptLink="http://www.isocat.org/datcat/DC-2573"/>
+        <CMD_Element name="ResourceName" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2544"/>
+        <CMD_Element name="URL" ValueScheme="anyURI" ConceptLink="http://www.isocat.org/datcat/DC-2546"/>
+        
+    <CMD_Component filename="operation.xml"/>
+    
+    </CMD_Component>
+</CMD_ComponentSpec>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../general-component-schema.xsd" isProfile="true">
+    <Header>
+        <ID>eu.clarin.cmdi.webservice.technicalmetadata</ID>
+        <Name>Technical Metadata</Name>
+        <Description>Technical metadata describes the technical characteristics of a resource or a service operation parameter. Its intended purpose is to capture technically relevant information in a uniform manner that is of relevance to the technical aspects of a resource needed for profile matching. </Description>
+    </Header>
+    
+    <CMD_Component name="technicalMetadata">
+                
+        <!-- todo: maybe provide a controlled vocabulary? -->
+        <CMD_Element name="CharacterEncoding" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2564"/>
+        
+        <CMD_Element name="AnnotationStandoff" ValueScheme="boolean" ConceptLink="http://www.isocat.org/datcat/DC-2507"/>
+        
+        <!-- todo: create Mimetype component based on http://www.iana.org/assignments/media-types -->
+        <CMD_Element name="MimeType" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2571"/>
+        
+        <!-- include ISO 639-3 language codes -->
+        <CMD_Component filename="../iso-639-3.xml" name="LanguageID"/>
+        
+        <CMD_Component filename="contentencoding.xml"/>
+        
+    </CMD_Component>
+</CMD_ComponentSpec>

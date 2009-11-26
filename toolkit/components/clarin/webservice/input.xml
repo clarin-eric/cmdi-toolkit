@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../general-component-schema.xsd" isProfile="true">
+    <Header>
+        <ID>eu.clarin.cmdi.webservice.input</ID>
+        <Name>Input</Name>
+        <Description>Input for an operation</Description>
+    </Header>
+    
+    <CMD_Component name="input">
+                
+        <CMD_Component filename="parameter.xml"/>
+                
+    </CMD_Component>
+</CMD_ComponentSpec>

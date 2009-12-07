@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="file:/home/dietuyt/svn/clarin/metadata/trunk/toolkit/general-component-schema.xsd">
+    <Header>
+        <ID>eu.clarin.cmdi.collection</ID>
+        <Name>Collection</Name>
+        <Description>A component for describing sets of metadata descriptions (e.g. a corpus)</Description>
+    </Header>
+    
+    <CMD_Component name="Collection">
+        <CMD_Element name="Name" ValueScheme="string"/>
+        <CMD_Element name="Description" ValueScheme="string"/>
+        <CMD_Element name="Design" ValueScheme="boolean"/>
+        <CMD_Element name="CollectionType" CardinalityMax="unbounded">
+            <ValueScheme>
+                <enumeration>
+                    <item>text</item>
+                    <item>picture</item>
+                    <item>video</item>
+                    <item>music</item>
+                    <item>various</item>
+                </enumeration>
+            </ValueScheme>
+        </CMD_Element>
+        <CMD_Element name="Modality" CardinalityMax="unbounded">
+            <ValueScheme>
+                <enumeration>
+                    <item>written</item>
+                    <item>oral</item>
+                    <item>gesture</item>
+                </enumeration>
+                </ValueScheme>
+        </CMD_Element>
+    </CMD_Component>
+
+</CMD_ComponentSpec>

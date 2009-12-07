@@ -4,26 +4,16 @@
     <Header>
         <ID>eu.clarin.cmdi.webservice.operation</ID>
         <Name>Operation</Name>
-        <Description></Description>
+        <Description>The Operation Component describes the metadata characteristics for an operation. Operation information, including input and output parameters, and  may initially be extracted from the WSDL or WADL file.</Description>
     </Header>
     
-    <CMD_Component name="service">
-        <!--  the datcat mentioned in the document (DC-1971) is not intended for web services -->
-        <CMD_Element name="Type">
-            <ValueScheme>
-                <enumeration>
-                    <item>REST</item>
-                    <item>SOAP</item>
-                    <item>XML-RPC</item>
-                </enumeration>
-            </ValueScheme>
-        </CMD_Element>
+    <CMD_Component name="operation">
         <CMD_Element name="PersistentIdentifier" ValueScheme="anyURI" ConceptLink="http://www.isocat.org/datcat/DC-2573"/>
-        <CMD_Element name="ResourceName" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2544"/>
-        <CMD_Element name="URL" ValueScheme="anyURI" ConceptLink="http://www.isocat.org/datcat/DC-2546"/>
+        <!-- missing datcat for name -->
+        <CMD_Element name="Name" ValueScheme="string" />
         
-        
-        <CMD_Component filename="operation.xml"/>
+        <CMD_Component filename="input.xml"/>
+        <CMD_Component filename="output.xml"/>
         
     </CMD_Component>
 </CMD_ComponentSpec>

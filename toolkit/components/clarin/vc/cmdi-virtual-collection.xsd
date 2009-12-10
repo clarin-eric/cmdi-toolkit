@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dcr="http://www.isocat.org">
+   <xs:simpleType name="simpletype-VirtualCollection-Status">
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="draft"/>
+         <xs:enumeration value="final"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="complextype-VirtualCollection-Status">
+      <xs:simpleContent>
+         <xs:extension base="simpletype-VirtualCollection-Status"/>
+      </xs:simpleContent>
+   </xs:complexType>
+   <xs:simpleType name="simpletype-VirtualCollection-Reproducability">
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="certain"/>
+         <xs:enumeration value="intended"/>
+         <xs:enumeration value="not intended"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="complextype-VirtualCollection-Reproducability">
+      <xs:simpleContent>
+         <xs:extension base="simpletype-VirtualCollection-Reproducability"/>
+      </xs:simpleContent>
+   </xs:complexType>
+   <xs:simpleType name="simpletype-VirtualCollection-Purpose">
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="research"/>
+         <xs:enumeration value="reference"/>
+         <xs:enumeration value="future use"/>
+         <xs:enumeration value="sample"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="complextype-VirtualCollection-Purpose">
+      <xs:simpleContent>
+         <xs:extension base="simpletype-VirtualCollection-Purpose"/>
+      </xs:simpleContent>
+   </xs:complexType>
+   <xs:element name="CMD">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="Header">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="MdCreator" type="xs:string" minOccurs="0"/>
+                     <xs:element name="MdCreationDate" type="xs:date" minOccurs="0"/>
+                     <xs:element name="MdSelfLink" type="xs:anyURI" minOccurs="0"/>
+                     <xs:element name="MdProfile" type="xs:anyURI" minOccurs="0"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element name="Resources">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="ResourceProxyList">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element maxOccurs="unbounded" minOccurs="0" name="ResourceProxy">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element maxOccurs="1" minOccurs="1" name="ResourceType">
+                                          <xs:simpleType>
+                                             <xs:restriction base="xs:string">
+                                                <xs:enumeration value="Metadata">
+                                                   <xs:annotation>
+                                                      <xs:documentation>The ResourceProxy
+                                                  refers to another component
+                                                  metadata instance (e.g. for
+                                                  grouping metadata descriptions
+                                                  into
+                                                  collections)</xs:documentation>
+                                                   </xs:annotation>
+                                                </xs:enumeration>
+                                                <xs:enumeration value="Resource">
+                                                   <xs:annotation>
+                                                      <xs:documentation>The ResourceProxy
+                                                  refers to a file that is not a
+                                                  metadata instance (e.g. a text
+                                                  document)</xs:documentation>
+                                                   </xs:annotation>
+                                                </xs:enumeration>
+                                             </xs:restriction>
+                                          </xs:simpleType>
+                                       </xs:element>
+                                       <xs:element maxOccurs="1" minOccurs="1" name="ResourceRef" type="xs:anyURI"/>
+                                    </xs:sequence>
+                                    <xs:attribute name="id" type="xs:ID" use="required"/>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+                     <xs:element name="JournalFileProxyList">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element maxOccurs="unbounded" minOccurs="0" name="JournalFileProxy">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element maxOccurs="1" minOccurs="1" name="JournalFileRef" type="xs:anyURI"/>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+                     <xs:element name="ResourceRelationList">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element maxOccurs="unbounded" minOccurs="0" name="ResourceRelation">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element maxOccurs="1" minOccurs="1" name="RelationType"/>
+                                       <xs:element maxOccurs="1" minOccurs="1" name="Res1">
+                                          <xs:complexType>
+                                             <xs:attribute name="ref" type="xs:IDREF"/>
+                                          </xs:complexType>
+                                       </xs:element>
+                                       <xs:element maxOccurs="1" minOccurs="1" name="Res2">
+                                          <xs:complexType>
+                                             <xs:attribute name="ref" type="xs:IDREF"/>
+                                          </xs:complexType>
+                                       </xs:element>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element name="Components">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="VirtualCollection">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element name="Name" type="xs:string"/>
+                              <xs:element name="Description" type="xs:string"/>
+                              <xs:element name="CreationDate" type="xs:date"/>
+                              <xs:element name="Status" type="complextype-VirtualCollection-Status"/>
+                              <xs:element name="Reproducability" type="complextype-VirtualCollection-Reproducability"/>
+                              <xs:element name="Purpose" type="complextype-VirtualCollection-Purpose"/>
+                              <xs:element name="ReproducabilityNotice" type="xs:string"/>
+                              <xs:element name="Origin" type="xs:string"/>
+                              <xs:element name="Creator">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element name="Name" type="xs:string"/>
+                                       <xs:element name="Email" type="xs:string"/>
+                                       <xs:element name="Organisation" type="xs:string"/>
+                                    </xs:sequence>
+                                    <xs:attribute name="ref" type="xs:IDREF"/>
+                                 </xs:complexType>
+                              </xs:element>
+                              <xs:element name="CopyOfResourceMetadata" minOccurs="0" maxOccurs="unbounded">
+                                 <xs:complexType>
+                                    <xs:sequence/>
+                                    <xs:attribute name="ref" type="xs:IDREF"/>
+                                 </xs:complexType>
+                              </xs:element>
+                              <xs:element name="GeneratedBy">
+                                 <xs:complexType>
+                                    <xs:sequence/>
+                                    <xs:attribute name="ref" type="xs:IDREF"/>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                           <xs:attribute name="ref" type="xs:IDREF"/>
+                        </xs:complexType>
+                     </xs:element>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+</xs:schema>

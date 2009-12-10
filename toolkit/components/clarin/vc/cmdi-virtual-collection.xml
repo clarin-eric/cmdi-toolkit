@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="file:/home/dietuyt/svn/clarin/metadata/trunk/toolkit/general-component-schema.xsd" isProfile="true">
+    <Header>
+        <ID>eu.clarin.cmdi.virtualcollection</ID>
+        <Name>Virtual Collection</Name>
+        <Description>A component for describing personalized sets of metadata descriptions</Description>
+    </Header>
+    
+    <CMD_Component name="VirtualCollection">
+        <CMD_Element name="Name" ValueScheme="string"/>
+        <CMD_Element name="Description" ValueScheme="string"/>
+        <CMD_Element name="CreationDate" ValueScheme="date"></CMD_Element>
+        <CMD_Element name="Status">
+            <ValueScheme>
+                <enumeration>
+                    <item>draft</item>
+                    <item>final</item>
+                </enumeration>
+            </ValueScheme>
+        </CMD_Element>
+        
+        <CMD_Element name="Reproducability">
+            <ValueScheme>
+                <enumeration>
+                    <item>certain</item>
+                    <item>intended</item>
+                    <item>not intended</item>
+                </enumeration>
+            </ValueScheme>
+        </CMD_Element>
+        
+        <CMD_Element name="Purpose">
+            <ValueScheme>
+                <enumeration>
+                    <item>research</item>
+                    <item>reference</item>
+                    <item>future use</item>
+                    <item>sample</item>
+                    <!-- to be extended -->
+                </enumeration>
+            </ValueScheme>
+        </CMD_Element>
+        
+        <!-- notice about removed elements for IPR reasons etc -->
+        <CMD_Element name="ReproducabilityNotice" ValueScheme="string"/>
+        
+        <!-- which tool has produced this virtual collection? -->
+        <CMD_Element name="Origin" ValueScheme="string"/>
+        
+        <CMD_Component name="Creator">
+            <CMD_Element name="Name" ValueScheme="string"></CMD_Element>
+            <CMD_Element name="Email" ValueScheme="string"></CMD_Element>
+            <CMD_Element name="Organisation" ValueScheme="string"></CMD_Element>
+        </CMD_Component>
+        
+        <!-- this links to the resourceproxy for the copied or imported metadata record that is used to describe a resource 
+        Note that this requires a ResourceRelation "isMetadataFor"  in the ResourceProxyList
+        -->
+        <CMD_Component name="CopyOfResourceMetadata"  CardinalityMin="0" CardinalityMax="unbounded"/>
+        
+        <!-- link to resourceproxy that links to a CMDI description of a query (for dynamic virtual collections) -->
+        <CMD_Component name="GeneratedBy"/>
+        
+    </CMD_Component>
+
+</CMD_ComponentSpec>

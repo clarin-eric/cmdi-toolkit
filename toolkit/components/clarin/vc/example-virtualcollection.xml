@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="cmdi-virtual-collection.xsd">
+    <Header></Header>
+    <Resources>
+        <ResourceProxyList>
+            
+            <!-- normal case: just a pointer to a metadata record -->
+            <ResourceProxy id="r1">
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef>http://hdl.handle.net/1839/00-0000-0000-0000-C523-5</ResourceRef>
+            </ResourceProxy>
+            
+            <!-- special case: a copy of the original record to ensure sustainability, marked by a CopyOfResourceMetadata component later on that refers to this id -->
+            <ResourceProxy id="r2">
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef>http://hdl.handle.net/1839/00-0000-0000-0005-671C-C</ResourceRef>
+            </ResourceProxy>
+            
+        </ResourceProxyList>
+        <JournalFileProxyList/>
+        <ResourceRelationList/>
+    </Resources>
+    <Components>
+        <VirtualCollection>
+            <Name>Sample VC</Name>
+            <Description>Just a test</Description>
+            <CreationDate>2009-12-10</CreationDate>
+            <Status>draft</Status>
+            <Reproducability>intended</Reproducability>
+            <Purpose>future use</Purpose>
+            <ReproducabilityNotice></ReproducabilityNotice>
+            <Origin></Origin>
+            <Creator>
+                <Name>Dieter</Name>
+                <Email>dieter.vanuytvanck@mpi.nl</Email>
+                <Organisation>CLARIN</Organisation>
+            </Creator>
+            
+            <!-- The element below indicates that the resourceProxy is a copy of an existing metadata record, just to make sure it is always available in its current version -->
+            <CopyOfResourceMetadata ref="r2"/>
+                
+            <GeneratedBy/>
+            
+        </VirtualCollection>
+    </Components>
+</CMD>

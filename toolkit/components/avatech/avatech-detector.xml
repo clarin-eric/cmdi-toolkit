@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../general-component-schema.xsd" isProfile="true">
+    <Header>
+        <ID>avatech.detector</ID>
+        <Name>AVATECH detector</Name>
+        <Description>See: http://avatech.mpi.nl/avatech/</Description>
+    </Header>
+    <CMD_Component name="DETECTOR">
+        
+        <CMD_Element name="detector" ValueScheme="string">
+            <AttributeList>
+                <Attribute >
+                    <Name>runLinux</Name>
+                    <Type>string</Type>
+                </Attribute>
+                <Attribute >
+                    <Name>runMac</Name>
+                    <Type>string</Type>
+                </Attribute>
+                <Attribute >
+                    <Name>runWin</Name>
+                    <Type>string</Type>
+                </Attribute>
+                <Attribute >
+                    <Name>info</Name>
+                    <Type>string</Type>
+                </Attribute>
+            </AttributeList>
+        </CMD_Element>
+        
+        <CMD_Element name="numparam" CardinalityMin="0" CardinalityMax="unbounded" ValueScheme="string">
+            <AttributeList>
+                <Attribute >
+                    <Name>min</Name>
+                    <Type>float</Type>
+                </Attribute>
+                <Attribute >
+                    <Name>max</Name>
+                    <Type>float</Type>
+                </Attribute>
+                <Attribute >
+                    <Name>default</Name>
+                    <Type>float</Type>
+                </Attribute>
+                <Attribute >
+                    <Name>info</Name>
+                    <Type>string</Type>
+                </Attribute>
+            </AttributeList>
+        </CMD_Element>
+        
+        <CMD_Element name="textparam" CardinalityMin="0" CardinalityMax="unbounded" ValueScheme="string">
+            <AttributeList>
+                <Attribute >
+                    <Name>convoc</Name>
+                    <Type>string</Type>
+                </Attribute>
+                <Attribute >
+                    <Name>default</Name>
+                    <Type>string</Type>
+                </Attribute>
+                <Attribute >
+                    <Name>info</Name>
+                    <Type>string</Type>
+                </Attribute>
+            </AttributeList>
+        </CMD_Element>
+        
+        <CMD_Element name="input" CardinalityMax="unbounded" ValueScheme="string">
+            <AttributeList>
+                <Attribute >
+                    <Name>type</Name>
+                    <Type>string</Type>
+                </Attribute>
+                <Attribute >
+                    <Name>optional</Name>
+                    <Type>boolean</Type>
+                </Attribute>
+                <Attribute >
+                    <Name>info</Name>
+                    <Type>string</Type>
+                </Attribute>
+            </AttributeList>
+        </CMD_Element>
+    
+        <CMD_Element name="output" CardinalityMax="unbounded" ValueScheme="string">
+            <AttributeList>
+                <Attribute >
+                    <Name>type</Name>
+                    <Type>string</Type>
+                </Attribute>
+                <Attribute >
+                    <Name>optional</Name>
+                    <Type>boolean</Type>
+                </Attribute>
+                <Attribute >
+                    <Name>info</Name>
+                    <Type>string</Type>
+                </Attribute>
+            </AttributeList>
+        </CMD_Element>
+    
+    </CMD_Component>
+</CMD_ComponentSpec>

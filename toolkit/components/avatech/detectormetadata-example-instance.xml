@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="file:/home/dietuyt/svn/clarin/metadata/trunk/toolkit/components/avatech/avatech-detector.xsd">
+    <Header></Header>
+    <Resources>
+        <ResourceProxyList></ResourceProxyList>
+        <JournalFileProxyList></JournalFileProxyList>
+        <ResourceRelationList></ResourceRelationList>
+    </Resources>
+    <Components>
+        <DETECTOR>
+            <detector runLinux="PitchPraat.sh" runMac="PitchPraat.sh" runWin="PP.bat"
+                info="Tag vowels (volume peaks of voiced timespans)">TagVowels</detector>
+            <numparam min="150" max="1500" default="550"
+                info="Pitch ceiling [Hz], eg. 300 male / 550 female">max_f0</numparam>
+            <numparam min="0.5" max="5.0" default="2.0"
+                info="Intensity change [dB] to start/end a peak">epsilon</numparam>
+            <numparam min="0.01" max="0.3" default="0.03"
+                info="Minimum amplitude (0..1) for pitch analysis">vol_threshold</numparam>
+            <numparam min="0.2" max="0.8" default="0.45"
+                info="Minimum voicing of voiced timespans">voicedness_threshold</numparam>
+            <!-- NOTE: If convoc is empty, any text can be entered -->
+            <textparam convoc="true false" default="false"
+                info="Set to true to get debug output">debug</textparam>
+            <!-- NOTE: Type could also be one of: video / tier / timeseries -->
+            <!-- NOTE: Input is passed as filename (tier/timeseries: CSV files) -->
+            <input type="audio" optional="false"
+                info="Mono or stereo WAV to scan">source</input>
+            <!-- NOTE: A detector could use this to override own analysis -->
+            <input type="timeseries" optional="true"
+                info="Pre-made time, pitch[Hz], volume[dB] CSV">pitch_in</input>
+            <!-- NOTE: timeseries format: CSV with msec time, data[, data...] -->
+            <!-- NOTE: Making output items optional can save time or space -->
+            <output type="timeseries" optional="true"
+                info="Pitch (or undefined) and volume, 100 samples/s">pitch_out</output>
+            <!-- NOTE: Can we bundle tiers in one output file? -->
+            <output type="tier" optional="false"
+                info="Vowel segments and their average f0 [Hz]">vowel_f0</output>
+            <output type="tier" optional="false"
+                info="Vowel segments and their average intensity [db]">vowel_db</output>
+            <!-- ... several other tiers omitted for this example ... -->
+            <!-- NOTE: tier format: CSV with msec start, end, content -->
+        </DETECTOR>
+    </Components>
+</CMD>

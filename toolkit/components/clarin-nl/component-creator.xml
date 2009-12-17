@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="file:/C:/Metadataproject/TOOLKIT/general-component-schema.xsd">
+    <Header></Header>
+    <CMD_Component name="Creator">
+        <CMD_Element name="Role" CardinalityMin="0" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2513"></CMD_Element>
+        <CMD_Component filename="component-contactcreator.xml"></CMD_Component>
+    </CMD_Component>    
+</CMD_ComponentSpec>

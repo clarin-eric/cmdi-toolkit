@@ -138,7 +138,16 @@
                                  <xs:complexType>
                                     <xs:simpleContent>
                                        <xs:extension base="xs:string">
-                                          <xs:attribute name="type" type="xs:string"/>
+                                          <xs:attribute name="type">
+                                             <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                   <xs:enumeration value="audio"/>
+                                                   <xs:enumeration value="video"/>
+                                                   <xs:enumeration value="tier"/>
+                                                   <xs:enumeration value="timeseries"/>
+                                                </xs:restriction>
+                                             </xs:simpleType>
+                                          </xs:attribute>
                                           <xs:attribute name="optional" type="xs:boolean"/>
                                           <xs:attribute name="info" type="xs:string"/>
                                        </xs:extension>
@@ -149,7 +158,16 @@
                                  <xs:complexType>
                                     <xs:simpleContent>
                                        <xs:extension base="xs:string">
-                                          <xs:attribute name="type" type="xs:string"/>
+                                          <xs:attribute name="type">
+                                             <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                   <xs:enumeration value="audio"/>
+                                                   <xs:enumeration value="video"/>
+                                                   <xs:enumeration value="tier"/>
+                                                   <xs:enumeration value="timeseries"/>
+                                                </xs:restriction>
+                                             </xs:simpleType>
+                                          </xs:attribute>
                                           <xs:attribute name="optional" type="xs:boolean"/>
                                           <xs:attribute name="info" type="xs:string"/>
                                        </xs:extension>

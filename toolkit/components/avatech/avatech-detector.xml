@@ -22,7 +22,7 @@
                     <Name>runWin</Name>
                     <Type>string</Type>
                 </Attribute>
-                <Attribute >
+                <Attribute>
                     <Name>info</Name>
                     <Type>string</Type>
                 </Attribute>
@@ -31,7 +31,7 @@
         
         <CMD_Element name="numparam" CardinalityMin="0" CardinalityMax="unbounded" ValueScheme="string">
             <AttributeList>
-                <Attribute >
+                <Attribute>
                     <Name>min</Name>
                     <Type>float</Type>
                 </Attribute>
@@ -71,7 +71,14 @@
             <AttributeList>
                 <Attribute >
                     <Name>type</Name>
-                    <Type>string</Type>
+                    <ValueScheme>
+                        <enumeration>
+                            <item>audio</item>
+                            <item>video</item>
+                            <item>tier</item>
+                            <item>timeseries</item>
+                        </enumeration>
+                    </ValueScheme>
                 </Attribute>
                 <Attribute >
                     <Name>optional</Name>
@@ -88,7 +95,14 @@
             <AttributeList>
                 <Attribute >
                     <Name>type</Name>
-                    <Type>string</Type>
+                    <ValueScheme>
+                        <enumeration>
+                            <item>audio</item>
+                            <item>video</item>
+                            <item>tier</item>
+                            <item>timeseries</item>
+                        </enumeration>
+                        </ValueScheme>
                 </Attribute>
                 <Attribute >
                     <Name>optional</Name>

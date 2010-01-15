@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="file:../../general-component-schema.xsd" isProfile="true">
+    <Header>
+        <ID>eu.clarin.cmdi.collection</ID>
+        <Name>Collection</Name>
+        <Description>A component for describing sets of resources. Can also recursively point to other collections.</Description>
+    </Header>
+    
+    <CMD_Component name="Collection">
+        <CMD_Element name="Name" ValueScheme="string" CardinalityMax="unbounded"/>
+        <CMD_Element name="Description" ValueScheme="string"/>
+        <CMD_Element name="CollectionType" CardinalityMax="unbounded">
+            <ValueScheme>
+                <enumeration>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2658">text</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2655">picture</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2654">video</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2653">audio</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2599">other</item>
+                </enumeration>
+            </ValueScheme>
+        </CMD_Element>
+        <CMD_Element name="Modality" CardinalityMax="unbounded">
+            <ValueScheme>
+                <enumeration>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2591">Unknown</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2592">Unspecified</item>
+                    <item >speech</item>
+                    <item>writing</item>
+                    <item>music notation</item>
+                    <item>gestures</item>
+                    <item>pointing-gestures</item>
+                    <item>signs</item>
+                    <item>eye-gaze</item>
+                    <item>facial-expressions</item>
+                    <item>emotional-state</item>
+                    <item>haptic</item>
+                    <item>song</item>
+                    <item>instrumental music</item>
+                </enumeration>
+                </ValueScheme>
+        </CMD_Element>
+    </CMD_Component>
+    
+    <CMD_Component name="IsPartOf">
+        <CMD_Element name="IsPartOf" CardinalityMin="0" CardinalityMax="unbounded" ValueScheme="anyURI"/>
+    </CMD_Component>
+
+</CMD_ComponentSpec>

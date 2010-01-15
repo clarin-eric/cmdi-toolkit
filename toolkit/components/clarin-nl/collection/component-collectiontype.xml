@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="file:/C:/Metadataproject/TOOLKIT/general-component-schema.xsd">
+    <Header></Header>
+    <CMD_Component name="CollectionType">
+        <CMD_Element name="CollectionType">
+            <ValueScheme>
+                <enumeration>
+                    <item>corpus</item>
+                    <item>database</item>
+                    <!-- This enumeration is not yet completed -->
+                </enumeration>
+            </ValueScheme>
+        </CMD_Element>
+    <CMD_Component name="CollectionSubtype">
+        <CMD_Element name="Linguality">
+            <ValueScheme>
+                <enumeration>
+                    <item>Monolingual</item>
+                    <item>Bilingual</item>
+                    <item>Multilingual</item>
+                    <item>NAP</item>
+                </enumeration>
+            </ValueScheme>
+        </CMD_Element>
+        <CMD_Element name="Source">
+            <ValueScheme>
+                <enumeration>
+                    <item>Written</item>
+                    <item>Spoken</item>
+                    <item>Written/Spoken</item>
+                    <item>NAP</item>
+                </enumeration>
+            </ValueScheme>
+        </CMD_Element>
+    </CMD_Component>
+    </CMD_Component>
+</CMD_ComponentSpec>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="file:/home/dietuyt/svn/clarin/metadata/trunk/toolkit/general-component-schema.xsd">
+    <Header>
+        <ID>eu.clarin.cmdi.language</ID>
+        <Name>Language</Name>
+        <Description>Component for describing a certain language (free name, ISO-639-3 code)</Description>
+    </Header>
+
+    <CMD_Component name="language">
+        
+        <CMD_Element name="languageName" CardinalityMin="0" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2484"/>
+        
+        <!-- include language codes -->
+        <CMD_Component filename="iso-639-3.xml" CardinalityMin="0"/>
+        
+    </CMD_Component>
+
+</CMD_ComponentSpec>

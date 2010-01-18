@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="file:/C:/Metadataproject/TOOLKIT/general-component-schema.xsd">
-    <Header></Header>
-    <CMD_Component name="Creators" CardinalityMin="0" CardinalityMax="unbounded">
-        <CMD_Component filename="component-creator.xml"> </CMD_Component>
-    </CMD_Component>
-</CMD_ComponentSpec>

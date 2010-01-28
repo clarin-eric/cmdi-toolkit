@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="file:/C:/Metadataproject/TOOLKIT/general-component-schema.xsd">
+    xsi:noNamespaceSchemaLocation="file:/C:/Metadataproject/TOOLKIT/general-component-schema.xsd" isProfile="false">
     <Header></Header>
     <CMD_Component name="SizePerLanguage" ConceptLink="http://www.isocat.org/datcat/DC-2581">
         <CMD_Element name="Number" ValueScheme="decimal"  ConceptLink="http://www.isocat.org/datcat/DC-2580"></CMD_Element>
         <!-- Unit can be hours, sessions, texts, words, lemmas, videos, phrases,... -->
         <CMD_Element name="SizeUnit" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2583"></CMD_Element>
-        <CMD_Component filename="cmdi-language.xml" CardinalityMin="0" CardinalityMax="unbounded"></CMD_Component>
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin/cmdi-language.xml" CardinalityMin="0" CardinalityMax="unbounded"></CMD_Component>
     </CMD_Component>
 </CMD_ComponentSpec>

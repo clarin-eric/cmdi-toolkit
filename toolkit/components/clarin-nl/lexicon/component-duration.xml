@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="file:/C:/Metadataproject/TOOLKIT/general-component-schema.xsd">
+    xsi:noNamespaceSchemaLocation="file:/C:/Metadataproject/TOOLKIT/general-component-schema.xsd" isProfile="false">
     <Header></Header>
     <CMD_Component name="Duration" CardinalityMin="0" CardinalityMax="1">
         <CMD_Element name="StartYear" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2539"> </CMD_Element>

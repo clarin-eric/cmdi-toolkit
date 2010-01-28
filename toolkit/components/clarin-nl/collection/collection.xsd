@@ -119521,8 +119521,11 @@
    </xs:complexType>
    <xs:simpleType name="simpletype-Collection-CollectionType-CollectionType">
       <xs:restriction base="xs:string">
-         <xs:enumeration value="corpus"/>
-         <xs:enumeration value="database"/>
+         <xs:enumeration value="text" dcr:datcat="http://www.isocat.org/datcat/DC-2658"/>
+         <xs:enumeration value="picture" dcr:datcat="http://www.isocat.org/datcat/DC-2655"/>
+         <xs:enumeration value="video" dcr:datcat="http://www.isocat.org/datcat/DC-2654"/>
+         <xs:enumeration value="audio" dcr:datcat="http://www.isocat.org/datcat/DC-2653"/>
+         <xs:enumeration value="other" dcr:datcat="http://www.isocat.org/datcat/DC-2599"/>
       </xs:restriction>
    </xs:simpleType>
    <xs:complexType name="complextype-Collection-CollectionType-CollectionType">
@@ -119530,30 +119533,27 @@
          <xs:extension base="simpletype-Collection-CollectionType-CollectionType"/>
       </xs:simpleContent>
    </xs:complexType>
-   <xs:simpleType name="simpletype-Collection-CollectionType-CollectionSubtype-Linguality">
+   <xs:simpleType name="simpletype-Collection-CollectionModality-Modality">
       <xs:restriction base="xs:string">
-         <xs:enumeration value="Monolingual"/>
-         <xs:enumeration value="Bilingual"/>
-         <xs:enumeration value="Multilingual"/>
-         <xs:enumeration value="NAP"/>
+         <xs:enumeration value="Unknown" dcr:datcat="http://www.isocat.org/datcat/DC-2591"/>
+         <xs:enumeration value="Unspecified" dcr:datcat="http://www.isocat.org/datcat/DC-2592"/>
+         <xs:enumeration value="speech"/>
+         <xs:enumeration value="writing"/>
+         <xs:enumeration value="music notation"/>
+         <xs:enumeration value="gestures"/>
+         <xs:enumeration value="pointing-gestures"/>
+         <xs:enumeration value="signs"/>
+         <xs:enumeration value="eye-gaze"/>
+         <xs:enumeration value="facial-expressions"/>
+         <xs:enumeration value="emotional-state"/>
+         <xs:enumeration value="haptic"/>
+         <xs:enumeration value="song"/>
+         <xs:enumeration value="instrumental music"/>
       </xs:restriction>
    </xs:simpleType>
-   <xs:complexType name="complextype-Collection-CollectionType-CollectionSubtype-Linguality">
+   <xs:complexType name="complextype-Collection-CollectionModality-Modality">
       <xs:simpleContent>
-         <xs:extension base="simpletype-Collection-CollectionType-CollectionSubtype-Linguality"/>
-      </xs:simpleContent>
-   </xs:complexType>
-   <xs:simpleType name="simpletype-Collection-CollectionType-CollectionSubtype-Source">
-      <xs:restriction base="xs:string">
-         <xs:enumeration value="Written"/>
-         <xs:enumeration value="Spoken"/>
-         <xs:enumeration value="Written/Spoken"/>
-         <xs:enumeration value="NAP"/>
-      </xs:restriction>
-   </xs:simpleType>
-   <xs:complexType name="complextype-Collection-CollectionType-CollectionSubtype-Source">
-      <xs:simpleContent>
-         <xs:extension base="simpletype-Collection-CollectionType-CollectionSubtype-Source"/>
+         <xs:extension base="simpletype-Collection-CollectionModality-Modality"/>
       </xs:simpleContent>
    </xs:complexType>
    <xs:simpleType name="simpletype-Collection-Validation-Validation">
@@ -119897,19 +119897,17 @@
                               <xs:element name="CollectionType">
                                  <xs:complexType>
                                     <xs:sequence>
-                                       <xs:element name="CollectionType"
+                                       <xs:element name="CollectionType" maxOccurs="unbounded"
                                                    type="complextype-Collection-CollectionType-CollectionType"/>
-                                       <xs:element name="CollectionSubtype">
-                                          <xs:complexType>
-                                             <xs:sequence>
-                                                <xs:element name="Linguality"
-                                                            type="complextype-Collection-CollectionType-CollectionSubtype-Linguality"/>
-                                                <xs:element name="Source"
-                                                            type="complextype-Collection-CollectionType-CollectionSubtype-Source"/>
-                                             </xs:sequence>
-                                             <xs:attribute name="ref" type="xs:IDREF"/>
-                                          </xs:complexType>
-                                       </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="ref" type="xs:IDREF"/>
+                                 </xs:complexType>
+                              </xs:element>
+                              <xs:element name="CollectionModality">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element name="Modality" maxOccurs="unbounded"
+                                                   type="complextype-Collection-CollectionModality-Modality"/>
                                     </xs:sequence>
                                     <xs:attribute name="ref" type="xs:IDREF"/>
                                  </xs:complexType>
@@ -119963,6 +119961,14 @@
                                                    dcr:datcat="http://www.isocat.org/datcat/DC-2586"/>
                                        <xs:element name="ValidationLevel" type="xs:string"
                                                    dcr:datcat="http://www.isocat.org/datcat/DC-2587"/>
+                                    </xs:sequence>
+                                    <xs:attribute name="ref" type="xs:IDREF"/>
+                                 </xs:complexType>
+                              </xs:element>
+                              <xs:element name="IsPartOf">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element name="IsPartOf" minOccurs="0" maxOccurs="unbounded" type="xs:anyURI"/>
                                     </xs:sequence>
                                     <xs:attribute name="ref" type="xs:IDREF"/>
                                  </xs:complexType>

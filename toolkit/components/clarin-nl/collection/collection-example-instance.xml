@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="collection.xsd">
+    xsi:noNamespaceSchemaLocation="file:/home/dietuyt/svn/clarin/metadata/trunk/toolkit/components/clarin-nl/collection/collection.xsd">
     <Header></Header>
     <Resources>
         <ResourceProxyList></ResourceProxyList>
@@ -17,11 +17,11 @@
             <Description></Description>
             <Size>
                 <TotalSize>
-                    <Number>1</Number>
+                    <Number></Number>
                     <SizeUnit></SizeUnit>
                 </TotalSize>
                 <SizePerLanguage>
-                    <Number>1</Number>
+                    <Number></Number>
                     <SizeUnit></SizeUnit>
                 </SizePerLanguage>
             </Size>
@@ -33,12 +33,12 @@
             <DocumentLanguages></DocumentLanguages>
             <location></location>
             <CollectionType>
-                <CollectionType>corpus</CollectionType>
-                <CollectionSubtype>
-                    <Linguality>Bilingual</Linguality>
-                    <Source>Spoken</Source>
-                </CollectionSubtype>
+                <CollectionType>picture</CollectionType>
             </CollectionType>
+            <CollectionModality>
+                <Modality>emotional-state</Modality>
+                <Modality>gestures</Modality>
+            </CollectionModality>
             <Access>
                 <Availability></Availability>
                 <CatalogueLink></CatalogueLink>
@@ -47,11 +47,12 @@
                 </Contact>
             </Access>
             <Validation>
-                <Validation>Not validated</Validation>
+                <Validation>Validated</Validation>
                 <ValidationType></ValidationType>
                 <ValidationMode></ValidationMode>
                 <ValidationLevel></ValidationLevel>
             </Validation>
+            <IsPartOf></IsPartOf>
         </Collection>
     </Components>
 </CMD>

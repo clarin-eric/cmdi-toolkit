@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="file:/C:/Metadataproject/TOOLKIT/general-component-schema.xsd">
+    xsi:noNamespaceSchemaLocation="file:/C:/Metadataproject/TOOLKIT/general-component-schema.xsd" isProfile="false">
     <Header></Header>
     <CMD_Component name="Access" CardinalityMin="1" CardinalityMax="unbounded">
         <CMD_Element name="Availability" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" ConceptLink="http://www.isocat.org/datcat/DC-2453/" />

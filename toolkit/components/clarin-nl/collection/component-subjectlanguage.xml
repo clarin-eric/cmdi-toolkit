@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/general-component-schema.xsd">
+    xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/general-component-schema.xsd" isProfile="false">
     <Header></Header>
     <CMD_Component name="SubjectLanguage" CardinalityMin="1" CardinalityMax="unbounded">
         <CMD_Element name="Dominant" CardinalityMin="0" CardinalityMax="unbounded" ConceptLink="http://www.isocat.org/datcat/DC-2468">

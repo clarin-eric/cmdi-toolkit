@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/general-component-schema.xsd"> 
+    <Header>
+        <ID></ID>
+        <Name>Speech Technical Metadata</Name>
+        <Description>Speech Technical Metadata component</Description>
+    </Header>
+    
+        <!-- in aparte file zetten en includen! + evt splitsen in verschillende (zie Daan) -->
+        <CMD_Component name="SpeechTechnicalMetadata" CardinalityMin="0" CardinalityMax="unbounded">
+
+            <CMD_Element name="SamplingFrequency" ValueScheme="decimal"/>
+            <CMD_Element name="NumberOfChannels" ValueScheme="decimal"/>
+            <CMD_Element name="ByteOrder">
+                <ValueScheme>
+                    <enumeration>
+                        <item>big endian</item>
+                        <item>little endian</item>
+                    </enumeration>
+                </ValueScheme>
+            </CMD_Element>
+            <CMD_Element name="Compression">
+                <ValueScheme>
+                    <enumeration>
+                        <item>none</item>
+                        <item>lossless</item>
+                        <item>lossy</item>
+                    </enumeration>
+                </ValueScheme>
+            </CMD_Element>
+            <CMD_Element name="BitResolution" ValueScheme="decimal"/>
+           
+            <!-- TODO: create mimetype component -->
+            <!--<CMD_Component name="mimetype"/>-->
+
+        </CMD_Component>
+
+        
+</CMD_ComponentSpec>

@@ -2,7 +2,7 @@
 <CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/general-component-schema.xsd" isProfile="false">
     <Header/>
-    <CMD_Component name="CollectionModality">
+    <CMD_Component name="CorpusModality">
 
         <CMD_Element name="Modality" CardinalityMax="unbounded">
             <ValueScheme>

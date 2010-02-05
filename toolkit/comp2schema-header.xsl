@@ -101,6 +101,16 @@
                             </xs:sequence>
                         </xs:complexType>
                     </xs:element>
+                    
+                    <xs:element minOccurs="0" name="IsPartOfList">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element maxOccurs="unbounded" minOccurs="0"
+                                    name="IsPartOf" type="xs:anyURI"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    
                 </xs:sequence>
             </xs:complexType>
         </xs:element>

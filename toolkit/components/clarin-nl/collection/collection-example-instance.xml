@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="file:/home/dietuyt/svn/clarin/metadata/trunk/toolkit/components/clarin-nl/collection/collection.xsd">
+    xsi:noNamespaceSchemaLocation="collection.xsd">
     <Header></Header>
     <Resources>
         <ResourceProxyList></ResourceProxyList>
         <JournalFileProxyList></JournalFileProxyList>
         <ResourceRelationList></ResourceRelationList>
+        <IsPartOfList></IsPartOfList>
     </Resources>
     <Components>
         <Collection>
@@ -15,30 +16,13 @@
             <Version></Version>
             <TimeCoverage></TimeCoverage>
             <Description></Description>
-            <Size>
-                <TotalSize>
-                    <Number></Number>
-                    <SizeUnit></SizeUnit>
-                </TotalSize>
-                <SizePerLanguage>
-                    <Number></Number>
-                    <SizeUnit></SizeUnit>
-                </SizePerLanguage>
-            </Size>
-            <SubjectLanguages>
-                <SubjectLanguage>
-                    <language></language>
-                </SubjectLanguage>
-            </SubjectLanguages>
-            <DocumentLanguages></DocumentLanguages>
-            <location></location>
+            <DocumentationLanguages></DocumentationLanguages>
+            <OriginLocation>
+                <location></location>
+            </OriginLocation>
             <CollectionType>
-                <CollectionType>picture</CollectionType>
+                <CollectionType>audio</CollectionType>
             </CollectionType>
-            <CollectionModality>
-                <Modality>emotional-state</Modality>
-                <Modality>gestures</Modality>
-            </CollectionModality>
             <Access>
                 <Availability></Availability>
                 <CatalogueLink></CatalogueLink>
@@ -47,12 +31,11 @@
                 </Contact>
             </Access>
             <Validation>
-                <Validation>Validated</Validation>
+                <Validation>Not validated</Validation>
                 <ValidationType></ValidationType>
                 <ValidationMode></ValidationMode>
                 <ValidationLevel></ValidationLevel>
             </Validation>
-            <IsPartOf></IsPartOf>
         </Collection>
     </Components>
 </CMD>

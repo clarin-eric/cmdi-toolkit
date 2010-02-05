@@ -23,9 +23,7 @@
         <CMD_Component filename="component-project.xml"></CMD_Component>
         <CMD_Component filename="component-creators.xml"></CMD_Component>
         
-        
-        <!-- wordt documentationlanguages -->
-        <CMD_Component filename="component-documentlanguages.xml"></CMD_Component>
+        <CMD_Component filename="component-documentationlanguages.xml"></CMD_Component>
         
         <CMD_Component name="OriginLocation">
             <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin/cmdi-location.xml"/>
@@ -34,16 +32,17 @@
         <CMD_Component filename="component-collectiontype.xml"></CMD_Component>
         
         <!-- gaat naar corpus en wordt corpusmodality -->
-        <CMD_Component filename="component-collectionmodality.xml"></CMD_Component>
+        <!--<CMD_Component filename="component-collectionmodality.xml"></CMD_Component>-->
         
         <CMD_Component filename="component-access.xml"></CMD_Component>   
         
         <!-- naar corpus -->
         <CMD_Component filename="component-validation.xml"></CMD_Component>
         
-        <CMD_Component name="IsPartOf">
+        <!-- naar header -->
+        <!--<CMD_Component name="IsPartOf">
             <CMD_Element name="IsPartOf" CardinalityMin="0" CardinalityMax="unbounded" ValueScheme="anyURI"/>
-        </CMD_Component>
+        </CMD_Component>-->
     
     </CMD_Component>
 </CMD_ComponentSpec>

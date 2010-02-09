@@ -19,12 +19,10 @@
         <!-- eg a corpus of travel planning prompts  -->
         <CMD_Element name="Topic" CardinalityMin="0" CardinalityMax="unbounded" ValueScheme="string"/>
         
-        <CMD_Component filename="component-size.xml"></CMD_Component>
-        <CMD_Component filename="component-subjectlanguages.xml"></CMD_Component>
-    
-        <!-- wordt documentationlanguages -->
-        <CMD_Component filename="component-documentationlanguages.xml"></CMD_Component>
-        <!--<CMD_Component filename="component-access.xml"></CMD_Component>-->
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/component-size.xml"/>
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/component-subjectlanguages.xml"/>
+        <CMD_Component filename="component-corpusmodality.xml"/>
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/component-validation.xml"/>
                 
     </CMD_Component>
 </CMD_ComponentSpec>

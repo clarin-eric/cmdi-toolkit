@@ -14,7 +14,7 @@
         <!-- in aparte file zetten en includen!  -->
         <CMD_Component filename="cmdi-text-technical.xml"/>
         
-        <CMD_Component filename="component-validation.xml"/>
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/component-validation.xml"/>
         
     </CMD_Component>
 

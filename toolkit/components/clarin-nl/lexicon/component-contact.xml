@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/general-component-schema.xsd"
+                   isProfile="false">
+    <Header/>
+    <CMD_Component name="Contact" CardinalityMin="1" CardinalityMax="unbounded">
+        <!-- Conceptlink only refers to the name of the person that can be contacted to get access to the resource -->
+        <CMD_Element name="Name" CardinalityMin="0" CardinalityMax="unbounded" ValueScheme="string"
+                   ConceptLink="http://www.isocat.org/datcat/DC-2454"/>
+        <CMD_Element name="Address" CardinalityMin="0" CardinalityMax="unbounded"
+                   ValueScheme="string"
+                   ConceptLink="http://www.isocat.org/datcat/DC-2505"/>
+        <CMD_Element name="Email" ValueScheme="string"
+                   ConceptLink="http://www.isocat.org/datcat/DC-2521"/>
+        <!-- Conceptlink only refers to the organization that was leading the creation project or that is responsible for accessing the resource -->
+        <CMD_Element name="Organisation" ValueScheme="string"
+                   ConceptLink="http://www.isocat.org/datcat/DC-2459"/>
+        <CMD_Element name="Telephone" CardinalityMin="0" CardinalityMax="unbounded"
+                   ValueScheme="string"/>
+    </CMD_Component>
+</CMD_ComponentSpec>

@@ -9,6 +9,6 @@
         <!-- Unit can be hours, sessions, texts, words, lemmas, videos, phrases,... -->
         <CMD_Element name="SizeUnit" ValueScheme="string"
                    ConceptLink="http://www.isocat.org/datcat/DC-2583"/>
-        <CMD_Component filename="cmdi-language.xml" CardinalityMin="0" CardinalityMax="unbounded"/>
+               <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin/cmdi-language.xml" CardinalityMin="0" CardinalityMax="unbounded"/>
     </CMD_Component>
 </CMD_ComponentSpec>

@@ -1,4 +1,0 @@
-- van CollectionType gewoon Type of MaterialType maken? Dan is het herbruikbaar voor lexicon
- anders wordt het LexiconType met bijna dezelfde inhoud
-- wat te doen met bijv. multi-word expressions? missch toch LexiconType? onderscheid
- woordenlijst/woordenboek

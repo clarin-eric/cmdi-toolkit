@@ -37,6 +37,6 @@
                 </enumeration>                
             </ValueScheme>
         </CMD_Element>
-        <CMD_Component filename="cmdi-language.xml" CardinalityMin="1"/>
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin/cmdi-language.xml" CardinalityMin="1"/>
     </CMD_Component>
 </CMD_ComponentSpec>

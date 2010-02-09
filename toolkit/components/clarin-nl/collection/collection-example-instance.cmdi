@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="collection.xsd">
+    xsi:noNamespaceSchemaLocation="file:collection.xsd">
     <Header></Header>
     <Resources>
         <ResourceProxyList></ResourceProxyList>
         <JournalFileProxyList></JournalFileProxyList>
         <ResourceRelationList></ResourceRelationList>
-        <IsPartOfList></IsPartOfList>
     </Resources>
     <Components>
         <Collection>

@@ -40846,7 +40846,7 @@
                                                 <xs:element name="Address" minOccurs="0" maxOccurs="unbounded" type="xs:string"
                                                             dcr:datcat="http://www.isocat.org/datcat/DC-2505"/>
                                                 <xs:element name="Email" type="xs:string" dcr:datcat="http://www.isocat.org/datcat/DC-2521"/>
-                                                <xs:element name="Organisation" minOccurs="0" type="xs:string"
+                                                <xs:element name="Organisation" type="xs:string"
                                                             dcr:datcat="http://www.isocat.org/datcat/DC-2459"/>
                                                 <xs:element name="Telephone" minOccurs="0" maxOccurs="unbounded" type="xs:string"/>
                                              </xs:sequence>

@@ -20,10 +20,10 @@
         <CMD_Element name="PublicationYear" CardinalityMin="0" CardinalityMax="1"  ConceptLink="http://www.isocat.org/datcat/DC-2538" ValueScheme="gYear"/>
                            
         
-        <CMD_Component filename="component-project.xml"></CMD_Component>
-        <CMD_Component filename="component-creators.xml"></CMD_Component>
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/component-project.xml"></CMD_Component>
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/component-creators.xml"></CMD_Component>
         
-        <CMD_Component filename="component-documentationlanguages.xml"></CMD_Component>
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/component-documentationlanguages.xml"></CMD_Component>
         
         <CMD_Component name="OriginLocation">
             <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin/cmdi-location.xml"/>
@@ -34,10 +34,10 @@
         <!-- gaat naar corpus en wordt corpusmodality -->
         <!--<CMD_Component filename="component-collectionmodality.xml"></CMD_Component>-->
         
-        <CMD_Component filename="component-access.xml"></CMD_Component>   
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/component-access.xml"></CMD_Component>   
         
         <!-- naar corpus -->
-        <CMD_Component filename="component-validation.xml"></CMD_Component>
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/component-validation.xml"></CMD_Component>
         
         <!-- naar header -->
         <!--<CMD_Component name="IsPartOf">

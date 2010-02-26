@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="file:lexicon.xsd">
+    xsi:noNamespaceSchemaLocation="file:/home/dietuyt/svn/clarin/metadata/trunk/toolkit/components/clarin-nl/lexicon/lexicon.xsd">
     <Header></Header>
     <Resources>
         <ResourceProxyList></ResourceProxyList>
@@ -9,21 +9,23 @@
     </Resources>
     <Components>
         <Lexicon>
-            <Name></Name>
-            <Title></Title>
-            <ID></ID>
-            <Version></Version>
-            <TimeCoverage></TimeCoverage>
-            <Description></Description>
+            <GeneralInfo>
+                <Name></Name>
+                <Title></Title>
+                <ID></ID>
+                <Version></Version>
+                <TimeCoverage></TimeCoverage>
+                <Description></Description>
+            </GeneralInfo>
             <LexiconType>
                 <LexiconType>dictionary</LexiconType>
                 <LexiconSubtype>
-                    <Linguality>bilingual</Linguality>
+                    <Linguality>monolingual</Linguality>
                     <HeadWordType>lemma</HeadWordType>
                 </LexiconSubtype>
             </LexiconType>
             <LexiconContent>
-                <AnnotationLevelType>frequency</AnnotationLevelType>
+                <AnnotationLevelType>lemma</AnnotationLevelType>
                 <AnnotationFormat>ASCII</AnnotationFormat>
             </LexiconContent>
             <Size>
@@ -36,11 +38,9 @@
                     <SizeUnit></SizeUnit>
                 </SizePerLanguage>
             </Size>
-            <SubjectLanguages>
-                <SubjectLanguage>
-                    <language></language>
-                </SubjectLanguage>
-            </SubjectLanguages>
+            <SubjectLanguage>
+                <language></language>
+            </SubjectLanguage>
             <DocumentationLanguages></DocumentationLanguages>
             <Access>
                 <Availability></Availability>
@@ -49,6 +49,12 @@
                     <Email></Email>
                 </Contact>
             </Access>
+            <Creator>
+                <ContactCreator>
+                    <Email></Email>
+                    <Organisation></Organisation>
+                </ContactCreator>
+            </Creator>
             <location></location>
             <Validation>
                 <Validation>Validated</Validation>

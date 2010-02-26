@@ -10,7 +10,7 @@
     <CMD_Component name="Collection" CardinalityMin="1" CardinalityMax="1">
        
                         
-        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/"></CMD_Component>
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/component-generalinfo.xml"></CMD_Component>
         <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/component-project.xml"></CMD_Component>
         <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/component-creator.xml"></CMD_Component>
         

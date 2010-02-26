@@ -20,7 +20,7 @@
         <CMD_Element name="Topic" CardinalityMin="0" CardinalityMax="unbounded" ValueScheme="string"/>
         
         <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/component-size.xml"/>
-        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/component-subjectlanguages.xml"/>
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/component-subjectlanguage.xml"/>
         <CMD_Component filename="component-corpusmodality.xml"/>
         <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/component-validation.xml"/>
                 

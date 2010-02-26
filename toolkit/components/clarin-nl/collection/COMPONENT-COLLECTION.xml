@@ -8,20 +8,11 @@
     </Header>
     
     <CMD_Component name="Collection" CardinalityMin="1" CardinalityMax="1">
-        
-        <CMD_Element name="Name" ValueScheme="string" CardinalityMin="1" CardinalityMax="unbounded" ConceptLink="http://www.isocat.org/datcat/DC-2544"></CMD_Element>
-        <CMD_Element name="Title" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2545"></CMD_Element>
-        <CMD_Element name="ID" ValueScheme="string"  CardinalityMax="unbounded" ConceptLink="http://www.isocat.org/datcat/DC-2573"></CMD_Element>
-        <CMD_Element name="Version" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2547"></CMD_Element>
-        
-        <!-- vergelijken met DC! -->
-        <CMD_Element name="TimeCoverage" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2502"></CMD_Element>
-        <CMD_Element name="Description" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" ConceptLink="http://www.isocat.org/datcat/DC-2520"/>
-        <CMD_Element name="PublicationYear" CardinalityMin="0" CardinalityMax="1"  ConceptLink="http://www.isocat.org/datcat/DC-2538" ValueScheme="gYear"/>
-                           
-        
+       
+                        
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/"></CMD_Component>
         <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/component-project.xml"></CMD_Component>
-        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/component-creators.xml"></CMD_Component>
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/component-creator.xml"></CMD_Component>
         
         <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/component-documentationlanguages.xml"></CMD_Component>
         

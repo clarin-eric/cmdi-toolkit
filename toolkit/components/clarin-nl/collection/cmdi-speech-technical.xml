@@ -31,9 +31,8 @@
             </CMD_Element>
             <CMD_Element name="BitResolution" ValueScheme="decimal"/>
            
-            <!-- TODO: create mimetype component -->
-            <!--<CMD_Component name="mimetype"/>-->
-
+            <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin/cmdi-mimetype.xml"/>
+            
         </CMD_Component>
 
         

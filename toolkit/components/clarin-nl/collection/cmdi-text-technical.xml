@@ -10,7 +10,6 @@
 
     <CMD_Component name="TextTechnicalMetadata" CardinalityMin="0" CardinalityMax="unbounded">
         <CMD_Element name="CharacterEncoding" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2564"/>
-        <CMD_Component filename="contentencoding.xml"/>
         <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin/cmdi-mimetype.xml"/>
     </CMD_Component>
 

@@ -2,14 +2,25 @@
 <CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="../../general-component-schema.xsd" isProfile="true">
     <Header>
-        <ID>avatech.detector</ID>
-        <Name>AVATECH detector</Name>
+        <ID>avatech.recognizer</ID>
+        <Name>AVATECH recognizer</Name>
         <Description>See: http://avatech.mpi.nl/avatech/</Description>
     </Header>
-    <CMD_Component name="DETECTOR">
+    <CMD_Component name="RECOGNIZER">
         
-        <CMD_Element name="detector" ValueScheme="string">
+        <CMD_Element name="recognizer" ValueScheme="string">
             <AttributeList>
+                <Attribute >
+                    <Name>recognizerType</Name>
+                    <ValueScheme>
+                        <enumeration>
+                            <item>direct</item>
+                            <item>local</item>
+                            <item>shared</item>
+                            <item>remote</item>
+                        </enumeration>
+                    </ValueScheme>
+                </Attribute>
                 <Attribute >
                     <Name>runLinux</Name>
                     <Type>string</Type>
@@ -76,9 +87,16 @@
                             <item>audio</item>
                             <item>video</item>
                             <item>tier</item>
+                            <item>csvtier</item>
                             <item>timeseries</item>
+                            <item>csvtimeseries</item>
+                            <item>auxiliary</item>
                         </enumeration>
                     </ValueScheme>
+                </Attribute>
+                <Attribute >
+                    <Name>mimetypes</Name>
+                    <Type>string</Type>
                 </Attribute>
                 <Attribute >
                     <Name>optional</Name>
@@ -100,9 +118,16 @@
                             <item>audio</item>
                             <item>video</item>
                             <item>tier</item>
+                            <item>csvtier</item>
                             <item>timeseries</item>
+                            <item>csvtimeseries</item>
+                            <item>auxiliary</item>
                         </enumeration>
                         </ValueScheme>
+                </Attribute>
+                <Attribute >
+                    <Name>mimetypes</Name>
+                    <Type>string</Type>
                 </Attribute>
                 <Attribute >
                     <Name>optional</Name>

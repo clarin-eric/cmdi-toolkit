@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="file:avatech-recognizer.xsd">
+    <Header></Header>
+    <Resources>
+        <ResourceProxyList></ResourceProxyList>
+        <JournalFileProxyList></JournalFileProxyList>
+        <ResourceRelationList></ResourceRelationList>
+    </Resources>
+    <Components>
+        <RECOGNIZER>
+            <recognizer recognizerType="local" runLinux="java PitchComponent" runMac="java PitchComponent" runWin="java PitchComponent"
+                info="Tag vowels (volume peaks of voiced timespans)">TagVowels</recognizer>
+            <numparam min="150" max="1500" default="550"
+                info="Pitch ceiling [Hz], eg. 300 male / 550 female">max_f0</numparam>
+            <numparam min="0.5" max="5.0" default="2.0"
+                info="Intensity change [dB] to start/end a peak">epsilon</numparam>
+            <numparam min="0.01" max="0.3" default="0.03"
+                info="Minimum amplitude (0..1) for pitch analysis">silence_threshold</numparam>
+            <numparam min="0.2" max="0.8" default="0.45"
+                info="Minimum voicing of voiced timespans">voicing_threshold</numparam>
+            <!-- NOTE: If convoc is empty, any text can be entered -->
+            <textparam convoc="normal verbose debug" default="normal"
+                info="Adjust amount of messages during calculation here">loglevel</textparam>
+            <input type="audio" optional="false" mimetypes="audio/x-wav"
+                info="Mono or stereo WAV to scan">source</input>
+            <input type="csvtimeseries" optional="true" mimetypes="text/csv"
+                info="Pre-made time, pitch[Hz], volume[dB] CSV">precalc_f0_db</input>
+            <output type="csvtimeseries" optional="true" mimetypes="text/csv"
+                info="Pitch (or undefined) and volume, 100 samples/s">output_f0_db</output>
+            <output type="csvtier" optional="false" mimetypes="text/csv"
+                info="Vowel segments and their average f0 [Hz] and volume [dB]">vowel_f0_db</output>
+            <output type="csvtier" optional="true" mimetypes="text/csv"
+                info="Vowel segments and their min, max, initial and final f0 [Hz]">vowel_stats</output>
+            <output type="tier" optional="true" mimetypes="text/xml"
+                info="Vowel segments and their average f0 [Hz] and volume [dB]">vowel_f0_db_xml</output>
+            <output type="tier" optional="true" mimetypes="text/xml"
+                info="Vowel segments and their min, max, initial and final f0 [Hz]">vowel_stats_xml</output>
+        </RECOGNIZER>
+    </Components>
+</CMD>

@@ -96,13 +96,23 @@
             <xs:element name="Components">
                <xs:complexType>
                   <xs:sequence>
-                     <xs:element name="DETECTOR">
+                     <xs:element name="RECOGNIZER">
                         <xs:complexType>
                            <xs:sequence>
-                              <xs:element name="detector">
+                              <xs:element name="recognizer">
                                  <xs:complexType>
                                     <xs:simpleContent>
                                        <xs:extension base="xs:string">
+                                          <xs:attribute name="recognizerType">
+                                             <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                   <xs:enumeration value="direct"/>
+                                                   <xs:enumeration value="local"/>
+                                                   <xs:enumeration value="shared"/>
+                                                   <xs:enumeration value="remote"/>
+                                                </xs:restriction>
+                                             </xs:simpleType>
+                                          </xs:attribute>
                                           <xs:attribute name="runLinux" type="xs:string"/>
                                           <xs:attribute name="runMac" type="xs:string"/>
                                           <xs:attribute name="runWin" type="xs:string"/>
@@ -144,10 +154,14 @@
                                                    <xs:enumeration value="audio"/>
                                                    <xs:enumeration value="video"/>
                                                    <xs:enumeration value="tier"/>
+                                                   <xs:enumeration value="csvtier"/>
                                                    <xs:enumeration value="timeseries"/>
+                                                   <xs:enumeration value="csvtimeseries"/>
+                                                   <xs:enumeration value="auxiliary"/>
                                                 </xs:restriction>
                                              </xs:simpleType>
                                           </xs:attribute>
+                                          <xs:attribute name="mimetypes" type="xs:string"/>
                                           <xs:attribute name="optional" type="xs:boolean"/>
                                           <xs:attribute name="info" type="xs:string"/>
                                        </xs:extension>
@@ -164,10 +178,14 @@
                                                    <xs:enumeration value="audio"/>
                                                    <xs:enumeration value="video"/>
                                                    <xs:enumeration value="tier"/>
+                                                   <xs:enumeration value="csvtier"/>
                                                    <xs:enumeration value="timeseries"/>
+                                                   <xs:enumeration value="csvtimeseries"/>
+                                                   <xs:enumeration value="auxiliary"/>
                                                 </xs:restriction>
                                              </xs:simpleType>
                                           </xs:attribute>
+                                          <xs:attribute name="mimetypes" type="xs:string"/>
                                           <xs:attribute name="optional" type="xs:boolean"/>
                                           <xs:attribute name="info" type="xs:string"/>
                                        </xs:extension>

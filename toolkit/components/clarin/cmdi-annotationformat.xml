@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/general-component-schema.xsd"
+    isProfile="false">
+    <Header>
+        <ID/>
+        <Name>Annotation format</Name>
+        <Description>List of frequently used annotation formats</Description>
+    </Header>
+
+    <CMD_Component name="annotationformat">
+        <!-- selection of most common mime types -->
+        <CMD_Element name="AnnotationFormat" ConceptLink="http://www.isocat.org/datcat/DC-2562">
+            <ValueScheme>
+                <enumeration>
+                    <item>application/pdf</item>
+                    <item>text/html</item>
+                    <item>text/plain</item>
+                    <item>text/xml</item>
+                    <item>text/x-chat</item>
+                    <item>text/x-cut</item>
+                    <item>text/x-eaf+xml</item>
+                    <item>text/x-esf</item>
+                    <item>text/x-lexus-config+xml</item>
+                    <item>text/x-lexus-resource+xml</item>
+                    <item>text/x-lmf+xml</item>
+                    <item>text/x-shoebox-language</item>
+                    <item>text/x-shoebox-text</item>
+                    <item>text/x-shoebox-type</item>
+                    <item>text/x-shoebox-lexicon</item>
+                    <item>text/x-toolbox-text</item>
+                    <item>text/x-toolbox-lexicon</item>
+                    <item>text/x-cgn-bpt+xml</item>
+                    <item>text/x-cgn-lxk+xml</item>
+                    <item>text/x-cgn-pri+xml</item>
+                    <item>text/x-cgn-prx+xml</item>
+                    <item>text/x-cgn-skp+xml</item>
+                    <item>text/x-cgn-tag+xml</item>
+                    <item>text/x-cgn-tig+xml</item>
+                    <item>AIF</item>
+                    <item>BAS</item>
+                    <item>MT</item>
+                    <item>TRS</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2591">Unknown</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2592">Unspecified</item>
+
+                </enumeration>
+            </ValueScheme>
+        </CMD_Element>
+    </CMD_Component>
+
+
+</CMD_ComponentSpec>

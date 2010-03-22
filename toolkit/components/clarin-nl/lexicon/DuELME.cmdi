@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="lexicalresource.xsd">
+    <Header></Header>
+    <Resources>
+        <ResourceProxyList></ResourceProxyList>
+        <JournalFileProxyList></JournalFileProxyList>
+        <ResourceRelationList></ResourceRelationList>
+    </Resources>
+    <Components>
+        <LexicalResource>
+            <GeneralInfo>
+                <Name>DuELME</Name>
+                <Title>Dutch Electronic Lexicon of Multiword Expressions</Title>
+                <ID></ID>
+                <Version>1.1</Version>
+                <TimeCoverage>2005-2007</TimeCoverage>
+                <Description>DuELME is an electronic lexicon that contains more than 5,000 Dutch 
+                    multiword expressions (MWEs). MWEs with the same syntactic pattern are grouped 
+                    in the same equivalence class. The DuELME lexicon is suitable for theoretical 
+                    research on multiword expressions as for use in NLP systems. The lexicon is a 
+                    result of the IRME project.</Description>
+            </GeneralInfo>
+            <Project>
+                <Name>IRME</Name>
+                <Title>Identification and Representation of Multiword Expressions</Title>
+                <ID></ID>
+                <Funder>STEVIN</Funder>
+                <Description>Dutch-Flemish Research Programme for Dutch Language and Speech Technology</Description>
+                <Contact>
+                    <Email>pspyns@taalunie.org</Email>
+                    <Organisation>Dutch Language Union</Organisation>
+                </Contact>
+            </Project>
+            
+            <Creator>
+                <ContactCreator>
+                    <Email>Nicole.Gregoire@let.uu.nl</Email>
+                    <Organisation>UiL-OTS, University of Utrecht</Organisation>
+                </ContactCreator>
+                <ContactCreator>
+                    <Email></Email>
+                    <Organisation>Van Dale, Utrecht</Organisation>
+                </ContactCreator>
+                <ContactCreator>
+                    <Email></Email>
+                    <Organisation>Alfa-informatica University of Groningen</Organisation>
+                </ContactCreator>                
+            </Creator>
+            <OriginLocation>
+                <location></location>
+            </OriginLocation>
+            <Size>
+                <TotalSize>
+                    <Number>5.000</Number>
+                    <SizeUnit>multi-word expressions</SizeUnit>
+                </TotalSize>
+                <SizePerLanguage>
+                    <Number></Number>
+                    <SizeUnit></SizeUnit>
+                </SizePerLanguage>
+            </Size>
+            <annotationformat>
+                <AnnotationFormat>text/plain</AnnotationFormat>
+            </annotationformat>
+            <SubjectLanguage>
+                <language>
+                    <languageName>Dutch</languageName>
+                </language>
+            </SubjectLanguage>
+            <DocumentationLanguages>
+                <language>
+                    <languageName>English</languageName>
+                </language>
+            </DocumentationLanguages>
+            <Validation>
+                <Validation></Validation>
+                <ValidationType></ValidationType>
+                <ValidationMode></ValidationMode>
+                <ValidationLevel></ValidationLevel>
+            </Validation>
+            <Access>
+                <Availability>validated</Availability>
+                <CatalogueLink></CatalogueLink>
+                <Contact>
+                    <Email></Email>
+                </Contact>
+            </Access>
+            <LexiconType>
+                <LexiconMainType>word list</LexiconMainType>
+                <LexiconSubtype>multi-word expressions</LexiconSubtype>
+                <Linguality>monolingual</Linguality>
+                <HeadWordType>phrase</HeadWordType>
+                <Modality>written</Modality>
+            </LexiconType>
+            <LexiconContent>
+                <LexiconFields>orthography</LexiconFields>
+                <LexiconFields>syntax</LexiconFields>                
+            </LexiconContent>
+        </LexicalResource>
+    </Components>
+</CMD>

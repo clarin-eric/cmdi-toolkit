@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/general-component-schema.xsd" isProfile="false">
-    <Header/>
+    <Header>
+        <Name>Corpus Modality</Name>
+        <Description>A component which contains information about the modalities that are contained in a corpus.</Description>
+    </Header>
+
     <CMD_Component name="CorpusModality">
 
-        <CMD_Element name="Modality" CardinalityMax="unbounded">
+        <CMD_Element name="Modality" CardinalityMin="1" CardinalityMax="unbounded" ConceptLink="http://www.isocat.org/datcat/DC-2490">
             <ValueScheme>
                 <enumeration>
                     <item ConceptLink="http://www.isocat.org/datcat/DC-2591">Unknown</item>
                     <item ConceptLink="http://www.isocat.org/datcat/DC-2592">Unspecified</item>
-                    <item >speech</item>
+                    <item>speech</item>
                     <item>writing</item>
                     <item>music notation</item>
                     <item>gestures</item>
@@ -20,7 +24,8 @@
                     <item>emotional-state</item>
                     <item>haptic</item>
                     <item>song</item>
-                    <item>instrumental music</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2611">instrumental music</item>
+                    <item>other</item>
                 </enumeration>
             </ValueScheme>
         </CMD_Element>

@@ -4,64 +4,51 @@
     <Header>
         <ID></ID>
         <Name>Speech Corpus</Name>
-        <Description>Speech Corpus component</Description>
+        <Description>A component for metadata which is characteristic for a speech corpus, like the number of speakers included in the corpus, information about the recording environments,...</Description>
     </Header>
+
     <CMD_Component name="SpeechCorpus" CardinalityMax="1">
-
-        <!-- in hours -->
+     
         <CMD_Element name="DurationOfEffectiveSpeech"
-            ConceptLink="http://www.isocat.org/datcat/DC-2691" ValueScheme="decimal"/>
+            ConceptLink="http://www.isocat.org/datcat/DC-2691" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
         <CMD_Element name="DurationOfFullDatabase"
-            ConceptLink="http://www.isocat.org/datcat/DC-2690" ValueScheme="decimal"/>
-        <CMD_Element name="NumberOfSpeakers" ValueScheme="decimal"/>
-
-
+            ConceptLink="http://www.isocat.org/datcat/DC-2690" ValueScheme="string" CardinalityMax="1"/>
+        <CMD_Element name="NumberOfSpeakers" ValueScheme="decimal" ConceptLink="http://www.isocat.org/datcat/DC-2692" CardinalityMax="1"/>
         <CMD_Element name="RecordingEnvironment" ValueScheme="string"
-            ConceptLink="http://www.isocat.org/datcat/DC-2696">
+            ConceptLink="http://www.isocat.org/datcat/DC-2696" CardinalityMax="unbounded">
             <ValueScheme>
                 <enumeration>
                     <item>home/office</item>
-                    <item>studio</item>
-                    <item>vehicle</item>
-                    <item>public place</item>
-                    <item>telephone</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2698">studio</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2699">vehicle</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2700">public place</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2596">telephone</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2599">other</item>
                 </enumeration>
             </ValueScheme>
         </CMD_Element>
-        
+        <CMD_Element name="SpeakerDemographics" ValueScheme="string" CardinalityMax="1"/>
 
-        <!-- nr of speakers per sex/age class/dialect/socio-economic status etc -->
-        <CMD_Element name="SpeakerDemographics" ValueScheme="string"/>
 
-        <CMD_Element name="AnnotationLevelType" ConceptLink="http://www.isocat.org/datcat/DC-2462">
+
+        <CMD_Element name="Quality" CardinalityMin="0" CardinalityMax="unbounded" ConceptLink="http://www.isocat.org/datcat/DC-2574" >
             <ValueScheme>
                 <enumeration>
-                    <item>orthography</item>
-                    <item>non-speech events</item>
-                    <item>morphology</item>
-                    <item>syntax</item>
-                    <item>semantics</item>
-                    <item>phonetic</item>
-                    <item>prosody</item>
-                    <item>segments</item>
-                    <item>speaker turn</item>
-                    <item>topic</item>
-                    <item>sound quality</item>
-                    <!-- new in isocat -->
-                    <item>gaze direction</item>
-                    <!-- check UPF suggestions -->
-                </enumeration>
-            </ValueScheme>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2666">1</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2667">2</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2668">3</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2669">4</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2670">5</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2591">Unknown</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2592">Unspecified</item>
+                </enumeration>               
+           </ValueScheme>
         </CMD_Element>
+        <CMD_Element name="RecordingPlatformHardware" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2693" CardinalityMin="0" CardinalityMax="unbounded"/>
+        <CMD_Element name="RecordingPlatformSoftware" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2694" CardinalityMin="0" CardinalityMax="unbounded"/>
 
-        <CMD_Element name="Quality" ValueScheme="string" CardinalityMin="0"/>
-        <CMD_Element name="RecordingPlatformHardware" ValueScheme="string"/>
-        <CMD_Element name="RecordingPlatformSoftware" ValueScheme="string"/>
-
-        
-        <CMD_Component filename="cmdi-speech-technical.xml"/>
-
-        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/component-validation.xml"/>
+        <!-- within the component SpeechCorpus the component SpeechTechnical contains technical information about the entire speech corpus like the sampling frequency, the compression,... -->
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/collection/cmdi-speech-technical.xml" CardinalityMax="unbounded"/>
 
     </CMD_Component>
 </CMD_ComponentSpec>

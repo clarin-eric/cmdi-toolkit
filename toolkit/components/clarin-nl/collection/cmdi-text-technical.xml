@@ -5,12 +5,13 @@
     <Header>
         <ID/>
         <Name>Text Technical Metadata</Name>
-        <Description>Text Technical Metadata component</Description>
+        <Description>A component for technical information about a text corpus, like the mime type and the character encoding of the texts</Description>
     </Header>
-
-    <CMD_Component name="TextTechnicalMetadata" CardinalityMin="0" CardinalityMax="unbounded">
-        <CMD_Element name="CharacterEncoding" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2564"/>
-        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin/cmdi-mimetype.xml"/>
+  
+    <CMD_Component name="TextTechnical">
+        <CMD_Element name="CharacterEncoding" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2564" CardinalityMax="unbounded"/>
+        <!-- within the component TextTechnical the component MimeType specifies the mime-type of the corpus, which is a formalized specifier for the format included.-->
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin/cmdi-mimetype.xml" CardinalityMax="unbounded"/>
     </CMD_Component>
 
 </CMD_ComponentSpec>

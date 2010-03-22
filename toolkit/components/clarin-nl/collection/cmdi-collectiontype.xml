@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/general-component-schema.xsd" isProfile="false">
+    <Header>
+        <Name>Collection Type</Name>
+        <Description>A component which specifies whether a collection contains audio, video, text, pictures or other types of resources. </Description>
+    </Header>
+
+    <CMD_Component name="CollectionType">
+
+        <CMD_Element name="CollectionType" CardinalityMin="1" CardinalityMax="unbounded"  >
+            <ValueScheme>
+                <enumeration>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2658">text</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2655">picture</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2654">video</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2653">audio</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2599">other</item>
+                </enumeration>
+            </ValueScheme>
+        </CMD_Element>
+    </CMD_Component>
+
+</CMD_ComponentSpec>

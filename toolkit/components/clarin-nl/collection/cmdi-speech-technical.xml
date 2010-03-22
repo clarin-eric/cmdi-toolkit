@@ -1,26 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/general-component-schema.xsd"> 
+                   xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/general-component-schema.xsd"
+                   isProfile="false"> 
     <Header>
-        <ID></ID>
+        <ID/>
         <Name>Speech Technical Metadata</Name>
-        <Description>Speech Technical Metadata component</Description>
+        <Description>A component for technical information about an entire speech corpus or about a single recording, e.g. the sampling frequency, the compression,...</Description>
     </Header>
     
-        <!-- in aparte file zetten en includen! + evt splitsen in verschillende (zie Daan) -->
-        <CMD_Component name="SpeechTechnicalMetadata" CardinalityMin="0" CardinalityMax="unbounded">
 
-            <CMD_Element name="SamplingFrequency" ValueScheme="decimal"/>
-            <CMD_Element name="NumberOfChannels" ValueScheme="decimal"/>
-            <CMD_Element name="ByteOrder">
+        <CMD_Component name="SpeechTechnicalMetadata">
+
+            <CMD_Element name="SamplingFrequency" ValueScheme="decimal" CardinalityMin="0"
+                   CardinalityMax="unbounded"/>
+            <CMD_Element name="NumberOfChannels" ValueScheme="decimal" CardinalityMin="0"
+                   CardinalityMax="unbounded"/>
+            <CMD_Element name="ByteOrder" ConceptLink="http://www.isocat.org/datcat/DC-2686"
+                   CardinalityMin="0"
+                   CardinalityMax="unbounded">
                 <ValueScheme>
                     <enumeration>
-                        <item>big endian</item>
-                        <item>little endian</item>
+                        <item ConceptLink="http://www.isocat.org/datcat/DC-2687">big endian</item>
+                        <item ConceptLink="http://www.isocat.org/datcat/DC-2688">little endian</item>
                     </enumeration>
                 </ValueScheme>
             </CMD_Element>
-            <CMD_Element name="Compression">
+            <CMD_Element name="Compression" ConceptLink="http://www.isocat.org/datcat/DC-2685"
+                   CardinalityMin="0"
+                   CardinalityMax="unbounded">
                 <ValueScheme>
                     <enumeration>
                         <item>none</item>
@@ -29,10 +36,15 @@
                     </enumeration>
                 </ValueScheme>
             </CMD_Element>
-            <CMD_Element name="BitResolution" ValueScheme="decimal"/>
-           
-            <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin/cmdi-mimetype.xml"/>
-            
+            <CMD_Element name="BitResolution" ValueScheme="decimal"
+                   ConceptLink="http://www.isocat.org/datcat/DC-2684"
+                   CardinalityMin="0"
+                   CardinalityMax="unbounded"/>
+            <!-- within the component SpeechTechnical the component MimeType specifies the mime-type of the corpus, which is a formalized specifier for the format included.-->
+            <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin/cmdi-mimetype.xml"
+                     CardinalityMin="0"
+                     CardinalityMax="unbounded"/>
+
         </CMD_Component>
 
         

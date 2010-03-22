@@ -4,17 +4,14 @@
     <Header>
         <ID></ID>
         <Name>Text Corpus</Name>
-        <Description>Text Corpus component</Description>
+        <Description>A component for metadata which is characteristic for a text corpus</Description>
     </Header>
-    <CMD_Component>
-        
-        <!-- where do the texts come from? eg newspaper, internet, etc -->
-        <CMD_Element name="origin" ValueScheme="string"/>   
-        
-        <!-- in aparte file zetten en includen!  -->
-        <CMD_Component filename="cmdi-text-technical.xml"/>
-        
-        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/component-validation.xml"/>
+    
+    <CMD_Component name="TextCorpus" CardinalityMax="1">
+              
+        <CMD_Element name="Origin" ValueScheme="string" CardinalityMax="unbounded"/>   
+        <!-- the component TextTechnical contains technical information about the text corpus, like the mime type and the character encoding -->
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/collection/cmdi-text-technical.xml" CardinalityMax="1"/>
         
     </CMD_Component>
 

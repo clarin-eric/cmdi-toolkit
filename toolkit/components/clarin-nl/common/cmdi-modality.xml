@@ -3,10 +3,10 @@
     xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/general-component-schema.xsd" isProfile="false">
     <Header>
         <Name>Corpus Modality</Name>
-        <Description>A component which contains information about the modalities that are contained in a corpus.</Description>
+        <Description>A component which contains information about the modalities that are contained in a resource.</Description>
     </Header>
 
-    <CMD_Component name="CorpusModality">
+    <CMD_Component name="Modality">
 
         <CMD_Element name="Modality" CardinalityMin="1" CardinalityMax="unbounded" ConceptLink="http://www.isocat.org/datcat/DC-2490">
             <ValueScheme>

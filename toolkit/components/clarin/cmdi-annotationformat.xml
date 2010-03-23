@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/general-component-schema.xsd"
-    isProfile="false">
+                   xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/general-component-schema.xsd"
+                   isProfile="false">
     <Header>
         <ID/>
         <Name>Annotation format</Name>
         <Description>List of frequently used annotation formats</Description>
     </Header>
 
-    <CMD_Component name="annotationformat">
+    <CMD_Component name="AnnotationFormat">
         <!-- selection of most common mime types -->
-        <CMD_Element name="AnnotationFormat" ConceptLink="http://www.isocat.org/datcat/DC-2562">
+        <CMD_Element name="AnnotationFormat" ConceptLink="http://www.isocat.org/datcat/DC-2562"
+                   CardinalityMin="1"
+                   CardinalityMax="unbounded">
             <ValueScheme>
                 <enumeration>
                     <item>application/pdf</item>

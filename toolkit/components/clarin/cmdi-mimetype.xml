@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/general-component-schema.xsd" isProfile="false">
+                   xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/general-component-schema.xsd"
+                   isProfile="false">
     <Header>
-        <ID></ID>
+        <ID/>
         <Name>Mime type</Name>
         <Description>List of frequently used mime types</Description>
     </Header>
 
-            <CMD_Component name="mimetype">
+            <CMD_Component name="MimeType">
                 <!-- selection of most common mime types -->
-                <CMD_Element name="MimeType" ConceptLink="http://www.isocat.org/datcat/DC-2571">
+                <CMD_Element name="MimeType" ConceptLink="http://www.isocat.org/datcat/DC-2571"
+                   CardinalityMin="1"
+                   CardinalityMax="unbounded">
                     <ValueScheme>
                         <enumeration>
                             <item>text/plain</item>

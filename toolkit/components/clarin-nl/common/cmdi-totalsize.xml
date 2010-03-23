@@ -2,12 +2,16 @@
 <CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                    xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/general-component-schema.xsd"
                    isProfile="false">
-    <Header/>
+    <Header>
+        <Name>Total Size</Name>
+        <Description>Component contains information about the size of a resource, e.g. number of texts in a text corpus, hours of speech recordings, number of entries in a wordlist,...</Description>
+    </Header>
+           
     <CMD_Component name="TotalSize">
         <CMD_Element name="Number" ValueScheme="decimal"
-                   ConceptLink="http://www.isocat.org/datcat/DC-2580"/>
+                   ConceptLink="http://www.isocat.org/datcat/DC-2580" CardinalityMin="1" CardinalityMax="1"/>
         <!-- Unit can be hours, sessions, texts, words, lemmas, videos, phrases,... -->
         <CMD_Element name="SizeUnit" ValueScheme="string"
-                   ConceptLink="http://www.isocat.org/datcat/DC-2583"/>
+                   ConceptLink="http://www.isocat.org/datcat/DC-2583" CardinalityMin="1" CardinalityMax="1"/>
     </CMD_Component>
 </CMD_ComponentSpec>

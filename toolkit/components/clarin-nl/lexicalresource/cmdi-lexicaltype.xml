@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/general-component-schema.xsd"
+                   isProfile="false">
+    
+    <Header>
+        <ID>eu.clarin.cmdi.lexicaltype</ID>
+        <Name>LexicalType</Name>
+        <Description>A component for describing the type, multilinguality, modality and headword type of a lexical resource. </Description>
+    </Header>
+    
+    <CMD_Component name="LexicalType">
+              
+        <!-- the component LexicalMainType indicates the main type of the lexical resource -->
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-lexicalmaintype.xml"
+                     CardinalityMin="1"
+                     CardinalityMax="1"/>
+        <!-- the component LexicalSubType specifies of the main type of the lexical resource -->
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-lexicalsubtype.xml"
+                     CardinalityMin="0"
+                     CardinalityMax="1"/>
+        <!-- the component HeadWordType indicates the linguistic nature of the lexical entry in the lexical resource -->
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-headwordtype.xml"
+                     CardinalityMin="1"
+                     CardinalityMax="unbounded"/>
+        <!-- the component MultiLinguality specifies whether one, two or more languages are included in the lexical resource -->
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-multilinguality.xml"
+                     CardinalityMin="1"
+                     CardinalityMax="1"/>
+        <!-- the component Modality indicates which mode of communication is captured in the lexical resource-->
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-modality.xml"
+                     CardinalityMin="0"
+                     CardinalityMax="unbounded"/>
+        
+
+    </CMD_Component>
+ </CMD_ComponentSpec>

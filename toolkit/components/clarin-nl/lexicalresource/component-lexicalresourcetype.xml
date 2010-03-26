@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/general-component-schema.xsd"
+    isProfile="false">
+    <Header>
+        <ID>eu.clarin.cmdi.lexicontype</ID>
+        <Name>Lexicon type</Name>
+        <Description>A component for describing the type of a lexical resource. </Description>
+    </Header>
+    <CMD_Component name="LexiconType">
+        <CMD_Element name="LexiconMainType" ConceptLink="http://www.isocat.org/datcat/DC-2487">
+            <ValueScheme>
+                <enumeration>
+                    <item>word list</item>
+                    <item>dictionary</item>
+                    <item>semantic network</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2599">other</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2592">unspecified</item> 
+              </enumeration>
+            </ValueScheme>
+        </CMD_Element>
+        
+        <CMD_Element name="LexiconSubtype">
+            <ValueScheme>
+                <enumeration>
+                    <item>terminology</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-1371">proper names</item>
+                    <item>multi-word expressions</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-317">synonyms</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2599">other</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2592">unspecified</item>
+                </enumeration>
+            </ValueScheme>
+        </CMD_Element>
+        
+        <CMD_Element name="Linguality" ConceptLink="http://www.isocat.org/datcat/DC-2520">
+            <ValueScheme>
+                <enumeration>
+                    <item>monolingual</item>
+                    <item>bilingual</item>
+                    <item>multilingual</item>
+                    <item>N/A</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2591">unknown</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2592">unspecified</item>
+                </enumeration>
+            </ValueScheme>
+        </CMD_Element>
+        
+        <CMD_Element name="HeadWordType" ConceptLink="http://www.isocat.org/rest/DC-2486">
+            <ValueScheme>
+                <enumeration>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-286">lemma</item>
+                    <item>word form</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-1386">sentence</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-350">phrase</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2599">other</item>
+                    <item>N/A</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2591">unknown</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2592">unspecified</item>
+                </enumeration>
+            </ValueScheme>
+        </CMD_Element>
+  
+        <CMD_Element name="Modality" ConceptLink="">
+            <ValueScheme>
+                <enumeration>
+                    <item>spoken</item>
+                    <item>written</item>
+                    <item>sign</item>
+                    <item>N/A</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2591">unknown</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2592">unspecified</item>
+                </enumeration>
+            </ValueScheme>
+        </CMD_Element>
+  
+     </CMD_Component>
+</CMD_ComponentSpec>

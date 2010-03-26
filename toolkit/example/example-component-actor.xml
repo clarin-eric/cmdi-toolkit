@@ -7,7 +7,7 @@
     
     <CMD_Component name="Actor" CardinalityMin="0" CardinalityMax="unbounded" ComponentId="eu.clarin.mdcomponent.actor">
         
-        <CMD_Element name="firstName" ValueScheme="string">
+        <CMD_Element name="firstName" ValueScheme="string" Documentation="This is the firstname of a person">
             <!-- provide a nickname attribute for the firstName element -->
             <AttributeList>
                 <!-- example of an attribute using a simple type -->

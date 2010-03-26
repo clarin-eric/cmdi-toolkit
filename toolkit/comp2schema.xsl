@@ -185,11 +185,14 @@
 
     <!-- Process all CMD_Elements, its attributes and children -->
     <xsl:template match="CMD_Element">
+        
+        
         <xsl:choose>
 
             <!-- Highest complexity: both attributes and a valuescheme, link to the type we created during the preprocessing of the ValueScheme -->
             <xsl:when test="./AttributeList and ./ValueScheme">
                 <xs:element name="{@name}">
+                    <xsl:apply-templates select= "@Documentation"/>
                     <xsl:apply-templates select="./ValueScheme"/>
                 </xs:element>
             </xsl:when>
@@ -197,6 +200,7 @@
             <!-- Medium complexity: attributes but no valuescheme, can be arranged inline -->
             <xsl:when test="./AttributeList and not(./ValueScheme)">
                 <xs:element name="{@name}">
+                    <xsl:apply-templates select= "@Documentation"/>
                     <xsl:apply-templates select= "@ConceptLink"/>
                     <xsl:apply-templates select= "@CardinalityMin"/>
                     <xsl:apply-templates select= "@CardinalityMax"/>
@@ -214,6 +218,7 @@
             <!-- Simple case: no attributes and no value scheme, 1-to-1 transform to an xs:element, just rename element and attributes -->
             <xsl:otherwise>
                 <xsl:element name="xs:element">
+                    <xsl:apply-templates select= "@Documentation"/>
                     <xsl:apply-templates select="@* | node()"/>
                 </xsl:element>
             </xsl:otherwise>
@@ -304,6 +309,12 @@
     <xsl:template match="@AppInfo">
         <xs:annotation>
             <xs:appinfo><xsl:value-of select="."/></xs:appinfo>
+        </xs:annotation>
+    </xsl:template>
+
+    <xsl:template match="@Documentation">
+        <xs:annotation>
+            <xs:documentation><xsl:value-of select="."/></xs:documentation>
         </xs:annotation>
     </xsl:template>
 

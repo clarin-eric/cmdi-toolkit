@@ -9,7 +9,7 @@
 
     <CMD_Component name="Language">
         
-        <CMD_Element name="languageName" CardinalityMin="1" CardinalityMax="1" ValueScheme="string"
+        <CMD_Element name="LanguageName" CardinalityMin="1" CardinalityMax="1" ValueScheme="string"
                    ConceptLink="http://www.isocat.org/datcat/DC-2484"/>
         <CMD_Component filename="iso-639-3.xml" CardinalityMin="1" CardinalityMax="1"/>
         

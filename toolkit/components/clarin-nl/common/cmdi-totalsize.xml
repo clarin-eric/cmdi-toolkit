@@ -9,9 +9,13 @@
            
     <CMD_Component name="TotalSize">
         <CMD_Element name="Number" ValueScheme="decimal"
-                   ConceptLink="http://www.isocat.org/datcat/DC-2580" CardinalityMin="1" CardinalityMax="1"/>
+                   ConceptLink="http://www.isocat.org/datcat/DC-2580"
+                   CardinalityMin="1"
+                   CardinalityMax="1"/>
         <!-- Unit can be hours, sessions, texts, words, lemmas, videos, phrases,... -->
         <CMD_Element name="SizeUnit" ValueScheme="string"
-                   ConceptLink="http://www.isocat.org/datcat/DC-2583" CardinalityMin="1" CardinalityMax="1"/>
+                   ConceptLink="http://www.isocat.org/datcat/DC-2583"
+                   CardinalityMin="1"
+                   CardinalityMax="1"/>
     </CMD_Component>
 </CMD_ComponentSpec>

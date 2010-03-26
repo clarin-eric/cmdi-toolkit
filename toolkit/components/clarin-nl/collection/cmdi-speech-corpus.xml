@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/general-component-schema.xsd" isProfile="false"> 
+                   xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/general-component-schema.xsd"
+                   isProfile="false"> 
     <Header>
-        <ID></ID>
+        <ID/>
         <Name>Speech Corpus</Name>
         <Description>A component for metadata which is characteristic for a speech corpus, like the number of speakers included in the corpus, information about the recording environments,...</Description>
     </Header>
@@ -10,12 +11,20 @@
     <CMD_Component name="SpeechCorpus" CardinalityMax="1">
      
         <CMD_Element name="DurationOfEffectiveSpeech"
-            ConceptLink="http://www.isocat.org/datcat/DC-2691" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                   ConceptLink="http://www.isocat.org/datcat/DC-2691"
+                   ValueScheme="string"
+                   CardinalityMin="0"
+                   CardinalityMax="1"/>
         <CMD_Element name="DurationOfFullDatabase"
-            ConceptLink="http://www.isocat.org/datcat/DC-2690" ValueScheme="string" CardinalityMax="1"/>
-        <CMD_Element name="NumberOfSpeakers" ValueScheme="decimal" ConceptLink="http://www.isocat.org/datcat/DC-2692" CardinalityMax="1"/>
+                   ConceptLink="http://www.isocat.org/datcat/DC-2690"
+                   ValueScheme="string"
+                   CardinalityMax="1"/>
+        <CMD_Element name="NumberOfSpeakers" ValueScheme="decimal"
+                   ConceptLink="http://www.isocat.org/datcat/DC-2692"
+                   CardinalityMax="1"/>
         <CMD_Element name="RecordingEnvironment" ValueScheme="string"
-            ConceptLink="http://www.isocat.org/datcat/DC-2696" CardinalityMax="unbounded">
+                   ConceptLink="http://www.isocat.org/datcat/DC-2696"
+                   CardinalityMax="unbounded">
             <ValueScheme>
                 <enumeration>
                     <item>home/office</item>
@@ -29,9 +38,8 @@
         </CMD_Element>
         <CMD_Element name="SpeakerDemographics" ValueScheme="string" CardinalityMax="1"/>
 
-
-
-        <CMD_Element name="Quality" CardinalityMin="0" CardinalityMax="unbounded" ConceptLink="http://www.isocat.org/datcat/DC-2574" >
+        <CMD_Element name="Quality" CardinalityMin="0" CardinalityMax="unbounded"
+                   ConceptLink="http://www.isocat.org/datcat/DC-2574">
             <ValueScheme>
                 <enumeration>
                     <item ConceptLink="http://www.isocat.org/datcat/DC-2666">1</item>
@@ -44,11 +52,18 @@
                 </enumeration>               
            </ValueScheme>
         </CMD_Element>
-        <CMD_Element name="RecordingPlatformHardware" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2693" CardinalityMin="0" CardinalityMax="unbounded"/>
-        <CMD_Element name="RecordingPlatformSoftware" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2694" CardinalityMin="0" CardinalityMax="unbounded"/>
+        <CMD_Element name="RecordingPlatformHardware" ValueScheme="string"
+                   ConceptLink="http://www.isocat.org/datcat/DC-2693"
+                   CardinalityMin="0"
+                   CardinalityMax="unbounded"/>
+        <CMD_Element name="RecordingPlatformSoftware" ValueScheme="string"
+                   ConceptLink="http://www.isocat.org/datcat/DC-2694"
+                   CardinalityMin="0"
+                   CardinalityMax="unbounded"/>
 
         <!-- within the component SpeechCorpus the component SpeechTechnical contains technical information about the entire speech corpus like the sampling frequency, the compression,... -->
-        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/collection/cmdi-speech-technical.xml" CardinalityMax="unbounded"/>
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/collection/cmdi-speech-technical.xml"
+                     CardinalityMax="unbounded"/>
 
     </CMD_Component>
 </CMD_ComponentSpec>

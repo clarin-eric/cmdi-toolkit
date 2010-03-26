@@ -7,7 +7,7 @@
         <Description>Component for describing a certain location (address, region, country, continent)</Description>
     </Header>
 
-    <CMD_Component name="location">
+    <CMD_Component name="Location">
         
         <CMD_Element name="Address" CardinalityMin="0" CardinalityMax="1" ValueScheme="string"
                    ConceptLink="http://www.isocat.org/datcat/DC-2528"/>

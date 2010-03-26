@@ -8,10 +8,11 @@
     </Header>
     
     <CMD_Component name="Creator">
-        <CMD_Element name="Role" CardinalityMax="unbounded" ValueScheme="string"
+        <CMD_Element name="Role" CardinalityMin="0" CardinalityMax="unbounded" ValueScheme="string"
                    ConceptLink="http://www.isocat.org/datcat/DC-2513"/>
         <!-- within the component Creator the component Contact contains contact information for a person or an organisation that was involved in the creation process of a resource -->
         <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-contact.xml"
-                     CardinalityMax="1"/>
+                     CardinalityMin="1"
+                     CardinalityMax="unbounded"/>
     </CMD_Component>    
 </CMD_ComponentSpec>

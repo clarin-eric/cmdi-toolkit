@@ -9,8 +9,7 @@
     
     
     <CMD_Component name="Description" ConceptLink="http://www.isocat.org/datcat/DC-2520">
-        <CMD_Element name="Description" ValueScheme="string" CardinalityMin="1" CardinalityMax="1"
-                   ConceptLink="http://www.isocat.org/datcat/DC-2520">
+        <CMD_Element name="Description" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" ConceptLink="http://www.isocat.org/datcat/DC-2520">
             <AttributeList>
                 <Attribute>
                     <Name>LanguageID</Name>

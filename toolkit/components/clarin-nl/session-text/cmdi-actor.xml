@@ -44,7 +44,7 @@
                 <enumeration>
                     <item>Male</item>
                     <item>Female</item>
-                    <item>NAP</item>
+                    <item>N/A</item>
                     <item ConceptLink="http://www.isocat.org/datcat/DC-2591">Unknown</item>
                     <item ConceptLink="http://www.isocat.org/datcat/DC-2592">Unspecified</item>
                 </enumeration>                

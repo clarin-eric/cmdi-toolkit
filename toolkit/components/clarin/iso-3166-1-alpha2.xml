@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="file:../../general-component-schema.xsd" isProfile="false">
+<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" isProfile="false"
+                   xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/general-component-schema.xsd">
     <Header>
         <ID>eu.clarin.cmdi.country</ID>
         <Name>Country Codes</Name>
         <Description>The list of ISO3166-1 country names, using 2 alphabetical characters. Based on: http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2</Description>        
     </Header>
 
-    <CMD_Component name="country" ConceptLink="http://www.isocat.org/datcat/DC-2532">
-        <CMD_Element name="code" ConceptLink="http://www.isocat.org/datcat/DC-2532">
+    <CMD_Component name="Country" ConceptLink="http://www.isocat.org/datcat/DC-2532">
+        <CMD_Element name="Code" ConceptLink="http://www.isocat.org/datcat/DC-2532"
+                   CardinalityMin="1"
+                   CardinalityMax="unbounded">
             <ValueScheme>
                 <enumeration>
                     

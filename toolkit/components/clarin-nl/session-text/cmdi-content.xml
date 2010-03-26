@@ -68,10 +68,12 @@
         </CMD_Element>
         <CMD_Element name="Task" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"
                    ConceptLink="http://www.isocat.org/datcat/DC-2500"/>
-        <CMD_Element name="Modalities" ValueScheme="string" CardinalityMax="unbounded"
-                   ConceptLink="http://www.isocat.org/datcat/DC-2490"/>
         <CMD_Element name="Topic" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded"
                    ConceptLink="http://www.isocat.org/datcat/DC-2503"/>
+        
+        <!-- the component Modality contains information about the modalities that are contained in the corpus. e.g. speech, signs, facial expressions,... -->
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-modality.xml"
+                     CardinalityMax="unbounded"/>
         <!-- the component CommunicationContext contains metadata about the communication context of a recording, e.g. how interactive was the communication, was the communication planned,... -->        
         <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/session-text/cmdi-communicationcontext.xml"
                      CardinalityMax="1"/>

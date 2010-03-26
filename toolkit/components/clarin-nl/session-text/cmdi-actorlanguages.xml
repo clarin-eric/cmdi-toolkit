@@ -13,7 +13,8 @@
                      CardinalityMin="0"
                      CardinalityMax="1"/>
         <!-- the component ActorLanguage identifies a language used by a speaker and indicates whether that language is the mother tongue and/or the primary language of the speaker -->
-        <CMD_Component filename="component-actorlanguage.xml" CardinalityMin="1"
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/session-text/cmdi-actorlanguage.xml"
+                     CardinalityMin="1"
                      CardinalityMax="unbounded"/>
     </CMD_Component>
 

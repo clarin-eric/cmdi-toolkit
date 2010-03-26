@@ -72,7 +72,9 @@
                 </enumeration>                
             </ValueScheme>        
         </CMD_Element>
-        <CMD_Component name="AnnotationType" CardinalityMax="unbounded"/>
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-annotationtype.xml"
+                     CardinalityMax="unbounded"
+                     CardinalityMin="1"/>
         <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin/cmdi-annotationformat.xml"
                      CardinalityMax="1"/>
         <!-- within the component WrittenResource the component TotalSize contains information about the size of the text and/or annotation files-->

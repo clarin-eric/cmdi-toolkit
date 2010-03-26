@@ -9,6 +9,10 @@
     
 
     <CMD_Component name="DocumentationLanguages">
+        <!-- within the component DocumentationLanguages the component Description provides the possibility to add extra information about the languages in which the documentation of a resource is available -->
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-description.xml"
+                     CardinalityMin="0"
+                     CardinalityMax="1"/>
         <!-- within the component DocumentationLanguages the component Language identifies a language in which the documentation of a resource is available -->
         <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin/cmdi-language.xml"
                      CardinalityMin="1"

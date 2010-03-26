@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="file:../../general-component-schema.xsd" isProfile="false">
+<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" isProfile="false"
+                   xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/general-component-schema.xsd">
     <Header>
         <Description>The list of ISO-639-5 language families. Based on: http://en.wikipedia.org/wiki/List_of_ISO_639-5_codes</Description>
     </Header>
 
     <CMD_Component name="ISO635">
-        <CMD_Element name="iso-639-5-code">
+        <CMD_Element name="iso-639-5-code" CardinalityMin="1" CardinalityMax="unbounded">
             <ValueScheme>
                 <enumeration>
 

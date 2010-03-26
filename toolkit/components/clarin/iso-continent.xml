@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="file:/home/dietuyt/svn/clarin/metadata/trunk/toolkit/general-component-schema.xsd" isProfile="false">
+<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" isProfile="false"
+                   xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/general-component-schema.xsd">
     <Header>
         <ID>eu.clarin.cmdi.continent</ID>
         <Name>Continent</Name>
         <Description>Component listing all continents using their ISO code</Description>
     </Header>
-    <CMD_Component name="continent"  ConceptLink="http://www.isocat.org/datcat/DC-2531">
-        <CMD_Element name="code">
+    <CMD_Component name="Continent" ConceptLink="http://www.isocat.org/datcat/DC-2531">
+        <CMD_Element name="Code" CardinalityMin="1" CardinalityMax="unbounded">
             <ValueScheme>
                 <enumeration>
                     <item AppInfo="Africa">AF</item>

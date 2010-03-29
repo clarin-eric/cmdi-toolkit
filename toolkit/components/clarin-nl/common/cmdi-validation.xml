@@ -19,7 +19,7 @@
             </ValueScheme>
         </CMD_Element>
         <CMD_Element name="ValidationType" ValueScheme="string"
-                   ConceptLink="http://www.isocat.org/datcat/DC-2585"
+                   ConceptLink="http://www.isocat.org/datcat/DC-2587"
                    CardinalityMin="0"
                    CardinalityMax="1"/>
         <CMD_Element name="ValidationMode" ValueScheme="string"
@@ -27,7 +27,7 @@
                    CardinalityMin="0"
                    CardinalityMax="1"/>
         <CMD_Element name="ValidationLevel" ValueScheme="string"
-                   ConceptLink="http://www.isocat.org/datcat/DC-2587"
+                   ConceptLink="http://www.isocat.org/datcat/DC-2585"
                    CardinalityMin="0"
                    CardinalityMax="1"/>
     </CMD_Component>

@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                   xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/general-component-schema.xsd"
-                   isProfile="false">
-    
+<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" isProfile="false"
+    xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/general-component-schema.xsd">    
     <Header>
         <ID>eu.clarin.cmdi.lexicalresource</ID>
         <Name>LexicalResource</Name>
@@ -16,70 +14,46 @@
 
         <!-- within the component LexicalResource the component GeneralInfo contains general information about the lexical resource, 
             like the name, the title, the time coverage of the data etc. -->
-        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-generalinfo.xml"
-                     CardinalityMin="1"
-                     CardinalityMax="1"/>
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-generalinfo.xml" CardinalityMin="1" CardinalityMax="1"></CMD_Component>
         <!-- within the component LexicalResource the component OriginLocation identifies the location where the lexical resource was built -->
-        <CMD_Component name="OriginLocation" CardinalityMin="1" CardinalityMax="1">
+        <CMD_Component name="OriginLocation" CardinalityMin="0" CardinalityMax="unbounded">
             <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin/cmdi-location.xml"/>
         </CMD_Component>
         <!-- within the component LexicalResource the component Project contains information about the preceding project 
             in which the lexical resource was built -->
-        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-project.xml"
-                     CardinalityMin="0"
-                     CardinalityMax="unbounded"/>
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-project.xml" CardinalityMin="0" CardinalityMax="unbounded"/>
         <!-- within the component LexicalResource the component Creator contains (contact) information about 
             the creators of the lexical resource -->
-        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-creators.xml"
-                     CardinalityMin="1"
-                     CardinalityMax="1"/>
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-creators.xml" CardinalityMin="0" CardinalityMax="1"/>
         <!-- within the component LexicalResource the component Source contains information about the source material that was used 
             to build the resource or on which the lexical resource was based-->
-        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-source.xml"
-                     CardinalityMin="0"
-                     CardinalityMax="unbounded"/>
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-source.xml" CardinalityMin="0" CardinalityMax="unbounded"/>
         <!-- within the component LexicalResource the component Size contains information about the size of the whole lexical resource
             e.g. total number of words -->
-        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-size.xml"
-                     CardinalityMin="1"
-                     CardinalityMax="1"/>
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-size.xml" CardinalityMin="0" CardinalityMax="1"/>
         <!-- within the component LexicalResource the component SubjectLanguages identifies the language(s) included in 
             the lexical resource and states which language is the dominant language, the source language and/or the target language-->
-        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-subjectlanguages.xml"
-                     CardinalityMin="1"
-                     CardinalityMax="1"/>
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-subjectlanguages.xml" CardinalityMin="0" CardinalityMax="1"/>
         <!-- within the component LexicalResource the component DocumentationLanguages identifies the language(s) in which 
             the documentation on the lexical resource is available -->
-        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-documentationlanguages.xml"
-                     CardinalityMin="0"
-                     CardinalityMax="1"/>
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-documentationlanguages.xml" CardinalityMin="0" CardinalityMax="1"/>
         <!-- within the component LexicalResource the component AnnotationFormat contains information about the annotation format(s) 
             that is/are used in the lexical resource-->
-        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin/cmdi-annotationformat.xml"
-                     CardinalityMin="1"
-                     CardinalityMax="unbounded"/>
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin/cmdi-annotationformat.xml" CardinalityMin="0" CardinalityMax="unbounded"/>
         <!-- within the component LexicalResource the component Validation contains information about the (available) 
             validation of the lexical resource -->
-        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-validation.xml"
-                     CardinalityMin="1"
-                     CardinalityMax="1"/>
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-validation.xml" CardinalityMin="0" CardinalityMax="1"/>
         <!-- within the component LexicalResource the component Access contains information on the availability and 
             accessibility of the lexical resource -->
-        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-access.xml"
-                     CardinalityMin="1"
-                     CardinalityMax="1"/>            
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-access.xml" CardinalityMin="0" CardinalityMax="1"/>            
         
         
         <!-- the set of components below contain "internal metadata": information about the linguistic content of the lexical resource -->
         
         <!-- the component LexicalType specifies the type, multilinguality, modality and headword type of the lexical resource -->
-        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-lexicaltype.xml"
-                     CardinalityMin="1"
-                     CardinalityMax="unbounded"/>
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/lexicalresource/cmdi-lexicaltype.xml" CardinalityMin="1" CardinalityMax="unbounded"></CMD_Component>
         <!-- the component AnnotationTypes specifies the linguistic content (annotations) of the lexical resource-->
-        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-annotationtypes.xml"
-                     CardinalityMin="1"
-                     CardinalityMax="unbounded"/>
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-annotationtypes.xml" CardinalityMin="1" CardinalityMax="unbounded"></CMD_Component>
                
     </CMD_Component>
 </CMD_ComponentSpec>

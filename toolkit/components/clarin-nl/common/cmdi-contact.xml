@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                   xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/general-component-schema.xsd"
-                   isProfile="false">
+<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/general-component-schema.xsd" isProfile="false">
+    
     <Header>
         <Name>Contact</Name>
         <Description>Component contains contact information about creators, distributors, actors,... of a resource </Description>
@@ -10,8 +10,8 @@
     <CMD_Component name="Contact">
         <CMD_Element name="Person" CardinalityMin="0" CardinalityMax="unbounded" ValueScheme="string" />
         <CMD_Element name="Address" CardinalityMin="0" CardinalityMax="unbounded" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2505"/>
-        <CMD_Element name="Email" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2521" CardinalityMax="unbounded"/>
-        <CMD_Element name="Organisation" ValueScheme="string" CardinalityMax="unbounded"/>
+        <CMD_Element name="Email" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2521" CardinalityMin="0" CardinalityMax="unbounded"/>
+        <CMD_Element name="Organisation" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded"/>
         <CMD_Element name="Telephone" ConceptLink="http://www.isocat.org/datcat/DC-2461" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded"/>
         <CMD_Element name="Website" ConceptLink="http://www.isocat.org/datcat/DC-63" ValueScheme="anyURI" CardinalityMin="0" CardinalityMax="unbounded"></CMD_Element>
     </CMD_Component>

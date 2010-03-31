@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" isProfile="false"
-                   xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/general-component-schema.xsd">
-    
+
+<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/general-component-schema.xsd" isProfile="false">    
     <Header>
         <Name>Actor</Name>
         <Description>Component contains information about a speaker in a speech corpus, e.g. age, education, language(s) of the speaker</Description>
@@ -9,37 +9,16 @@
 
     <CMD_Component name="Actor">
 
-        <CMD_Element name="Role" ValueScheme="string"
-                   ConceptLink="http://www.isocat.org/datcat/DC-2559"
-                   CardinalityMin="0"
-                   CardinalityMax="unbounded"/>
-        <CMD_Element name="Name" ValueScheme="string"
-                   ConceptLink="http://www.isocat.org/datcat/DC-2557"
-                   CardinalityMin="0"
-                   CardinalityMax="1"/>
-        <CMD_Element name="FullName" ValueScheme="string"
-                   ConceptLink="http://www.isocat.org/datcat/DC-2556"
-                   CardinalityMax="1"/>
-        <CMD_Element name="Code" ValueScheme="string"
-                   ConceptLink="http://www.isocat.org/datcat/DC-2552"
-                   CardinalityMax="1"/>
-        <CMD_Element name="SocialFamilyRole" ValueScheme="string"
-                   ConceptLink="http://www.isocat.org/datcat/DC-2561"
-                   CardinalityMax="unbounded"/>
-        <CMD_Element name="EthnicGroup" ValueScheme="string"
-                   ConceptLink="http://www.isocat.org/datcat/DC-2555"
-                   CardinalityMin="0"
-                   CardinalityMax="unbounded"/>
-        <CMD_Element name="Age" ValueScheme="decimal"
-                   ConceptLink="http://www.isocat.org/datcat/DC-2550"
-                   CardinalityMax="1"> </CMD_Element>
-        <CMD_Element name="BirthYear" ValueScheme="gYear"
-                   ConceptLink="http://www.isocat.org/datcat/DC-2551"
-                   CardinalityMin="0"
-                   CardinalityMax="1"> </CMD_Element>
+        <CMD_Element name="Role" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2559" CardinalityMin="0" CardinalityMax="unbounded"/>
+        <CMD_Element name="Name" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2557" CardinalityMin="0" CardinalityMax="1"/>
+        <CMD_Element name="FullName" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2556"  CardinalityMin="0" CardinalityMax="1"/>
+        <CMD_Element name="Code" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2552" CardinalityMin="0" CardinalityMax="1"/>
+        <CMD_Element name="SocialFamilyRole" ValueScheme="string"  ConceptLink="http://www.isocat.org/datcat/DC-2561" CardinalityMin="0" CardinalityMax="unbounded"/>
+        <CMD_Element name="EthnicGroup" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2555" CardinalityMin="0" CardinalityMax="unbounded"/>
+        <CMD_Element name="Age" ValueScheme="decimal" ConceptLink="http://www.isocat.org/datcat/DC-2550" CardinalityMin="0" CardinalityMax="1"> </CMD_Element>
+        <CMD_Element name="BirthYear" ValueScheme="gYear" ConceptLink="http://www.isocat.org/datcat/DC-2551" CardinalityMin="0" CardinalityMax="1"> </CMD_Element>
 
-        <CMD_Element name="Sex" ConceptLink="http://www.isocat.org/datcat/DC-2560"
-                   CardinalityMax="1">
+        <CMD_Element name="Sex" ConceptLink="http://www.isocat.org/datcat/DC-2560" CardinalityMin="0" CardinalityMax="1" >
             <ValueScheme>
                 <enumeration>
                     <item>Male</item>
@@ -50,17 +29,9 @@
                 </enumeration>                
             </ValueScheme>
         </CMD_Element>
-        <CMD_Element name="Education" ValueScheme="string"
-                   ConceptLink="http://www.isocat.org/datcat/DC-2554"
-                   CardinalityMin="0"
-                   CardinalityMax="unbounded"/>
-        <CMD_Element name="Profession" ValueScheme="string"
-                   ConceptLink="http://www.isocat.org/datcat/DC-2558"
-                   CardinalityMin="0"
-                   CardinalityMax="unbounded"/>
-        <CMD_Element name="Anonymized" ValueScheme="boolean"
-                   ConceptLink="http://www.isocat.org/datcat/DC-2548"
-                   CardinalityMax="1">
+        <CMD_Element name="Education" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2554" CardinalityMin="0" CardinalityMax="unbounded"/>
+        <CMD_Element name="Profession" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2558" CardinalityMin="0" CardinalityMax="unbounded"></CMD_Element>
+        <CMD_Element name="Anonymized" ValueScheme="boolean" ConceptLink="http://www.isocat.org/datcat/DC-2548" CardinalityMin="0" CardinalityMax="1">
             <ValueScheme>
                 <enumeration>
                     <item>true</item>
@@ -72,16 +43,12 @@
         </CMD_Element>
         <!-- within the component Actor the component BirthCountry identifies the country in which the speaker was born -->  
         <CMD_Component name="BirthCountry" CardinalityMin="0" CardinalityMax="1">
-            <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin/iso-3166-1-alpha2.xml"
-                        CardinalityMin="1"
-                        CardinalityMax="1"/>
+            <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin/iso-3166-1-alpha2.xml" CardinalityMin="1" CardinalityMax="1"></CMD_Component>
         </CMD_Component>
         <!-- within the component Actor the component Description provides the possibility to add extra information about a speaker -->    
-        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-description.xml"
-                     CardinalityMin="0"
-                     CardinalityMax="1"/>      
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-description.xml" CardinalityMin="0" CardinalityMax="1" />      
         <!-- the component ActorLanguages identifies the language(s) used by a speaker and indicates which language is the mother tongue and/or the primary language of the speaker -->
-        <CMD_Component filename="cmdi-actorlanguages.xml" CardinalityMax="1"/>
+        <CMD_Component filename="cmdi-actorlanguages.xml" CardinalityMin="0" CardinalityMax="1" />
         
         
     </CMD_Component>

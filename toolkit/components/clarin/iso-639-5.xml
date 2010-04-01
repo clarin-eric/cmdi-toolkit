@@ -10,120 +10,124 @@
             <ValueScheme>
                 <enumeration>
 
-                    <item AppInfo="Austro-Asiatic languages">aav</item>
-                    <item AppInfo="Afro-Asiatic languages">afa</item>
-                    <item AppInfo="Algonquian languages">alg</item>
-                    <item AppInfo="Atlantic-Congo languages">alv</item>
-                    <item AppInfo="Apache languages">apa</item>
-                    <item AppInfo="Alacalufan languages">aqa</item>
-                    <item AppInfo="Algic languages">aql</item>
-                    <item AppInfo="Artificial languages">art</item>
-                    <item AppInfo="Athapascan languages">ath</item>
-                    <item AppInfo="Arauan languages">auf</item>
-                    <item AppInfo="Australian languages">aus</item>
-                    <item AppInfo="Arawakan languages">awd</item>
-                    <item AppInfo="Uto-Aztecan languages">azc</item>
-                    <item AppInfo="Banda languages">bad</item>
-                    <item AppInfo="Bamileke languages">bai</item>
-                    <item AppInfo="Baltic languages">bat</item>
-                    <item AppInfo="Berber languages">ber</item>
-                    <item AppInfo="Bantu languages">bnt</item>
-                    <item AppInfo="Batak languages">btk</item>
-                    <item AppInfo="Central American Indian languages">cai</item>
-                    <item AppInfo="Caucasian languages">cau</item>
-                    <item AppInfo="Chibchan languages">cba</item>
-                    <item AppInfo="North Caucasian languages">ccn</item>
-                    <item AppInfo="South Caucasian languages">ccs</item>
-                    <item AppInfo="Chadic languages">cdc</item>
-                    <item AppInfo="Caddoan languages">cdd</item>
-                    <item AppInfo="Celtic languages">cel</item>
-                    <item AppInfo="Chamic languages">cmc</item>
-                    <item AppInfo="creoles and pidgins">cpe</item>
-                    <item AppInfo="creoles and pidgins">cpf</item>
-                    <item AppInfo="creoles and pidgins">cpp</item>
-                    <item AppInfo="creoles and pidgins">crp</item>
-                    <item AppInfo="Central Sudanic languages">csu</item>
-                    <item AppInfo="Cushitic languages">cus</item>
-                    <item AppInfo="Land Dayak languages">day</item>
-                    <item AppInfo="Mande languages">dmn</item>
-                    <item AppInfo="Dravidian languages">dra</item>
-                    <item AppInfo="Egyptian languages">egx</item>
-                    <item AppInfo="Eskimo-Aleut languages">esx</item>
-                    <item AppInfo="Basque (family)">euq</item>
-                    <item AppInfo="Finno-Ugrian languages">fiu</item>
-                    <item AppInfo="Formosan languages">fox</item>
-                    <item AppInfo="Germanic languages">gem</item>
-                    <item AppInfo="East Germanic languages">gme</item>
-                    <item AppInfo="North Germanic languages">gmq</item>
-                    <item AppInfo="West Germanic languages">gmw</item>
-                    <item AppInfo="Greek languages">grk</item>
-                    <item AppInfo="Hmong-Mien languages">hmx</item>
-                    <item AppInfo="Hokan languages">hok</item>
-                    <item AppInfo="Armenian (family)">hyx</item>
-                    <item AppInfo="Indo-Iranian languages">iir</item>
-                    <item AppInfo="Ijo languages">ijo</item>
-                    <item AppInfo="Indic languages">inc</item>
-                    <item AppInfo="Indo-European languages">ine</item>
-                    <item AppInfo="Iranian languages">ira</item>
-                    <item AppInfo="Iroquoian languages">iro</item>
-                    <item AppInfo="Italic languages">itc</item>
-                    <item AppInfo="Japanese (family)">jpx</item>
-                    <item AppInfo="Karen languages">kar</item>
-                    <item AppInfo="Kordofanian languages">kdo</item>
-                    <item AppInfo="Khoisan languages">khi</item>
-                    <item AppInfo="Kru languages">kro</item>
-                    <item AppInfo="Austronesian languages">map</item>
-                    <item AppInfo="Mon-Khmer languages">mkh</item>
-                    <item AppInfo="Manobo languages">mno</item>
-                    <item AppInfo="Munda languages">mun</item>
-                    <item AppInfo="Mayan languages">myn</item>
-                    <item AppInfo="Nahuatl languages">nah</item>
-                    <item AppInfo="North American Indian languages">nai</item>
-                    <item AppInfo="Trans-New Guinea languages">ngf</item>
-                    <item AppInfo="Niger-Kordofanian languages">nic</item>
-                    <item AppInfo="Nubian languages">nub</item>
-                    <item AppInfo="Oto-Manguean languages">omq</item>
-                    <item AppInfo="Omotic languages">omv</item>
-                    <item AppInfo="Otomian languages">oto</item>
-                    <item AppInfo="Papuan languages">paa</item>
-                    <item AppInfo="Philippine languages">phi</item>
-                    <item AppInfo="Central Malayo-Polynesian languages">plf</item>
-                    <item AppInfo="Malayo-Polynesian languages">poz</item>
-                    <item AppInfo="Eastern Malayo-Polynesian languages">pqe</item>
-                    <item AppInfo="Western Malayo-Polynesian languages">pqw</item>
-                    <item AppInfo="Prakrit languages">pra</item>
-                    <item AppInfo="Quechuan (family)">qwe</item>
-                    <item AppInfo="Romance languages">roa</item>
-                    <item AppInfo="South American Indian languages">sai</item>
-                    <item AppInfo="Salishan languages">sal</item>
-                    <item AppInfo="Eastern Sudanic languages">sdv</item>
-                    <item AppInfo="Semitic languages">sem</item>
-                    <item AppInfo="sign languages">sgn</item>
-                    <item AppInfo="Siouan languages">sio</item>
-                    <item AppInfo="Sino-Tibetan languages">sit</item>
-                    <item AppInfo="Slavic languages">sla</item>
-                    <item AppInfo="Sami languages">smi</item>
-                    <item AppInfo="Songhai languages">son</item>
-                    <item AppInfo="Albanian languages">sqj</item>
-                    <item AppInfo="Nilo-Saharan languages">ssa</item>
-                    <item AppInfo="Samoyedic languages">syd</item>
-                    <item AppInfo="Tai languages">tai</item>
-                    <item AppInfo="Tibeto-Burman languages">tbq</item>
-                    <item AppInfo="Turkic languages">trk</item>
-                    <item AppInfo="Tupi languages">tup</item>
-                    <item AppInfo="Altaic languages">tut</item>
-                    <item AppInfo="Tungus languages">tuw</item>
-                    <item AppInfo="Uralic languages">urj</item>
-                    <item AppInfo="Wakashan languages">wak</item>
-                    <item AppInfo="Sorbian languages">wen</item>
-                    <item AppInfo="Mongolian languages">xgn</item>
-                    <item AppInfo="Na-Dene languages">xnd</item>
-                    <item AppInfo="Yupik languages">ypk</item>
-                    <item AppInfo="Chinese (family)">zhx</item>
-                    <item AppInfo="East Slavic languages">zle</item>
-                    <item AppInfo="South Slavic languages">zls</item>
-                    <item AppInfo="West Slavic languages">zlw</item>
-                    <item AppInfo="Zande languages">znd</item>
+                    <item AppInfo="Austro-Asiatic languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138763-001">aav</item>
+                    <item AppInfo="Afro-Asiatic languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138759-001">afa</item>
+                    <item AppInfo="Algonquian languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138721-001">alg</item>
+                    <item AppInfo="Atlantic-Congo languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138719-001">alv</item>
+                    <item AppInfo="Apache languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138720-001">apa</item>
+                    <item AppInfo="Alacalufan languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138725-001">aqa</item>
+                    <item AppInfo="Algic languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138727-001">aql</item>
+                    <item AppInfo="Artificial languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138724-001">art</item>
+                    <item AppInfo="Athapascan languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138708-001">ath</item>
+                    <item AppInfo="Arauan languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138707-001">auf</item>
+                    <item AppInfo="Australian languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138705-001">aus</item>
+                    <item AppInfo="Arawakan languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138701-001">awd</item>
+                    <item AppInfo="Uto-Aztecan languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138713-001">azc</item>
+                    <item AppInfo="Banda languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138717-001">bad</item>
+                    <item AppInfo="Bamileke languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138716-001">bai</item>
+                    <item AppInfo="Baltic languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138718-001">bat</item>
+                    <item AppInfo="Berber languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138709-001">ber</item>
+                    <item AppInfo="Bihari languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138653-001">bih</item>
+                    <item AppInfo="Bantu languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138657-001">bnt</item>
+                    <item AppInfo="Batak languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138662-001">btk</item>
+                    <item AppInfo="Central American Indian languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138654-001">cai</item>
+                    <item AppInfo="Galibi Carib" ConceptLink="http://cdb.iso.org/lg/CDB-00138651-001">car</item>
+                    <item AppInfo="Caucasian languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138680-001">cau</item>
+                    <item AppInfo="Chibchan languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138679-001">cba</item>
+                    <item AppInfo="North Caucasian languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138678-001">ccn</item>
+                    <item AppInfo="South Caucasian languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138676-001">ccs</item>
+                    <item AppInfo="Chadic languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138658-001">cdc</item>
+                    <item AppInfo="Caddoan languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138675-001">cdd</item>
+                    <item AppInfo="Celtic languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138677-001">cel</item>
+                    <item AppInfo="Chamic languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138672-001">cmc</item>
+                    <item AppInfo="Creoles and pidgins" ConceptLink=" English-based">cpe</item>
+                    <item AppInfo="Creoles and pidgins" ConceptLink=" French-based">cpf</item>
+                    <item AppInfo="Creoles and pidgins" ConceptLink=" Portuguese-based">cpp</item>
+                    <item AppInfo="Creoles and pidgins" ConceptLink="http://cdb.iso.org/lg/CDB-00138668-001">crp</item>
+                    <item AppInfo="Central Sudanic languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138674-001">csu</item>
+                    <item AppInfo="Cushitic languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138673-001">cus</item>
+                    <item AppInfo="Land Dayak languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138736-001">day</item>
+                    <item AppInfo="Mande languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138652-001">dmn</item>
+                    <item AppInfo="Dravidian languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138767-001">dra</item>
+                    <item AppInfo="Egyptian languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138664-001">egx</item>
+                    <item AppInfo="Eskimo-Aleut languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138666-001">esx</item>
+                    <item AppInfo="Basque (family)" ConceptLink="http://cdb.iso.org/lg/CDB-00138667-001">euq</item>
+                    <item AppInfo="Finno-Ugrian languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138661-001">fiu</item>
+                    <item AppInfo="Formosan languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138660-001">fox</item>
+                    <item AppInfo="Germanic languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138659-001">gem</item>
+                    <item AppInfo="East Germanic languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138665-001">gme</item>
+                    <item AppInfo="North Germanic languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138663-001">gmq</item>
+                    <item AppInfo="West Germanic languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138656-001">gmw</item>
+                    <item AppInfo="Greek languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138655-001">grk</item>
+                    <item AppInfo="Himachali languages; Western Pahari languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138710-001">him</item>
+                    <item AppInfo="Hmong-Mien languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138711-001">hmx</item>
+                    <item AppInfo="Hokan languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138712-001">hok</item>
+                    <item AppInfo="Armenian (family)" ConceptLink="http://cdb.iso.org/lg/CDB-00138714-001">hyx</item>
+                    <item AppInfo="Indo-Iranian languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138715-001">iir</item>
+                    <item AppInfo="Ijo languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138683-001">ijo</item>
+                    <item AppInfo="Indic languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138703-001">inc</item>
+                    <item AppInfo="Indo-European languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138698-001">ine</item>
+                    <item AppInfo="Iranian languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138699-001">ira</item>
+                    <item AppInfo="Iroquoian languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138700-001">iro</item>
+                    <item AppInfo="Italic languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138702-001">itc</item>
+                    <item AppInfo="Japanese (family)" ConceptLink="http://cdb.iso.org/lg/CDB-00138704-001">jpx</item>
+                    <item AppInfo="Karen languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138706-001">kar</item>
+                    <item AppInfo="Kordofanian languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138722-001">kdo</item>
+                    <item AppInfo="Khoisan languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138723-001">khi</item>
+                    <item AppInfo="Kru languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138726-001">kro</item>
+                    <item AppInfo="Austronesian languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138685-001">map</item>
+                    <item AppInfo="Mon-Khmer languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138681-001">mkh</item>
+                    <item AppInfo="Manobo languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138682-001">mno</item>
+                    <item AppInfo="Munda languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138686-001">mun</item>
+                    <item AppInfo="Mayan languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138687-001">myn</item>
+                    <item AppInfo="Nahuatl languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138690-001">nah</item>
+                    <item AppInfo="North American Indian languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138691-001">nai</item>
+                    <item AppInfo="Trans New Guinea" ConceptLink="http://cdb.iso.org/lg/CDB-00138692-001">ngf</item>
+                    <item AppInfo="Niger-Kordofanian languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138689-001">nic</item>
+                    <item AppInfo="Nubian languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138697-001">nub</item>
+                    <item AppInfo="Oto-Manguean languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138696-001">omq</item>
+                    <item AppInfo="Omotic languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138695-001">omv</item>
+                    <item AppInfo="Otomian languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138694-001">oto</item>
+                    <item AppInfo="Papuan languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138693-001">paa</item>
+                    <item AppInfo="Philippine languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138684-001">phi</item>
+                    <item AppInfo="Central Malayo-Polynesian languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138688-001">plf</item>
+                    <item AppInfo="Malayo-Polynesian languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138761-001">poz</item>
+                    <item AppInfo="Eastern Malayo-Polynesian languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138760-001">pqe</item>
+                    <item AppInfo="Western Malayo-Polynesian languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138754-001">pqw</item>
+                    <item AppInfo="Prakrit languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138741-001">pra</item>
+                    <item AppInfo="Quechuan (family)" ConceptLink="http://cdb.iso.org/lg/CDB-00138744-001">qwe</item>
+                    <item AppInfo="Romance languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138743-001">roa</item>
+                    <item AppInfo="South American Indian languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138740-001">sai</item>
+                    <item AppInfo="Salishan languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138738-001">sal</item>
+                    <item AppInfo="Eastern Sudanic languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138750-001">sdv</item>
+                    <item AppInfo="Semitic languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138753-001">sem</item>
+                    <item AppInfo="sign languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138752-001">sgn</item>
+                    <item AppInfo="Siouan languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138745-001">sio</item>
+                    <item AppInfo="Sino-Tibetan languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138755-001">sit</item>
+                    <item AppInfo="Slavic languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138749-001">sla</item>
+                    <item AppInfo="Sami languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138748-001">smi</item>
+                    <item AppInfo="Songhai languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138747-001">son</item>
+                    <item AppInfo="Albanian languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138746-001">sqj</item>
+                    <item AppInfo="Nilo-Saharan languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138751-001">ssa</item>
+                    <item AppInfo="Samoyedic languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138742-001">syd</item>
+                    <item AppInfo="Tai languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138737-001">tai</item>
+                    <item AppInfo="Tibeto-Burman languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138739-001">tbq</item>
+                    <item AppInfo="Turkic languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138762-001">trk</item>
+                    <item AppInfo="Tupi languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138764-001">tup</item>
+                    <item AppInfo="Altaic languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138765-001">tut</item>
+                    <item AppInfo="Tungus languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138766-001">tuw</item>
+                    <item AppInfo="Uralic languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138756-001">urj</item>
+                    <item AppInfo="Wakashan languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138757-001">wak</item>
+                    <item AppInfo="Sorbian languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138758-001">wen</item>
+                    <item AppInfo="Mongolian languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138728-001">xgn</item>
+                    <item AppInfo="Na-Dene languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138729-001">xnd</item>
+                    <item AppInfo="Yupik languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138730-001">ypk</item>
+                    <item AppInfo="Chinese (family)" ConceptLink="http://cdb.iso.org/lg/CDB-00138731-001">zhx</item>
+                    <item AppInfo="East Slavic languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138732-001">zle</item>
+                    <item AppInfo="South Slavic languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138733-001">zls</item>
+                    <item AppInfo="West Slavic languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138734-001">zlw</item>
+                    <item AppInfo="Zande languages" ConceptLink="http://cdb.iso.org/lg/CDB-00138735-001">znd</item>
+                    
 
                 </enumeration>
             </ValueScheme>

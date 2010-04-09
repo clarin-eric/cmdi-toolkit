@@ -193,6 +193,9 @@
             <xsl:when test="./AttributeList and ./ValueScheme">
                 <xs:element name="{@name}">
                     <xsl:apply-templates select= "@Documentation"/>
+                    <xsl:apply-templates select= "@ConceptLink"/>
+                    <xsl:apply-templates select= "@CardinalityMin"/>
+                    <xsl:apply-templates select= "@CardinalityMax"/>
                     <xsl:apply-templates select="./ValueScheme"/>
                 </xs:element>
             </xsl:when>

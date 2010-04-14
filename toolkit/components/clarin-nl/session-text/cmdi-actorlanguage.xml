@@ -9,36 +9,37 @@
     </Header>
 
     <CMD_Component name="ActorLanguage">
-        <CMD_Element name="HomeLanguage" CardinalityMin="0" CardinalityMax="1">
+        <CMD_Element name="HomeLanguage" ConceptLink="http://www.isocat.org/datcat/DC-2955" CardinalityMin="0" CardinalityMax="1">
             <ValueScheme>
                 <enumeration>
                     <item ConceptLink="http://www.isocat.org/datcat/DC-2591">Unknown</item>
                     <item ConceptLink="http://www.isocat.org/datcat/DC-2592">Unspecified</item>
-                    <item>true</item>
-                    <item>false</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2952">true</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2953">false</item>
                 </enumeration>                
             </ValueScheme>
         </CMD_Element>
-        <CMD_Element name="MotherTongue" CardinalityMin="0" CardinalityMax="1">
+        <CMD_Element name="MotherTongue" ConceptLink="http://www.isocat.org/datcat/DC-2955" CardinalityMin="0" CardinalityMax="1" >
             <ValueScheme>
                 <enumeration>
                     <item ConceptLink="http://www.isocat.org/datcat/DC-2591">Unknown</item>
                     <item ConceptLink="http://www.isocat.org/datcat/DC-2592">Unspecified</item>
-                    <item>true</item>
-                    <item>false</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2952">true</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2953">false</item>
                 </enumeration>                
             </ValueScheme>
         </CMD_Element>
-        <CMD_Element name="PrimaryLanguage" CardinalityMin="0" CardinalityMax="1" ConceptLink="http://www.isocat.org/datcat/DC-2553" >
+        <CMD_Element name="PrimaryLanguage" ConceptLink="http://www.isocat.org/datcat/DC-2553" CardinalityMin="0" CardinalityMax="1" >
             <ValueScheme>
                 <enumeration>
                     <item ConceptLink="http://www.isocat.org/datcat/DC-2591">Unknown</item>
                     <item ConceptLink="http://www.isocat.org/datcat/DC-2592">Unspecified</item>
-                    <item>true</item>
-                    <item>false</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2952">true</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2953">false</item>
                 </enumeration>                
             </ValueScheme>
         </CMD_Element>
+        
         <!-- within the component ActorLanguage the component Description offers the possibility to add extra information about the language of a speaker -->
         <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-description.xml" CardinalityMin="0" CardinalityMax="1" />
         <!-- within the component ActorLanguage the component Language identifies a language used by a speaker -->

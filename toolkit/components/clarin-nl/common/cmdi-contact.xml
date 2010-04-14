@@ -8,10 +8,10 @@
     </Header>
 
     <CMD_Component name="Contact">
-        <CMD_Element name="Person" CardinalityMin="0" CardinalityMax="unbounded" ValueScheme="string" />
-        <CMD_Element name="Address" CardinalityMin="0" CardinalityMax="unbounded" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2505"/>
+        <CMD_Element name="Person" ConceptLink="http://www.isocat.org/datcat/DC-2978" CardinalityMin="0" CardinalityMax="unbounded" ValueScheme="string" />
+        <CMD_Element name="Address" ConceptLink="http://www.isocat.org/datcat/DC-2505" CardinalityMin="0" CardinalityMax="unbounded" ValueScheme="string" />
         <CMD_Element name="Email" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2521" CardinalityMin="0" CardinalityMax="unbounded"/>
-        <CMD_Element name="Organisation" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded"/>
+        <CMD_Element name="Organisation" ConceptLink="http://www.isocat.org/datcat/DC-2979" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" />
         <CMD_Element name="Telephone" ConceptLink="http://www.isocat.org/datcat/DC-2461" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded"/>
         <CMD_Element name="Website" ConceptLink="http://www.isocat.org/datcat/DC-63" ValueScheme="anyURI" CardinalityMin="0" CardinalityMax="unbounded"></CMD_Element>
     </CMD_Component>

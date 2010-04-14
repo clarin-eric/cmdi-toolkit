@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" isProfile="false"
-                   xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/general-component-schema.xsd">
-    
+
+<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/general-component-schema.xsd" isProfile="false">    
     <Header>
         <Name>Session Resources</Name>
         <Description>Component contains information about the resources associated with a session, i.e. a media file and written resources (annotations, analyses,...)</Description>
     </Header>
 
     <CMD_Component name="SessionResources">
+        
         <!-- the component MediaFile contains information about the media file of a session, e.g. the size, the format, the sampling rate... -->
-        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/session-text/cmdi-mediafile.xml"
-                     CardinalityMax="1"/>
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/session-text/cmdi-mediafile.xml" CardinalityMin="0" CardinalityMax="1"/>
         <!-- within the component SessionResources the component WrittenResources contains information about the written resources associated with a session (annotations, analyses,...) -->
-        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/session-text/cmdi-writtenresources.xml"
-                     CardinalityMax="1"/>
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/session-text/cmdi-writtenresources.xml" CardinalityMin="0" CardinalityMax="1"/>
+
     </CMD_Component>
 
 </CMD_ComponentSpec>

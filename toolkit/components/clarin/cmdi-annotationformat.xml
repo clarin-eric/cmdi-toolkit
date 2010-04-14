@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                   xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/general-component-schema.xsd"
-                   isProfile="false">
+<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/general-component-schema.xsd" isProfile="false">
+    
     <Header>
         <ID/>
         <Name>Annotation format</Name>
@@ -9,10 +9,7 @@
     </Header>
 
     <CMD_Component name="AnnotationFormat">
-        <!-- selection of most common mime types -->
-        <CMD_Element name="AnnotationFormat" ConceptLink="http://www.isocat.org/datcat/DC-2562"
-                   CardinalityMin="1"
-                   CardinalityMax="unbounded">
+        <CMD_Element name="AnnotationFormat" ConceptLink="http://www.isocat.org/datcat/DC-2562" CardinalityMin="1" CardinalityMax="unbounded">
             <ValueScheme>
                 <enumeration>
                     <item>application/pdf</item>
@@ -39,6 +36,11 @@
                     <item>text/x-cgn-skp+xml</item>
                     <item>text/x-cgn-tag+xml</item>
                     <item>text/x-cgn-tig+xml</item>
+                    <item>text/x-jasmin-ort+text</item>
+                    <item>text/x-jasmin-awd+text</item>
+                    <item>text/x-jasmin-pos+text</item>
+                    <item>text/x-jasmin-hmi+text</item>
+                    <item>text/x-mmax+xml</item>
                     <item>AIF</item>
                     <item>BAS</item>
                     <item>MT</item>

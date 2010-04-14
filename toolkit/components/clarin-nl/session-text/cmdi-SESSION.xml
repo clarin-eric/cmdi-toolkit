@@ -11,8 +11,10 @@
     </Header>
     
     <CMD_Component name="SESSION" CardinalityMin="1" CardinalityMax="1">
-        <CMD_Element name="Name" ValueScheme="string" CardinalityMin="1" ConceptLink="http://www.isocat.org/datcat/DC-2544" CardinalityMax="unbounded"/>
+        
+        <CMD_Element name="Name" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2544" CardinalityMin="1" CardinalityMax="unbounded"/>
         <CMD_Element name="NumberOfSpeakers" ValueScheme="decimal" ConceptLink="http://www.isocat.org/datcat/DC-2692" CardinalityMin="0" CardinalityMax="1"></CMD_Element>
+
         <!-- within the component Session the component Description provides the possibility to add extra information about a session -->
         <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-description.xml" CardinalityMin="0" CardinalityMax="1"/>
         <!-- the component Actors contains information about the speaker(s) of one session, e.g. age, profession, relation between the speakers,... -->

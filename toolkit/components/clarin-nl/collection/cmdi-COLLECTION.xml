@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                   xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/general-component-schema.xsd"
-                   isProfile="true">
+    xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/general-component-schema.xsd" isProfile="true">
     <Header>
         <ID>eu.clarin.cmdi.collection</ID>
         <Name>Collection</Name>
@@ -10,32 +9,21 @@
     
     <CMD_Component name="Collection" CardinalityMin="1" CardinalityMax="1">
         <!-- within the component Collection the component GeneralInfo contains general information about the collection, like the name, the title, the time coverage of the data,... -->
-        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-generalinfo.xml"
-                     CardinalityMin="1"
-                     CardinalityMax="1"/>
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-generalinfo.xml" CardinalityMin="1" CardinalityMax="1"></CMD_Component>
         <!-- within the component Collection the component OriginLocation identifies the location where the collection was built -->
         <CMD_Component name="OriginLocation" CardinalityMin="1" CardinalityMax="unbounded">
-            <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin/cmdi-location.xml"
-                        CardinalityMin="1"
-                        CardinalityMax="unbounded"/>
+            <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin/cmdi-location.xml" CardinalityMin="1" CardinalityMax="unbounded" />
         </CMD_Component>
         <!-- within the component Collection the component Project contains information about the preceding project in which the collection was built -->
-        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-project.xml"
-                     CardinalityMax="unbounded"/>
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-project.xml" CardinalityMin="0" CardinalityMax="unbounded"></CMD_Component>
         <!-- within the component Collection the component Creator contains (contact) information about the creators of the collection -->
-        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-creators.xml"
-                     CardinalityMax="1"/>       
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-creators.xml" CardinalityMin="0" CardinalityMax="1"></CMD_Component>       
         <!-- within the component Collection the component DocumentationLanguages identifies the language(s) in which the documentation about the collection is available -->
-        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-documentationlanguages.xml"
-                     CardinalityMax="1"/>
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-documentationlanguages.xml" CardinalityMin="0" CardinalityMax="1"></CMD_Component>
         <!-- within the component Collection the component Access contains information about the availability and accessibility of the collection -->
-        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-access.xml"
-                     CardinalityMin="1"
-                     CardinalityMax="1"/>  
-
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-access.xml" CardinalityMin="0" CardinalityMax="1"></CMD_Component>  
         <!-- the component CollectionType specifies whether the collection contains audio, video, text, pictures or other resources -->
-        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/collection/cmdi-collectiontype.xml"
-                     CardinalityMax="1"/>
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/collection/cmdi-collectiontype.xml" CardinalityMin="0" CardinalityMax="1"></CMD_Component>
             
     </CMD_Component>
 </CMD_ComponentSpec>

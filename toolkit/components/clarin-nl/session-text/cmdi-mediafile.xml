@@ -9,6 +9,7 @@
     </Header>
 
     <CMD_Component name="MediaFile">
+        
         <CMD_Element name="CreationYear" ValueScheme="gYear" ConceptLink="http://www.isocat.org/datcat/DC-2510" CardinalityMin="0" CardinalityMax="1"/>
         <CMD_Element name="Type" ConceptLink="http://www.isocat.org/datcat/DC-2570" CardinalityMin="1" CardinalityMax="2">
             <ValueScheme>
@@ -33,9 +34,10 @@
                 </enumeration>               
             </ValueScheme>
         </CMD_Element>
-        <CMD_Element name="RecordingConditions" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+        <CMD_Element name="RecordingConditions" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" ConceptLink=""/>
         <CMD_Element name="RecordingPlatformSoftware" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2694" CardinalityMin="0" CardinalityMax="1"></CMD_Element>
         <CMD_Element name="RecordingPlatformHardware" ValueScheme="string" ConceptLink="http://www.isocat.org/datcat/DC-2693" CardinalityMin="0" CardinalityMax="1"></CMD_Element>
+
         <!-- within the component MediaFile the component Location identifies the recording location -->
         <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin/cmdi-location.xml" CardinalityMin="0" CardinalityMax="1"></CMD_Component>
         <!-- within the component MediaFile the component Size contains information about the size of the mediafile -->
@@ -43,7 +45,7 @@
         <!-- within the component MediaFile the component Description provides the possibility to add extra information about the MediaFile of a session -->
         <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-description.xml" CardinalityMin="0" CardinalityMax="1" />
         <!-- within the component MediaFile the component Speech-Technical contains information about technical aspects of the media file, e.g. the sampling frequency, the byte order,... -->
-        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/collection/cmdi-speech-technical.xml" CardinalityMax="1"/>
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/collection/cmdi-speech-technical.xml" CardinalityMin="0" CardinalityMax="1"/>
     </CMD_Component>
 
 </CMD_ComponentSpec>

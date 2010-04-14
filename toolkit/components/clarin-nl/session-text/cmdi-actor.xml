@@ -21,9 +21,9 @@
         <CMD_Element name="Sex" ConceptLink="http://www.isocat.org/datcat/DC-2560" CardinalityMin="0" CardinalityMax="1" >
             <ValueScheme>
                 <enumeration>
-                    <item>Male</item>
-                    <item>Female</item>
-                    <item>N/A</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2949">Male</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2950">Female</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2951">N/A</item>
                     <item ConceptLink="http://www.isocat.org/datcat/DC-2591">Unknown</item>
                     <item ConceptLink="http://www.isocat.org/datcat/DC-2592">Unspecified</item>
                 </enumeration>                
@@ -34,8 +34,8 @@
         <CMD_Element name="Anonymized" ValueScheme="boolean" ConceptLink="http://www.isocat.org/datcat/DC-2548" CardinalityMin="0" CardinalityMax="1">
             <ValueScheme>
                 <enumeration>
-                    <item>true</item>
-                    <item>false</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2952">true</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2953">false</item>
                     <item ConceptLink="http://www.isocat.org/datcat/DC-2591">Unknown</item>
                     <item ConceptLink="http://www.isocat.org/datcat/DC-2592">Unspecified</item>
                 </enumeration>                
@@ -50,7 +50,5 @@
         <!-- the component ActorLanguages identifies the language(s) used by a speaker and indicates which language is the mother tongue and/or the primary language of the speaker -->
         <CMD_Component filename="cmdi-actorlanguages.xml" CardinalityMin="0" CardinalityMax="1" />
         
-        
     </CMD_Component>
-
 </CMD_ComponentSpec>

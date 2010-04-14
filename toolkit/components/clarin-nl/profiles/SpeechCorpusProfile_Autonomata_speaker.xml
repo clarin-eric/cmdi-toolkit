@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/general-component-schema.xsd"
+                   isProfile="true">
+    <Header/>
+ 
+    <CMD_Component name="SpeechCorpusProfile_Autonomata_speaker" CardinalityMax="unbounded">
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/collection/cmdi-COLLECTION.xml" CardinalityMin="1" CardinalityMax="1"></CMD_Component>
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/collection/cmdi-corpus.xml" CardinalityMin="1" CardinalityMax="1"></CMD_Component>
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/collection/cmdi-speech-corpus.xml" CardinalityMin="1" CardinalityMax="1"></CMD_Component>
+        <!-- within the component SpeechCorpusProfile_Autonomata_speaker the component cmdi-SESSION is relevant for all speech recordings in the AUTONOMATA speech corpus -->
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/session-text/cmdi-SESSION.xml" CardinalityMin="1" CardinalityMax="1"></CMD_Component>
+    </CMD_Component>
+</CMD_ComponentSpec>

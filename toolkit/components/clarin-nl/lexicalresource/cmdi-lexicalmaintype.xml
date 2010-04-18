@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                   xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/general-component-schema.xsd"
-                   isProfile="false">
+    xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/general-component-schema.xsd"
+    isProfile="false">
     
     <Header>
         <ID>eu.clarin.cmdi.lexicalmaintype</ID>
@@ -13,20 +13,18 @@
         <CMD_Element name="LexicalMainType" ConceptLink="http://www.isocat.org/datcat/DC-2487">
             <ValueScheme>
                 <enumeration>
-                    <item>word list</item>
-                    <item>dictionary</item>
-                    <item>semantic network</item>
-                    <item ConceptLink="http://www.isocat.org/datcat/DC-2599">other</item>
-                    <item ConceptLink="http://www.isocat.org/datcat/DC-2592">unspecified</item> 
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2811">Word list</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2812">Dictionary</item>
+                    <item ConceptLink="http://www.isocat.org/rest/dc/142">Semantic network</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2599">Other</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-2592">Unspecified</item> 
               </enumeration>
             </ValueScheme>
         </CMD_Element>
     
         <!-- within the component LexicalMainType the component Description provides the possibility to add extra information 
             about the type (other) of the resource -->
-        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-description.xml"
-                     CardinalityMin="0"
-                     CardinalityMax="1"/>
+        <CMD_Component filename="http://www.clarin.eu/cmd/components/clarin-nl/common/cmdi-description.xml" CardinalityMin="0" CardinalityMax="1" />
     
     </CMD_Component>        
 </CMD_ComponentSpec>

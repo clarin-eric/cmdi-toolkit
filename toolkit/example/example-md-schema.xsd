@@ -192,11 +192,6 @@
                         </xs:complexType>
                      </xs:element>
                      <xs:element name="Actor" minOccurs="0" maxOccurs="4">
-                        <xs:annotation>
-                           <xs:appinfo>
-                              <DisplayPriority>0</DisplayPriority>
-                           </xs:appinfo>
-                        </xs:annotation>
                         <xs:complexType>
                            <xs:sequence>
                               <xs:element name="firstName">

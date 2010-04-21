@@ -167,11 +167,7 @@
             </xsl:if>
             <!-- Add a dcr:datcat if a ConceptLink attribute is found -->
             <xsl:apply-templates select="./@ConceptLink"/>
-            
-            
-            <!-- process all Documentation and DisplayPriority attributes -->
-            <xsl:call-template name="annotations"/>
-            
+                                 
             <xs:complexType>
                 <xs:sequence>
                     <!-- process all elements at this level -->

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="../general-component-schema.xsd">
+    xsi:noNamespaceSchemaLocation="../general-component-schema.xsd" isProfile="false">
     
     <Header/>
     
-    <CMD_Component name="Actor" CardinalityMin="0" CardinalityMax="unbounded" ComponentId="eu.clarin.mdcomponent.actor" DisplayPriority="0">
+    <CMD_Component name="Actor" CardinalityMin="0" CardinalityMax="unbounded" ComponentId="eu.clarin.mdcomponent.actor">
         
         <CMD_Element name="firstName" ValueScheme="string" Documentation="This is the firstname of a person" DisplayPriority="0">
             <!-- provide a nickname attribute for the firstName element -->

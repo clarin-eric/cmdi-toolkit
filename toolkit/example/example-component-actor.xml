@@ -5,9 +5,9 @@
     
     <Header/>
     
-    <CMD_Component name="Actor" CardinalityMin="0" CardinalityMax="unbounded" ComponentId="eu.clarin.mdcomponent.actor">
+    <CMD_Component name="Actor" CardinalityMin="0" CardinalityMax="unbounded" ComponentId="eu.clarin.mdcomponent.actor" DisplayPriority="0">
         
-        <CMD_Element name="firstName" ValueScheme="string" Documentation="This is the firstname of a person">
+        <CMD_Element name="firstName" ValueScheme="string" Documentation="This is the firstname of a person" DisplayPriority="0">
             <!-- provide a nickname attribute for the firstName element -->
             <AttributeList>
                 <!-- example of an attribute using a simple type -->
@@ -28,7 +28,7 @@
             </AttributeList>
         </CMD_Element>
         
-        <CMD_Element name="lastName" ValueScheme="string"/>
+        <CMD_Element name="lastName" ValueScheme="string" DisplayPriority="1"/>
         
         <CMD_Element name="sex" ConceptLink="http://www.isocat.org/datcat/CMD-000" ValueScheme="anyURI">
             <ValueScheme>

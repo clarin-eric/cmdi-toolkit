@@ -154,6 +154,7 @@
         <xsl:param name="MaxOccurs" select="@CardinalityMax"/>
 
         <xs:element name="{@name}">
+            
             <xsl:if test="$MinOccurs">
                 <xsl:attribute name="minOccurs">
                     <xsl:value-of select="$MinOccurs"/>
@@ -166,6 +167,11 @@
             </xsl:if>
             <!-- Add a dcr:datcat if a ConceptLink attribute is found -->
             <xsl:apply-templates select="./@ConceptLink"/>
+            
+            
+            <!-- process all Documentation and DisplayPriority attributes -->
+            <xsl:call-template name="annotations"/>
+            
             <xs:complexType>
                 <xs:sequence>
                     <!-- process all elements at this level -->
@@ -179,6 +185,8 @@
                     <xs:attribute name="ComponentId" type="xs:anyURI" fixed="{@ComponentId}"/>
                 </xsl:if>
             </xs:complexType>
+            
+        
         </xs:element>
 
     </xsl:template>
@@ -186,13 +194,15 @@
     <!-- Process all CMD_Elements, its attributes and children -->
     <xsl:template match="CMD_Element">
         
-        
         <xsl:choose>
 
             <!-- Highest complexity: both attributes and a valuescheme, link to the type we created during the preprocessing of the ValueScheme -->
             <xsl:when test="./AttributeList and ./ValueScheme">
                 <xs:element name="{@name}">
-                    <xsl:apply-templates select= "@Documentation"/>
+                    
+                    <!-- process all Documentation and DisplayPriority attributes -->
+                    <xsl:call-template name="annotations"/>
+                    
                     <xsl:apply-templates select= "@ConceptLink"/>
                     <xsl:apply-templates select= "@CardinalityMin"/>
                     <xsl:apply-templates select= "@CardinalityMax"/>
@@ -203,7 +213,10 @@
             <!-- Medium complexity: attributes but no valuescheme, can be arranged inline -->
             <xsl:when test="./AttributeList and not(./ValueScheme)">
                 <xs:element name="{@name}">
-                    <xsl:apply-templates select= "@Documentation"/>
+                    
+                    <!-- process all Documentation and DisplayPriority attributes -->
+                    <xsl:call-template name="annotations"/>
+    
                     <xsl:apply-templates select= "@ConceptLink"/>
                     <xsl:apply-templates select= "@CardinalityMin"/>
                     <xsl:apply-templates select= "@CardinalityMax"/>
@@ -221,8 +234,11 @@
             <!-- Simple case: no attributes and no value scheme, 1-to-1 transform to an xs:element, just rename element and attributes -->
             <xsl:otherwise>
                 <xsl:element name="xs:element">
-                    <xsl:apply-templates select= "@Documentation"/>
-                    <xsl:apply-templates select="@* | node()"/>
+               
+                    <xsl:apply-templates select="@*[name() != 'Documentation' and name() != 'DisplayPriority'] | node()"/>
+                    <!-- process all Documentation and DisplayPriority attributes -->
+                    <xsl:call-template name="annotations"/>
+                    
                 </xsl:element>
             </xsl:otherwise>
 
@@ -285,11 +301,13 @@
         </xsl:for-each>
     </xsl:template>
 
+      
     <!--  default action: keep the attributes like they are -->
     <xsl:template match="@*|node()">
         <xsl:copy/>
     </xsl:template>
 
+     
     <!-- except for those attributes we want to be renamed -->
     <xsl:template match="@CardinalityMin">
         <xsl:attribute name="minOccurs">
@@ -314,17 +332,30 @@
             <xs:appinfo><xsl:value-of select="."/></xs:appinfo>
         </xs:annotation>
     </xsl:template>
-
-    <xsl:template match="@Documentation">
-        <xs:annotation>
-            <xs:documentation><xsl:value-of select="."/></xs:documentation>
-        </xs:annotation>
-    </xsl:template>
-
+    
+    
     <xsl:template match="@ValueScheme">
         <xsl:attribute name="type">
             <xsl:value-of select="concat('xs:',.)"/>
         </xsl:attribute>
     </xsl:template>
+
+    <xsl:template match="@Documentation">
+        <xs:documentation><xsl:value-of select="."/></xs:documentation>
+    </xsl:template>
+    
+    <xsl:template match="@DisplayPriority">
+        <xs:appinfo><DisplayPriority><xsl:value-of select="."/></DisplayPriority></xs:appinfo>
+    </xsl:template>
+
+    <xsl:template name="annotations">
+        <xsl:if test="@Documentation or @DisplayPriority">
+        <xs:annotation>
+            <xsl:apply-templates select= "@Documentation"/>
+            <xsl:apply-templates select= "@DisplayPriority"/>
+        </xs:annotation>
+        </xsl:if>
+    </xsl:template>
+
 
 </xsl:stylesheet>

@@ -90,6 +90,7 @@
         <xs:attribute name="CardinalityMin" type="cardinality_type"/>
         <xs:attribute name="CardinalityMax" type="cardinality_type"/>
         <xs:attribute name="Documentation" type="xs:string"/>
+        <xs:attribute name="DisplayPriority" type="xs:integer"/>
     </xs:attributeGroup>
 
     <!-- list of all attributes that can be bound to a cl_comp -->
@@ -103,6 +104,7 @@
         
         <xs:attribute name="CardinalityMin" type="cardinality_type" />
         <xs:attribute name="CardinalityMax" type="cardinality_type"/>
+        <xs:attribute name="DisplayPriority" type="xs:integer"/>
         <xs:attribute ref="xml:base"/>
     </xs:attributeGroup>
     

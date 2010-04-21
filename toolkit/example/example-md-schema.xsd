@@ -192,11 +192,19 @@
                         </xs:complexType>
                      </xs:element>
                      <xs:element name="Actor" minOccurs="0" maxOccurs="4">
+                        <xs:annotation>
+                           <xs:appinfo>
+                              <DisplayPriority>0</DisplayPriority>
+                           </xs:appinfo>
+                        </xs:annotation>
                         <xs:complexType>
                            <xs:sequence>
                               <xs:element name="firstName">
                                  <xs:annotation>
                                     <xs:documentation>This is the firstname of a person</xs:documentation>
+                                    <xs:appinfo>
+                                       <DisplayPriority>0</DisplayPriority>
+                                    </xs:appinfo>
                                  </xs:annotation>
                                  <xs:complexType>
                                     <xs:simpleContent>
@@ -214,7 +222,13 @@
                                     </xs:simpleContent>
                                  </xs:complexType>
                               </xs:element>
-                              <xs:element name="lastName" type="xs:string"/>
+                              <xs:element name="lastName" type="xs:string">
+                                 <xs:annotation>
+                                    <xs:appinfo>
+                                       <DisplayPriority>1</DisplayPriority>
+                                    </xs:appinfo>
+                                 </xs:annotation>
+                              </xs:element>
                               <xs:element name="sex" dcr:datcat="http://www.isocat.org/datcat/CMD-000"
                                           type="complextype-Actor-sex"/>
                               <xs:element name="age" dcr:datcat="http://www.isocat.org/datcat/CMD-000"

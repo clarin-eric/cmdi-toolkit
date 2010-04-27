@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/components/clarin-nl/profiles/TextCorpus.xsd">
+    <Header></Header>
+    <Resources>
+        <ResourceProxyList></ResourceProxyList>
+        <JournalFileProxyList></JournalFileProxyList>
+        <ResourceRelationList></ResourceRelationList>
+    </Resources>
+    <Components>
+        <TextCorpusProfile>
+            <Collection>
+                <GeneralInfo>
+                    <Name>Statenvertaling 1637</Name>
+                    <Version>1.0</Version>
+                    <TimeCoverage>1637</TimeCoverage>
+                    <Owner>Nicoline van der Sijs</Owner>
+                    <PublicationYear>2008</PublicationYear>
+                    <Description>
+                        <Description>The digitized texts of the "Statenvertaling" bible of 1637.</Description>
+                    </Description>
+                </GeneralInfo>
+                <OriginLocation>
+                    <Location>
+                        <Country>
+                            <Code>NL</Code>
+                        </Country>
+                        <Continent>
+                            <Code>EU</Code>
+                        </Continent>
+                    </Location>
+                </OriginLocation>
+                <Project>
+                    <Name>Bijbeldigitaliseringsproject</Name>
+                    <Funder>Digitale Bibliotheek voor de Nederlandse Letteren (dbnl); Instituut voor Nederlandse Lexicologie (INL); Nederlands Bijbelgenootschap (NBG); Nederlandse Taalunie (NTU)</Funder>
+                    <Contact>
+                        <Person>Nicoline van der Sijs</Person>
+                        <Email>nvdsijs@euronet.nl</Email>
+                    </Contact>
+                    <Duration>
+                        <StartYear>2008</StartYear>
+                    </Duration>
+                </Project>
+                <Creators>
+                    <Creator>
+                        <Role>Project coordinator</Role>
+                        <Contact>
+                            <Person>Nicoline van der Sijs</Person>
+                        </Contact>
+                    </Creator>
+                </Creators>
+                <DocumentationLanguages>
+                    <Language>
+                        <LanguageName>Dutch</LanguageName>
+                        <ISO639>
+                            <iso-639-3-code>dut</iso-639-3-code>
+                        </ISO639>                  
+                    </Language>   
+                </DocumentationLanguages>
+                <Access>
+                    <Availability>online and offline available for academic use; restricted use; not available for commercial use</Availability>
+                    <DistributionMedium>online and download</DistributionMedium>
+                    <CatalogueLink>http://www.inl.nl/nl/corpora/bijbelteksten/statenvertaling-1637</CatalogueLink>
+                    <Contact>
+                        <Email>servicedesk@inl.nl</Email>
+                        <Organisation>Institute for Dutch Lexicology</Organisation>
+                    </Contact>
+                    <Price>
+                        <Price>free for academic use</Price>
+                    </Price>
+                </Access>
+                <CollectionType>
+                    <CollectionType>text</CollectionType>
+                </CollectionType>
+            </Collection>
+            <Corpus>
+                <Topic>religious texts</Topic>
+                <Multilinguality>
+                    <Multilinguality>Monolingual</Multilinguality>
+                </Multilinguality>
+                <AnnotationTypes>
+                    <AnnotationType>
+                        <AnnotationType>Orthography</AnnotationType>
+                    </AnnotationType>
+                </AnnotationTypes>
+                <Size>
+                    <TotalSize>
+                        <Number>2590583</Number>
+                        <SizeUnit>words</SizeUnit>
+                    </TotalSize>
+                    <TotalSize>
+                        <Number>92</Number>
+                        <SizeUnit>bible books</SizeUnit>
+                    </TotalSize>
+                </Size>
+                <SubjectLanguages>
+                    <SubjectLanguage>
+                        <Dominant>true</Dominant>
+                        <Language>
+                            <LanguageName>Dutch</LanguageName>
+                            <ISO639>
+                                <iso-639-3-code>dut</iso-639-3-code>
+                            </ISO639>
+                        </Language>
+                    </SubjectLanguage>
+                </SubjectLanguages>
+                <Modality>
+                    <Modality>Written</Modality>
+                </Modality>
+            </Corpus>
+            <TextCorpus>
+                <SourceType> bible </SourceType>
+                <TextTechnical>
+                    <MimeType>
+                        <MimeType>text/xml</MimeType>
+                    </MimeType>
+                </TextTechnical>
+            </TextCorpus>
+        </TextCorpusProfile>
+    </Components>
+</CMD>

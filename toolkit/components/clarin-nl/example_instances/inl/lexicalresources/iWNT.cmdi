@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/components/clarin-nl/lexicalresource/cmdi-lexicalresource.xsd">
+    <Header></Header>
+    <Resources>
+        <ResourceProxyList></ResourceProxyList>
+        <JournalFileProxyList></JournalFileProxyList>
+        <ResourceRelationList></ResourceRelationList>
+    </Resources>
+    <Components>
+        <!--  -->
+        <LexicalResource>
+            <GeneralInfo>
+                <Name>iWNT</Name>
+                <Name>Woordenboek der Nederlandsche Taal online</Name>
+                <Version>1.2.1</Version>
+                <TimeCoverage>1500-1976</TimeCoverage>
+                <Owner>Institute for Dutch Lexicology (Instituut voor Nederlandse Lexicologie, INL)</Owner>
+                <PublicationYear>2006</PublicationYear>
+                <Description>
+                    <Description>Woordenboek der Nederlandsche Taal (WNT) online is the electronic version of the Woordenboek
+                        der Nederlandsche Taal: a historical and scientific dictionary of the Dutch language. The dictionary 
+                        decribes the meaning and history of hundred thousands of words in written Dutch, from the period 1500-1976.
+                    </Description>
+                </Description>
+            </GeneralInfo>
+            <OriginLocation>
+                <Location>
+                    <Country>
+                        <Code>NL</Code>
+                    </Country>
+                </Location>
+            </OriginLocation>
+            
+            <Project>
+                <Name>WNT</Name>
+                <Title>Woordenboek der Nederlandsche Taal</Title>
+                <Funder>Comité van Ministers: since 1980 united in the Dutch Language Union 
+                    (Nederlandse Taalunie, NTU)</Funder>
+                <Contact>
+                    <Email>servicedesk@inl.nl</Email>
+                    <Organisation>Institute for Dutch Lexicology (Instituut voor Nederlandse Lexicologie, INL),
+                    Language Database Department (Taalbank Nederlands)</Organisation>
+                </Contact>
+                <Duration>
+                    <StartYear>1968</StartYear>
+                    <CompletionYear>2001</CompletionYear>
+                </Duration>
+            </Project>
+            <Creators>
+                <Creator>
+                    <Contact>
+                        <Email>servicedesk@inl.nl</Email>
+                        <Organisation>Institute for Dutch Lexicology (Instituut voor Nederlandse Lexicologie, INL),
+                            Language Database Department (Taalbank Nederlands)</Organisation>
+                    </Contact>
+                </Creator>
+            </Creators>
+          
+            <Size>
+                <TotalSize>
+                    <Number>95.000</Number>
+                    <SizeUnit>Lemmas</SizeUnit>
+                </TotalSize>
+                <TotalSize>
+                    <Number>1700000</Number>
+                    <SizeUnit>Quotations</SizeUnit>
+                </TotalSize>
+            </Size>
+            
+            <SubjectLanguages>
+                <SubjectLanguage>
+                    <Language>
+                        <LanguageName>Dutch</LanguageName>
+                        <ISO639>
+                            <iso-639-3-code>dut</iso-639-3-code>
+                        </ISO639>
+                    </Language>
+                </SubjectLanguage>
+            </SubjectLanguages>
+            
+            <DocumentationLanguages>
+                <Language>
+                    <LanguageName>Dutch</LanguageName>
+                    <ISO639>
+                        <iso-639-3-code>dut</iso-639-3-code>
+                    </ISO639>
+                </Language>
+            </DocumentationLanguages>
+            
+            <Access>
+                <Availability>free for academic use; 
+                    non appliccable for commercial parties</Availability>
+                <DistributionMedium>online application</DistributionMedium>
+                <CatalogueLink>http://www.inl.nl/en/dictionaries/woordenboek-der-nederlandsche-taal-(iwnt)</CatalogueLink>
+                <Contact>
+                    <Email>servidesk@inl.nl</Email>
+                    <Organisation>TST-Centrale/INL</Organisation>
+                    <Website>www.inl.nl/tst-centrale</Website>
+                </Contact>
+                <Price>
+                    <Price>free</Price>
+                </Price>
+            </Access>
+            
+            <LexicalType>
+                <LexicalMainType>
+                    <LexicalMainType>Dictionary</LexicalMainType>
+                </LexicalMainType>                
+                <HeadWordType>
+                    <HeadWordType>Lemma</HeadWordType>
+                </HeadWordType>
+                <Multilinguality>
+                    <Multilinguality>Monolingual</Multilinguality>
+                </Multilinguality>
+                <Modality>
+                    <Modality>Written</Modality>
+                </Modality>
+                <TimePeriod>
+                    <TimePeriod>Diachronic</TimePeriod>
+                </TimePeriod>
+            </LexicalType>
+            
+            <AnnotationTypes>
+                <AnnotationType>
+                    <AnnotationType>Lemma</AnnotationType>
+                    <Description>
+                        <Description>Modern Dutch Lemma</Description>
+                    </Description>
+                </AnnotationType>
+            </AnnotationTypes>
+         </LexicalResource>
+    </Components>
+</CMD>

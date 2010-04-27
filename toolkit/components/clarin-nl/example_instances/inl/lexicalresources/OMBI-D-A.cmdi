@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/components/clarin-nl/lexicalresource/cmdi-lexicalresource.xsd">
+    <Header></Header>
+    <Resources>
+        <ResourceProxyList></ResourceProxyList>
+        <JournalFileProxyList></JournalFileProxyList>
+        <ResourceRelationList></ResourceRelationList>
+    </Resources>
+    <Components>
+        <LexicalResource>
+            <GeneralInfo>
+                <Name>OMBI-Dutch-Arabic</Name>
+                <Name>OMBI-Nederlands-Arabisch</Name>
+                <Version>1.0</Version>
+                <Owner>Dutch Language Union (Nederlandse Taalunie; NTU)</Owner>
+                <PublicationYear>2008</PublicationYear>
+                <Description>
+                    <Description>OMBI-Dutch-Arabic is a reversible bilingual lexical file (in Dutch, OMBI, omkeerbare bilinguale
+                        bestanden) in which Dutch is the source language and Arabic the target language. OMBI-Dutch-
+                        Arabic can be used in computational applications such as automatic translation and computer
+                        supported learning.
+                    </Description>
+                </Description>
+            </GeneralInfo>
+            
+            <OriginLocation>
+                <Location>
+                    <Country>
+                        <Code>NL</Code>
+                    </Country>
+                    <Continent>
+                        <Code>EU</Code>
+                    </Continent>
+                </Location>
+            </OriginLocation>
+            
+            <Project>
+                <Name>The Nijmegen Dutch-Arabic Dictionary Project</Name>
+                <Name>Het Nijmeegs Nederlands-Arabisch Woordenboekproject</Name>
+                <Website>http://www.let.kun.nl/wba/</Website>
+                <Contact>
+                    <Email>j.hoogland@let.kun.nl</Email>
+                    <Organisation>Radboud University Nijmegen, Department of Arab and Islamic Studies (TCMO)</Organisation>
+                </Contact>
+                <Duration>
+                    <StartYear>1998</StartYear>
+                    <CompletionYear>2002</CompletionYear>
+                </Duration>
+            </Project>
+            
+            <Creators>
+                <Creator>
+                    <Role>Project leaders</Role>
+                    <Contact>
+                        <Person>Jan Hoogland</Person>
+                        <Person>Kees Versteegh</Person>
+                        <Person>Manfred Woidich</Person>
+                        <Email>j.hoogland@let.kun.nl</Email>
+                        <Organisation>Radboud University Nijmegen, Department of Arab and Islamic Studies (TCMO)</Organisation>
+                    </Contact>
+                </Creator>
+            </Creators>
+            
+            <Source>
+                <SourceName>Dutch-Arabic Dictionary</SourceName>
+                <SourceType>Dictionary</SourceType>
+            </Source>
+            
+            <Size>
+                <TotalSize>
+                    <Number>37.706</Number>
+                    <SizeUnit>Lemmas</SizeUnit>
+                </TotalSize>
+                <TotalSize>
+                   <Number>44.024</Number>
+                   <SizeUnit>Senses/meanings</SizeUnit>
+                </TotalSize>
+                <TotalSize>
+                    <Number>48.501</Number>
+                    <SizeUnit>Examples</SizeUnit>
+                </TotalSize>
+                <TotalSize>
+                    <Number>48.501</Number>
+                    <SizeUnit>Translation Equivalents</SizeUnit>
+                </TotalSize>
+                <TotalSize>
+                    <Number>91</Number>
+                    <SizeUnit>Mb</SizeUnit>
+                </TotalSize>
+            </Size>
+          
+            <SubjectLanguages>
+              <SubjectLanguage>
+                  <Language>
+                      <LanguageName>Dutch</LanguageName>
+                      <ISO639>
+                          <iso-639-3-code>dut</iso-639-3-code>
+                      </ISO639>
+                  </Language>
+              </SubjectLanguage>
+              <SubjectLanguage>
+                  <Language>
+                      <LanguageName>Arabic</LanguageName>
+                      <ISO639>
+                          <iso-639-3-code>ara</iso-639-3-code>
+                      </ISO639>
+                  </Language>
+              </SubjectLanguage>
+          </SubjectLanguages>
+            
+          <DocumentationLanguages>
+              <Language>
+                  <LanguageName>Dutch</LanguageName>
+                  <ISO639>
+                      <iso-639-3-code>dut</iso-639-3-code>
+                  </ISO639>
+              </Language>
+              <Language>
+                  <LanguageName>English</LanguageName>
+                  <ISO639>
+                      <iso-639-3-code>eng</iso-639-3-code>
+                  </ISO639>
+              </Language>
+          </DocumentationLanguages>
+          
+          <MimeType>
+              <MimeType>text/xml</MimeType>
+          </MimeType>
+            
+            <Access>
+                <Availability>free for academic use; user licence required and restricted use</Availability>
+                <DistributionMedium>download</DistributionMedium>
+                <CatalogueLink>http://www.inl.nl/nl/lexica/ombi-dutch-arabic</CatalogueLink>
+                <Contact>
+                    <Email>servidesk@inl.nl</Email>
+                    <Organisation>TST-Centrale/INL</Organisation>
+                    <Website>www.inl.nl/tst-centrale</Website>
+                </Contact>
+                <Price>
+                    <Price>free for academic use</Price>
+                </Price>
+            </Access>
+            
+            <LexicalType>
+                <LexicalMainType>
+                    <LexicalMainType>Word list</LexicalMainType>
+                </LexicalMainType>
+                <HeadWordType>
+                    <HeadWordType>Lemma</HeadWordType>
+                </HeadWordType>
+                <Multilinguality>
+                    <Multilinguality>Bilingual</Multilinguality>
+                </Multilinguality>
+                <Modality>
+                    <Modality>Written</Modality>
+                </Modality>
+            </LexicalType>
+            
+            <AnnotationTypes>
+                <AnnotationType>
+                    <AnnotationType>Morphosyntax</AnnotationType>
+                    <Description>
+                        <Description>partOfspeech, gender, gradability, countability</Description>
+                    </Description>
+                </AnnotationType>
+                <AnnotationType>
+                    <AnnotationType>Syntax</AnnotationType>
+                <Description>
+                    <Description>complementation, collocation</Description>
+                </Description>
+                </AnnotationType>
+                <AnnotationType>
+                    <AnnotationType>Semantics</AnnotationType>
+                    <Description>
+                        <Description>gloss, ontologicalClassification</Description>
+                    </Description>
+                </AnnotationType>
+                <AnnotationType>
+                    <AnnotationType>Pragmatics</AnnotationType>
+                    <Description>
+                        <Description>connotation, domain, style, chronology, geography</Description>
+                    </Description>
+                </AnnotationType>
+            </AnnotationTypes>
+        </LexicalResource>
+    </Components>
+</CMD>

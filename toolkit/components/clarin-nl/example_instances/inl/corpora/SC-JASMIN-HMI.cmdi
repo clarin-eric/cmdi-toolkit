@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/components/clarin-nl/profiles/SpeechCorpus.xsd">
+    <Header></Header>
+    <Resources>
+        <ResourceProxyList></ResourceProxyList>
+        <JournalFileProxyList></JournalFileProxyList>
+        <ResourceRelationList></ResourceRelationList>
+    </Resources>
+    <Components>
+        <SpeechCorpusProfile>
+            <Collection>
+                <GeneralInfo>
+                    <Name>JASMIN speech corpus - Human-Machine-Interaction</Name>
+                    <Name>JASMIN spraakcorpus - Mens-machine-interactie</Name>
+                    <Description>
+                        <Description>The Human-Machine-Interaction part of the JASMIN speech corpus is a collection Dutch speech by young speakers, non-native speakers and elderly speakers living in Flanders and the Netherlands who interact with a computer.</Description>
+                    </Description>
+                </GeneralInfo>
+            </Collection>
+            <Corpus>
+                <Size>
+                    <TotalSize>
+                        <Number>493</Number>
+                        <SizeUnit>recordings</SizeUnit>
+                    </TotalSize>  
+                    <TotalSize>
+                        <Number>54</Number>
+                        <SizeUnit>hours</SizeUnit>
+                    </TotalSize>
+                </Size>
+            </Corpus>
+            <SpeechCorpus>
+                <DurationOfFullDatabase>54</DurationOfFullDatabase>
+            </SpeechCorpus>
+        </SpeechCorpusProfile>
+    </Components>
+</CMD>

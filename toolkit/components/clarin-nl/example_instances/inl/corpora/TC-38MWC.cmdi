@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/components/clarin-nl/profiles/TextCorpus.xsd">
+    <Header></Header>
+    <Resources>
+        <ResourceProxyList></ResourceProxyList>
+        <JournalFileProxyList></JournalFileProxyList>
+        <ResourceRelationList></ResourceRelationList>
+    </Resources>
+    <Components>
+        <TextCorpusProfile>
+            <Collection>
+                <GeneralInfo>
+                    <Name>38 MWC</Name>
+                    <Name>38 Million Words Corpus 1996</Name>
+                    <Name>38 Miljoen Woorden Corpus 1996</Name>
+                    <Version>1.0</Version>
+                    <TimeCoverage>1814-1995</TimeCoverage>
+                    <Owner>Institute for Dutch Lexicology</Owner>
+                    <PublicationYear>1996</PublicationYear>
+                    <Description>
+                        <Description>Dutch text corpus that consists of three main components: a varied component (1970-1995), a newspaper component (Meppeler Courant, 1992-1995) and a legal component (1814-1989).</Description>
+                    </Description>
+                </GeneralInfo>
+                <OriginLocation>
+                    <Location>
+                        <Country>
+                            <Code>NL</Code>
+                        </Country>
+                        <Continent>
+                            <Code>EU</Code>
+                        </Continent>
+                    </Location>
+                </OriginLocation>
+                <Project>
+                    <Contact>
+                        <Person>Katrien Depuydt</Person>
+                        <Email>katrien.depuydt@inl.nl</Email>
+                        <Organisation>Language Database Department, Institute for Dutch Lexicology</Organisation>
+                    </Contact>
+                    <Duration>
+                        <CompletionYear>1996</CompletionYear>
+                    </Duration>
+                </Project>
+                <Creators>
+                    <Creator>
+                        <Contact>
+                            <Organisation>Language Database Department, Institute for Dutch Lexicology</Organisation>
+                            <Website>http://www.inl.nl/en</Website>
+                        </Contact>
+                    </Creator>
+                </Creators>
+                <DocumentationLanguages>
+                    <Language>
+                        <LanguageName>English</LanguageName>
+                        <ISO639>
+                            <iso-639-3-code>eng</iso-639-3-code>
+                        </ISO639>                  
+                    </Language>
+                    <Language>
+                        <LanguageName>Dutch</LanguageName>
+                        <ISO639>
+                            <iso-639-3-code>dut</iso-639-3-code>
+                        </ISO639>
+                    </Language>        
+                </DocumentationLanguages>
+                <Access>
+                    <Availability>online available for academic use after signing a licence; restricted use</Availability>
+                    <DistributionMedium>online application</DistributionMedium>
+                    <CatalogueLink>http://www.inl.nl/en/corpora/38-million-words-corpus-1996</CatalogueLink>
+                    <Contact>
+                        <Email>servicedesk@inl.nl</Email>
+                        <Organisation>Institute for Dutch Lexicology</Organisation>
+                    </Contact>
+                    <Price>
+                        <Price>free for online academic use</Price>
+                    </Price>
+                </Access>
+                <CollectionType>
+                    <CollectionType>text</CollectionType>
+                </CollectionType>
+            </Collection>
+            <Corpus>
+                <Multilinguality>
+                    <Multilinguality>Monolingual</Multilinguality>
+                </Multilinguality>
+                <AnnotationTypes>
+                    <AnnotationType>
+                        <AnnotationType>Morphosyntax</AnnotationType>
+                        <Description>
+                            <Description>A part of speech tag conformant with the MECOLB standard was added to every word of the corpus.</Description>
+                        </Description>                           
+                    </AnnotationType>
+                    <AnnotationType>
+                        <AnnotationType>Morphology</AnnotationType>
+                        <Description>
+                            <Description>A word category was added to every word of the corpus.</Description>
+                        </Description>                           
+                    </AnnotationType>
+                    <AnnotationType>
+                        <AnnotationType>Lemma</AnnotationType>
+                    </AnnotationType>
+                </AnnotationTypes>
+                <Size>
+                    <TotalSize>
+                        <Number>38000000</Number>
+                        <SizeUnit>words</SizeUnit>
+                    </TotalSize>
+                </Size>
+                <SubjectLanguages>
+                    <SubjectLanguage>
+                        <Dominant>true</Dominant>
+                        <Language>
+                            <LanguageName>Dutch</LanguageName>
+                            <ISO639>
+                                <iso-639-3-code>dut</iso-639-3-code>
+                            </ISO639>
+                        </Language>
+                    </SubjectLanguage>
+                </SubjectLanguages>
+                <Modality>
+                    <Modality>Written</Modality>
+                </Modality>
+            </Corpus>
+            <TextCorpus>
+                <SourceType>newspapers; legal texts; books; magazines; television programs;...</SourceType>
+            </TextCorpus>
+        </TextCorpusProfile>
+    </Components>
+</CMD>

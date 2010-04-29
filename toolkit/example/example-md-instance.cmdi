@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="example-md-schema.xsd">
+    xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/example/example-md-schema.xsd">
     <Header>
         <MdCreator>Dieter Van Uytvanck</MdCreator>
         <MdCreationDate>2009-11-18</MdCreationDate>

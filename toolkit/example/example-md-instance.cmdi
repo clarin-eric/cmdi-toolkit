@@ -11,12 +11,17 @@
         <ResourceProxyList>
             <ResourceProxy id="a_text">
                 <ResourceType>Resource</ResourceType>
-                <ResourceRef>bla.txt</ResourceRef>
+                <ResourceRef>http://hdl.handle.net/1839/00-0000-0000-0009-2951-C</ResourceRef>
             </ResourceProxy>
             <ResourceProxy id="a_picture">
                 <ResourceType>Resource</ResourceType>
-                <ResourceRef></ResourceRef>
+                <ResourceRef>http://corpus1.mpi.nl/qfs1/media-archive/demo/pewi/Media/route_to_kleve.jpg</ResourceRef>
             </ResourceProxy>
+            <ResourceProxy id="a_movie">
+                <ResourceType>Resource</ResourceType>
+                <ResourceRef>http://corpus1.mpi.nl/qfs1/media-archive/demo/Talks/Media/Talk_section.mp4</ResourceRef>
+            </ResourceProxy>
+            
         </ResourceProxyList>
         <JournalFileProxyList></JournalFileProxyList>
         <ResourceRelationList>

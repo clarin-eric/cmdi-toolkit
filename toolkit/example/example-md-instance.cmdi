@@ -13,6 +13,14 @@
                 <ResourceType>Resource</ResourceType>
                 <ResourceRef>http://hdl.handle.net/1839/00-0000-0000-0009-2951-C</ResourceRef>
             </ResourceProxy>
+            <ResourceProxy id="b_text">
+                <ResourceType>Resource</ResourceType>
+                <ResourceRef>hdl://1839/00-0000-0000-0009-2951-C</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="c_text">
+                <ResourceType>Resource</ResourceType>
+                <ResourceRef>test.txt</ResourceRef>
+            </ResourceProxy>
             <ResourceProxy id="a_picture">
                 <ResourceType>Resource</ResourceType>
                 <ResourceRef>http://corpus1.mpi.nl/qfs1/media-archive/demo/pewi/Media/route_to_kleve.jpg</ResourceRef>
@@ -40,7 +48,7 @@
         <PhotoTMD ref="a_picture">
             <Format>image/png</Format>
         </PhotoTMD>
-        <Actor ComponentId="eu.clarin.mdcomponent.actor">
+        <Actor ComponentId="eu.clarin.mdcomponent.actor" ref="c_text">
             <firstName>Foo</firstName>
             <lastName>Bar</lastName>
             <sex>female</sex>
@@ -59,5 +67,12 @@
             <sex>male</sex>
             <age>33</age>
         </Actor>
+        <Actor ref="b_text">
+            <firstName>A</firstName>
+            <lastName></lastName>
+            <sex>female</sex>
+            <age>11</age>
+        </Actor>
+        
     </Components>
 </CMD>

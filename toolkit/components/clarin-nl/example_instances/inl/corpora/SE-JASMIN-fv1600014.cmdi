@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/components/clarin-nl/profiles/SESSION.xsd">
+    xsi:schemaLocation="http://www.clarin.eu/cmd http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1271859438165/xsd">
     <Header></Header>
     <Resources>
         <ResourceProxyList></ResourceProxyList>
@@ -165,3 +165,4 @@
         </SessionProfile>
 
     </Components>
+</CMD>

@@ -203,6 +203,7 @@
                     <xsl:apply-templates select= "@CardinalityMin"/>
                     <xsl:apply-templates select= "@CardinalityMax"/>
                     <xsl:apply-templates select="./ValueScheme"/>
+                
                 </xs:element>
             </xsl:when>
 
@@ -210,12 +211,13 @@
             <xsl:when test="./AttributeList and not(./ValueScheme)">
                 <xs:element name="{@name}">
                     
-                    <!-- process all Documentation and DisplayPriority attributes -->
-                    <xsl:call-template name="annotations"/>
-    
                     <xsl:apply-templates select= "@ConceptLink"/>
                     <xsl:apply-templates select= "@CardinalityMin"/>
                     <xsl:apply-templates select= "@CardinalityMax"/>
+                    
+                    <!-- process all Documentation and DisplayPriority attributes -->
+                    <xsl:call-template name="annotations"/>
+                    
                     <!-- <xsl:apply-templates select= "and(not(@type) and @*)"/> -->
                     <xs:complexType>
                         <xs:simpleContent>

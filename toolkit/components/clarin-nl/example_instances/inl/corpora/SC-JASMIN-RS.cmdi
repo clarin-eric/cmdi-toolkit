@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/components/clarin-nl/profiles/SpeechCorpus.xsd">
+    xsi:schemaLocation="http://www.clarin.eu/cmd http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1271859438166/xsd">
     <Header></Header>
     <Resources>
         <ResourceProxyList></ResourceProxyList>
@@ -17,6 +17,18 @@
                         <Description>The read speech part of the JASMIN speech corpus is a collection Dutch speech by young speakers, non-native speakers and elderly speakers living in Flanders and the Netherlands who read phonetically rich sentences and stories or general texts.</Description>
                     </Description>
                 </GeneralInfo>
+                <OriginLocation>
+                    <Location>
+                        <Country>
+                            <Code>BE</Code>
+                        </Country>
+                    </Location>
+                    <Location>
+                        <Country>
+                            <Code>NL</Code>
+                        </Country>
+                    </Location>
+                </OriginLocation>
             </Collection>
             <Corpus>
                 <Size>

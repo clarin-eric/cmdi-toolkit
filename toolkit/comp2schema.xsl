@@ -6,7 +6,7 @@
 -->
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dcr="http://www.isocat.org">
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dcr="http://www.isocat.org" xmlns:ann="http://www.clarin.eu">
     <xsl:strip-space elements="*"/>
     <xsl:include href="comp2schema-header.xsl"/>
     <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
@@ -339,19 +339,21 @@
     </xsl:template>
 
     <xsl:template match="@Documentation">
-        <xs:documentation><xsl:value-of select="."/></xs:documentation>
+        <xsl:attribute name="ann:documentation"><xsl:value-of select="."/></xsl:attribute>
+        <!--<xs:documentation><xsl:value-of select="."/></xs:documentation>-->
     </xsl:template>
     
     <xsl:template match="@DisplayPriority">
-        <xs:appinfo><DisplayPriority><xsl:value-of select="."/></DisplayPriority></xs:appinfo>
+        <xsl:attribute name="ann:displaypriority"><xsl:value-of select="."/></xsl:attribute>
+        <!--<xs:appinfo><DisplayPriority><xsl:value-of select="."/></DisplayPriority></xs:appinfo>-->
     </xsl:template>
 
     <xsl:template name="annotations">
         <xsl:if test="@Documentation or @DisplayPriority">
-        <xs:annotation>
+        <!--<xs:annotation>-->
             <xsl:apply-templates select= "@Documentation"/>
             <xsl:apply-templates select= "@DisplayPriority"/>
-        </xs:annotation>
+        <!--</xs:annotation>-->
         </xsl:if>
     </xsl:template>
 

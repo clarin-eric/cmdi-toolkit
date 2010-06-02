@@ -7,23 +7,14 @@
     <xsl:output method="xml" indent="yes" />
    
     <xsl:template match="METATRANSCRIPT">
-        <CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-            xsi:noNamespaceSchemaLocation="http://www.clarin.eu/cmd/components/imdi/imdi_md_schema.xsd">
+        <CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
             <Header>
-                <Description>
-                </Description>
-                <Creator>
-                </Creator>
-                <CreationDate>
-                </CreationDate>
-                <SelfLink>
-                </SelfLink>
-                <Profile>
-                </Profile>
+                <MdSelfLink>test-<xsl:value-of select="@ArchiveHandle" /></MdSelfLink>                
             </Header>
             <Resources>
                 <ResourceProxyList>
                     <xsl:apply-templates select="//Resources" mode="linking"/>
+                    <xsl:apply-templates select="//Corpus" mode="linking"/>
                 </ResourceProxyList>
                 <JournalFileProxyList>
                 </JournalFileProxyList>
@@ -31,10 +22,49 @@
                 </ResourceRelationList>
             </Resources>
             <Components>       
-                <xsl:apply-templates select="Session" />        
+                <xsl:apply-templates select="Session" />
+                <xsl:apply-templates select="Corpus" />
             </Components>
         </CMD>
         
+    </xsl:template>
+    
+    
+    <xsl:template match="Corpus">
+        <imdi-corpus>
+            <Corpus>
+                <xsl:apply-templates select="child::Name"/>
+                <xsl:apply-templates select="child::Title"/>
+                <xsl:if test="exists(child::CorpusLink)">
+                    <xsl:for-each select="CorpusLink">
+                        <CorpusLink>
+                            <!--<xsl:attribute name="ArchiveHandle" select="@ArchiveHandle"/>-->
+                            <xsl:attribute name="Name" select="@Name"/>
+                            <xsl:value-of select="."/>
+                        </CorpusLink>
+                    </xsl:for-each>
+                </xsl:if>    
+                <xsl:if test="exists(child::Description)">
+                    <descriptions>
+                        <xsl:for-each select="Description">
+                            <Description>
+                                <xsl:attribute name="LanguageId" select="@LanguageId"/>
+                                <xsl:value-of select="."/>
+                            </Description>
+                        </xsl:for-each>
+                    </descriptions>                
+                </xsl:if>                    
+            </Corpus>
+        </imdi-corpus>
+    </xsl:template>
+    
+    <xsl:template match="Corpus" mode="linking">
+        <xsl:for-each select="CorpusLink">
+            <ResourceProxy id="{generate-id()}">                
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef><xsl:value-of select="."/></ResourceRef>
+            </ResourceProxy>
+        </xsl:for-each>
     </xsl:template>
     
     <xsl:template match="Resources" mode="linking">
@@ -491,7 +521,7 @@
     </xsl:template>
     
     <xsl:template name="main">
-        <xsl:for-each select="collection('file:///tmp/alekoe/ma?select=*.imdi;recurse=yes;on-error=ignore')">
+        <xsl:for-each select="collection('file:///tmp/alekoe?select=*.imdi;recurse=yes;on-error=ignore')">
             <xsl:result-document href="{document-uri(.)}.cmdi">
                 <xsl:apply-templates select="."/>
             </xsl:result-document>

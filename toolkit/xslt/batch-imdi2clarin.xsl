@@ -62,7 +62,7 @@
         <xsl:for-each select="CorpusLink">
             <ResourceProxy id="{generate-id()}">                
                 <ResourceType>Metadata</ResourceType>
-                <ResourceRef><xsl:value-of select="."/></ResourceRef>
+                <ResourceRef><xsl:value-of select="."/>.cmdi</ResourceRef>
             </ResourceProxy>
         </xsl:for-each>
     </xsl:template>

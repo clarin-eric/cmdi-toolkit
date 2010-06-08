@@ -7,10 +7,12 @@
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dcr="http://www.isocat.org"
-    xmlns:ann="http://www.clarin.eu">
+    xmlns:ann="http://www.clarin.eu"
+    >
     <xsl:strip-space elements="*"/>
     <xsl:include href="comp2schema-header.xsl"/>
-    <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
+    <!-- note: the automatic chaining with clean-xsd.xsl only works with the Saxon XSLT processor, otherwise you'll have to do this manually (or use e.g the Xalan pipeDocument tag) -->
+    <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" saxon:next-in-chain="cleanup-xsd.xsl" xmlns:saxon="http://saxon.sf.net/"/>
 
     <!-- Start includes -->
 

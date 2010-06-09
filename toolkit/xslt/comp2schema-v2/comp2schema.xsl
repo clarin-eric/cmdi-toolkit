@@ -12,7 +12,7 @@
     <xsl:strip-space elements="*"/>
     <xsl:include href="comp2schema-header.xsl"/>
     <!-- note: the automatic chaining with clean-xsd.xsl only works with the Saxon XSLT processor, otherwise you'll have to do this manually (or use e.g the Xalan pipeDocument tag) -->
-    <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" saxon:next-in-chain="cleanup-xsd.xsl" xmlns:saxon="http://saxon.sf.net/"/>
+    <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" saxon:indent-spaces="1" saxon:next-in-chain="cleanup-xsd.xsl" xmlns:saxon="http://saxon.sf.net/"/>
 
     <!-- Start includes -->
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 
-    $Rev$ 
-    $Date$ 
+    $Revision$ 
+    $Date: 2010-06-24 11:36:11 +0200 (Thu, 24 Jun 2010) $ 
 -->
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">

@@ -25,7 +25,7 @@
                 <!-- changed: no CMD_Elements allowed anymore at the top level! 
                     <xs:group ref="group"/> -->
             </xs:sequence>
-            <xs:attribute name="isProfile" type="xs:boolean"/>
+            <xs:attribute name="isProfile" type="xs:boolean" use="required"/>
         </xs:complexType>
     </xs:element>
 

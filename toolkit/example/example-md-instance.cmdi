@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/example/example-md-schema.xsd">
+<CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+    xsi:schemaLocation="http://www.clarin.eu/cmd http://www.clarin.eu/cmd/example/example-md-schema.xsd" >
     <Header>
         <MdCreator>Dieter Van Uytvanck</MdCreator>
         <MdCreationDate>2009-11-18</MdCreationDate>
@@ -49,6 +49,9 @@
             <Format>image/png</Format>
         </PhotoTMD>
         <Actor ComponentId="eu.clarin.mdcomponent.actor" ref="c_text">
+            <title xml:lang="eng">mister</title>
+            <title xml:lang="fra">monsieur</title>
+            <title xml:lang="nld">meneer</title>
             <firstName>Foo</firstName>
             <lastName>Bar</lastName>
             <sex>female</sex>

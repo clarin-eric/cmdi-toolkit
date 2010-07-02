@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="general-component-schema.xsd">
+    xsi:noNamespaceSchemaLocation="../general-component-schema.xsd" isProfile="false">
     
     <Header/>
     
-    <CMD_Component name="TextTMD" ConceptLink="http://www.isocat.org/datcat/CMD-000" ComponentId="http://www.clarin.eu/cmd/example/example-component-text.xml">
+    <CMD_Component name="TextTMD" ConceptLink="http://www.isocat.org/datcat/CMD-000" ComponentId="ex_compid_text">
         
         <CMD_Element name="Format" ConceptLink="http://www.isocat.org/datcat/DC-1758"
             CardinalityMin="0" CardinalityMax="1">
@@ -16,6 +16,8 @@
             </ValueScheme>
         </CMD_Element>
         
+        
+        <CMD_Component name="dummy"></CMD_Component>
         
         <CMD_Component filename="example-component-text-type.xml" />
         

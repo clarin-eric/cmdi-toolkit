@@ -9,10 +9,12 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dcr="http://www.isocat.org"
     xmlns:ann="http://www.clarin.eu">
     <xsl:strip-space elements="*"/>
-    <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" saxon:indent-spaces="1" xmlns:saxon="http://saxon.sf.net/"/>
+    <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" saxon:indent-spaces="1"
+        xmlns:saxon="http://saxon.sf.net/"/>
 
     <xsl:template match="/xs:schema">
         <xs:schema>
+            <xsl:apply-templates select="xs:import"/>
             <!-- Remove double entries for named simpleType and complexType definitions at the begin of the XSD.  -->
             <xsl:for-each-group select="./xs:simpleType" group-by="@name">
                 <!-- only take the first item -->
@@ -25,7 +27,6 @@
             </xsl:for-each-group>
 
             <xsl:apply-templates select="xs:element"/>
-
         </xs:schema>
     </xsl:template>
 

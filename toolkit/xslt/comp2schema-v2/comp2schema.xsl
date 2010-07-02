@@ -7,12 +7,13 @@
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dcr="http://www.isocat.org"
-    xmlns:ann="http://www.clarin.eu"
-    >
+    xmlns:ann="http://www.clarin.eu">
+
     <xsl:strip-space elements="*"/>
     <xsl:include href="comp2schema-header.xsl"/>
     <!-- note: the automatic chaining with clean-xsd.xsl only works with the Saxon XSLT processor, otherwise you'll have to do this manually (or use e.g the Xalan pipeDocument tag) -->
-    <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" saxon:indent-spaces="1" saxon:next-in-chain="cleanup-xsd.xsl" xmlns:saxon="http://saxon.sf.net/"/>
+    <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" saxon:indent-spaces="1"
+        saxon:next-in-chain="cleanup-xsd.xsl" xmlns:saxon="http://saxon.sf.net/"/>
 
     <!-- Start includes -->
 
@@ -55,11 +56,20 @@
 
         <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dcr="http://www.isocat.org">
 
+            <!-- import this for the use of the xml:lang attribute -->
+            <xs:import namespace="http://www.w3.org/XML/1998/namespace"
+                schemaLocation="http://www.w3.org/2001/xml.xsd"/>
+
+
             <!--  first create complex types for valueschemes (not inline) -->
             <xsl:call-template name="CreateComplexTypes"/>
 
+
+
+
             <xs:element name="CMD">
                 <xs:complexType>
+
                     <xs:sequence>
 
                         <!-- Produce (fixed) header elements (description and resources)-->
@@ -92,73 +102,54 @@
 
     <!-- Start types -->
 
-    <!-- workaround to prevent junk in complex type definitions -->
-    <!--<xsl:template match="AttributeList" mode="preProcess"/>-->
-
     <!-- skip all text nodes -->
     <xsl:template match="text()" mode="types"/>
 
     <!-- first pass: create the complex types on top of the resulting XSD -->
-    <xsl:template match="ValueScheme" mode="types">
+    <!-- ignore when this ValueScheme is descendant of an Attribute as we do not allow CV-attributes in a CV-list -->
+    <xsl:template match="ValueScheme[not(../../Attribute)]" mode="types">
+
         <!-- create a unique suffix (the path to the element) to ensure the unicity of the types to be created -->
+        <xsl:variable name="uniquePath">
+            <xsl:call-template name="printComponentId">
+                <!-- start from the CMD_Element above and go upwards in the tree -->
+                <xsl:with-param name="node" select=".."/>
+            </xsl:call-template>
+        </xsl:variable>
 
-        <!-- ignore when this ValueScheme is descendant of an Attribute as we do not allow CV-attributes in a CV-list -->
-        <xsl:if test="not(../../Attribute)">
+        <!-- first auto-generate a name for the simpletype to be extended -->
+        <xs:simpleType name="simpletype{$uniquePath}">
+            <xs:restriction base="xs:string">
+                <xsl:apply-templates select="pattern"/>
+                <xsl:apply-templates select="enumeration"/>
+            </xs:restriction>
+        </xs:simpleType>
 
-            <xsl:variable name="uniquePath">
-                <xsl:call-template name="printComponentId">
-                    <!-- start from the CMD_Element above and go upwards in the tree -->
-                    <xsl:with-param name="node" select=".."/>
-                </xsl:call-template>
-            </xsl:variable>
-
-            <!-- first auto-generate a name for the simpletype to be extended -->
-            <xs:simpleType name="simpletype{$uniquePath}">
-                <xs:restriction base="xs:string">
-                    <xsl:apply-templates select="pattern"/>
-                    <xsl:apply-templates select="enumeration"/>
-                </xs:restriction>
-            </xs:simpleType>
-
-            <!--  then auto-derive a complextype for the attributes -->
-            <xs:complexType name="complextype{$uniquePath}">
-                <xs:simpleContent>
-                    <xs:extension base="simpletype{$uniquePath}">
-                        <!-- now look at the attribute list of the CMD_Element parent of this ValueScheme-->
-                        <xsl:apply-templates select="parent::node()/AttributeList/Attribute"/>
-                        <!--<xs:attribute name="attributeName" type="xs:anyURI"/>-->
-                    </xs:extension>
-                </xs:simpleContent>
-            </xs:complexType>
-
-
-        </xsl:if>
+        <!--  then auto-derive a complextype for the attributes -->
+        <xs:complexType name="complextype{$uniquePath}">
+            <xs:simpleContent>
+                <xs:extension base="simpletype{$uniquePath}">
+                    <!-- now look at the attribute list of the CMD_Element parent of this ValueScheme-->
+                    <xsl:apply-templates select="parent::node()/AttributeList/Attribute"/>
+                    <!--<xs:attribute name="attributeName" type="xs:anyURI"/>-->
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
 
     </xsl:template>
-
-
 
     <!-- Stop types -->
 
-    <!-- create a unique identifier (the path of the name of the ancestor elements) from the current ValueScheme element -->
-    <xsl:template name="printUniquePath">
-        <xsl:for-each select="ancestor::*">
-            <xsl:if test="string(./@name)">
-                <xsl:text>-</xsl:text>
-                <xsl:value-of select="./attribute::name"/>
-            </xsl:if>
-        </xsl:for-each>
-    </xsl:template>
-
+    <!-- create a unique identifier from the current ValueScheme element -->
     <xsl:template name="printComponentId">
         <xsl:param name="node"/>
         <xsl:text>-</xsl:text>
-        
+
         <xsl:choose>
-        
+
             <!-- deeper recursion needed -->
             <xsl:when test="$node[not(@ComponentId)]">
-                
+
                 <xsl:choose>
                     <!-- element has name, add it to the type name and recurse upwards in the tree -->
                     <xsl:when test="name($node) = 'CMD_Element'">
@@ -169,12 +160,12 @@
                         <xsl:value-of select="count($node/preceding-sibling::*)"/>
                     </xsl:when>
                 </xsl:choose>
-                
+
                 <!-- recursive call -->
                 <xsl:call-template name="printComponentId">
                     <xsl:with-param name="node" select="$node/.."/>
                 </xsl:call-template>
-            
+
             </xsl:when>
 
             <!-- end of recursion: component has ComponentId -->
@@ -223,68 +214,65 @@
                 </xsl:if>
             </xs:complexType>
 
-
         </xs:element>
 
     </xsl:template>
 
     <!-- Process all CMD_Elements, its attributes and children -->
-    <xsl:template match="CMD_Element">
 
-        <xsl:choose>
+    <!-- Highest complexity: both attributes and a valuescheme, link to the type we created during the preprocessing of the ValueScheme -->
+    <xsl:template match="CMD_Element[./AttributeList][./ValueScheme]" priority="3">
+        <xs:element name="{@name}">
 
-            <!-- Highest complexity: both attributes and a valuescheme, link to the type we created during the preprocessing of the ValueScheme -->
-            <xsl:when test="./AttributeList and ./ValueScheme">
-                <xs:element name="{@name}">
+            <!-- process all Documentation and DisplayPriority attributes -->
+            <xsl:call-template name="annotations"/>
 
-                    <!-- process all Documentation and DisplayPriority attributes -->
-                    <xsl:call-template name="annotations"/>
+            <xsl:apply-templates select="@ConceptLink"/>
+            <xsl:apply-templates select="@CardinalityMin"/>
+            <xsl:apply-templates select="@CardinalityMax"/>
+            <xsl:apply-templates select="ValueScheme"/>
 
-                    <xsl:apply-templates select="@ConceptLink"/>
-                    <xsl:apply-templates select="@CardinalityMin"/>
-                    <xsl:apply-templates select="@CardinalityMax"/>
-                    <xsl:apply-templates select="ValueScheme"/>                    
-                    
-                </xs:element>
-            </xsl:when>
-
-            <!-- Medium complexity: attributes but no valuescheme, can be arranged inline -->
-            <xsl:when test="./AttributeList and not(./ValueScheme)">
-                <xs:element name="{@name}">
-
-                    <xsl:apply-templates select="@ConceptLink"/>
-                    <xsl:apply-templates select="@CardinalityMin"/>
-                    <xsl:apply-templates select="@CardinalityMax"/>
-
-                    <!-- process all Documentation and DisplayPriority attributes -->
-                    <xsl:call-template name="annotations"/>
-
-                    <!-- <xsl:apply-templates select= "and(not(@type) and @*)"/> -->
-                    <xs:complexType>
-                        <xs:simpleContent>
-                            <xs:extension base="{concat('xs:',@ValueScheme)}">
-                                <xsl:apply-templates select="./AttributeList/Attribute"/>
-                            </xs:extension>
-                        </xs:simpleContent>
-                    </xs:complexType>
-                </xs:element>
-            </xsl:when>
-
-            <!-- Simple case: no attributes and no value scheme, 1-to-1 transform to an xs:element, just rename element and attributes -->
-            <xsl:otherwise>
-                <xsl:element name="xs:element">
-
-                    <xsl:apply-templates
-                        select="@*[name() != 'Documentation' and name() != 'DisplayPriority'] | node()"/>
-                    <!-- process all Documentation and DisplayPriority attributes -->
-                    <xsl:call-template name="annotations"/>
-
-                </xsl:element>
-            </xsl:otherwise>
-
-        </xsl:choose>
-
+        </xs:element>
     </xsl:template>
+
+    <!-- Medium complexity: attributes (or Multilingual field) but no valuescheme, can be arranged inline -->
+    <xsl:template match="CMD_Element[./AttributeList or ./@Multilingual]" priority="2">
+        <xs:element name="{@name}">
+
+            <xsl:apply-templates select="@Multilingual"/>
+            <xsl:apply-templates select="@ConceptLink"/>
+            <xsl:apply-templates select="@CardinalityMin"/>
+            <xsl:apply-templates select="@CardinalityMax"/>
+
+            <!-- process all Documentation and DisplayPriority attributes -->
+            <xsl:call-template name="annotations"/>
+
+            <!-- <xsl:apply-templates select= "and(not(@type) and @*)"/> -->
+            <xs:complexType>
+                <xs:simpleContent>
+                    <xs:extension base="{concat('xs:',@ValueScheme)}">
+                        <xsl:apply-templates select="./AttributeList/Attribute"/>
+                        <xsl:if test="./@Multilingual">
+                            <xs:attribute ref="xml:lang"/>
+                        </xsl:if>
+                    </xs:extension>
+                </xs:simpleContent>
+            </xs:complexType>
+        </xs:element>
+    </xsl:template>
+
+
+    <!-- Simple case: no attributes and no value scheme, 1-to-1 transform to an xs:element, just rename element and attributes -->
+    <xsl:template match="CMD_Element" priority="1">
+        <xsl:element name="xs:element">
+            <xsl:apply-templates
+                select="@*[name() != 'Documentation' and name() != 'DisplayPriority'] | node()"/>
+            <!-- process all Documentation and DisplayPriority attributes -->
+            <xsl:call-template name="annotations"/>
+        </xsl:element>
+    </xsl:template>
+
+    <!-- end of CMD_Element templates -->
 
     <!-- second pass, now link to the earlier created complextype definition -->
     <xsl:template match="ValueScheme">
@@ -294,20 +282,10 @@
                 <xsl:with-param name="node" select=".."/>
             </xsl:call-template>
         </xsl:variable>
-        
+
         <xsl:attribute name="type">
             <xsl:text>complextype</xsl:text>
-            <xsl:value-of select="$uniquePath"></xsl:value-of>
-            
-            <!--
-                strange but this does not work!
-                <xsl:call-template name="printComponentId">
-                <xsl:with-param name="node">
-                    <xsl:value-of select="."/>
-                </xsl:with-param>
-            </xsl:call-template>
-            -->
-        
+            <xsl:value-of select="$uniquePath"/>
         </xsl:attribute>
     </xsl:template>
 
@@ -337,10 +315,10 @@
 
             </xsl:choose>
 
-
         </xs:attribute>
     </xsl:template>
-
+    
+    
     <!-- Convert patterns -->
     <xsl:template match="pattern">
         <xs:pattern value="{self::node()}"/>
@@ -355,7 +333,6 @@
                 <xsl:apply-templates select="./@ConceptLink"/>
                 <xsl:apply-templates select="./@AppInfo"/>
             </xs:enumeration>
-            <!-- dcr:datcat="{@ConceptLink}"/>-->
         </xsl:for-each>
     </xsl:template>
 
@@ -379,6 +356,25 @@
         </xsl:attribute>
     </xsl:template>
 
+    <!-- start multilinguality part -->
+
+    <!-- if the multilingual attribute is there and the field has the type string, allow multuple occurrences -->
+    <xsl:template match="@Multilingual[../@ValueScheme='string'][. = 'true'] ">
+        <xsl:attribute name="maxOccurs">
+            <xsl:value-of>unbounded</xsl:value-of>
+        </xsl:attribute>
+    </xsl:template>
+
+    <xsl:template match="@Multilingual">
+        <!-- do nothing - only influences maxOccurs if it is true and if it is a a string element -->
+    </xsl:template>
+
+    <xsl:template match="@CardinalityMax[../@Multilingual='true'][../@ValueScheme='string']">
+        <!-- do nothing - maxOccurs should be set by Multilingual rule for strings -->
+    </xsl:template>
+
+    <!-- end multilinguality part -->
+
     <xsl:template match="@ConceptLink">
         <xsl:attribute name="dcr:datcat">
             <xsl:value-of select="."/>
@@ -392,7 +388,6 @@
             </xs:appinfo>
         </xs:annotation>
     </xsl:template>
-
 
     <xsl:template match="@ValueScheme">
         <xsl:attribute name="type">
@@ -422,6 +417,5 @@
             <!--</xs:annotation>-->
         </xsl:if>
     </xsl:template>
-
 
 </xsl:stylesheet>

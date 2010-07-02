@@ -91,6 +91,7 @@
         <xs:attribute name="CardinalityMax" type="cardinality_type"/>
         <xs:attribute name="Documentation" type="xs:string"/>
         <xs:attribute name="DisplayPriority" type="xs:integer"/>
+        <xs:attribute name="Multilingual" type="xs:boolean"/>
     </xs:attributeGroup>
 
     <!-- list of all attributes that can be bound to a cl_comp -->

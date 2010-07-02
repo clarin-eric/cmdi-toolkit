@@ -5,9 +5,11 @@
     
     <Header/>
     
-    <CMD_Component name="Actor" CardinalityMin="0" CardinalityMax="unbounded" ComponentId="eu.clarin.mdcomponent.actor">
+    <CMD_Component name="Actor" CardinalityMin="0" CardinalityMax="unbounded" ComponentId="ex_compid_actor">
         
-        <CMD_Element name="firstName" ValueScheme="string" Documentation="This is the firstname of a person" DisplayPriority="0">
+        <CMD_Element name="title" ValueScheme="string" Multilingual="true" CardinalityMax="1" />
+       
+        <CMD_Element name="firstName" ValueScheme="string" Documentation="This is the firstname of a person" DisplayPriority="0" CardinalityMax="1">
             <!-- provide a nickname attribute for the firstName element -->
             <AttributeList>
                 <!-- example of an attribute using a simple type -->

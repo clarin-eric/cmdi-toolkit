@@ -16,9 +16,6 @@
             </ValueScheme>
         </CMD_Element>
         
-        
-        <CMD_Component name="dummy"></CMD_Component>
-        
         <CMD_Component filename="example-component-text-type.xml" />
         
         

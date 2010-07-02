@@ -41,14 +41,14 @@
         </ResourceRelationList>
     </Resources>
     <Components>
-        <TextTMD ref="a_text" ComponentId="http://www.clarin.eu/cmd/example/example-component-text.xml">
+        <TextTMD ref="a_text" >
             <Format>text/plain</Format>
-            <TextType></TextType>
+            <TextType><TextTypeDescription>manuscript</TextTypeDescription></TextType>
         </TextTMD>
         <PhotoTMD ref="a_picture">
             <Format>image/png</Format>
         </PhotoTMD>
-        <Actor ComponentId="eu.clarin.mdcomponent.actor" ref="c_text">
+        <Actor  ref="c_text">
             <title xml:lang="eng">mister</title>
             <title xml:lang="fra">monsieur</title>
             <title xml:lang="nld">meneer</title>
@@ -64,13 +64,15 @@
             </ActorLanguage>
         </Actor>
         <!-- Bob is depicted in a_picture -->
-        <Actor ref="a_picture" ComponentId="eu.clarin.mdcomponent.actor">
+        <Actor ref="a_picture" >
+            <title>mister</title>
             <firstName nickname="bobby">Bob</firstName>
             <lastName></lastName>
             <sex>male</sex>
             <age>33</age>
         </Actor>
         <Actor ref="b_text">
+            <title>test</title>
             <firstName>A</firstName>
             <lastName></lastName>
             <sex>female</sex>

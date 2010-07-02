@@ -166,12 +166,6 @@
           <xs:element name="Format" dcr:datcat="http://www.isocat.org/datcat/DC-1758" minOccurs="0"
                       maxOccurs="1"
                       type="complextype-Format-ex_compid_text"/>
-          <xs:element name="dummy">
-           <xs:complexType>
-            <xs:sequence/>
-            <xs:attribute name="ref" type="xs:IDREF"/>
-           </xs:complexType>
-          </xs:element>
           <xs:element name="TextType" dcr:datcat="http://www.isocat.org/datcat/CMD-000">
            <xs:complexType>
             <xs:sequence>

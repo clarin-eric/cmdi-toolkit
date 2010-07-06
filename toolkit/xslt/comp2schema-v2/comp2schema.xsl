@@ -382,11 +382,7 @@
     </xsl:template>
 
     <xsl:template match="@AppInfo">
-        <xs:annotation>
-            <xs:appinfo>
-                <xsl:value-of select="."/>
-            </xs:appinfo>
-        </xs:annotation>
+        <xsl:attribute name="ann:label"><xsl:value-of select="."/></xsl:attribute>
     </xsl:template>
 
     <xsl:template match="@ValueScheme">

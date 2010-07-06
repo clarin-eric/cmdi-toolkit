@@ -22,8 +22,8 @@
                     <Name>suffix</Name>
                     <ValueScheme>
                         <enumeration>
-                            <item ConceptLink="http://www.isocat.org/datcat/CMD-001">senior</item>
-                            <item ConceptLink="http://www.isocat.org/datcat/CMD-002">junior</item>
+                            <item ConceptLink="http://www.isocat.org/datcat/CMD-001" AppInfo="the older">senior</item>
+                            <item ConceptLink="http://www.isocat.org/datcat/CMD-002" AppInfo="the younger">junior</item>
                         </enumeration>
                     </ValueScheme>
                 </Attribute>
@@ -35,8 +35,8 @@
         <CMD_Element name="sex" ConceptLink="http://www.isocat.org/datcat/CMD-000" ValueScheme="anyURI">
             <ValueScheme>
                 <enumeration>
-                    <item ConceptLink="http://www.isocat.org/datcat/CMD-0010">male</item>
-                    <item ConceptLink="http://www.isocat.org/datcat/CMD-001">female</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/CMD-0010" AppInfo="a male person">male</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/CMD-001" AppInfo="a female person">female</item>
                 </enumeration>
             </ValueScheme>
         </CMD_Element>

@@ -23,8 +23,10 @@
  </xs:simpleType>
  <xs:simpleType name="simpletype-sex-ex_compid_actor">
   <xs:restriction base="xs:string">
-   <xs:enumeration value="male" dcr:datcat="http://www.isocat.org/datcat/CMD-0010"/>
-   <xs:enumeration value="female" dcr:datcat="http://www.isocat.org/datcat/CMD-001"/>
+   <xs:enumeration value="male" dcr:datcat="http://www.isocat.org/datcat/CMD-0010"
+                   ann:label="a male person"/>
+   <xs:enumeration value="female" dcr:datcat="http://www.isocat.org/datcat/CMD-001"
+                   ann:label="a female person"/>
   </xs:restriction>
  </xs:simpleType>
  <xs:simpleType name="simpletype-age-ex_compid_actor">
@@ -217,8 +219,10 @@
               <xs:attribute name="suffix">
                <xs:simpleType>
                 <xs:restriction base="xs:string">
-                 <xs:enumeration value="senior" dcr:datcat="http://www.isocat.org/datcat/CMD-001"/>
-                 <xs:enumeration value="junior" dcr:datcat="http://www.isocat.org/datcat/CMD-002"/>
+                 <xs:enumeration value="senior" dcr:datcat="http://www.isocat.org/datcat/CMD-001"
+                                 ann:label="the older"/>
+                 <xs:enumeration value="junior" dcr:datcat="http://www.isocat.org/datcat/CMD-002"
+                                 ann:label="the younger"/>
                 </xs:restriction>
                </xs:simpleType>
               </xs:attribute>

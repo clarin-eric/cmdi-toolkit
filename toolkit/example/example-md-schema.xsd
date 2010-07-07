@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dcr="http://www.isocat.org"
            xmlns:ann="http://www.clarin.eu">
- <xs:import namespace="http://www.w3.org/XML/1998/namespace"
-            schemaLocation="http://www.w3.org/2001/xml.xsd"/>
  <xs:simpleType name="simpletype-Format-ex_compid_text">
   <xs:restriction base="xs:string">
    <xs:enumeration value="text/plain" dcr:datcat="http://www.isocat.org/datcat/DC-000"/>
@@ -200,12 +198,10 @@
        <xs:element name="Actor" minOccurs="0" maxOccurs="4">
         <xs:complexType>
          <xs:sequence>
-          <xs:element name="title" maxOccurs="unbounded">
+          <xs:element name="title" maxOccurs="1">
            <xs:complexType>
             <xs:simpleContent>
-             <xs:extension base="xs:string">
-              <xs:attribute ref="xml:lang"/>
-             </xs:extension>
+             <xs:extension base="xs:string"/>
             </xs:simpleContent>
            </xs:complexType>
           </xs:element>

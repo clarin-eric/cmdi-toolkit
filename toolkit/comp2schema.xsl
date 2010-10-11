@@ -49,6 +49,9 @@
     <xsl:template match="/CMD_ComponentSpec">
 
         <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dcr="http://www.isocat.org">
+            <xs:import namespace="http://www.w3.org/XML/1998/namespace"  schemaLocation="http://www.w3.org/2001/xml.xsd"/>
+            
+            
 
             <!--  first create complex types for valueschemes (not inline) -->
             <xsl:call-template name="CreateComplexTypes"/>

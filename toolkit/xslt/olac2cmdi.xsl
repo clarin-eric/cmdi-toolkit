@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"  xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/">
-    
+<xsl:stylesheet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"  xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:defns="http://www.openarchives.org/OAI/2.0/">
+
+    <!-- run on ubtunu with: saxonb-xslt -ext:on -it main ~/svn/clarin/metadata/trunk/toolkit/xslt/olac2cmdi.xsl  -->
+
     <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
 
     <!-- identity copy -->
@@ -10,10 +12,24 @@
         </xsl:copy>
     </xsl:template>
 
-
     <xsl:template match="/">
         <CMD xsi:schemaLocation="http://www.clarin.eu/cmd http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1271859438236/xsd">
-        <Header><MdProfile>clarin.eu:cr1:p_1271859438236</MdProfile></Header>
+            <Header>                
+            <MdCreator>olac2cmdi.xsl</MdCreator>
+            <MdCreationDate>
+                <xsl:variable name="date"><xsl:value-of select="//defns:datestamp"></xsl:value-of></xsl:variable>
+                <xsl:choose>
+                    <xsl:when test="contains($date,'T')">
+                        <xsl:value-of select="substring-before($date,'T')"/> 
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="$date"/> 
+                    </xsl:otherwise>
+                </xsl:choose>
+            </MdCreationDate>
+            <MdSelfLink><xsl:value-of select="//defns:identifier" /></MdSelfLink>
+            <MdProfile>clarin.eu:cr1:p_1271859438236</MdProfile>
+        </Header>
         <Resources>
             <ResourceProxyList></ResourceProxyList>
             <JournalFileProxyList></JournalFileProxyList>
@@ -30,11 +46,9 @@
                     <olac-creator><xsl:apply-templates select="."/></olac-creator>    
                 </xsl:for-each>
               
-              
                 <xsl:for-each select="//dc:date">
                     <olac-date><xsl:apply-templates select="."/></olac-date>    
-                </xsl:for-each>
-                
+                </xsl:for-each>  
                 
                 <xsl:for-each select="//dc:description">
                     <olac-description><xsl:apply-templates select="."/></olac-description>    
@@ -90,7 +104,7 @@
     <xsl:template match="dc:*">
         <xsl:value-of select="."/>
     </xsl:template>
-
+    
 
     <xsl:template name="main">
         <xsl:for-each select="collection('file:////home/dietuyt/olac?select=*.xml;recurse=yes;on-error=ignore')">

@@ -54,7 +54,7 @@
     <!-- generate XSD -->
     <xsl:template match="/CMD_ComponentSpec">
 
-        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dcr="http://www.isocat.org">
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dcr="http://www.isocat.org/ns/dcr">
 
             <!-- import this for the use of the xml:lang attribute -->
             <!--<xs:import namespace="http://www.w3.org/XML/1998/namespace"

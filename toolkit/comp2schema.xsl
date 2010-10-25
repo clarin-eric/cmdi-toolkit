@@ -6,7 +6,7 @@
 -->
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dcr="http://www.isocat.org" xmlns:ann="http://www.clarin.eu">
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dcr="http://www.isocat.org/ns/dcr" xmlns:ann="http://www.clarin.eu">
     <xsl:strip-space elements="*"/>
     <xsl:include href="comp2schema-header.xsl"/>
     <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>

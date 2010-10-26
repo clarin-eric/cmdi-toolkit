@@ -57,9 +57,9 @@
         <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dcr="http://www.isocat.org/ns/dcr">
 
             <!-- import this for the use of the xml:lang attribute -->
-            <!--<xs:import namespace="http://www.w3.org/XML/1998/namespace"
+            <xs:import namespace="http://www.w3.org/XML/1998/namespace"
                 schemaLocation="http://www.w3.org/2001/xml.xsd"/>
--->
+
 
             <!--  first create complex types for valueschemes (not inline) -->
             <xsl:call-template name="CreateComplexTypes"/>
@@ -253,9 +253,9 @@
                     <xs:extension base="{concat('xs:',@ValueScheme)}">
                         <xsl:apply-templates select="./AttributeList/Attribute"/>
                         <!-- temporarily disabled -->
-                        <!--<xsl:if test="./@Multilingual">
+                        <xsl:if test="./@Multilingual">
                             <xs:attribute ref="xml:lang"/>
-                        </xsl:if>-->
+                        </xsl:if>
                     </xs:extension>
                 </xs:simpleContent>
             </xs:complexType>
@@ -360,20 +360,20 @@
     <!-- start multilinguality part -->
 
     <!-- if the multilingual attribute is there and the field has the type string, allow multuple occurrences -->
-    <!--<xsl:template match="@Multilingual[../@ValueScheme='string'][. = 'true'] ">-->
+    <xsl:template match="@Multilingual[../@ValueScheme='string'][. = 'true'] ">
         <!-- temporarily disabled until Arbil can deal with the <xs:import> to cope with xml:lang -->
-        <!--<xsl:attribute name="maxOccurs">
+        <xsl:attribute name="maxOccurs">
             <xsl:value-of>unbounded</xsl:value-of>
-        </xsl:attribute>-->
-    <!--</xsl:template>-->
+        </xsl:attribute>
+    </xsl:template>
 
     <xsl:template match="@Multilingual">
         <!-- do nothing - only influences maxOccurs if it is true and if it is a a string element -->
     </xsl:template>
 
-    <!--<xsl:template match="@CardinalityMax[../@Multilingual='true'][../@ValueScheme='string']">-->
+    <xsl:template match="@CardinalityMax[../@Multilingual='true'][../@ValueScheme='string']">
         <!-- do nothing - maxOccurs should be set by Multilingual rule for strings -->
-    <!--</xsl:template>-->
+    </xsl:template>
 
     <!-- end multilinguality part -->
 

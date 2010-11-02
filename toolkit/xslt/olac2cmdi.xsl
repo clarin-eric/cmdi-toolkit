@@ -1,27 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
-    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/"
     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
     xmlns:defns="http://www.openarchives.org/OAI/2.0/"
     xmlns:olac="http://www.language-archives.org/OLAC/1.0/"
+    xmlns:olac11="http://www.language-archives.org/OLAC/1.1/"
     xsi:schemaLocation="    http://purl.org/dc/elements/1.1/    http://www.language-archives.org/OLAC/1.0/dc.xsd    http://purl.org/dc/terms/    http://www.language-archives.org/OLAC/1.0/dcterms.xsd    http://www.language-archives.org/OLAC/1.0/    http://www.language-archives.org/OLAC/1.0/olac.xsd    http://www.language-archives.org/OLAC/1.0/third-party/software.xsd ">
 
     <!-- run on ubtunu with: saxonb-xslt -ext:on -it main ~/svn/clarin/metadata/trunk/toolkit/xslt/olac2cmdi.xsl  -->
 
     <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
 
-    <!-- identity copy -->
-<!--    <xsl:template match="@*|node()">
-        <xsl:copy>
-            <xsl:apply-templates select="@*|node()"/>
-        </xsl:copy>
-    </xsl:template>
--->
-    
     <xsl:template match="/">
         <CMD
-            xsi:schemaLocation="http://www.clarin.eu/cmd http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1271859438236/xsd">
+            xsi:schemaLocation="http://www.clarin.eu/cmd http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1288172614026/xsd">
             <Header>
                 <MdCreator>olac2cmdi.xsl</MdCreator>
                 <MdCreationDate>
@@ -40,7 +33,7 @@
                 <MdSelfLink>
                     <xsl:value-of select="//defns:identifier"/>
                 </MdSelfLink>
-                <MdProfile>clarin.eu:cr1:p_1271859438236</MdProfile>
+                <MdProfile>clarin.eu:cr1:p_1288172614026</MdProfile>
             </Header>
             <Resources>
                 <ResourceProxyList/>
@@ -48,129 +41,151 @@
                 <ResourceRelationList/>
             </Resources>
             <Components>
-                <olac>
+                <OLAC-DcmiTerms>
 
+                    <xsl:apply-templates select="//dcterms:abstract"/>
+                    <xsl:apply-templates select="//dcterms:accessRights"/>
+                    <xsl:apply-templates select="//dcterms:accrualMethod"/>
+                    <xsl:apply-templates select="//dcterms:accrualPeriodicity"/>
+                    <xsl:apply-templates select="//dcterms:accrualPolicy"/>
+                    <xsl:apply-templates select="//dcterms:alternative"/>
+                    <xsl:apply-templates select="//dcterms:audience"/>
+                    <xsl:apply-templates select="//dcterms:available"/>
+                    <xsl:apply-templates select="//dcterms:bibliographicCitation"/>
+                    <xsl:apply-templates select="//dcterms:conformsTo"/>
+        
                     <xsl:apply-templates select="//dc:contributor"/>
                     <xsl:apply-templates select="//dc:coverage"/>
+
+                    <xsl:apply-templates select="//dcterms:created"/>
+
                     <xsl:apply-templates select="//dc:creator"/>
                     <xsl:apply-templates select="//dc:date"/>
+                    
+                    <xsl:apply-templates select="//dcterms:dateAccepted"/>
+                    <xsl:apply-templates select="//dcterms:dateCopyrighted"/>
+                    <xsl:apply-templates select="//dcterms:dateSubmitted"/>
+
                     <xsl:apply-templates select="//dc:description"/>
+                    
+                    <xsl:apply-templates select="//dcterms:educationLevel"/>
+                    <xsl:apply-templates select="//dcterms:extent"/>
+                    
                     <xsl:apply-templates select="//dc:format"/>
+                    
+                    <xsl:apply-templates select="//dcterms:hasFormat"/>
+                    <xsl:apply-templates select="//dcterms:hasPart"/>
+                    <xsl:apply-templates select="//dcterms:hasVersion"/>
+
                     <xsl:apply-templates select="//dc:identifier"/>
+
+                    <xsl:apply-templates select="//dc:instructionalMethod"/>
+                    
+                    <xsl:apply-templates select="//dcterms:isFormatOf"/>
+                    <xsl:apply-templates select="//dcterms:isPartOf"/>
+                    <xsl:apply-templates select="//dcterms:isReferencedBy"/>                    
+                    <xsl:apply-templates select="//dcterms:isReplacedBy"/>
+                    <xsl:apply-templates select="//dcterms:isRequiredBy"/>
+                    <xsl:apply-templates select="//dcterms:issued"/>
+                    <xsl:apply-templates select="//dcterms:isVersionOf"/>
+                 
                     <xsl:apply-templates select="//dc:language"/>
+                    
+                    <xsl:apply-templates select="//dcterms:license"/>
+                    <xsl:apply-templates select="//dcterms:mediator"/>
+                    <xsl:apply-templates select="//dcterms:medium"/>
+                    <xsl:apply-templates select="//dcterms:modified"/>
+                    <xsl:apply-templates select="//dcterms:provenance"/>
+                    
                     <xsl:apply-templates select="//dc:publisher"/>
+                    
+                    <xsl:apply-templates select="//dcterms:references"/>
+                  
                     <xsl:apply-templates select="//dc:relation"/>
+
+                    <xsl:apply-templates select="//dcterms:replaces"/>
+                    <xsl:apply-templates select="//dcterms:requires"/>
+                    
                     <xsl:apply-templates select="//dc:rights"/>
+                    
+                    <xsl:apply-templates select="//dcterms:rightsHolder"/>
+                    
                     <xsl:apply-templates select="//dc:source"/>
+                    
+                    <xsl:apply-templates select="//dcterms:spatial"/>
+                    
                     <xsl:apply-templates select="//dc:subject"/>
+                    
+                    <xsl:apply-templates select="//dcterms:tableOfContents"/>
+                    <xsl:apply-templates select="//dcterms:temporal"/>
+                    
                     <xsl:apply-templates select="//dc:title"/>
                     <xsl:apply-templates select="//dc:type"/>
+                    
+                    <xsl:apply-templates select="//dcterms:valid"/>
 
-                </olac>
+                </OLAC-DcmiTerms>
             </Components>
         </CMD>
     </xsl:template>
 
     <xsl:template match="dc:contributor">
-        <olac-contributor>
+        <contributor>
             <xsl:if test="@xsi:type='olac:role'">
                 <xsl:attribute name="olac-role">
-                    <xsl:value-of select="@olac:code"/>
+                    <!-- note: namespace wildcard necessary to match with both OLAC 1.0 and 1.1 -->
+                    <xsl:value-of select="@*:code"/>
                 </xsl:attribute>
             </xsl:if>
-            <xsl:value-of select="."/>
-        </olac-contributor>
-    </xsl:template>
-
-
-    <xsl:template match="dc:creator">
-        <olac-creator>
-            <xsl:value-of select="."/>
-        </olac-creator>
-    </xsl:template>
-
-    <xsl:template match="dc:date">
-        <olac-date>
-            <xsl:value-of select="."/>
-        </olac-date>
+            <xsl:value-of select="."/> 
+        </contributor>
     </xsl:template>
 
     <xsl:template match="dc:description">
-        <olac-description>
-           <xsl:apply-templates select="./@xml:lang"/>            
+        <description>
+            <xsl:apply-templates select="./@xml:lang"/>
             <xsl:value-of select="."/>
-        </olac-description>
-    </xsl:template>
-
-    <xsl:template match="dc:format">
-        <olac-format>
-            <xsl:value-of select="."/>
-        </olac-format>
-    </xsl:template>
-
-    <xsl:template match="dc:identifier">
-        <olac-identifier>
-            <xsl:value-of select="."/>
-        </olac-identifier>
-    </xsl:template>
-
-    <xsl:template match="dc:language">
-        <olac-language>
-            <xsl:value-of select="."/>
-        </olac-language>
+        </description>
     </xsl:template>
 
     <xsl:template match="dc:language[@xsi:type='olac:language']" priority="3">
-        <olac-language>
+        <language>
             <xsl:attribute name="olac-language">
-                <xsl:value-of select="@olac:code"/>
+                <xsl:value-of select="@*:code"/>
             </xsl:attribute>
-        </olac-language>
+        </language>
     </xsl:template>
 
-
-    <xsl:template match="dc:publisher">
-        <olac-publisher>
-            <xsl:value-of select="."/>
-        </olac-publisher>
+    <xsl:template match="dc:subject[@xsi:type='olac:language']" priority="3">
+        <subject>
+            <xsl:attribute name="olac-language">
+                <xsl:value-of select="@*:code"/>
+            </xsl:attribute>
+        </subject>
     </xsl:template>
 
-    <xsl:template match="dc:relation">
-        <olac-relation>
-            <xsl:value-of select="."/>
-        </olac-relation>
-    </xsl:template>
-
-
-    <xsl:template match="dc:rights">
-        <olac-rights>
-            <xsl:value-of select="."/>
-        </olac-rights>
-    </xsl:template>
-
-
-    <xsl:template match="//dc:subject[@xsi:type='olac:linguistic-field']" priority="3">
-        <olac-subject>
+   <xsl:template match="//dc:subject[@xsi:type='olac:linguistic-field']" priority="3">
+        <subject>
             <xsl:attribute name="olac-linguistic-field">
-                <xsl:value-of select="@olac:code"/>
+                <xsl:value-of select="@*:code"/>
             </xsl:attribute>
-        </olac-subject>
+        </subject>
     </xsl:template>
 
     <xsl:template match="//dc:subject[@xsi:type='olac:discourse-type']" priority="3">
-        <olac-subject>
+        <subject>
             <xsl:attribute name="olac-discourse-type">
-                <xsl:value-of select="@olac:code"/>
+                <xsl:value-of select="@*:code"/>
             </xsl:attribute>
-        </olac-subject>
+        </subject>
     </xsl:template>
 
 
     <xsl:template match="//dc:subject" priority="1">
-        <olac-subject>
+        <subject>
             <xsl:apply-templates select="./@xml:lang"/>
             <xsl:value-of select="."/>
-        </olac-subject>
+        </subject>
     </xsl:template>
 
 
@@ -185,7 +200,7 @@
     <xsl:template match="//dc:type[@xsi:type='olac:discourse-type']" priority="2">
         <type>
             <xsl:attribute name="olac-discourse-type">
-                <xsl:value-of select="@olac:code"/>
+                <xsl:value-of select="@*:code"/>
             </xsl:attribute>
         </type>
     </xsl:template>
@@ -194,7 +209,7 @@
     <xsl:template match="//dc:type[@xsi:type='olac:linguistic-type']" priority="2">
         <type>
             <xsl:attribute name="olac-linguistic-type">
-                <xsl:value-of select="@olac:code"/>
+                <xsl:value-of select="@*:code"/>
             </xsl:attribute>
         </type>
     </xsl:template>
@@ -211,6 +226,28 @@
             <xsl:value-of select="."/>
         </xsl:attribute>
     </xsl:template>
+
+
+    <!--  general DC  template -->
+    <xsl:template match="dc:*">
+        <xsl:variable name="tagname">
+            <xsl:value-of select="local-name()"/>
+        </xsl:variable>
+        <xsl:element name="{$tagname}">
+            <xsl:value-of select="."/>
+        </xsl:element>
+    </xsl:template>
+
+    <!--  general DC terms template -->
+    <xsl:template match="dcterms:*">
+        <xsl:variable name="tagname">
+            <xsl:value-of select="local-name()"/>
+        </xsl:variable>
+        <xsl:element name="{$tagname}">
+            <xsl:value-of select="."/>
+        </xsl:element>
+    </xsl:template>
+
 
 
     <xsl:template name="main">

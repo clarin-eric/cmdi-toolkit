@@ -53,7 +53,7 @@
                     <xsl:apply-templates select="//dcterms:available"/>
                     <xsl:apply-templates select="//dcterms:bibliographicCitation"/>
                     <xsl:apply-templates select="//dcterms:conformsTo"/>
-        
+
                     <xsl:apply-templates select="//dc:contributor"/>
                     <xsl:apply-templates select="//dc:coverage"/>
 
@@ -61,18 +61,18 @@
 
                     <xsl:apply-templates select="//dc:creator"/>
                     <xsl:apply-templates select="//dc:date"/>
-                    
+
                     <xsl:apply-templates select="//dcterms:dateAccepted"/>
                     <xsl:apply-templates select="//dcterms:dateCopyrighted"/>
                     <xsl:apply-templates select="//dcterms:dateSubmitted"/>
 
                     <xsl:apply-templates select="//dc:description"/>
-                    
+
                     <xsl:apply-templates select="//dcterms:educationLevel"/>
                     <xsl:apply-templates select="//dcterms:extent"/>
-                    
+
                     <xsl:apply-templates select="//dc:format"/>
-                    
+
                     <xsl:apply-templates select="//dcterms:hasFormat"/>
                     <xsl:apply-templates select="//dcterms:hasPart"/>
                     <xsl:apply-templates select="//dcterms:hasVersion"/>
@@ -80,48 +80,48 @@
                     <xsl:apply-templates select="//dc:identifier"/>
 
                     <xsl:apply-templates select="//dc:instructionalMethod"/>
-                    
+
                     <xsl:apply-templates select="//dcterms:isFormatOf"/>
                     <xsl:apply-templates select="//dcterms:isPartOf"/>
-                    <xsl:apply-templates select="//dcterms:isReferencedBy"/>                    
+                    <xsl:apply-templates select="//dcterms:isReferencedBy"/>
                     <xsl:apply-templates select="//dcterms:isReplacedBy"/>
                     <xsl:apply-templates select="//dcterms:isRequiredBy"/>
                     <xsl:apply-templates select="//dcterms:issued"/>
                     <xsl:apply-templates select="//dcterms:isVersionOf"/>
-                 
+
                     <xsl:apply-templates select="//dc:language"/>
-                    
+
                     <xsl:apply-templates select="//dcterms:license"/>
                     <xsl:apply-templates select="//dcterms:mediator"/>
                     <xsl:apply-templates select="//dcterms:medium"/>
                     <xsl:apply-templates select="//dcterms:modified"/>
                     <xsl:apply-templates select="//dcterms:provenance"/>
-                    
+
                     <xsl:apply-templates select="//dc:publisher"/>
-                    
+
                     <xsl:apply-templates select="//dcterms:references"/>
-                  
+
                     <xsl:apply-templates select="//dc:relation"/>
 
                     <xsl:apply-templates select="//dcterms:replaces"/>
                     <xsl:apply-templates select="//dcterms:requires"/>
-                    
+
                     <xsl:apply-templates select="//dc:rights"/>
-                    
+
                     <xsl:apply-templates select="//dcterms:rightsHolder"/>
-                    
+
                     <xsl:apply-templates select="//dc:source"/>
-                    
+
                     <xsl:apply-templates select="//dcterms:spatial"/>
-                    
+
                     <xsl:apply-templates select="//dc:subject"/>
-                    
+
                     <xsl:apply-templates select="//dcterms:tableOfContents"/>
                     <xsl:apply-templates select="//dcterms:temporal"/>
-                    
+
                     <xsl:apply-templates select="//dc:title"/>
                     <xsl:apply-templates select="//dc:type"/>
-                    
+
                     <xsl:apply-templates select="//dcterms:valid"/>
 
                 </OLAC-DcmiTerms>
@@ -137,13 +137,14 @@
                     <xsl:value-of select="@*:code"/>
                 </xsl:attribute>
             </xsl:if>
-            <xsl:value-of select="."/> 
+            <xsl:value-of select="."/>
         </contributor>
     </xsl:template>
 
     <xsl:template match="dc:description">
         <description>
             <xsl:apply-templates select="./@xml:lang"/>
+            <xsl:apply-templates select="@xsi:type"/>
             <xsl:value-of select="."/>
         </description>
     </xsl:template>
@@ -164,7 +165,7 @@
         </subject>
     </xsl:template>
 
-   <xsl:template match="//dc:subject[@xsi:type='olac:linguistic-field']" priority="3">
+    <xsl:template match="//dc:subject[@xsi:type='olac:linguistic-field']" priority="3">
         <subject>
             <xsl:attribute name="olac-linguistic-field">
                 <xsl:value-of select="@*:code"/>
@@ -184,6 +185,7 @@
     <xsl:template match="//dc:subject" priority="1">
         <subject>
             <xsl:apply-templates select="./@xml:lang"/>
+            <xsl:apply-templates select="@xsi:type"/>
             <xsl:value-of select="."/>
         </subject>
     </xsl:template>
@@ -192,6 +194,7 @@
     <xsl:template match="//dc:title">
         <title>
             <xsl:apply-templates select="./@xml:lang"/>
+            <xsl:apply-templates select="@xsi:type"/>
             <xsl:value-of select="."/>
         </title>
     </xsl:template>
@@ -217,6 +220,7 @@
 
     <xsl:template match="//dc:type" priority="1">
         <type>
+            <xsl:apply-templates select="@xsi:type"/>
             <xsl:value-of select="."/>
         </type>
     </xsl:template>
@@ -227,6 +231,19 @@
         </xsl:attribute>
     </xsl:template>
 
+    <xsl:template match="@xsi:type">
+        <xsl:variable name="attval">
+            <xsl:value-of select="."/>
+        </xsl:variable>
+        <xsl:if test="contains($attval, 'dcterms:')">
+            <xsl:variable name="attclean">
+                <xsl:value-of select="replace($attval, 'dcterms:','')"/>
+            </xsl:variable>
+            <xsl:attribute name="dcterms-type">
+                <xsl:value-of select="$attclean"/>
+            </xsl:attribute>
+        </xsl:if>
+    </xsl:template>
 
     <!--  general DC  template -->
     <xsl:template match="dc:*">
@@ -234,6 +251,7 @@
             <xsl:value-of select="local-name()"/>
         </xsl:variable>
         <xsl:element name="{$tagname}">
+            <xsl:apply-templates select="@xsi:type"/>
             <xsl:value-of select="."/>
         </xsl:element>
     </xsl:template>
@@ -243,7 +261,9 @@
         <xsl:variable name="tagname">
             <xsl:value-of select="local-name()"/>
         </xsl:variable>
+
         <xsl:element name="{$tagname}">
+            <xsl:apply-templates select="@xsi:type"/>
             <xsl:value-of select="."/>
         </xsl:element>
     </xsl:template>

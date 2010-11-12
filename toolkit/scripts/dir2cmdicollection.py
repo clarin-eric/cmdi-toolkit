@@ -7,10 +7,16 @@
 #   - also reading ProviderURL-file and filling as ID in the basic collection-profile
 #   - does NOT add IsPartOf-elements yet
 
+# params:
+#  ref_flag := what to put into ResourceRef: 
+# 			'handle' := PID (read from MdSelfLink of the resources), 
+# 			'path' := the relative path of the record
+
 import os, datetime
 from string import Template
 
 target_dir = "_corpusstructure/"
+ref_flag = "path" # "handle" | "path"
 
 def main():
 	rootList = []
@@ -21,11 +27,11 @@ def main():
 		for d in dirs:
 			if d == "0":
 				rootList.append(generate_branch(root, dirs))
-	writeCollection(rootList, target_dir + "collection_root.cmdi", "olac-root")
+	writeCollection(rootList, "collection_root.cmdi", "olac-root")
 		
 def generate_branch(root, dirs):
 	collectionName = os.path.relpath(root)
-	collectionFile = "_corpusstructure/collection_%s.cmdi" % collectionName
+	collectionFile = "collection_%s.cmdi" % collectionName
 	
 	dirs.sort()
 	collectionList = []	
@@ -80,27 +86,27 @@ def writeCollection(collectionList, collectionFile, collectionName):
 	idx = ""
 	for item in collectionList:
 		# trying to restore the original id (which is in the MdSelfLink
-		if os.path.isfile(item):
+		if os.path.isfile(item) and ref_flag=="handle":
 				for line in open(item):
 					if "<MdSelfLink>" in line:
  						#  WARNING! rocket science employed here !
-						idx = line.replace("<MdSelfLink>","").replace("</MdSelfLink>","").strip() 
+						idx = line.replace("<MdSelfLink>","").replace("</MdSelfLink>","").strip() 						
 						break
 		else:
-			 idx = item
+			 idx = item		
 		#idx = item.replace(".xml.cmdi","").replace("_", ":",1)[::-1].replace("_", ":",1)[::-1].replace("_", "-")
-		resourceProxies += "\n" + resourceTemplate.substitute(idname = idx.replace(".","_").replace("/","_"), idx = idx)
+		resourceProxies += "\n" + resourceTemplate.substitute(idname = idx.replace(".","_").replace("/","_").replace("\\","_"), idx = idx)
 	if collectionName=="olac-root":
 		collidx = "olac-root"
 	else:
 		# print "idx:" + idx
-		if idx!="":
+		if idx!="" and ref_flag=="handle":
 			collidx = idx[:idx.rfind(":")] # this is just a hack to derive the collection-id from the id of the collection-item (stripping the running number)
 		else:
-			collidx = "olac:" + collectionName
+			collidx = collectionFile
 	print collidx 
 	outfile = outstring.substitute(date= datetime.datetime.now().strftime("%Y-%m-%d"), selflink=collidx, rp=resourceProxies,url=url, name=name)
-	f = open(collectionFile, 'w')	
+	f = open(target_dir + collectionFile, 'w')	
 	f.write(outfile)
 	f.close()
 	

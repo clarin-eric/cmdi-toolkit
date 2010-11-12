@@ -84,33 +84,45 @@ def writeCollection(collectionList, collectionFile, collectionName):
 	  url ="?"
 	name = "OLAC: " + collectionName.replace("_", " ")
 	idx = ""
+	path = ""
 	for item in collectionList:
 		# trying to restore the original id (which is in the MdSelfLink
-		if os.path.isfile(item) and ref_flag=="handle":
+		if os.path.isfile(item):
 				for line in open(item):
 					if "<MdSelfLink>" in line:
  						#  WARNING! rocket science employed here !
 						idx = line.replace("<MdSelfLink>","").replace("</MdSelfLink>","").strip() 						
 						break
 		else:
-			 idx = item		
+			 idx = item
+			 
+		if ref_flag=="path":
+			# need to add '../' for the number of dirs in the target_dir, so paths match again.
+			path = "../"+item
+		else:
+			path = idx;
+			
 		#idx = item.replace(".xml.cmdi","").replace("_", ":",1)[::-1].replace("_", ":",1)[::-1].replace("_", "-")
-		resourceProxies += "\n" + resourceTemplate.substitute(idname = idx.replace(".","_").replace("/","_").replace("\\","_"), idx = idx)
+		resourceProxies += "\n" + resourceTemplate.substitute(idname = idx.replace(".","_").replace("/","_").replace("\\","_"), idx = path)
 	if collectionName=="olac-root":
 		collidx = "olac-root"
 	else:
 		# print "idx:" + idx
-		if idx!="" and ref_flag=="handle":
+		if idx!="":
 			collidx = idx[:idx.rfind(":")] # this is just a hack to derive the collection-id from the id of the collection-item (stripping the running number)
 		else:
 			collidx = collectionFile
 	print collidx 
 	outfile = outstring.substitute(date= datetime.datetime.now().strftime("%Y-%m-%d"), selflink=collidx, rp=resourceProxies,url=url, name=name)
-	f = open(target_dir + collectionFile, 'w')	
+	collectionFile = target_dir + collectionFile
+	f = open(collectionFile, 'w')	
 	f.write(outfile)
 	f.close()
 	
 	print collectionFile
-	return collidx
+	if ref_flag=="path":
+		return collectionFile
+	else:
+		return collidx
 
 main()

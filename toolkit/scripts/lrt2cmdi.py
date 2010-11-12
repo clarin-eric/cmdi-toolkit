@@ -3,7 +3,7 @@
 # converts the CSV from the LRT inventory to nice and clean CMDI
 # Dieter says: I deny the existance of this script! 
 
-import urllib, csv, xml.etree.ElementTree as ElementTree
+import urllib, csv, datetime, xml.etree.ElementTree as ElementTree
 
 class CmdiFile:
     def __init__(self, nodeId):
@@ -12,6 +12,8 @@ class CmdiFile:
         self.xmlTree = ElementTree.ElementTree(ElementTree.fromstring(template))
         # create dict with links to parent node for each node (= key)
         self.parentmap = dict((c, p) for p in self.xmlTree.getiterator() for c in p)
+        self.fillElement("//MdCreationDate", datetime.datetime.now().strftime("%Y-%m-%d"))
+        self.fillElement("//MdSelfLink", "clarin.eu:lrt:%s" % nodeId)
 
     def fillElement(self, xpath, value):
         self.xmlTree.find(xpath).text = value.strip() 
@@ -211,7 +213,6 @@ def loadCsv(filename):
     dictionary = dict()
     for l in csvFile:
         dictionary[l[1]] = l[0]
-    print dictionary
     return dictionary
 
 
@@ -222,7 +223,7 @@ def main():
     iso6391List = loadCsv("639-1-language_codes.csv")
     
     for record in infoDict.values():
-        print "processing lrt-%s.cmdi" % record["nid"]
+        print "creating lrt-%s.cmdi" % record["nid"]
         
         cmdi = CmdiFile(record["nid"])
         

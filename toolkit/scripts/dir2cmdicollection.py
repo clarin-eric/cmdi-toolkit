@@ -12,25 +12,39 @@
 # 			'handle' := PID (read from MdSelfLink of the resources), 
 # 			'path' := the relative path of the record
 
-import os, datetime
+import os, datetime, sys
 from string import Template
 
 target_dir = "_corpusstructure/"
 ref_flag = "path" # "handle" | "path"
 
+
 def main():
+	simple_dir_structure = False
+	if len(sys.argv) > 1:
+		if sys.argv[1] == "-simpledir":
+			simple_dir_structure = True
+
 	rootList = []
 	if not os.path.isdir(target_dir):
 		os.mkdir(target_dir)
-	for root, dirs, files in os.walk(os.getcwd()):
-		startpath = os.getcwd()		
-		for d in dirs:
-			if d == "0":
-				rootList.append(generate_branch(root, dirs))
+	
+	if not simple_dir_structure:
+		for root, dirs, files in os.walk(os.getcwd()):
+			startpath = os.getcwd()		
+			for d in dirs:
+				if d == "0":
+					rootList.append(generate_branch(root, dirs))
+	else:
+		rootList.append(generate_branch(os.getcwd(), [""], "lrt_inventory"))
 	writeCollection(rootList, "collection_root.cmdi", "olac-root")
-		
+
 def generate_branch(root, dirs):
 	collectionName = os.path.relpath(root)
+	return generate_branch(root, dirs, collectionName)
+
+def generate_branch(root, dirs, collectionName):
+	#collectionName = os.path.relpath(root)
 	collectionFile = "collection_%s.cmdi" % collectionName
 	
 	dirs.sort()

@@ -16,12 +16,18 @@ class CmdiFile:
         self.fillElement("//MdSelfLink", "clarin.eu:lrt:%s" % nodeId)
 
     def fillElement(self, xpath, value):
+        #print "fill %s with %s" % (xpath, value)
         self.xmlTree.find(xpath).text = value.strip() 
         
     def fillMultipleElement(self, elementname, xpath, values):
         # fill in the already existing element
-        if values[0]:
+        #print values
+        if (values[0]):
+            #print "first one", values[0]
+            #print values[0]
             self.fillElement(xpath, values[0])
+            #print "fill %s with %s" % (xpath, values[0])
+        #print
         
         element = self.xmlTree.find(xpath)
         parent = self.parentmap[element]
@@ -30,7 +36,9 @@ class CmdiFile:
         # then add siblings for the other elements
         for value in values[1:]:
             if value:
-                # create new sibling of xpath (elementname) = value            
+                # create new sibling of xpath (elementname) = value
+                #print value
+                #print "next one", value
                 position += 1
                 newElement = ElementTree.Element(elementname)
                 newElement.text = value.strip()
@@ -55,6 +63,8 @@ class CmdiFile:
                 items = institute.split(";") 
                 uniqueItems = set(items) # filter out double items
                 items = [i for i in uniqueItems] # convert set back to a list
+                #print items
+                 
                 self.fillMultipleElement("Institute", "//LrtCommon/Institute", items)
     
     def addCountries(self, countryList, countries):
@@ -192,8 +202,8 @@ def parseFirstLine(l):
     
             
 def loadInfo():
-    #csvFile = csv.reader(urllib.urlopen("http://www.clarin.eu/export_resources").readlines())
-    csvFile = csv.reader(urllib.urlopen("resources.csv").readlines())  
+    csvFile = csv.reader(urllib.urlopen("http://www.clarin.eu/export_resources").readlines())
+    #csvFile = csv.reader(urllib.urlopen("resources.csv").readlines())  
     linenr = 0
     newDict = dict()
     for l in csvFile:

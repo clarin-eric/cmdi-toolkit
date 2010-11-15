@@ -44,7 +44,17 @@ class CmdiFile:
                 newElement.text = value.strip()
                 parent.insert(position, newElement)
     
+    def removeEmptyNodes(self):
+        removeList = ["ResourceType", "BeginYearResourceCreation", "FinalizationYearResourceCreation", "Institute"]
+        for r in removeList:
+            results = self.xmlTree.findall("//%s" % r)
+            for res in results:
+                if not res.text:
+                    parentNode = self.parentmap[res]
+                    parentNode.remove(res)
+    
     def serialize(self): 
+        self.removeEmptyNodes()
         filename = "lrt-%s.cmdi" % self.nodeId
         self.xmlTree.write(filename, encoding="utf-8")
         

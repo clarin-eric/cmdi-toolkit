@@ -58,6 +58,13 @@ class CmdiFile:
         self.removeEmptyNodes()
         filename = "lrt-%s.cmdi" % self.nodeId
         self.xmlTree.write(filename, encoding="utf-8")
+        f = open(filename, 'r+' )
+        content = f.read().replace('<CMD', '<?xml version="1.0" encoding="UTF-8"?>\n<CMD')
+        f.close()
+        f = open(filename, 'w' )
+        #print content
+        f.write(content)
+        f.close
         
     def addFormats(self, format):
         if ";" in format or "," in format:
@@ -236,7 +243,7 @@ def loadCsv(filename):
     csvFile = csv.reader(urllib.urlopen(filename).readlines())
     dictionary = dict()
     for l in csvFile:
-        dictionary[l[1]] = unicode(l[0])
+        dictionary[l[1]] = l[0]
 
     return dictionary
 

@@ -4,6 +4,7 @@
 # Dieter says: I deny the existance of this script! 
 
 import urllib, csv, datetime, xml.etree.ElementTree as ElementTree
+from curses.ascii import ascii
 
 class CmdiFile:
     def __init__(self, nodeId):
@@ -95,7 +96,8 @@ class CmdiFile:
             if language and not language == "-- language not in list --":
                 newLanguageNode = ElementTree.Element("ISO639")
                 newCodeNode = ElementTree.Element("iso-639-%s-code" % iso639Type)
-                newCodeNode.text = isoList[language]
+                keyLang = language.encode("utf-8")
+                newCodeNode.text = isoList[keyLang]
                 newLanguageNode.append(newCodeNode)
                 languagesNode.append(newLanguageNode)
                     
@@ -213,6 +215,8 @@ def parseFirstLine(l):
             
 def loadInfo():
     csvFile = csv.reader(urllib.urlopen("http://www.clarin.eu/export_resources").readlines())
+    #csvFile =[l.decode('utf-8') for l in rawCsvFile]
+    
     #csvFile = csv.reader(urllib.urlopen("resources.csv").readlines())  
     linenr = 0
     newDict = dict()
@@ -223,7 +227,7 @@ def loadInfo():
             newDict[linenr] = dict()
             colnr = 0
             for field in fieldList:
-                newDict[linenr][fieldList[colnr].replace(" ", "_")] = l[colnr]
+                newDict[linenr][fieldList[colnr].replace(" ", "_").decode('utf-8')] = l[colnr].decode('utf-8')
                 colnr += 1 
         linenr += 1
     return newDict    
@@ -232,7 +236,8 @@ def loadCsv(filename):
     csvFile = csv.reader(urllib.urlopen(filename).readlines())
     dictionary = dict()
     for l in csvFile:
-        dictionary[l[1]] = l[0]
+        dictionary[l[1]] = unicode(l[0])
+
     return dictionary
 
 

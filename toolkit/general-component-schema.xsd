@@ -21,31 +21,44 @@
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-                <xs:element name="CMD_Component" type="CMD_Component_type" maxOccurs="unbounded"/>
-                <!-- changed: no CMD_Elements allowed anymore at the top level! 
-                    <xs:group ref="group"/> -->
+                <xs:element name="CMD_Component" type="CMD_Component_type" maxOccurs="unbounded">
+                    <xs:annotation>
+                        <xs:documentation>At the root level there should always be a
+                        Component.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
             </xs:sequence>
             <xs:attribute name="isProfile" type="xs:boolean" use="required"/>
         </xs:complexType>
     </xs:element>
 
-    <!-- recursive construction  -->
+    <!-- recursive construction: A component can contain elements and/or other components  -->
     <xs:group name="group">
         <xs:sequence>
             <!-- from small (attribute) to big (component) -->
             <xs:element name="AttributeList" type="AttributeList_type" minOccurs="0" maxOccurs="1"/>
             <xs:element name="CMD_Element" type="CMD_Element_type" minOccurs="0"
                 maxOccurs="unbounded"> </xs:element>
-            <xs:element name="CMD_Component" type="CMD_Component_type" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="CMD_Component" type="CMD_Component_type" minOccurs="0"
+                maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:group>
 
     <!-- type definitions -->
     <xs:complexType name="CMD_Element_type">
         <xs:sequence>
-            <xs:element name="AttributeList" type="AttributeList_type" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="AttributeList" type="AttributeList_type" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>The AttributeList child of an element contains a set of XML
+                        attributes for that element.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
             <xs:element minOccurs="0" maxOccurs="1" name="ValueScheme" type="ValueScheme_type">
-                
+                <xs:annotation>
+                    <xs:documentation>When an element is linked to a regular expression or a
+                        controlled vocabulary, the ValueScheme sub-element contains more information
+                        about this.</xs:documentation>
+                </xs:annotation>
             </xs:element>
         </xs:sequence>
         <xs:attributeGroup ref="clarin_element_attributes"/>
@@ -54,22 +67,47 @@
 
     <xs:complexType name="ValueScheme_type">
         <xs:choice>
-            <xs:element name="pattern" type="xs:string" maxOccurs="1"/>
-            <xs:element name="enumeration" type="enumeration_type"> </xs:element>
+            <xs:element name="pattern" type="xs:string" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Specification of a regular expression the element should
+                        comply with.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="enumeration" type="enumeration_type">
+                <xs:annotation>
+                    <xs:documentation>A list of the allowed values of a controlled
+                    vocabulary.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
         </xs:choice>
     </xs:complexType>
 
 
-    <xs:complexType name="AttributeList_type"> 
+    <xs:complexType name="AttributeList_type">
         <xs:sequence>
             <xs:element name="Attribute" minOccurs="1" maxOccurs="unbounded">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="Name" type="xs:string"/>
+                        <xs:element name="Name" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>The name of the attribute.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
                         <xs:choice>
-                            <xs:element name="Type" type="allowed_attributetypes_type"/>
-                            <xs:element name="ValueScheme" type="ValueScheme_type"/>
-                        </xs:choice>                       
+                            <xs:element name="Type" type="allowed_attributetypes_type">
+                                <xs:annotation>
+                                    <xs:documentation>For the use of simple XML types as the type of
+                                        the attribute.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="ValueScheme" type="ValueScheme_type">
+                                <xs:annotation>
+                                    <xs:documentation>For the use of a regular expression or a
+                                        controlled vocabulary as the type of the
+                                    attribute.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                        </xs:choice>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -84,31 +122,85 @@
 
     <!-- list of all attributes that can be bound to a cl_el -->
     <xs:attributeGroup name="clarin_element_attributes">
-        <xs:attribute name="name" type="xs:Name" use="required"/>
-        <xs:attribute name="ConceptLink" type="xs:anyURI"/>
-        <xs:attribute name="ValueScheme" type="allowed_attributetypes_type"/>
-        <xs:attribute name="CardinalityMin" type="cardinality_type"/>
-        <xs:attribute name="CardinalityMax" type="cardinality_type"/>
-        <xs:attribute name="Documentation" type="xs:string"/>
-        <xs:attribute name="DisplayPriority" type="xs:integer"/>
-        <xs:attribute name="Multilingual" type="xs:boolean"/>
+        <xs:attribute name="name" type="xs:Name" use="required">
+            <xs:annotation>
+                <xs:documentation>The name of the element.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="ConceptLink" type="xs:anyURI">
+            <xs:annotation>
+                <xs:documentation>A link to the ISOcat data category registry (or any other concept
+                    registry).</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="ValueScheme" type="allowed_attributetypes_type">
+            <xs:annotation>
+                <xs:documentation>Used to specify that an element has a simple XML type (string,
+                    integer, etc)</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="CardinalityMin" type="cardinality_type">
+            <xs:annotation>
+                <xs:documentation>Minimal number of occurrences.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="CardinalityMax" type="cardinality_type">
+            <xs:annotation>
+                <xs:documentation>Maximal number of occurrences.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="Documentation" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>Some information an application (eg Arbil) can display to give
+                    guidance to the user when entering metadata.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="DisplayPriority" type="xs:integer">
+            <xs:annotation>
+                <xs:documentation>The element with the highest priority will be displayed as the
+                    label for a metadata file (eg in Arbil)</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="Multilingual" type="xs:boolean">
+            <xs:annotation>
+                <xs:documentation>Indicates that this element can have values in multiple languages
+                    (and thus is repeatable). This will result in the possibility of using the
+                    xml:lang attribute in the metadata instances that are
+                created.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
     </xs:attributeGroup>
 
     <!-- list of all attributes that can be bound to a cl_comp -->
     <xs:attributeGroup name="clarin_component_attributes">
         <xs:attribute name="name" type="xs:Name"/>
-        <xs:attribute name="ComponentId" type="xs:anyURI"/>
-        <xs:attribute name="ConceptLink" type="xs:anyURI"/>
-        <xs:attribute name="filename" type="xs:anyURI"/>
-        
+        <xs:attribute name="ComponentId" type="xs:anyURI">
+            <xs:annotation>
+                <xs:documentation>Indicates that a component (using its unique ComponentId issued by
+                    the ComponentRegistry) should be included.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="ConceptLink" type="xs:anyURI">
+            <xs:annotation>
+                <xs:documentation>A link to the ISOcat data category registry (or any other concept
+                    registry). Currently not used.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="filename" type="xs:anyURI">
+            <xs:annotation>
+                <xs:documentation>Outdated way of including an external component. Here for backward
+                    compatibility with the XML-cmdi-toolkit.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+
         <!-- (components cannot have a ValueScheme attribute) -->
-        
-        <xs:attribute name="CardinalityMin" type="cardinality_type" />
+
+        <xs:attribute name="CardinalityMin" type="cardinality_type"/>
         <xs:attribute name="CardinalityMax" type="cardinality_type"/>
         <xs:attribute ref="xml:base"/>
     </xs:attributeGroup>
-    
-    
+
+
     <xs:simpleType name="cardinality_type">
         <xs:annotation>
             <xs:documentation>cardinality for elements and components</xs:documentation>
@@ -123,13 +215,13 @@
                 </xs:restriction>
             </xs:simpleType>
         </xs:union>
-    </xs:simpleType>    
+    </xs:simpleType>
 
     <xs:simpleType name="allowed_attributetypes_type">
         <xs:annotation>
             <xs:documentation>Subset of XSD types that are allowed as CMD type</xs:documentation>
         </xs:annotation>
-        
+
         <xs:restriction base="xs:token">
             <xs:enumeration value="boolean"/>
             <xs:enumeration value="decimal"/>
@@ -149,16 +241,36 @@
             <xs:documentation>controlled vocabularies</xs:documentation>
         </xs:annotation>
         <xs:choice minOccurs="0" maxOccurs="unbounded">
-            <xs:element name="item" type="item_type" />
-            <xs:element name="appinfo" type="xs:string" />
+            <xs:element name="item" type="item_type">
+                <xs:annotation>
+                    <xs:documentation>An item from a controlled vocabulary.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="appinfo" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>End-user guidance about the value of the controlled vocabulary
+                        as a whole. Currently not used.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
         </xs:choice>
     </xs:complexType>
 
     <xs:complexType name="item_type">
         <xs:simpleContent>
             <xs:extension base="xs:string">
-                <xs:attribute type="xs:anyURI" name="ConceptLink"/>
-                <xs:attribute type="xs:string" name="AppInfo"/>
+                <xs:attribute type="xs:anyURI" name="ConceptLink">
+                    <xs:annotation>
+                        <xs:documentation>A link to the ISOcat data category registry (or any other
+                            concept registry) related to this controllec vocabulary
+                        item.</xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+                <xs:attribute type="xs:string" name="AppInfo">
+                    <xs:annotation>
+                        <xs:documentation>End-user guidance about the value of this controlled
+                            vocabulary item.</xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>

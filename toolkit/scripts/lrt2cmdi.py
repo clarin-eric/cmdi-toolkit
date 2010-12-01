@@ -14,7 +14,7 @@ class CmdiFile:
         # create dict with links to parent node for each node (= key)
         self.parentmap = dict((c, p) for p in self.xmlTree.getiterator() for c in p)
         self.fillElement("//MdCreationDate", datetime.datetime.now().strftime("%Y-%m-%d"))
-        self.fillElement("//MdSelfLink", "clarin.eu:lrt:%s" % nodeId)
+        self.fillElement("//MdSelfLink", "http://www.clarin.eu/node/%s" % nodeId)
 
     def fillElement(self, xpath, value):
         #print "fill %s with %s" % (xpath, value)
@@ -269,6 +269,7 @@ def main():
         cmdi.fillElement("//LrtCommon/MetadataLink", record["field_metadata_link"])
         cmdi.fillElement("//LrtCommon/Publications", record["field_publications"])
         cmdi.fillElement("//LrtCommon/ReadilyAvailable", record["field_resource_available"].replace("Yes","true").replace("No","false"))
+	cmdi.fillElement("//LrtCommon/ReferenceLink", record["field_reference_link"])
 
         cmdi.fillElement("//LrtDistributionClassification/DistributionType", record["distribution_type"])
         cmdi.fillElement("//LrtDistributionClassification/ModificationsRequireRedeposition", record["modifications_require_redeposition"].replace("1","true").replace("0","false"))

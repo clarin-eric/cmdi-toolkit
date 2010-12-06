@@ -117,7 +117,7 @@ def writeCollection(collectionList, collectionFile, collectionName):
 			path = idx;
 			
 		#idx = item.replace(".xml.cmdi","").replace("_", ":",1)[::-1].replace("_", ":",1)[::-1].replace("_", "-")
-		resourceProxies += "\n" + resourceTemplate.substitute(idname = idx.replace(".","_").replace("/","_").replace("\\","_"), idx = path)
+		resourceProxies += "\n" + resourceTemplate.substitute(idname = idx.replace(".","_").replace("/","_").replace("\\","_").replace(":","_"), idx = path)
 	if collectionName=="olac-root":
 		collidx = "olac-root"
 	else:

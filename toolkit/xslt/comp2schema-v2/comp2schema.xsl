@@ -64,7 +64,8 @@
             <!--  first create complex types for valueschemes (not inline) -->
             <xsl:call-template name="CreateComplexTypes"/>
 
-
+            <!-- then create simple type for the ResourceProxy -->
+            <xsl:call-template name="PrintHeaderType"/>
 
 
             <xs:element name="CMD">

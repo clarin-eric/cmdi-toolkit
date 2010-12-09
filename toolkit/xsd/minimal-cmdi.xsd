@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dcr="http://www.isocat.org" targetNamespace="http://www.clarin.eu/cmd" attributeFormDefault="unqualified" elementFormDefault="qualified">
+<xs:schema xmlns="http://www.clarin.eu/cmd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dcr="http://www.isocat.org" targetNamespace="http://www.clarin.eu/cmd" attributeFormDefault="unqualified" elementFormDefault="qualified">
 
    <xs:element name="CMD">
       <xs:complexType>

@@ -6,11 +6,15 @@
     xmlns:defns="http://www.openarchives.org/OAI/2.0/"
     xmlns:olac="http://www.language-archives.org/OLAC/1.0/"
     xmlns:olac11="http://www.language-archives.org/OLAC/1.1/"
-    xsi:schemaLocation="    http://purl.org/dc/elements/1.1/    http://www.language-archives.org/OLAC/1.0/dc.xsd    http://purl.org/dc/terms/    http://www.language-archives.org/OLAC/1.0/dcterms.xsd    http://www.language-archives.org/OLAC/1.0/    http://www.language-archives.org/OLAC/1.0/olac.xsd    http://www.language-archives.org/OLAC/1.0/third-party/software.xsd ">
+    xsi:schemaLocation="    http://purl.org/dc/elements/1.1/    http://www.language-archives.org/OLAC/1.0/dc.xsd    http://purl.org/dc/terms/    http://www.language-archives.org/OLAC/1.0/dcterms.xsd    http://www.language-archives.org/OLAC/1.0/    http://www.language-archives.org/OLAC/1.0/olac.xsd    http://www.language-archives.org/OLAC/1.0/ http://www.language-archives.org/OLAC/1.0/third-party/software.xsd ">
 
     <!-- run on ubtunu with: saxonb-xslt -ext:on -it main ~/svn/clarin/metadata/trunk/toolkit/xslt/olac2cmdi.xsl  -->
 
     <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
+
+    <xsl:key name="iso-lookup" match="lang" use="sil"/>
+
+    <xsl:variable name="lang-top" select="document('sil_to_iso6393.xml')/languages"/>
 
     <xsl:template match="/">
         <CMD
@@ -152,15 +156,46 @@
     <xsl:template match="dc:language[@xsi:type='olac:language']" priority="3">
         <language>
             <xsl:attribute name="olac-language">
-                <xsl:value-of select="@*:code"/>
+                <!-- can be enabled when there is a 1-to-1 mapping in sil_to_iso6393.xml           -->
+               <!-- <xsl:choose>
+                    <xsl:when test="contains(@*:code, 'x-sil-')">
+                        <xsl:apply-templates select="$lang-top">
+                            <xsl:with-param name="curr-label" select="."/>
+                        </xsl:apply-templates>
+                    </xsl:when>
+                    <xsl:otherwise>-->
+                        <xsl:value-of select="@*:code"/>
+                  <!--  </xsl:otherwise>
+                </xsl:choose>-->
             </xsl:attribute>
         </language>
     </xsl:template>
 
+    <xsl:template match="languages">
+        <xsl:param name="curr-label"/>
+        <xsl:variable name="silcode">
+            <xsl:value-of select="lower-case(replace($curr-label/@*:code, 'x-sil-', ''))"/>
+        </xsl:variable>
+        <xsl:value-of select="key('iso-lookup', $silcode)/iso"/>
+    </xsl:template>
+
+
+
+
     <xsl:template match="dc:subject[@xsi:type='olac:language']" priority="3">
         <subject>
+            <!-- can be enabled when there is a 1-to-1 mapping in sil_to_iso6393.xml           -->
             <xsl:attribute name="olac-language">
-                <xsl:value-of select="@*:code"/>
+               <!-- <xsl:choose>
+                    <xsl:when test="contains(@*:code, 'x-sil-')">
+                        <xsl:apply-templates select="$lang-top">
+                            <xsl:with-param name="curr-label" select="."/>
+                        </xsl:apply-templates>
+                    </xsl:when>
+                    <xsl:otherwise>-->
+                        <xsl:value-of select="@*:code"/>
+                  <!--  </xsl:otherwise>
+                </xsl:choose>-->
             </xsl:attribute>
         </subject>
     </xsl:template>

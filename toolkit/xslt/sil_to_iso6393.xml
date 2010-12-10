@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 
 <!--
-
 mapping from x-sil- codes to ISO-639-3 codes, to be used by olac2cmdi.xsl
  Filename: >iso_sorted_090810.tab
  This file is used by the OLAC harvester for ISO 639.3 code mapping.
@@ -12,6 +11,10 @@ mapping from x-sil- codes to ISO-639-3 codes, to be used by olac2cmdi.xsl
 	-referenceFiles/iso-639-3_Retirements_20090126.tab
 	-referenceFiles/LL-changehistory-dump.tab
 	-referenceFiles/ISO-639-2_utf-8.txt
+
+Wherever there were multiple target mappings we have chosen the language with the highest number of speakers according to Ethnologue. This might result in incorrect conversions but it
+should be stressed that in such situations the best solution is to provide a non-ambiguous ISO-639-3 code directly.
+
 -->
 
 <languages>
@@ -938,11 +941,13 @@ mapping from x-sil- codes to ISO-639-3 codes, to be used by olac2cmdi.xsl
 <lang><sil>blr</sil>	<iso>blr</iso></lang>
 <lang><sil>bls</sil>	<iso>bls</iso></lang>
 <lang><sil>blt</sil>	<iso>blt</iso></lang>
-<lang><sil>blu</sil>	<iso>cqd</iso></lang>
-<lang><sil>blu</sil>	<iso>hnj</iso></lang>
+
+ <lang><sil>blu</sil>	<iso>cqd</iso></lang>
+<!--<lang><sil>blu</sil>	<iso>hnj</iso></lang>
 <lang><sil>blu</sil>	<iso>hrm</iso></lang>
-<lang><sil>blu</sil>	<iso>sfm</iso></lang>
-<lang><sil>blv</sil>	<iso>blv</iso></lang>
+<lang><sil>blu</sil>	<iso>sfm</iso></lang>-->
+
+ <lang><sil>blv</sil>	<iso>blv</iso></lang>
 <lang><sil>blw</sil>	<iso>blw</iso></lang>
 <lang><sil>blx</sil>	<iso>blx</iso></lang>
 <lang><sil>bly</sil>	<iso>bly</iso></lang>
@@ -1398,7 +1403,11 @@ mapping from x-sil- codes to ISO-639-3 codes, to be used by olac2cmdi.xsl
 <lang><sil>ccq</sil>	<iso>ccq</iso></lang>
 <lang><sil>ccr</sil>	<iso>ccr</iso></lang>
 <lang><sil>cct</sil>	<iso>cho</iso></lang>
-<lang><sil>ccx</sil>	<iso>zch</iso></lang>
+
+ <lang><sil>ccx</sil>	<iso>zha</iso></lang>
+ 
+<!--
+ <lang><sil>ccx</sil>	<iso>zch</iso></lang>
 <lang><sil>ccx</sil>	<iso>zeh</iso></lang>
 <lang><sil>ccx</sil>	<iso>zgb</iso></lang>
 <lang><sil>ccx</sil>	<iso>zgn</iso></lang>
@@ -1408,12 +1417,16 @@ mapping from x-sil- codes to ISO-639-3 codes, to be used by olac2cmdi.xsl
 <lang><sil>ccx</sil>	<iso>zqe</iso></lang>
 <lang><sil>ccx</sil>	<iso>zyb</iso></lang>
 <lang><sil>ccx</sil>	<iso>zyj</iso></lang>
-<lang><sil>ccy</sil>	<iso>zhd</iso></lang>
+-->
+ 
+ <lang><sil>ccy</sil>	<iso>zha</iso></lang>
+ <!--<lang><sil>ccy</sil>	<iso>zhd</iso></lang>
 <lang><sil>ccy</sil>	<iso>zhn</iso></lang>
 <lang><sil>ccy</sil>	<iso>zyg</iso></lang>
 <lang><sil>ccy</sil>	<iso>zyn</iso></lang>
-<lang><sil>ccy</sil>	<iso>zzj</iso></lang>
-<lang><sil>cda</sil>	<iso>cda</iso></lang>
+<lang><sil>ccy</sil>	<iso>zzj</iso></lang>-->
+
+ <lang><sil>cda</sil>	<iso>cda</iso></lang>
 <lang><sil>cde</sil>	<iso>cde</iso></lang>
 <lang><sil>cdf</sil>	<iso>cdf</iso></lang>
 <lang><sil>cdg</sil>	<iso>cdg</iso></lang>
@@ -1477,13 +1490,16 @@ mapping from x-sil- codes to ISO-639-3 codes, to be used by olac2cmdi.xsl
 <lang><sil>chq</sil>	<iso>chq</iso></lang>
 <lang><sil>chr</sil>	<iso>chr</iso></lang>
 <lang><sil>chr</sil>	<iso>crw</iso></lang>
+
 <lang><sil>chs</sil>	<iso>boi</iso></lang>
-<lang><sil>chs</sil>	<iso>crz</iso></lang>
+<!--<lang><sil>chs</sil>	<iso>crz</iso></lang>
 <lang><sil>chs</sil>	<iso>inz</iso></lang>
 <lang><sil>chs</sil>	<iso>obi</iso></lang>
 <lang><sil>chs</sil>	<iso>puy</iso></lang>
-<lang><sil>chs</sil>	<iso>veo</iso></lang>
-<lang><sil>cht</sil>	<iso>cht</iso></lang>
+<lang><sil>chs</sil>	<iso>veo</iso></lang>-->
+
+ 
+ <lang><sil>cht</sil>	<iso>cht</iso></lang>
 <lang><sil>chu</sil>	<iso>chu</iso></lang>
 <lang><sil>chu</sil>	<iso>clw</iso></lang>
 <lang><sil>chv</sil>	<iso>chv</iso></lang>
@@ -1950,6 +1966,9 @@ mapping from x-sil- codes to ISO-639-3 codes, to be used by olac2cmdi.xsl
 <lang><sil>dod</sil>	<iso>xku</iso></lang>
 <lang><sil>doe</sil>	<iso>doe</iso></lang>
 <lang><sil>dof</sil>	<iso>dof</iso></lang>
+
+ <lang><sil>dog</sil>	<iso>dtm</iso></lang>
+ <!--
 <lang><sil>dog</sil>	<iso>dba</iso></lang>
 <lang><sil>dog</sil>	<iso>dbg</iso></lang>
 <lang><sil>dog</sil>	<iso>dbu</iso></lang>
@@ -1957,10 +1976,11 @@ mapping from x-sil- codes to ISO-639-3 codes, to be used by olac2cmdi.xsl
 <lang><sil>dog</sil>	<iso>djm</iso></lang>
 <lang><sil>dog</sil>	<iso>dkl</iso></lang>
 <lang><sil>dog</sil>	<iso>dtk</iso></lang>
-<lang><sil>dog</sil>	<iso>dtm</iso></lang>
 <lang><sil>dog</sil>	<iso>dts</iso></lang>
 <lang><sil>dog</sil>	<iso>dtt</iso></lang>
-<lang><sil>doh</sil>	<iso>doh</iso></lang>
+ -->
+ 
+ <lang><sil>doh</sil>	<iso>doh</iso></lang>
 <lang><sil>doi</sil>	<iso>doi</iso></lang>
 <lang><sil>doi</sil>	<iso>mkp</iso></lang>
 <lang><sil>doj</sil>	<iso>dgo</iso></lang>
@@ -2290,7 +2310,7 @@ mapping from x-sil- codes to ISO-639-3 codes, to be used by olac2cmdi.xsl
 <lang><sil>frc</sil>	<iso>frc</iso></lang>
 <lang><sil>frd</sil>	<iso>frd</iso></lang>
 <lang><sil>fre</sil>	<iso>fra</iso></lang>
-<lang><sil>fre</sil>	<iso>gcr</iso></lang>
+<!--<lang><sil>fre</sil>	<iso>gcr</iso></lang>-->
 <lang><sil>fri</sil>	<iso>fry</iso></lang>
 <lang><sil>frk</sil>	<iso>frk</iso></lang>
 <lang><sil>frl</sil>	<iso>fur</iso></lang>
@@ -3555,12 +3575,15 @@ mapping from x-sil- codes to ISO-639-3 codes, to be used by olac2cmdi.xsl
 <lang><sil>kkc</sil>	<iso>kkc</iso></lang>
 <lang><sil>kkd</sil>	<iso>kkd</iso></lang>
 <lang><sil>kke</sil>	<iso>kke</iso></lang>
-<lang><sil>kkf</sil>	<iso>gio</iso></lang>
+
+ <lang><sil>kkf</sil>	<iso>kkf</iso></lang>
+ <!--<lang><sil>kkf</sil>	<iso>gio</iso></lang>
 <lang><sil>kkf</sil>	<iso>giq</iso></lang>
 <lang><sil>kkf</sil>	<iso>gir</iso></lang>
 <lang><sil>kkf</sil>	<iso>giw</iso></lang>
-<lang><sil>kkf</sil>	<iso>kkf</iso></lang>
-<lang><sil>kkg</sil>	<iso>kkg</iso></lang>
+-->
+
+ <lang><sil>kkg</sil>	<iso>kkg</iso></lang>
 <lang><sil>kkh</sil>	<iso>kkh</iso></lang>
 <lang><sil>kki</sil>	<iso>kki</iso></lang>
 <lang><sil>kkj</sil>	<iso>kkj</iso></lang>
@@ -4305,12 +4328,15 @@ mapping from x-sil- codes to ISO-639-3 codes, to be used by olac2cmdi.xsl
 <lang><sil>lrc</sil>	<iso>lrc</iso></lang>
 <lang><sil>lre</sil>	<iso>lre</iso></lang>
 <lang><sil>lrg</sil>	<iso>lrg</iso></lang>
-<lang><sil>lri</sil>	<iso>bqi</iso></lang>
+
+ <lang><sil>lri</sil>	<iso>lrc</iso></lang>
+<!-- <lang><sil>lri</sil>	<iso>bqi</iso></lang>
 <lang><sil>lri</sil>	<iso>lki</iso></lang>
-<lang><sil>lri</sil>	<iso>lrc</iso></lang>
 <lang><sil>lri</sil>	<iso>lri</iso></lang>
 <lang><sil>lri</sil>	<iso>luz</iso></lang>
-<lang><sil>lrk</sil>	<iso>lrk</iso></lang>
+-->
+ 
+ <lang><sil>lrk</sil>	<iso>lrk</iso></lang>
 <lang><sil>lrl</sil>	<iso>lrl</iso></lang>
 <lang><sil>lrm</sil>	<iso>lrm</iso></lang>
 <lang><sil>lrn</sil>	<iso>lrn</iso></lang>
@@ -4442,13 +4468,15 @@ mapping from x-sil- codes to ISO-639-3 codes, to be used by olac2cmdi.xsl
 <lang><sil>mbe</sil>	<iso>mbe</iso></lang>
 <lang><sil>mbf</sil>	<iso>mbf</iso></lang>
 <lang><sil>mbf</sil>	<iso>mri</iso></lang>
-<lang><sil>mbg</sil>	<iso>apv</iso></lang>
+
+ <lang><sil>mbg</sil>	<iso>wmd</iso></lang>
+<!--<lang><sil>mbg</sil>	<iso>apv</iso></lang>
 <lang><sil>mbg</sil>	<iso>lkd</iso></lang>
 <lang><sil>mbg</sil>	<iso>ltn</iso></lang>
-<lang><sil>mbg</sil>	<iso>wmd</iso></lang>
 <lang><sil>mbg</sil>	<iso>xtw</iso></lang>
 <lang><sil>mbg</sil>	<iso>xyl</iso></lang>
-<lang><sil>mbh</sil>	<iso>mbh</iso></lang>
+-->
+ <lang><sil>mbh</sil>	<iso>mbh</iso></lang>
 <lang><sil>mbi</sil>	<iso>mbi</iso></lang>
 <lang><sil>mbj</sil>	<iso>mbj</iso></lang>
 <lang><sil>mbk</sil>	<iso>mbk</iso></lang>
@@ -4547,11 +4575,14 @@ mapping from x-sil- codes to ISO-639-3 codes, to be used by olac2cmdi.xsl
 <lang><sil>meu</sil>	<iso>meu</iso></lang>
 <lang><sil>mev</sil>	<iso>mev</iso></lang>
 <lang><sil>mew</sil>	<iso>mew</iso></lang>
-<lang><sil>mex</sil>	<iso>bhr</iso></lang>
+
+ <lang><sil>mex</sil>	<iso>plt</iso></lang>
+ <!--<lang><sil>mex</sil>	<iso>bhr</iso></lang>
 <lang><sil>mex</sil>	<iso>bjq</iso></lang>
 <lang><sil>mex</sil>	<iso>bmm</iso></lang>
-<lang><sil>mex</sil>	<iso>plt</iso></lang>
-<lang><sil>mey</sil>	<iso>mey</iso></lang>
+-->
+
+ <lang><sil>mey</sil>	<iso>mey</iso></lang>
 <lang><sil>mez</sil>	<iso>mez</iso></lang>
 <lang><sil>mfa</sil>	<iso>mfa</iso></lang>
 <lang><sil>mfb</sil>	<iso>mfb</iso></lang>
@@ -4702,12 +4733,14 @@ mapping from x-sil- codes to ISO-639-3 codes, to be used by olac2cmdi.xsl
 <lang><sil>mka</sil>	<iso>mka</iso></lang>
 <lang><sil>mkb</sil>	<iso>mkb</iso></lang>
 <lang><sil>mkc</sil>	<iso>mkc</iso></lang>
-<lang><sil>mkd</sil>	<iso>dhd</iso></lang>
-<lang><sil>mkd</sil>	<iso>mkd</iso></lang>
+
+ <lang><sil>mkd</sil>	<iso>dhd</iso></lang>
+<!--<lang><sil>mkd</sil>	<iso>mkd</iso></lang>
 <lang><sil>mkd</sil>	<iso>rwr</iso></lang>
 <lang><sil>mkd</sil>	<iso>swv</iso></lang>
-<lang><sil>mkd</sil>	<iso>wry</iso></lang>
-<lang><sil>mke</sil>	<iso>mke</iso></lang>
+<lang><sil>mkd</sil>	<iso>wry</iso></lang>-->
+
+ <lang><sil>mke</sil>	<iso>mke</iso></lang>
 <lang><sil>mkf</sil>	<iso>mkf</iso></lang>
 <lang><sil>mkg</sil>	<iso>mkg</iso></lang>
 <lang><sil>mkh</sil>	<iso>mxz</iso></lang>
@@ -4760,12 +4793,15 @@ mapping from x-sil- codes to ISO-639-3 codes, to be used by olac2cmdi.xsl
 <lang><sil>mlv</sil>	<iso>mlv</iso></lang>
 <lang><sil>mlw</sil>	<iso>mlw</iso></lang>
 <lang><sil>mlx</sil>	<iso>mlx</iso></lang>
-<lang><sil>mly</sil>	<iso>hji</iso></lang>
+
+
+ <lang><sil>mly</sil>	<iso>zlm</iso></lang>
+ <!--<lang><sil>mly</sil>	<iso>hji</iso></lang>
 <lang><sil>mly</sil>	<iso>npn</iso></lang>
 <lang><sil>mly</sil>	<iso>pmy</iso></lang>
-<lang><sil>mly</sil>	<iso>zlm</iso></lang>
-<lang><sil>mly</sil>	<iso>zsm</iso></lang>
-<lang><sil>mlz</sil>	<iso>mlz</iso></lang>
+<lang><sil>mly</sil>	<iso>zsm</iso></lang>-->
+
+ <lang><sil>mlz</sil>	<iso>mlz</iso></lang>
 <lang><sil>mma</sil>	<iso>mma</iso></lang>
 <lang><sil>mmb</sil>	<iso>mmb</iso></lang>
 <lang><sil>mmc</sil>	<iso>mmc</iso></lang>
@@ -4826,12 +4862,14 @@ mapping from x-sil- codes to ISO-639-3 codes, to be used by olac2cmdi.xsl
 <lang><sil>mny</sil>	<iso>mny</iso></lang>
 <lang><sil>mnz</sil>	<iso>mnz</iso></lang>
 <lang><sil>moa</sil>	<iso>moa</iso></lang>
-<lang><sil>mob</sil>	<iso>cvg</iso></lang>
+
+ <lang><sil>mob</sil>	<iso>twm</iso></lang>
+ <!-- <lang><sil>mob</sil>	<iso>cvg</iso></lang>
 <lang><sil>mob</sil>	<iso>kkf</iso></lang>
 <lang><sil>mob</sil>	<iso>lsh</iso></lang>
-<lang><sil>mob</sil>	<iso>onp</iso></lang>
-<lang><sil>mob</sil>	<iso>twm</iso></lang>
-<lang><sil>moc</sil>	<iso>moc</iso></lang>
+<lang><sil>mob</sil>	<iso>onp</iso></lang>-->
+
+ <lang><sil>moc</sil>	<iso>moc</iso></lang>
 <lang><sil>mod</sil>	<iso>mod</iso></lang>
 <lang><sil>moe</sil>	<iso>moe</iso></lang>
 <lang><sil>mof</sil>	<iso>mof</iso></lang>
@@ -5140,11 +5178,13 @@ mapping from x-sil- codes to ISO-639-3 codes, to be used by olac2cmdi.xsl
 <lang><sil>mzc</sil>	<iso>mzc</iso></lang>
 <lang><sil>mzd</sil>	<iso>mzd</iso></lang>
 <lang><sil>mze</sil>	<iso>mze</iso></lang>
-<lang><sil>mzf</sil>	<iso>aag</iso></lang>
+
+ <lang><sil>mzf</sil>	<iso>ymo</iso></lang>
+ <!--<lang><sil>mzf</sil>	<iso>aag</iso></lang>
 <lang><sil>mzf</sil>	<iso>yde</iso></lang>
-<lang><sil>mzf</sil>	<iso>ygl</iso></lang>
-<lang><sil>mzf</sil>	<iso>ymo</iso></lang>
-<lang><sil>mzg</sil>	<iso>mzg</iso></lang>
+<lang><sil>mzf</sil>	<iso>ygl</iso></lang>-->
+
+ <lang><sil>mzg</sil>	<iso>mzg</iso></lang>
 <lang><sil>mzh</sil>	<iso>mzh</iso></lang>
 <lang><sil>mzi</sil>	<iso>mzi</iso></lang>
 <lang><sil>mzj</sil>	<iso>mzj</iso></lang>
@@ -6580,13 +6620,16 @@ mapping from x-sil- codes to ISO-639-3 codes, to be used by olac2cmdi.xsl
 <lang><sil>roo</sil>	<iso>roo</iso></lang>
 <lang><sil>rop</sil>	<iso>rop</iso></lang>
 <lang><sil>ror</sil>	<iso>ror</iso></lang>
-<lang><sil>rot</sil>	<iso>bpz</iso></lang>
+
+<lang><sil>rot</sil>	<iso>twu</iso></lang>
+<!--<lang><sil>rot</sil>	<iso>bpz</iso></lang>
 <lang><sil>rot</sil>	<iso>dnk</iso></lang>
 <lang><sil>rot</sil>	<iso>llg</iso></lang>
 <lang><sil>rot</sil>	<iso>rgu</iso></lang>
-<lang><sil>rot</sil>	<iso>twu</iso></lang>
 <lang><sil>rot</sil>	<iso>txq</iso></lang>
-<lang><sil>rou</sil>	<iso>rou</iso></lang>
+-->
+ 
+ <lang><sil>rou</sil>	<iso>rou</iso></lang>
 <lang><sil>row</sil>	<iso>row</iso></lang>
 <lang><sil>rpn</sil>	<iso>rpn</iso></lang>
 <lang><sil>rpt</sil>	<iso>rpt</iso></lang>
@@ -7061,11 +7104,13 @@ mapping from x-sil- codes to ISO-639-3 codes, to be used by olac2cmdi.xsl
 <lang><sil>sra</sil>	<iso>sam</iso></lang>
 <lang><sil>sra</sil>	<iso>sra</iso></lang>
 <lang><sil>srb</sil>	<iso>srb</iso></lang>
-<lang><sil>src</sil>	<iso>bos</iso></lang>
+
+ <lang><sil>src</sil>	<iso>srp</iso></lang>
+<!--<lang><sil>src</sil>	<iso>bos</iso></lang>
 <lang><sil>src</sil>	<iso>hrv</iso></lang>
-<lang><sil>src</sil>	<iso>src</iso></lang>
-<lang><sil>src</sil>	<iso>srp</iso></lang>
-<lang><sil>srd</sil>	<iso>src</iso></lang>
+-->
+
+ <lang><sil>srd</sil>	<iso>src</iso></lang>
 <lang><sil>srd</sil>	<iso>srd</iso></lang>
 <lang><sil>sre</sil>	<iso>sre</iso></lang>
 <lang><sil>srf</sil>	<iso>srf</iso></lang>
@@ -7095,11 +7140,14 @@ mapping from x-sil- codes to ISO-639-3 codes, to be used by olac2cmdi.xsl
 <lang><sil>ss</sil>	<iso>ssw</iso></lang>
 <lang><sil>ssa</sil>	<iso>sax</iso></lang>
 <lang><sil>ssb</sil>	<iso>ssb</iso></lang>
-<lang><sil>ssc</sil>	<iso>env</iso></lang>
+
+ <lang><sil>ssc</sil>	<iso>ssc</iso></lang>
+ <!--<lang><sil>ssc</sil>	<iso>env</iso></lang>
 <lang><sil>ssc</sil>	<iso>igw</iso></lang>
-<lang><sil>ssc</sil>	<iso>ssc</iso></lang>
 <lang><sil>ssc</sil>	<iso>sxs</iso></lang>
-<lang><sil>ssd</sil>	<iso>ssd</iso></lang>
+ -->
+ 
+ <lang><sil>ssd</sil>	<iso>ssd</iso></lang>
 <lang><sil>sse</sil>	<iso>sse</iso></lang>
 <lang><sil>ssf</sil>	<iso>ssf</iso></lang>
 <lang><sil>ssg</sil>	<iso>ssg</iso></lang>
@@ -7379,11 +7427,14 @@ mapping from x-sil- codes to ISO-639-3 codes, to be used by olac2cmdi.xsl
 <lang><sil>tea</sil>	<iso>tea</iso></lang>
 <lang><sil>tea</sil>	<iso>ter</iso></lang>
 <lang><sil>teb</sil>	<iso>teb</iso></lang>
-<lang><sil>tec</sil>	<iso>ebo</iso></lang>
-<lang><sil>tec</sil>	<iso>nzu</iso></lang>
+
+ <lang><sil>tec</sil>	<iso>nzu</iso></lang>
+ <!--<lang><sil>tec</sil>	<iso>ebo</iso></lang>
 <lang><sil>tec</sil>	<iso>tec</iso></lang>
 <lang><sil>tec</sil>	<iso>tyx</iso></lang>
-<lang><sil>ted</sil>	<iso>ted</iso></lang>
+ -->
+ 
+ <lang><sil>ted</sil>	<iso>ted</iso></lang>
 <lang><sil>tee</sil>	<iso>tee</iso></lang>
 <lang><sil>tef</sil>	<iso>tef</iso></lang>
 <lang><sil>teg</sil>	<iso>teg</iso></lang>
@@ -8702,11 +8753,13 @@ mapping from x-sil- codes to ISO-639-3 codes, to be used by olac2cmdi.xsl
 <lang><sil>yic</sil>	<iso>ycl</iso></lang>
 <lang><sil>yid</sil>	<iso>xwg</iso></lang>
 <lang><sil>yid</sil>	<iso>yid</iso></lang>
-<lang><sil>yie</sil>	<iso>yiu</iso></lang>
+
+ <lang><sil>yie</sil>	<iso>ysn</iso></lang>
+ <!--<lang><sil>yie</sil>	<iso>yiu</iso></lang>
 <lang><sil>yie</sil>	<iso>yix</iso></lang>
-<lang><sil>yie</sil>	<iso>yiz</iso></lang>
-<lang><sil>yie</sil>	<iso>ysn</iso></lang>
-<lang><sil>yif</sil>	<iso>yif</iso></lang>
+<lang><sil>yie</sil>	<iso>yiz</iso></lang>-->
+
+ <lang><sil>yif</sil>	<iso>yif</iso></lang>
 <lang><sil>yig</sil>	<iso>yig</iso></lang>
 <lang><sil>yih</sil>	<iso>yih</iso></lang>
 <lang><sil>yii</sil>	<iso>yii</iso></lang>
@@ -8758,12 +8811,14 @@ mapping from x-sil- codes to ISO-639-3 codes, to be used by olac2cmdi.xsl
 <lang><sil>ymh</sil>	<iso>ymh</iso></lang>
 <lang><sil>ymi</sil>	<iso>tao</iso></lang>
 <lang><sil>ymi</sil>	<iso>ymi</iso></lang>
+
 <lang><sil>ymj</sil>	<iso>ymc</iso></lang>
-<lang><sil>ymj</sil>	<iso>ymi</iso></lang>
+<!--<lang><sil>ymj</sil>	<iso>ymi</iso></lang>
 <lang><sil>ymj</sil>	<iso>ymq</iso></lang>
 <lang><sil>ymj</sil>	<iso>ymx</iso></lang>
-<lang><sil>ymj</sil>	<iso>ymz</iso></lang>
-<lang><sil>ymk</sil>	<iso>ymk</iso></lang>
+<lang><sil>ymj</sil>	<iso>ymz</iso></lang>-->
+
+  <lang><sil>ymk</sil>	<iso>ymk</iso></lang>
 <lang><sil>yml</sil>	<iso>yml</iso></lang>
 <lang><sil>ymm</sil>	<iso>ymm</iso></lang>
 <lang><sil>ymn</sil>	<iso>ymn</iso></lang>

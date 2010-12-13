@@ -136,10 +136,12 @@
     <xsl:template match="dc:contributor">
         <contributor>
             <xsl:if test="@xsi:type='olac:role'">
-                <xsl:attribute name="olac-role">
-                    <!-- note: namespace wildcard necessary to match with both OLAC 1.0 and 1.1 -->
-                    <xsl:value-of select="@*:code"/>
-                </xsl:attribute>
+                <xsl:if test="@*:code">
+                    <xsl:attribute name="olac-role">
+                        <!-- note: namespace wildcard necessary to match with both OLAC 1.0 and 1.1 -->
+                        <xsl:value-of select="@*:code"/>
+                    </xsl:attribute>
+                </xsl:if>
             </xsl:if>
             <xsl:value-of select="."/>
         </contributor>
@@ -155,19 +157,22 @@
 
     <xsl:template match="dc:language[@xsi:type='olac:language']" priority="3">
         <language>
-            <xsl:attribute name="olac-language">
-                <!-- can be enabled when there is a 1-to-1 mapping in sil_to_iso6393.xml           -->
-                <xsl:choose>
-                    <xsl:when test="contains(@*:code, 'x-sil-')">
-                        <xsl:apply-templates select="$lang-top">
-                            <xsl:with-param name="curr-label" select="."/>
-                        </xsl:apply-templates>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:value-of select="@*:code"/>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </xsl:attribute>
+            <xsl:if test="@*:code">
+                <xsl:attribute name="olac-language">
+                    <!-- can be enabled when there is a 1-to-1 mapping in sil_to_iso6393.xml           -->
+                    <xsl:choose>
+                        <xsl:when test="contains(@*:code, 'x-sil-')">
+                            <xsl:apply-templates select="$lang-top">
+                                <xsl:with-param name="curr-label" select="."/>
+                            </xsl:apply-templates>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="@*:code"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:attribute>
+            </xsl:if>
+            <xsl:value-of select="."/>
         </language>
     </xsl:template>
 
@@ -185,26 +190,32 @@
     <xsl:template match="dc:subject[@xsi:type='olac:language']" priority="3">
         <subject>
             <!-- can be enabled when there is a 1-to-1 mapping in sil_to_iso6393.xml           -->
-            <xsl:attribute name="olac-language">
-                <xsl:choose>
-                    <xsl:when test="contains(@*:code, 'x-sil-')">
-                        <xsl:apply-templates select="$lang-top">
-                            <xsl:with-param name="curr-label" select="."/>
-                        </xsl:apply-templates>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:value-of select="@*:code"/>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </xsl:attribute>
+            <xsl:if test="@*:code">
+                <xsl:attribute name="olac-language">
+                    <xsl:choose>
+                        <xsl:when test="contains(@*:code, 'x-sil-')">
+                            <xsl:apply-templates select="$lang-top">
+                                <xsl:with-param name="curr-label" select="."/>
+                            </xsl:apply-templates>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="@*:code"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:attribute>
+            </xsl:if>
+            <xsl:value-of select="."/>
         </subject>
     </xsl:template>
 
     <xsl:template match="//dc:subject[@xsi:type='olac:linguistic-field']" priority="3">
         <subject>
-            <xsl:attribute name="olac-linguistic-field">
-                <xsl:value-of select="@*:code"/>
-            </xsl:attribute>
+            <xsl:if test="@*:code">
+                <xsl:attribute name="olac-linguistic-field">
+                    <xsl:value-of select="@*:code"/>
+                </xsl:attribute>
+            </xsl:if>
+            <xsl:value-of select="."/>
         </subject>
     </xsl:template>
 
@@ -213,6 +224,7 @@
             <xsl:attribute name="olac-discourse-type">
                 <xsl:value-of select="@*:code"/>
             </xsl:attribute>
+            <xsl:value-of select="."/>
         </subject>
     </xsl:template>
 
@@ -237,18 +249,24 @@
 
     <xsl:template match="//dc:type[@xsi:type='olac:discourse-type']" priority="2">
         <type>
-            <xsl:attribute name="olac-discourse-type">
-                <xsl:value-of select="@*:code"/>
-            </xsl:attribute>
+            <xsl:if test="@*:code">
+                <xsl:attribute name="olac-discourse-type">
+                    <xsl:value-of select="@*:code"/>
+                </xsl:attribute>
+            </xsl:if>
+            <xsl:value-of select="."/>
         </type>
     </xsl:template>
 
 
     <xsl:template match="//dc:type[@xsi:type='olac:linguistic-type']" priority="2">
         <type>
-            <xsl:attribute name="olac-linguistic-type">
-                <xsl:value-of select="@*:code"/>
-            </xsl:attribute>
+            <xsl:if test="@*:code">
+                <xsl:attribute name="olac-linguistic-type">
+                    <xsl:value-of select="@*:code"/>
+                </xsl:attribute>
+            </xsl:if>
+            <xsl:value-of select="."/>
         </type>
     </xsl:template>
 

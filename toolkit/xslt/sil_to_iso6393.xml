@@ -1,23 +1,21 @@
-<?xml version="1.0"?>
+<languages>
 
-<!--
-mapping from x-sil- codes to ISO-639-3 codes, to be used by olac2cmdi.xsl
+<!-- 
+ mapping from x-sil- codes to ISO-639-3 codes, to be used by olac2cmdi.xsl
  Filename: >iso_sorted_090810.tab
  This file is used by the OLAC harvester for ISO 639.3 code mapping.
  It was produced by the script createNewIsoSorted.pl on 2009-08-10.
  The mapping was created from the following files:
-	-referenceFiles/iso-639-3_Name_Index_20090210.tab
-	-referenceFiles/iso-639-3_20090210.tab
-	-referenceFiles/iso-639-3_Retirements_20090126.tab
-	-referenceFiles/LL-changehistory-dump.tab
-	-referenceFiles/ISO-639-2_utf-8.txt
-
-Wherever there were multiple target mappings we have chosen the language with the highest number of speakers according to Ethnologue. This might result in incorrect conversions but it
-should be stressed that in such situations the best solution is to provide a non-ambiguous ISO-639-3 code directly.
-
+ -referenceFiles/iso-639-3_Name_Index_20090210.tab
+ -referenceFiles/iso-639-3_20090210.tab
+ -referenceFiles/iso-639-3_Retirements_20090126.tab
+ -referenceFiles/LL-changehistory-dump.tab
+ -referenceFiles/ISO-639-2_utf-8.txt
+ 
+ Wherever there were multiple target mappings we have chosen the language with the highest number of speakers according to Ethnologue. This might result in incorrect conversions but it
+ should be stressed that in such situations the best solution is to provide a non-ambiguous ISO-639-3 code directly.
+ 
 -->
-
-<languages>
 
 <lang><sil>aa</sil>	<iso>aar</iso></lang>
 <lang><sil>aaa</sil>	<iso>aaa</iso></lang>
@@ -54,7 +52,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>abg</sil>	<iso>abg</iso></lang>
 <lang><sil>abh</sil>	<iso>abh</iso></lang>
 <lang><sil>abi</sil>	<iso>abi</iso></lang>
-<lang><sil>abj</sil>	<iso>abj</iso></lang>
 <lang><sil>abj</sil>	<iso>mrr</iso></lang>
 <lang><sil>abk</sil>	<iso>abk</iso></lang>
 <lang><sil>abl</sil>	<iso>abl</iso></lang>
@@ -67,7 +64,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>abs</sil>	<iso>abs</iso></lang>
 <lang><sil>abt</sil>	<iso>abt</iso></lang>
 <lang><sil>abu</sil>	<iso>abu</iso></lang>
-<lang><sil>abv</sil>	<iso>abv</iso></lang>
 <lang><sil>abv</sil>	<iso>arb</iso></lang>
 <lang><sil>abw</sil>	<iso>abw</iso></lang>
 <lang><sil>abx</sil>	<iso>abx</iso></lang>
@@ -78,9 +74,7 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>acc</sil>	<iso>acr</iso></lang>
 <lang><sil>acd</sil>	<iso>acd</iso></lang>
 <lang><sil>ace</sil>	<iso>abj</iso></lang>
-<lang><sil>ace</sil>	<iso>ace</iso></lang>
 <lang><sil>acf</sil>	<iso>acf</iso></lang>
-<lang><sil>ach</sil>	<iso>ach</iso></lang>
 <lang><sil>ach</sil>	<iso>acv</iso></lang>
 <lang><sil>aci</sil>	<iso>aci</iso></lang>
 <lang><sil>ack</sil>	<iso>ack</iso></lang>
@@ -99,7 +93,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>acx</sil>	<iso>acx</iso></lang>
 <lang><sil>acy</sil>	<iso>acy</iso></lang>
 <lang><sil>acz</sil>	<iso>acz</iso></lang>
-<lang><sil>ada</sil>	<iso>ada</iso></lang>
 <lang><sil>ada</sil>	<iso>adr</iso></lang>
 <lang><sil>adb</sil>	<iso>adb</iso></lang>
 <lang><sil>add</sil>	<iso>add</iso></lang>
@@ -147,15 +140,12 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>afe</sil>	<iso>afe</iso></lang>
 <lang><sil>afg</sil>	<iso>afg</iso></lang>
 <lang><sil>afh</sil>	<iso>abv</iso></lang>
-<lang><sil>afh</sil>	<iso>afh</iso></lang>
 <lang><sil>afi</sil>	<iso>afi</iso></lang>
-<lang><sil>afk</sil>	<iso>afk</iso></lang>
 <lang><sil>afk</sil>	<iso>afr</iso></lang>
 <lang><sil>afn</sil>	<iso>afn</iso></lang>
 <lang><sil>afo</sil>	<iso>afo</iso></lang>
 <lang><sil>afp</sil>	<iso>afp</iso></lang>
 <lang><sil>afr</sil>	<iso>aar</iso></lang>
-<lang><sil>afr</sil>	<iso>afr</iso></lang>
 <lang><sil>afs</sil>	<iso>afs</iso></lang>
 <lang><sil>aft</sil>	<iso>aft</iso></lang>
 <lang><sil>afu</sil>	<iso>afu</iso></lang>
@@ -236,7 +226,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>ajz</sil>	<iso>ajz</iso></lang>
 <lang><sil>ak</sil>	<iso>aka</iso></lang>
 <lang><sil>aka</sil>	<iso>ahk</iso></lang>
-<lang><sil>aka</sil>	<iso>aka</iso></lang>
 <lang><sil>akb</sil>	<iso>akb</iso></lang>
 <lang><sil>akc</sil>	<iso>akc</iso></lang>
 <lang><sil>akd</sil>	<iso>akd</iso></lang>
@@ -246,7 +235,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>akh</sil>	<iso>akh</iso></lang>
 <lang><sil>aki</sil>	<iso>aki</iso></lang>
 <lang><sil>akj</sil>	<iso>akj</iso></lang>
-<lang><sil>akk</sil>	<iso>akk</iso></lang>
 <lang><sil>akk</sil>	<iso>aqg</iso></lang>
 <lang><sil>akl</sil>	<iso>akl</iso></lang>
 <lang><sil>akm</sil>	<iso>akm</iso></lang>
@@ -268,7 +256,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>alb</sil>	<iso>sqi</iso></lang>
 <lang><sil>alc</sil>	<iso>alc</iso></lang>
 <lang><sil>ald</sil>	<iso>ald</iso></lang>
-<lang><sil>ale</sil>	<iso>ale</iso></lang>
 <lang><sil>ale</sil>	<iso>aqp</iso></lang>
 <lang><sil>alf</sil>	<iso>alf</iso></lang>
 <lang><sil>alg</sil>	<iso>alq</iso></lang>
@@ -278,19 +265,16 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>alk</sil>	<iso>alk</iso></lang>
 <lang><sil>all</sil>	<iso>all</iso></lang>
 <lang><sil>alm</sil>	<iso>alm</iso></lang>
-<lang><sil>aln</sil>	<iso>aln</iso></lang>
 <lang><sil>aln</sil>	<iso>als</iso></lang>
 <lang><sil>alo</sil>	<iso>alo</iso></lang>
 <lang><sil>alp</sil>	<iso>alp</iso></lang>
 <lang><sil>alq</sil>	<iso>alq</iso></lang>
 <lang><sil>alr</sil>	<iso>alr</iso></lang>
 <lang><sil>als</sil>	<iso>aln</iso></lang>
-<lang><sil>als</sil>	<iso>als</iso></lang>
 <lang><sil>alt</sil>	<iso>alt</iso></lang>
 <lang><sil>alu</sil>	<iso>alu</iso></lang>
 <lang><sil>alv</sil>	<iso>ami</iso></lang>
 <lang><sil>alw</sil>	<iso>ale</iso></lang>
-<lang><sil>alw</sil>	<iso>alw</iso></lang>
 <lang><sil>alx</sil>	<iso>alx</iso></lang>
 <lang><sil>aly</sil>	<iso>aly</iso></lang>
 <lang><sil>alz</sil>	<iso>alz</iso></lang>
@@ -304,7 +288,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>amg</sil>	<iso>amg</iso></lang>
 <lang><sil>amh</sil>	<iso>amh</iso></lang>
 <lang><sil>ami</sil>	<iso>aey</iso></lang>
-<lang><sil>ami</sil>	<iso>ami</iso></lang>
 <lang><sil>amj</sil>	<iso>amj</iso></lang>
 <lang><sil>amk</sil>	<iso>amk</iso></lang>
 <lang><sil>aml</sil>	<iso>aml</iso></lang>
@@ -329,7 +312,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>and</sil>	<iso>and</iso></lang>
 <lang><sil>ane</sil>	<iso>ane</iso></lang>
 <lang><sil>anf</sil>	<iso>anf</iso></lang>
-<lang><sil>ang</sil>	<iso>ang</iso></lang>
 <lang><sil>ang</sil>	<iso>kkn</iso></lang>
 <lang><sil>anh</sil>	<iso>anh</iso></lang>
 <lang><sil>ani</sil>	<iso>ani</iso></lang>
@@ -382,7 +364,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>apl</sil>	<iso>apl</iso></lang>
 <lang><sil>apm</sil>	<iso>apm</iso></lang>
 <lang><sil>apn</sil>	<iso>apn</iso></lang>
-<lang><sil>apo</sil>	<iso>apo</iso></lang>
 <lang><sil>apo</sil>	<iso>kwj</iso></lang>
 <lang><sil>app</sil>	<iso>app</iso></lang>
 <lang><sil>apq</sil>	<iso>apq</iso></lang>
@@ -402,19 +383,16 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>aqp</sil>	<iso>aqp</iso></lang>
 <lang><sil>aqr</sil>	<iso>aqr</iso></lang>
 <lang><sil>ar</sil>	<iso>ara</iso></lang>
-<lang><sil>ara</sil>	<iso>ara</iso></lang>
 <lang><sil>ara</sil>	<iso>aru</iso></lang>
 <lang><sil>arb</sil>	<iso>ake</iso></lang>
-<lang><sil>arb</sil>	<iso>arb</iso></lang>
 <lang><sil>arc</sil>	<iso>aqc</iso></lang>
-<lang><sil>arc</sil>	<iso>arc</iso></lang>
 <lang><sil>ard</sil>	<iso>ard</iso></lang>
 <lang><sil>are</sil>	<iso>are</iso></lang>
-<lang><sil>arf</sil>	<iso>afd</iso></lang>
-<lang><sil>arf</sil>	<iso>afk</iso></lang>
-<lang><sil>arf</sil>	<iso>afp</iso></lang>
-<lang><sil>arg</sil>	<iso>arg</iso></lang>
-<lang><sil>arg</sil>	<iso>axx</iso></lang>
+
+ <lang><sil>arf</sil>	<iso>afk</iso></lang>
+ 
+
+ <lang><sil>arg</sil>	<iso>axx</iso></lang>
 <lang><sil>arh</sil>	<iso>arh</iso></lang>
 <lang><sil>ari</sil>	<iso>ari</iso></lang>
 <lang><sil>arj</sil>	<iso>arj</iso></lang>
@@ -422,7 +400,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>arl</sil>	<iso>arl</iso></lang>
 <lang><sil>arm</sil>	<iso>hye</iso></lang>
 <lang><sil>arn</sil>	<iso>aqr</iso></lang>
-<lang><sil>arn</sil>	<iso>arn</iso></lang>
 <lang><sil>aro</sil>	<iso>aro</iso></lang>
 <lang><sil>arp</sil>	<iso>arp</iso></lang>
 <lang><sil>arq</sil>	<iso>arq</iso></lang>
@@ -430,7 +407,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>ars</sil>	<iso>ars</iso></lang>
 <lang><sil>art</sil>	<iso>rkb</iso></lang>
 <lang><sil>aru</sil>	<iso>arn</iso></lang>
-<lang><sil>aru</sil>	<iso>aru</iso></lang>
 <lang><sil>arv</sil>	<iso>arv</iso></lang>
 <lang><sil>arw</sil>	<iso>arw</iso></lang>
 <lang><sil>arx</sil>	<iso>arx</iso></lang>
@@ -456,7 +432,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>asq</sil>	<iso>asq</iso></lang>
 <lang><sil>asr</sil>	<iso>asr</iso></lang>
 <lang><sil>ass</sil>	<iso>ass</iso></lang>
-<lang><sil>ast</sil>	<iso>ast</iso></lang>
 <lang><sil>ast</sil>	<iso>cns</iso></lang>
 <lang><sil>asu</sil>	<iso>asu</iso></lang>
 <lang><sil>asv</sil>	<iso>asv</iso></lang>
@@ -474,7 +449,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>ath</sil>	<iso>azt</iso></lang>
 <lang><sil>ati</sil>	<iso>ati</iso></lang>
 <lang><sil>atj</sil>	<iso>ace</iso></lang>
-<lang><sil>atj</sil>	<iso>atj</iso></lang>
 <lang><sil>atk</sil>	<iso>atk</iso></lang>
 <lang><sil>atl</sil>	<iso>atl</iso></lang>
 <lang><sil>atm</sil>	<iso>atm</iso></lang>
@@ -493,7 +467,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>atz</sil>	<iso>atz</iso></lang>
 <lang><sil>aua</sil>	<iso>aua</iso></lang>
 <lang><sil>aub</sil>	<iso>ast</iso></lang>
-<lang><sil>aub</sil>	<iso>aub</iso></lang>
 <lang><sil>auc</sil>	<iso>auc</iso></lang>
 <lang><sil>aud</sil>	<iso>aud</iso></lang>
 <lang><sil>aue</sil>	<iso>aue</iso></lang>
@@ -518,11 +491,9 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>auy</sil>	<iso>auy</iso></lang>
 <lang><sil>auz</sil>	<iso>auz</iso></lang>
 <lang><sil>av</sil>	<iso>ava</iso></lang>
-<lang><sil>ava</sil>	<iso>ava</iso></lang>
 <lang><sil>ava</sil>	<iso>avn</iso></lang>
 <lang><sil>avb</sil>	<iso>avb</iso></lang>
 <lang><sil>avd</sil>	<iso>avd</iso></lang>
-<lang><sil>ave</sil>	<iso>ave</iso></lang>
 <lang><sil>ave</sil>	<iso>hvk</iso></lang>
 <lang><sil>avi</sil>	<iso>avi</iso></lang>
 <lang><sil>avk</sil>	<iso>avk</iso></lang>
@@ -531,12 +502,10 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>avo</sil>	<iso>avo</iso></lang>
 <lang><sil>avr</sil>	<iso>ava</iso></lang>
 <lang><sil>avs</sil>	<iso>ave</iso></lang>
-<lang><sil>avs</sil>	<iso>avs</iso></lang>
 <lang><sil>avt</sil>	<iso>avt</iso></lang>
 <lang><sil>avu</sil>	<iso>avu</iso></lang>
 <lang><sil>avv</sil>	<iso>avv</iso></lang>
 <lang><sil>awa</sil>	<iso>acp</iso></lang>
-<lang><sil>awa</sil>	<iso>awa</iso></lang>
 <lang><sil>awb</sil>	<iso>awb</iso></lang>
 <lang><sil>awc</sil>	<iso>awc</iso></lang>
 <lang><sil>awd</sil>	<iso>awa</iso></lang>
@@ -564,7 +533,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>axk</sil>	<iso>axk</iso></lang>
 <lang><sil>axm</sil>	<iso>axm</iso></lang>
 <lang><sil>axx</sil>	<iso>arg</iso></lang>
-<lang><sil>axx</sil>	<iso>axx</iso></lang>
 <lang><sil>ay</sil>	<iso>aym</iso></lang>
 <lang><sil>aya</sil>	<iso>aya</iso></lang>
 <lang><sil>ayb</sil>	<iso>ayb</iso></lang>
@@ -576,7 +544,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>ayi</sil>	<iso>ayi</iso></lang>
 <lang><sil>ayk</sil>	<iso>ayk</iso></lang>
 <lang><sil>ayl</sil>	<iso>ayl</iso></lang>
-<lang><sil>aym</sil>	<iso>aym</iso></lang>
 <lang><sil>aym</sil>	<iso>ayr</iso></lang>
 <lang><sil>ayn</sil>	<iso>ayn</iso></lang>
 <lang><sil>ayo</sil>	<iso>ayo</iso></lang>
@@ -592,19 +559,18 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>az</sil>	<iso>aze</iso></lang>
 <lang><sil>aza</sil>	<iso>aza</iso></lang>
 <lang><sil>azb</sil>	<iso>azb</iso></lang>
-<lang><sil>aze</sil>	<iso>aze</iso></lang>
 <lang><sil>aze</sil>	<iso>azj</iso></lang>
 <lang><sil>azg</sil>	<iso>azg</iso></lang>
 <lang><sil>azj</sil>	<iso>azj</iso></lang>
 <lang><sil>azm</sil>	<iso>azm</iso></lang>
 <lang><sil>azo</sil>	<iso>azo</iso></lang>
-<lang><sil>azr</sil>	<iso>adz</iso></lang>
-<lang><sil>azr</sil>	<iso>zsa</iso></lang>
-<lang><sil>azr</sil>	<iso>zsu</iso></lang>
-<lang><sil>azt</sil>	<iso>azt</iso></lang>
+
+ <lang><sil>azr</sil>	<iso>adz</iso></lang>
+
+ 
+ <lang><sil>azt</sil>	<iso>azt</iso></lang>
 <lang><sil>azz</sil>	<iso>azz</iso></lang>
 <lang><sil>ba</sil>	<iso>bak</iso></lang>
-<lang><sil>baa</sil>	<iso>baa</iso></lang>
 <lang><sil>baa</sil>	<iso>bas</iso></lang>
 <lang><sil>bab</sil>	<iso>bab</iso></lang>
 <lang><sil>bac</sil>	<iso>bac</iso></lang>
@@ -615,20 +581,15 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>bah</sil>	<iso>bah</iso></lang>
 <lang><sil>bai</sil>	<iso>bwi</iso></lang>
 <lang><sil>baj</sil>	<iso>baj</iso></lang>
-<lang><sil>bak</sil>	<iso>bak</iso></lang>
 <lang><sil>bak</sil>	<iso>bjw</iso></lang>
-<lang><sil>bal</sil>	<iso>bal</iso></lang>
 <lang><sil>bal</sil>	<iso>mbf</iso></lang>
-<lang><sil>bam</sil>	<iso>bam</iso></lang>
 <lang><sil>bam</sil>	<iso>bcy</iso></lang>
-<lang><sil>ban</sil>	<iso>ban</iso></lang>
 <lang><sil>ban</sil>	<iso>ybb</iso></lang>
 <lang><sil>bao</sil>	<iso>bao</iso></lang>
 <lang><sil>bap</sil>	<iso>bap</iso></lang>
 <lang><sil>baq</sil>	<iso>baa</iso></lang>
 <lang><sil>baq</sil>	<iso>eus</iso></lang>
 <lang><sil>bar</sil>	<iso>bar</iso></lang>
-<lang><sil>bas</sil>	<iso>bas</iso></lang>
 <lang><sil>bas</sil>	<iso>bsq</iso></lang>
 <lang><sil>bat</sil>	<iso>bei</iso></lang>
 <lang><sil>bau</sil>	<iso>bau</iso></lang>
@@ -638,10 +599,10 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>bay</sil>	<iso>bay</iso></lang>
 <lang><sil>baz</sil>	<iso>baz</iso></lang>
 <lang><sil>bba</sil>	<iso>bba</iso></lang>
-<lang><sil>bbb</sil>	<iso>bbb</iso></lang>
-<lang><sil>bbb</sil>	<iso>bjz</iso></lang>
-<lang><sil>bbb</sil>	<iso>dgx</iso></lang>
-<lang><sil>bbc</sil>	<iso>bbc</iso></lang>
+
+ <lang><sil>bbb</sil>	<iso>bjz</iso></lang>
+ 
+ <lang><sil>bbc</sil>	<iso>bbc</iso></lang>
 <lang><sil>bbd</sil>	<iso>bbd</iso></lang>
 <lang><sil>bbe</sil>	<iso>bbe</iso></lang>
 <lang><sil>bbf</sil>	<iso>bbf</iso></lang>
@@ -665,10 +626,11 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>bbx</sil>	<iso>bbx</iso></lang>
 <lang><sil>bby</sil>	<iso>bby</iso></lang>
 <lang><sil>bbz</sil>	<iso>bbz</iso></lang>
-<lang><sil>bca</sil>	<iso>bbb</iso></lang>
-<lang><sil>bca</sil>	<iso>bca</iso></lang>
-<lang><sil>bca</sil>	<iso>nvm</iso></lang>
-<lang><sil>bcb</sil>	<iso>bcb</iso></lang>
+
+ <lang><sil>bca</sil>	<iso>nvm</iso></lang>
+
+
+ <lang><sil>bcb</sil>	<iso>bcb</iso></lang>
 <lang><sil>bcc</sil>	<iso>bcc</iso></lang>
 <lang><sil>bcd</sil>	<iso>bcd</iso></lang>
 <lang><sil>bce</sil>	<iso>bce</iso></lang>
@@ -679,7 +641,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>bcj</sil>	<iso>bcj</iso></lang>
 <lang><sil>bck</sil>	<iso>bck</iso></lang>
 <lang><sil>bcl</sil>	<iso>aix</iso></lang>
-<lang><sil>bcl</sil>	<iso>bcl</iso></lang>
 <lang><sil>bcm</sil>	<iso>bcm</iso></lang>
 <lang><sil>bcn</sil>	<iso>bcn</iso></lang>
 <lang><sil>bco</sil>	<iso>bco</iso></lang>
@@ -693,7 +654,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>bcw</sil>	<iso>bcw</iso></lang>
 <lang><sil>bcx</sil>	<iso>pmf</iso></lang>
 <lang><sil>bcx</sil>	<iso>zbt</iso></lang>
-<lang><sil>bcy</sil>	<iso>bcy</iso></lang>
 <lang><sil>bcy</sil>	<iso>bis</iso></lang>
 <lang><sil>bcz</sil>	<iso>bcz</iso></lang>
 <lang><sil>bda</sil>	<iso>bda</iso></lang>
@@ -719,7 +679,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>bdu</sil>	<iso>bdu</iso></lang>
 <lang><sil>bdv</sil>	<iso>bdv</iso></lang>
 <lang><sil>bdw</sil>	<iso>bdw</iso></lang>
-<lang><sil>bdx</sil>	<iso>bdx</iso></lang>
 <lang><sil>bdx</sil>	<iso>yet</iso></lang>
 <lang><sil>bdy</sil>	<iso>bdy</iso></lang>
 <lang><sil>bdz</sil>	<iso>bdz</iso></lang>
@@ -732,19 +691,14 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>bef</sil>	<iso>bef</iso></lang>
 <lang><sil>beg</sil>	<iso>beg</iso></lang>
 <lang><sil>beh</sil>	<iso>beh</iso></lang>
-<lang><sil>bei</sil>	<iso>bei</iso></lang>
 <lang><sil>bei</sil>	<iso>bej</iso></lang>
-<lang><sil>bej</sil>	<iso>bej</iso></lang>
 <lang><sil>bej</sil>	<iso>beq</iso></lang>
 <lang><sil>bek</sil>	<iso>bek</iso></lang>
-<lang><sil>bel</sil>	<iso>bel</iso></lang>
 <lang><sil>bel</sil>	<iso>blc</iso></lang>
 <lang><sil>bem</sil>	<iso>bem</iso></lang>
-<lang><sil>ben</sil>	<iso>ben</iso></lang>
 <lang><sil>ben</sil>	<iso>bng</iso></lang>
 <lang><sil>beo</sil>	<iso>beo</iso></lang>
 <lang><sil>bep</sil>	<iso>bep</iso></lang>
-<lang><sil>beq</sil>	<iso>beq</iso></lang>
 <lang><sil>beq</sil>	<iso>bxd</iso></lang>
 <lang><sil>ber</sil>	<iso>bkl</iso></lang>
 <lang><sil>bes</sil>	<iso>bes</iso></lang>
@@ -773,7 +727,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>bfp</sil>	<iso>bfp</iso></lang>
 <lang><sil>bfq</sil>	<iso>bfq</iso></lang>
 <lang><sil>bfr</sil>	<iso>bfr</iso></lang>
-<lang><sil>bfs</sil>	<iso>bfs</iso></lang>
 <lang><sil>bfs</sil>	<iso>bra</iso></lang>
 <lang><sil>bft</sil>	<iso>bft</iso></lang>
 <lang><sil>bfu</sil>	<iso>bfu</iso></lang>
@@ -816,14 +769,12 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>bhg</sil>	<iso>bhg</iso></lang>
 <lang><sil>bhh</sil>	<iso>bhh</iso></lang>
 <lang><sil>bhi</sil>	<iso>bhi</iso></lang>
-<lang><sil>bhj</sil>	<iso>bhj</iso></lang>
 <lang><sil>bhj</sil>	<iso>bho</iso></lang>
 <lang><sil>bhk</sil>	<iso>bhk</iso></lang>
 <lang><sil>bhl</sil>	<iso>bhl</iso></lang>
 <lang><sil>bhm</sil>	<iso>bhm</iso></lang>
 <lang><sil>bhn</sil>	<iso>bhn</iso></lang>
 <lang><sil>bho</sil>	<iso>bfi</iso></lang>
-<lang><sil>bho</sil>	<iso>bho</iso></lang>
 <lang><sil>bhp</sil>	<iso>bhp</iso></lang>
 <lang><sil>bhq</sil>	<iso>bhq</iso></lang>
 <lang><sil>bhr</sil>	<iso>bhr</iso></lang>
@@ -847,17 +798,14 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>bii</sil>	<iso>bzi </iso></lang>
 <lang><sil>bii</sil>	<iso>lwm</iso></lang>
 <lang><sil>bij</sil>	<iso>bij</iso></lang>
-<lang><sil>bik</sil>	<iso>bik</iso></lang>
 <lang><sil>bik</sil>	<iso>bpr</iso></lang>
 <lang><sil>bil</sil>	<iso>bil</iso></lang>
 <lang><sil>bim</sil>	<iso>bim</iso></lang>
-<lang><sil>bin</sil>	<iso>bin</iso></lang>
 <lang><sil>bin</sil>	<iso>bpj</iso></lang>
 <lang><sil>bio</sil>	<iso>bio</iso></lang>
 <lang><sil>bip</sil>	<iso>bip</iso></lang>
 <lang><sil>biq</sil>	<iso>biq</iso></lang>
 <lang><sil>bir</sil>	<iso>bir</iso></lang>
-<lang><sil>bis</sil>	<iso>bis</iso></lang>
 <lang><sil>bis</sil>	<iso>bps</iso></lang>
 <lang><sil>bit</sil>	<iso>bit</iso></lang>
 <lang><sil>biu</sil>	<iso>biu</iso></lang>
@@ -903,7 +851,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>bkj</sil>	<iso>bkj</iso></lang>
 <lang><sil>bkk</sil>	<iso>bkk</iso></lang>
 <lang><sil>bkl</sil>	<iso>bcl</iso></lang>
-<lang><sil>bkl</sil>	<iso>bkl</iso></lang>
 <lang><sil>bkm</sil>	<iso>bkm</iso></lang>
 <lang><sil>bkn</sil>	<iso>bkn</iso></lang>
 <lang><sil>bko</sil>	<iso>bko</iso></lang>
@@ -919,14 +866,11 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>bky</sil>	<iso>bky</iso></lang>
 <lang><sil>bkz</sil>	<iso>bkz</iso></lang>
 <lang><sil>bla</sil>	<iso>bfk</iso></lang>
-<lang><sil>bla</sil>	<iso>bla</iso></lang>
 <lang><sil>blb</sil>	<iso>blb</iso></lang>
 <lang><sil>blc</sil>	<iso>bla</iso></lang>
-<lang><sil>blc</sil>	<iso>blc</iso></lang>
 <lang><sil>bld</sil>	<iso>bld</iso></lang>
 <lang><sil>ble</sil>	<iso>ble</iso></lang>
 <lang><sil>blf</sil>	<iso>blf</iso></lang>
-<lang><sil>blg</sil>	<iso>blg</iso></lang>
 <lang><sil>blg</sil>	<iso>bul</iso></lang>
 <lang><sil>blh</sil>	<iso>blh</iso></lang>
 <lang><sil>bli</sil>	<iso>bli</iso></lang>
@@ -943,9 +887,7 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>blt</sil>	<iso>blt</iso></lang>
 
  <lang><sil>blu</sil>	<iso>cqd</iso></lang>
-<!--<lang><sil>blu</sil>	<iso>hnj</iso></lang>
-<lang><sil>blu</sil>	<iso>hrm</iso></lang>
-<lang><sil>blu</sil>	<iso>sfm</iso></lang>-->
+
 
  <lang><sil>blv</sil>	<iso>blv</iso></lang>
 <lang><sil>blw</sil>	<iso>blw</iso></lang>
@@ -971,7 +913,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>bmp</sil>	<iso>bmp</iso></lang>
 <lang><sil>bmq</sil>	<iso>bmq</iso></lang>
 <lang><sil>bmr</sil>	<iso>bmr</iso></lang>
-<lang><sil>bms</sil>	<iso>bms</iso></lang>
 <lang><sil>bms</sil>	<iso>mya</iso></lang>
 <lang><sil>bmt</sil>	<iso>bmt</iso></lang>
 <lang><sil>bmu</sil>	<iso>bmu</iso></lang>
@@ -988,7 +929,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>bne</sil>	<iso>bne</iso></lang>
 <lang><sil>bnf</sil>	<iso>bnf</iso></lang>
 <lang><sil>bng</sil>	<iso>ben</iso></lang>
-<lang><sil>bng</sil>	<iso>bng</iso></lang>
 <lang><sil>bnh</sil>	<iso>jaa</iso></lang>
 <lang><sil>bni</sil>	<iso>bni</iso></lang>
 <lang><sil>bnj</sil>	<iso>bnj</iso></lang>
@@ -1012,7 +952,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>boa</sil>	<iso>boa</iso></lang>
 <lang><sil>bob</sil>	<iso>bob</iso></lang>
 <lang><sil>boc</sil>	<iso>xkl</iso></lang>
-<lang><sil>bod</sil>	<iso>bod</iso></lang>
 <lang><sil>bod</sil>	<iso>bvw</iso></lang>
 <lang><sil>boe</sil>	<iso>boe</iso></lang>
 <lang><sil>bof</sil>	<iso>bof</iso></lang>
@@ -1023,13 +962,11 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>bok</sil>	<iso>bok</iso></lang>
 <lang><sil>bol</sil>	<iso>bol</iso></lang>
 <lang><sil>bom</sil>	<iso>bom</iso></lang>
-<lang><sil>bon</sil>	<iso>bon</iso></lang>
 <lang><sil>bon</sil>	<iso>loy</iso></lang>
 <lang><sil>boo</sil>	<iso>boo</iso></lang>
 <lang><sil>bop</sil>	<iso>bop</iso></lang>
 <lang><sil>boq</sil>	<iso>boq</iso></lang>
 <lang><sil>bor</sil>	<iso>bor</iso></lang>
-<lang><sil>bos</sil>	<iso>bos</iso></lang>
 <lang><sil>bos</sil>	<iso>bwf</iso></lang>
 <lang><sil>bot</sil>	<iso>bot</iso></lang>
 <lang><sil>bou</sil>	<iso>bou</iso></lang>
@@ -1052,7 +989,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>bpo</sil>	<iso>bpo</iso></lang>
 <lang><sil>bpp</sil>	<iso>bpp</iso></lang>
 <lang><sil>bpq</sil>	<iso>bpq</iso></lang>
-<lang><sil>bpr</sil>	<iso>bpr</iso></lang>
 <lang><sil>bpr</sil>	<iso>bug</iso></lang>
 <lang><sil>bps</sil>	<iso>bps</iso></lang>
 <lang><sil>bpt</sil>	<iso>bpt</iso></lang>
@@ -1070,10 +1006,11 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>bqf</sil>	<iso>bqf</iso></lang>
 <lang><sil>bqg</sil>	<iso>bqg</iso></lang>
 <lang><sil>bqh</sil>	<iso>bqh</iso></lang>
-<lang><sil>bqi</sil>	<iso>bhb</iso></lang>
-<lang><sil>bqi</sil>	<iso>bqi</iso></lang>
-<lang><sil>bqi</sil>	<iso>noi</iso></lang>
-<lang><sil>bqj</sil>	<iso>bqj</iso></lang>
+
+ <lang><sil>bqi</sil>	<iso>bhb</iso></lang>
+
+
+ <lang><sil>bqj</sil>	<iso>bqj</iso></lang>
 <lang><sil>bqk</sil>	<iso>bqk</iso></lang>
 <lang><sil>bql</sil>	<iso>bql</iso></lang>
 <lang><sil>bqm</sil>	<iso>bqm</iso></lang>
@@ -1092,11 +1029,9 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>bqz</sil>	<iso>bqz</iso></lang>
 <lang><sil>br</sil>	<iso>bre</iso></lang>
 <lang><sil>bra</sil>	<iso>bam</iso></lang>
-<lang><sil>bra</sil>	<iso>bra</iso></lang>
 <lang><sil>brb</sil>	<iso>brb</iso></lang>
 <lang><sil>brc</sil>	<iso>brc</iso></lang>
 <lang><sil>brd</sil>	<iso>brd</iso></lang>
-<lang><sil>bre</sil>	<iso>bre</iso></lang>
 <lang><sil>bre</sil>	<iso>brt</iso></lang>
 <lang><sil>brf</sil>	<iso>brf</iso></lang>
 <lang><sil>brg</sil>	<iso>brg</iso></lang>
@@ -1113,7 +1048,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>brr</sil>	<iso>brr</iso></lang>
 <lang><sil>brs</sil>	<iso>brs</iso></lang>
 <lang><sil>brt</sil>	<iso>bre</iso></lang>
-<lang><sil>brt</sil>	<iso>brt</iso></lang>
 <lang><sil>bru</sil>	<iso>bru</iso></lang>
 <lang><sil>brv</sil>	<iso>brv</iso></lang>
 <lang><sil>brw</sil>	<iso>brw</iso></lang>
@@ -1137,7 +1071,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>bsn</sil>	<iso>bsn</iso></lang>
 <lang><sil>bso</sil>	<iso>bso</iso></lang>
 <lang><sil>bsp</sil>	<iso>bsp</iso></lang>
-<lang><sil>bsq</sil>	<iso>bsq</iso></lang>
 <lang><sil>bsq</sil>	<iso>eus</iso></lang>
 <lang><sil>bsr</sil>	<iso>bsr</iso></lang>
 <lang><sil>bss</sil>	<iso>bss</iso></lang>
@@ -1175,19 +1108,16 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>bty</sil>	<iso>bty</iso></lang>
 <lang><sil>btz</sil>	<iso>btz</iso></lang>
 <lang><sil>bua</sil>	<iso>bfn</iso></lang>
-<lang><sil>bua</sil>	<iso>bua</iso></lang>
 <lang><sil>bub</sil>	<iso>bub</iso></lang>
 <lang><sil>buc</sil>	<iso>buc</iso></lang>
 <lang><sil>bud</sil>	<iso>bud</iso></lang>
 <lang><sil>bue</sil>	<iso>bue</iso></lang>
 <lang><sil>buf</sil>	<iso>buf</iso></lang>
 <lang><sil>bug</sil>	<iso>blg</iso></lang>
-<lang><sil>bug</sil>	<iso>bug</iso></lang>
 <lang><sil>buh</sil>	<iso>buh</iso></lang>
 <lang><sil>bui</sil>	<iso>bui</iso></lang>
 <lang><sil>buj</sil>	<iso>buj</iso></lang>
 <lang><sil>buk</sil>	<iso>buk</iso></lang>
-<lang><sil>bul</sil>	<iso>bul</iso></lang>
 <lang><sil>bul</sil>	<iso>bxk</iso></lang>
 <lang><sil>bum</sil>	<iso>bum</iso></lang>
 <lang><sil>bun</sil>	<iso>bun</iso></lang>
@@ -1266,14 +1196,12 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>bxi</sil>	<iso>bxi</iso></lang>
 <lang><sil>bxj</sil>	<iso>bxj</iso></lang>
 <lang><sil>bxk</sil>	<iso>bak</iso></lang>
-<lang><sil>bxk</sil>	<iso>bxk</iso></lang>
 <lang><sil>bxl</sil>	<iso>bxl</iso></lang>
 <lang><sil>bxm</sil>	<iso>bxm</iso></lang>
 <lang><sil>bxn</sil>	<iso>bxn</iso></lang>
 <lang><sil>bxo</sil>	<iso>bxo</iso></lang>
 <lang><sil>bxp</sil>	<iso>bxp</iso></lang>
 <lang><sil>bxq</sil>	<iso>bxq</iso></lang>
-<lang><sil>bxr</sil>	<iso>bxr</iso></lang>
 <lang><sil>bxr</sil>	<iso>prx</iso></lang>
 <lang><sil>bxs</sil>	<iso>bxs</iso></lang>
 <lang><sil>bxt</sil>	<iso>bgk</iso></lang>
@@ -1283,7 +1211,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>bxx</sil>	<iso>bxx</iso></lang>
 <lang><sil>bxy</sil>	<iso>kwj</iso></lang>
 <lang><sil>bxz</sil>	<iso>bxz</iso></lang>
-<lang><sil>bya</sil>	<iso>bya</iso></lang>
 <lang><sil>bya</sil>	<iso>tmr</iso></lang>
 <lang><sil>byb</sil>	<iso>byb</iso></lang>
 <lang><sil>byc</sil>	<iso>byc</iso></lang>
@@ -1291,7 +1218,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>bye</sil>	<iso>bye</iso></lang>
 <lang><sil>byf</sil>	<iso>byf</iso></lang>
 <lang><sil>byg</sil>	<iso>byg</iso></lang>
-<lang><sil>byh</sil>	<iso>byh</iso></lang>
 <lang><sil>byh</sil>	<iso>eng</iso></lang>
 <lang><sil>byi</sil>	<iso>byi</iso></lang>
 <lang><sil>byj</sil>	<iso>byj</iso></lang>
@@ -1305,10 +1231,11 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>byr</sil>	<iso>byr</iso></lang>
 <lang><sil>bys</sil>	<iso>bys</iso></lang>
 <lang><sil>byt</sil>	<iso>byt</iso></lang>
-<lang><sil>byu</sil>	<iso>yha</iso></lang>
-<lang><sil>byu</sil>	<iso>yln</iso></lang>
-<lang><sil>byu</sil>	<iso>yzg</iso></lang>
-<lang><sil>byv</sil>	<iso>byv</iso></lang>
+
+ <lang><sil>byu</sil>	<iso>yha</iso></lang>
+
+
+ <lang><sil>byv</sil>	<iso>byv</iso></lang>
 <lang><sil>byw</sil>	<iso>byw</iso></lang>
 <lang><sil>byx</sil>	<iso>byx</iso></lang>
 <lang><sil>byy</sil>	<iso>byy</iso></lang>
@@ -1321,7 +1248,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>bzf</sil>	<iso>bzf</iso></lang>
 <lang><sil>bzg</sil>	<iso>bzg</iso></lang>
 <lang><sil>bzh</sil>	<iso>bzh</iso></lang>
-<lang><sil>bzi</sil>	<iso>bzi</iso></lang>
 <lang><sil>bzi</sil>	<iso>icr</iso></lang>
 <lang><sil>bzj</sil>	<iso>bzj</iso></lang>
 <lang><sil>bzk</sil>	<iso>bzk</iso></lang>
@@ -1358,10 +1284,8 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>cao</sil>	<iso>cao</iso></lang>
 <lang><sil>cap</sil>	<iso>cap</iso></lang>
 <lang><sil>caq</sil>	<iso>caq</iso></lang>
-<lang><sil>car</sil>	<iso>car</iso></lang>
 <lang><sil>car</sil>	<iso>crx</iso></lang>
 <lang><sil>cas</sil>	<iso>cas</iso></lang>
-<lang><sil>cat</sil>	<iso>cat</iso></lang>
 <lang><sil>cat</sil>	<iso>cyb</iso></lang>
 <lang><sil>cau</sil>	<iso>clu</iso></lang>
 <lang><sil>cav</sil>	<iso>cav</iso></lang>
@@ -1406,25 +1330,10 @@ should be stressed that in such situations the best solution is to provide a non
 
  <lang><sil>ccx</sil>	<iso>zha</iso></lang>
  
-<!--
- <lang><sil>ccx</sil>	<iso>zch</iso></lang>
-<lang><sil>ccx</sil>	<iso>zeh</iso></lang>
-<lang><sil>ccx</sil>	<iso>zgb</iso></lang>
-<lang><sil>ccx</sil>	<iso>zgn</iso></lang>
-<lang><sil>ccx</sil>	<iso>zlj</iso></lang>
-<lang><sil>ccx</sil>	<iso>zln</iso></lang>
-<lang><sil>ccx</sil>	<iso>zlq</iso></lang>
-<lang><sil>ccx</sil>	<iso>zqe</iso></lang>
-<lang><sil>ccx</sil>	<iso>zyb</iso></lang>
-<lang><sil>ccx</sil>	<iso>zyj</iso></lang>
--->
+
  
  <lang><sil>ccy</sil>	<iso>zha</iso></lang>
- <!--<lang><sil>ccy</sil>	<iso>zhd</iso></lang>
-<lang><sil>ccy</sil>	<iso>zhn</iso></lang>
-<lang><sil>ccy</sil>	<iso>zyg</iso></lang>
-<lang><sil>ccy</sil>	<iso>zyn</iso></lang>
-<lang><sil>ccy</sil>	<iso>zzj</iso></lang>-->
+ 
 
  <lang><sil>cda</sil>	<iso>cda</iso></lang>
 <lang><sil>cde</sil>	<iso>cde</iso></lang>
@@ -1444,7 +1353,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>cea</sil>	<iso>cea</iso></lang>
 <lang><sil>ceb</sil>	<iso>ceb</iso></lang>
 <lang><sil>ceg</sil>	<iso>ceg</iso></lang>
-<lang><sil>cen</sil>	<iso>cen</iso></lang>
 <lang><sil>cen</sil>	<iso>tye</iso></lang>
 <lang><sil>cer</sil>	<iso>chr</iso></lang>
 <lang><sil>ces</sil>	<iso>ces</iso></lang>
@@ -1461,48 +1369,32 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>cgp</sil>	<iso>kac</iso></lang>
 <lang><sil>cgt</sil>	<iso>chg</iso></lang>
 <lang><sil>ch</sil>	<iso>cha</iso></lang>
-<lang><sil>cha</sil>	<iso>cha</iso></lang>
 <lang><sil>cha</sil>	<iso>cll</iso></lang>
-<lang><sil>chb</sil>	<iso>chb</iso></lang>
 <lang><sil>chb</sil>	<iso>cnu</iso></lang>
 <lang><sil>chc</sil>	<iso>chc</iso></lang>
 <lang><sil>chd</sil>	<iso>chd</iso></lang>
-<lang><sil>che</sil>	<iso>che</iso></lang>
 <lang><sil>che</sil>	<iso>ctc</iso></lang>
 <lang><sil>chf</sil>	<iso>chf</iso></lang>
 <lang><sil>chg</sil>	<iso>cgg</iso></lang>
-<lang><sil>chg</sil>	<iso>chg</iso></lang>
 <lang><sil>chh</sil>	<iso>chh</iso></lang>
 <lang><sil>chi</sil>	<iso>clc</iso></lang>
 <lang><sil>chi</sil>	<iso>zho</iso></lang>
 <lang><sil>chj</sil>	<iso>chj</iso></lang>
 <lang><sil>chk</sil>	<iso>cgk</iso></lang>
-<lang><sil>chk</sil>	<iso>chk</iso></lang>
 <lang><sil>chl</sil>	<iso>chl</iso></lang>
-<lang><sil>chm</sil>	<iso>chm</iso></lang>
 <lang><sil>chm</sil>	<iso>ctm</iso></lang>
-<lang><sil>chn</sil>	<iso>chn</iso></lang>
 <lang><sil>chn</sil>	<iso>cmn</iso></lang>
-<lang><sil>cho</sil>	<iso>cho</iso></lang>
 <lang><sil>cho</sil>	<iso>crv</iso></lang>
-<lang><sil>chp</sil>	<iso>chp</iso></lang>
 <lang><sil>chp</sil>	<iso>mjs</iso></lang>
 <lang><sil>chq</sil>	<iso>chq</iso></lang>
-<lang><sil>chr</sil>	<iso>chr</iso></lang>
 <lang><sil>chr</sil>	<iso>crw</iso></lang>
 
 <lang><sil>chs</sil>	<iso>boi</iso></lang>
-<!--<lang><sil>chs</sil>	<iso>crz</iso></lang>
-<lang><sil>chs</sil>	<iso>inz</iso></lang>
-<lang><sil>chs</sil>	<iso>obi</iso></lang>
-<lang><sil>chs</sil>	<iso>puy</iso></lang>
-<lang><sil>chs</sil>	<iso>veo</iso></lang>-->
+
 
  
  <lang><sil>cht</sil>	<iso>cht</iso></lang>
-<lang><sil>chu</sil>	<iso>chu</iso></lang>
 <lang><sil>chu</sil>	<iso>clw</iso></lang>
-<lang><sil>chv</sil>	<iso>chv</iso></lang>
 <lang><sil>chv</sil>	<iso>cvn</iso></lang>
 <lang><sil>chw</sil>	<iso>chw</iso></lang>
 <lang><sil>chx</sil>	<iso>chx</iso></lang>
@@ -1623,9 +1515,7 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>coo</sil>	<iso>coo</iso></lang>
 <lang><sil>cop</sil>	<iso>cop</iso></lang>
 <lang><sil>coq</sil>	<iso>coq</iso></lang>
-<lang><sil>cor</sil>	<iso>cor</iso></lang>
 <lang><sil>cor</sil>	<iso>crn</iso></lang>
-<lang><sil>cos</sil>	<iso>cos</iso></lang>
 <lang><sil>cos</sil>	<iso>csz</iso></lang>
 <lang><sil>cot</sil>	<iso>cot</iso></lang>
 <lang><sil>cou</sil>	<iso>cou</iso></lang>
@@ -1652,22 +1542,18 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>cr</sil>	<iso>cre</iso></lang>
 <lang><sil>cra</sil>	<iso>cra</iso></lang>
 <lang><sil>crb</sil>	<iso>car</iso></lang>
-<lang><sil>crb</sil>	<iso>crb</iso></lang>
 <lang><sil>crc</sil>	<iso>crc</iso></lang>
 <lang><sil>crd</sil>	<iso>crd</iso></lang>
-<lang><sil>cre</sil>	<iso>cre</iso></lang>
 <lang><sil>cre</sil>	<iso>crj</iso></lang>
 <lang><sil>crf</sil>	<iso>crf</iso></lang>
 <lang><sil>crg</sil>	<iso>crg</iso></lang>
 <lang><sil>crh</sil>	<iso>crh</iso></lang>
 <lang><sil>cri</sil>	<iso>cri</iso></lang>
 <lang><sil>crj</sil>	<iso>crj</iso></lang>
-<lang><sil>crk</sil>	<iso>crk</iso></lang>
 <lang><sil>crk</sil>	<iso>mus</iso></lang>
 <lang><sil>crl</sil>	<iso>crl</iso></lang>
 <lang><sil>crm</sil>	<iso>crm</iso></lang>
 <lang><sil>crn</sil>	<iso>cor</iso></lang>
-<lang><sil>crn</sil>	<iso>crn</iso></lang>
 <lang><sil>cro</sil>	<iso>cro</iso></lang>
 <lang><sil>crp</sil>	<iso>crk</iso></lang>
 <lang><sil>crq</sil>	<iso>crq</iso></lang>
@@ -1677,7 +1563,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>cru</sil>	<iso>bwi</iso></lang>
 <lang><sil>crv</sil>	<iso>crv</iso></lang>
 <lang><sil>crw</sil>	<iso>chn</iso></lang>
-<lang><sil>crw</sil>	<iso>crw</iso></lang>
 <lang><sil>crx</sil>	<iso>crx</iso></lang>
 <lang><sil>cry</sil>	<iso>cry</iso></lang>
 <lang><sil>crz</sil>	<iso>crz</iso></lang>
@@ -1775,11 +1660,9 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>dah</sil>	<iso>dah</iso></lang>
 <lang><sil>dai</sil>	<iso>dai</iso></lang>
 <lang><sil>daj</sil>	<iso>daj</iso></lang>
-<lang><sil>dak</sil>	<iso>dak</iso></lang>
 <lang><sil>dak</sil>	<iso>dzg</iso></lang>
 <lang><sil>dal</sil>	<iso>dal</iso></lang>
 <lang><sil>dam</sil>	<iso>dam</iso></lang>
-<lang><sil>dan</sil>	<iso>dan</iso></lang>
 <lang><sil>dan</sil>	<iso>dny</iso></lang>
 <lang><sil>dao</sil>	<iso>dao</iso></lang>
 <lang><sil>dap</sil>	<iso>dap</iso></lang>
@@ -1832,22 +1715,18 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>deh</sil>	<iso>deh</iso></lang>
 <lang><sil>dei</sil>	<iso>dei</iso></lang>
 <lang><sil>dek</sil>	<iso>dek</iso></lang>
-<lang><sil>del</sil>	<iso>del</iso></lang>
 <lang><sil>del</sil>	<iso>unm</iso></lang>
 <lang><sil>dem</sil>	<iso>dem</iso></lang>
 <lang><sil>den</sil>	<iso>ddn</iso></lang>
-<lang><sil>den</sil>	<iso>den</iso></lang>
 <lang><sil>dep</sil>	<iso>dep</iso></lang>
 <lang><sil>deq</sil>	<iso>deq</iso></lang>
 <lang><sil>der</sil>	<iso>der</iso></lang>
 <lang><sil>des</sil>	<iso>des</iso></lang>
 <lang><sil>det</sil>	<iso>shg</iso></lang>
-<lang><sil>deu</sil>	<iso>deu</iso></lang>
 <lang><sil>deu</sil>	<iso>dhv</iso></lang>
 <lang><sil>dev</sil>	<iso>dev</iso></lang>
 <lang><sil>dez</sil>	<iso>dez</iso></lang>
 <lang><sil>dga</sil>	<iso>dga</iso></lang>
-<lang><sil>dgb</sil>	<iso>dgb</iso></lang>
 <lang><sil>dgb</sil>	<iso>dgr</iso></lang>
 <lang><sil>dgc</sil>	<iso>dgc</iso></lang>
 <lang><sil>dgd</sil>	<iso>dgd</iso></lang>
@@ -1859,7 +1738,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>dgm</sil>	<iso>ada</iso></lang>
 <lang><sil>dgn</sil>	<iso>dgn</iso></lang>
 <lang><sil>dgo</sil>	<iso>dgo</iso></lang>
-<lang><sil>dgr</sil>	<iso>dgr</iso></lang>
 <lang><sil>dgr</sil>	<iso>dgu</iso></lang>
 <lang><sil>dgs</sil>	<iso>dgs</iso></lang>
 <lang><sil>dgu</sil>	<iso>dgu</iso></lang>
@@ -1868,7 +1746,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>dha</sil>	<iso>dha</iso></lang>
 <lang><sil>dhd</sil>	<iso>dhd</iso></lang>
 <lang><sil>dhg</sil>	<iso>dak</iso></lang>
-<lang><sil>dhg</sil>	<iso>dhg</iso></lang>
 <lang><sil>dhi</sil>	<iso>dhi</iso></lang>
 <lang><sil>dhl</sil>	<iso>dhl</iso></lang>
 <lang><sil>dhm</sil>	<iso>dhm</iso></lang>
@@ -1892,7 +1769,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>dik</sil>	<iso>dik</iso></lang>
 <lang><sil>dil</sil>	<iso>dil</iso></lang>
 <lang><sil>dim</sil>	<iso>dim</iso></lang>
-<lang><sil>din</sil>	<iso>din</iso></lang>
 <lang><sil>din</sil>	<iso>dks</iso></lang>
 <lang><sil>dio</sil>	<iso>dio</iso></lang>
 <lang><sil>dip</sil>	<iso>dip</iso></lang>
@@ -1901,7 +1777,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>dis</sil>	<iso>dis</iso></lang>
 <lang><sil>dit</sil>	<iso>dit</iso></lang>
 <lang><sil>diu</sil>	<iso>diu</iso></lang>
-<lang><sil>div</sil>	<iso>div</iso></lang>
 <lang><sil>div</sil>	<iso>dsi</iso></lang>
 <lang><sil>diw</sil>	<iso>diw</iso></lang>
 <lang><sil>dix</sil>	<iso>dix</iso></lang>
@@ -1968,20 +1843,9 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>dof</sil>	<iso>dof</iso></lang>
 
  <lang><sil>dog</sil>	<iso>dtm</iso></lang>
- <!--
-<lang><sil>dog</sil>	<iso>dba</iso></lang>
-<lang><sil>dog</sil>	<iso>dbg</iso></lang>
-<lang><sil>dog</sil>	<iso>dbu</iso></lang>
-<lang><sil>dog</sil>	<iso>dds</iso></lang>
-<lang><sil>dog</sil>	<iso>djm</iso></lang>
-<lang><sil>dog</sil>	<iso>dkl</iso></lang>
-<lang><sil>dog</sil>	<iso>dtk</iso></lang>
-<lang><sil>dog</sil>	<iso>dts</iso></lang>
-<lang><sil>dog</sil>	<iso>dtt</iso></lang>
- -->
+ 
  
  <lang><sil>doh</sil>	<iso>doh</iso></lang>
-<lang><sil>doi</sil>	<iso>doi</iso></lang>
 <lang><sil>doi</sil>	<iso>mkp</iso></lang>
 <lang><sil>doj</sil>	<iso>dgo</iso></lang>
 <lang><sil>doj</sil>	<iso>xnr</iso></lang>
@@ -2039,7 +1903,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>dtt</sil>	<iso>dtt</iso></lang>
 <lang><sil>dtu</sil>	<iso>dtu</iso></lang>
 <lang><sil>dtx</sil>	<iso>dum</iso></lang>
-<lang><sil>dua</sil>	<iso>dua</iso></lang>
 <lang><sil>dua</sil>	<iso>dva</iso></lang>
 <lang><sil>dub</sil>	<iso>dub</iso></lang>
 <lang><sil>duc</sil>	<iso>duc</iso></lang>
@@ -2052,7 +1915,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>duj</sil>	<iso>duj</iso></lang>
 <lang><sil>duk</sil>	<iso>duk</iso></lang>
 <lang><sil>dul</sil>	<iso>dul</iso></lang>
-<lang><sil>dum</sil>	<iso>dum</iso></lang>
 <lang><sil>dum</sil>	<iso>gjn</iso></lang>
 <lang><sil>dun</sil>	<iso>dun</iso></lang>
 <lang><sil>duo</sil>	<iso>duo</iso></lang>
@@ -2132,7 +1994,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>elh</sil>	<iso>elh</iso></lang>
 <lang><sil>eli</sil>	<iso>eli</iso></lang>
 <lang><sil>elk</sil>	<iso>elk</iso></lang>
-<lang><sil>ell</sil>	<iso>ell</iso></lang>
 <lang><sil>ell</sil>	<iso>tvl</iso></lang>
 <lang><sil>elm</sil>	<iso>elm</iso></lang>
 <lang><sil>elo</sil>	<iso>elo</iso></lang>
@@ -2245,16 +2106,12 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>fak</sil>	<iso>fak</iso></lang>
 <lang><sil>fal</sil>	<iso>fal</iso></lang>
 <lang><sil>fam</sil>	<iso>fam</iso></lang>
-<lang><sil>fan</sil>	<iso>fan</iso></lang>
 <lang><sil>fan</sil>	<iso>fni</iso></lang>
-<lang><sil>fao</sil>	<iso>fao</iso></lang>
 <lang><sil>fao</sil>	<iso>fng</iso></lang>
 <lang><sil>fap</sil>	<iso>fap</iso></lang>
 <lang><sil>far</sil>	<iso>far</iso></lang>
-<lang><sil>fas</sil>	<iso>fas</iso></lang>
 <lang><sil>fas</sil>	<iso>fqs</iso></lang>
 <lang><sil>fat</sil>	<iso>faj</iso></lang>
-<lang><sil>fat</sil>	<iso>fat</iso></lang>
 <lang><sil>fau</sil>	<iso>fau</iso></lang>
 <lang><sil>fax</sil>	<iso>fax</iso></lang>
 <lang><sil>fay</sil>	<iso>fay</iso></lang>
@@ -2292,7 +2149,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>fmp</sil>	<iso>fmp</iso></lang>
 <lang><sil>fmu</sil>	<iso>fmu</iso></lang>
 <lang><sil>fng</sil>	<iso>fan</iso></lang>
-<lang><sil>fng</sil>	<iso>fng</iso></lang>
 <lang><sil>fni</sil>	<iso>fni</iso></lang>
 <lang><sil>fo</sil>	<iso>fao</iso></lang>
 <lang><sil>foa</sil>	<iso>fon</iso></lang>
@@ -2305,18 +2161,16 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>fpe</sil>	<iso>fpe</iso></lang>
 <lang><sil>fqs</sil>	<iso>fqs</iso></lang>
 <lang><sil>fr</sil>	<iso>fra</iso></lang>
-<lang><sil>fra</sil>	<iso>fra</iso></lang>
 <lang><sil>fra</sil>	<iso>frp</iso></lang>
 <lang><sil>frc</sil>	<iso>frc</iso></lang>
 <lang><sil>frd</sil>	<iso>frd</iso></lang>
 <lang><sil>fre</sil>	<iso>fra</iso></lang>
-<!--<lang><sil>fre</sil>	<iso>gcr</iso></lang>-->
+
 <lang><sil>fri</sil>	<iso>fry</iso></lang>
 <lang><sil>frk</sil>	<iso>frk</iso></lang>
 <lang><sil>frl</sil>	<iso>fur</iso></lang>
 <lang><sil>frm</sil>	<iso>frm</iso></lang>
 <lang><sil>frn</sil>	<iso>fra</iso></lang>
-<lang><sil>fro</sil>	<iso>fro</iso></lang>
 <lang><sil>fro</sil>	<iso>frq</iso></lang>
 <lang><sil>frp</sil>	<iso>frp</iso></lang>
 <lang><sil>frq</sil>	<iso>frq</iso></lang>
@@ -2324,7 +2178,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>frs</sil>	<iso>frs</iso></lang>
 <lang><sil>frt</sil>	<iso>frt</iso></lang>
 <lang><sil>frx</sil>	<iso>frm</iso></lang>
-<lang><sil>fry</sil>	<iso>fry</iso></lang>
 <lang><sil>fry</sil>	<iso>zrs</iso></lang>
 <lang><sil>fse</sil>	<iso>fse</iso></lang>
 <lang><sil>fsl</sil>	<iso>fsl</iso></lang>
@@ -2339,11 +2192,9 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>fui</sil>	<iso>fui</iso></lang>
 <lang><sil>fuj</sil>	<iso>fuj</iso></lang>
 <lang><sil>ful</sil>	<iso>ffm</iso></lang>
-<lang><sil>ful</sil>	<iso>ful</iso></lang>
 <lang><sil>fum</sil>	<iso>fum</iso></lang>
 <lang><sil>fun</sil>	<iso>fun</iso></lang>
 <lang><sil>fuq</sil>	<iso>fuq</iso></lang>
-<lang><sil>fur</sil>	<iso>fur</iso></lang>
 <lang><sil>fur</sil>	<iso>fvr</iso></lang>
 <lang><sil>fut</sil>	<iso>fut</iso></lang>
 <lang><sil>fuu</sil>	<iso>fuu</iso></lang>
@@ -2354,7 +2205,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>fwe</sil>	<iso>fwe</iso></lang>
 <lang><sil>fy</sil>	<iso>fry</iso></lang>
 <lang><sil>ga</sil>	<iso>gle</iso></lang>
-<lang><sil>gaa</sil>	<iso>gaa</iso></lang>
 <lang><sil>gaa</sil>	<iso>gqa</iso></lang>
 <lang><sil>gab</sil>	<iso>gab</iso></lang>
 <lang><sil>gac</sil>	<iso>gaa</iso></lang>
@@ -2369,7 +2219,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>gal</sil>	<iso>gal</iso></lang>
 <lang><sil>gam</sil>	<iso>gam</iso></lang>
 <lang><sil>gan</sil>	<iso>etx</iso></lang>
-<lang><sil>gan</sil>	<iso>gan</iso></lang>
 <lang><sil>gao</sil>	<iso>gao</iso></lang>
 <lang><sil>gap</sil>	<iso>gap</iso></lang>
 <lang><sil>gaq</sil>	<iso>gaq</iso></lang>
@@ -2380,11 +2229,9 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>gav</sil>	<iso>gav</iso></lang>
 <lang><sil>gaw</sil>	<iso>gaw</iso></lang>
 <lang><sil>gax</sil>	<iso>gax</iso></lang>
-<lang><sil>gay</sil>	<iso>gay</iso></lang>
 <lang><sil>gay</sil>	<iso>gvp</iso></lang>
 <lang><sil>gaz</sil>	<iso>gaz</iso></lang>
 <lang><sil>gba</sil>	<iso>bza</iso></lang>
-<lang><sil>gba</sil>	<iso>gba</iso></lang>
 <lang><sil>gbb</sil>	<iso>gbb</iso></lang>
 <lang><sil>gbc</sil>	<iso>gbc</iso></lang>
 <lang><sil>gbd</sil>	<iso>gbd</iso></lang>
@@ -2458,7 +2305,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>gew</sil>	<iso>gew</iso></lang>
 <lang><sil>gex</sil>	<iso>gex</iso></lang>
 <lang><sil>gey</sil>	<iso>gey</iso></lang>
-<lang><sil>gez</sil>	<iso>gez</iso></lang>
 <lang><sil>gez</sil>	<iso>gji</iso></lang>
 <lang><sil>gfk</sil>	<iso>gfk</iso></lang>
 <lang><sil>gft</sil>	<iso>gft</iso></lang>
@@ -2494,7 +2340,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>gid</sil>	<iso>gid</iso></lang>
 <lang><sil>gig</sil>	<iso>gig</iso></lang>
 <lang><sil>gil</sil>	<iso>ggt</iso></lang>
-<lang><sil>gil</sil>	<iso>gil</iso></lang>
 <lang><sil>gim</sil>	<iso>gim</iso></lang>
 <lang><sil>gin</sil>	<iso>gin</iso></lang>
 <lang><sil>gio</sil>	<iso>gio</iso></lang>
@@ -2519,17 +2364,13 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>gkp</sil>	<iso>gkp</iso></lang>
 <lang><sil>gl</sil>	<iso>glg</iso></lang>
 <lang><sil>gla</sil>	<iso>dhg</iso></lang>
-<lang><sil>gla</sil>	<iso>gla</iso></lang>
 <lang><sil>glb</sil>	<iso>gil</iso></lang>
 <lang><sil>glc</sil>	<iso>glc</iso></lang>
 <lang><sil>gld</sil>	<iso>gld</iso></lang>
-<lang><sil>gle</sil>	<iso>gle</iso></lang>
 <lang><sil>gle</sil>	<iso>gly</iso></lang>
-<lang><sil>glg</sil>	<iso>glg</iso></lang>
 <lang><sil>glg</sil>	<iso>gli</iso></lang>
 <lang><sil>glh</sil>	<iso>glh</iso></lang>
 <lang><sil>gli</sil>	<iso>gle</iso></lang>
-<lang><sil>gli</sil>	<iso>gli</iso></lang>
 <lang><sil>glj</sil>	<iso>glj</iso></lang>
 <lang><sil>glk</sil>	<iso>glk</iso></lang>
 <lang><sil>gln</sil>	<iso>glg</iso></lang>
@@ -2537,7 +2378,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>glr</sil>	<iso>glr</iso></lang>
 <lang><sil>gls</sil>	<iso>gla</iso></lang>
 <lang><sil>glu</sil>	<iso>glu</iso></lang>
-<lang><sil>glv</sil>	<iso>glv</iso></lang>
 <lang><sil>glv</sil>	<iso>glw</iso></lang>
 <lang><sil>glw</sil>	<iso>glw</iso></lang>
 <lang><sil>gly</sil>	<iso>gly</iso></lang>
@@ -2548,10 +2388,11 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>gml</sil>	<iso>gml</iso></lang>
 <lang><sil>gmm</sil>	<iso>gmm</iso></lang>
 <lang><sil>gmn</sil>	<iso>gmn</iso></lang>
+
 <lang><sil>gmo</sil>	<iso>dwr</iso></lang>
-<lang><sil>gmo</sil>	<iso>gmv</iso></lang>
-<lang><sil>gmo</sil>	<iso>gof</iso></lang>
-<lang><sil>gmu</sil>	<iso>gmu</iso></lang>
+
+ 
+ <lang><sil>gmu</sil>	<iso>gmu</iso></lang>
 <lang><sil>gmv</sil>	<iso>gmv</iso></lang>
 <lang><sil>gmx</sil>	<iso>gmx</iso></lang>
 <lang><sil>gmy</sil>	<iso>gmy</iso></lang>
@@ -2560,7 +2401,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>gnb</sil>	<iso>gnb</iso></lang>
 <lang><sil>gnc</sil>	<iso>gnc</iso></lang>
 <lang><sil>gnd</sil>	<iso>gnd</iso></lang>
-<lang><sil>gne</sil>	<iso>gne</iso></lang>
 <lang><sil>gne</sil>	<iso>shg</iso></lang>
 <lang><sil>gng</sil>	<iso>gng</iso></lang>
 <lang><sil>gnh</sil>	<iso>gnh</iso></lang>
@@ -2581,26 +2421,21 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>goc</sil>	<iso>goc</iso></lang>
 <lang><sil>god</sil>	<iso>god</iso></lang>
 <lang><sil>goe</sil>	<iso>goe</iso></lang>
-<lang><sil>gof</sil>	<iso>gof</iso></lang>
 <lang><sil>gof</sil>	<iso>got</iso></lang>
 <lang><sil>gog</sil>	<iso>gog</iso></lang>
 <lang><sil>goh</sil>	<iso>ggw</iso></lang>
-<lang><sil>goh</sil>	<iso>goh</iso></lang>
 <lang><sil>goi</sil>	<iso>goi</iso></lang>
 <lang><sil>goj</sil>	<iso>goj</iso></lang>
 <lang><sil>gok</sil>	<iso>gok</iso></lang>
 <lang><sil>gol</sil>	<iso>gol</iso></lang>
 <lang><sil>gom</sil>	<iso>gom</iso></lang>
 <lang><sil>gon</sil>	<iso>gno</iso></lang>
-<lang><sil>gon</sil>	<iso>gon</iso></lang>
 <lang><sil>goo</sil>	<iso>goo</iso></lang>
 <lang><sil>gop</sil>	<iso>gop</iso></lang>
 <lang><sil>goq</sil>	<iso>goq</iso></lang>
 <lang><sil>gor</sil>	<iso>byh</iso></lang>
-<lang><sil>gor</sil>	<iso>gor</iso></lang>
 <lang><sil>gos</sil>	<iso>gos</iso></lang>
 <lang><sil>got</sil>	<iso>cme</iso></lang>
-<lang><sil>got</sil>	<iso>got</iso></lang>
 <lang><sil>gou</sil>	<iso>gou</iso></lang>
 <lang><sil>gow</sil>	<iso>gow</iso></lang>
 <lang><sil>gox</sil>	<iso>gox</iso></lang>
@@ -2614,21 +2449,19 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>gqr</sil>	<iso>gqr</iso></lang>
 <lang><sil>gra</sil>	<iso>gra</iso></lang>
 <lang><sil>grb</sil>	<iso>gbo</iso></lang>
-<lang><sil>grb</sil>	<iso>grb</iso></lang>
-<lang><sil>grc</sil>	<iso>grc</iso></lang>
 <lang><sil>grc</sil>	<iso>gvm</iso></lang>
 <lang><sil>grd</sil>	<iso>grd</iso></lang>
-<lang><sil>gre</sil>	<iso>ell</iso></lang>
-<lang><sil>gre</sil>	<iso>stv</iso></lang>
-<lang><sil>gre</sil>	<iso>wle</iso></lang>
-<lang><sil>grg</sil>	<iso>grg</iso></lang>
+
+ <lang><sil>gre</sil>	<iso>stv</iso></lang>
+ 
+
+ <lang><sil>grg</sil>	<iso>grg</iso></lang>
 <lang><sil>grh</sil>	<iso>grh</iso></lang>
 <lang><sil>gri</sil>	<iso>gri</iso></lang>
 <lang><sil>grj</sil>	<iso>grj</iso></lang>
 <lang><sil>grk</sil>	<iso>ell</iso></lang>
 <lang><sil>grl</sil>	<iso>gor</iso></lang>
 <lang><sil>grm</sil>	<iso>grm</iso></lang>
-<lang><sil>grn</sil>	<iso>grn</iso></lang>
 <lang><sil>grn</sil>	<iso>pdt</iso></lang>
 <lang><sil>gro</sil>	<iso>gro</iso></lang>
 <lang><sil>grq</sil>	<iso>grq</iso></lang>
@@ -2664,7 +2497,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>gug</sil>	<iso>gug</iso></lang>
 <lang><sil>guh</sil>	<iso>guh</iso></lang>
 <lang><sil>gui</sil>	<iso>gui</iso></lang>
-<lang><sil>guj</sil>	<iso>guj</iso></lang>
 <lang><sil>guj</sil>	<iso>gvj</iso></lang>
 <lang><sil>guk</sil>	<iso>guk</iso></lang>
 <lang><sil>gul</sil>	<iso>gul</iso></lang>
@@ -2680,9 +2512,10 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>guv</sil>	<iso>guv</iso></lang>
 <lang><sil>guw</sil>	<iso>guw</iso></lang>
 <lang><sil>gux</sil>	<iso>gux</iso></lang>
-<lang><sil>guy</sil>	<iso>ior</iso></lang>
-<lang><sil>guy</sil>	<iso>mvz</iso></lang>
-<lang><sil>guy</sil>	<iso>sgw</iso></lang>
+
+ <lang><sil>guy</sil>	<iso>sgw</iso></lang>
+ 
+
 <lang><sil>guz</sil>	<iso>guz</iso></lang>
 <lang><sil>gv</sil>	<iso>glv</iso></lang>
 <lang><sil>gva</sil>	<iso>gva</iso></lang>
@@ -2739,7 +2572,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>haf</sil>	<iso>haf</iso></lang>
 <lang><sil>hag</sil>	<iso>hag</iso></lang>
 <lang><sil>hah</sil>	<iso>hah</iso></lang>
-<lang><sil>hai</sil>	<iso>hai</iso></lang>
 <lang><sil>hai</sil>	<iso>hdn</iso></lang>
 <lang><sil>haj</sil>	<iso>haj</iso></lang>
 <lang><sil>hak</sil>	<iso>hak</iso></lang>
@@ -2752,10 +2584,8 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>har</sil>	<iso>har</iso></lang>
 <lang><sil>has</sil>	<iso>has</iso></lang>
 <lang><sil>hat</sil>	<iso>hat</iso></lang>
-<lang><sil>hau</sil>	<iso>hau</iso></lang>
 <lang><sil>hau</sil>	<iso>hus</iso></lang>
 <lang><sil>hav</sil>	<iso>hav</iso></lang>
-<lang><sil>haw</sil>	<iso>haw</iso></lang>
 <lang><sil>haw</sil>	<iso>hwc</iso></lang>
 <lang><sil>hax</sil>	<iso>hax</iso></lang>
 <lang><sil>hay</sil>	<iso>hay</iso></lang>
@@ -2776,7 +2606,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>he</sil>	<iso>heb</iso></lang>
 <lang><sil>hea</sil>	<iso>hea</iso></lang>
 <lang><sil>heb</sil>	<iso>hbn</iso></lang>
-<lang><sil>heb</sil>	<iso>heb</iso></lang>
 <lang><sil>hed</sil>	<iso>hed</iso></lang>
 <lang><sil>heg</sil>	<iso>heg</iso></lang>
 <lang><sil>heh</sil>	<iso>heh</iso></lang>
@@ -2803,11 +2632,9 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>hij</sil>	<iso>hij</iso></lang>
 <lang><sil>hik</sil>	<iso>hik</iso></lang>
 <lang><sil>hil</sil>	<iso>hil</iso></lang>
-<lang><sil>hin</sil>	<iso>hin</iso></lang>
 <lang><sil>hin</sil>	<iso>hnd</iso></lang>
 <lang><sil>hio</sil>	<iso>hio</iso></lang>
 <lang><sil>hir</sil>	<iso>hir</iso></lang>
-<lang><sil>hit</sil>	<iso>hit</iso></lang>
 <lang><sil>hit</sil>	<iso>htu</iso></lang>
 <lang><sil>hiw</sil>	<iso>hiw</iso></lang>
 <lang><sil>hix</sil>	<iso>hix</iso></lang>
@@ -2837,8 +2664,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>hml</sil>	<iso>hml</iso></lang>
 <lang><sil>hmm</sil>	<iso>hmm</iso></lang>
 <lang><sil>hmn</sil>	<iso>hmi</iso></lang>
-<lang><sil>hmn</sil>	<iso>hmn</iso></lang>
-<lang><sil>hmo</sil>	<iso>hmo</iso></lang>
 <lang><sil>hmo</sil>	<iso>hmp</iso></lang>
 <lang><sil>hmp</sil>	<iso>hmp</iso></lang>
 <lang><sil>hmq</sil>	<iso>hmq</iso></lang>
@@ -2852,7 +2677,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>hmz</sil>	<iso>hmz</iso></lang>
 <lang><sil>hna</sil>	<iso>hna</iso></lang>
 <lang><sil>hnd</sil>	<iso>hin</iso></lang>
-<lang><sil>hnd</sil>	<iso>hnd</iso></lang>
 <lang><sil>hne</sil>	<iso>hne</iso></lang>
 <lang><sil>hng</sil>	<iso>hun</iso></lang>
 <lang><sil>hnh</sil>	<iso>hnh</iso></lang>
@@ -2966,7 +2790,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>ibm</sil>	<iso>ibm</iso></lang>
 <lang><sil>ibn</sil>	<iso>ibn</iso></lang>
 <lang><sil>ibo</sil>	<iso>ibi</iso></lang>
-<lang><sil>ibo</sil>	<iso>ibo</iso></lang>
 <lang><sil>ibr</sil>	<iso>ibr</iso></lang>
 <lang><sil>ibu</sil>	<iso>ibu</iso></lang>
 <lang><sil>iby</sil>	<iso>iby</iso></lang>
@@ -2982,7 +2805,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>idd</sil>	<iso>idd</iso></lang>
 <lang><sil>ide</sil>	<iso>ide</iso></lang>
 <lang><sil>idi</sil>	<iso>idi</iso></lang>
-<lang><sil>ido</sil>	<iso>ido</iso></lang>
 <lang><sil>ido</sil>	<iso>idu</iso></lang>
 <lang><sil>idr</sil>	<iso>idr</iso></lang>
 <lang><sil>ids</sil>	<iso>ids</iso></lang>
@@ -3028,14 +2850,12 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>ikp</sil>	<iso>ikp</iso></lang>
 <lang><sil>ikt</sil>	<iso>ikt</iso></lang>
 <lang><sil>iku</sil>	<iso>ikl</iso></lang>
-<lang><sil>iku</sil>	<iso>iku</iso></lang>
 <lang><sil>ikv</sil>	<iso>ikv</iso></lang>
 <lang><sil>ikw</sil>	<iso>ikw</iso></lang>
 <lang><sil>ikx</sil>	<iso>ikx</iso></lang>
 <lang><sil>ikz</sil>	<iso>ikz</iso></lang>
 <lang><sil>ila</sil>	<iso>ila</iso></lang>
 <lang><sil>ilb</sil>	<iso>ilb</iso></lang>
-<lang><sil>ile</sil>	<iso>ile</iso></lang>
 <lang><sil>ile</sil>	<iso>ilv</iso></lang>
 <lang><sil>ilg</sil>	<iso>ilg</iso></lang>
 <lang><sil>ili</sil>	<iso>ili</iso></lang>
@@ -3055,11 +2875,9 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>imr</sil>	<iso>imr</iso></lang>
 <lang><sil>ims</sil>	<iso>ims</iso></lang>
 <lang><sil>imy</sil>	<iso>imy</iso></lang>
-<lang><sil>ina</sil>	<iso>ina</iso></lang>
 <lang><sil>ina</sil>	<iso>inp</iso></lang>
 <lang><sil>inb</sil>	<iso>inb</iso></lang>
 <lang><sil>ind</sil>	<iso>bfh</iso></lang>
-<lang><sil>ind</sil>	<iso>ind</iso></lang>
 <lang><sil>ine</sil>	<iso>inz</iso></lang>
 <lang><sil>ing</sil>	<iso>ing</iso></lang>
 <lang><sil>inh</sil>	<iso>inh</iso></lang>
@@ -3073,13 +2891,11 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>ins</sil>	<iso>ins</iso></lang>
 <lang><sil>int</sil>	<iso>int</iso></lang>
 <lang><sil>inz</sil>	<iso>ind</iso></lang>
-<lang><sil>inz</sil>	<iso>inz</iso></lang>
 <lang><sil>io</sil>	<iso>ido</iso></lang>
 <lang><sil>ior</sil>	<iso>ior</iso></lang>
 <lang><sil>iou</sil>	<iso>iou</iso></lang>
 <lang><sil>iow</sil>	<iso>iow</iso></lang>
 <lang><sil>ipi</sil>	<iso>ipi</iso></lang>
-<lang><sil>ipk</sil>	<iso>ipk</iso></lang>
 <lang><sil>ipk</sil>	<iso>ipo</iso></lang>
 <lang><sil>ipo</sil>	<iso>ipo</iso></lang>
 <lang><sil>iqu</sil>	<iso>iqu</iso></lang>
@@ -3102,7 +2918,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>isg</sil>	<iso>isg</iso></lang>
 <lang><sil>ish</sil>	<iso>ish</iso></lang>
 <lang><sil>isi</sil>	<iso>isi</iso></lang>
-<lang><sil>isl</sil>	<iso>isl</iso></lang>
 <lang><sil>isl</sil>	<iso>isr</iso></lang>
 <lang><sil>ism</sil>	<iso>ism</iso></lang>
 <lang><sil>isn</sil>	<iso>isn</iso></lang>
@@ -3169,7 +2984,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>jas</sil>	<iso>jas</iso></lang>
 <lang><sil>jat</sil>	<iso>jat</iso></lang>
 <lang><sil>jau</sil>	<iso>jau</iso></lang>
-<lang><sil>jav</sil>	<iso>jav</iso></lang>
 <lang><sil>jav</sil>	<iso>jdg</iso></lang>
 <lang><sil>jax</sil>	<iso>jax</iso></lang>
 <lang><sil>jay</sil>	<iso>jay</iso></lang>
@@ -3280,12 +3094,9 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>jye</sil>	<iso>jye</iso></lang>
 <lang><sil>jyy</sil>	<iso>jyy</iso></lang>
 <lang><sil>ka</sil>	<iso>kat</iso></lang>
-<lang><sil>kaa</sil>	<iso>kaa</iso></lang>
 <lang><sil>kaa</sil>	<iso>ksk</iso></lang>
-<lang><sil>kab</sil>	<iso>kab</iso></lang>
 <lang><sil>kab</sil>	<iso>kbd</iso></lang>
 <lang><sil>kac</sil>	<iso>kaa</iso></lang>
-<lang><sil>kac</sil>	<iso>kac</iso></lang>
 <lang><sil>kad</sil>	<iso>kad</iso></lang>
 <lang><sil>kae</sil>	<iso>kae</iso></lang>
 <lang><sil>kaf</sil>	<iso>kaf</iso></lang>
@@ -3294,24 +3105,17 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>kai</sil>	<iso>kai</iso></lang>
 <lang><sil>kaj</sil>	<iso>kaj</iso></lang>
 <lang><sil>kak</sil>	<iso>kak</iso></lang>
-<lang><sil>kal</sil>	<iso>kal</iso></lang>
 <lang><sil>kal</sil>	<iso>kyl</iso></lang>
-<lang><sil>kam</sil>	<iso>kam</iso></lang>
 <lang><sil>kam</sil>	<iso>tsw</iso></lang>
-<lang><sil>kan</sil>	<iso>kan</iso></lang>
 <lang><sil>kan</sil>	<iso>xnn</iso></lang>
 <lang><sil>kao</sil>	<iso>kao</iso></lang>
 <lang><sil>kap</sil>	<iso>kap</iso></lang>
 <lang><sil>kaq</sil>	<iso>kaq</iso></lang>
 <lang><sil>kar</sil>	<iso>xrb</iso></lang>
-<lang><sil>kas</sil>	<iso>kas</iso></lang>
 <lang><sil>kas</sil>	<iso>xsm</iso></lang>
-<lang><sil>kat</sil>	<iso>kat</iso></lang>
 <lang><sil>kat</sil>	<iso>xtc</iso></lang>
 <lang><sil>kau</sil>	<iso>cdr</iso></lang>
-<lang><sil>kau</sil>	<iso>kau</iso></lang>
 <lang><sil>kav</sil>	<iso>kav</iso></lang>
-<lang><sil>kaw</sil>	<iso>kaw</iso></lang>
 <lang><sil>kaw</sil>	<iso>xaw</iso></lang>
 <lang><sil>kax</sil>	<iso>kax</iso></lang>
 <lang><sil>kay</sil>	<iso>kay</iso></lang>
@@ -3319,13 +3123,11 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>kba</sil>	<iso>kba</iso></lang>
 <lang><sil>kbb</sil>	<iso>kbb</iso></lang>
 <lang><sil>kbc</sil>	<iso>kbc</iso></lang>
-<lang><sil>kbd</sil>	<iso>kbd</iso></lang>
 <lang><sil>kbd</sil>	<iso>xbx</iso></lang>
 <lang><sil>kbe</sil>	<iso>kbe</iso></lang>
 <lang><sil>kbf</sil>	<iso>kbf</iso></lang>
 <lang><sil>kbg</sil>	<iso>kbg</iso></lang>
 <lang><sil>kbh</sil>	<iso>kbh</iso></lang>
-<lang><sil>kbi</sil>	<iso>kbi</iso></lang>
 <lang><sil>kbi</sil>	<iso>kzy</iso></lang>
 <lang><sil>kbj</sil>	<iso>kbj</iso></lang>
 <lang><sil>kbk</sil>	<iso>kbk</iso></lang>
@@ -3405,10 +3207,11 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>kee</sil>	<iso>kee</iso></lang>
 <lang><sil>kef</sil>	<iso>kef</iso></lang>
 <lang><sil>keg</sil>	<iso>keg</iso></lang>
-<lang><sil>keh</sil>	<iso>keh</iso></lang>
-<lang><sil>keh</sil>	<iso>ogo</iso></lang>
-<lang><sil>keh</sil>	<iso>tkq</iso></lang>
-<lang><sil>kei</sil>	<iso>kei</iso></lang>
+
+ <lang><sil>keh</sil>	<iso>tkq</iso></lang>
+
+
+ <lang><sil>kei</sil>	<iso>kei</iso></lang>
 <lang><sil>kej</sil>	<iso>kej</iso></lang>
 <lang><sil>kek</sil>	<iso>kek</iso></lang>
 <lang><sil>kel</sil>	<iso>kel</iso></lang>
@@ -3473,15 +3276,15 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>kgr</sil>	<iso>kgr</iso></lang>
 <lang><sil>kgs</sil>	<iso>kgs</iso></lang>
 <lang><sil>kgt</sil>	<iso>kgt</iso></lang>
-<lang><sil>kgu</sil>	<iso>kgu</iso></lang>
-<lang><sil>kgu</sil>	<iso>tyn</iso></lang>
-<lang><sil>kgu</sil>	<iso>wng</iso></lang>
-<lang><sil>kgv</sil>	<iso>kgv</iso></lang>
+
+ <lang><sil>kgu</sil>	<iso>tyn</iso></lang>
+ 
+
+ <lang><sil>kgv</sil>	<iso>kgv</iso></lang>
 <lang><sil>kgw</sil>	<iso>kgw</iso></lang>
 <lang><sil>kgx</sil>	<iso>kgx</iso></lang>
 <lang><sil>kgy</sil>	<iso>kgy</iso></lang>
 <lang><sil>kgz</sil>	<iso>xal</iso></lang>
-<lang><sil>kha</sil>	<iso>kha</iso></lang>
 <lang><sil>kha</sil>	<iso>knk</iso></lang>
 <lang><sil>khb</sil>	<iso>khb</iso></lang>
 <lang><sil>khc</sil>	<iso>khc</iso></lang>
@@ -3494,10 +3297,8 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>khj</sil>	<iso>khj</iso></lang>
 <lang><sil>khk</sil>	<iso>khk</iso></lang>
 <lang><sil>khl</sil>	<iso>khl</iso></lang>
-<lang><sil>khm</sil>	<iso>khm</iso></lang>
 <lang><sil>khm</sil>	<iso>xla</iso></lang>
 <lang><sil>khn</sil>	<iso>khn</iso></lang>
-<lang><sil>kho</sil>	<iso>kho</iso></lang>
 <lang><sil>kho</sil>	<iso>xuo</iso></lang>
 <lang><sil>khp</sil>	<iso>khp</iso></lang>
 <lang><sil>khq</sil>	<iso>khq</iso></lang>
@@ -3522,26 +3323,23 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>kii</sil>	<iso>kii</iso></lang>
 <lang><sil>kij</sil>	<iso>kij</iso></lang>
 <lang><sil>kik</sil>	<iso>kam</iso></lang>
-<lang><sil>kik</sil>	<iso>kik</iso></lang>
 <lang><sil>kil</sil>	<iso>kil</iso></lang>
 <lang><sil>kim</sil>	<iso>kim</iso></lang>
-<lang><sil>kin</sil>	<iso>kin</iso></lang>
 <lang><sil>kin</sil>	<iso>xte</iso></lang>
 <lang><sil>kio</sil>	<iso>kio</iso></lang>
 <lang><sil>kip</sil>	<iso>kip</iso></lang>
 <lang><sil>kiq</sil>	<iso>kiq</iso></lang>
 <lang><sil>kir</sil>	<iso>hbb</iso></lang>
-<lang><sil>kir</sil>	<iso>kir</iso></lang>
 <lang><sil>kis</sil>	<iso>kis</iso></lang>
 <lang><sil>kit</sil>	<iso>kit</iso></lang>
 <lang><sil>kiu</sil>	<iso>kik</iso></lang>
-<lang><sil>kiu</sil>	<iso>kiu</iso></lang>
 <lang><sil>kiv</sil>	<iso>kiv</iso></lang>
 <lang><sil>kiw</sil>	<iso>kiw</iso></lang>
-<lang><sil>kix</sil>	<iso>gmx</iso></lang>
-<lang><sil>kix</sil>	<iso>kix</iso></lang>
-<lang><sil>kix</sil>	<iso>zga</iso></lang>
-<lang><sil>kiy</sil>	<iso>kiy</iso></lang>
+
+ <lang><sil>kix</sil>	<iso>zga</iso></lang>
+ 
+
+ <lang><sil>kiy</sil>	<iso>kiy</iso></lang>
 <lang><sil>kiz</sil>	<iso>kiz</iso></lang>
 <lang><sil>kj</sil>	<iso>kua</iso></lang>
 <lang><sil>kja</sil>	<iso>kja</iso></lang>
@@ -3577,11 +3375,7 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>kke</sil>	<iso>kke</iso></lang>
 
  <lang><sil>kkf</sil>	<iso>kkf</iso></lang>
- <!--<lang><sil>kkf</sil>	<iso>gio</iso></lang>
-<lang><sil>kkf</sil>	<iso>giq</iso></lang>
-<lang><sil>kkf</sil>	<iso>gir</iso></lang>
-<lang><sil>kkf</sil>	<iso>giw</iso></lang>
--->
+ 
 
  <lang><sil>kkg</sil>	<iso>kkg</iso></lang>
 <lang><sil>kkh</sil>	<iso>kkh</iso></lang>
@@ -3590,7 +3384,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>kkk</sil>	<iso>kkk</iso></lang>
 <lang><sil>kkl</sil>	<iso>kkl</iso></lang>
 <lang><sil>kkm</sil>	<iso>kkm</iso></lang>
-<lang><sil>kkn</sil>	<iso>kkn</iso></lang>
 <lang><sil>kkn</sil>	<iso>kor</iso></lang>
 <lang><sil>kko</sil>	<iso>kko</iso></lang>
 <lang><sil>kkp</sil>	<iso>kkp</iso></lang>
@@ -3634,7 +3427,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>km</sil>	<iso>khm</iso></lang>
 <lang><sil>kma</sil>	<iso>kma</iso></lang>
 <lang><sil>kmb</sil>	<iso>gmn</iso></lang>
-<lang><sil>kmb</sil>	<iso>kmb</iso></lang>
 <lang><sil>kmc</sil>	<iso>kmc</iso></lang>
 <lang><sil>kmd</sil>	<iso>kmd</iso></lang>
 <lang><sil>kme</sil>	<iso>kme</iso></lang>
@@ -3651,7 +3443,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>kmp</sil>	<iso>kmp</iso></lang>
 <lang><sil>kmq</sil>	<iso>kmq</iso></lang>
 <lang><sil>kmr</sil>	<iso>khm</iso></lang>
-<lang><sil>kmr</sil>	<iso>kmr</iso></lang>
 <lang><sil>kms</sil>	<iso>kms</iso></lang>
 <lang><sil>kmt</sil>	<iso>kmt</iso></lang>
 <lang><sil>kmu</sil>	<iso>kmu</iso></lang>
@@ -3663,24 +3454,21 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>kn</sil>	<iso>kan</iso></lang>
 <lang><sil>kna</sil>	<iso>kna</iso></lang>
 <lang><sil>knb</sil>	<iso>knb</iso></lang>
-<lang><sil>knc</sil>	<iso>knc</iso></lang>
 <lang><sil>knc</sil>	<iso>kzh</iso></lang>
 <lang><sil>knd</sil>	<iso>knd</iso></lang>
 <lang><sil>kne</sil>	<iso>kne</iso></lang>
-<lang><sil>knf</sil>	<iso>knf</iso></lang>
-<lang><sil>knf</sil>	<iso>njx</iso></lang>
-<lang><sil>knf</sil>	<iso>sdj</iso></lang>
-<lang><sil>kng</sil>	<iso>kng</iso></lang>
-<lang><sil>kng</sil>	<iso>uun</iso></lang>
+
+ <lang><sil>knf</sil>	<iso>sdj</iso></lang>
+
+
+ <lang><sil>kng</sil>	<iso>uun</iso></lang>
 <lang><sil>knh</sil>	<iso>knh</iso></lang>
 <lang><sil>kni</sil>	<iso>kni</iso></lang>
 <lang><sil>knj</sil>	<iso>knj</iso></lang>
-<lang><sil>knk</sil>	<iso>knk</iso></lang>
 <lang><sil>knk</sil>	<iso>knn</iso></lang>
 <lang><sil>knl</sil>	<iso>knl</iso></lang>
 <lang><sil>knm</sil>	<iso>knm</iso></lang>
 <lang><sil>knn</sil>	<iso>gan</iso></lang>
-<lang><sil>knn</sil>	<iso>knn</iso></lang>
 <lang><sil>kno</sil>	<iso>kno</iso></lang>
 <lang><sil>knp</sil>	<iso>knp</iso></lang>
 <lang><sil>knq</sil>	<iso>knq</iso></lang>
@@ -3704,20 +3492,17 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>koh</sil>	<iso>koh</iso></lang>
 <lang><sil>koi</sil>	<iso>koi</iso></lang>
 <lang><sil>koj</sil>	<iso>koj</iso></lang>
-<lang><sil>kok</sil>	<iso>kok</iso></lang>
 <lang><sil>kok</sil>	<iso>xbi</iso></lang>
 <lang><sil>kol</sil>	<iso>kol</iso></lang>
-<lang><sil>kom</sil>	<iso>kom</iso></lang>
 <lang><sil>kom</sil>	<iso>xom</iso></lang>
-<lang><sil>kon</sil>	<iso>kng</iso></lang>
+
 <lang><sil>kon</sil>	<iso>kon</iso></lang>
-<lang><sil>kon</sil>	<iso>ldi</iso></lang>
-<lang><sil>koo</sil>	<iso>koo</iso></lang>
+
+ 
+ <lang><sil>koo</sil>	<iso>koo</iso></lang>
 <lang><sil>kop</sil>	<iso>kop</iso></lang>
 <lang><sil>koq</sil>	<iso>koq</iso></lang>
-<lang><sil>kor</sil>	<iso>kor</iso></lang>
 <lang><sil>kor</sil>	<iso>ksh</iso></lang>
-<lang><sil>kos</sil>	<iso>kos</iso></lang>
 <lang><sil>kos</sil>	<iso>xon</iso></lang>
 <lang><sil>kot</sil>	<iso>kot</iso></lang>
 <lang><sil>kou</sil>	<iso>kou</iso></lang>
@@ -3730,12 +3515,10 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>kpb</sil>	<iso>kpb</iso></lang>
 <lang><sil>kpc</sil>	<iso>kpc</iso></lang>
 <lang><sil>kpd</sil>	<iso>kpd</iso></lang>
-<lang><sil>kpe</sil>	<iso>kpe</iso></lang>
 <lang><sil>kpe</sil>	<iso>xpe</iso></lang>
 <lang><sil>kpf</sil>	<iso>kpf</iso></lang>
 <lang><sil>kpg</sil>	<iso>kpg</iso></lang>
 <lang><sil>kph</sil>	<iso>knc</iso></lang>
-<lang><sil>kph</sil>	<iso>kph</iso></lang>
 <lang><sil>kpi</sil>	<iso>kpi</iso></lang>
 <lang><sil>kpj</sil>	<iso>kpj</iso></lang>
 <lang><sil>kpk</sil>	<iso>kpk</iso></lang>
@@ -3801,7 +3584,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>krr</sil>	<iso>krr</iso></lang>
 <lang><sil>krs</sil>	<iso>krs</iso></lang>
 <lang><sil>krt</sil>	<iso>krt</iso></lang>
-<lang><sil>kru</sil>	<iso>kru</iso></lang>
 <lang><sil>kru</sil>	<iso>tja</iso></lang>
 <lang><sil>krv</sil>	<iso>krv</iso></lang>
 <lang><sil>krw</sil>	<iso>krw</iso></lang>
@@ -3817,11 +3599,8 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>ksf</sil>	<iso>ksf</iso></lang>
 <lang><sil>ksg</sil>	<iso>ksg</iso></lang>
 <lang><sil>ksh</sil>	<iso>kas</iso></lang>
-<lang><sil>ksh</sil>	<iso>ksh</iso></lang>
 <lang><sil>ksi</sil>	<iso>kos</iso></lang>
-<lang><sil>ksi</sil>	<iso>ksi</iso></lang>
 <lang><sil>ksj</sil>	<iso>ksj</iso></lang>
-<lang><sil>ksk</sil>	<iso>ksk</iso></lang>
 <lang><sil>ksk</sil>	<iso>kum</iso></lang>
 <lang><sil>ksl</sil>	<iso>ksl</iso></lang>
 <lang><sil>ksm</sil>	<iso>ksm</iso></lang>
@@ -3865,11 +3644,9 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>kty</sil>	<iso>kty</iso></lang>
 <lang><sil>ktz</sil>	<iso>ktz</iso></lang>
 <lang><sil>ku</sil>	<iso>kur</iso></lang>
-<lang><sil>kua</sil>	<iso>kua</iso></lang>
 <lang><sil>kua</sil>	<iso>kvn</iso></lang>
 <lang><sil>kub</sil>	<iso>kub</iso></lang>
 <lang><sil>kuc</sil>	<iso>gwi</iso></lang>
-<lang><sil>kuc</sil>	<iso>kuc</iso></lang>
 <lang><sil>kud</sil>	<iso>kud</iso></lang>
 <lang><sil>kue</sil>	<iso>kue</iso></lang>
 <lang><sil>kuf</sil>	<iso>kuf</iso></lang>
@@ -3879,24 +3656,19 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>kuj</sil>	<iso>kuj</iso></lang>
 <lang><sil>kuk</sil>	<iso>kuk</iso></lang>
 <lang><sil>kul</sil>	<iso>kul</iso></lang>
-<lang><sil>kum</sil>	<iso>kum</iso></lang>
 <lang><sil>kum</sil>	<iso>kun</iso></lang>
-<lang><sil>kun</sil>	<iso>kun</iso></lang>
 <lang><sil>kun</sil>	<iso>kut</iso></lang>
 <lang><sil>kuo</sil>	<iso>kuo</iso></lang>
 <lang><sil>kup</sil>	<iso>kup</iso></lang>
 <lang><sil>kuq</sil>	<iso>kuq</iso></lang>
 <lang><sil>kur</sil>	<iso>kmr</iso></lang>
-<lang><sil>kur</sil>	<iso>kur</iso></lang>
 <lang><sil>kus</sil>	<iso>kus</iso></lang>
-<lang><sil>kut</sil>	<iso>kut</iso></lang>
 <lang><sil>kut</sil>	<iso>pfe</iso></lang>
 <lang><sil>kuu</sil>	<iso>kuu</iso></lang>
 <lang><sil>kuv</sil>	<iso>kuv</iso></lang>
 <lang><sil>kuw</sil>	<iso>kuw</iso></lang>
 <lang><sil>kux</sil>	<iso>kux</iso></lang>
 <lang><sil>kuy</sil>	<iso>kua</iso></lang>
-<lang><sil>kuy</sil>	<iso>kuy</iso></lang>
 <lang><sil>kuz</sil>	<iso>kuz</iso></lang>
 <lang><sil>kv</sil>	<iso>kom</iso></lang>
 <lang><sil>kva</sil>	<iso>kva</iso></lang>
@@ -3913,7 +3685,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>kvl</sil>	<iso>kvl</iso></lang>
 <lang><sil>kvm</sil>	<iso>kvm</iso></lang>
 <lang><sil>kvn</sil>	<iso>kru</iso></lang>
-<lang><sil>kvn</sil>	<iso>kvn</iso></lang>
 <lang><sil>kvo</sil>	<iso>kvo</iso></lang>
 <lang><sil>kvp</sil>	<iso>kvp</iso></lang>
 <lang><sil>kvq</sil>	<iso>kvq</iso></lang>
@@ -3992,7 +3763,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>kyj</sil>	<iso>kyj</iso></lang>
 <lang><sil>kyk</sil>	<iso>kyk</iso></lang>
 <lang><sil>kyl</sil>	<iso>kab</iso></lang>
-<lang><sil>kyl</sil>	<iso>kyl</iso></lang>
 <lang><sil>kym</sil>	<iso>kym</iso></lang>
 <lang><sil>kyn</sil>	<iso>kyn</iso></lang>
 <lang><sil>kyo</sil>	<iso>kyo</iso></lang>
@@ -4014,10 +3784,11 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>kze</sil>	<iso>kze</iso></lang>
 <lang><sil>kzf</sil>	<iso>kzf</iso></lang>
 <lang><sil>kzg</sil>	<iso>kzg</iso></lang>
-<lang><sil>kzh</sil>	<iso>aax</iso></lang>
+
 <lang><sil>kzh</sil>	<iso>bwp</iso></lang>
-<lang><sil>kzh</sil>	<iso>kzh</iso></lang>
-<lang><sil>kzi</sil>	<iso>kzi</iso></lang>
+
+
+ <lang><sil>kzi</sil>	<iso>kzi</iso></lang>
 <lang><sil>kzj</sil>	<iso>kzj</iso></lang>
 <lang><sil>kzk</sil>	<iso>kzk</iso></lang>
 <lang><sil>kzl</sil>	<iso>kzl</iso></lang>
@@ -4037,34 +3808,26 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>kzz</sil>	<iso>kzz</iso></lang>
 <lang><sil>la</sil>	<iso>lat</iso></lang>
 <lang><sil>laa</sil>	<iso>laa</iso></lang>
-<lang><sil>lab</sil>	<iso>lab</iso></lang>
 <lang><sil>lab</sil>	<iso>lam</iso></lang>
 <lang><sil>lac</sil>	<iso>lac</iso></lang>
-<lang><sil>lad</sil>	<iso>lad</iso></lang>
 <lang><sil>lad</sil>	<iso>lhh</iso></lang>
 <lang><sil>lae</sil>	<iso>lae</iso></lang>
 <lang><sil>laf</sil>	<iso>laf</iso></lang>
 <lang><sil>lag</sil>	<iso>lag</iso></lang>
-<lang><sil>lah</sil>	<iso>lah</iso></lang>
 <lang><sil>lah</sil>	<iso>lhu</iso></lang>
 <lang><sil>lai</sil>	<iso>lai</iso></lang>
 <lang><sil>laj</sil>	<iso>laj</iso></lang>
 <lang><sil>lak</sil>	<iso>lak</iso></lang>
 <lang><sil>lal</sil>	<iso>lal</iso></lang>
-<lang><sil>lam</sil>	<iso>lam</iso></lang>
 <lang><sil>lam</sil>	<iso>lap</iso></lang>
 <lang><sil>lan</sil>	<iso>lan</iso></lang>
-<lang><sil>lao</sil>	<iso>lao</iso></lang>
 <lang><sil>lao</sil>	<iso>ldm</iso></lang>
-<lang><sil>lap</sil>	<iso>lap</iso></lang>
 <lang><sil>lap</sil>	<iso>lug</iso></lang>
 <lang><sil>laq</sil>	<iso>laq</iso></lang>
 <lang><sil>lar</sil>	<iso>lar</iso></lang>
 <lang><sil>las</sil>	<iso>las</iso></lang>
-<lang><sil>lat</sil>	<iso>lat</iso></lang>
 <lang><sil>lat</sil>	<iso>lav</iso></lang>
 <lang><sil>lau</sil>	<iso>lau</iso></lang>
-<lang><sil>lav</sil>	<iso>lav</iso></lang>
 <lang><sil>lav</sil>	<iso>lyn</iso></lang>
 <lang><sil>law</sil>	<iso>law</iso></lang>
 <lang><sil>lax</sil>	<iso>lax</iso></lang>
@@ -4181,7 +3944,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>lij</sil>	<iso>lij</iso></lang>
 <lang><sil>lik</sil>	<iso>lik</iso></lang>
 <lang><sil>lil</sil>	<iso>lil</iso></lang>
-<lang><sil>lim</sil>	<iso>lim</iso></lang>
 <lang><sil>lim</sil>	<iso>lmp</iso></lang>
 <lang><sil>lin</sil>	<iso>lin</iso></lang>
 <lang><sil>lio</sil>	<iso>lio</iso></lang>
@@ -4213,7 +3975,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>lkn</sil>	<iso>lkn</iso></lang>
 <lang><sil>lko</sil>	<iso>lko</iso></lang>
 <lang><sil>lkr</sil>	<iso>lkr</iso></lang>
-<lang><sil>lks</sil>	<iso>lks</iso></lang>
 <lang><sil>lks</sil>	<iso>sjk</iso></lang>
 <lang><sil>lkt</sil>	<iso>lkt</iso></lang>
 <lang><sil>lky</sil>	<iso>lky</iso></lang>
@@ -4281,13 +4042,13 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>lnz</sil>	<iso>lnz</iso></lang>
 <lang><sil>lo</sil>	<iso>lao</iso></lang>
 <lang><sil>loa</sil>	<iso>apr</iso></lang>
-<lang><sil>loa</sil>	<iso>loa</iso></lang>
 <lang><sil>lob</sil>	<iso>lob</iso></lang>
 <lang><sil>loc</sil>	<iso>loc</iso></lang>
-<lang><sil>lod</sil>	<iso>zbc</iso></lang>
-<lang><sil>lod</sil>	<iso>zbe</iso></lang>
-<lang><sil>lod</sil>	<iso>zbw</iso></lang>
-<lang><sil>loe</sil>	<iso>loe</iso></lang>
+
+ <lang><sil>lod</sil>	<iso>zbe</iso></lang>
+ 
+
+ <lang><sil>loe</sil>	<iso>loe</iso></lang>
 <lang><sil>lof</sil>	<iso>lof</iso></lang>
 <lang><sil>log</sil>	<iso>log</iso></lang>
 <lang><sil>loh</sil>	<iso>loh</iso></lang>
@@ -4295,7 +4056,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>loj</sil>	<iso>loj</iso></lang>
 <lang><sil>lok</sil>	<iso>lok</iso></lang>
 <lang><sil>lol</sil>	<iso>loa</iso></lang>
-<lang><sil>lol</sil>	<iso>lol</iso></lang>
 <lang><sil>lom</sil>	<iso>lom</iso></lang>
 <lang><sil>lon</sil>	<iso>lon</iso></lang>
 <lang><sil>loo</sil>	<iso>loo</iso></lang>
@@ -4330,11 +4090,7 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>lrg</sil>	<iso>lrg</iso></lang>
 
  <lang><sil>lri</sil>	<iso>lrc</iso></lang>
-<!-- <lang><sil>lri</sil>	<iso>bqi</iso></lang>
-<lang><sil>lri</sil>	<iso>lki</iso></lang>
-<lang><sil>lri</sil>	<iso>lri</iso></lang>
-<lang><sil>lri</sil>	<iso>luz</iso></lang>
--->
+
  
  <lang><sil>lrk</sil>	<iso>lrk</iso></lang>
 <lang><sil>lrl</sil>	<iso>lrl</iso></lang>
@@ -4349,7 +4105,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>lsd</sil>	<iso>lsd</iso></lang>
 <lang><sil>lse</sil>	<iso>lse</iso></lang>
 <lang><sil>lsg</sil>	<iso>lsg</iso></lang>
-<lang><sil>lsh</sil>	<iso>lsh</iso></lang>
 <lang><sil>lsh</sil>	<iso>lus</iso></lang>
 <lang><sil>lsi</sil>	<iso>lsi</iso></lang>
 <lang><sil>lsl</sil>	<iso>lsl</iso></lang>
@@ -4363,37 +4118,30 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>ltc</sil>	<iso>ltc</iso></lang>
 <lang><sil>lti</sil>	<iso>lti</iso></lang>
 <lang><sil>ltn</sil>	<iso>lat</iso></lang>
-<lang><sil>ltn</sil>	<iso>ltn</iso></lang>
 <lang><sil>lto</sil>	<iso>lto</iso></lang>
 <lang><sil>lts</sil>	<iso>lts</iso></lang>
 <lang><sil>ltu</sil>	<iso>ltu</iso></lang>
-<lang><sil>ltz</sil>	<iso>ltz</iso></lang>
 <lang><sil>ltz</sil>	<iso>lzl</iso></lang>
 <lang><sil>lu</sil>	<iso>lub</iso></lang>
 <lang><sil>lua</sil>	<iso>lmz</iso></lang>
-<lang><sil>lua</sil>	<iso>lua</iso></lang>
 <lang><sil>lub</sil>	<iso>lua</iso></lang>
-<lang><sil>lub</sil>	<iso>lub</iso></lang>
 <lang><sil>luc</sil>	<iso>luc</iso></lang>
 <lang><sil>lud</sil>	<iso>lud</iso></lang>
 <lang><sil>lue</sil>	<iso>lue</iso></lang>
 <lang><sil>luf</sil>	<iso>luf</iso></lang>
 <lang><sil>lug</sil>	<iso>lgg</iso></lang>
-<lang><sil>lug</sil>	<iso>lug</iso></lang>
 <lang><sil>luh</sil>	<iso>lub</iso></lang>
 <lang><sil>lui</sil>	<iso>lui</iso></lang>
 <lang><sil>luj</sil>	<iso>luj</iso></lang>
 <lang><sil>luk</sil>	<iso>luk</iso></lang>
 <lang><sil>lul</sil>	<iso>lul</iso></lang>
 <lang><sil>lum</sil>	<iso>lum</iso></lang>
-<lang><sil>lun</sil>	<iso>lun</iso></lang>
 <lang><sil>lun</sil>	<iso>ojv</iso></lang>
 <lang><sil>luo</sil>	<iso>luo</iso></lang>
 <lang><sil>lup</sil>	<iso>lup</iso></lang>
 <lang><sil>luq</sil>	<iso>luq</iso></lang>
 <lang><sil>lur</sil>	<iso>lur</iso></lang>
 <lang><sil>lus</sil>	<iso>lse</iso></lang>
-<lang><sil>lus</sil>	<iso>lus</iso></lang>
 <lang><sil>lut</sil>	<iso>lut</iso></lang>
 <lang><sil>luu</sil>	<iso>luu</iso></lang>
 <lang><sil>luv</sil>	<iso>luv</iso></lang>
@@ -4426,33 +4174,26 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>mab</sil>	<iso>mab</iso></lang>
 <lang><sil>mac</sil>	<iso>mkd</iso></lang>
 <lang><sil>mac</sil>	<iso>pqm</iso></lang>
-<lang><sil>mad</sil>	<iso>mad</iso></lang>
 <lang><sil>mad</sil>	<iso>wlv</iso></lang>
 <lang><sil>mae</sil>	<iso>mae</iso></lang>
 <lang><sil>maf</sil>	<iso>maf</iso></lang>
-<lang><sil>mag</sil>	<iso>mag</iso></lang>
 <lang><sil>mag</sil>	<iso>mpu</iso></lang>
-<lang><sil>mah</sil>	<iso>mah</iso></lang>
 <lang><sil>mah</sil>	<iso>zns</iso></lang>
-<lang><sil>mai</sil>	<iso>mai</iso></lang>
 <lang><sil>mai</sil>	<iso>mjd</iso></lang>
 <lang><sil>maj</sil>	<iso>maj</iso></lang>
-<lang><sil>mak</sil>	<iso>mak</iso></lang>
+
 <lang><sil>mak</sil>	<iso>mgh</iso></lang>
-<lang><sil>mak</sil>	<iso>xsq</iso></lang>
-<lang><sil>mal</sil>	<iso>mal</iso></lang>
-<lang><sil>mal</sil>	<iso>mhr</iso></lang>
+
+
+ <lang><sil>mal</sil>	<iso>mhr</iso></lang>
 <lang><sil>mam</sil>	<iso>mam</iso></lang>
 <lang><sil>man</sil>	<iso>knf</iso></lang>
-<lang><sil>man</sil>	<iso>man</iso></lang>
 <lang><sil>mao</sil>	<iso>mri</iso></lang>
 <lang><sil>mao</sil>	<iso>mzi</iso></lang>
 <lang><sil>map</sil>	<iso>bjv</iso></lang>
 <lang><sil>maq</sil>	<iso>maq</iso></lang>
-<lang><sil>mar</sil>	<iso>mar</iso></lang>
 <lang><sil>mar</sil>	<iso>mrt</iso></lang>
 <lang><sil>mas</sil>	<iso>jle</iso></lang>
-<lang><sil>mas</sil>	<iso>mas</iso></lang>
 <lang><sil>mat</sil>	<iso>mat</iso></lang>
 <lang><sil>mau</sil>	<iso>mau</iso></lang>
 <lang><sil>mav</sil>	<iso>mav</iso></lang>
@@ -4466,16 +4207,10 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>mbc</sil>	<iso>mbc</iso></lang>
 <lang><sil>mbd</sil>	<iso>mbd</iso></lang>
 <lang><sil>mbe</sil>	<iso>mbe</iso></lang>
-<lang><sil>mbf</sil>	<iso>mbf</iso></lang>
 <lang><sil>mbf</sil>	<iso>mri</iso></lang>
 
  <lang><sil>mbg</sil>	<iso>wmd</iso></lang>
-<!--<lang><sil>mbg</sil>	<iso>apv</iso></lang>
-<lang><sil>mbg</sil>	<iso>lkd</iso></lang>
-<lang><sil>mbg</sil>	<iso>ltn</iso></lang>
-<lang><sil>mbg</sil>	<iso>xtw</iso></lang>
-<lang><sil>mbg</sil>	<iso>xyl</iso></lang>
--->
+
  <lang><sil>mbh</sil>	<iso>mbh</iso></lang>
 <lang><sil>mbi</sil>	<iso>mbi</iso></lang>
 <lang><sil>mbj</sil>	<iso>mbj</iso></lang>
@@ -4515,7 +4250,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>mcr</sil>	<iso>mcr</iso></lang>
 <lang><sil>mcs</sil>	<iso>mcs</iso></lang>
 <lang><sil>mct</sil>	<iso>mct</iso></lang>
-<lang><sil>mcu</sil>	<iso>mcu</iso></lang>
 <lang><sil>mcu</sil>	<iso>mpg</iso></lang>
 <lang><sil>mcv</sil>	<iso>mcv</iso></lang>
 <lang><sil>mcw</sil>	<iso>mcw</iso></lang>
@@ -4540,7 +4274,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>mdo</sil>	<iso>gso</iso></lang>
 <lang><sil>mdp</sil>	<iso>mdp</iso></lang>
 <lang><sil>mdq</sil>	<iso>mdq</iso></lang>
-<lang><sil>mdr</sil>	<iso>mdr</iso></lang>
 <lang><sil>mdr</sil>	<iso>zgr</iso></lang>
 <lang><sil>mds</sil>	<iso>mds</iso></lang>
 <lang><sil>mdt</sil>	<iso>mdt</iso></lang>
@@ -4563,7 +4296,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>mek</sil>	<iso>mek</iso></lang>
 <lang><sil>mel</sil>	<iso>mel</iso></lang>
 <lang><sil>mem</sil>	<iso>mem</iso></lang>
-<lang><sil>men</sil>	<iso>men</iso></lang>
 <lang><sil>men</sil>	<iso>njj</iso></lang>
 <lang><sil>meo</sil>	<iso>meo</iso></lang>
 <lang><sil>mep</sil>	<iso>mep</iso></lang>
@@ -4571,16 +4303,12 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>mer</sil>	<iso>mer</iso></lang>
 <lang><sil>mes</sil>	<iso>mes</iso></lang>
 <lang><sil>met</sil>	<iso>mas</iso></lang>
-<lang><sil>met</sil>	<iso>met</iso></lang>
 <lang><sil>meu</sil>	<iso>meu</iso></lang>
 <lang><sil>mev</sil>	<iso>mev</iso></lang>
 <lang><sil>mew</sil>	<iso>mew</iso></lang>
 
  <lang><sil>mex</sil>	<iso>plt</iso></lang>
- <!--<lang><sil>mex</sil>	<iso>bhr</iso></lang>
-<lang><sil>mex</sil>	<iso>bjq</iso></lang>
-<lang><sil>mex</sil>	<iso>bmm</iso></lang>
--->
+ 
 
  <lang><sil>mey</sil>	<iso>mey</iso></lang>
 <lang><sil>mez</sil>	<iso>mez</iso></lang>
@@ -4609,10 +4337,8 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>mfw</sil>	<iso>mfw</iso></lang>
 <lang><sil>mfx</sil>	<iso>mfx</iso></lang>
 <lang><sil>mfy</sil>	<iso>men</iso></lang>
-<lang><sil>mfy</sil>	<iso>mfy</iso></lang>
 <lang><sil>mfz</sil>	<iso>mfz</iso></lang>
 <lang><sil>mg</sil>	<iso>mlg</iso></lang>
-<lang><sil>mga</sil>	<iso>mga</iso></lang>
 <lang><sil>mga</sil>	<iso>zng</iso></lang>
 <lang><sil>mgb</sil>	<iso>mgb</iso></lang>
 <lang><sil>mgc</sil>	<iso>mgc</iso></lang>
@@ -4650,20 +4376,18 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>mhh</sil>	<iso>mhh</iso></lang>
 <lang><sil>mhi</sil>	<iso>mhi</iso></lang>
 <lang><sil>mhj</sil>	<iso>mad</iso></lang>
-<lang><sil>mhj</sil>	<iso>mhj</iso></lang>
 <lang><sil>mhk</sil>	<iso>mhk</iso></lang>
 <lang><sil>mhl</sil>	<iso>mhl</iso></lang>
-<lang><sil>mhm</sil>	<iso>mhm</iso></lang>
 <lang><sil>mhm</sil>	<iso>mos</iso></lang>
 <lang><sil>mhn</sil>	<iso>mdr</iso></lang>
-<lang><sil>mhn</sil>	<iso>mhn</iso></lang>
 <lang><sil>mho</sil>	<iso>mho</iso></lang>
 <lang><sil>mhp</sil>	<iso>mhp</iso></lang>
 <lang><sil>mhq</sil>	<iso>mhq</iso></lang>
-<lang><sil>mhr</sil>	<iso>bhm</iso></lang>
-<lang><sil>mhr</sil>	<iso>gdq</iso></lang>
-<lang><sil>mhr</sil>	<iso>mhr</iso></lang>
-<lang><sil>mhs</sil>	<iso>mhs</iso></lang>
+
+ <lang><sil>mhr</sil>	<iso>gdq</iso></lang>
+ 
+
+ <lang><sil>mhs</sil>	<iso>mhs</iso></lang>
 <lang><sil>mht</sil>	<iso>mht</iso></lang>
 <lang><sil>mhu</sil>	<iso>mhu</iso></lang>
 <lang><sil>mhv</sil>	<iso>rki</iso></lang>
@@ -4687,12 +4411,10 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>mil</sil>	<iso>mil</iso></lang>
 <lang><sil>mim</sil>	<iso>mim</iso></lang>
 <lang><sil>min</sil>	<iso>lkj</iso></lang>
-<lang><sil>min</sil>	<iso>min</iso></lang>
 <lang><sil>mio</sil>	<iso>mio</iso></lang>
 <lang><sil>mip</sil>	<iso>mip</iso></lang>
 <lang><sil>miq</sil>	<iso>miq</iso></lang>
 <lang><sil>mir</sil>	<iso>mir</iso></lang>
-<lang><sil>mis</sil>	<iso>mis</iso></lang>
 <lang><sil>mis</sil>	<iso>xtd</iso></lang>
 <lang><sil>mit</sil>	<iso>mit</iso></lang>
 <lang><sil>miu</sil>	<iso>miu</iso></lang>
@@ -4705,7 +4427,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>mjb</sil>	<iso>opk</iso></lang>
 <lang><sil>mjc</sil>	<iso>mjc</iso></lang>
 <lang><sil>mjd</sil>	<iso>glv</iso></lang>
-<lang><sil>mjd</sil>	<iso>mjd</iso></lang>
 <lang><sil>mje</sil>	<iso>mje</iso></lang>
 <lang><sil>mjf</sil>	<iso>mnc</iso></lang>
 <lang><sil>mjg</sil>	<iso>mjg</iso></lang>
@@ -4721,7 +4442,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>mjq</sil>	<iso>mjq</iso></lang>
 <lang><sil>mjr</sil>	<iso>mjr</iso></lang>
 <lang><sil>mjs</sil>	<iso>mal</iso></lang>
-<lang><sil>mjs</sil>	<iso>mjs</iso></lang>
 <lang><sil>mjt</sil>	<iso>mjt</iso></lang>
 <lang><sil>mju</sil>	<iso>mju</iso></lang>
 <lang><sil>mjv</sil>	<iso>mjv</iso></lang>
@@ -4735,10 +4455,7 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>mkc</sil>	<iso>mkc</iso></lang>
 
  <lang><sil>mkd</sil>	<iso>dhd</iso></lang>
-<!--<lang><sil>mkd</sil>	<iso>mkd</iso></lang>
-<lang><sil>mkd</sil>	<iso>rwr</iso></lang>
-<lang><sil>mkd</sil>	<iso>swv</iso></lang>
-<lang><sil>mkd</sil>	<iso>wry</iso></lang>-->
+
 
  <lang><sil>mke</sil>	<iso>mke</iso></lang>
 <lang><sil>mkf</sil>	<iso>mkf</iso></lang>
@@ -4746,14 +4463,12 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>mkh</sil>	<iso>mxz</iso></lang>
 <lang><sil>mki</sil>	<iso>mki</iso></lang>
 <lang><sil>mkj</sil>	<iso>mkd</iso></lang>
-<lang><sil>mkj</sil>	<iso>mkj</iso></lang>
 <lang><sil>mkk</sil>	<iso>mkk</iso></lang>
 <lang><sil>mkl</sil>	<iso>mkl</iso></lang>
 <lang><sil>mkm</sil>	<iso>mkm</iso></lang>
 <lang><sil>mkn</sil>	<iso>mkn</iso></lang>
 <lang><sil>mko</sil>	<iso>mko</iso></lang>
 <lang><sil>mkp</sil>	<iso>mai</iso></lang>
-<lang><sil>mkp</sil>	<iso>mkp</iso></lang>
 <lang><sil>mkq</sil>	<iso>mkq</iso></lang>
 <lang><sil>mkr</sil>	<iso>mkr</iso></lang>
 <lang><sil>mks</sil>	<iso>mks</iso></lang>
@@ -4772,7 +4487,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>mle</sil>	<iso>mle</iso></lang>
 <lang><sil>mlf</sil>	<iso>mlf</iso></lang>
 <lang><sil>mlg</sil>	<iso>mhj</iso></lang>
-<lang><sil>mlg</sil>	<iso>mlg</iso></lang>
 <lang><sil>mlh</sil>	<iso>mlh</iso></lang>
 <lang><sil>mli</sil>	<iso>mli</iso></lang>
 <lang><sil>mlj</sil>	<iso>mlj</iso></lang>
@@ -4781,14 +4495,11 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>mlm</sil>	<iso>mlm</iso></lang>
 <lang><sil>mln</sil>	<iso>mln</iso></lang>
 <lang><sil>mlo</sil>	<iso>kmb</iso></lang>
-<lang><sil>mlo</sil>	<iso>mlo</iso></lang>
 <lang><sil>mlp</sil>	<iso>mlp</iso></lang>
 <lang><sil>mlq</sil>	<iso>mlq</iso></lang>
 <lang><sil>mlr</sil>	<iso>mlr</iso></lang>
-<lang><sil>mls</sil>	<iso>mls</iso></lang>
 <lang><sil>mls</sil>	<iso>mlt</iso></lang>
 <lang><sil>mlt</sil>	<iso>mli</iso></lang>
-<lang><sil>mlt</sil>	<iso>mlt</iso></lang>
 <lang><sil>mlu</sil>	<iso>mlu</iso></lang>
 <lang><sil>mlv</sil>	<iso>mlv</iso></lang>
 <lang><sil>mlw</sil>	<iso>mlw</iso></lang>
@@ -4796,15 +4507,11 @@ should be stressed that in such situations the best solution is to provide a non
 
 
  <lang><sil>mly</sil>	<iso>zlm</iso></lang>
- <!--<lang><sil>mly</sil>	<iso>hji</iso></lang>
-<lang><sil>mly</sil>	<iso>npn</iso></lang>
-<lang><sil>mly</sil>	<iso>pmy</iso></lang>
-<lang><sil>mly</sil>	<iso>zsm</iso></lang>-->
+ 
 
  <lang><sil>mlz</sil>	<iso>mlz</iso></lang>
 <lang><sil>mma</sil>	<iso>mma</iso></lang>
 <lang><sil>mmb</sil>	<iso>mmb</iso></lang>
-<lang><sil>mmc</sil>	<iso>mmc</iso></lang>
 <lang><sil>mmc</sil>	<iso>tsj</iso></lang>
 <lang><sil>mmd</sil>	<iso>mmd</iso></lang>
 <lang><sil>mme</sil>	<iso>mme</iso></lang>
@@ -4832,17 +4539,13 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>mn</sil>	<iso>mon</iso></lang>
 <lang><sil>mna</sil>	<iso>mna</iso></lang>
 <lang><sil>mnb</sil>	<iso>bxr</iso></lang>
-<lang><sil>mnb</sil>	<iso>mnb</iso></lang>
 <lang><sil>mnc</sil>	<iso>cmo</iso></lang>
-<lang><sil>mnc</sil>	<iso>mnc</iso></lang>
 <lang><sil>mnd</sil>	<iso>mnd</iso></lang>
 <lang><sil>mne</sil>	<iso>mne</iso></lang>
-<lang><sil>mnf</sil>	<iso>mnf</iso></lang>
 <lang><sil>mnf</sil>	<iso>umb</iso></lang>
 <lang><sil>mng</sil>	<iso>mng</iso></lang>
 <lang><sil>mnh</sil>	<iso>mnh</iso></lang>
 <lang><sil>mni</sil>	<iso>emk</iso></lang>
-<lang><sil>mni</sil>	<iso>mni</iso></lang>
 <lang><sil>mnj</sil>	<iso>mnj</iso></lang>
 <lang><sil>mnk</sil>	<iso>mnk</iso></lang>
 <lang><sil>mnl</sil>	<iso>mnl</iso></lang>
@@ -4852,7 +4555,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>mnp</sil>	<iso>mnp</iso></lang>
 <lang><sil>mnq</sil>	<iso>mnq</iso></lang>
 <lang><sil>mnr</sil>	<iso>mni</iso></lang>
-<lang><sil>mnr</sil>	<iso>mnr</iso></lang>
 <lang><sil>mns</sil>	<iso>mns</iso></lang>
 <lang><sil>mnt</sil>	<iso>mnt</iso></lang>
 <lang><sil>mnu</sil>	<iso>mnu</iso></lang>
@@ -4864,10 +4566,7 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>moa</sil>	<iso>moa</iso></lang>
 
  <lang><sil>mob</sil>	<iso>twm</iso></lang>
- <!-- <lang><sil>mob</sil>	<iso>cvg</iso></lang>
-<lang><sil>mob</sil>	<iso>kkf</iso></lang>
-<lang><sil>mob</sil>	<iso>lsh</iso></lang>
-<lang><sil>mob</sil>	<iso>onp</iso></lang>-->
+ 
 
  <lang><sil>moc</sil>	<iso>moc</iso></lang>
 <lang><sil>mod</sil>	<iso>mod</iso></lang>
@@ -4881,14 +4580,11 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>mol</sil>	<iso>mom</iso></lang>
 <lang><sil>mol</sil>	<iso>ron</iso></lang>
 <lang><sil>mom</sil>	<iso>lol</iso></lang>
-<lang><sil>mom</sil>	<iso>mom</iso></lang>
 <lang><sil>mon</sil>	<iso>mnr</iso></lang>
-<lang><sil>mon</sil>	<iso>mon</iso></lang>
 <lang><sil>moo</sil>	<iso>moo</iso></lang>
 <lang><sil>mop</sil>	<iso>mop</iso></lang>
 <lang><sil>moq</sil>	<iso>moq</iso></lang>
 <lang><sil>mor</sil>	<iso>mor</iso></lang>
-<lang><sil>mos</sil>	<iso>mos</iso></lang>
 <lang><sil>mos</sil>	<iso>xtn</iso></lang>
 <lang><sil>mot</sil>	<iso>mot</iso></lang>
 <lang><sil>mou</sil>	<iso>mou</iso></lang>
@@ -4918,7 +4614,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>mps</sil>	<iso>mps</iso></lang>
 <lang><sil>mpt</sil>	<iso>mpt</iso></lang>
 <lang><sil>mpu</sil>	<iso>min</iso></lang>
-<lang><sil>mpu</sil>	<iso>mpu</iso></lang>
 <lang><sil>mpv</sil>	<iso>mpv</iso></lang>
 <lang><sil>mpw</sil>	<iso>mpw</iso></lang>
 <lang><sil>mpx</sil>	<iso>mpx</iso></lang>
@@ -4937,7 +4632,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>mqk</sil>	<iso>mqk</iso></lang>
 <lang><sil>mql</sil>	<iso>mql</iso></lang>
 <lang><sil>mqm</sil>	<iso>mag</iso></lang>
-<lang><sil>mqm</sil>	<iso>mqm</iso></lang>
 <lang><sil>mqn</sil>	<iso>mqn</iso></lang>
 <lang><sil>mqo</sil>	<iso>mqo</iso></lang>
 <lang><sil>mqp</sil>	<iso>mqp</iso></lang>
@@ -4960,7 +4654,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>mrf</sil>	<iso>mrf</iso></lang>
 <lang><sil>mrg</sil>	<iso>mrg</iso></lang>
 <lang><sil>mrh</sil>	<iso>mrh</iso></lang>
-<lang><sil>mri</sil>	<iso>mri</iso></lang>
 <lang><sil>mri</sil>	<iso>mve</iso></lang>
 <lang><sil>mrj</sil>	<iso>mrj</iso></lang>
 <lang><sil>mrk</sil>	<iso>mrk</iso></lang>
@@ -4973,7 +4666,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>mrr</sil>	<iso>mrr</iso></lang>
 <lang><sil>mrs</sil>	<iso>mrs</iso></lang>
 <lang><sil>mrt</sil>	<iso>mar</iso></lang>
-<lang><sil>mrt</sil>	<iso>mrt</iso></lang>
 <lang><sil>mru</sil>	<iso>mru</iso></lang>
 <lang><sil>mrv</sil>	<iso>mrv</iso></lang>
 <lang><sil>mrw</sil>	<iso>mrw</iso></lang>
@@ -4982,7 +4674,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>mrz</sil>	<iso>mrz</iso></lang>
 <lang><sil>ms</sil>	<iso>msa</iso></lang>
 <lang><sil>msa</sil>	<iso>mls</iso></lang>
-<lang><sil>msa</sil>	<iso>msa</iso></lang>
 <lang><sil>msb</sil>	<iso>msb</iso></lang>
 <lang><sil>msc</sil>	<iso>msc</iso></lang>
 <lang><sil>msd</sil>	<iso>msd</iso></lang>
@@ -5000,7 +4691,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>msp</sil>	<iso>msp</iso></lang>
 <lang><sil>msq</sil>	<iso>msq</iso></lang>
 <lang><sil>msr</sil>	<iso>mak</iso></lang>
-<lang><sil>msr</sil>	<iso>msr</iso></lang>
 <lang><sil>mss</sil>	<iso>mss</iso></lang>
 <lang><sil>mst</sil>	<iso>mst</iso></lang>
 <lang><sil>msu</sil>	<iso>msu</iso></lang>
@@ -5046,7 +4736,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>mui</sil>	<iso>mui</iso></lang>
 <lang><sil>muj</sil>	<iso>muj</iso></lang>
 <lang><sil>muk</sil>	<iso>muk</iso></lang>
-<lang><sil>mul</sil>	<iso>mul</iso></lang>
 <lang><sil>mul</sil>	<iso>mzm</iso></lang>
 <lang><sil>mum</sil>	<iso>mum</iso></lang>
 <lang><sil>mun</sil>	<iso>mnf</iso></lang>
@@ -5054,7 +4743,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>mup</sil>	<iso>mup</iso></lang>
 <lang><sil>muq</sil>	<iso>muq</iso></lang>
 <lang><sil>mur</sil>	<iso>mur</iso></lang>
-<lang><sil>mus</sil>	<iso>mus</iso></lang>
 <lang><sil>mus</sil>	<iso>nty</iso></lang>
 <lang><sil>mut</sil>	<iso>mut</iso></lang>
 <lang><sil>muu</sil>	<iso>muu</iso></lang>
@@ -5068,10 +4756,11 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>mvb</sil>	<iso>mvb</iso></lang>
 <lang><sil>mvc</sil>	<iso>mam</iso></lang>
 <lang><sil>mvd</sil>	<iso>mvd</iso></lang>
-<lang><sil>mve</sil>	<iso>mve</iso></lang>
+
 <lang><sil>mve</sil>	<iso>neq</iso></lang>
-<lang><sil>mve</sil>	<iso>pxm</iso></lang>
-<lang><sil>mvf</sil>	<iso>mvf</iso></lang>
+
+
+ <lang><sil>mvf</sil>	<iso>mvf</iso></lang>
 <lang><sil>mvg</sil>	<iso>mvg</iso></lang>
 <lang><sil>mvh</sil>	<iso>mvh</iso></lang>
 <lang><sil>mvi</sil>	<iso>mvi</iso></lang>
@@ -5109,7 +4798,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>mwo</sil>	<iso>mwo</iso></lang>
 <lang><sil>mwp</sil>	<iso>mwp</iso></lang>
 <lang><sil>mwq</sil>	<iso>mwq</iso></lang>
-<lang><sil>mwr</sil>	<iso>mwr</iso></lang>
 <lang><sil>mwr</sil>	<iso>rkm</iso></lang>
 <lang><sil>mws</sil>	<iso>mws</iso></lang>
 <lang><sil>mwt</sil>	<iso>mwt</iso></lang>
@@ -5147,7 +4835,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>mxz</sil>	<iso>mxz</iso></lang>
 <lang><sil>my</sil>	<iso>mya</iso></lang>
 <lang><sil>mya</sil>	<iso>mcu</iso></lang>
-<lang><sil>mya</sil>	<iso>mya</iso></lang>
 <lang><sil>myb</sil>	<iso>myb</iso></lang>
 <lang><sil>myc</sil>	<iso>myc</iso></lang>
 <lang><sil>myd</sil>	<iso>myd</iso></lang>
@@ -5180,9 +4867,7 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>mze</sil>	<iso>mze</iso></lang>
 
  <lang><sil>mzf</sil>	<iso>ymo</iso></lang>
- <!--<lang><sil>mzf</sil>	<iso>aag</iso></lang>
-<lang><sil>mzf</sil>	<iso>yde</iso></lang>
-<lang><sil>mzf</sil>	<iso>ygl</iso></lang>-->
+ 
 
  <lang><sil>mzg</sil>	<iso>mzg</iso></lang>
 <lang><sil>mzh</sil>	<iso>mzh</iso></lang>
@@ -5191,7 +4876,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>mzk</sil>	<iso>mzk</iso></lang>
 <lang><sil>mzl</sil>	<iso>mzl</iso></lang>
 <lang><sil>mzm</sil>	<iso>mah</iso></lang>
-<lang><sil>mzm</sil>	<iso>mzm</iso></lang>
 <lang><sil>mzn</sil>	<iso>mzn</iso></lang>
 <lang><sil>mzo</sil>	<iso>mzo</iso></lang>
 <lang><sil>mzp</sil>	<iso>mzp</iso></lang>
@@ -5206,7 +4890,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>mzy</sil>	<iso>mzy</iso></lang>
 <lang><sil>mzz</sil>	<iso>mzz</iso></lang>
 <lang><sil>na</sil>	<iso>nau</iso></lang>
-<lang><sil>naa</sil>	<iso>naa</iso></lang>
 <lang><sil>naa</sil>	<iso>nfd</iso></lang>
 <lang><sil>nab</sil>	<iso>nab</iso></lang>
 <lang><sil>nac</sil>	<iso>nac</iso></lang>
@@ -5220,16 +4903,13 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>nak</sil>	<iso>nak</iso></lang>
 <lang><sil>nal</sil>	<iso>nal</iso></lang>
 <lang><sil>nam</sil>	<iso>nam</iso></lang>
-<lang><sil>nan</sil>	<iso>nan</iso></lang>
 <lang><sil>nan</sil>	<iso>ngr</iso></lang>
 <lang><sil>nao</sil>	<iso>nao</iso></lang>
-<lang><sil>nap</sil>	<iso>nap</iso></lang>
 <lang><sil>nap</sil>	<iso>npy</iso></lang>
 <lang><sil>naq</sil>	<iso>naq</iso></lang>
 <lang><sil>nar</sil>	<iso>nar</iso></lang>
 <lang><sil>nas</sil>	<iso>nas</iso></lang>
 <lang><sil>nat</sil>	<iso>nat</iso></lang>
-<lang><sil>nau</sil>	<iso>nau</iso></lang>
 <lang><sil>nau</sil>	<iso>nhx</iso></lang>
 <lang><sil>nav</sil>	<iso>nav</iso></lang>
 <lang><sil>naw</sil>	<iso>naw</iso></lang>
@@ -5249,7 +4929,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>nbj</sil>	<iso>nbj</iso></lang>
 <lang><sil>nbk</sil>	<iso>nbk</iso></lang>
 <lang><sil>nbl</sil>	<iso>jgb</iso></lang>
-<lang><sil>nbl</sil>	<iso>nbl</iso></lang>
 <lang><sil>nbm</sil>	<iso>nbm</iso></lang>
 <lang><sil>nbn</sil>	<iso>nbn</iso></lang>
 <lang><sil>nbo</sil>	<iso>nbo</iso></lang>
@@ -5291,11 +4970,8 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>ndb</sil>	<iso>ndb</iso></lang>
 <lang><sil>ndc</sil>	<iso>ndc</iso></lang>
 <lang><sil>ndd</sil>	<iso>ndd</iso></lang>
-<lang><sil>nde</sil>	<iso>nde</iso></lang>
 <lang><sil>nde</sil>	<iso>ndg</iso></lang>
 <lang><sil>ndf</sil>	<iso>nde</iso></lang>
-<lang><sil>ndf</sil>	<iso>ndf</iso></lang>
-<lang><sil>ndg</sil>	<iso>ndg</iso></lang>
 <lang><sil>ndg</sil>	<iso>ndo</iso></lang>
 <lang><sil>ndh</sil>	<iso>ndh</iso></lang>
 <lang><sil>ndi</sil>	<iso>ndi</iso></lang>
@@ -5305,11 +4981,9 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>ndm</sil>	<iso>ndm</iso></lang>
 <lang><sil>ndn</sil>	<iso>ndn</iso></lang>
 <lang><sil>ndo</sil>	<iso>bvm</iso></lang>
-<lang><sil>ndo</sil>	<iso>ndo</iso></lang>
 <lang><sil>ndp</sil>	<iso>ndp</iso></lang>
 <lang><sil>ndq</sil>	<iso>ndq</iso></lang>
 <lang><sil>ndr</sil>	<iso>ndr</iso></lang>
-<lang><sil>nds</sil>	<iso>nds</iso></lang>
 <lang><sil>nds</sil>	<iso>njd</iso></lang>
 <lang><sil>ndt</sil>	<iso>ndt</iso></lang>
 <lang><sil>ndu</sil>	<iso>ndu</iso></lang>
@@ -5366,27 +5040,22 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>ngm</sil>	<iso>ngm</iso></lang>
 <lang><sil>ngn</sil>	<iso>ngn</iso></lang>
 <lang><sil>ngo</sil>	<iso>bdu</iso></lang>
-<lang><sil>ngo</sil>	<iso>ngo</iso></lang>
 <lang><sil>ngp</sil>	<iso>ngp</iso></lang>
 <lang><sil>ngq</sil>	<iso>ngq</iso></lang>
 <lang><sil>ngr</sil>	<iso>nbw</iso></lang>
-<lang><sil>ngr</sil>	<iso>ngr</iso></lang>
 <lang><sil>ngs</sil>	<iso>ngs</iso></lang>
 <lang><sil>ngt</sil>	<iso>ngt</iso></lang>
 <lang><sil>ngu</sil>	<iso>ngo</iso></lang>
-<lang><sil>ngu</sil>	<iso>ngu</iso></lang>
 <lang><sil>ngv</sil>	<iso>ngv</iso></lang>
 <lang><sil>ngw</sil>	<iso>ngw</iso></lang>
 <lang><sil>ngx</sil>	<iso>ngx</iso></lang>
 <lang><sil>ngy</sil>	<iso>ngy</iso></lang>
 <lang><sil>ngz</sil>	<iso>ngz</iso></lang>
-<lang><sil>nha</sil>	<iso>nha</iso></lang>
 <lang><sil>nha</sil>	<iso>pcc</iso></lang>
 <lang><sil>nhb</sil>	<iso>nhb</iso></lang>
 <lang><sil>nhc</sil>	<iso>nhc</iso></lang>
 <lang><sil>nhd</sil>	<iso>nhd</iso></lang>
 <lang><sil>nhe</sil>	<iso>cwe</iso></lang>
-<lang><sil>nhe</sil>	<iso>nhe</iso></lang>
 <lang><sil>nhf</sil>	<iso>nhf</iso></lang>
 <lang><sil>nhg</sil>	<iso>nhg</iso></lang>
 <lang><sil>nhh</sil>	<iso>nhh</iso></lang>
@@ -5407,11 +5076,9 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>nhu</sil>	<iso>nhu</iso></lang>
 <lang><sil>nhv</sil>	<iso>nhv</iso></lang>
 <lang><sil>nhw</sil>	<iso>nhw</iso></lang>
-<lang><sil>nhx</sil>	<iso>nhx</iso></lang>
 <lang><sil>nhx</sil>	<iso>nlv</iso></lang>
 <lang><sil>nhy</sil>	<iso>nhy</iso></lang>
 <lang><sil>nhz</sil>	<iso>nhz</iso></lang>
-<lang><sil>nia</sil>	<iso>nia</iso></lang>
 <lang><sil>nia</sil>	<iso>nwb</iso></lang>
 <lang><sil>nib</sil>	<iso>nib</iso></lang>
 <lang><sil>nic</sil>	<iso>njs</iso></lang>
@@ -5428,13 +5095,11 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>nin</sil>	<iso>nin</iso></lang>
 <lang><sil>nio</sil>	<iso>nio</iso></lang>
 <lang><sil>nip</sil>	<iso>nia</iso></lang>
-<lang><sil>niq</sil>	<iso>niq</iso></lang>
 <lang><sil>niq</sil>	<iso>niu</iso></lang>
 <lang><sil>nir</sil>	<iso>nir</iso></lang>
 <lang><sil>nis</sil>	<iso>nis</iso></lang>
 <lang><sil>nit</sil>	<iso>nit</iso></lang>
 <lang><sil>niu</sil>	<iso>met</iso></lang>
-<lang><sil>niu</sil>	<iso>niu</iso></lang>
 <lang><sil>niv</sil>	<iso>niv</iso></lang>
 <lang><sil>niw</sil>	<iso>niw</iso></lang>
 <lang><sil>nix</sil>	<iso>nix</iso></lang>
@@ -5480,10 +5145,11 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>nkv</sil>	<iso>nkv</iso></lang>
 <lang><sil>nkw</sil>	<iso>nkw</iso></lang>
 <lang><sil>nkx</sil>	<iso>nkx</iso></lang>
-<lang><sil>nky</sil>	<iso>jmn</iso></lang>
-<lang><sil>nky</sil>	<iso>kix</iso></lang>
-<lang><sil>nky</sil>	<iso>pzn</iso></lang>
-<lang><sil>nkz</sil>	<iso>nkz</iso></lang>
+
+ <lang><sil>nky</sil>	<iso>kix</iso></lang>
+ 
+
+ <lang><sil>nkz</sil>	<iso>nkz</iso></lang>
 <lang><sil>nl</sil>	<iso>nld</iso></lang>
 <lang><sil>nla</sil>	<iso>nla</iso></lang>
 <lang><sil>nlc</sil>	<iso>nlc</iso></lang>
@@ -5544,7 +5210,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>nnm</sil>	<iso>nnm</iso></lang>
 <lang><sil>nnn</sil>	<iso>nnn</iso></lang>
 <lang><sil>nno</sil>	<iso>jgo</iso></lang>
-<lang><sil>nno</sil>	<iso>nno</iso></lang>
 <lang><sil>nnp</sil>	<iso>nnp</iso></lang>
 <lang><sil>nnq</sil>	<iso>nnq</iso></lang>
 <lang><sil>nnr</sil>	<iso>nnr</iso></lang>
@@ -5558,7 +5223,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>nnz</sil>	<iso>nnz</iso></lang>
 <lang><sil>no</sil>	<iso>nor</iso></lang>
 <lang><sil>noa</sil>	<iso>noa</iso></lang>
-<lang><sil>nob</sil>	<iso>nob</iso></lang>
 <lang><sil>nob</sil>	<iso>xwr</iso></lang>
 <lang><sil>noc</sil>	<iso>noc</iso></lang>
 <lang><sil>nod</sil>	<iso>nod</iso></lang>
@@ -5570,12 +5234,10 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>nok</sil>	<iso>nok</iso></lang>
 <lang><sil>nol</sil>	<iso>lao</iso></lang>
 <lang><sil>nom</sil>	<iso>nom</iso></lang>
-<lang><sil>non</sil>	<iso>non</iso></lang>
 <lang><sil>non</sil>	<iso>nrn</iso></lang>
 <lang><sil>noo</sil>	<iso>noo</iso></lang>
 <lang><sil>nop</sil>	<iso>nop</iso></lang>
 <lang><sil>noq</sil>	<iso>noq</iso></lang>
-<lang><sil>nor</sil>	<iso>nor</iso></lang>
 <lang><sil>nor</sil>	<iso>nrr</iso></lang>
 <lang><sil>nos</sil>	<iso>nos</iso></lang>
 <lang><sil>not</sil>	<iso>not</iso></lang>
@@ -5588,7 +5250,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>npb</sil>	<iso>npb</iso></lang>
 <lang><sil>nph</sil>	<iso>nph</iso></lang>
 <lang><sil>npl</sil>	<iso>nap</iso></lang>
-<lang><sil>npl</sil>	<iso>npl</iso></lang>
 <lang><sil>npn</sil>	<iso>npn</iso></lang>
 <lang><sil>npo</sil>	<iso>npo</iso></lang>
 <lang><sil>nps</sil>	<iso>nps</iso></lang>
@@ -5628,7 +5289,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>nsm</sil>	<iso>nsm</iso></lang>
 <lang><sil>nsn</sil>	<iso>nsn</iso></lang>
 <lang><sil>nso</sil>	<iso>lns</iso></lang>
-<lang><sil>nso</sil>	<iso>nso</iso></lang>
 <lang><sil>nsp</sil>	<iso>nsp</iso></lang>
 <lang><sil>nsq</sil>	<iso>nsq</iso></lang>
 <lang><sil>nsr</sil>	<iso>nsr</iso></lang>
@@ -5704,7 +5364,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>nxu</sil>	<iso>nxu</iso></lang>
 <lang><sil>nxx</sil>	<iso>nxx</iso></lang>
 <lang><sil>ny</sil>	<iso>nya</iso></lang>
-<lang><sil>nya</sil>	<iso>nya</iso></lang>
 <lang><sil>nya</sil>	<iso>nyj</iso></lang>
 <lang><sil>nyb</sil>	<iso>nyb</iso></lang>
 <lang><sil>nyc</sil>	<iso>nyc</iso></lang>
@@ -5715,21 +5374,16 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>nyh</sil>	<iso>nyh</iso></lang>
 <lang><sil>nyi</sil>	<iso>nyi</iso></lang>
 <lang><sil>nyj</sil>	<iso>nya</iso></lang>
-<lang><sil>nyj</sil>	<iso>nyj</iso></lang>
 <lang><sil>nyk</sil>	<iso>nyk</iso></lang>
 <lang><sil>nyl</sil>	<iso>nyl</iso></lang>
 <lang><sil>nym</sil>	<iso>now</iso></lang>
-<lang><sil>nym</sil>	<iso>nym</iso></lang>
 <lang><sil>nyn</sil>	<iso>nyn</iso></lang>
 <lang><sil>nyo</sil>	<iso>nwm</iso></lang>
-<lang><sil>nyo</sil>	<iso>nyo</iso></lang>
 <lang><sil>nyp</sil>	<iso>nyp</iso></lang>
 <lang><sil>nyq</sil>	<iso>nyq</iso></lang>
 <lang><sil>nyr</sil>	<iso>nyo</iso></lang>
-<lang><sil>nyr</sil>	<iso>nyr</iso></lang>
 <lang><sil>nys</sil>	<iso>nys</iso></lang>
 <lang><sil>nyt</sil>	<iso>nyt</iso></lang>
-<lang><sil>nyu</sil>	<iso>nyu</iso></lang>
 <lang><sil>nyu</sil>	<iso>phm</iso></lang>
 <lang><sil>nyv</sil>	<iso>nyv</iso></lang>
 <lang><sil>nyw</sil>	<iso>nyw</iso></lang>
@@ -5789,7 +5443,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>ojb</sil>	<iso>ojb</iso></lang>
 <lang><sil>ojc</sil>	<iso>ojc</iso></lang>
 <lang><sil>ojg</sil>	<iso>ojg</iso></lang>
-<lang><sil>oji</sil>	<iso>oji</iso></lang>
 <lang><sil>oji</sil>	<iso>ojw</iso></lang>
 <lang><sil>ojp</sil>	<iso>ojp</iso></lang>
 <lang><sil>ojs</sil>	<iso>ojs</iso></lang>
@@ -5873,12 +5526,10 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>org</sil>	<iso>org</iso></lang>
 <lang><sil>orh</sil>	<iso>orh</iso></lang>
 <lang><sil>ori</sil>	<iso>org</iso></lang>
-<lang><sil>ori</sil>	<iso>ori</iso></lang>
-<lang><sil>ork</sil>	<iso>aez</iso></lang>
-<lang><sil>ork</sil>	<iso>hkk</iso></lang>
 <lang><sil>ork</sil>	<iso>okv</iso></lang>
-<lang><sil>orm</sil>	<iso>bon</iso></lang>
-<lang><sil>orm</sil>	<iso>orm</iso></lang>
+ 
+
+ <lang><sil>orm</sil>	<iso>bon</iso></lang>
 <lang><sil>orn</sil>	<iso>orn</iso></lang>
 <lang><sil>oro</sil>	<iso>oro</iso></lang>
 <lang><sil>orr</sil>	<iso>orr</iso></lang>
@@ -5900,11 +5551,9 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>osr</sil>	<iso>aws</iso></lang>
 <lang><sil>osr</sil>	<iso>awy</iso></lang>
 <lang><sil>oss</sil>	<iso>oso</iso></lang>
-<lang><sil>oss</sil>	<iso>oss</iso></lang>
 <lang><sil>ost</sil>	<iso>ost</iso></lang>
 <lang><sil>osu</sil>	<iso>osu</iso></lang>
 <lang><sil>osx</sil>	<iso>osx</iso></lang>
-<lang><sil>ota</sil>	<iso>ota</iso></lang>
 <lang><sil>ota</sil>	<iso>otz</iso></lang>
 <lang><sil>otb</sil>	<iso>otb</iso></lang>
 <lang><sil>otd</sil>	<iso>otd</iso></lang>
@@ -5942,30 +5591,23 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>pab</sil>	<iso>pab</iso></lang>
 <lang><sil>pac</sil>	<iso>pac</iso></lang>
 <lang><sil>pad</sil>	<iso>pad</iso></lang>
-<lang><sil>pae</sil>	<iso>pae</iso></lang>
 <lang><sil>pae</sil>	<iso>pap</iso></lang>
 <lang><sil>paf</sil>	<iso>paf</iso></lang>
 <lang><sil>pag</sil>	<iso>pae</iso></lang>
-<lang><sil>pag</sil>	<iso>pag</iso></lang>
 <lang><sil>pah</sil>	<iso>pah</iso></lang>
 <lang><sil>pai</sil>	<iso>pai</iso></lang>
 <lang><sil>paj</sil>	<iso>kpc</iso></lang>
 <lang><sil>pak</sil>	<iso>pak</iso></lang>
-<lang><sil>pal</sil>	<iso>pal</iso></lang>
 <lang><sil>pal</sil>	<iso>plu</iso></lang>
-<lang><sil>pam</sil>	<iso>pam</iso></lang>
 <lang><sil>pam</sil>	<iso>pmb</iso></lang>
-<lang><sil>pan</sil>	<iso>pan</iso></lang>
 <lang><sil>pan</sil>	<iso>pgs</iso></lang>
 <lang><sil>pao</sil>	<iso>pao</iso></lang>
 <lang><sil>pap</sil>	<iso>ood</iso></lang>
-<lang><sil>pap</sil>	<iso>pap</iso></lang>
 <lang><sil>paq</sil>	<iso>paq</iso></lang>
 <lang><sil>par</sil>	<iso>par</iso></lang>
 <lang><sil>pas</sil>	<iso>pas</iso></lang>
 <lang><sil>pat</sil>	<iso>pat</iso></lang>
 <lang><sil>pau</sil>	<iso>bvz</iso></lang>
-<lang><sil>pau</sil>	<iso>pau</iso></lang>
 <lang><sil>pav</sil>	<iso>pav</iso></lang>
 <lang><sil>paw</sil>	<iso>paw</iso></lang>
 <lang><sil>pax</sil>	<iso>pax</iso></lang>
@@ -6029,7 +5671,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>pel</sil>	<iso>pel</iso></lang>
 <lang><sil>pem</sil>	<iso>pem</iso></lang>
 <lang><sil>pen</sil>	<iso>mui</iso></lang>
-<lang><sil>peo</sil>	<iso>peo</iso></lang>
 <lang><sil>peo</sil>	<iso>pom</iso></lang>
 <lang><sil>pep</sil>	<iso>pep</iso></lang>
 <lang><sil>peq</sil>	<iso>peq</iso></lang>
@@ -6059,7 +5700,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>phk</sil>	<iso>phk</iso></lang>
 <lang><sil>phl</sil>	<iso>phl</iso></lang>
 <lang><sil>phm</sil>	<iso>phm</iso></lang>
-<lang><sil>phn</sil>	<iso>phn</iso></lang>
 <lang><sil>phn</sil>	<iso>phq</iso></lang>
 <lang><sil>pho</sil>	<iso>pho</iso></lang>
 <lang><sil>phq</sil>	<iso>phq</iso></lang>
@@ -6086,10 +5726,10 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>pin</sil>	<iso>pin</iso></lang>
 <lang><sil>pio</sil>	<iso>pio</iso></lang>
 <lang><sil>pip</sil>	<iso>pip</iso></lang>
-<lang><sil>piq</sil>	<iso>bca</iso></lang>
-<lang><sil>piq</sil>	<iso>bfc</iso></lang>
-<lang><sil>piq</sil>	<iso>bfs</iso></lang>
-<lang><sil>pir</sil>	<iso>pir</iso></lang>
+
+ <lang><sil>piq</sil>	<iso>bca</iso></lang>
+
+ <lang><sil>pir</sil>	<iso>pir</iso></lang>
 <lang><sil>pis</sil>	<iso>pis</iso></lang>
 <lang><sil>pit</sil>	<iso>pit</iso></lang>
 <lang><sil>piu</sil>	<iso>piu</iso></lang>
@@ -6120,11 +5760,9 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>plg</sil>	<iso>plg</iso></lang>
 <lang><sil>plh</sil>	<iso>plh</iso></lang>
 <lang><sil>pli</sil>	<iso>apo</iso></lang>
-<lang><sil>pli</sil>	<iso>pli</iso></lang>
 <lang><sil>plj</sil>	<iso>plj</iso></lang>
 <lang><sil>plk</sil>	<iso>plk</iso></lang>
 <lang><sil>pll</sil>	<iso>pli</iso></lang>
-<lang><sil>pll</sil>	<iso>pll</iso></lang>
 <lang><sil>plm</sil>	<iso>mui</iso></lang>
 <lang><sil>pln</sil>	<iso>pln</iso></lang>
 <lang><sil>plo</sil>	<iso>plo</iso></lang>
@@ -6134,7 +5772,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>pls</sil>	<iso>pls</iso></lang>
 <lang><sil>plt</sil>	<iso>plt</iso></lang>
 <lang><sil>plu</sil>	<iso>pau</iso></lang>
-<lang><sil>plu</sil>	<iso>plu</iso></lang>
 <lang><sil>plv</sil>	<iso>plv</iso></lang>
 <lang><sil>plw</sil>	<iso>plw</iso></lang>
 <lang><sil>plx</sil>	<iso>xmx</iso></lang>
@@ -6142,7 +5779,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>plz</sil>	<iso>plz</iso></lang>
 <lang><sil>pma</sil>	<iso>pma</iso></lang>
 <lang><sil>pmb</sil>	<iso>pia</iso></lang>
-<lang><sil>pmb</sil>	<iso>pmb</iso></lang>
 <lang><sil>pmc</sil>	<iso>pmc</iso></lang>
 <lang><sil>pme</sil>	<iso>pme</iso></lang>
 <lang><sil>pmf</sil>	<iso>pmf</iso></lang>
@@ -6170,7 +5806,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>pne</sil>	<iso>pne</iso></lang>
 <lang><sil>pnf</sil>	<iso>pon</iso></lang>
 <lang><sil>png</sil>	<iso>pag</iso></lang>
-<lang><sil>png</sil>	<iso>png</iso></lang>
 <lang><sil>pnh</sil>	<iso>pnh</iso></lang>
 <lang><sil>pni</sil>	<iso>pni</iso></lang>
 <lang><sil>pnj</sil>	<iso>pan</iso></lang>
@@ -6201,11 +5836,8 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>poj</sil>	<iso>pkb</iso></lang>
 <lang><sil>pok</sil>	<iso>pok</iso></lang>
 <lang><sil>pol</sil>	<iso>plj</iso></lang>
-<lang><sil>pol</sil>	<iso>pol</iso></lang>
 <lang><sil>pom</sil>	<iso>hmo</iso></lang>
-<lang><sil>pom</sil>	<iso>pom</iso></lang>
 <lang><sil>pon</sil>	<iso>png</iso></lang>
-<lang><sil>pon</sil>	<iso>pon</iso></lang>
 <lang><sil>poo</sil>	<iso>poo</iso></lang>
 <lang><sil>pop</sil>	<iso>pop</iso></lang>
 <lang><sil>poq</sil>	<iso>poq</iso></lang>
@@ -6247,7 +5879,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>prl</sil>	<iso>prl</iso></lang>
 <lang><sil>prm</sil>	<iso>prm</iso></lang>
 <lang><sil>prn</sil>	<iso>prn</iso></lang>
-<lang><sil>pro</sil>	<iso>pro</iso></lang>
 <lang><sil>pro</sil>	<iso>prz</iso></lang>
 <lang><sil>prp</sil>	<iso>prp</iso></lang>
 <lang><sil>prq</sil>	<iso>prq</iso></lang>
@@ -6267,10 +5898,11 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>pse</sil>	<iso>pse</iso></lang>
 <lang><sil>psg</sil>	<iso>psg</iso></lang>
 <lang><sil>psh</sil>	<iso>psh</iso></lang>
+
 <lang><sil>psi</sil>	<iso>ayq</iso></lang>
-<lang><sil>psi</sil>	<iso>psi</iso></lang>
-<lang><sil>psi</sil>	<iso>psq</iso></lang>
-<lang><sil>psl</sil>	<iso>psl</iso></lang>
+
+
+ <lang><sil>psl</sil>	<iso>psl</iso></lang>
 <lang><sil>psm</sil>	<iso>psm</iso></lang>
 <lang><sil>psn</sil>	<iso>psn</iso></lang>
 <lang><sil>pso</sil>	<iso>pso</iso></lang>
@@ -6312,7 +5944,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>puq</sil>	<iso>puq</iso></lang>
 <lang><sil>pur</sil>	<iso>pur</iso></lang>
 <lang><sil>pus</sil>	<iso>pmj</iso></lang>
-<lang><sil>pus</sil>	<iso>pus</iso></lang>
 <lang><sil>put</sil>	<iso>put</iso></lang>
 <lang><sil>puu</sil>	<iso>puu</iso></lang>
 <lang><sil>puw</sil>	<iso>puw</iso></lang>
@@ -6435,7 +6066,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>quc</sil>	<iso>quc</iso></lang>
 <lang><sil>qud</sil>	<iso>qud</iso></lang>
 <lang><sil>que</sil>	<iso>cqu</iso></lang>
-<lang><sil>que</sil>	<iso>que</iso></lang>
 <lang><sil>quf</sil>	<iso>quf</iso></lang>
 <lang><sil>qug</sil>	<iso>qug</iso></lang>
 <lang><sil>quh</sil>	<iso>quh</iso></lang>
@@ -6504,17 +6134,14 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>rah</sil>	<iso>rah</iso></lang>
 <lang><sil>rai</sil>	<iso>rai</iso></lang>
 <lang><sil>raj</sil>	<iso>mui</iso></lang>
-<lang><sil>raj</sil>	<iso>raj</iso></lang>
 <lang><sil>rak</sil>	<iso>rak</iso></lang>
 <lang><sil>ral</sil>	<iso>ral</iso></lang>
 <lang><sil>ram</sil>	<iso>ram</iso></lang>
 <lang><sil>ran</sil>	<iso>ran</iso></lang>
 <lang><sil>rao</sil>	<iso>rao</iso></lang>
-<lang><sil>rap</sil>	<iso>rap</iso></lang>
 <lang><sil>rap</sil>	<iso>rpt</iso></lang>
 <lang><sil>raq</sil>	<iso>raq</iso></lang>
 <lang><sil>rar</sil>	<iso>bhj</iso></lang>
-<lang><sil>rar</sil>	<iso>rar</iso></lang>
 <lang><sil>ras</sil>	<iso>ras</iso></lang>
 <lang><sil>rat</sil>	<iso>rat</iso></lang>
 <lang><sil>rau</sil>	<iso>rau</iso></lang>
@@ -6610,24 +6237,16 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>rof</sil>	<iso>rof</iso></lang>
 <lang><sil>rog</sil>	<iso>rog</iso></lang>
 <lang><sil>roh</sil>	<iso>rmx</iso></lang>
-<lang><sil>roh</sil>	<iso>roh</iso></lang>
 <lang><sil>rok</sil>	<iso>itr</iso></lang>
 <lang><sil>rol</sil>	<iso>rol</iso></lang>
 <lang><sil>rom</sil>	<iso>rml</iso></lang>
-<lang><sil>rom</sil>	<iso>rom</iso></lang>
 <lang><sil>ron</sil>	<iso>rng</iso></lang>
-<lang><sil>ron</sil>	<iso>ron</iso></lang>
 <lang><sil>roo</sil>	<iso>roo</iso></lang>
 <lang><sil>rop</sil>	<iso>rop</iso></lang>
 <lang><sil>ror</sil>	<iso>ror</iso></lang>
 
 <lang><sil>rot</sil>	<iso>twu</iso></lang>
-<!--<lang><sil>rot</sil>	<iso>bpz</iso></lang>
-<lang><sil>rot</sil>	<iso>dnk</iso></lang>
-<lang><sil>rot</sil>	<iso>llg</iso></lang>
-<lang><sil>rot</sil>	<iso>rgu</iso></lang>
-<lang><sil>rot</sil>	<iso>txq</iso></lang>
--->
+
  
  <lang><sil>rou</sil>	<iso>rou</iso></lang>
 <lang><sil>row</sil>	<iso>row</iso></lang>
@@ -6656,7 +6275,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>ruk</sil>	<iso>ruk</iso></lang>
 <lang><sil>rum</sil>	<iso>ron</iso></lang>
 <lang><sil>run</sil>	<iso>rna</iso></lang>
-<lang><sil>run</sil>	<iso>run</iso></lang>
 <lang><sil>ruo</sil>	<iso>ruo</iso></lang>
 <lang><sil>rup</sil>	<iso>rup</iso></lang>
 <lang><sil>ruq</sil>	<iso>ruq</iso></lang>
@@ -6680,36 +6298,27 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>saa</sil>	<iso>saa</iso></lang>
 <lang><sil>sab</sil>	<iso>sab</iso></lang>
 <lang><sil>sac</sil>	<iso>sac</iso></lang>
-<lang><sil>sad</sil>	<iso>sad</iso></lang>
 <lang><sil>sad</sil>	<iso>sjb</iso></lang>
 <lang><sil>sae</sil>	<iso>sae</iso></lang>
 <lang><sil>saf</sil>	<iso>saf</iso></lang>
-<lang><sil>sag</sil>	<iso>sag</iso></lang>
 <lang><sil>sag</sil>	<iso>sak</iso></lang>
-<lang><sil>sah</sil>	<iso>sah</iso></lang>
 <lang><sil>sah</sil>	<iso>srt</iso></lang>
 <lang><sil>sai</sil>	<iso>xsy</iso></lang>
 <lang><sil>saj</sil>	<iso>sag</iso></lang>
-<lang><sil>saj</sil>	<iso>saj</iso></lang>
-<lang><sil>sak</sil>	<iso>sak</iso></lang>
 <lang><sil>sak</sil>	<iso>sel</iso></lang>
 <lang><sil>sal</sil>	<iso>sln</iso></lang>
-<lang><sil>sam</sil>	<iso>sam</iso></lang>
 <lang><sil>sam</sil>	<iso>xsu</iso></lang>
-<lang><sil>san</sil>	<iso>san</iso></lang>
 <lang><sil>san</sil>	<iso>sxn</iso></lang>
 <lang><sil>sao</sil>	<iso>sao</iso></lang>
 <lang><sil>sap</sil>	<iso>sap</iso></lang>
 <lang><sil>saq</sil>	<iso>saq</iso></lang>
 <lang><sil>sar</sil>	<iso>sar</iso></lang>
 <lang><sil>sas</sil>	<iso>sas</iso></lang>
-<lang><sil>sat</sil>	<iso>sat</iso></lang>
 <lang><sil>sat</sil>	<iso>skt</iso></lang>
 <lang><sil>sau</sil>	<iso>sau</iso></lang>
 <lang><sil>sav</sil>	<iso>sav</iso></lang>
 <lang><sil>saw</sil>	<iso>saw</iso></lang>
 <lang><sil>sax</sil>	<iso>eng</iso></lang>
-<lang><sil>sax</sil>	<iso>sax</iso></lang>
 <lang><sil>say</sil>	<iso>say</iso></lang>
 <lang><sil>saz</sil>	<iso>saz</iso></lang>
 <lang><sil>sba</sil>	<iso>sba</iso></lang>
@@ -6730,12 +6339,10 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>sbp</sil>	<iso>sbp</iso></lang>
 <lang><sil>sbq</sil>	<iso>sbq</iso></lang>
 <lang><sil>sbr</sil>	<iso>sad</iso></lang>
-<lang><sil>sbr</sil>	<iso>sbr</iso></lang>
 <lang><sil>sbs</sil>	<iso>sbs</iso></lang>
 <lang><sil>sbt</sil>	<iso>sbt</iso></lang>
 <lang><sil>sbu</sil>	<iso>sbu</iso></lang>
 <lang><sil>sbv</sil>	<iso>jax</iso></lang>
-<lang><sil>sbv</sil>	<iso>sbv</iso></lang>
 <lang><sil>sbw</sil>	<iso>sbw</iso></lang>
 <lang><sil>sbx</sil>	<iso>sbx</iso></lang>
 <lang><sil>sby</sil>	<iso>sby</iso></lang>
@@ -6743,9 +6350,9 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>sc</sil>	<iso>srd</iso></lang>
 <lang><sil>sca</sil>	<iso>sca</iso></lang>
 <lang><sil>scb</sil>	<iso>scb</iso></lang>
-<lang><sil>scc</sil>	<iso>srp</iso></lang>
-<lang><sil>scc</sil>	<iso>srp</iso></lang>
-<lang><sil>scc</sil>	<iso>sxm</iso></lang>
+
+<lang><sil>scc</sil>	<iso>hbs</iso></lang>
+
 <lang><sil>sce</sil>	<iso>sce</iso></lang>
 <lang><sil>scf</sil>	<iso>scf</iso></lang>
 <lang><sil>scg</sil>	<iso>scg</iso></lang>
@@ -6757,10 +6364,11 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>sco</sil>	<iso>sco</iso></lang>
 <lang><sil>scp</sil>	<iso>scp</iso></lang>
 <lang><sil>scq</sil>	<iso>scq</iso></lang>
-<lang><sil>scr</sil>	<iso>hrv</iso></lang>
-<lang><sil>scr</sil>	<iso>hrv</iso></lang>
-<lang><sil>scr</sil>	<iso>xsr</iso></lang>
-<lang><sil>scs</sil>	<iso>scs</iso></lang>
+
+<lang><sil>scr</sil>	<iso>hbs</iso></lang>
+
+
+ <lang><sil>scs</sil>	<iso>scs</iso></lang>
 <lang><sil>scu</sil>	<iso>scu</iso></lang>
 <lang><sil>scv</sil>	<iso>scv</iso></lang>
 <lang><sil>scw</sil>	<iso>scw</iso></lang>
@@ -6800,7 +6408,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>sei</sil>	<iso>sei</iso></lang>
 <lang><sil>sej</sil>	<iso>sej</iso></lang>
 <lang><sil>sek</sil>	<iso>sek</iso></lang>
-<lang><sil>sel</sil>	<iso>sel</iso></lang>
 <lang><sil>sel</sil>	<iso>spl</iso></lang>
 <lang><sil>sem</sil>	<iso>xse</iso></lang>
 <lang><sil>sen</sil>	<iso>sen</iso></lang>
@@ -6808,7 +6415,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>sep</sil>	<iso>sep</iso></lang>
 <lang><sil>seq</sil>	<iso>seq</iso></lang>
 <lang><sil>ser</sil>	<iso>ser</iso></lang>
-<lang><sil>ses</sil>	<iso>ses</iso></lang>
 <lang><sil>ses</sil>	<iso>srr</iso></lang>
 <lang><sil>set</sil>	<iso>set</iso></lang>
 <lang><sil>seu</sil>	<iso>seu</iso></lang>
@@ -6821,7 +6427,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>sfs</sil>	<iso>sfs</iso></lang>
 <lang><sil>sfw</sil>	<iso>sfw</iso></lang>
 <lang><sil>sg</sil>	<iso>sag</iso></lang>
-<lang><sil>sga</sil>	<iso>sga</iso></lang>
 <lang><sil>sga</sil>	<iso>xsn</iso></lang>
 <lang><sil>sgb</sil>	<iso>sgb</iso></lang>
 <lang><sil>sgc</sil>	<iso>sgc</iso></lang>
@@ -6855,7 +6460,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>shk</sil>	<iso>shk</iso></lang>
 <lang><sil>shl</sil>	<iso>shl</iso></lang>
 <lang><sil>shm</sil>	<iso>shm</iso></lang>
-<lang><sil>shn</sil>	<iso>shn</iso></lang>
 <lang><sil>shn</sil>	<iso>snh</iso></lang>
 <lang><sil>sho</sil>	<iso>sho</iso></lang>
 <lang><sil>shp</sil>	<iso>shp</iso></lang>
@@ -6884,7 +6488,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>sik</sil>	<iso>sik</iso></lang>
 <lang><sil>sil</sil>	<iso>sil</iso></lang>
 <lang><sil>sim</sil>	<iso>sim</iso></lang>
-<lang><sil>sin</sil>	<iso>sin</iso></lang>
 <lang><sil>sin</sil>	<iso>snn</iso></lang>
 <lang><sil>sio</sil>	<iso>xsi</iso></lang>
 <lang><sil>sip</sil>	<iso>sip</iso></lang>
@@ -6907,7 +6510,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>sjl</sil>	<iso>sjl</iso></lang>
 <lang><sil>sjm</sil>	<iso>sjm</iso></lang>
 <lang><sil>sjn</sil>	<iso>shn</iso></lang>
-<lang><sil>sjn</sil>	<iso>sjn</iso></lang>
 <lang><sil>sjo</sil>	<iso>sjo</iso></lang>
 <lang><sil>sjp</sil>	<iso>sjp</iso></lang>
 <lang><sil>sjr</sil>	<iso>sjr</iso></lang>
@@ -6936,7 +6538,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>skr</sil>	<iso>skr</iso></lang>
 <lang><sil>sks</sil>	<iso>sks</iso></lang>
 <lang><sil>skt</sil>	<iso>san</iso></lang>
-<lang><sil>skt</sil>	<iso>skt</iso></lang>
 <lang><sil>sku</sil>	<iso>sku</iso></lang>
 <lang><sil>skv</sil>	<iso>skv</iso></lang>
 <lang><sil>skw</sil>	<iso>skw</iso></lang>
@@ -6954,12 +6555,10 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>slh</sil>	<iso>slh</iso></lang>
 <lang><sil>sli</sil>	<iso>sli</iso></lang>
 <lang><sil>slj</sil>	<iso>slj</iso></lang>
-<lang><sil>slk</sil>	<iso>slk</iso></lang>
 <lang><sil>slk</sil>	<iso>sua</iso></lang>
 <lang><sil>sll</sil>	<iso>sll</iso></lang>
 <lang><sil>slm</sil>	<iso>slm</iso></lang>
 <lang><sil>sln</sil>	<iso>chu</iso></lang>
-<lang><sil>sln</sil>	<iso>sln</iso></lang>
 <lang><sil>slo</sil>	<iso>slk</iso></lang>
 <lang><sil>slp</sil>	<iso>slp</iso></lang>
 <lang><sil>slq</sil>	<iso>slq</iso></lang>
@@ -6974,29 +6573,23 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>slz</sil>	<iso>slz</iso></lang>
 <lang><sil>sm</sil>	<iso>smo</iso></lang>
 <lang><sil>sma</sil>	<iso>sbr</iso></lang>
-<lang><sil>sma</sil>	<iso>sma</iso></lang>
 <lang><sil>smb</sil>	<iso>smb</iso></lang>
 <lang><sil>smc</sil>	<iso>smc</iso></lang>
 <lang><sil>smd</sil>	<iso>smd</iso></lang>
 <lang><sil>sme</sil>	<iso>scf</iso></lang>
-<lang><sil>sme</sil>	<iso>sme</iso></lang>
 <lang><sil>smf</sil>	<iso>smf</iso></lang>
 <lang><sil>smg</sil>	<iso>smg</iso></lang>
 <lang><sil>smh</sil>	<iso>smh</iso></lang>
 <lang><sil>smi</sil>	<iso>xbr</iso></lang>
-<lang><sil>smj</sil>	<iso>smj</iso></lang>
 <lang><sil>smj</sil>	<iso>smy</iso></lang>
 <lang><sil>smk</sil>	<iso>smk</iso></lang>
 <lang><sil>sml</sil>	<iso>sml</iso></lang>
 <lang><sil>smm</sil>	<iso>smm</iso></lang>
 <lang><sil>smn</sil>	<iso>pse</iso></lang>
-<lang><sil>smn</sil>	<iso>smn</iso></lang>
-<lang><sil>smo</sil>	<iso>smo</iso></lang>
 <lang><sil>smo</sil>	<iso>swm</iso></lang>
 <lang><sil>smp</sil>	<iso>smp</iso></lang>
 <lang><sil>smq</sil>	<iso>smq</iso></lang>
 <lang><sil>smr</sil>	<iso>smr</iso></lang>
-<lang><sil>sms</sil>	<iso>sms</iso></lang>
 <lang><sil>sms</sil>	<iso>sts</iso></lang>
 <lang><sil>smt</sil>	<iso>smt</iso></lang>
 <lang><sil>smu</sil>	<iso>smu</iso></lang>
@@ -7004,10 +6597,8 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>smw</sil>	<iso>smw</iso></lang>
 <lang><sil>smx</sil>	<iso>smx</iso></lang>
 <lang><sil>smy</sil>	<iso>smo</iso></lang>
-<lang><sil>smy</sil>	<iso>smy</iso></lang>
 <lang><sil>smz</sil>	<iso>smz</iso></lang>
 <lang><sil>sn</sil>	<iso>sna</iso></lang>
-<lang><sil>sna</sil>	<iso>sna</iso></lang>
 <lang><sil>sna</sil>	<iso>xsb</iso></lang>
 <lang><sil>snb</sil>	<iso>snb</iso></lang>
 <lang><sil>snc</sil>	<iso>snc</iso></lang>
@@ -7016,16 +6607,12 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>snf</sil>	<iso>snf</iso></lang>
 <lang><sil>sng</sil>	<iso>sng</iso></lang>
 <lang><sil>snh</sil>	<iso>sin</iso></lang>
-<lang><sil>snh</sil>	<iso>snh</iso></lang>
 <lang><sil>sni</sil>	<iso>sni</iso></lang>
 <lang><sil>snj</sil>	<iso>snj</iso></lang>
 <lang><sil>snk</sil>	<iso>sdz</iso></lang>
-<lang><sil>snk</sil>	<iso>snk</iso></lang>
 <lang><sil>snl</sil>	<iso>snl</iso></lang>
 <lang><sil>snm</sil>	<iso>div</iso></lang>
-<lang><sil>snm</sil>	<iso>snm</iso></lang>
 <lang><sil>snn</sil>	<iso>snk</iso></lang>
-<lang><sil>snn</sil>	<iso>snn</iso></lang>
 <lang><sil>sno</sil>	<iso>sno</iso></lang>
 <lang><sil>snp</sil>	<iso>snp</iso></lang>
 <lang><sil>snq</sil>	<iso>snq</iso></lang>
@@ -7045,7 +6632,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>sod</sil>	<iso>sod</iso></lang>
 <lang><sil>soe</sil>	<iso>soe</iso></lang>
 <lang><sil>sof</sil>	<iso>tbz</iso></lang>
-<lang><sil>sog</sil>	<iso>sog</iso></lang>
 <lang><sil>sog</sil>	<iso>xog</iso></lang>
 <lang><sil>soh</sil>	<iso>soh</iso></lang>
 <lang><sil>soi</sil>	<iso>soi</iso></lang>
@@ -7059,7 +6645,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>soq</sil>	<iso>soq</iso></lang>
 <lang><sil>sor</sil>	<iso>sor</iso></lang>
 <lang><sil>sos</sil>	<iso>sos</iso></lang>
-<lang><sil>sot</sil>	<iso>sot</iso></lang>
 <lang><sil>sot</sil>	<iso>xsp</iso></lang>
 <lang><sil>sou</sil>	<iso>sou</iso></lang>
 <lang><sil>sov</sil>	<iso>sov</iso></lang>
@@ -7102,16 +6687,12 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>squ</sil>	<iso>squ</iso></lang>
 <lang><sil>sr</sil>	<iso>srp</iso></lang>
 <lang><sil>sra</sil>	<iso>sam</iso></lang>
-<lang><sil>sra</sil>	<iso>sra</iso></lang>
 <lang><sil>srb</sil>	<iso>srb</iso></lang>
 
- <lang><sil>src</sil>	<iso>srp</iso></lang>
-<!--<lang><sil>src</sil>	<iso>bos</iso></lang>
-<lang><sil>src</sil>	<iso>hrv</iso></lang>
--->
+ 
+
 
  <lang><sil>srd</sil>	<iso>src</iso></lang>
-<lang><sil>srd</sil>	<iso>srd</iso></lang>
 <lang><sil>sre</sil>	<iso>sre</iso></lang>
 <lang><sil>srf</sil>	<iso>srf</iso></lang>
 <lang><sil>srg</sil>	<iso>srg</iso></lang>
@@ -7124,13 +6705,10 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>srn</sil>	<iso>srn</iso></lang>
 <lang><sil>sro</sil>	<iso>sro</iso></lang>
 <lang><sil>srp</sil>	<iso>sra</iso></lang>
-<lang><sil>srp</sil>	<iso>srp</iso></lang>
 <lang><sil>srq</sil>	<iso>srq</iso></lang>
 <lang><sil>srr</sil>	<iso>nab</iso></lang>
-<lang><sil>srr</sil>	<iso>srr</iso></lang>
 <lang><sil>srs</sil>	<iso>srs</iso></lang>
 <lang><sil>srt</sil>	<iso>nso</iso></lang>
-<lang><sil>srt</sil>	<iso>srt</iso></lang>
 <lang><sil>sru</sil>	<iso>sru</iso></lang>
 <lang><sil>srv</sil>	<iso>srv</iso></lang>
 <lang><sil>srw</sil>	<iso>srw</iso></lang>
@@ -7142,10 +6720,7 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>ssb</sil>	<iso>ssb</iso></lang>
 
  <lang><sil>ssc</sil>	<iso>ssc</iso></lang>
- <!--<lang><sil>ssc</sil>	<iso>env</iso></lang>
-<lang><sil>ssc</sil>	<iso>igw</iso></lang>
-<lang><sil>ssc</sil>	<iso>sxs</iso></lang>
- -->
+ 
  
  <lang><sil>ssd</sil>	<iso>ssd</iso></lang>
 <lang><sil>sse</sil>	<iso>sse</iso></lang>
@@ -7159,7 +6734,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>ssm</sil>	<iso>ssm</iso></lang>
 <lang><sil>ssn</sil>	<iso>ssn</iso></lang>
 <lang><sil>sso</sil>	<iso>sot</iso></lang>
-<lang><sil>sso</sil>	<iso>sso</iso></lang>
 <lang><sil>ssp</sil>	<iso>ssp</iso></lang>
 <lang><sil>ssq</sil>	<iso>ssq</iso></lang>
 <lang><sil>ssr</sil>	<iso>ssr</iso></lang>
@@ -7168,7 +6742,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>ssu</sil>	<iso>ssu</iso></lang>
 <lang><sil>ssv</sil>	<iso>ssv</iso></lang>
 <lang><sil>ssw</sil>	<iso>sso</iso></lang>
-<lang><sil>ssw</sil>	<iso>ssw</iso></lang>
 <lang><sil>ssx</sil>	<iso>ssx</iso></lang>
 <lang><sil>ssy</sil>	<iso>ssy</iso></lang>
 <lang><sil>ssz</sil>	<iso>ssz</iso></lang>
@@ -7193,13 +6766,11 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>stq</sil>	<iso>stq</iso></lang>
 <lang><sil>str</sil>	<iso>str</iso></lang>
 <lang><sil>sts</sil>	<iso>guw</iso></lang>
-<lang><sil>sts</sil>	<iso>sts</iso></lang>
 <lang><sil>stt</sil>	<iso>stt</iso></lang>
 <lang><sil>stu</sil>	<iso>stu</iso></lang>
 <lang><sil>stv</sil>	<iso>stv</iso></lang>
 <lang><sil>stw</sil>	<iso>stw</iso></lang>
 <lang><sil>su</sil>	<iso>sun</iso></lang>
-<lang><sil>sua</sil>	<iso>sua</iso></lang>
 <lang><sil>sua</sil>	<iso>suk</iso></lang>
 <lang><sil>sub</sil>	<iso>sub</iso></lang>
 <lang><sil>suc</sil>	<iso>suc</iso></lang>
@@ -7212,24 +6783,20 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>suh</sil>	<iso>sxb</iso></lang>
 <lang><sil>sui</sil>	<iso>sui</iso></lang>
 <lang><sil>suj</sil>	<iso>suj</iso></lang>
-<lang><sil>suk</sil>	<iso>suk</iso></lang>
 <lang><sil>suk</sil>	<iso>syk</iso></lang>
 <lang><sil>sul</sil>	<iso>sul</iso></lang>
 <lang><sil>sum</sil>	<iso>sum</iso></lang>
 <lang><sil>sun</sil>	<iso>sjg</iso></lang>
-<lang><sil>sun</sil>	<iso>sun</iso></lang>
 <lang><sil>suo</sil>	<iso>sun</iso></lang>
 <lang><sil>sup</sil>	<iso>kur</iso></lang>
 <lang><sil>suq</sil>	<iso>suq</iso></lang>
 <lang><sil>sur</sil>	<iso>sur</iso></lang>
-<lang><sil>sus</sil>	<iso>sus</iso></lang>
 <lang><sil>sus</sil>	<iso>syb</iso></lang>
 <lang><sil>sut</sil>	<iso>sut</iso></lang>
 <lang><sil>suu</sil>	<iso>ljp</iso></lang>
 <lang><sil>suv</sil>	<iso>suv</iso></lang>
 <lang><sil>suw</sil>	<iso>suw</iso></lang>
 <lang><sil>sux</sil>	<iso>saj</iso></lang>
-<lang><sil>sux</sil>	<iso>sux</iso></lang>
 <lang><sil>suy</sil>	<iso>suy</iso></lang>
 <lang><sil>suz</sil>	<iso>suz</iso></lang>
 <lang><sil>sv</sil>	<iso>swe</iso></lang>
@@ -7245,16 +6812,13 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>svs</sil>	<iso>svs</iso></lang>
 <lang><sil>svx</sil>	<iso>svx</iso></lang>
 <lang><sil>sw</sil>	<iso>swa</iso></lang>
-<lang><sil>swa</sil>	<iso>swa</iso></lang>
 <lang><sil>swa</sil>	<iso>swh</iso></lang>
 <lang><sil>swb</sil>	<iso>swb</iso></lang>
 <lang><sil>swc</sil>	<iso>swc</iso></lang>
 <lang><sil>swd</sil>	<iso>swe</iso></lang>
 <lang><sil>swe</sil>	<iso>pll</iso></lang>
-<lang><sil>swe</sil>	<iso>swe</iso></lang>
 <lang><sil>swf</sil>	<iso>swf</iso></lang>
 <lang><sil>swg</sil>	<iso>swg</iso></lang>
-<lang><sil>swh</sil>	<iso>swh</iso></lang>
 <lang><sil>swh</sil>	<iso>sws</iso></lang>
 <lang><sil>swi</sil>	<iso>swi</iso></lang>
 <lang><sil>swj</sil>	<iso>swj</iso></lang>
@@ -7266,10 +6830,12 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>swp</sil>	<iso>swp</iso></lang>
 <lang><sil>swq</sil>	<iso>swq</iso></lang>
 <lang><sil>swr</sil>	<iso>swr</iso></lang>
-<lang><sil>sws</sil>	<iso>sws</iso></lang>
-<lang><sil>sws</sil>	<iso>wlc</iso></lang>
-<lang><sil>sws</sil>	<iso>zdj</iso></lang>
-<lang><sil>swt</sil>	<iso>swt</iso></lang>
+
+ <lang><sil>sws</sil>	<iso>zdj</iso></lang>
+
+
+
+ <lang><sil>swt</sil>	<iso>swt</iso></lang>
 <lang><sil>swu</sil>	<iso>swu</iso></lang>
 <lang><sil>swv</sil>	<iso>swv</iso></lang>
 <lang><sil>sww</sil>	<iso>sww</iso></lang>
@@ -7284,7 +6850,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>sxl</sil>	<iso>sxl</iso></lang>
 <lang><sil>sxm</sil>	<iso>sxm</iso></lang>
 <lang><sil>sxn</sil>	<iso>nds</iso></lang>
-<lang><sil>sxn</sil>	<iso>sxn</iso></lang>
 <lang><sil>sxo</sil>	<iso>sxo</iso></lang>
 <lang><sil>sxr</sil>	<iso>sxr</iso></lang>
 <lang><sil>sxs</sil>	<iso>sxs</iso></lang>
@@ -7299,7 +6864,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>sym</sil>	<iso>sym</iso></lang>
 <lang><sil>syn</sil>	<iso>syn</iso></lang>
 <lang><sil>syo</sil>	<iso>syo</iso></lang>
-<lang><sil>syr</sil>	<iso>syr</iso></lang>
 <lang><sil>syr</sil>	<iso>tru</iso></lang>
 <lang><sil>sys</sil>	<iso>sys</iso></lang>
 <lang><sil>syu</sil>	<iso>mui</iso></lang>
@@ -7326,23 +6890,19 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>tae</sil>	<iso>tae</iso></lang>
 <lang><sil>taf</sil>	<iso>taf</iso></lang>
 <lang><sil>tag</sil>	<iso>tag</iso></lang>
-<lang><sil>tah</sil>	<iso>tah</iso></lang>
 <lang><sil>tah</sil>	<iso>tht</iso></lang>
 <lang><sil>tai</sil>	<iso>tpj</iso></lang>
 <lang><sil>taj</sil>	<iso>taj</iso></lang>
 <lang><sil>tak</sil>	<iso>tak</iso></lang>
 <lang><sil>tal</sil>	<iso>tal</iso></lang>
-<lang><sil>tam</sil>	<iso>tam</iso></lang>
 <lang><sil>tam</sil>	<iso>tpm</iso></lang>
 <lang><sil>tan</sil>	<iso>tan</iso></lang>
-<lang><sil>tao</sil>	<iso>tao</iso></lang>
 <lang><sil>tao</sil>	<iso>twf</iso></lang>
 <lang><sil>tap</sil>	<iso>tap</iso></lang>
 <lang><sil>taq</sil>	<iso>taq</iso></lang>
 <lang><sil>tar</sil>	<iso>tar</iso></lang>
 <lang><sil>tas</sil>	<iso>tas</iso></lang>
 <lang><sil>tat</sil>	<iso>jdt</iso></lang>
-<lang><sil>tat</sil>	<iso>tat</iso></lang>
 <lang><sil>tau</sil>	<iso>tau</iso></lang>
 <lang><sil>tav</sil>	<iso>tav</iso></lang>
 <lang><sil>taw</sil>	<iso>taw</iso></lang>
@@ -7384,7 +6944,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>tcg</sil>	<iso>tcg</iso></lang>
 <lang><sil>tch</sil>	<iso>tch</iso></lang>
 <lang><sil>tci</sil>	<iso>tci</iso></lang>
-<lang><sil>tck</sil>	<iso>tck</iso></lang>
 <lang><sil>tck</sil>	<iso>tuk</iso></lang>
 <lang><sil>tcl</sil>	<iso>tcl</iso></lang>
 <lang><sil>tcm</sil>	<iso>tcm</iso></lang>
@@ -7397,7 +6956,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>tct</sil>	<iso>tct</iso></lang>
 <lang><sil>tcu</sil>	<iso>tcu</iso></lang>
 <lang><sil>tcv</sil>	<iso>tam</iso></lang>
-<lang><sil>tcw</sil>	<iso>tcw</iso></lang>
 <lang><sil>tcw</sil>	<iso>tel</iso></lang>
 <lang><sil>tcx</sil>	<iso>tcx</iso></lang>
 <lang><sil>tcy</sil>	<iso>tcy</iso></lang>
@@ -7424,15 +6982,11 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>tdx</sil>	<iso>tdx</iso></lang>
 <lang><sil>tdy</sil>	<iso>tdy</iso></lang>
 <lang><sil>te</sil>	<iso>tel</iso></lang>
-<lang><sil>tea</sil>	<iso>tea</iso></lang>
 <lang><sil>tea</sil>	<iso>ter</iso></lang>
 <lang><sil>teb</sil>	<iso>teb</iso></lang>
 
  <lang><sil>tec</sil>	<iso>nzu</iso></lang>
- <!--<lang><sil>tec</sil>	<iso>ebo</iso></lang>
-<lang><sil>tec</sil>	<iso>tec</iso></lang>
-<lang><sil>tec</sil>	<iso>tyx</iso></lang>
- -->
+ 
  
  <lang><sil>ted</sil>	<iso>ted</iso></lang>
 <lang><sil>tee</sil>	<iso>tee</iso></lang>
@@ -7442,28 +6996,26 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>tei</sil>	<iso>tei</iso></lang>
 <lang><sil>tej</sil>	<iso>tem</iso></lang>
 <lang><sil>tek</sil>	<iso>tek</iso></lang>
-<lang><sil>tel</sil>	<iso>tel</iso></lang>
 <lang><sil>tel</sil>	<iso>tll</iso></lang>
-<lang><sil>tem</sil>	<iso>tem</iso></lang>
 <lang><sil>tem</sil>	<iso>tqb</iso></lang>
 <lang><sil>ten</sil>	<iso>ten</iso></lang>
 <lang><sil>teo</sil>	<iso>teo</iso></lang>
 <lang><sil>tep</sil>	<iso>tep</iso></lang>
 <lang><sil>teq</sil>	<iso>teq</iso></lang>
-<lang><sil>ter</sil>	<iso>ter</iso></lang>
 <lang><sil>ter</sil>	<iso>ttr</iso></lang>
 <lang><sil>tes</sil>	<iso>tes</iso></lang>
 <lang><sil>tet</sil>	<iso>atj</iso></lang>
-<lang><sil>tet</sil>	<iso>tet</iso></lang>
 <lang><sil>teu</sil>	<iso>teu</iso></lang>
 <lang><sil>tev</sil>	<iso>tev</iso></lang>
 <lang><sil>tew</sil>	<iso>tew</iso></lang>
 <lang><sil>tex</sil>	<iso>tex</iso></lang>
 <lang><sil>tey</sil>	<iso>tey</iso></lang>
-<lang><sil>tez</sil>	<iso>iyx</iso></lang>
-<lang><sil>tez</sil>	<iso>lli</iso></lang>
-<lang><sil>tez</sil>	<iso>tyi</iso></lang>
-<lang><sil>tfi</sil>	<iso>tfi</iso></lang>
+
+ <lang><sil>tez</sil>	<iso>tyi</iso></lang>
+ 
+
+
+ <lang><sil>tfi</sil>	<iso>tfi</iso></lang>
 <lang><sil>tfn</sil>	<iso>tfn</iso></lang>
 <lang><sil>tfo</sil>	<iso>tfo</iso></lang>
 <lang><sil>tfr</sil>	<iso>tfr</iso></lang>
@@ -7479,7 +7031,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>tgh</sil>	<iso>tgh</iso></lang>
 <lang><sil>tgi</sil>	<iso>tgi</iso></lang>
 <lang><sil>tgk</sil>	<iso>bdx</iso></lang>
-<lang><sil>tgk</sil>	<iso>tgk</iso></lang>
 <lang><sil>tgl</sil>	<iso>tgl</iso></lang>
 <lang><sil>tgn</sil>	<iso>tir</iso></lang>
 <lang><sil>tgo</sil>	<iso>tgo</iso></lang>
@@ -7494,7 +7045,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>tgx</sil>	<iso>tgx</iso></lang>
 <lang><sil>tgy</sil>	<iso>tgy</iso></lang>
 <lang><sil>th</sil>	<iso>tha</iso></lang>
-<lang><sil>tha</sil>	<iso>tha</iso></lang>
 <lang><sil>tha</sil>	<iso>thk</iso></lang>
 <lang><sil>thb</sil>	<iso>gbm</iso></lang>
 <lang><sil>thc</sil>	<iso>thc</iso></lang>
@@ -7508,7 +7058,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>thk</sil>	<iso>thk</iso></lang>
 <lang><sil>thl</sil>	<iso>thl</iso></lang>
 <lang><sil>thm</sil>	<iso>thm</iso></lang>
-<lang><sil>thn</sil>	<iso>thn</iso></lang>
 <lang><sil>thn</sil>	<iso>thq</iso></lang>
 <lang><sil>tho</sil>	<iso>pdi</iso></lang>
 <lang><sil>tho</sil>	<iso>tyz</iso></lang>
@@ -7517,7 +7066,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>thr</sil>	<iso>thr</iso></lang>
 <lang><sil>ths</sil>	<iso>ths</iso></lang>
 <lang><sil>tht</sil>	<iso>tah</iso></lang>
-<lang><sil>tht</sil>	<iso>tht</iso></lang>
 <lang><sil>thu</sil>	<iso>thu</iso></lang>
 <lang><sil>thv</sil>	<iso>thv</iso></lang>
 <lang><sil>thw</sil>	<iso>thw</iso></lang>
@@ -7529,13 +7077,10 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>tib</sil>	<iso>bod</iso></lang>
 <lang><sil>tib</sil>	<iso>tov</iso></lang>
 <lang><sil>tic</sil>	<iso>bod</iso></lang>
-<lang><sil>tic</sil>	<iso>tic</iso></lang>
 <lang><sil>tid</sil>	<iso>tid</iso></lang>
-<lang><sil>tie</sil>	<iso>tie</iso></lang>
 <lang><sil>tie</sil>	<iso>tig</iso></lang>
 <lang><sil>tif</sil>	<iso>tif</iso></lang>
 <lang><sil>tig</sil>	<iso>tie</iso></lang>
-<lang><sil>tig</sil>	<iso>tig</iso></lang>
 <lang><sil>tih</sil>	<iso>tih</iso></lang>
 <lang><sil>tii</sil>	<iso>tii</iso></lang>
 <lang><sil>tij</sil>	<iso>tij</iso></lang>
@@ -7547,7 +7092,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>tip</sil>	<iso>tip</iso></lang>
 <lang><sil>tiq</sil>	<iso>tiq</iso></lang>
 <lang><sil>tir</sil>	<iso>tic</iso></lang>
-<lang><sil>tir</sil>	<iso>tir</iso></lang>
 <lang><sil>tis</sil>	<iso>tis</iso></lang>
 <lang><sil>tit</sil>	<iso>tit</iso></lang>
 <lang><sil>tiu</sil>	<iso>tiu</iso></lang>
@@ -7572,7 +7116,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>tkf</sil>	<iso>tkf</iso></lang>
 <lang><sil>tkk</sil>	<iso>tkk</iso></lang>
 <lang><sil>tkl</sil>	<iso>lpo</iso></lang>
-<lang><sil>tkl</sil>	<iso>tkl</iso></lang>
 <lang><sil>tkm</sil>	<iso>tkm</iso></lang>
 <lang><sil>tkn</sil>	<iso>tkn</iso></lang>
 <lang><sil>tko</sil>	<iso>opk</iso></lang>
@@ -7594,14 +7137,14 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>tlf</sil>	<iso>tlf</iso></lang>
 <lang><sil>tlg</sil>	<iso>tlg</iso></lang>
 <lang><sil>tlh</sil>	<iso>guw</iso></lang>
-<lang><sil>tlh</sil>	<iso>tlh</iso></lang>
 <lang><sil>tli</sil>	<iso>tli</iso></lang>
 <lang><sil>tlj</sil>	<iso>tlj</iso></lang>
 <lang><sil>tlk</sil>	<iso>tlk</iso></lang>
-<lang><sil>tll</sil>	<iso>tcf</iso></lang>
-<lang><sil>tll</sil>	<iso>tll</iso></lang>
-<lang><sil>tll</sil>	<iso>tpl</iso></lang>
-<lang><sil>tlm</sil>	<iso>tlm</iso></lang>
+
+ <lang><sil>tll</sil>	<iso>tcf</iso></lang>
+
+
+ <lang><sil>tlm</sil>	<iso>tlm</iso></lang>
 <lang><sil>tln</sil>	<iso>tln</iso></lang>
 <lang><sil>tlo</sil>	<iso>tlo</iso></lang>
 <lang><sil>tlp</sil>	<iso>tlp</iso></lang>
@@ -7623,7 +7166,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>tmf</sil>	<iso>tmf</iso></lang>
 <lang><sil>tmg</sil>	<iso>tmg</iso></lang>
 <lang><sil>tmh</sil>	<iso>tea</iso></lang>
-<lang><sil>tmh</sil>	<iso>tmh</iso></lang>
 <lang><sil>tmi</sil>	<iso>tmi</iso></lang>
 <lang><sil>tmj</sil>	<iso>tmj</iso></lang>
 <lang><sil>tmk</sil>	<iso>tmk</iso></lang>
@@ -7633,10 +7175,12 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>tmo</sil>	<iso>tmo</iso></lang>
 <lang><sil>tmp</sil>	<iso>tmp</iso></lang>
 <lang><sil>tmq</sil>	<iso>tmq</iso></lang>
-<lang><sil>tmr</sil>	<iso>aoz</iso></lang>
-<lang><sil>tmr</sil>	<iso>bkx</iso></lang>
-<lang><sil>tmr</sil>	<iso>tmr</iso></lang>
-<lang><sil>tms</sil>	<iso>tms</iso></lang>
+
+ <lang><sil>tmr</sil>	<iso>aoz</iso></lang>
+
+
+ 
+ <lang><sil>tms</sil>	<iso>tms</iso></lang>
 <lang><sil>tmt</sil>	<iso>tmt</iso></lang>
 <lang><sil>tmu</sil>	<iso>tmu</iso></lang>
 <lang><sil>tmv</sil>	<iso>tmv</iso></lang>
@@ -7685,7 +7229,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>tok</sil>	<iso>tkl</iso></lang>
 <lang><sil>tol</sil>	<iso>tol</iso></lang>
 <lang><sil>tom</sil>	<iso>tom</iso></lang>
-<lang><sil>ton</sil>	<iso>ton</iso></lang>
 <lang><sil>ton</sil>	<iso>tqw</iso></lang>
 <lang><sil>too</sil>	<iso>too</iso></lang>
 <lang><sil>top</sil>	<iso>top</iso></lang>
@@ -7696,7 +7239,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>tot</sil>	<iso>tku</iso></lang>
 <lang><sil>tou</sil>	<iso>tou</iso></lang>
 <lang><sil>tov</sil>	<iso>ton</iso></lang>
-<lang><sil>tov</sil>	<iso>tov</iso></lang>
 <lang><sil>tow</sil>	<iso>tow</iso></lang>
 <lang><sil>tox</sil>	<iso>tox</iso></lang>
 <lang><sil>toy</sil>	<iso>toy</iso></lang>
@@ -7706,7 +7248,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>tpe</sil>	<iso>tpe</iso></lang>
 <lang><sil>tpf</sil>	<iso>tpf</iso></lang>
 <lang><sil>tpg</sil>	<iso>tpg</iso></lang>
-<lang><sil>tpi</sil>	<iso>tpi</iso></lang>
 <lang><sil>tpi</sil>	<iso>tqo</iso></lang>
 <lang><sil>tpj</sil>	<iso>tpj</iso></lang>
 <lang><sil>tpk</sil>	<iso>tpk</iso></lang>
@@ -7757,7 +7298,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>trs</sil>	<iso>trs</iso></lang>
 <lang><sil>trt</sil>	<iso>trt</iso></lang>
 <lang><sil>tru</sil>	<iso>chk</iso></lang>
-<lang><sil>tru</sil>	<iso>tru</iso></lang>
 <lang><sil>trv</sil>	<iso>trv</iso></lang>
 <lang><sil>trw</sil>	<iso>trw</iso></lang>
 <lang><sil>trx</sil>	<iso>trx</iso></lang>
@@ -7777,7 +7317,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>tsk</sil>	<iso>tsk</iso></lang>
 <lang><sil>tsl</sil>	<iso>tsl</iso></lang>
 <lang><sil>tsm</sil>	<iso>tsm</iso></lang>
-<lang><sil>tsn</sil>	<iso>tsn</iso></lang>
 <lang><sil>tsn</sil>	<iso>xel</iso></lang>
 <lang><sil>tso</sil>	<iso>tso</iso></lang>
 <lang><sil>tsp</sil>	<iso>tsp</iso></lang>
@@ -7785,14 +7324,11 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>tsr</sil>	<iso>tsr</iso></lang>
 <lang><sil>tss</sil>	<iso>tss</iso></lang>
 <lang><sil>tst</sil>	<iso>mxw</iso></lang>
-<lang><sil>tsu</sil>	<iso>tsu</iso></lang>
 <lang><sil>tsu</sil>	<iso>wme</iso></lang>
 <lang><sil>tsv</sil>	<iso>tsv</iso></lang>
 <lang><sil>tsw</sil>	<iso>tsn</iso></lang>
-<lang><sil>tsw</sil>	<iso>tsw</iso></lang>
 <lang><sil>tsx</sil>	<iso>tsx</iso></lang>
 <lang><sil>tsy</sil>	<iso>tsu</iso></lang>
-<lang><sil>tsy</sil>	<iso>tsy</iso></lang>
 <lang><sil>tsz</sil>	<iso>tsz</iso></lang>
 <lang><sil>tt</sil>	<iso>tat</iso></lang>
 <lang><sil>tta</sil>	<iso>tta</iso></lang>
@@ -7808,13 +7344,11 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>ttk</sil>	<iso>ttk</iso></lang>
 <lang><sil>ttl</sil>	<iso>ttl</iso></lang>
 <lang><sil>ttm</sil>	<iso>tet</iso></lang>
-<lang><sil>ttm</sil>	<iso>ttm</iso></lang>
 <lang><sil>ttn</sil>	<iso>ttn</iso></lang>
 <lang><sil>tto</sil>	<iso>tto</iso></lang>
 <lang><sil>ttp</sil>	<iso>ttp</iso></lang>
 <lang><sil>ttq</sil>	<iso>ttq</iso></lang>
 <lang><sil>ttr</sil>	<iso>tat</iso></lang>
-<lang><sil>ttr</sil>	<iso>ttr</iso></lang>
 <lang><sil>tts</sil>	<iso>tts</iso></lang>
 <lang><sil>ttt</sil>	<iso>ttt</iso></lang>
 <lang><sil>ttu</sil>	<iso>ttu</iso></lang>
@@ -7833,17 +7367,13 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>tuh</sil>	<iso>tuh</iso></lang>
 <lang><sil>tui</sil>	<iso>tui</iso></lang>
 <lang><sil>tuj</sil>	<iso>tuj</iso></lang>
-<lang><sil>tuk</sil>	<iso>tuk</iso></lang>
 <lang><sil>tuk</sil>	<iso>tun</iso></lang>
 <lang><sil>tul</sil>	<iso>tul</iso></lang>
 <lang><sil>tum</sil>	<iso>tqp</iso></lang>
-<lang><sil>tum</sil>	<iso>tum</iso></lang>
-<lang><sil>tun</sil>	<iso>tun</iso></lang>
 <lang><sil>tun</sil>	<iso>tyv</iso></lang>
 <lang><sil>tuo</sil>	<iso>tuo</iso></lang>
 <lang><sil>tup</sil>	<iso>tpr</iso></lang>
 <lang><sil>tuq</sil>	<iso>tuq</iso></lang>
-<lang><sil>tur</sil>	<iso>tur</iso></lang>
 <lang><sil>tur</sil>	<iso>xed</iso></lang>
 <lang><sil>tus</sil>	<iso>tus</iso></lang>
 <lang><sil>tut</sil>	<iso>ttm</iso></lang>
@@ -7858,7 +7388,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>tve</sil>	<iso>tve</iso></lang>
 <lang><sil>tvk</sil>	<iso>tvk</iso></lang>
 <lang><sil>tvl</sil>	<iso>nlc</iso></lang>
-<lang><sil>tvl</sil>	<iso>tvl</iso></lang>
 <lang><sil>tvm</sil>	<iso>tvm</iso></lang>
 <lang><sil>tvn</sil>	<iso>tvn</iso></lang>
 <lang><sil>tvo</sil>	<iso>tvo</iso></lang>
@@ -7957,7 +7486,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>ufi</sil>	<iso>ufi</iso></lang>
 <lang><sil>ug</sil>	<iso>uig</iso></lang>
 <lang><sil>uga</sil>	<iso>lle</iso></lang>
-<lang><sil>uga</sil>	<iso>uga</iso></lang>
 <lang><sil>ugb</sil>	<iso>ugb</iso></lang>
 <lang><sil>uge</sil>	<iso>uge</iso></lang>
 <lang><sil>ugn</sil>	<iso>ugn</iso></lang>
@@ -7994,7 +7522,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>ulu</sil>	<iso>ulu</iso></lang>
 <lang><sil>uma</sil>	<iso>uma</iso></lang>
 <lang><sil>umb</sil>	<iso>ubu</iso></lang>
-<lang><sil>umb</sil>	<iso>umb</iso></lang>
 <lang><sil>umc</sil>	<iso>umc</iso></lang>
 <lang><sil>umd</sil>	<iso>umd</iso></lang>
 <lang><sil>umg</sil>	<iso>umg</iso></lang>
@@ -8064,7 +7591,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>uwa</sil>	<iso>uwa</iso></lang>
 <lang><sil>uya</sil>	<iso>uya</iso></lang>
 <lang><sil>uz</sil>	<iso>uzb</iso></lang>
-<lang><sil>uzb</sil>	<iso>uzb</iso></lang>
 <lang><sil>uzb</sil>	<iso>uzn</iso></lang>
 <lang><sil>uzn</sil>	<iso>uzn</iso></lang>
 <lang><sil>uzs</sil>	<iso>uzs</iso></lang>
@@ -8186,7 +7712,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>wai</sil>	<iso>wai</iso></lang>
 <lang><sil>waj</sil>	<iso>waj</iso></lang>
 <lang><sil>wak</sil>	<iso>wgi</iso></lang>
-<lang><sil>wal</sil>	<iso>wal</iso></lang>
 <lang><sil>wal</sil>	<iso>wls</iso></lang>
 <lang><sil>wam</sil>	<iso>wam</iso></lang>
 <lang><sil>wan</sil>	<iso>wan</iso></lang>
@@ -8194,7 +7719,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>wap</sil>	<iso>wap</iso></lang>
 <lang><sil>waq</sil>	<iso>waq</iso></lang>
 <lang><sil>war</sil>	<iso>tqn</iso></lang>
-<lang><sil>war</sil>	<iso>war</iso></lang>
 <lang><sil>was</sil>	<iso>was</iso></lang>
 <lang><sil>wat</sil>	<iso>wat</iso></lang>
 <lang><sil>wau</sil>	<iso>wau</iso></lang>
@@ -8289,12 +7813,10 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>wlk</sil>	<iso>wlk</iso></lang>
 <lang><sil>wll</sil>	<iso>wll</iso></lang>
 <lang><sil>wlm</sil>	<iso>wlm</iso></lang>
-<lang><sil>wln</sil>	<iso>wln</iso></lang>
 <lang><sil>wln</sil>	<iso>wnb</iso></lang>
 <lang><sil>wlo</sil>	<iso>wlo</iso></lang>
 <lang><sil>wlr</sil>	<iso>wlr</iso></lang>
 <lang><sil>wls</sil>	<iso>cym</iso></lang>
-<lang><sil>wls</sil>	<iso>wls</iso></lang>
 <lang><sil>wlu</sil>	<iso>wlu</iso></lang>
 <lang><sil>wlv</sil>	<iso>wlv</iso></lang>
 <lang><sil>wlw</sil>	<iso>wlw</iso></lang>
@@ -8362,7 +7884,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>wrw</sil>	<iso>wrw</iso></lang>
 <lang><sil>wrx</sil>	<iso>wrx</iso></lang>
 <lang><sil>wry</sil>	<iso>war</iso></lang>
-<lang><sil>wry</sil>	<iso>wry</iso></lang>
 <lang><sil>wrz</sil>	<iso>wrz</iso></lang>
 <lang><sil>wsa</sil>	<iso>wsa</iso></lang>
 <lang><sil>wsi</sil>	<iso>wsi</iso></lang>
@@ -8473,7 +7994,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>xho</sil>	<iso>xho</iso></lang>
 <lang><sil>xhr</sil>	<iso>xhr</iso></lang>
 <lang><sil>xht</sil>	<iso>xht</iso></lang>
-<lang><sil>xhu</sil>	<iso>xhu</iso></lang>
 <lang><sil>xhu</sil>	<iso>xhv</iso></lang>
 <lang><sil>xhv</sil>	<iso>xhv</iso></lang>
 <lang><sil>xia</sil>	<iso>xia</iso></lang>
@@ -8530,7 +8050,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>xmc</sil>	<iso>xmc</iso></lang>
 <lang><sil>xmd</sil>	<iso>xmd</iso></lang>
 <lang><sil>xme</sil>	<iso>kxo</iso></lang>
-<lang><sil>xme</sil>	<iso>xme</iso></lang>
 <lang><sil>xmf</sil>	<iso>xmf</iso></lang>
 <lang><sil>xmg</sil>	<iso>xmg</iso></lang>
 <lang><sil>xmh</sil>	<iso>xmh</iso></lang>
@@ -8540,17 +8059,18 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>xml</sil>	<iso>xml</iso></lang>
 <lang><sil>xmm</sil>	<iso>xmm</iso></lang>
 <lang><sil>xmn</sil>	<iso>ncr</iso></lang>
-<lang><sil>xmn</sil>	<iso>xmn</iso></lang>
 <lang><sil>xmo</sil>	<iso>xmo</iso></lang>
 <lang><sil>xmp</sil>	<iso>xmp</iso></lang>
 <lang><sil>xmq</sil>	<iso>xmq</iso></lang>
 <lang><sil>xmr</sil>	<iso>xmr</iso></lang>
 <lang><sil>xms</sil>	<iso>xms</iso></lang>
 <lang><sil>xmt</sil>	<iso>xmt</iso></lang>
-<lang><sil>xmu</sil>	<iso>msh</iso></lang>
-<lang><sil>xmu</sil>	<iso>tdx</iso></lang>
-<lang><sil>xmu</sil>	<iso>xmu</iso></lang>
-<lang><sil>xmv</sil>	<iso>xmv</iso></lang>
+
+
+ <lang><sil>xmu</sil>	<iso>tdx</iso></lang>
+ 
+
+ <lang><sil>xmv</sil>	<iso>xmv</iso></lang>
 <lang><sil>xmw</sil>	<iso>xmw</iso></lang>
 <lang><sil>xmx</sil>	<iso>xmx</iso></lang>
 <lang><sil>xmy</sil>	<iso>xmy</iso></lang>
@@ -8752,12 +8272,8 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>yib</sil>	<iso>eng</iso></lang>
 <lang><sil>yic</sil>	<iso>ycl</iso></lang>
 <lang><sil>yid</sil>	<iso>xwg</iso></lang>
-<lang><sil>yid</sil>	<iso>yid</iso></lang>
-
- <lang><sil>yie</sil>	<iso>ysn</iso></lang>
- <!--<lang><sil>yie</sil>	<iso>yiu</iso></lang>
-<lang><sil>yie</sil>	<iso>yix</iso></lang>
-<lang><sil>yie</sil>	<iso>yiz</iso></lang>-->
+<lang><sil>yie</sil>	<iso>ysn</iso></lang>
+ 
 
  <lang><sil>yif</sil>	<iso>yif</iso></lang>
 <lang><sil>yig</sil>	<iso>yig</iso></lang>
@@ -8810,13 +8326,8 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>ymg</sil>	<iso>ymg</iso></lang>
 <lang><sil>ymh</sil>	<iso>ymh</iso></lang>
 <lang><sil>ymi</sil>	<iso>tao</iso></lang>
-<lang><sil>ymi</sil>	<iso>ymi</iso></lang>
-
 <lang><sil>ymj</sil>	<iso>ymc</iso></lang>
-<!--<lang><sil>ymj</sil>	<iso>ymi</iso></lang>
-<lang><sil>ymj</sil>	<iso>ymq</iso></lang>
-<lang><sil>ymj</sil>	<iso>ymx</iso></lang>
-<lang><sil>ymj</sil>	<iso>ymz</iso></lang>-->
+
 
   <lang><sil>ymk</sil>	<iso>ymk</iso></lang>
 <lang><sil>yml</sil>	<iso>yml</iso></lang>
@@ -8857,18 +8368,20 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>ypb</sil>	<iso>ypb</iso></lang>
 <lang><sil>ypg</sil>	<iso>ypg</iso></lang>
 <lang><sil>yph</sil>	<iso>yph</iso></lang>
-<lang><sil>ypl</sil>	<iso>ypa</iso></lang>
-<lang><sil>ypl</sil>	<iso>ypg</iso></lang>
-<lang><sil>ypl</sil>	<iso>ypo</iso></lang>
-<lang><sil>ypm</sil>	<iso>ypm</iso></lang>
+
+ <lang><sil>ypl</sil>	<iso>ypg</iso></lang>
+ 
+ 
+ <lang><sil>ypm</sil>	<iso>ypm</iso></lang>
 <lang><sil>ypn</sil>	<iso>ypn</iso></lang>
 <lang><sil>ypo</sil>	<iso>ypo</iso></lang>
 <lang><sil>ypp</sil>	<iso>ypp</iso></lang>
 <lang><sil>yps</sil>	<iso>yap</iso></lang>
+
 <lang><sil>ypw</sil>	<iso>yhl</iso></lang>
-<lang><sil>ypw</sil>	<iso>ypb</iso></lang>
-<lang><sil>ypw</sil>	<iso>ypn</iso></lang>
-<lang><sil>ypz</sil>	<iso>ypz</iso></lang>
+
+
+ <lang><sil>ypz</sil>	<iso>ypz</iso></lang>
 <lang><sil>yra</sil>	<iso>yra</iso></lang>
 <lang><sil>yrb</sil>	<iso>yrb</iso></lang>
 <lang><sil>yre</sil>	<iso>yre</iso></lang>
@@ -8895,7 +8408,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>yub</sil>	<iso>yub</iso></lang>
 <lang><sil>yuc</sil>	<iso>yuc</iso></lang>
 <lang><sil>yud</sil>	<iso>yud</iso></lang>
-<lang><sil>yue</sil>	<iso>yue</iso></lang>
 <lang><sil>yue</sil>	<iso>yuz</iso></lang>
 <lang><sil>yuf</sil>	<iso>yuf</iso></lang>
 <lang><sil>yug</sil>	<iso>yug</iso></lang>
@@ -8950,7 +8462,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>zam</sil>	<iso>zam</iso></lang>
 <lang><sil>zan</sil>	<iso>zne</iso></lang>
 <lang><sil>zao</sil>	<iso>zao</iso></lang>
-<lang><sil>zap</sil>	<iso>zap</iso></lang>
 <lang><sil>zap</sil>	<iso>zca</iso></lang>
 <lang><sil>zaq</sil>	<iso>zaq</iso></lang>
 <lang><sil>zar</sil>	<iso>zar</iso></lang>
@@ -8980,7 +8491,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>zgn</sil>	<iso>zgn</iso></lang>
 <lang><sil>zgr</sil>	<iso>zgr</iso></lang>
 <lang><sil>zh</sil>	<iso>zho</iso></lang>
-<lang><sil>zha</sil>	<iso>zha</iso></lang>
 <lang><sil>zha</sil>	<iso>zhb</iso></lang>
 <lang><sil>zhb</sil>	<iso>zhb</iso></lang>
 <lang><sil>zhd</sil>	<iso>zhd</iso></lang>
@@ -9109,7 +8619,6 @@ should be stressed that in such situations the best solution is to provide a non
 <lang><sil>zua</sil>	<iso>zua</iso></lang>
 <lang><sil>zuh</sil>	<iso>zuh</iso></lang>
 <lang><sil>zul</sil>	<iso>gnd</iso></lang>
-<lang><sil>zul</sil>	<iso>zul</iso></lang>
 <lang><sil>zum</sil>	<iso>zum</iso></lang>
 <lang><sil>zun</sil>	<iso>zun</iso></lang>
 <lang><sil>zuu</sil>	<iso>zul</iso></lang>

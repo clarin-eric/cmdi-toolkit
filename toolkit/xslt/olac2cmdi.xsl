@@ -157,16 +157,16 @@
         <language>
             <xsl:attribute name="olac-language">
                 <!-- can be enabled when there is a 1-to-1 mapping in sil_to_iso6393.xml           -->
-               <!-- <xsl:choose>
+                <xsl:choose>
                     <xsl:when test="contains(@*:code, 'x-sil-')">
                         <xsl:apply-templates select="$lang-top">
                             <xsl:with-param name="curr-label" select="."/>
                         </xsl:apply-templates>
                     </xsl:when>
-                    <xsl:otherwise>-->
+                    <xsl:otherwise>
                         <xsl:value-of select="@*:code"/>
-                  <!--  </xsl:otherwise>
-                </xsl:choose>-->
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:attribute>
         </language>
     </xsl:template>
@@ -186,16 +186,16 @@
         <subject>
             <!-- can be enabled when there is a 1-to-1 mapping in sil_to_iso6393.xml           -->
             <xsl:attribute name="olac-language">
-               <!-- <xsl:choose>
+                <xsl:choose>
                     <xsl:when test="contains(@*:code, 'x-sil-')">
                         <xsl:apply-templates select="$lang-top">
                             <xsl:with-param name="curr-label" select="."/>
                         </xsl:apply-templates>
                     </xsl:when>
-                    <xsl:otherwise>-->
+                    <xsl:otherwise>
                         <xsl:value-of select="@*:code"/>
-                  <!--  </xsl:otherwise>
-                </xsl:choose>-->
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:attribute>
         </subject>
     </xsl:template>

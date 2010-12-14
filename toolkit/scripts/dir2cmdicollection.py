@@ -30,18 +30,25 @@ def main():
 		os.mkdir(target_dir)
 	
 	if not simple_dir_structure:
-		for root, dirs, files in os.walk(os.getcwd()):
-			startpath = os.getcwd()		
-			for d in dirs:
-				if d == "0":
-					rootList.append(generate_branch(root, dirs))
+		root = os.getcwd()		
+		dirs = filter (os.path.isdir, os.listdir(root))		
+		dirs.remove(target_dir.replace("/",""))
+		#for root, dirs, files in os.walk(os.getcwd()):
+		print dirs		
+		for d in dirs:		
+			rootList.append(generate_branch(root, [d], d))
+			#startpath = os.getcwd()		
+			#for d in dirs:
+				#if d == "0":
+				
 	else:
 		rootList.append(generate_branch(os.getcwd(), [""], "lrt_inventory"))
 	writeCollection(rootList, "collection_root.cmdi", "olac-root")
 
-def generate_branch(root, dirs):
-	collectionName = os.path.relpath(root)
-	return generate_branch(root, dirs, collectionName)
+#def generate_branch(root, dirs):
+#	collectionName = os.path.relpath(root)
+#	print collectionName
+#	return generate_branch(root, dirs, collectionName)
 
 def generate_branch(root, dirs, collectionName):
 	#collectionName = os.path.relpath(root)
@@ -51,6 +58,7 @@ def generate_branch(root, dirs, collectionName):
 	collectionList = []	
 	for d in dirs:
 		fullpath = os.path.join(root, d)
+		print fullpath
 		for file in os.listdir(fullpath):
 			if ".cmdi" in file:
 				newFile = os.path.relpath(os.path.join(fullpath,file))

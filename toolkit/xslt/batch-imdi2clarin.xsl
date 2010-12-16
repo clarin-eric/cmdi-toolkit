@@ -51,15 +51,6 @@
             <Corpus>
                 <xsl:apply-templates select="child::Name"/>
                 <xsl:apply-templates select="child::Title"/>
-                <xsl:if test="exists(child::CorpusLink)">
-                    <xsl:for-each select="CorpusLink">
-                        <CorpusLink>
-                            <!--<xsl:attribute name="ArchiveHandle" select="@ArchiveHandle"/>-->
-                            <xsl:attribute name="Name" select="@Name"/>
-                            <xsl:value-of select="."/>
-                        </CorpusLink>
-                    </xsl:for-each>
-                </xsl:if>
                 <xsl:if test="exists(child::Description)">
                     <descriptions>
                         <xsl:for-each select="Description">
@@ -69,6 +60,17 @@
                             </Description>
                         </xsl:for-each>
                     </descriptions>
+                </xsl:if>
+                <xsl:if test="exists(child::CorpusLink)">
+                    <xsl:for-each select="CorpusLink">
+                        <CorpusLink>
+                            <CorpusLinkContent>
+                                <!--<xsl:attribute name="ArchiveHandle" select="@ArchiveHandle"/>-->
+                                <xsl:attribute name="Name" select="@Name"/>
+                                <xsl:value-of select="."/>
+                            </CorpusLinkContent>
+                        </CorpusLink>
+                    </xsl:for-each>
                 </xsl:if>
             </Corpus>
         </imdi-corpus>

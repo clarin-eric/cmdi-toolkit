@@ -203,6 +203,18 @@ class CmdiFile:
         # and now fill it
         self.fillElement("//LrtLexiconDetails/Date", record["field_date_0"])
         
+    def addResourceProxy(self, link):
+        template = '''<ResourceProxy id="reflink">
+                <ResourceType>Resource</ResourceType>
+                <ResourceRef></ResourceRef>
+            </ResourceProxy>'''
+        partTree = ElementTree.fromstring(template)
+        parent = self.xmlTree.find("//ResourceProxyList")
+        parent.append(partTree)
+        
+        # and now fill it
+        self.fillElement("//ResourceProxy/ResourceRef", link)
+        
 
 def addChildNode(parent, tag, content):
     node = ElementTree.Element(tag)
@@ -269,7 +281,7 @@ def main():
         cmdi.fillElement("//LrtCommon/MetadataLink", record["field_metadata_link"])
         cmdi.fillElement("//LrtCommon/Publications", record["field_publications"])
         cmdi.fillElement("//LrtCommon/ReadilyAvailable", record["field_resource_available"].replace("Yes","true").replace("No","false"))
-	cmdi.fillElement("//LrtCommon/ReferenceLink", record["field_reference_link"])
+        cmdi.fillElement("//LrtCommon/ReferenceLink", record["field_reference_link"])
 
         cmdi.fillElement("//LrtDistributionClassification/DistributionType", record["distribution_type"])
         cmdi.fillElement("//LrtDistributionClassification/ModificationsRequireRedeposition", record["modifications_require_redeposition"].replace("1","true").replace("0","false"))
@@ -282,6 +294,10 @@ def main():
         cmdi.fillElement("//LrtIPR/LicenseType", record["field_license_type"])
         cmdi.fillElement("//LrtIPR/Description", record["field_description_0"])
         cmdi.fillElement("//LrtIPR/ContactPerson", record["field_contact_person"])
+        
+        # add a ResourceProxy for ReferenceLink
+        if "http" in record["field_reference_link"]:
+            cmdi.addResourceProxy(record["field_reference_link"])
         
         # more sophisticated (dirty) tricks needed
         cmdi.addFormats(record["field_format"])

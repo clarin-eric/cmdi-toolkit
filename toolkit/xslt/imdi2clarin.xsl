@@ -711,4 +711,14 @@
             </xsl:if>
         </References>
     </xsl:template>
+    
+    <xsl:template name="main">
+        <xsl:for-each
+            select="collection('file:///home/paucas/corpus_copy/corpus_copy/data/corpora?select=*.imdi;recurse=yes;on-error=ignore')">
+            <xsl:result-document href="{document-uri(.)}.cmdi">
+                <xsl:apply-templates select="."/>
+            </xsl:result-document>
+        </xsl:for-each>
+    </xsl:template>
+    
 </xsl:stylesheet>

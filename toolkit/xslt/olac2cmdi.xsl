@@ -40,7 +40,9 @@
                 <MdProfile>clarin.eu:cr1:p_1288172614026</MdProfile>
             </Header>
             <Resources>
-                <ResourceProxyList/>
+                <ResourceProxyList>
+                    <xsl:apply-templates select="//dc:identifier" mode="preprocess"/>
+                </ResourceProxyList>
                 <JournalFileProxyList/>
                 <ResourceRelationList/>
             </Resources>
@@ -185,6 +187,17 @@
     </xsl:template>
 
 
+    <xsl:template match="dc:identifier" mode="preprocess">
+  
+        <xsl:if test="contains(., 'http://')">
+        <ResourceProxy>
+            <xsl:attribute name="id"><xsl:value-of select="generate-id()"/></xsl:attribute>
+            <ResourceType>Resource</ResourceType>
+            <ResourceRef><xsl:value-of select="."/></ResourceRef>
+        </ResourceProxy>
+        </xsl:if>
+     
+    </xsl:template>
 
 
     <xsl:template match="dc:subject[@xsi:type='olac:language']" priority="3">

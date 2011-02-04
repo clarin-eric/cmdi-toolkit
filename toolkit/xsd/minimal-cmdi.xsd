@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns="http://www.clarin.eu/cmd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dcr="http://www.isocat.org" targetNamespace="http://www.clarin.eu/cmd" attributeFormDefault="unqualified" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dcr="http://www.isocat.org" targetNamespace="http://www.clarin.eu/cmd/" attributeFormDefault="unqualified" elementFormDefault="qualified">
 
    <xs:element name="CMD">
       <xs:complexType>
@@ -28,20 +28,12 @@
                                              <xs:restriction base="xs:string">
                                                 <xs:enumeration value="Metadata">
                                                    <xs:annotation>
-                                                      <xs:documentation>The ResourceProxy
-                                                  refers to another component
-                                                  metadata instance (e.g. for
-                                                  grouping metadata descriptions
-                                                  into
-                                                  collections)</xs:documentation>
+                                                      <xs:documentation>The ResourceProxy refers to another component metadata instance (e.g. for grouping metadata descriptions into collections)</xs:documentation>
                                                    </xs:annotation>
                                                 </xs:enumeration>
                                                 <xs:enumeration value="Resource">
                                                    <xs:annotation>
-                                                      <xs:documentation>The ResourceProxy
-                                                  refers to a file that is not a
-                                                  metadata instance (e.g. a text
-                                                  document)</xs:documentation>
+                                                      <xs:documentation>The ResourceProxy refers to a file that is not a metadata instance (e.g. a text document)</xs:documentation>
                                                    </xs:annotation>
                                                 </xs:enumeration>
                                              </xs:restriction>
@@ -102,9 +94,13 @@
                </xs:complexType>
             </xs:element>
             <xs:element name="Components">
-               
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:any namespace="##targetNamespace" minOccurs="1" maxOccurs="unbounded" processContents="lax"/>
+                  </xs:sequence>
+               </xs:complexType>
             </xs:element>
-            
+
          </xs:sequence>
       </xs:complexType>
 

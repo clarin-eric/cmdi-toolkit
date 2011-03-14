@@ -10,10 +10,10 @@
     <xsl:template name="metatranscriptDelegate">
         <xsl:param name="profile"></xsl:param>
         <Header>
-            <MdSelfLink>test-<xsl:value-of select="@ArchiveHandle"/></MdSelfLink>
             <MdCreator>imdi2clarin.xsl</MdCreator>
+            <MdCreationDate><xsl:value-of select="format-date(current-date(), '[Y]-[M01]-[D01]')"/></MdCreationDate>
+            <MdSelfLink>test-<xsl:value-of select="@ArchiveHandle"/></MdSelfLink>
             <MdProfile><xsl:value-of select="$profile"/></MdProfile>
-            <MdCreationDate><xsl:value-of select="format-date(current-date(), '[Y]-[M]-[D]')"/></MdCreationDate>
         </Header>
         <Resources>
             <ResourceProxyList>

@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
+<xsl:stylesheet xmlns="http://www.clarin.eu/cmd/" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
     xpath-default-namespace="http://www.mpi.nl/IMDI/Schema/IMDI">
     <!-- this is a version of imdi2clarin.xsl that batch processes a whole directory structure of imdi files, call it from the command line like this:
         java -jar saxon8.jar -it main batch-imdi2clarin.xsl
         the last template in this file has to be modified to reflect the actual directory name
--->
+    -->
     <xsl:output method="xml" indent="yes"/>
-
+    
     <xsl:template name="metatranscriptDelegate">
+        <xsl:param name="profile"></xsl:param>
         <Header>
             <MdSelfLink>test-<xsl:value-of select="@ArchiveHandle"/></MdSelfLink>
+            <MdCreator>imdi2clarin.xsl</MdCreator>
+            <MdProfile><xsl:value-of select="$profile"/></MdProfile>
+            <MdCreationDate><xsl:value-of select="format-date(current-date(), '[Y]-[M]-[D]')"/></MdCreationDate>
         </Header>
         <Resources>
             <ResourceProxyList>
@@ -24,27 +28,34 @@
             <xsl:apply-templates select="Corpus"/>
         </Components>
     </xsl:template>
-
+    
     <xsl:template match="METATRANSCRIPT">
         <xsl:choose>
-            <xsl:when test=".[@Type='SESSION']">
-                <CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                    xsi:schemaLocation="http://www.clarin.eu/cmd http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1271859438204/xsd">
-                    <xsl:call-template name="metatranscriptDelegate"/>
+            <xsl:when test=".[@Type='SESSION'] or .[@Type='SESSION.Profile']">
+                <CMD CMDVersion="1.1"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1271859438204/xsd">
+                    <xsl:call-template name="metatranscriptDelegate">
+                        <xsl:with-param name="profile">clarin.eu:cr1:p_1271859438204</xsl:with-param>
+                    </xsl:call-template>
                 </CMD>
             </xsl:when>
-            <xsl:when test=".[@Type='CORPUS']">
-                <CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                    xsi:schemaLocation="http://www.clarin.eu/cmd http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1274880881885/xsd">
-                    <xsl:call-template name="metatranscriptDelegate"/>
+            <xsl:when test=".[@Type='CORPUS'] or .[@Type='CORPUS.Profile']">
+                <CMD CMDVersion="1.1"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1274880881885/xsd">
+                    <xsl:call-template name="metatranscriptDelegate">
+                        <xsl:with-param name="profile">clarin.eu:cr1:p_1274880881885</xsl:with-param>
+                    </xsl:call-template>
                 </CMD>
             </xsl:when>
             <xsl:otherwise>
-                <!--                Currently we are only processing 'SESSION' and 'CORPUS' types.-->
+                <!--                Currently we are only processing 'SESSION' and 'CORPUS' types. The error displayed can be used to filter out erroneous files after processing-->
+                ERROR: Invalid METATRANSCRIPT Type!
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-
+    
 
     <xsl:template match="Corpus">
         <imdi-corpus>

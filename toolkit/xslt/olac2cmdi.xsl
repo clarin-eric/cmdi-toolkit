@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<xsl:stylesheet xmlns="http://www.clarin.eu/cmd/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
     xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/"
     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
@@ -17,8 +17,8 @@
     <xsl:variable name="lang-top" select="document('sil_to_iso6393.xml')/languages"/>
 
     <xsl:template match="/">
-        <CMD
-            xsi:schemaLocation="http://www.clarin.eu/cmd http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1288172614026/xsd">
+        <CMD CMDVersion="1.1"
+            xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1288172614026/xsd">
             <Header>
                 <MdCreator>olac2cmdi.xsl</MdCreator>
                 <MdCreationDate>

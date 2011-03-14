@@ -8,6 +8,8 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dcr="http://www.isocat.org/ns/dcr"
     xmlns:ann="http://www.clarin.eu">
+    
+    <xsl:variable name="CMDVersion" select="'1.1'"/>
 
     <xsl:strip-space elements="*"/>
     <xsl:include href="comp2schema-header.xsl"/>
@@ -54,7 +56,7 @@
     <!-- generate XSD -->
     <xsl:template match="/CMD_ComponentSpec">
 
-        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dcr="http://www.isocat.org/ns/dcr">
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dcr="http://www.isocat.org/ns/dcr" xmlns:cmd="http://www.clarin.eu/cmd/" targetNamespace="http://www.clarin.eu/cmd/" elementFormDefault="qualified">
 
             <!-- import this for the use of the xml:lang attribute -->
             <xs:import namespace="http://www.w3.org/XML/1998/namespace"
@@ -70,7 +72,7 @@
 
             <xs:element name="CMD">
                 <xs:complexType>
-
+                    
                     <xs:sequence>
 
                         <!-- Produce (fixed) header elements (description and resources)-->
@@ -89,6 +91,10 @@
 
                         <!-- Generate the footer -->
                     </xs:sequence>
+                    
+                    <!-- CMD version -->
+                    <xs:attribute name="CMDVersion" fixed="{$CMDVersion}" use="required"/>
+                    
                 </xs:complexType>
             </xs:element>
         </xs:schema>
@@ -129,7 +135,7 @@
         <!--  then auto-derive a complextype for the attributes -->
         <xs:complexType name="complextype{$uniquePath}">
             <xs:simpleContent>
-                <xs:extension base="simpletype{$uniquePath}">
+                <xs:extension base="cmd:simpletype{$uniquePath}">
                     <!-- now look at the attribute list of the CMD_Element parent of this ValueScheme-->
                     <xsl:apply-templates select="parent::node()/AttributeList/Attribute"/>
                     <!--<xs:attribute name="attributeName" type="xs:anyURI"/>-->
@@ -286,7 +292,7 @@
         </xsl:variable>
 
         <xsl:attribute name="type">
-            <xsl:text>complextype</xsl:text>
+            <xsl:text>cmd:complextype</xsl:text>
             <xsl:value-of select="$uniquePath"/>
         </xsl:attribute>
     </xsl:template>

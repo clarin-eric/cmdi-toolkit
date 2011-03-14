@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dcr="http://www.isocat.org" targetNamespace="http://www.clarin.eu/cmd/" attributeFormDefault="unqualified" elementFormDefault="qualified">
-
    <xs:element name="CMD">
       <xs:complexType>
          <xs:sequence>
@@ -100,9 +99,8 @@
                   </xs:sequence>
                </xs:complexType>
             </xs:element>
-
          </xs:sequence>
+         <xs:attribute name="CMDVersion" fixed="1.1" use="required"/>
       </xs:complexType>
-
    </xs:element>
 </xs:schema>

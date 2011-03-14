@@ -6,14 +6,15 @@
 -->
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dcr="http://www.isocat.org"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dcr="http://www.isocat.org/ns/dcr"
     xmlns:ann="http://www.clarin.eu">
     <xsl:strip-space elements="*"/>
     <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" saxon:indent-spaces="1"
         xmlns:saxon="http://saxon.sf.net/"/>
 
     <xsl:template match="/xs:schema">
-        <xs:schema>
+        <xs:schema xmlns:cmd="http://www.clarin.eu/cmd/">
+            <xsl:copy-of select="@*"/>
             <xsl:apply-templates select="xs:import"/>
             <!-- Remove double entries for named simpleType and complexType definitions at the begin of the XSD.  -->
             <xsl:for-each-group select="./xs:simpleType" group-by="@name">

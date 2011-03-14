@@ -59,7 +59,7 @@
                                                 name="ResourceType">
                                                 <xs:complexType>                                                
                                                     <xs:simpleContent>
-                                                        <xs:extension base="Resourcetype_simple">
+                                                        <xs:extension base="cmd:Resourcetype_simple">
                                                             <xs:attribute name="mimetype" type="xs:string"/>
                                                         </xs:extension>
                                                     </xs:simpleContent>

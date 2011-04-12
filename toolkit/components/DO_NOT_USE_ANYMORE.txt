@@ -1,0 +1,10 @@
+Hi,
+
+The components listed here are old and based on the xml-toolkit which is now superseded by the Component Registry.
+
+Please see: www.clarin.eu/cmdi for more information.
+The component registry can be found here: http://catalog.clarin.eu/ds/ComponentRegistry
+
+Cheers,
+  The Clarin CMDI team.
+  April 12, 2011.

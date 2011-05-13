@@ -7,6 +7,11 @@
 -->
     <xsl:output method="xml" indent="yes"/>
 
+    <!-- A collection name can be specified for each record. This
+    information is extrinsic to the IMDI file, so it is given as an
+    external parameter. -->
+    <xsl:param name="collection"/>
+
     <xsl:template name="metatranscriptDelegate">
         <xsl:param name="profile"></xsl:param>
         <Header>
@@ -14,6 +19,9 @@
             <MdCreationDate><xsl:value-of select="format-date(current-date(), '[Y]-[M01]-[D01]')"/></MdCreationDate>
             <MdSelfLink>test-<xsl:value-of select="@ArchiveHandle"/></MdSelfLink>
             <MdProfile><xsl:value-of select="$profile"/></MdProfile>
+            <xsl:if test="$collection">
+                <MdCollectionDisplayName><xsl:value-of select="$collection"/></MdCollectionDisplayName>
+            </xsl:if>
         </Header>
         <Resources>
             <ResourceProxyList>

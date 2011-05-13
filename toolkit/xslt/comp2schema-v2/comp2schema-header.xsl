@@ -43,6 +43,7 @@
                     <xs:element name="MdCreationDate" type="xs:date" minOccurs="0"/>
                     <xs:element name="MdSelfLink" type="xs:anyURI" minOccurs="0"/>
                     <xs:element name="MdProfile" type="xs:anyURI" minOccurs="0"/>
+                    <xs:element name="MdCollectionDisplayName" type="xs:string" minOccurs="0"/>
                 </xs:sequence>
             </xs:complexType>
         </xs:element>

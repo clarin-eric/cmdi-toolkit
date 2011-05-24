@@ -8,13 +8,18 @@
     xmlns:olac11="http://www.language-archives.org/OLAC/1.1/"
     xsi:schemaLocation="    http://purl.org/dc/elements/1.1/    http://www.language-archives.org/OLAC/1.0/dc.xsd    http://purl.org/dc/terms/    http://www.language-archives.org/OLAC/1.0/dcterms.xsd    http://www.language-archives.org/OLAC/1.0/    http://www.language-archives.org/OLAC/1.0/olac.xsd    http://www.language-archives.org/OLAC/1.0/ http://www.language-archives.org/OLAC/1.0/third-party/software.xsd ">
 
-    <!-- run on ubtunu with: saxonb-xslt -ext:on -it main ~/svn/clarin/metadata/trunk/toolkit/xslt/olac2cmdi.xsl  -->
+    <!-- run on Ubuntu with: saxonb-xslt -ext:on -it main ~/svn/clarin/metadata/trunk/toolkit/xslt/olac2cmdi.xsl  -->
 
     <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
 
     <xsl:key name="iso-lookup" match="lang" use="sil"/>
 
-    <xsl:variable name="lang-top" select="document('sil_to_iso6393.xml')/languages"/>
+    <!--
+	This parameter can be used to specify path to the iso xml
+	file.
+      -->
+    <xsl:param name="iso_xml_path"/>
+    <xsl:variable name="lang-top" select="document(concat($iso_xml_path,'sil_to_iso6393.xml'))/languages"/>
 
     <xsl:template match="/">
         <CMD CMDVersion="1.1"

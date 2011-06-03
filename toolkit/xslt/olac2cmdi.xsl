@@ -13,6 +13,7 @@
     <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
 
     <xsl:key name="iso-lookup" match="lang" use="sil"/>
+    <xsl:key name="provider-lookup" match="prov" use="identifier"/>
 
     <!--
 	This parameter can be used to specify path to the iso xml
@@ -21,6 +22,10 @@
     <xsl:param name="iso_xml_path"/>
     <xsl:variable name="lang-top" select="document(concat($iso_xml_path,'sil_to_iso6393.xml'))/languages"/>
 
+    <xsl:param name="providers_path"/>
+    <xsl:variable name="id-top" select="document(concat($providers_path,'id_to_name.xml'))/providers"/>
+    
+
     <xsl:template match="/">
         <CMD CMDVersion="1.1"
             xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1288172614026/xsd">
@@ -28,7 +33,7 @@
                 <MdCreator>olac2cmdi.xsl</MdCreator>
                 <MdCreationDate>
                     <xsl:variable name="date">
-                        <xsl:value-of select="//defns:datestamp"/>
+                        <xsl:value-of select="/defns:OAI-PMH/defns:GetRecord[1]/defns:record[1]/defns:header[1]/defns:datestamp[1]"/>
                     </xsl:variable>
                     <xsl:choose>
                         <xsl:when test="contains($date,'T')">
@@ -40,9 +45,17 @@
                     </xsl:choose>
                 </MdCreationDate>
                 <MdSelfLink>
-                    <xsl:value-of select="//defns:identifier"/>
+                    <xsl:value-of select="/defns:OAI-PMH/defns:GetRecord[1]/defns:record[1]/defns:header[1]/defns:identifier[1]"/>
                 </MdSelfLink>
                 <MdProfile>clarin.eu:cr1:p_1288172614026</MdProfile>
+                <xsl:variable name="oai_id">
+                    <xsl:value-of select="tokenize(/defns:OAI-PMH/defns:GetRecord[1]/defns:record[1]/defns:header[1]/defns:identifier[1], ':')[2]"/>
+                </xsl:variable>
+                <MdCollectionDisplayName>
+                    <xsl:apply-templates select="$id-top">
+                        <xsl:with-param name="curr-label" select="$oai_id"/>
+                    </xsl:apply-templates>
+                </MdCollectionDisplayName>
             </Header>
             <Resources>
                 <ResourceProxyList>
@@ -190,6 +203,15 @@
         </xsl:variable>
         <xsl:value-of select="key('iso-lookup', $silcode)/iso"/>
     </xsl:template>
+    
+    <xsl:template match="providers">
+        <xsl:param name="curr-label"/>
+        <xsl:variable name="id">
+            <xsl:value-of select="$curr-label"/>
+        </xsl:variable>
+        <xsl:value-of select="key('provider-lookup', $id)/name"/>
+    </xsl:template>
+    
 
 
     <xsl:template match="dc:identifier" mode="preprocess">

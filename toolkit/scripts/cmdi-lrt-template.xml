@@ -6,6 +6,7 @@
         <MdCreationDate/>
         <MdSelfLink/>
         <MdProfile>clarin.eu:cr1:p_1288172614070</MdProfile>
+	<MdCollectionDisplayName>CLARIN LRT inventory</MdCollectionDisplayName>
     </Header>
     <Resources>
         <ResourceProxyList></ResourceProxyList>

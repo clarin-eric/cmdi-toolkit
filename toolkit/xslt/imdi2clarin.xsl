@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns="http://www.clarin.eu/cmd/" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
-    xpath-default-namespace="http://www.mpi.nl/IMDI/Schema/IMDI">
+<xsl:stylesheet xmlns="http://www.clarin.eu/cmd/" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    version="2.0" xpath-default-namespace="http://www.mpi.nl/IMDI/Schema/IMDI">
     <!-- this is a version of imdi2clarin.xsl that batch processes a whole directory structure of imdi files, call it from the command line like this:
         java -jar saxon8.jar -it main batch-imdi2clarin.xsl
         the last template in this file has to be modified to reflect the actual directory name
@@ -9,16 +9,33 @@
 
     <!-- A collection name can be specified for each record. This
     information is extrinsic to the IMDI file, so it is given as an
-    external parameter. -->
+    external parameter. Omit this if you are unsure. -->
     <xsl:param name="collection"/>
 
+    <!-- If this optional parameter is defined, the behaviour of this
+    stylesheet changes in the following ways: If no archive handle is
+    available for MdSelfLink, the base URI is inserted there
+    instead. All links (ResourceProxy elements) that contain relative
+    paths are resolved into absolute URIs in the context of the base
+    URI. Omit this if you are unsure. -->
+    <xsl:param name="uri-base"/>
+
     <xsl:template name="metatranscriptDelegate">
-        <xsl:param name="profile"></xsl:param>
+        <xsl:param name="profile"/>
         <Header>
             <MdCreator>imdi2clarin.xsl</MdCreator>
             <MdCreationDate><xsl:value-of select="format-date(current-date(), '[Y]-[M01]-[D01]')"/></MdCreationDate>
-            <MdSelfLink>test-<xsl:value-of select="@ArchiveHandle"/></MdSelfLink>
-            <MdProfile><xsl:value-of select="$profile"/></MdProfile>
+            <MdSelfLink>
+                <xsl:choose>
+                    <xsl:when test="not($uri-base='') and normalize-space(@ArchiveHandle)=''"><xsl:value-of select="$uri-base"/></xsl:when>
+                    <xsl:otherwise>
+                        test-<xsl:value-of select="@ArchiveHandle"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </MdSelfLink>
+            <MdProfile>
+                <xsl:value-of select="$profile"/>
+            </MdProfile>
             <xsl:if test="$collection">
                 <MdCollectionDisplayName><xsl:value-of select="$collection"/></MdCollectionDisplayName>
             </xsl:if>
@@ -40,8 +57,7 @@
     <xsl:template match="METATRANSCRIPT">
         <xsl:choose>
             <xsl:when test=".[@Type='SESSION'] or .[@Type='SESSION.Profile']">
-                <CMD CMDVersion="1.1"
-                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                <CMD CMDVersion="1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                     xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1271859438204/xsd">
                     <xsl:call-template name="metatranscriptDelegate">
                         <xsl:with-param name="profile">clarin.eu:cr1:p_1271859438204</xsl:with-param>
@@ -49,8 +65,7 @@
                 </CMD>
             </xsl:when>
             <xsl:when test=".[@Type='CORPUS'] or .[@Type='CORPUS.Profile']">
-                <CMD CMDVersion="1.1"
-                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                <CMD CMDVersion="1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                     xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1274880881885/xsd">
                     <xsl:call-template name="metatranscriptDelegate">
                         <xsl:with-param name="profile">clarin.eu:cr1:p_1274880881885</xsl:with-param>
@@ -99,7 +114,12 @@
         <xsl:for-each select="CorpusLink">
             <ResourceProxy id="{generate-id()}">
                 <ResourceType>Metadata</ResourceType>
-                <ResourceRef><xsl:value-of select="."/>.cmdi</ResourceRef>
+                <ResourceRef>
+                    <xsl:choose>
+                        <xsl:when test="$uri-base='' or starts-with(., 'hdl:')"><xsl:value-of select="."/>.cmdi</xsl:when>
+                        <xsl:otherwise><xsl:value-of select="concat(resolve-uri(., $uri-base), '.cmdi')"/></xsl:otherwise>
+                    </xsl:choose>
+                </ResourceRef>
             </ResourceProxy>
         </xsl:for-each>
     </xsl:template>
@@ -114,7 +134,10 @@
                         </xsl:attribute>
                     </xsl:if>Resource</ResourceType>
                 <ResourceRef>
-                    <xsl:value-of select="ResourceLink/@ArchiveHandle"/>
+                    <xsl:choose>
+                        <xsl:when test="not(normalize-space(ResourceLink/@ArchiveHandle)='')"><xsl:value-of select="ResourceLink/@ArchiveHandle"/></xsl:when>
+                        <xsl:when test="not($uri-base='')"><xsl:value-of select="resolve-uri(ResourceLink/., $uri-base)"/></xsl:when>
+                    </xsl:choose>
                 </ResourceRef>
             </ResourceProxy>
         </xsl:for-each>
@@ -127,7 +150,10 @@
                         </xsl:attribute>
                     </xsl:if>Resource</ResourceType>
                 <ResourceRef>
-                    <xsl:value-of select="ResourceLink/@ArchiveHandle"/>
+                    <xsl:choose>
+                        <xsl:when test="not(normalize-space(ResourceLink/@ArchiveHandle)='')"><xsl:value-of select="ResourceLink/@ArchiveHandle"/></xsl:when>
+                        <xsl:when test="not($uri-base='')"><xsl:value-of select="resolve-uri(ResourceLink/., $uri-base)"/></xsl:when>
+                    </xsl:choose>
                 </ResourceRef>
             </ResourceProxy>
         </xsl:for-each>
@@ -729,7 +755,7 @@
             </xsl:if>
         </References>
     </xsl:template>
-    
+
     <xsl:template name="main">
         <xsl:for-each
             select="collection('file:///home/paucas/corpus_copy/corpus_copy/data/corpora?select=*.imdi;recurse=yes;on-error=ignore')">
@@ -738,5 +764,5 @@
             </xsl:result-document>
         </xsl:for-each>
     </xsl:template>
-    
+
 </xsl:stylesheet>

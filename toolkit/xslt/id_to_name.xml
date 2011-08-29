@@ -7,6 +7,7 @@
 <prov> <identifier>childes.psy.cmu.edu</identifier> <name>CHILDES Data repository</name> </prov>
 <prov> <identifier>CoCoSP.linguistlist.org</identifier> <name>Comparative Corpus of Spoken Portuguese</name> </prov>
 <prov> <identifier>crdo.fr</identifier> <name>Centre de Ressources pour la description de l'Oral (CRDO-Aix)</name> </prov>
+<prov> <identifier>sldr.org</identifier> <name>Speech and Language Data Repository</name> </prov>
 <prov> <identifier>dfki.de</identifier> <name>The Natural Language Software Registry</name> </prov>
 <prov> <identifier>elra.icp.inpg.fr</identifier> <name>European Language Resources Association</name> </prov>
 <prov> <identifier>ethnologue.com</identifier> <name>Ethnologue: Languages of the World</name> </prov>

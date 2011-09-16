@@ -12,8 +12,10 @@
       <MdProfile>clarin.eu:cr1:p_1290431694484</MdProfile>
    </Header>
    
-   <!-- List of external resource files and (CMDI) metadata files -->
+   <!-- Fixed element (not dependent on the profile) for referring to external items -->
    <Resources>
+      
+      <!-- List of external resource files and (CMDI) metadata files -->
       <ResourceProxyList>
          
          <ResourceProxy id="a_photo">
@@ -27,13 +29,25 @@
          </ResourceProxy>
          
          <ResourceProxy id="another_md_file">
+            <!-- only use the ResourceType "Metadata" for links to other .cmdi files -->
             <ResourceType>Metadata</ResourceType>
             <ResourceRef>http://www.clarin.eu/cmd/example/example-md-instance.cmdi</ResourceRef>
          </ResourceProxy>
          
       </ResourceProxyList>
+      
+      <!-- this part could contain links to journal information as produced by some web services - currently not in use anywhere  -->
       <JournalFileProxyList/>
-      <ResourceRelationList/>
+      
+      <!-- expresses relations between ResourceProxies - rarely used -->
+      <ResourceRelationList>
+         <ResourceRelation>
+            <RelationType>describes</RelationType>
+            <Res1 ref="a_text"/>
+            <Res2 ref="a_photo"/>
+         </ResourceRelation>
+      </ResourceRelationList>
+   
    </Resources>
    
    <!-- start of the profile-dependent part -->

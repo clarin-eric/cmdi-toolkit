@@ -216,7 +216,7 @@
 
     <xsl:template match="dc:identifier" mode="preprocess">
   
-        <xsl:if test="contains(., 'http://')">
+        <xsl:if test="contains(., 'http://') or contains(., 'urn:nbn') or contains(., 'hdl:')">
         <ResourceProxy>
             <xsl:attribute name="id"><xsl:value-of select="generate-id()"/></xsl:attribute>
             <ResourceType>Resource</ResourceType>

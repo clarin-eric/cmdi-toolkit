@@ -214,7 +214,7 @@
                     <!-- process all components at one level deeper (recursive call) -->
                     <xsl:apply-templates select="./CMD_Component"/>
                 </xs:sequence>
-                <xs:attribute name="ref" type="xs:IDREF"/>
+                <xs:attribute name="ref" type="xs:IDREFS"/>
                 <xsl:apply-templates select="./AttributeList/Attribute"/>
                 <xsl:if test="@ComponentId">
                     <xs:attribute name="ComponentId" type="xs:anyURI" fixed="{@ComponentId}"/>

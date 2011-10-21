@@ -93,6 +93,11 @@
                                 <xs:documentation>The name of the attribute.</xs:documentation>
                             </xs:annotation>
                         </xs:element>
+                        <xs:element name="ConceptLink" type="xs:anyURI" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>A link to the ISOcat data category registry (or any other concept registry).</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
                         <xs:choice>
                             <xs:element name="Type" type="allowed_attributetypes_type">
                                 <xs:annotation>

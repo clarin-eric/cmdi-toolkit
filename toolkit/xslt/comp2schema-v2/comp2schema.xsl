@@ -301,6 +301,13 @@
     <xsl:template match="AttributeList/Attribute">
         <xs:attribute name="{./Name}">
 
+            <!-- Add a dcr:datcat if a ConceptLink element is found -->
+            <xsl:if test="normalize-space(./ConceptLink)!=''">
+                <xsl:attribute name="dcr:datcat">
+                    <xsl:value-of select="./ConceptLink" />
+                </xsl:attribute>
+            </xsl:if>
+
             <!-- add some extra stuff if we have a CV attribute -->
             <xsl:choose>
 

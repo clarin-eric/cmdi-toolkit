@@ -39,7 +39,11 @@ class CmdiFile:
                 parent.insert(position, newElement)
 
     def removeEmptyNodes(self):
-        removeList = ["ResourceType", "BeginYearResourceCreation", "FinalizationYearResourceCreation", "Institute"]
+        # we added some elements so need to recalculate the parentmap
+        self.parentmap = dict((c, p) for p in self.xmlTree.getiterator() for c in p)
+
+        removeList = ["ResourceType", "BeginYearResourceCreation", "FinalizationYearResourceCreation", "Institute", \
+                      "DistributionType", "NonCommercialUsageOnly", "UsageReportRequired", "ModificationsRequireRedeposition", "WorkingLanguages", "Date"]
         for r in removeList:
             results = self.xmlTree.findall("//%s" % r)
             for res in results:
@@ -160,7 +164,7 @@ class CmdiFile:
                 <SchemaReference />
                 <Size />
                 <Access />
-                <WorkingLanguages/>
+                <WorkingLanguages />
             </LrtLexiconDetails>'''
         partTree = ElementTree.fromstring(template)
         parent = self.xmlTree.find("//LrtInventoryResource")
@@ -174,7 +178,6 @@ class CmdiFile:
         self.fillElement("//LrtLexiconDetails/Size", record["field_size_0"])
         self.fillElement("//LrtLexiconDetails/Access", record["field_access_1"])
         self.addLanguages(isoList, record["field_working_languages_0"], 1, "//LrtLexiconDetails/WorkingLanguages")
-
 
     def addServiceDetails(self, record):
         template = '''<LrtServiceDetails>

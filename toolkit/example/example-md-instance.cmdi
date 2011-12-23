@@ -19,19 +19,20 @@
       <ResourceProxyList>
          
          <ResourceProxy id="a_photo">
-            <ResourceType>Resource</ResourceType>
-            <ResourceRef>http://www.clarin.eu/sites/all/themes/clarin/images/clarin-name-logo.png</ResourceRef>
+            <ResourceType mimetype="image/jpeg">Resource</ResourceType>
+            <!-- note that both a normal URL and a handle Persistent Identifier can be used for the ResourceRef -->
+            <ResourceRef>hdl:1839/00-0000-0000-0009-3C7E-F</ResourceRef>
          </ResourceProxy>
          
          <ResourceProxy id="a_text">
-            <ResourceType>Resource</ResourceType>
+            <ResourceType mimetype="text/plain">Resource</ResourceType>
             <ResourceRef>http://www.clarin.eu/sometext.txt</ResourceRef>
          </ResourceProxy>
          
          <ResourceProxy id="another_md_file">
             <!-- only use the ResourceType "Metadata" for links to other .cmdi files -->
             <ResourceType>Metadata</ResourceType>
-            <ResourceRef>http://www.clarin.eu/cmd/example/example-md-instance.cmdi</ResourceRef>
+            <ResourceRef>http://www.clarin.eu/cmd/example/example-phonological-corpus.cmdi</ResourceRef>
          </ResourceProxy>
          
       </ResourceProxyList>
@@ -58,13 +59,14 @@
          <!-- instantation of the first embedded component: technical metadata about a text -->
          <!-- Instead of having a URL to the resource here we link with a ref attribute to the relevant ResourceProxy element defined above -->
          <example-component-text ref="a_text">
-            <Format>text/plain</Format>
-            <example-component-texttype/>
+            <example-component-texttype>
+               <TextTypeDescription>print</TextTypeDescription>
+            </example-component-texttype>
          </example-component-text>
          
          <!-- instantation of the second embedded component: technical metadata about a digital image -->
          <example-component-photo ref="a_photo">
-            <Format>image/png</Format>
+            <description>a suitable textual description of this photo</description>
          </example-component-photo>
          
          <!-- instantation of the first embedded component: metadata about a person -->

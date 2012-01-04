@@ -238,6 +238,7 @@
             <xs:enumeration value="gMonth"/>
             <xs:enumeration value="gYear"/>
             <xs:enumeration value="time"/>
+            <xs:enumeration value="dateTime"/>
         </xs:restriction>
     </xs:simpleType>
 

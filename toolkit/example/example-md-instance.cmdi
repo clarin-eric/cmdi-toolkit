@@ -10,6 +10,8 @@
       <MdSelfLink>http://www.clarin.eu/cmd/example/example-md-instance.cmdi</MdSelfLink>
       <!-- A reference to the unique identifier of the profile this metadata instance is based on -->
       <MdProfile>clarin.eu:cr1:p_1290431694484</MdProfile>
+      <!-- An (optional but recommended) plain text indication to which collection this file belongs. Used for the Collection facet in the VLO -->
+      <MdCollectionDisplayName>CMDI test collection</MdCollectionDisplayName>
    </Header>
    
    <!-- Fixed element (not dependent on the profile) for referring to external items -->

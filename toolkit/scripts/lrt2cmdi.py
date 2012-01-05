@@ -39,7 +39,7 @@ class CmdiFile:
                 parent.insert(position, newElement)
 
     def removeEmptyNodes(self):
-        # we added some elements so need to recalculate the parentmap
+        # we maybe added some elements so need to recalculate the parentmap
         self.parentmap = dict((c, p) for p in self.xmlTree.getiterator() for c in p)
 
         removeList = ["ResourceType", "BeginYearResourceCreation", "FinalizationYearResourceCreation", "Institute", \

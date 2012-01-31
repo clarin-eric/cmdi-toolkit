@@ -260,7 +260,7 @@
                     <xs:extension base="{concat('xs:',@ValueScheme)}">
                         <xsl:apply-templates select="./AttributeList/Attribute"/>
                         <!-- temporarily disabled -->
-                        <xsl:if test="./@Multilingual=true">
+                        <xsl:if test="./@Multilingual='true'">
                             <xs:attribute ref="xml:lang" />
                         </xsl:if>
                     </xs:extension>

@@ -13,9 +13,9 @@
 
     <xsl:strip-space elements="*"/>
     <xsl:include href="comp2schema-header.xsl"/>
+    <xsl:include href="cleanup-xsd.xsl"/>
     <!-- note: the automatic chaining with clean-xsd.xsl only works with the Saxon XSLT processor, otherwise you'll have to do this manually (or use e.g the Xalan pipeDocument tag) -->
-    <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" saxon:indent-spaces="1"
-        saxon:next-in-chain="cleanup-xsd.xsl" xmlns:saxon="http://saxon.sf.net/"/>
+    <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="no" />
 
     <!-- Start includes -->
 
@@ -50,7 +50,10 @@
             <xsl:apply-templates mode="include"/>
         </xsl:variable>
         <!-- Process the complete tree -->
-        <xsl:apply-templates select="$tree/*"/>
+        <xsl:variable name="schema">
+            <xsl:apply-templates select="$tree/*"/>
+        </xsl:variable>
+        <xsl:apply-templates select="$schema" mode="clean" />
     </xsl:template>
 
     <!-- generate XSD -->
@@ -429,5 +432,5 @@
             <!--</xs:annotation>-->
         </xsl:if>
     </xsl:template>
-
+    
 </xsl:stylesheet>

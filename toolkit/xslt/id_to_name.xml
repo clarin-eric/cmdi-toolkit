@@ -1,15 +1,14 @@
 <providers>
+<prov> <identifier>TDDC</identifier> <name>University of Tübingen</name> </prov>
 <prov> <identifier>acl.sr.language-archives.org</identifier> <name>A Digital Archive of Research Papers in Computational Linguistics</name> </prov>
 <prov> <identifier>ailla.utexas.edu</identifier> <name>Archive of the Indigenous Languages of Latin America</name> </prov>
-<prov> <identifier>aseda.aiatsis.gov.au</identifier> <name>Aboriginal Studies Electronic Data Archive (ASEDA)</name> </prov>
 <prov> <identifier>atilf.inalf.fr</identifier> <name>ATILF Resources</name> </prov>
 <prov> <identifier>blc.berkeley.edu</identifier> <name>Audio Archive of Linguistic Fieldwork</name> </prov>
 <prov> <identifier>childes.psy.cmu.edu</identifier> <name>CHILDES Data repository</name> </prov>
 <prov> <identifier>CoCoSP.linguistlist.org</identifier> <name>Comparative Corpus of Spoken Portuguese</name> </prov>
-<prov> <identifier>crdo.fr</identifier> <name>Centre de Ressources pour la description de l'Oral (CRDO-Aix)</name> </prov>
 <prov> <identifier>sldr.org</identifier> <name>Speech and Language Data Repository</name> </prov>
 <prov> <identifier>dfki.de</identifier> <name>The Natural Language Software Registry</name> </prov>
-<prov> <identifier>elra.icp.inpg.fr</identifier> <name>European Language Resources Association</name> </prov>
+<prov> <identifier>catalogue.elra.info</identifier> <name>European Language Resources Association</name> </prov>
 <prov> <identifier>ethnologue.com</identifier> <name>Ethnologue: Languages of the World</name> </prov>
 <prov> <identifier>Formosan.sinica.edu.tw</identifier> <name>Academia Sinica Formosan Language Archive</name> </prov>
 <prov> <identifier>Krebs.linguistlist.org</identifier> <name>Boiste</name> </prov>
@@ -31,26 +30,25 @@
 <prov> <identifier>surrey.smg.surrey.ac.uk</identifier> <name>Surrey Morphology Group Databases</name> </prov>
 <prov> <identifier>scholarspace.manoa.hawaii.edu</identifier> <name>ScholarSpace at University of Hawaii at Manoa</name> </prov>
 <prov> <identifier>EarlyMandarin.sinica.edu.tw</identifier> <name>Academia Sinica Tagged Corpus of Early Mandarin Chinese</name> </prov>
+<prov> <identifier>clarind-uds</identifier> <name>Saarland University</name> </prov>
 <prov> <identifier>dta</identifier> <name>Berlin-Brandenburgische Akademie der Wissenschaften</name> </prov>
 <prov> <identifier>easy.dans.knaw.nl</identifier> <name>DANS EASY Archive</name> </prov>
 <prov> <identifier>nlp.pwr.wroc.pl</identifier> <name>University of Wroclaw</name> </prov>
 <prov> <identifier>upf</identifier> <name>IULA UPF OAI Archive</name> </prov>
 <prov> <identifier>cnrtl.fr</identifier> <name>CNRTL</name> </prov>
 <prov> <identifier>meertens.knaw.nl</identifier> <name>Meertens institute</name> </prov>
+<prov> <identifier>mulce.org</identifier> <name>Multimodal Learning and teaching Corpora Exchange</name> </prov>
 <prov> <identifier>uvigo</identifier> <name>Universidade de Vigo</name> </prov>
 <prov> <identifier>ehu-upv</identifier> <name>Euskal Herriko Unibertsitatea</name> </prov>
 <prov> <identifier>upc</identifier> <name>Universitat Politècnica de Catalunya</name> </prov>
 <prov> <identifier>grial</identifier> <name>Universitat de Barcelona</name> </prov>
 <prov> <identifier>jsi</identifier> <name>Jožef Stefan Institute</name> </prov>
-<prov> <identifier>celi</identifier> <name>CELI</name> </prov>
 <prov> <identifier>ua</identifier> <name>Universitat d'Alacant</name> </prov>
 <prov> <identifier>de</identifier> <name>Humboldt University of Berlin</name> </prov>
-<prov> <identifier>ul</identifier> <name>University of Lisbon</name> </prov>
 <prov> <identifier>MAREC</identifier> <name>Information Retrieval Facility</name> </prov>
 <prov> <identifier>uk</identifier> <name>National Centre for Text Mining NaCTeM</name> </prov>
 <prov> <identifier>usfd</identifier> <name>University of Sheffield</name> </prov>
 <prov> <identifier>rtv</identifier> <name>University of Roma Tor Vergata</name> </prov>
 <prov> <identifier>clle-erss</identifier> <name>CLLE-ERSS Université de Toulouse-Le Mirail</name> </prov>
-<prov> <identifier>asv.uni-leipzig.de</identifier> <name>University of Leipzig</name> </prov>
 <prov> <identifier>cnr.it</identifier> <name>Meta-Share Repository at ILC</name> </prov>
 </providers>

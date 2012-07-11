@@ -119,7 +119,7 @@
                         <xsl:when test="not(normalize-space(./@ArchiveHandle)='')">test-<xsl:value-of select="./@ArchiveHandle"/></xsl:when>
                         <xsl:when test="starts-with(., 'hdl:')"><xsl:value-of select="."/></xsl:when>
                         <xsl:when test="$uri-base=''"><xsl:value-of select="."/>.cmdi</xsl:when>
-                        <xsl:otherwise><xsl:value-of select="concat(resolve-uri(., $uri-base), '.cmdi')"/></xsl:otherwise>
+                        <xsl:otherwise><xsl:value-of select="concat(resolve-uri(normalize-space(.), $uri-base), '.cmdi')"/></xsl:otherwise>
                     </xsl:choose>
                 </ResourceRef>
             </ResourceProxy>
@@ -138,7 +138,7 @@
                 <ResourceRef>
                     <xsl:choose>
                         <xsl:when test="not(normalize-space(ResourceLink/@ArchiveHandle)='')"><xsl:value-of select="ResourceLink/@ArchiveHandle"/></xsl:when>
-                        <xsl:when test="not($uri-base='')"><xsl:value-of select="resolve-uri(ResourceLink/., $uri-base)"/></xsl:when>
+                        <xsl:when test="not($uri-base='')"><xsl:value-of select="resolve-uri(normalize-space(ResourceLink/.), $uri-base)"/></xsl:when>
                     </xsl:choose>
                 </ResourceRef>
             </ResourceProxy>
@@ -154,7 +154,7 @@
                 <ResourceRef>
                     <xsl:choose>
                         <xsl:when test="not(normalize-space(ResourceLink/@ArchiveHandle)='')"><xsl:value-of select="ResourceLink/@ArchiveHandle"/></xsl:when>
-                        <xsl:when test="not($uri-base='')"><xsl:value-of select="resolve-uri(ResourceLink/., $uri-base)"/></xsl:when>
+                        <xsl:when test="not($uri-base='')"><xsl:value-of select="resolve-uri(normalize-space(ResourceLink/.), $uri-base)"/></xsl:when>
                     </xsl:choose>
                 </ResourceRef>
             </ResourceProxy>

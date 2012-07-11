@@ -116,7 +116,9 @@
                 <ResourceType>Metadata</ResourceType>
                 <ResourceRef>
                     <xsl:choose>
-                        <xsl:when test="$uri-base='' or starts-with(., 'hdl:')"><xsl:value-of select="."/>.cmdi</xsl:when>
+                        <xsl:when test="not(normalize-space(./@ArchiveHandle)='')">test-<xsl:value-of select="./@ArchiveHandle"/></xsl:when>
+                        <xsl:when test="starts-with(., 'hdl:')"><xsl:value-of select="."/></xsl:when>
+                        <xsl:when test="$uri-base=''"><xsl:value-of select="."/>.cmdi</xsl:when>
                         <xsl:otherwise><xsl:value-of select="concat(resolve-uri(., $uri-base), '.cmdi')"/></xsl:otherwise>
                     </xsl:choose>
                 </ResourceRef>

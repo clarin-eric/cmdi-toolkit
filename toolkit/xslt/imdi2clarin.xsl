@@ -24,25 +24,30 @@
         <xsl:param name="profile"/>
         <Header>
             <MdCreator>imdi2clarin.xsl</MdCreator>
-            <MdCreationDate><xsl:value-of select="format-date(current-date(), '[Y]-[M01]-[D01]')"/></MdCreationDate>
+            <MdCreationDate>
+                <xsl:value-of select="format-date(current-date(), '[Y]-[M01]-[D01]')"/>
+            </MdCreationDate>
             <MdSelfLink>
                 <xsl:choose>
-                    <xsl:when test="not($uri-base='') and normalize-space(@ArchiveHandle)=''"><xsl:value-of select="$uri-base"/></xsl:when>
-                    <xsl:otherwise>
-                        test-<xsl:value-of select="@ArchiveHandle"/>
-                    </xsl:otherwise>
+                    <xsl:when test="not($uri-base='') and normalize-space(@ArchiveHandle)=''">
+                        <xsl:value-of select="$uri-base"/>
+                    </xsl:when>
+                    <xsl:otherwise>test-<xsl:value-of select="@ArchiveHandle"/></xsl:otherwise>
                 </xsl:choose>
             </MdSelfLink>
             <MdProfile>
                 <xsl:value-of select="$profile"/>
             </MdProfile>
             <xsl:if test="$collection">
-                <MdCollectionDisplayName><xsl:value-of select="$collection"/></MdCollectionDisplayName>
+                <MdCollectionDisplayName>
+                    <xsl:value-of select="$collection"/>
+                </MdCollectionDisplayName>
             </xsl:if>
         </Header>
         <Resources>
             <ResourceProxyList>
                 <xsl:apply-templates select="//Resources" mode="linking"/>
+                <xsl:apply-templates select="//Description[not(normalize-space(./@ArchiveHandle)='') or not(normalize-space(./@Link)='')]" mode="linking"/>
                 <xsl:apply-templates select="//Corpus" mode="linking"/>
             </ResourceProxyList>
             <JournalFileProxyList> </JournalFileProxyList>
@@ -60,7 +65,8 @@
                 <CMD CMDVersion="1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                     xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1271859438204/xsd">
                     <xsl:call-template name="metatranscriptDelegate">
-                        <xsl:with-param name="profile">clarin.eu:cr1:p_1271859438204</xsl:with-param>
+                        <xsl:with-param name="profile"
+                            >clarin.eu:cr1:p_1271859438204</xsl:with-param>
                     </xsl:call-template>
                 </CMD>
             </xsl:when>
@@ -68,14 +74,14 @@
                 <CMD CMDVersion="1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                     xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1274880881885/xsd">
                     <xsl:call-template name="metatranscriptDelegate">
-                        <xsl:with-param name="profile">clarin.eu:cr1:p_1274880881885</xsl:with-param>
+                        <xsl:with-param name="profile"
+                            >clarin.eu:cr1:p_1274880881885</xsl:with-param>
                     </xsl:call-template>
                 </CMD>
             </xsl:when>
             <xsl:otherwise>
                 <!--                Currently we are only processing 'SESSION' and 'CORPUS' types. The error displayed can be used to filter out erroneous files after processing-->
-                ERROR: Invalid METATRANSCRIPT Type!
-            </xsl:otherwise>
+                ERROR: Invalid METATRANSCRIPT Type! </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
 
@@ -87,12 +93,30 @@
                 <xsl:apply-templates select="child::Title"/>
                 <xsl:if test="exists(child::Description)">
                     <descriptions>
+                        
+                        <xsl:variable name="reflist">
+                            <xsl:for-each select="Description">
+                                
+                                <xsl:if test="not(normalize-space(@ArchiveHandle)='') or not(normalize-space(@Link)='')">
+                                    <xsl:value-of select="generate-id()"/>
+                                    <xsl:text> </xsl:text>
+                                </xsl:if>
+                                
+                                
+                            </xsl:for-each> 
+                        </xsl:variable>
+                        
+                        <xsl:attribute name="ref" select="normalize-space($reflist)"></xsl:attribute>
+                        
+                        
+                        
                         <xsl:for-each select="Description">
-                            <Description>
-                                <xsl:attribute name="LanguageId" select="@LanguageId"/>
-                                <xsl:value-of select="."/>
-                            </Description>
+                        <Description>
+                            <xsl:attribute name="LanguageId" select="@LanguageId"/>
+                            <xsl:value-of select="."/>
+                        </Description>
                         </xsl:for-each>
+                        
                     </descriptions>
                 </xsl:if>
                 <xsl:if test="exists(child::CorpusLink)">
@@ -116,50 +140,69 @@
                 <ResourceType>Metadata</ResourceType>
                 <ResourceRef>
                     <xsl:choose>
-                        <xsl:when test="not(normalize-space(./@ArchiveHandle)='')">test-<xsl:value-of select="./@ArchiveHandle"/></xsl:when>
-                        <xsl:when test="starts-with(., 'hdl:')"><xsl:value-of select="."/></xsl:when>
+                        <xsl:when test="not(normalize-space(./@ArchiveHandle)='')"
+                                >test-<xsl:value-of select="./@ArchiveHandle"/></xsl:when>
+                        <xsl:when test="starts-with(., 'hdl:')">
+                            <xsl:value-of select="."/>
+                        </xsl:when>
                         <xsl:when test="$uri-base=''"><xsl:value-of select="."/>.cmdi</xsl:when>
-                        <xsl:otherwise><xsl:value-of select="concat(resolve-uri(normalize-space(.), $uri-base), '.cmdi')"/></xsl:otherwise>
+                        <xsl:otherwise>
+                            <xsl:value-of
+                                select="concat(resolve-uri(normalize-space(.), $uri-base), '.cmdi')"
+                            />
+                        </xsl:otherwise>
                     </xsl:choose>
                 </ResourceRef>
             </ResourceProxy>
         </xsl:for-each>
     </xsl:template>
 
+    <!-- Create ResourceProxy for MediaFile and WrittenResource -->
     <xsl:template match="Resources" mode="linking">
         <xsl:for-each select="MediaFile">
-            <ResourceProxy id="{generate-id()}">
-                <ResourceType>
-                    <xsl:if test="exists(Format) and not(empty(Format))">
-                        <xsl:attribute name="mimetype">
-                            <xsl:value-of select="./Format"/>
-                        </xsl:attribute>
-                    </xsl:if>Resource</ResourceType>
-                <ResourceRef>
-                    <xsl:choose>
-                        <xsl:when test="not(normalize-space(ResourceLink/@ArchiveHandle)='')"><xsl:value-of select="ResourceLink/@ArchiveHandle"/></xsl:when>
-                        <xsl:when test="not($uri-base='')"><xsl:value-of select="resolve-uri(normalize-space(ResourceLink/.), $uri-base)"/></xsl:when>
-                    </xsl:choose>
-                </ResourceRef>
-            </ResourceProxy>
+            <xsl:call-template name="CreateResourceProxyTypeResource"/>        
         </xsl:for-each>
         <xsl:for-each select="WrittenResource">
-            <ResourceProxy id="{generate-id()}">
-                <ResourceType>
-                    <xsl:if test="exists(Format) and not(empty(Format))">
-                        <xsl:attribute name="mimetype">
-                            <xsl:value-of select="./Format"/>
-                        </xsl:attribute>
-                    </xsl:if>Resource</ResourceType>
-                <ResourceRef>
-                    <xsl:choose>
-                        <xsl:when test="not(normalize-space(ResourceLink/@ArchiveHandle)='')"><xsl:value-of select="ResourceLink/@ArchiveHandle"/></xsl:when>
-                        <xsl:when test="not($uri-base='')"><xsl:value-of select="resolve-uri(normalize-space(ResourceLink/.), $uri-base)"/></xsl:when>
-                    </xsl:choose>
-                </ResourceRef>
-            </ResourceProxy>
+            <xsl:call-template name="CreateResourceProxyTypeResource"/>
         </xsl:for-each>
     </xsl:template>
+    
+    <!-- Create ResourceProxy for Info files -->
+    <xsl:template match="//Description[@ArchiveHandle or @Link]" mode="linking">
+        <xsl:call-template name="CreateResourceProxyTypeResource"/>
+    </xsl:template> 
+    
+    <!-- to be called during the creation of the ResourceProxyList (in linking mode) -->
+    <xsl:template name="CreateResourceProxyTypeResource">
+        <ResourceProxy id="{generate-id()}">
+            <ResourceType>
+                <xsl:if test="exists(Format) and not(empty(Format))">
+                    <xsl:attribute name="mimetype">
+                        <xsl:value-of select="./Format"/>
+                    </xsl:attribute>
+                </xsl:if>Resource</ResourceType>
+            <ResourceRef>
+                <xsl:choose>
+                    <xsl:when test="not(normalize-space(ResourceLink/@ArchiveHandle)='')">
+                        <xsl:value-of select="ResourceLink/@ArchiveHandle"/>
+                    </xsl:when>
+                    <xsl:when test="not($uri-base='')">
+                        <xsl:value-of
+                            select="resolve-uri(normalize-space(ResourceLink/.), $uri-base)"/>
+                    </xsl:when>
+                    <!-- for info files the @ArchiveHandle or @Link is part of the Description element - preference for ArchiveHandle -->
+                    <xsl:when test="not(normalize-space(@ArchiveHandle)='')">
+                        <xsl:value-of select="@ArchiveHandle"/>
+                    </xsl:when>
+                    <xsl:when test="not(normalize-space(@Link)='')">
+                        <xsl:value-of select="@Link"/>
+                    </xsl:when>
+                </xsl:choose>
+            </ResourceRef>
+        </ResourceProxy>
+    </xsl:template>
+
+
 
     <xsl:template match="Session">
         <Session>
@@ -169,6 +212,9 @@
             <xsl:if test="exists(child::Description)">
                 <descriptions>
                     <xsl:for-each select="Description">
+                        <xsl:if test="@ArchiveHandle">
+                            <xsl:attribute name="ref" select="generate-id()"/>
+                        </xsl:if>
                         <Description>
                             <xsl:attribute name="LanguageId" select="@LanguageId"/>
                             <xsl:value-of select="."/>

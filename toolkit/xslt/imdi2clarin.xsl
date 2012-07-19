@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+$Rev$
+$LastChangedDate$
+-->
 <xsl:stylesheet xmlns="http://www.clarin.eu/cmd/" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     version="2.0" xpath-default-namespace="http://www.mpi.nl/IMDI/Schema/IMDI">
     <!-- this is a version of imdi2clarin.xsl that batch processes a whole directory structure of imdi files, call it from the command line like this:
         java -jar saxon8.jar -it main batch-imdi2clarin.xsl
         the last template in this file has to be modified to reflect the actual directory name
--->
+    -->
     <xsl:output method="xml" indent="yes"/>
 
     <!-- A collection name can be specified for each record. This

@@ -51,5 +51,5 @@
 <prov> <identifier>rtv</identifier> <name>University of Roma Tor Vergata</name> </prov>
 <prov> <identifier>clle-erss</identifier> <name>CLLE-ERSS Université de Toulouse-Le Mirail</name> </prov>
 <prov> <identifier>cnr.it</identifier> <name>Meta-Share Repository at ILC</name> </prov>
-<prov> <identifier>https://ufal-point.mff.cuni.cz</identifier> <name>LINDAT-Clarin repository</name> </prov>
+<prov> <identifier>ufal-point.mff.cuni.cz</identifier> <name>LINDAT-Clarin repository</name> </prov>
 </providers>

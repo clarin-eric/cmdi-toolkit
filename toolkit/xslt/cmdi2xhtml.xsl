@@ -2,7 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:cmd="http://www.clarin.eu/cmd/"
-    xmlns:fnc="http://127.0.0.1/"
+    xmlns:fn="http://www.w3.org/2005/xpath-functions"
     exclude-result-prefixes="xs"
     version="2.0"
     xpath-default-namespace="http://www.clarin.eu/cmd/">
@@ -17,39 +17,47 @@
         indent="yes"
         cdata-section-elements="td"/>
     
+    <xsl:param name="prune_Components_branches_without_text_values" as="xs:boolean" select='false()'/>
+    
 
-    <xsl:template name="component_tree" match="/CMD/Components">
+    <xsl:template name="Component_tree" match="/CMD/Components">
         <xsl:param name="nodeset" as="element()+" select="/CMD/Components"/>
 
         <ul>
             <xsl:for-each select="$nodeset/element()">
-                <xsl:variable name="nchildren" select="count(child::element())"/>
-
-                <li>
-                    <code>
-                        <xsl:value-of select="concat(local-name(), ' ')"/>
-                        <xsl:if test="count(@*) > 0">
-                            <div id="attributes">
-                                <xsl:for-each select="@*">
-                                    <xsl:value-of select="name()"/>="<xsl:value-of select="."/>"
-                                </xsl:for-each>
-                            </div>
-                        </xsl:if>
-                    </code>
-
-                    <xsl:choose>
-                        <xsl:when test="$nchildren = 0">
-                            <br /><br /><sample><xsl:value-of select="self::element()"/></sample>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <ul>
-                                <xsl:call-template name="component_tree">
-                                    <xsl:with-param name="nodeset" select="self::element()"/>
-                                </xsl:call-template>
-                            </ul>
-                        </xsl:otherwise>
-                    </xsl:choose>
-                </li>
+                <!--fn:normalize-space(-->
+                <xsl:variable name="subnodes_text" select="fn:normalize-space(fn:string-join(descendant-or-self::element()/text(), ''))" as="xs:string+"/>
+                <xsl:if test="not($subnodes_text = '' and $prune_Components_branches_without_text_values)">
+                    <xsl:variable name="nchildren" select="fn:count(child::element())"/>
+                     <li>                    
+                     <code>
+                         <xsl:value-of select="fn:concat(local-name(), ' ')"/>
+                         <xsl:if test="count(@*) > 0">
+                             <div class="attributes">
+                                 <xsl:for-each select="@*">
+                                     <xsl:value-of select="name()"/>="<xsl:value-of select="."/>"
+                                 </xsl:for-each>
+                             </div>
+                         </xsl:if>
+                     </code>
+                    
+                     <xsl:choose>
+                         <xsl:when test="$nchildren = 0">
+                             <br /><br />
+                             <div class="Component_tree_node_content">
+                                 <sample><xsl:value-of select="self::element()"/></sample>
+                             </div>
+                         </xsl:when>
+                         <xsl:otherwise>
+                             <ul>
+                                 <xsl:call-template name="Component_tree">
+                                     <xsl:with-param name="nodeset" select="self::element()"/>
+                                 </xsl:call-template>
+                             </ul>
+                         </xsl:otherwise>
+                     </xsl:choose>
+                    </li>
+                </xsl:if>
             </xsl:for-each>
         </ul>
     </xsl:template>
@@ -68,6 +76,7 @@
                     li
                     {
                         margin: 20px;
+                        margin-left: -1.2em;
                     }
                     
                     code
@@ -78,18 +87,18 @@
                         padding: 5px;
                     }
                     
-                    sample
+                    .Component_tree_node_content
                     {
                         background-color: rgba(188, 200, 232, 0.3);
                         border: 1px dotted red;                        
                         margin-top: 10px;
                         padding: 5px;
-                        float: none;
-                    }
+                        float: none;               
+                        display:table-cell;
+                    }                    
                     
-                    #attributes
+                    .attributes
                     {
-                        overflow: hidden;
                         display: inline-block;
                         font-style: italic;
                         font-weight: normal;
@@ -107,7 +116,7 @@
                 <article>
                     <div class="endgame">
                         <p>
-                            <h1>Metadata overview</h1>
+                            <h1>Resources</h1>
                             <table>
                                 <caption>Resources</caption>
                                 <thead>
@@ -120,9 +129,21 @@
                                 </thead>
                                 <tbody class="attributesTbody">
                                     <xsl:for-each select="Resources/ResourceProxyList/ResourceProxy">
-                                        <tr>
-                                            <td class="attributeValue">
-                                                <xsl:value-of select="ResourceRef"/>
+                                        <xsl:variable name="URI"                                select="ResourceRef/text()"                                 as="xs:string"/>
+                                        <tr> 
+                                            <td class="attributeValue">                                                
+                                                <xsl:variable name="protocol"                   select="fn:substring-before($URI, ':')"                     as="xs:string"/>
+                                                <xsl:choose>
+                                                    <xsl:when test="$protocol = 'hdl'">
+                                                        <xsl:variable name="HANDLE_PREFIX"      select="'http://hdl.handle.net'"                            as="xs:string"/>                                                
+                                                        <xsl:variable name="Handle_reference"   select="fn:substring-after($URI, ':')"                      as="xs:string"/>
+                                                        <xsl:variable name="Handle_HTTP_URL"    select="fn:concat($HANDLE_PREFIX, '/', $Handle_reference)"     as="xs:string"/>
+                                                        <a href="{$Handle_HTTP_URL}"><xsl:value-of select="$Handle_HTTP_URL"/></a>
+                                                    </xsl:when>
+                                                    <xsl:otherwise>
+                                                        <a href="{ResourceRef}"><xsl:value-of select="ResourceRef"/></a>
+                                                    </xsl:otherwise>
+                                                </xsl:choose>                                                
                                             </td>
                                             <td class="attributeValue">
                                                 <xsl:value-of select="ResourceType"/>
@@ -140,6 +161,7 @@
                         </p>
                     </div>
 
+                    <!--                   
                     <p>
                         <h1>Journal file proxy list</h1>
                         <xsl:for-each select="JournalFileProxyList"> </xsl:for-each>
@@ -149,16 +171,17 @@
                         <h1>Resource relations</h1>
                         <xsl:for-each select="Resources/ResourceRelationList/ResourceRelation"> </xsl:for-each>
                     </p>
+                    -->
                     
                     <p>
-                        <h1>CMDI component tree</h1>
-                        <xsl:call-template name="component_tree"/>
+                        <h1>Metadata content</h1>
+                        <xsl:call-template name="Component_tree"/>
                     </p>
                     
                     <footer>
                         <p>Created by <address class="author"> <xsl:value-of select="Header/MdCreator"/>
                         </address> on <time datetime="{Header/MdCreationDate}">
-                                <xsl:value-of select="normalize-space(Header/MdCreationDate)"
+                                <xsl:value-of select="Header/MdCreationDate"
                                 /></time>
                             <br />
                             <small>Located at <a href="{Header/MdSelfLink}">
@@ -170,7 +193,7 @@
                             </small>
                             <br />
                             <xsl:variable name="resource_URL"
-                                select="concat('http://catalog.clarin.eu/ds/ComponentRegistry?item=',Header/MdProfile)"/>
+                                select="fn:concat('http://catalog.clarin.eu/ds/ComponentRegistry?item=',Header/MdProfile)"/>
                             <small>Based on <a href="{$resource_URL}"><xsl:value-of select="$resource_URL"/></a>
                             </small>
                         </p>

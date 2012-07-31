@@ -198,7 +198,7 @@ class CmdiFile:
         # and now fill it
         self.fillElement("//LrtLexiconDetails/Date", record["field_date_0"])
 
-    def addResourceProxy(self, link):
+    def addResourceProxy(self, link) :
         template = '''<ResourceProxy id="reflink">
                 <ResourceType>Resource</ResourceType>
                 <ResourceRef></ResourceRef>
@@ -210,7 +210,24 @@ class CmdiFile:
         # and now fill it
         self.fillElement("//ResourceProxy/ResourceRef", link)
 
-def addChildNode(parent, tag, content):
+    def addTags(self, tags_string) :
+        tags_XML_element                = self.xmlTree.find(".//Tags")
+        assert(tags_XML_element is not None)
+
+        tags = tags_string.split(",")
+        if len(tags) > 0 :
+            # Remove whitespace left and right to tag values
+            tags                        = list(map(unicode.strip, tags)) # X- Python 3 incompatible
+            # Remove empty strings from tags list.
+            tags                        = list(filter(None, tags))
+
+            for tag in tags :
+                tag_XML_element         = ElementTree.Element('Tag')
+                tag_XML_element.text    = tag
+                tags_XML_element.append(tag_XML_element)
+
+
+def addChildNode(parent, tag, content) :
     node = ElementTree.Element(tag)
     node.text = content
     parent.append(node)
@@ -306,7 +323,7 @@ def main():
 
         orgList = ""
         for i in range(1,5):
-            orgList += record["org%s" % i] + ";"
+            orgList += record["org" + str(i)] + ";"
         cmdi.addInstitutes(orgList + record["field_institute"])
 
         cmdi.addCountries(countryList, record["field_country"])
@@ -314,6 +331,8 @@ def main():
         cmdi.addLanguages(iso6393List, record["field_languages"])
 
         cmdi.addResourceType(record["field_resource_type"], record, iso6391List)
+
+        cmdi.addTags(record['tags']);
 
         cmdi.serialize()
 

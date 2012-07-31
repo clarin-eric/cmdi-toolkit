@@ -33,8 +33,6 @@
                 <ReadilyAvailable></ReadilyAvailable>
                 <ReferenceLink></ReferenceLink>         
                 <Languages/>
-                    
-              
                 <Countries/>
             </LrtCommon>
             
@@ -54,6 +52,7 @@
                 <ContactPerson></ContactPerson>
             </LrtIPR>
             
+            <Tags/>
                
         </LrtInventoryResource>
     </Components>

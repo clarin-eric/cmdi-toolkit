@@ -97,22 +97,16 @@ $LastChangedDate$
                 <xsl:apply-templates select="child::Title"/>
                 <xsl:if test="exists(child::Description)">
                     <descriptions>
-                        
                         <xsl:variable name="reflist">
                             <xsl:for-each select="Description">
-                                
                                 <xsl:if test="not(normalize-space(@ArchiveHandle)='') or not(normalize-space(@Link)='')">
                                     <xsl:value-of select="generate-id()"/>
                                     <xsl:text> </xsl:text>
                                 </xsl:if>
-                                
-                                
                             </xsl:for-each> 
                         </xsl:variable>
                         
                         <xsl:attribute name="ref" select="normalize-space($reflist)"></xsl:attribute>
-                        
-                        
                         
                         <xsl:for-each select="Description">
                         <Description>
@@ -215,10 +209,20 @@ $LastChangedDate$
             <xsl:apply-templates select="child::Date"/>
             <xsl:if test="exists(child::Description)">
                 <descriptions>
+                    <xsl:variable name="reflist">
+                        <xsl:for-each select="Description">
+                            <xsl:if test="not(normalize-space(@ArchiveHandle)='') or not(normalize-space(@Link)='')">
+                                <xsl:value-of select="generate-id()"/>
+                                <xsl:text> </xsl:text>
+                            </xsl:if>
+                        </xsl:for-each> 
+                    </xsl:variable>
+                    
+                    <xsl:if test="not(normalize-space($reflist)='')">
+                        <xsl:attribute name="ref" select="normalize-space($reflist)"></xsl:attribute>
+                    </xsl:if>
+
                     <xsl:for-each select="Description">
-                        <xsl:if test="@ArchiveHandle">
-                            <xsl:attribute name="ref" select="generate-id()"/>
-                        </xsl:if>
                         <Description>
                             <xsl:attribute name="LanguageId" select="@LanguageId"/>
                             <xsl:value-of select="."/>

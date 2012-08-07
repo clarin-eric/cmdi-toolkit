@@ -5,14 +5,16 @@
 ##   Author:     Sander Maijers <sanmai @@ mpi.nl>
 ##   Since:      1-8-2012
 ##   Description:
+##   Check the CLARIN tools registry CSV file for problematic 
+##   URLs (dead links, etc.) and problematic e-mail-addresses. 
+##   Export a table for each record in the registry with the 
+##   check results.
 ##
-##
-
 
 __author__          = "Sander Maijers"
 
 import              pdb
-import				comm
+import				      comm
 import              csv, sys
 import              urllib.request
 import              signal
@@ -41,28 +43,12 @@ def email(from_addr,
 
         COMMASPACE      = ', '
 
-        #.format(user, socket.gethostname(), experiment_name)
-
-    #    header_original_recipient = "Original-Recipient:{0}".format(recorded_email_address)
-    #    "Disposition-Notification-To:{0}".format(options.test_mailbox)
-
         msg             = MIMEMultipart()
-        msg['Subject']  = "Automatic message for CLARIN database e-mail check." 
+        msg['Subject']  = "Automatic message for CLARIN database e-mail address check." 
         msg['From']     = from_addr
         msg['To']       = COMMASPACE.join([to_addrs])
         msg['Disposition-Notification-To']  = from_addr
         msg['Original-Recipient']           = to_addr
-        #msg.preamble    = "Experiment " + experiment_name + " completed."
-
-        # DEBUG:
-        #import pdb
-        #pdb.set_trace()
-
-    #    body_MIME       = MIMEText(body)
-    #    print(body)
-        #_text = stdout.decode("utf-8"), _subtype = 'plain', _charset = 'utf-8')
-
-    #    msg.attach(body_MIME)
 
         return(msg.as_string())
 
@@ -96,12 +82,10 @@ def email(from_addr,
 
 
 def download_file(destination_directory_path  = None, 
-                  destination_file_name  = "", 
-                  file_mode  = None, 
-                  base_URL   = "", 
-                  URL        = "") :
-
-    pdb.set_trace();
+                  destination_file_name       = "", 
+                  file_mode                   = None, 
+                  base_URL                    = "", 
+                  URL                         = "") :
 
     if base_URL == "" and URL == "" :
          # You need to specify either one of the URL arguments to this function.
@@ -143,18 +127,12 @@ def read_tools_CSV() :
 
     with open(options.tools_CSV_file_path, 
               newline = '') as CSV_file :
-        CSV_reader          = csv.DictReader(CSV_file) #DictReader(CSV_file)
+        CSV_reader          = csv.DictReader(CSV_file)
         
         CSV_data            = list(CSV_reader)
-        #for row in CSV_reader :
 
 
-    return(CSV_data) # tools_CSV_file_path
-
-    # if not DEBUG :
-    #     communicate(level           = 0,
-    #                 message         = table_str,
-    #                 output_streams  = sys.stdout)
+    return(CSV_data)
 
 
 def test_URLs(recorded_URLs) :
@@ -163,7 +141,6 @@ def test_URLs(recorded_URLs) :
         try :
             urllib.request.urlopen(url = URL)
         except HTTPError as HTTP_error_obj :
-            #print(dir(HTTP_error_obj))
             #HTTP_error_obj.getcode()
             return(False)
         except URLError as URL_error_obj :
@@ -172,32 +149,11 @@ def test_URLs(recorded_URLs) :
             return(False)
         else :
             return(True)
-            # ['_HTTPError__super_init', '__cause__', '__class__', '__context__', '__delattr__', '__dict__', '__doc__', '__enter__', '__eq__', '__exit__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__iter__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__setstate__', '__sizeof__', '__str__', '__subclasshook__', '__traceback__', '__weakref__', 'args', 'close', 'code', 'errno', 'filename', 'fileno', 'fp', 'getcode', 'geturl', 'hdrs', 'headers', 'info', 'msg', 'read', 'readline', 'readlines', 'reason', 'strerror', 'url', 'with_traceback']
-            # X-
-    # test:
-    # recorded_URLs =
-    # ['http://www.google.com/testtesttest',
-    # 'http://bla',
-    # 'http://google.com',
-    # 'ftp://ftp.kernel.org/',
-    # 'http://www.mpi.nl']
-
-    # recorded_URLs  
-
-    # # Reduce to unique URLs
-    # URLs            = frozenset(recorded_URLs)
-
-    # test_results    = list(map(test_URL, URLs))
-
-    # check_results   = dict(zip(URLs, test_results))
 
     assert(len(recorded_URLs) == len(URL_record_columns))
     results         = [''] * len(URL_record_columns)
 
-    #pdb.set_trace()
-
     for recorded_URL_index, URL in enumerate(recorded_URLs) : # X- check unique urls once
-        #URL         = recorded_URLs[recorded_URL_index].strip()
 
         URL         = URL.strip()
 
@@ -209,7 +165,6 @@ def test_URLs(recorded_URLs) :
                 results[recorded_URL_index] = 'works' 
             else :
                 results[recorded_URL_index] = 'problematic'
-#    pdb.set_trace()
 
     return(results)
 
@@ -265,10 +220,7 @@ def prepare() :
     parser.set_defaults(SMTP_server_port    = None)
 
     parser.set_defaults(tools_CSV_file_path     = '/tmp/export_tools')
-    parser.set_defaults(output_CSV_file_path    = '/tmp/output.tab')
-     # X- 
-     # X- !!! date_checksumoftoolsCSV.tab
-
+    parser.set_defaults(output_CSV_file_path    = '/tmp/output.tab') # X- !!! date_checksumoftoolsCSV.tab
 
     parser.add_option("--check_mail",
                       dest      = "check_mail",
@@ -356,10 +308,7 @@ def check() :
 
     tools_CSV_data          = read_tools_CSV()
 
-    # 'URL check result (field_tool_urlcheck)'
-
     test_results = []
-
     progress_bar_obj = progressbar.ProgressBar()
 
     for record in progress_bar_obj(tools_CSV_data) :
@@ -369,28 +318,12 @@ def check() :
         # Filter out empty URL strings
         #URL = list(filter(None, URL))
 
-        #test_results        = []
-
         if len(URL) > 0 :
-            #test_results    += test_URLs(URL)
-            #test_results = dict(zip(URL, test_URLs(URL)))
-#            pdb.set_trace()
+
             test_results    += [dict(zip(URL_record_columns, test_URLs(URL)))]   # list(zip(URL_record_columns, )) #, test_results)
 
             data = test_results
 
-            #pdb.set_trace()
-        # from collections import defaultdict
-        # data = defaultdict(list)
-        # for URL_record_column, test_result in test_results :
-        #     data[URL_record_column].append(test_result)
-
-    # for URL_record_column in URL_record_columns :
-
-
-    #     recorded_URLs   = tools_CSV_data[URL_record_column]
-
-    #     test_URLs(recorded_URLs)
     return(data)
 
 
@@ -405,14 +338,9 @@ def main(*args,
 
     retrieve_tools_CSV()
 
-#    pdb.set_trace()
-
     # check_results is a list row objects for DictWriter
     check_results           = check()
     write_check_results(check_results)
-
-
-    # assert(options.source_file_path         is not None)
 
 
 if __name__ == '__main__' :

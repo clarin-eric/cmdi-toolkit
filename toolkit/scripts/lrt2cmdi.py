@@ -211,7 +211,7 @@ class CmdiFile:
         self.fillElement("//ResourceProxy/ResourceRef", link)
 
     def addTags(self, tags_string) :
-        tags_XML_element                = self.xmlTree.find(".//Tags")
+        tags_XML_element                = self.xmlTree.find(".//tags")
         assert(tags_XML_element is not None)
 
         tags = tags_string.split(",")

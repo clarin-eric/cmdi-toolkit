@@ -15,6 +15,7 @@
     </Resources>
     
     <Components>
+
         <LrtInventoryResource>
             
             <LrtCommon>
@@ -50,10 +51,10 @@
                 <LicenseType></LicenseType>
                 <Description></Description>
                 <ContactPerson></ContactPerson>
-            </LrtIPR>
-            
-            <Tags/>
+            </LrtIPR> 
                
         </LrtInventoryResource>
+
+        <tags/>
     </Components>
 </CMD>

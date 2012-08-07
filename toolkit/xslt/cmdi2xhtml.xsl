@@ -25,11 +25,11 @@
 
         <ul>
             <xsl:for-each select="$nodeset/element()">
-                <!--fn:normalize-space(-->
                 <xsl:variable name="subnodes_text" select="fn:normalize-space(fn:string-join(descendant-or-self::element()/text(), ''))" as="xs:string+"/>
                 <xsl:if test="not($subnodes_text = '' and $prune_Components_branches_without_text_values)">
                     <xsl:variable name="nchildren" select="fn:count(child::element())"/>
-                     <li>                    
+                     <li>
+                     
                      <code>
                          <xsl:value-of select="fn:concat(local-name(), ' ')"/>
                          <xsl:if test="count(@*) > 0">
@@ -43,9 +43,20 @@
                     
                      <xsl:choose>
                          <xsl:when test="$nchildren = 0">
-                             <br /><br />
+                             <!--<br /><br />-->
                              <div class="Component_tree_node_content">
-                                 <sample><xsl:value-of select="self::element()"/></sample>
+                                 <xsl:variable name="leaf_value" select="self::element()"                       as="xs:string"/>
+                                 <xsl:variable name="HTTP_URL"   select="starts-with($leaf_value, 'http://')"   as="xs:boolean"/> 
+                                 <sample>
+                                 <xsl:choose>
+                                     <xsl:when test="$HTTP_URL">
+                                         <a href="{$leaf_value}"><xsl:value-of select="$leaf_value"/></a>
+                                     </xsl:when>
+                                     <xsl:otherwise>                                    
+                                             <xsl:value-of select="$leaf_value"/>                                         
+                                     </xsl:otherwise>                                 
+                                 </xsl:choose>
+                                 </sample>
                              </div>
                          </xsl:when>
                          <xsl:otherwise>
@@ -56,7 +67,8 @@
                              </ul>
                          </xsl:otherwise>
                      </xsl:choose>
-                    </li>
+                                     
+                    </li>                                
                 </xsl:if>
             </xsl:for-each>
         </ul>
@@ -85,6 +97,7 @@
                         border: 1px ridge;
                         font-weight: bold;
                         padding: 5px;
+                        /*float: left;*/
                     }
                     
                     .Component_tree_node_content
@@ -92,13 +105,15 @@
                         background-color: rgba(188, 200, 232, 0.3);
                         border: 1px dotted red;                        
                         margin-top: 10px;
+                        margin-left: 10px;
                         padding: 5px;
-                        float: none;               
-                        display:table-cell;
+                        display: inline-block;
+                        /*float: left;*/       
+                        /*display: table-cell;*/
                     }                    
                     
                     .attributes
-                    {
+                    {                        
                         display: inline-block;
                         font-style: italic;
                         font-weight: normal;
@@ -188,8 +203,8 @@
                                     <xsl:value-of select="Header/MdSelfLink"/></a>
                             </small>
                             <br />
-                            <small>Belongs to <xsl:value-of select="Header/MdCollectionDisplayName"
-                                />
+                            <small>Belongs to &quot;<xsl:value-of select="Header/MdCollectionDisplayName"
+                            />&quot;
                             </small>
                             <br />
                             <xsl:variable name="resource_URL"

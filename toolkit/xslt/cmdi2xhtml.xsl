@@ -30,7 +30,7 @@
                     <xsl:variable name="nchildren" select="fn:count(child::element())"/>
                      <li>
                      
-                     <code>
+                     <code class="node">
                          <xsl:value-of select="fn:concat(local-name(), ' ')"/>
                          <xsl:if test="count(@*) > 0">
                              <div class="attributes">
@@ -47,7 +47,7 @@
                              <div class="Component_tree_node_content">
                                  <xsl:variable name="leaf_value" select="self::element()"                       as="xs:string"/>
                                  <xsl:variable name="HTTP_URL"   select="starts-with($leaf_value, 'http://')"   as="xs:boolean"/> 
-                                 <sample>
+                                 <code class="leaf">
                                  <xsl:choose>
                                      <xsl:when test="$HTTP_URL">
                                          <a href="{$leaf_value}"><xsl:value-of select="$leaf_value"/></a>
@@ -56,7 +56,7 @@
                                              <xsl:value-of select="$leaf_value"/>                                         
                                      </xsl:otherwise>                                 
                                  </xsl:choose>
-                                 </sample>
+                                 </code>
                              </div>
                          </xsl:when>
                          <xsl:otherwise>
@@ -91,14 +91,18 @@
                         margin-left: -1.2em;
                     }
                     
-                    code
+                    .node
                     {
                         background-color: rgba(188, 205, 232, 0.8);
                         border: 1px ridge;
                         font-weight: bold;
                         padding: 5px;
                         /*float: left;*/
-                    }
+                    }                    
+                    
+                    .leaf
+                    {
+                    }                    
                     
                     .Component_tree_node_content
                     {
@@ -117,8 +121,13 @@
                         display: inline-block;
                         font-style: italic;
                         font-weight: normal;
-                        /* background-color: rgba(100, 201, 234, 0.4); */
+                        /*background-color: rgba(100, 201, 234, 0.4);*/
                     }
+                    
+                    footer
+                    {
+                        border: 1px dotted;
+                    }                    
                     
                     address
                     {

@@ -10,32 +10,37 @@
 
     <xsl:template name="PrintHeaderType">
         <xs:simpleType name="Resourcetype_simple">
-            <xs:restriction base="xs:string">    
+            <xs:restriction base="xs:string">
                 <xs:enumeration value="Metadata">
                     <xs:annotation>
-                        <xs:documentation>The ResourceProxy
-                            refers to another component
-                            metadata instance (e.g. for
-                            grouping metadata descriptions
-                            into
+                        <xs:documentation>The ResourceProxy refers to another component metadata
+                            instance (e.g. for grouping metadata descriptions into
                             collections)</xs:documentation>
                     </xs:annotation>
                 </xs:enumeration>
                 <xs:enumeration value="Resource">
                     <xs:annotation>
-                        <xs:documentation>The ResourceProxy
-                            refers to a file that is not a
-                            metadata instance (e.g. a text
-                            document)</xs:documentation>
+                        <xs:documentation>The ResourceProxy refers to a file that is not a metadata
+                            instance (e.g. a text document)</xs:documentation>
                     </xs:annotation>
                 </xs:enumeration>
-            </xs:restriction>    
+                <xs:enumeration value="SearchService">
+                    <xs:annotation>
+                        <xs:documentation>The ResourceProxy refers to a (SRU/CQL) web service that can be used to query the resource described in this file</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="SearchPage">
+                    <xs:annotation>
+                        <xs:documentation>The ResourceProxy refers to a web page that can be used to query the resource described in this file</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+            </xs:restriction>
         </xs:simpleType>
     </xsl:template>
 
 
     <xsl:template name="PrintHeader">
-        
+
         <xs:element name="Header">
             <xs:complexType>
                 <xs:sequence>
@@ -58,12 +63,12 @@
                                         <xs:sequence>
                                             <xs:element maxOccurs="1" minOccurs="1"
                                                 name="ResourceType">
-                                                <xs:complexType>                                                
-                                                    <xs:simpleContent>
-                                                        <xs:extension base="cmd:Resourcetype_simple">
-                                                            <xs:attribute name="mimetype" type="xs:string"/>
-                                                        </xs:extension>
-                                                    </xs:simpleContent>
+                                                <xs:complexType>
+                                                  <xs:simpleContent>
+                                                  <xs:extension base="cmd:Resourcetype_simple">
+                                                  <xs:attribute name="mimetype" type="xs:string"/>
+                                                  </xs:extension>
+                                                  </xs:simpleContent>
                                                 </xs:complexType>
                                             </xs:element>
                                             <xs:element maxOccurs="1" minOccurs="1"
@@ -115,16 +120,16 @@
                             </xs:sequence>
                         </xs:complexType>
                     </xs:element>
-                    
+
                     <xs:element minOccurs="0" name="IsPartOfList">
                         <xs:complexType>
                             <xs:sequence>
-                                <xs:element maxOccurs="unbounded" minOccurs="0"
-                                    name="IsPartOf" type="xs:anyURI"/>
+                                <xs:element maxOccurs="unbounded" minOccurs="0" name="IsPartOf"
+                                    type="xs:anyURI"/>
                             </xs:sequence>
                         </xs:complexType>
                     </xs:element>
-                    
+
                 </xs:sequence>
             </xs:complexType>
         </xs:element>

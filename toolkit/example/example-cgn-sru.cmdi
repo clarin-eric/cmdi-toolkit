@@ -5,7 +5,7 @@
     <Header>
         <MdCreator>imdi2clarin.xsl</MdCreator>
         <MdCreationDate>2012-04-14</MdCreationDate>
-        <MdSelfLink> test-hdl:1839/00-0000-0000-0001-53A5-2</MdSelfLink>
+        <MdSelfLink>test-hdl:1839/00-0000-0000-0001-53A5-2</MdSelfLink>
         <MdProfile>clarin.eu:cr1:p_1274880881885</MdProfile>
         <MdCollectionDisplayName>MPI CGN</MdCollectionDisplayName>
     </Header>
@@ -13,7 +13,7 @@
         <ResourceProxyList>
             <!-- Here we specify the SRU/CQL end point, note the mimetype and the ResourceType = Resource -->
             <ResourceProxy id="d55">
-                <ResourceType mimetype="application/sru+xml">Resource</ResourceType>
+                <ResourceType mimetype="application/sru+xml">SearchService</ResourceType>
                 <ResourceRef>http://cqlservlet.mpi.nl/</ResourceRef>
             </ResourceProxy>
             <!-- This contains the other ResourceProxy elements -->

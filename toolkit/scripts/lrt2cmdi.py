@@ -225,7 +225,8 @@ class CmdiFile:
                 tag_XML_element         = ElementTree.Element('tag')
                 tag_XML_element.text    = tag
                 tags_XML_element.append(tag_XML_element)
-
+        else :
+            self.xmlTree.remove("tags")
 
 def addChildNode(parent, tag, content) :
     node = ElementTree.Element(tag)

@@ -51,8 +51,14 @@
                 <LicenseType></LicenseType>
                 <Description></Description>
                 <ContactPerson></ContactPerson>
-            </LrtIPR> 
-               
+            </LrtIPR>
+
+            <LrtCollectionDetails/>
+    
+            <LrtLexiconDetails/>
+    
+            <LrtServiceDetails/>
+    
             <tags/>
 
         </LrtInventoryResource>

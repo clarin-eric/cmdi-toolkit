@@ -53,8 +53,9 @@
                 <ContactPerson></ContactPerson>
             </LrtIPR> 
                
+            <tags/>
+
         </LrtInventoryResource>
 
-        <tags/>
     </Components>
 </CMD>

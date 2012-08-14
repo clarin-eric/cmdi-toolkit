@@ -222,7 +222,7 @@ class CmdiFile:
             tags                        = list(filter(None, tags))
 
             for tag in tags :
-                tag_XML_element         = ElementTree.Element('Tag')
+                tag_XML_element         = ElementTree.Element('tag')
                 tag_XML_element.text    = tag
                 tags_XML_element.append(tag_XML_element)
 

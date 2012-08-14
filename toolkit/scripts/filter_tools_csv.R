@@ -7,6 +7,8 @@ tools_registry 		<- read.csv("/tmp/export_tools", check.names = FALSE, header = 
 checks_output_table <- read.table("/tmp/output.tab", sep = '\t', check.names = FALSE, header = TRUE);
 colnames(checks_output_table) <- paste(colnames(checks_output_table), "check");
 
+tools_registry <- tools_registry[, -1 * which(colnames(tools_registry) == "URL check result (field_tool_urlcheck)")];
+
 records_to_be_kept 	<- subset(checks_output_table, `Reference link (field_tool_reference_link) check` != "unspecified");
 
 
@@ -21,10 +23,10 @@ records_any_unspecified <- subset(records_to_be_kept, `Reference link (field_too
 complete_extended_table 					<- cbind(tools_registry, checks_output_table);
 
 write.table(complete_extended_table, 
-				file = "/run/media/sanmai/SAMSUNG/3,MPI/export_tools__complete_extended__7-8-2012.csv", 
-				sep = ',', 
-				row.names = FALSE, 
-				col.names = TRUE);
+				file 		= "/tmp/export_tools__complete_extended__7-8-2012.csv", 
+				sep 		= ',', 
+				row.names 	= FALSE, 
+				col.names 	= TRUE);
 
 
 records_relevant_links_specified 	<- subset(records_to_be_kept, (`Reference link (field_tool_reference_link) check` 	    != "unspecified"
@@ -32,10 +34,10 @@ records_relevant_links_specified 	<- subset(records_to_be_kept, (`Reference link
 																	& `Documentation link (field_tool_document_link) check` 	!= "unspecified");
 links_specified_table				<- cbind(tools_registry[row.names(records_relevant_links_specified),], records_relevant_links_specified);
 write.table(links_specified_table, 
-			file = "/run/media/sanmai/SAMSUNG/3,MPI/export_tools__relevant_links_specified__7-8-2012.csv", 
-			sep = ',', 
-			row.names = FALSE, 
-			col.names = TRUE);
+			file 			= "/tmp/export_tools__relevant_links_specified__7-8-2012.csv", 
+			sep 			= ',', 
+			row.names 		= FALSE, 
+			col.names 		= TRUE);
 
 
 records_relevant_links_work 	    <- subset(records_to_be_kept, (`Reference link (field_tool_reference_link) check` 	    == "works"
@@ -43,12 +45,10 @@ records_relevant_links_work 	    <- subset(records_to_be_kept, (`Reference link 
 																	& `Documentation link (field_tool_document_link) check` 	== "works");
 links_work_table 					<- cbind(tools_registry[row.names(records_relevant_links_work),], records_relevant_links_work);
 write.table(links_work_table, 
-			file = "/run/media/sanmai/SAMSUNG/3,MPI/export_tools__relevant_links_work__7-8-2012.csv", 
-			sep = ',', 
-			row.names = FALSE, 
-			col.names = TRUE);
-
-
+			file 			= "/tmp/export_tools__relevant_links_work__7-8-2012.csv", 
+			sep 			= ',', 
+			row.names 		= FALSE, 
+			col.names 		= TRUE);
 
 URLs 				<- tools_registry[row.names(records_problematic),17]
 

@@ -6,7 +6,7 @@
         <MdCreationDate/>
         <MdSelfLink/>
         <MdProfile>clarin.eu:cr1:p_1289827960126</MdProfile>
-	<MdCollectionDisplayName>CLARIN LRT inventory</MdCollectionDisplayName>
+    <MdCollectionDisplayName>CLARIN LRT inventory</MdCollectionDisplayName>
     </Header>
     <Resources>
         <ResourceProxyList></ResourceProxyList>
@@ -53,11 +53,41 @@
                 <ContactPerson></ContactPerson>
             </LrtIPR>
 
-            <LrtCollectionDetails/>
+            <LrtCollectionDetails>
+                <LongTermPreservationBy />
+                <Location />
+                <ContentType />
+                <FormatDetailed />
+                <Quality />
+                <Applications />
+                <Size />
+                <DistributionForm />
+                <Access />
+                <Source />
+                <WorkingLanguages />
+            </LrtCollectionDetails>
     
-            <LrtLexiconDetails/>
+            <LrtLexiconDetails>
+                <Date />
+                <Type />
+                <FormatDetailed />
+                <SchemaReference />
+                <Size />
+                <Access />
+                <WorkingLanguages />
+            </LrtLexiconDetails>
     
-            <LrtServiceDetails/>
+            <LrtServiceDetails>
+                <Date />
+                <LocationWebservice />
+                <InterfaceReference />
+                <Input />
+                <InputSchemaReference />
+                <Output />
+                <OutputSchema />
+                <DevDescription />
+                <Access />
+            </LrtServiceDetails>
     
             <tags/>
 

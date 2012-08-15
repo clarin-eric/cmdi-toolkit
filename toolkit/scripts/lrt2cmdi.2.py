@@ -3,10 +3,13 @@
 # converts the CSV from the LRT inventory to nice and clean CMDI
 # Dieter says: I deny the existance of this script!
 
-import urllib, csv, datetime, pdb, xml.etree.ElementTree as ElementTree
+import csv, datetime, pdb, sys, traceback, urllib, xml.etree.ElementTree as ElementTree
 from curses.ascii import ascii
 
-class CmdiFile:
+if sys.version_info < (2, 7) :
+    sys.stderr.write("WARNING: this script was only tested with Python version 2.7.3! You are running version " + str(sys.version_info[1]) + "." + str(sys.version_info[2]) + " instead.\n")
+
+class CmdiFile :
     def __init__(self, nodeId) :
         template            = open("cmdi-lrt-template.xml").read()
         self.nodeId         = nodeId
@@ -15,21 +18,28 @@ class CmdiFile:
         self.fillElement("//MdCreationDate", datetime.datetime.now().strftime("%Y-%m-%d"))
         self.fillElement("//MdSelfLink", "http://www.clarin.eu/node/%s" % nodeId)
 
-    def fillElement(self, xpath, value):
-        self.xmlTree.find(xpath).text = value.strip()
+    def fillElement(self, XPath, value) :
+        try :
+            self.xmlTree.find(XPath).text = value.strip()
+        except :
+            print "Error in filling element " + XPath
+            print traceback.format_exc()
 
-    def fillOptionalElement(self, XPath, value):
+            pdb.set_trace()
+        
 
+    def fillOptionalElement(self, XPath, value) :
         try :
             result = self.fillElement(XPath, value)
         except :
-            print "Error in filling optional element"
+            print "Error in filling optional element " + XPath
+            print traceback.format_exc()
 
             pdb.set_trace()
         else :
             return result
 
-        ### Conceptual code that should remove optional element that are filled with an empty text.
+        ### Conceptual code that should remove optional elements if they are being filled with empty strings.
         # optional_element_parent_XPath   = XPath + "/.." 
         # optional_element_parent         = self.xmlTree.find(optional_element_parent_XPath)
         # optional_element                = self.xmlTree.find(XPath)

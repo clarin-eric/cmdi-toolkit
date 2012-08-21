@@ -44,7 +44,7 @@
         <xs:element name="Header">
             <xs:complexType>
                 <xs:sequence>
-                    <xs:element name="MdCreator" type="xs:string" minOccurs="0"/>
+                    <xs:element name="MdCreator" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
                     <xs:element name="MdCreationDate" type="xs:date" minOccurs="0"/>
                     <xs:element name="MdSelfLink" type="xs:anyURI" minOccurs="0"/>
                     <xs:element name="MdProfile" type="xs:anyURI" minOccurs="0"/>

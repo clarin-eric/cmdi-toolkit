@@ -217,8 +217,9 @@
                     <!-- process all components at one level deeper (recursive call) -->
                     <xsl:apply-templates select="./CMD_Component"/>
                 </xs:sequence>
-                <!-- allow @xml:base as a residue of XInclude processing -->
+                <!-- DISABLED (Arbil needs to handle it first) allow @xml:base as a residue of XInclude processing -X->
                 <xs:attribute ref="xml:base"/>
+		-->
                 <!-- @ref to the resource proxy (TODO: put this in the CMD namespace, i.e., @cmd:ref -->                 
                 <xs:attribute name="ref" type="xs:IDREFS"/>
                 <xsl:apply-templates select="./AttributeList/Attribute"/>

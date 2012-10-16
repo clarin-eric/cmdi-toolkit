@@ -196,7 +196,7 @@
         <xsl:param name="MaxOccurs" select="@CardinalityMax"/>
 
         <xs:element name="{@name}">
-
+            
             <xsl:if test="$MinOccurs">
                 <xsl:attribute name="minOccurs">
                     <xsl:value-of select="$MinOccurs"/>
@@ -217,6 +217,9 @@
                     <!-- process all components at one level deeper (recursive call) -->
                     <xsl:apply-templates select="./CMD_Component"/>
                 </xs:sequence>
+                <!-- allow @xml:base as a residue of XInclude processing -->
+                <xs:attribute ref="xml:base"/>
+                <!-- @ref to the resource proxy (TODO: put this in the CMD namespace, i.e., @cmd:ref -->                 
                 <xs:attribute name="ref" type="xs:IDREFS"/>
                 <xsl:apply-templates select="./AttributeList/Attribute"/>
                 <xsl:if test="@ComponentId">
@@ -310,7 +313,7 @@
                     <xsl:value-of select="./ConceptLink" />
                 </xsl:attribute>
             </xsl:if>
-
+            
             <!-- add some extra stuff if we have a CV attribute -->
             <xsl:choose>
 

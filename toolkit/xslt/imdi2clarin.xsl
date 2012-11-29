@@ -53,6 +53,10 @@ $LastChangedDate$
                 <xsl:apply-templates select="//Resources" mode="linking"/>
                 <xsl:apply-templates select="//Description[not(normalize-space(./@ArchiveHandle)='') or not(normalize-space(./@Link)='')]" mode="linking"/>
                 <xsl:apply-templates select="//Corpus" mode="linking"/>
+                <ResourceProxy id="sru">
+                    <ResourceType>SearchService</ResourceType>
+                    <ResourceRef>http://cqlservlet.mpi.nl/</ResourceRef>
+                </ResourceProxy>
             </ResourceProxyList>
             <JournalFileProxyList> </JournalFileProxyList>
             <ResourceRelationList> </ResourceRelationList>

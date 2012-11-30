@@ -36,7 +36,7 @@ $LastChangedDate$
                     <xsl:when test="not($uri-base='') and normalize-space(@ArchiveHandle)=''">
                         <xsl:value-of select="$uri-base"/>
                     </xsl:when>
-                    <xsl:otherwise>test-<xsl:value-of select="@ArchiveHandle"/></xsl:otherwise>
+                    <xsl:otherwise><xsl:value-of select="@ArchiveHandle"/>@format=cmdi</xsl:otherwise>
                 </xsl:choose>
             </MdSelfLink>
             <MdProfile>

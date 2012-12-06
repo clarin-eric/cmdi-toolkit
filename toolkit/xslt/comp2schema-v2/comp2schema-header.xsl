@@ -34,6 +34,11 @@
                         <xs:documentation>The ResourceProxy refers to a web page that can be used to query the resource described in this file</xs:documentation>
                     </xs:annotation>
                 </xs:enumeration>
+                <xs:enumeration value="LandingPage">
+                    <xs:annotation>
+                        <xs:documentation>The ResourceProxy refers to a web page that contains the "original context" of the resource described in this file (e.g. repository web page displaying the metadata).</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
             </xs:restriction>
         </xs:simpleType>
     </xsl:template>

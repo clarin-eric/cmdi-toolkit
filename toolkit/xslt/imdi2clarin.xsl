@@ -24,6 +24,9 @@ $LastChangedDate$
     URI. Omit this if you are unsure. -->
     <xsl:param name="uri-base"/>
 
+    <!-- definition of the SRU-searchable collections at TLA (for use later on) -->
+    <xsl:variable name="SruSearchable">childes,ESF corpus,IFA corpus,MPI CGN,talkbank</xsl:variable>
+
     <xsl:template name="metatranscriptDelegate">
         <xsl:param name="profile"/>
         <Header>
@@ -53,10 +56,13 @@ $LastChangedDate$
                 <xsl:apply-templates select="//Resources" mode="linking"/>
                 <xsl:apply-templates select="//Description[not(normalize-space(./@ArchiveHandle)='') or not(normalize-space(./@Link)='')]" mode="linking"/>
                 <xsl:apply-templates select="//Corpus" mode="linking"/>
+                <!-- If this collection name is indicated to be SRU-searchable, add a link to the TLA SRU endpoint -->
+                <xsl:if test="$collection and contains($SruSearchable,$collection)">
                 <ResourceProxy id="sru">
                     <ResourceType>SearchService</ResourceType>
                     <ResourceRef>http://cqlservlet.mpi.nl/</ResourceRef>
                 </ResourceProxy>
+                </xsl:if>
             </ResourceProxyList>
             <JournalFileProxyList> </JournalFileProxyList>
             <ResourceRelationList> </ResourceRelationList>

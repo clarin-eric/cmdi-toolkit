@@ -36,10 +36,12 @@ $LastChangedDate$
             </MdCreationDate>
             <MdSelfLink>
                 <xsl:choose>
-                    <xsl:when test="not($uri-base='') and normalize-space(@ArchiveHandle)=''">
-                        <xsl:value-of select="$uri-base"/>
-                    </xsl:when>
-                    <xsl:otherwise><xsl:value-of select="@ArchiveHandle"/>@format=cmdi</xsl:otherwise>
+                    <!-- MPI handle prefix? Use handle + @format=cmdi suffix -->
+                    <xsl:when test="starts-with(normalize-space(@ArchiveHandle), 'hdl:1839/')"><xsl:value-of select="@ArchiveHandle"/>@format=cmdi</xsl:when>
+                    <!-- No handle? Then just use the URL -->
+                    <xsl:when test="not($uri-base='') and normalize-space(@ArchiveHandle)=''"><xsl:value-of select="$uri-base"/></xsl:when>
+                    <!-- Other handle prefix? Use handle (e.g. Lund) -->
+                    <xsl:otherwise><xsl:value-of select="@ArchiveHandle"/></xsl:otherwise>
                 </xsl:choose>
             </MdSelfLink>
             <MdProfile>

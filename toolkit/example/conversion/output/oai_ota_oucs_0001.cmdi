@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:defns="http://www.openarchives.org/OAI/2.0/"
+     xmlns:olac="http://www.language-archives.org/OLAC/1.0/"
+     xmlns:olac11="http://www.language-archives.org/OLAC/1.1/"
+     xmlns="http://www.clarin.eu/cmd/"
+     CMDVersion="1.1"
+     xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1288172614026/xsd">
+   <Header>
+      <MdCreator>olac2cmdi.xsl</MdCreator>
+      <MdCreationDate>2012-06-01</MdCreationDate>
+      <MdSelfLink>oai:ota:oucs:0001</MdSelfLink>
+      <MdProfile>clarin.eu:cr1:p_1288172614026</MdProfile>
+      <MdCollectionDisplayName>Oxford Text Archive</MdCollectionDisplayName>
+   </Header>
+   <Resources>
+      <ResourceProxyList>
+         <ResourceProxy id="w85094ab1b5b1b3b1b1">
+            <ResourceType>Resource</ResourceType>
+            <ResourceRef>http://ota.ox.ac.uk/headers/0001.xml</ResourceRef>
+         </ResourceProxy>
+      </ResourceProxyList>
+      <JournalFileProxyList/>
+      <ResourceRelationList/>
+   </Resources>
+   <Components>
+      <OLAC-DcmiTerms>
+         <alternative>Arden of Feversham</alternative>
+         <alternative>The tragedy of Master Arden of Feversham</alternative>
+         <alternative>The lamentable and true tragedy of Master Arden of Feversham in Kent: who was most wickedly murdered by the means of his disloyal and wanton wife who for the love she bore to one Mosbie, hired two desperate ruffians Blackwill and Shakebag to kill him: wherein is showed the great malice and dissimulation of a wicked woman, the unsatiable desire of filthy lust and the shameful end of all murderers</alternative>
+         <created/>
+         <extent>(1 file : ca. 97.6 kilobytes)</extent>
+         <format dcterms-type="IMT">text/plain</format>
+         <identifier>http://ota.ox.ac.uk/headers/0001.xml</identifier>
+         <language olac-language="eng">English</language>
+         <publisher>Oxford Text Archive, University of Oxford</publisher>
+         <rights>Freely available for non-commercial use provided that this header is included in its entirety with any copy distributed.</rights>
+         <rights>http://www.ota.ox.ac.uk/documents/user_agreement.xml</rights>
+         <subject olac-linguistic-field="text_and_corpus_linguistics"/>
+         <title>Arden of Feversham [Electronic resource] / Anonymous</title>
+         <type dcterms-type="DCMIType">Text</type>
+      </OLAC-DcmiTerms>
+   </Components>
+</CMD>

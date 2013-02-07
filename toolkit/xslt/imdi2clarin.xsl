@@ -229,7 +229,17 @@ $LastChangedDate$
         </ResourceProxy>
     </xsl:template>
 
-
+    <!-- Used to create resource refs on actors, sources and languages -->
+    <xsl:template name="CreateResourceRefAttribute">
+        <xsl:choose>
+            <xsl:when test="$keep-resource-refs 
+                and string-length(@ResourceRef) &gt; 0 
+                and (boolean(//MediaFile/@ResourceId = @ResourceRef) 
+                or boolean(//WrittenResource/@ResourceId = @ResourceRef))">
+                <xsl:attribute name="ref" select="@ResourceRef"/>
+            </xsl:when>
+        </xsl:choose>
+    </xsl:template>
 
     <xsl:template match="Session">
         <Session>
@@ -460,6 +470,7 @@ $LastChangedDate$
             </xsl:if>
             <xsl:for-each select="Language">
                 <Content_Language>
+                    <xsl:call-template name="CreateResourceRefAttribute" />
                     <Id>
                         <xsl:value-of select=" ./Id"/>
                     </Id>
@@ -510,11 +521,7 @@ $LastChangedDate$
             </xsl:if>
             <xsl:for-each select="Actor">
                 <Actor>
-                    <xsl:choose>
-                        <xsl:when test="$keep-resource-refs and string-length(@ResourceRef) &gt; 0">
-                            <xsl:attribute name="ref" select="@ResourceRef"/>
-                        </xsl:when>
-                    </xsl:choose>
+                    <xsl:call-template name="CreateResourceRefAttribute" />
                     <Role>
                         <xsl:value-of select=" ./Role"/>
                     </Role>
@@ -580,6 +587,7 @@ $LastChangedDate$
             </xsl:if>
             <xsl:for-each select="Language">
                 <Actor_Language>
+                    <xsl:call-template name="CreateResourceRefAttribute" />
                     <Id>
                         <xsl:value-of select=" ./Id"/>
                     </Id>
@@ -804,6 +812,7 @@ $LastChangedDate$
 
     <xsl:template match="Source">
         <Source>
+            <xsl:call-template name="CreateResourceRefAttribute" />
             <Id>
                 <xsl:value-of select=" ./Id"/>
             </Id>

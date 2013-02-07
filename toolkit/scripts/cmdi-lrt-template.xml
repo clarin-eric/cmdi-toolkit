@@ -6,7 +6,7 @@
         <MdCreationDate/>
         <MdSelfLink/>
         <MdProfile>clarin.eu:cr1:p_1289827960126</MdProfile>
-	<MdCollectionDisplayName>CLARIN LRT inventory</MdCollectionDisplayName>
+    <MdCollectionDisplayName>CLARIN LRT inventory</MdCollectionDisplayName>
     </Header>
     <Resources>
         <ResourceProxyList></ResourceProxyList>
@@ -15,6 +15,7 @@
     </Resources>
     
     <Components>
+
         <LrtInventoryResource>
             
             <LrtCommon>
@@ -33,8 +34,6 @@
                 <ReadilyAvailable></ReadilyAvailable>
                 <ReferenceLink></ReferenceLink>         
                 <Languages/>
-                    
-              
                 <Countries/>
             </LrtCommon>
             
@@ -53,8 +52,46 @@
                 <Description></Description>
                 <ContactPerson></ContactPerson>
             </LrtIPR>
-            
-               
+
+            <LrtCollectionDetails>
+                <LongTermPreservationBy />
+                <Location />
+                <ContentType />
+                <FormatDetailed />
+                <Quality />
+                <Applications />
+                <Size />
+                <DistributionForm />
+                <Access />
+                <Source />
+                <WorkingLanguages />
+            </LrtCollectionDetails>
+    
+            <LrtLexiconDetails>
+                <Date />
+                <Type />
+                <FormatDetailed />
+                <SchemaReference />
+                <Size />
+                <Access />
+                <WorkingLanguages />
+            </LrtLexiconDetails>
+    
+            <LrtServiceDetails>
+                <Date />
+                <LocationWebservice />
+                <InterfaceReference />
+                <Input />
+                <InputSchemaReference />
+                <Output />
+                <OutputSchema />
+                <DevDescription />
+                <Access />
+            </LrtServiceDetails>
+    
+            <tags/>
+
         </LrtInventoryResource>
+
     </Components>
 </CMD>

@@ -229,15 +229,53 @@ $LastChangedDate$
         </ResourceProxy>
     </xsl:template>
 
-    <!-- Used to create resource refs on actors, sources and languages -->
-    <xsl:template name="CreateResourceRefAttribute">
+    <!-- Used to create the ResourceRef (single ref) attribute on actors and languages -->
+    <xsl:template match="@ResourceRef" mode="CreateResourceRefAttribute">
         <xsl:choose>
+            <!-- Only add attribute if a resource with the referenced id exists -->
             <xsl:when test="$keep-resource-refs 
-                and string-length(@ResourceRef) &gt; 0 
-                and (boolean(//MediaFile/@ResourceId = @ResourceRef) 
-                or boolean(//WrittenResource/@ResourceId = @ResourceRef))">
-                <xsl:attribute name="ref" select="@ResourceRef"/>
+                and string-length(.) &gt; 0 
+                and (boolean(//MediaFile/@ResourceId = .) 
+                or boolean(//WrittenResource/@ResourceId = .))
+                ">
+                <xsl:attribute name="ref" select="."/>
             </xsl:when>
+        </xsl:choose>
+    </xsl:template>
+    
+    <!-- Used to create the ResourceRefs attribute (multiple refs) on sources -->
+    <xsl:template match="@ResourceRefs" mode="CreateResourceRefAttribute">
+        <xsl:variable name="resourceRefsValid">
+            <xsl:call-template name="CheckResourceRefsValidity">
+                <xsl:with-param name="resourceRefs" select="concat(normalize-space(string(.)),' ')"></xsl:with-param>
+            </xsl:call-template>
+        </xsl:variable>
+        <xsl:if test="$resourceRefsValid = 'true'">
+            <xsl:attribute name="ref" select="."/>
+        </xsl:if>
+    </xsl:template>
+    
+    <!-- Recursive function that checks whether all references in a ResourceRefs attribute  are actually valid -->
+    <xsl:template name="CheckResourceRefsValidity" >
+        <xsl:param name="resourceRefs"/>
+        <xsl:choose>
+            <!-- empty resourceRefs attribute is always valid -->
+            <xsl:when test="string-length($resourceRefs) = 0">true</xsl:when>
+            <xsl:otherwise>
+                <!-- check first ref (CAR) -->
+                <xsl:variable name="firstRef" select="substring-before($resourceRefs,' ')"/>
+                <xsl:choose>
+                    <xsl:when test="boolean(//MediaFile/@ResourceId = $firstRef) or boolean(//WrittenResource/@ResourceId = $firstRef)">
+                        <!-- a resource with the same ref exists -->
+                        <xsl:call-template name="CheckResourceRefsValidity" >
+                            <!-- check remainder (CDR) -->
+                            <xsl:with-param name="resourceRefs" select="substring-after($resourceRefs,' ')" />
+                        </xsl:call-template>
+                    </xsl:when>
+                    <!-- if this one does not match, discard entire resourceRefs -->
+                    <xsl:otherwise>false</xsl:otherwise>
+                </xsl:choose>
+            </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
 
@@ -470,7 +508,7 @@ $LastChangedDate$
             </xsl:if>
             <xsl:for-each select="Language">
                 <Content_Language>
-                    <xsl:call-template name="CreateResourceRefAttribute" />
+                    <xsl:apply-templates mode="CreateResourceRefAttribute" select="@ResourceRef"/>
                     <Id>
                         <xsl:value-of select=" ./Id"/>
                     </Id>
@@ -521,7 +559,7 @@ $LastChangedDate$
             </xsl:if>
             <xsl:for-each select="Actor">
                 <Actor>
-                    <xsl:call-template name="CreateResourceRefAttribute" />
+                    <xsl:apply-templates mode="CreateResourceRefAttribute" select="@ResourceRef"/>
                     <Role>
                         <xsl:value-of select=" ./Role"/>
                     </Role>
@@ -587,7 +625,7 @@ $LastChangedDate$
             </xsl:if>
             <xsl:for-each select="Language">
                 <Actor_Language>
-                    <xsl:call-template name="CreateResourceRefAttribute" />
+                    <xsl:apply-templates mode="CreateResourceRefAttribute" select="@ResourceRef" />
                     <Id>
                         <xsl:value-of select=" ./Id"/>
                     </Id>
@@ -812,7 +850,7 @@ $LastChangedDate$
 
     <xsl:template match="Source">
         <Source>
-            <xsl:call-template name="CreateResourceRefAttribute" />
+            <xsl:apply-templates mode="CreateResourceRefAttribute" select="@ResourceRefs"/>
             <Id>
                 <xsl:value-of select=" ./Id"/>
             </Id>

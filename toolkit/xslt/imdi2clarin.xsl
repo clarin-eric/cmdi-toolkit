@@ -186,7 +186,22 @@ $LastChangedDate$
     
     <!-- to be called during the creation of the ResourceProxyList (in linking mode) -->
     <xsl:template name="CreateResourceProxyTypeResource">
-        <ResourceProxy id="{generate-id()}">
+        
+        <xsl:variable name="resourceId">
+            <xsl:choose>
+                <xsl:when test="$keep-resource-refs and string-length(@ResourceId) &gt; 0">
+                    <xsl:value-of select="@ResourceId" />
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="generate-id()"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        
+        <ResourceProxy>
+            <xsl:attribute name="id">
+                <xsl:value-of select="$resourceId"/>
+            </xsl:attribute>
             <ResourceType>
                 <xsl:if test="exists(Format) and not(empty(Format))">
                     <xsl:attribute name="mimetype">
@@ -612,13 +627,13 @@ $LastChangedDate$
             <xsl:choose>
                 <xsl:when test="$keep-resource-refs and string-length(@ResourceId) &gt; 0">
                     <xsl:value-of select="@ResourceId" />
-            </xsl:when>
+                </xsl:when>
                 <xsl:otherwise>
                     <xsl:value-of select="generate-id()"/>
                 </xsl:otherwise>
-        </xsl:choose>
-            
+            </xsl:choose>
         </xsl:variable>
+        
         <MediaFile>
             <xsl:attribute name="ref">
                 <xsl:value-of select="$resourceRef"/>

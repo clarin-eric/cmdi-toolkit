@@ -495,6 +495,11 @@ $LastChangedDate$
             </xsl:if>
             <xsl:for-each select="Actor">
                 <Actor>
+                    <xsl:choose>
+                        <xsl:when test="$keep-resource-refs and string-length(@ResourceRef) &gt; 0">
+                            <xsl:attribute name="ref" select="@ResourceRef"/>
+                        </xsl:when>
+                    </xsl:choose>
                     <Role>
                         <xsl:value-of select=" ./Role"/>
                     </Role>
@@ -615,7 +620,9 @@ $LastChangedDate$
             
         </xsl:variable>
         <MediaFile>
-            <xsl:attribute name="ref"><xsl:value-of select="$resourceRef"/></xsl:attribute>
+            <xsl:attribute name="ref">
+                <xsl:value-of select="$resourceRef"/>
+            </xsl:attribute>
             <ResourceLink>
                 <xsl:value-of select=" ./ResourceLink"/>
             </ResourceLink>
@@ -688,7 +695,22 @@ $LastChangedDate$
     </xsl:template>
 
     <xsl:template match="WrittenResource">
-        <WrittenResource ref="{generate-id()}">
+        
+        <xsl:variable name="resourceRef">
+            <xsl:choose>
+                <xsl:when test="$keep-resource-refs and string-length(@ResourceId) &gt; 0">
+                    <xsl:value-of select="@ResourceId" />
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="generate-id()"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        
+        <WrittenResource>
+            <xsl:attribute name="ref">
+                <xsl:value-of select="$resourceRef"/>
+            </xsl:attribute>
             <ResourceLink>
                 <xsl:value-of select=" ./ResourceLink"/>
             </ResourceLink>

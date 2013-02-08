@@ -23,7 +23,7 @@ $LastChangedDate$
     paths are resolved into absolute URIs in the context of the base
     URI. Omit this if you are unsure. -->
     <xsl:param name="uri-base"/>
-
+    
     <!-- definition of the SRU-searchable collections at TLA (for use later on) -->
     <xsl:variable name="SruSearchable">childes,ESF corpus,IFA corpus,MPI CGN,talkbank</xsl:variable>
     
@@ -186,21 +186,9 @@ $LastChangedDate$
     
     <!-- to be called during the creation of the ResourceProxyList (in linking mode) -->
     <xsl:template name="CreateResourceProxyTypeResource">
-        
-        <xsl:variable name="resourceId">
-            <xsl:choose>
-                <xsl:when test="$keep-resource-refs and string-length(@ResourceId) &gt; 0">
-                    <xsl:value-of select="@ResourceId" />
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:value-of select="generate-id()"/>
-                </xsl:otherwise>
-            </xsl:choose>
-        </xsl:variable>
-        
         <ResourceProxy>
             <xsl:attribute name="id">
-                <xsl:value-of select="$resourceId"/>
+                <xsl:apply-templates mode="CreateRefFromResourceId" select="."/>
             </xsl:attribute>
             <ResourceType>
                 <xsl:if test="exists(Format) and not(empty(Format))">
@@ -228,8 +216,23 @@ $LastChangedDate$
             </ResourceRef>
         </ResourceProxy>
     </xsl:template>
-
-    <!-- Used to create the ResourceRef (single ref) attribute on actors and languages -->
+    
+    <!-- 
+        Used to create id on ResourceProxy elements and ref on MediaFile and WrittenResource elements 
+        from ResourceId attribute on original MediaFile and WritteResource elements 
+    -->
+    <xsl:template match="MediaFile|WrittenResource" mode="CreateRefFromResourceId">
+        <xsl:choose>
+            <xsl:when test="$keep-resource-refs and string-length(@ResourceId) &gt; 0">
+                <xsl:value-of select="@ResourceId" />
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="generate-id()"/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    
+    <!-- Used to create the ref attribute on actors and languages from the original ResourceRef (single ref) -->
     <xsl:template match="@ResourceRef" mode="CreateResourceRefAttribute">
         <xsl:choose>
             <!-- Only add attribute if a resource with the referenced id exists -->
@@ -243,7 +246,7 @@ $LastChangedDate$
         </xsl:choose>
     </xsl:template>
     
-    <!-- Used to create the ResourceRefs attribute (multiple refs) on sources -->
+    <!-- Used to create the ref attribute on sources from the original ResourceRefs attribute (multiple refs) -->
     <xsl:template match="@ResourceRefs" mode="CreateResourceRefAttribute">
         <xsl:variable name="resourceRefsValid">
             <xsl:call-template name="CheckResourceRefsValidity">
@@ -668,21 +671,9 @@ $LastChangedDate$
     </xsl:template>
 
     <xsl:template match="MediaFile">
-        
-        <xsl:variable name="resourceRef">
-            <xsl:choose>
-                <xsl:when test="$keep-resource-refs and string-length(@ResourceId) &gt; 0">
-                    <xsl:value-of select="@ResourceId" />
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:value-of select="generate-id()"/>
-                </xsl:otherwise>
-            </xsl:choose>
-        </xsl:variable>
-        
         <MediaFile>
-            <xsl:attribute name="ref">
-                <xsl:value-of select="$resourceRef"/>
+            <xsl:attribute name="ref">            
+                <xsl:apply-templates mode="CreateRefFromResourceId" select="."/>
             </xsl:attribute>
             <ResourceLink>
                 <xsl:value-of select=" ./ResourceLink"/>
@@ -756,21 +747,9 @@ $LastChangedDate$
     </xsl:template>
 
     <xsl:template match="WrittenResource">
-        
-        <xsl:variable name="resourceRef">
-            <xsl:choose>
-                <xsl:when test="$keep-resource-refs and string-length(@ResourceId) &gt; 0">
-                    <xsl:value-of select="@ResourceId" />
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:value-of select="generate-id()"/>
-                </xsl:otherwise>
-            </xsl:choose>
-        </xsl:variable>
-        
-        <WrittenResource>
-            <xsl:attribute name="ref">
-                <xsl:value-of select="$resourceRef"/>
+        <WrittenResource>            
+            <xsl:attribute name="ref">            
+                <xsl:apply-templates mode="CreateRefFromResourceId" select="."/>
             </xsl:attribute>
             <ResourceLink>
                 <xsl:value-of select=" ./ResourceLink"/>

@@ -27,7 +27,7 @@ $LastChangedDate$
     <!-- definition of the SRU-searchable collections at TLA (for use later on) -->
     <xsl:variable name="SruSearchable">childes,ESF corpus,IFA corpus,MPI CGN,talkbank</xsl:variable>
     
-    <xsl:param name="keep-resource-refs" select="'true'" />
+    <xsl:param name="keep-resource-refs" select="true()" />
 
     <xsl:template name="metatranscriptDelegate">
         <xsl:param name="profile"/>
@@ -248,13 +248,15 @@ $LastChangedDate$
     
     <!-- Used to create the ref attribute on sources from the original ResourceRefs attribute (multiple refs) -->
     <xsl:template match="@ResourceRefs" mode="CreateResourceRefAttribute">
-        <xsl:variable name="resourceRefsValid">
-            <xsl:call-template name="CheckResourceRefsValidity">
-                <xsl:with-param name="resourceRefs" select="concat(normalize-space(string(.)),' ')"></xsl:with-param>
-            </xsl:call-template>
-        </xsl:variable>
-        <xsl:if test="$resourceRefsValid = 'true'">
-            <xsl:attribute name="ref" select="."/>
+        <xsl:if test="$keep-resource-refs">
+            <xsl:variable name="resourceRefsValid">
+                <xsl:call-template name="CheckResourceRefsValidity">
+                    <xsl:with-param name="resourceRefs" select="concat(normalize-space(string(.)),' ')"></xsl:with-param>
+                </xsl:call-template>
+            </xsl:variable>
+            <xsl:if test="$resourceRefsValid = 'true'">
+                <xsl:attribute name="ref" select="."/>
+            </xsl:if>
         </xsl:if>
     </xsl:template>
     

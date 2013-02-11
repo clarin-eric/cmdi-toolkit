@@ -3,22 +3,59 @@
 # converts the CSV from the LRT inventory to nice and clean CMDI
 # Dieter says: I deny the existance of this script!
 
-import urllib, csv, datetime, xml.etree.ElementTree as ElementTree
+import csv, datetime, pdb, sys, traceback, urllib, xml.etree.ElementTree as ElementTree
 from curses.ascii import ascii
 
-class CmdiFile:
-    def __init__(self, nodeId):
-        template = open("cmdi-lrt-template.xml").read()
-        self.nodeId = nodeId
-        self.xmlTree = ElementTree.ElementTree(ElementTree.fromstring(template))
-        self.parentmap = dict((c, p) for p in self.xmlTree.getiterator() for c in p)
+if sys.version_info < (2, 7) :
+    sys.stderr.write("WARNING: this script was only tested with Python version 2.7.3! You are running version " + str(sys.version_info[1]) + "." + str(sys.version_info[2]) + " instead.\n")
+
+class CmdiFile :
+    def __init__(self, nodeId) :
+        template            = open("cmdi-lrt-template.xml").read()
+        self.nodeId         = nodeId
+        self.xmlTree        = ElementTree.ElementTree(ElementTree.fromstring(template))
+        self.parentmap      = dict((c, p) for p in self.xmlTree.getiterator() for c in p)
         self.fillElement("//MdCreationDate", datetime.datetime.now().strftime("%Y-%m-%d"))
-        self.fillElement("//MdSelfLink", "http://www.clarin.eu/node/%s" % nodeId)
+        self.fillElement("//MdSelfLink", "http://user.clarin.eu/node/%s" % nodeId)
 
+    def fillElement(self, XPath, value) :
+        try :
+            self.xmlTree.find(XPath).text = value.strip()
+        except :
+            print "Error in filling element " + XPath
+            print traceback.format_exc()
 
+            pdb.set_trace()
+        
 
-    def fillElement(self, xpath, value):
-        self.xmlTree.find(xpath).text = value.strip()
+    def fillOptionalElement(self, XPath, value) :
+        try :
+            result = self.fillElement(XPath, value)
+        except :
+            print "Error in filling optional element " + XPath
+            print traceback.format_exc()
+
+            pdb.set_trace()
+        else :
+            return result
+
+        ### Conceptual code that should remove optional elements if they are being filled with empty strings.
+        # optional_element_parent_XPath   = XPath + "/.." 
+        # optional_element_parent         = self.xmlTree.find(optional_element_parent_XPath)
+        # optional_element                = self.xmlTree.find(XPath)
+
+        # try :
+        #     assert(optional_element_parent is not None)
+        #     assert(optional_element is not None)
+        # except :
+        #     import pdb
+        #     pdb.set_trace()
+
+        # value = str(value).strip()
+        # if len(value) > 1 :
+        #     optional_element.text   = value
+        # else :
+        #     optional_element_parent.remove(optional_element)
 
     def fillMultipleElement(self, elementname, xpath, values):
         # fill in the already existing element
@@ -54,12 +91,12 @@ class CmdiFile:
     def serialize(self):
         self.removeEmptyNodes()
         #print ElementTree.tostring(self.xmlTree.getroot())
-        filename = "lrt-%s.cmdi" % self.nodeId
-        self.xmlTree.write(filename, encoding="utf-8", xml_declaration=True)
-        f = open(filename, 'r+' )
-        content = f.read().replace('<CMD', '<CMD xmlns="http://www.clarin.eu/cmd/"')
+        filename            = "lrt-%s.cmdi" % self.nodeId
+        self.xmlTree.write(filename, encoding = "utf-8", xml_declaration = True)
+        f                   = open(filename, 'r+' )
+        content             = f.read().replace('<CMD', '<CMD xmlns="http://www.clarin.eu/cmd/"')
         f.close()
-        f = open(filename, 'w' )
+        f                   = open(filename, 'w' )
         f.write(content)
         f.close
 
@@ -93,7 +130,7 @@ class CmdiFile:
                 newCountryNode.append(newCodeNode)
                 countriesNode.append(newCountryNode)
 
-    def addLanguages(self, isoList, languages, iso639Type=3, xpath="//LrtCommon/Languages"):
+    def addLanguages(self, isoList, languages, iso639Type = 3, xpath = "//LrtCommon/Languages"):
         languagesNode = self.xmlTree.find(xpath)
         languageList = [l.strip() for l in languages.split("||")]
         for language in languageList:
@@ -109,94 +146,52 @@ class CmdiFile:
     def addResourceType(self, types, record, isoList):
             typeList = [t.strip() for t in types.split("||")]
             self.fillMultipleElement("ResourceType", "//LrtCommon/ResourceType", typeList)
+            typeList = frozenset(typeList)
 
-            collectionList = ["Written Corpus","Multimodal Corpus","Aligned Corpus","Treebank","N-Gram Model"]
-            lexiconList = ["Lexicon / Knowledge Source","Terminological Resource"]
+            collectionList  = frozenset(("Spoken Corpus", "Written Corpus", "Multimodal Corpus", "Aligned Corpus", "Treebank", "N-Gram Model",))
+            lexiconList     = frozenset(("Grammar", "Lexicon / Knowledge Source", "Terminological Resource",))
 
-            if set(typeList).intersection(set(collectionList)):
+            if typeList.intersection(collectionList):
                 self.addCollectionDetails(record, isoList)
-            if set(typeList).intersection(set(lexiconList)):
+            if typeList.intersection(lexiconList):
                 self.addLexiconDetails(record, isoList)
             #if "Web Service" in typeList:
             #    self.addServiceDetails(record)
 
     def addCollectionDetails(self, record, isoList):
-        # add the relevant XML subtree
-        template = '''<LrtCollectionDetails>
-                <LongTermPreservationBy />
-                <Location />
-                <ContentType />
-                <FormatDetailed />
-                <Quality />
-                <Applications />
-                <Size />
-                <DistributionForm />
-                <Access />
-                <Source />
-                <WorkingLanguages />
-            </LrtCollectionDetails>'''
-        partTree = ElementTree.fromstring(template)
-        parent = self.xmlTree.find("//LrtInventoryResource")
-        parent.append(partTree)
-        # and now fill it
-        self.fillElement("//LrtCollectionDetails/LongTermPreservationBy", record["field_longterm_preservation"])
-        self.fillElement("//LrtCollectionDetails/Location", record["field_location_0"])
-        self.fillElement("//LrtCollectionDetails/ContentType", record["field_content_type"])
-        self.fillElement("//LrtCollectionDetails/FormatDetailed", record["field_format_detailed"])
-        self.fillElement("//LrtCollectionDetails/Quality", record["field_quality"])
-        self.fillElement("//LrtCollectionDetails/Applications", record["field_applications"])
-        self.fillElement("//LrtCollectionDetails/Size", record["field_size"])
-        self.fillElement("//LrtCollectionDetails/DistributionForm", record["field_distribution_form"])
-        self.fillElement("//LrtCollectionDetails/Size", record["field_size"])
-        self.fillElement("//LrtCollectionDetails/Access", record["field_access"])
-        self.fillElement("//LrtCollectionDetails/Source", record["field_source_0"])
+        LrtCollectionDetails_XPath  = "//LrtInventoryResource/LrtCollectionDetails"
+
+
+        self.fillOptionalElement(LrtCollectionDetails_XPath + "/LongTermPreservationBy",    record["field_longterm_preservation"])
+        self.fillOptionalElement(LrtCollectionDetails_XPath + "/Location",                  record["field_location_0"])
+        self.fillOptionalElement(LrtCollectionDetails_XPath + "/ContentType",               record["field_content_type"])
+        self.fillOptionalElement(LrtCollectionDetails_XPath + "/FormatDetailed",            record["field_format_detailed"])
+        self.fillOptionalElement(LrtCollectionDetails_XPath + "/Quality",                   record["field_quality"])
+        self.fillOptionalElement(LrtCollectionDetails_XPath + "/Applications",              record["field_applications"])
+        self.fillOptionalElement(LrtCollectionDetails_XPath + "/Size",                      record["field_size"])
+        self.fillOptionalElement(LrtCollectionDetails_XPath + "/DistributionForm",          record["field_distribution_form"])
+        self.fillOptionalElement(LrtCollectionDetails_XPath + "/Size",                      record["field_size"])
+        self.fillOptionalElement(LrtCollectionDetails_XPath + "/Access",                    record["field_access"])
+        self.fillOptionalElement(LrtCollectionDetails_XPath + "/Source",                    record["field_source_0"])
 
         # ok - this can be done in a cleaner way
-        self.addLanguages(isoList, record["field_working_languages"], 1, "//LrtCollectionDetails/WorkingLanguages")
-
-
+        self.addLanguages(isoList, record["field_working_languages"], 1, LrtCollectionDetails_XPath + "/WorkingLanguages")
 
     def addLexiconDetails(self, record, isoList):
-        template = '''<LrtLexiconDetails>
-                <Date />
-                <Type />
-                <FormatDetailed />
-                <SchemaReference />
-                <Size />
-                <Access />
-                <WorkingLanguages />
-            </LrtLexiconDetails>'''
-        partTree = ElementTree.fromstring(template)
-        parent = self.xmlTree.find("//LrtInventoryResource")
-        parent.append(partTree)
+        LrtLexiconDetails_XPath     = "//LrtInventoryResource/LrtLexiconDetails"
 
-        # and now fill it
-        self.fillElement("//LrtLexiconDetails/Date", record["field_date_0"])
-        self.fillElement("//LrtLexiconDetails/Type", record["field_type"])
-        self.fillElement("//LrtLexiconDetails/FormatDetailed", record["field_format_detailed_1"])
-        self.fillElement("//LrtLexiconDetails/SchemaReference", record["field_schema_reference"])
-        self.fillElement("//LrtLexiconDetails/Size", record["field_size_0"])
-        self.fillElement("//LrtLexiconDetails/Access", record["field_access_1"])
-        self.addLanguages(isoList, record["field_working_languages_0"], 1, "//LrtLexiconDetails/WorkingLanguages")
+        self.fillOptionalElement(LrtLexiconDetails_XPath + "/Date",                         record["field_date_0"])
+        self.fillOptionalElement(LrtLexiconDetails_XPath + "/Type",                         record["field_type"])
+        self.fillOptionalElement(LrtLexiconDetails_XPath + "/FormatDetailed",               record["field_format_detailed_1"])
+        self.fillOptionalElement(LrtLexiconDetails_XPath + "/SchemaReference",              record["field_schema_reference"])
+        self.fillOptionalElement(LrtLexiconDetails_XPath + "/Size",                         record["field_size_0"])
+        self.fillOptionalElement(LrtLexiconDetails_XPath + "/Access",                       record["field_access_1"])
+        self.addLanguages(isoList, record["field_working_languages_0"], 1, LrtLexiconDetails_XPath + "/WorkingLanguages")
 
     def addServiceDetails(self, record):
-        template = '''<LrtServiceDetails>
-                <Date />
-                <LocationWebservice />
-                <InterfaceReference />
-                <Input />
-                <InputSchemaReference />
-                <Output />
-                <OutputSchema />
-                <DevDescription />
-                <Access />
-            </LrtServiceDetails>'''
-        partTree = ElementTree.fromstring(template)
-        parent = self.xmlTree.find("//LrtInventoryResource")
-        parent.append(partTree)
+        LrtLexiconDetails_XPath  = "//LrtInventoryResource/LrtServiceDetails"
 
-        # and now fill it
-        self.fillElement("//LrtLexiconDetails/Date", record["field_date_0"])
+        self.fillOptionalElement(LrtLexiconDetails_XPath + "/Date",                         record["field_date_0"])
 
     def addResourceProxy(self, link) :
         template = '''<ResourceProxy id="reflink">
@@ -211,10 +206,11 @@ class CmdiFile:
         self.fillElement("//ResourceProxy/ResourceRef", link)
 
     def addTags(self, tags_string) :
-        tags_XML_element                = self.xmlTree.find(".//tags")
+        tags_parent_XPath               = "//LrtInventoryResource" # One could use "/..", but that is unnecessary and can lead to mistakes.
+        tags_XML_element                = self.xmlTree.find("//LrtInventoryResource/tags")
         assert(tags_XML_element is not None)
 
-        tags = tags_string.split(",")
+        tags = filter(None, tags_string.split(","))
         if len(tags) > 0 :
             # Remove whitespace left and right to tag values
             tags                        = list(map(unicode.strip, tags)) # X- Python 3 incompatible
@@ -226,7 +222,8 @@ class CmdiFile:
                 tag_XML_element.text    = tag
                 tags_XML_element.append(tag_XML_element)
         else :
-            self.xmlTree.remove("tags")
+            tags_parent_element         = self.xmlTree.find(tags_parent_XPath)
+            tags_parent_element.remove(tags_XML_element)
 
 def addChildNode(parent, tag, content) :
     node = ElementTree.Element(tag)
@@ -245,7 +242,7 @@ def parseFirstLine(l):
 
 
 def loadInfo():
-    csvFile = csv.reader(urllib.urlopen("http://www.clarin.eu/export_resources").readlines())
+    csvFile = csv.reader(urllib.urlopen("http://user.clarin.eu/export_resources").readlines())
     #csvFile = csv.reader(urllib.urlopen("resources.csv").readlines())
     #csvFile =[l.decode('utf-8') for l in rawCsvFile]
 
@@ -336,7 +333,5 @@ def main():
         cmdi.addTags(record['tags']);
 
         cmdi.serialize()
-
-
 
 main()

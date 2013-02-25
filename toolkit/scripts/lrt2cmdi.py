@@ -16,7 +16,7 @@ class CmdiFile :
         self.xmlTree        = ElementTree.ElementTree(ElementTree.fromstring(template))
         self.parentmap      = dict((c, p) for p in self.xmlTree.getiterator() for c in p)
         self.fillElement("//MdCreationDate", datetime.datetime.now().strftime("%Y-%m-%d"))
-        self.fillElement("//MdSelfLink", "http://user.clarin.eu/node/%s" % nodeId)
+        self.fillElement("//MdSelfLink", "http://lrt.clarin.eu/node/%s" % nodeId)
 
     def fillElement(self, XPath, value) :
         try :
@@ -242,7 +242,7 @@ def parseFirstLine(l):
 
 
 def loadInfo():
-    csvFile = csv.reader(urllib.urlopen("http://user.clarin.eu/export_resources").readlines())
+    csvFile = csv.reader(urllib.urlopen("http://lrt.clarin.eu/export_resources").readlines())
     #csvFile = csv.reader(urllib.urlopen("resources.csv").readlines())
     #csvFile =[l.decode('utf-8') for l in rawCsvFile]
 

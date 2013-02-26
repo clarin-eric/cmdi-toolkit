@@ -60,7 +60,14 @@
     <xsl:template match="/CMD_ComponentSpec">
 
         <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dcr="http://www.isocat.org/ns/dcr" xmlns:cmd="http://www.clarin.eu/cmd/" targetNamespace="http://www.clarin.eu/cmd/" elementFormDefault="qualified">
-
+            
+	    <!-- put the header information from the component specification in the schema as appinfo -->
+            <xs:annotation>
+                <xs:appinfo xmlns:ann="http://www.clarin.eu">
+                    <xsl:apply-templates select="Header" mode="Header"/>
+                </xs:appinfo>
+            </xs:annotation>
+            
             <!-- import this for the use of the xml:lang attribute -->
             <xs:import namespace="http://www.w3.org/XML/1998/namespace"
                 schemaLocation="http://www.w3.org/2001/xml.xsd"/>
@@ -71,7 +78,7 @@
 
             <!-- then create simple type for the ResourceProxy -->
             <xsl:call-template name="PrintHeaderType"/>
-
+            
 
             <xs:element name="CMD">
                 <xs:complexType>
@@ -103,7 +110,13 @@
         </xs:schema>
 
     </xsl:template>
-
+    
+    <xsl:template match="*" mode="Header">
+        <xsl:element name="ann:{name()}" namespace="http://www.clarin.eu">
+            <xsl:value-of select="text()"/>
+            <xsl:apply-templates select="*" mode="Header" />
+        </xsl:element>
+    </xsl:template>
 
     <xsl:template name="CreateComplexTypes">
         <xsl:apply-templates select="CMD_Component" mode="types"/>

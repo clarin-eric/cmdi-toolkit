@@ -14,6 +14,8 @@
     <xsl:template match="/xs:schema" mode="clean">
         <xs:schema xmlns:cmd="http://www.clarin.eu/cmd/">
             <xsl:copy-of select="@*"/>
+	    <!-- Keep the annotation with header information -->
+            <xsl:copy-of select="xs:annotation" />
             <xsl:apply-templates select="xs:import" mode="clean"/>
             <!-- Remove double entries for named simpleType and complexType definitions at the begin of the XSD.  -->
             <xsl:for-each-group select="./xs:simpleType" group-by="@name">

@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-##   Title:      Check tools integry
+##   Title:      Check tools integrity
 ##   Author:     Sander Maijers <sanmai @@ mpi.nl>
 ##   Since:      1-8-2012
+##   Status:     ALPHA
 ##   Description:
 ##   Check the CLARIN tools registry CSV file for problematic 
 ##   URLs (dead links, etc.) and problematic e-mail-addresses. 

@@ -6,7 +6,7 @@
 import csv, datetime, pdb, sys, traceback, urllib, xml.etree.ElementTree as ElementTree
 from curses.ascii import ascii
 
-if sys.version_info < (2, 7) :
+if sys.version_info < (2, 7) or sys.version_info >= (3, 0):
     sys.stderr.write("WARNING: this script was only tested with Python version 2.7.3! You are running version " + str(sys.version_info[1]) + "." + str(sys.version_info[2]) + " instead.\n")
 
 class CmdiFile :
@@ -15,7 +15,8 @@ class CmdiFile :
         self.nodeId         = nodeId
         self.xmlTree        = ElementTree.ElementTree(ElementTree.fromstring(template))
         self.parentmap      = dict((c, p) for p in self.xmlTree.getiterator() for c in p)
-        self.fillElement("//MdCreationDate", datetime.datetime.now().strftime("%Y-%m-%d"))
+        self.current_date   = datetime.datetime.now().strftime("%Y-%m-%d")
+        self.fillElement("//MdCreationDate", self.current_date)
         self.fillElement("//MdSelfLink", "http://lrt.clarin.eu/node/%s" % nodeId)
 
     def fillElement(self, XPath, value) :
@@ -150,48 +151,80 @@ class CmdiFile :
 
             collectionList  = frozenset(("Spoken Corpus", "Written Corpus", "Multimodal Corpus", "Aligned Corpus", "Treebank", "N-Gram Model",))
             lexiconList     = frozenset(("Grammar", "Lexicon / Knowledge Source", "Terminological Resource",))
-
+           
             if typeList.intersection(collectionList):
                 self.addCollectionDetails(record, isoList)
             if typeList.intersection(lexiconList):
                 self.addLexiconDetails(record, isoList)
-            #if "Web Service" in typeList:
-            #    self.addServiceDetails(record)
+            if "Web Service" in typeList:
+                #pdb.set_trace()
+                self.addServiceDetails(record)
 
     def addCollectionDetails(self, record, isoList):
         LrtCollectionDetails_XPath  = "//LrtInventoryResource/LrtCollectionDetails"
 
 
-        self.fillOptionalElement(LrtCollectionDetails_XPath + "/LongTermPreservationBy",    record["field_longterm_preservation"])
-        self.fillOptionalElement(LrtCollectionDetails_XPath + "/Location",                  record["field_location_0"])
-        self.fillOptionalElement(LrtCollectionDetails_XPath + "/ContentType",               record["field_content_type"])
-        self.fillOptionalElement(LrtCollectionDetails_XPath + "/FormatDetailed",            record["field_format_detailed"])
-        self.fillOptionalElement(LrtCollectionDetails_XPath + "/Quality",                   record["field_quality"])
-        self.fillOptionalElement(LrtCollectionDetails_XPath + "/Applications",              record["field_applications"])
-        self.fillOptionalElement(LrtCollectionDetails_XPath + "/Size",                      record["field_size"])
-        self.fillOptionalElement(LrtCollectionDetails_XPath + "/DistributionForm",          record["field_distribution_form"])
-        self.fillOptionalElement(LrtCollectionDetails_XPath + "/Size",                      record["field_size"])
-        self.fillOptionalElement(LrtCollectionDetails_XPath + "/Access",                    record["field_access"])
-        self.fillOptionalElement(LrtCollectionDetails_XPath + "/Source",                    record["field_source_0"])
+        self.fillOptionalElement(LrtCollectionDetails_XPath + "/LongTermPreservationBy",    
+                                 record["field_longterm_preservation"])
+        self.fillOptionalElement(LrtCollectionDetails_XPath + "/Location",                  
+                                 record["field_location_0"])
+        self.fillOptionalElement(LrtCollectionDetails_XPath + "/ContentType",               
+                                 record["field_content_type"])
+        self.fillOptionalElement(LrtCollectionDetails_XPath + "/FormatDetailed",            
+                                 record["field_format_detailed"])
+        self.fillOptionalElement(LrtCollectionDetails_XPath + "/Quality",                   
+                                 record["field_quality"])
+        self.fillOptionalElement(LrtCollectionDetails_XPath + "/Applications",              
+                                 record["field_applications"])
+        self.fillOptionalElement(LrtCollectionDetails_XPath + "/Size",                      
+                                 record["field_size"])
+        self.fillOptionalElement(LrtCollectionDetails_XPath + "/DistributionForm",          
+                                 record["field_distribution_form"])
+        self.fillOptionalElement(LrtCollectionDetails_XPath + "/Size",                      
+                                 record["field_size"])
+        self.fillOptionalElement(LrtCollectionDetails_XPath + "/Access",                    
+                                 record["field_access"])
+        self.fillOptionalElement(LrtCollectionDetails_XPath + "/Source",                    
+                                 record["field_source_0"])
 
         # ok - this can be done in a cleaner way
-        self.addLanguages(isoList, record["field_working_languages"], 1, LrtCollectionDetails_XPath + "/WorkingLanguages")
+        self.addLanguages(isoList, 
+                          record["field_working_languages"], 
+                          1, 
+                          LrtCollectionDetails_XPath + "/WorkingLanguages")
 
     def addLexiconDetails(self, record, isoList):
-        LrtLexiconDetails_XPath     = "//LrtInventoryResource/LrtLexiconDetails"
+        LrtLexiconDetails_XPath = "//LrtInventoryResource/LrtLexiconDetails"
 
-        self.fillOptionalElement(LrtLexiconDetails_XPath + "/Date",                         record["field_date_0"])
-        self.fillOptionalElement(LrtLexiconDetails_XPath + "/Type",                         record["field_type"])
-        self.fillOptionalElement(LrtLexiconDetails_XPath + "/FormatDetailed",               record["field_format_detailed_1"])
-        self.fillOptionalElement(LrtLexiconDetails_XPath + "/SchemaReference",              record["field_schema_reference"])
-        self.fillOptionalElement(LrtLexiconDetails_XPath + "/Size",                         record["field_size_0"])
-        self.fillOptionalElement(LrtLexiconDetails_XPath + "/Access",                       record["field_access_1"])
-        self.addLanguages(isoList, record["field_working_languages_0"], 1, LrtLexiconDetails_XPath + "/WorkingLanguages")
+        self.fillOptionalElement(LrtLexiconDetails_XPath + "/Date",                         
+                                 record["field_date_0"])
+        self.fillOptionalElement(LrtLexiconDetails_XPath + "/Type",                         
+                                 record["field_type"])
+        self.fillOptionalElement(LrtLexiconDetails_XPath + "/FormatDetailed",               
+                                 record["field_format_detailed_1"])
+        self.fillOptionalElement(LrtLexiconDetails_XPath + "/SchemaReference",              
+                                 record["field_schema_reference"])
+        self.fillOptionalElement(LrtLexiconDetails_XPath + "/Size",                         
+                                 record["field_size_0"])
+        self.fillOptionalElement(LrtLexiconDetails_XPath + "/Access",                       
+                                 record["field_access_1"])
+        self.addLanguages(isoList, 
+                          record["field_working_languages_0"], 
+                          1, 
+                          LrtLexiconDetails_XPath + "/WorkingLanguages")
 
     def addServiceDetails(self, record):
+
+        #pdb.set_trace()
         LrtLexiconDetails_XPath  = "//LrtInventoryResource/LrtServiceDetails"
 
-        self.fillOptionalElement(LrtLexiconDetails_XPath + "/Date",                         record["field_date_0"])
+        if str(record["field_date_0"]).strip() == '' :
+            service_date = self.current_date
+        else :
+            service_date = record["field_date_0"] 
+
+        self.fillElement(LrtLexiconDetails_XPath + "/Date",
+                         service_date)
 
     def addResourceProxy(self, link) :
         template = '''<ResourceProxy id="reflink">
@@ -297,13 +330,13 @@ def main():
         cmdi.fillElement("//LrtCommon/FinalizationYearResourceCreation", record["field_end_creation_date"])
         cmdi.fillElement("//LrtCommon/MetadataLink", record["field_metadata_link"])
         cmdi.fillElement("//LrtCommon/Publications", record["field_publications"])
-        cmdi.fillElement("//LrtCommon/ReadilyAvailable", record["field_resource_available"].replace("Yes","true").replace("No","false"))
+        cmdi.fillElement("//LrtCommon/ReadilyAvailable", record["field_resource_available"].replace("Yes", "true").replace("No", "false"))
         cmdi.fillElement("//LrtCommon/ReferenceLink", record["field_reference_link"])
 
         cmdi.fillElement("//LrtDistributionClassification/DistributionType", record["distribution_type"])
-        cmdi.fillElement("//LrtDistributionClassification/ModificationsRequireRedeposition", record["modifications_require_redeposition"].replace("1","true").replace("0","false"))
-        cmdi.fillElement("//LrtDistributionClassification/NonCommercialUsageOnly", record["non-commercial_usage_only"].replace("1","true").replace("0","false"))
-        cmdi.fillElement("//LrtDistributionClassification/UsageReportRequired", record["usage_report_required"].replace("1","true").replace("0","false"))
+        cmdi.fillElement("//LrtDistributionClassification/ModificationsRequireRedeposition", record["modifications_require_redeposition"].replace("1", "true").replace("0","false"))
+        cmdi.fillElement("//LrtDistributionClassification/NonCommercialUsageOnly", record["non-commercial_usage_only"].replace("1", "true").replace("0", "false"))
+        cmdi.fillElement("//LrtDistributionClassification/UsageReportRequired", record["usage_report_required"].replace("1", "true").replace("0", "false"))
         cmdi.fillElement("//LrtDistributionClassification/OtherDistributionRestrictions", record["other_distribution_restrictions"])
 
         cmdi.fillElement("//LrtIPR/EthicalReference", record["field_ethical_reference"])

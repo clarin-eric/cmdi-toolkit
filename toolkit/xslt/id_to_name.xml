@@ -11,7 +11,6 @@
 <prov> <identifier>childes.psy.cmu.edu</identifier> <name>CHILDES Data repository</name> </prov>
 <prov> <identifier>CoCoSP.linguistlist.org</identifier> <name>Comparative Corpus of Spoken Portuguese</name> </prov>
 <prov> <identifier>sldr.org</identifier> <name>Speech and Language Data Repository</name> </prov>
-<prov> <identifier>dfki.de</identifier> <name>The Natural Language Software Registry</name> </prov>
 <prov> <identifier>catalogue.elra.info</identifier> <name>European Language Resources Association</name> </prov>
 <prov> <identifier>ethnologue.com</identifier> <name>Ethnologue: Languages of the World</name> </prov>
 <prov> <identifier>Formosan.sinica.edu.tw</identifier> <name>Academia Sinica Formosan Language Archive</name> </prov>
@@ -34,6 +33,7 @@
 <prov> <identifier>surrey.smg.surrey.ac.uk</identifier> <name>Surrey Morphology Group Databases</name> </prov>
 <prov> <identifier>scholarspace.manoa.hawaii.edu</identifier> <name>ScholarSpace at University of Hawaii at Manoa</name> </prov>
 <prov> <identifier>EarlyMandarin.sinica.edu.tw</identifier> <name>Academia Sinica Tagged Corpus of Early Mandarin Chinese</name> </prov>
+<prov> <identifier>https.service.arthurianfiction.org</identifier> <name>Arthurian Fiction</name> </prov>
 <prov> <identifier>clarind-uds</identifier> <name>Saarland University</name> </prov>
 <prov> <identifier>clarin.dk</identifier> <name>DK-CLARIN Repository</name> </prov>
 <prov> <identifier>dta</identifier> <name>Berlin-Brandenburgische Akademie der Wissenschaften</name> </prov>
@@ -59,4 +59,6 @@
 <prov> <identifier>rtv</identifier> <name>University of Roma Tor Vergata</name> </prov>
 <prov> <identifier>clle-erss</identifier> <name>CLLE-ERSS Université de Toulouse-Le Mirail</name> </prov>
 <prov> <identifier>cnr.it</identifier> <name>Meta-Share Repository at ILC</name> </prov>
+<prov> <identifier>repos.ids-mannheim.de</identifier> <name>Institut für Deutsche Sprache</name> </prov>
+<prov> <identifier>ims.uni-stuttgart.de</identifier> <name>IMS, University of Stuttgart</name> </prov>
 </providers>

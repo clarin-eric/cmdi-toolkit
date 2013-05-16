@@ -41,7 +41,7 @@
 <prov> <identifier>ufal-point.mff.cuni.cz</identifier> <name>LINDAT-Clarin repository</name> </prov>
 <prov> <identifier>nlp.pwr.wroc.pl</identifier> <name>University of Wroclaw</name> </prov>
 <prov> <identifier>upf</identifier> <name>UPF Harvesting Day Repository</name> </prov>
-<prov> <identifier>gilmere.upf.edu</identifier> <name>UPF Metashare Repository</name> </prov>
+<prov> <identifier>iula.upf.edu</identifier> <name>UPF Metashare Repository</name> </prov>
 <prov> <identifier>cnrtl.fr</identifier> <name>CNRTL</name> </prov>
 <prov> <identifier>meertens.knaw.nl</identifier> <name>Meertens institute</name> </prov>
 <prov> <identifier>mulce.org</identifier> <name>Multimodal Learning and teaching Corpora Exchange</name> </prov>

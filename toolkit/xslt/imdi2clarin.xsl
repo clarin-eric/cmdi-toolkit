@@ -151,7 +151,7 @@ $LastChangedDate$
                 <ResourceRef>
                     <xsl:choose>
                         <xsl:when test="not(normalize-space(./@ArchiveHandle)='')"
-                                >test-<xsl:value-of select="./@ArchiveHandle"/></xsl:when>
+                                ><xsl:value-of select="./@ArchiveHandle"/></xsl:when>
                         <xsl:when test="starts-with(., 'hdl:')">
                             <xsl:value-of select="."/>
                         </xsl:when>

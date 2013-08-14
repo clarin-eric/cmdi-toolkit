@@ -147,14 +147,30 @@ $LastChangedDate$
     <xsl:template match="Corpus" mode="linking">
         <xsl:for-each select="CorpusLink">
             <ResourceProxy id="{generate-id()}">
+                <!-- Do we have both archive handle and link (text content)? -->
+                <xsl:if test="not(normalize-space(./@ArchiveHandle)='' or normalize-space(.)='')">
+                    <!-- Archive handle is kept, but original link is lost in CDMI. Keep content in a comment. -->
+                    <xsl:comment>
+                        <xsl:value-of select="."/>
+                    </xsl:comment>
+                </xsl:if>
                 <ResourceType>Metadata</ResourceType>
                 <ResourceRef>
                     <xsl:choose>
-                        <xsl:when test="not(normalize-space(./@ArchiveHandle)='')"
-                                ><xsl:value-of select="./@ArchiveHandle"/></xsl:when>
+                        <!-- Check for archive handle attribute -->
+                        <xsl:when test="not(normalize-space(./@ArchiveHandle)='')">
+                            <xsl:choose>
+                                <!-- MPI handle prefix? Use handle + @format=cmdi suffix -->
+                                <xsl:when test="starts-with(normalize-space(@ArchiveHandle), 'hdl:1839/')"><xsl:value-of select="@ArchiveHandle"/>@format=cmdi</xsl:when>
+                                <!-- Other handle prefix? Use handle (e.g. Lund) -->
+                                <xsl:otherwise><xsl:value-of select="@ArchiveHandle"/></xsl:otherwise>
+                            </xsl:choose>
+                        </xsl:when>
+                        <!-- Is link a handle? -->
                         <xsl:when test="starts-with(., 'hdl:')">
                             <xsl:value-of select="."/>
                         </xsl:when>
+                        <!-- Fallback: use original link, append .cmdi. Resolve from base URI if available. -->
                         <xsl:when test="$uri-base=''"><xsl:value-of select="."/>.cmdi</xsl:when>
                         <xsl:otherwise>
                             <xsl:value-of

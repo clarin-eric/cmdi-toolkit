@@ -34,10 +34,11 @@
 <prov> <identifier>scholarspace.manoa.hawaii.edu</identifier> <name>ScholarSpace at University of Hawaii at Manoa</name> </prov>
 <prov> <identifier>EarlyMandarin.sinica.edu.tw</identifier> <name>Academia Sinica Tagged Corpus of Early Mandarin Chinese</name> </prov>
 <prov> <identifier>https.service.arthurianfiction.org</identifier> <name>Arthurian Fiction</name> </prov>
+<prov> <identifier>oaipmh.emitx.huygens.knaw.nl</identifier> <name>EMIT-X</name> </prov>
 <prov> <identifier>clarind-uds</identifier> <name>Saarland University</name> </prov>
-<prov> <identifier>clarin.dk</identifier> <name>DK-CLARIN Repository</name> </prov>
+<prov> <identifier>clarin.dk</identifier> <name>CLARIN-DK-UCPH Repository</name> </prov>
 <prov> <identifier>dta</identifier> <name>Berlin-Brandenburgische Akademie der Wissenschaften</name> </prov>
-<prov> <identifier>easy.dans.knaw.nl</identifier> <name>DANS EASY Archive</name> </prov>
+<prov> <identifier>easy.dans.knaw.nl</identifier> <name>DANS</name> </prov>
 <prov> <identifier>ufal-point.mff.cuni.cz</identifier> <name>LINDAT-Clarin repository</name> </prov>
 <prov> <identifier>nlp.pwr.wroc.pl</identifier> <name>University of Wroclaw</name> </prov>
 <prov> <identifier>upf</identifier> <name>UPF Harvesting Day Repository</name> </prov>

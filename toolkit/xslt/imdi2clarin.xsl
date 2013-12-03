@@ -73,6 +73,12 @@ $LastChangedDate$
         select="'http://corpus1.mpi.nl/'" 
         as="xs:string"/>
 
+    <!-- A URL pointing to the imdi-to-cmdi translation service, with
+    'IMDI' to be replaced by the URL or handle of the IMDI file. -->
+    <xsl:param name="translation_service_url"
+	       select="'http://corpus1.mpi.nl/ds/TranslationService/translate?in=IMDI&amp;outFormat=cmdi'"
+	       as="xs:string"/>
+
     <!-- A prefix for the MdCollectionDisplayName with a meaning similar to the old 'Data provider' facet in the Virtual Language Observatory. -->
     <xsl:param 
         name="collection_display_name_prefix" 
@@ -337,15 +343,22 @@ $LastChangedDate$
                 <ResourceRef>
                     <xsl:choose>
                         <xsl:when test="not(normalize-space(./@ArchiveHandle)='')">
-                            <xsl:text>test-</xsl:text><xsl:value-of select="./@ArchiveHandle"/>
+			  <xsl:choose>
+			    <xsl:when test="MPI:is_MPI_handle(@ArchiveHandle) and not(contains(./@ArchiveHandle, '@'))">
+			      <xsl:value-of select="./@ArchiveHandle"/><xsl:text>@format=cmdi</xsl:text>
+			    </xsl:when>
+			    <xsl:otherwise>
+			      <xsl:value-of select="./@ArchiveHandle"/>
+			    </xsl:otherwise>
+			  </xsl:choose>
                         </xsl:when>
                         <xsl:when test="starts-with(., 'hdl:')">
                             <xsl:value-of select="."/>
                         </xsl:when>
-                        <xsl:when test="$uri-base=''"><xsl:value-of select="."/><xsl:text>.cmdi</xsl:text></xsl:when>
+                        <xsl:when test="$uri-base=''"><xsl:value-of select="replace($translation_service_url, 'IMDI', .)"/></xsl:when>
                         <xsl:otherwise>
                             <xsl:value-of
-                                select="concat(resolve-uri(normalize-space(.), $uri-base), '.cmdi')"/>
+                                select="replace($translation_service_url,'IMDI',resolve-uri(normalize-space(.), $uri-base))"/>
                         </xsl:otherwise>
                     </xsl:choose>
                 </ResourceRef>

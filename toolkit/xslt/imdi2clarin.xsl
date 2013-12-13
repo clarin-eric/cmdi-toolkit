@@ -136,39 +136,41 @@ $LastChangedDate$
         </Header>
         <Resources>
             <ResourceProxyList>
+	      <!-- A landing page can only be created when either 1)
+	      the file has an MPI handle or 2) $uri-base is
+	      defined. Note especially that files are not required to
+	      have a handle at all. That is not an error condition;
+	      simply skip landing page creation. -->
+	      <xsl:if test="(@ArchiveHandle and MPI:is_MPI_handle(@ArchiveHandle)) or not(normalize-space($uri-base)='')">
                 <ResourceProxy id="{generate-id()}">
-                    <ResourceType><xsl:text>LandingPage</xsl:text></ResourceType>                        
-                    <xsl:choose>
-                        <!-- ArchiveHandle attribute has MPI handle prefix? If so, generate a LandingPage resource to the original IMDI -->
-                        <xsl:when 
-                            test="MPI:is_MPI_handle(@ArchiveHandle)">
-                            <xsl:choose>
-                                <xsl:when 
-                                    test="ends-with($MdSelfLink,'@format=cmdi')">
-                                    <ResourceRef><xsl:value-of 
-                                        select="concat(substring-before($MdSelfLink,'@format=cmdi'),'@view')"/></ResourceRef>
-                                </xsl:when>
-                                <xsl:otherwise>
-                                    <ResourceRef><xsl:value-of 
-                                        select="concat($MdSelfLink,'@view')"/></ResourceRef>
-<!--                                    <ResourceRef><xsl:value-of 
-                                        select="MPI:URL_to_view_in_IMDI_Browser_by_handle(@ArchiveHandle)"/></ResourceRef> -->
-                                </xsl:otherwise>
-                            </xsl:choose>                                
-                        </xsl:when>
-                        <!-- When ArchiveHandle is not an MPI handle, it is necessarily a (non-MPI) handle. Use $uri-base as LandingPage, because the IMDI Browser cannot show external resources. -->
-                        <xsl:when test="not(MPI:is_MPI_handle(@ArchiveHandle)) and not(normalize-space($uri-base)='')">
-                            <ResourceRef><xsl:value-of 
-                                select="MPI:URL_to_view_in_IMDI_Browser_by_path($uri-base)"/></ResourceRef> 
+                  <ResourceType><xsl:text>LandingPage</xsl:text></ResourceType>                        
+                  <xsl:choose>
+                    <!-- Does ArchiveHandle attribute *exist* and does
+                         it have an MPI handle prefix? Then generate a
+                         LandingPage resource to the original IMDI -->
+                    <xsl:when test="@ArchiveHandle and MPI:is_MPI_handle(@ArchiveHandle)">
+                      <xsl:choose>
+                        <xsl:when test="ends-with($MdSelfLink,'@format=cmdi')">
+                          <ResourceRef><xsl:value-of 
+                                          select="concat(substring-before($MdSelfLink,'@format=cmdi'),'@view')"/></ResourceRef>
                         </xsl:when>
                         <xsl:otherwise>
-                            <xsl:message 
-                                terminate="yes">
-                            <xsl:text>ERROR: @ArchiveHandle is not an MPI handle, but $uri-base is empty. </xsl:text><xsl:value-of select="name()"/>
-                        </xsl:message></xsl:otherwise>
-                    </xsl:choose>      
+                          <ResourceRef><xsl:value-of select="concat($MdSelfLink,'@view')"/></ResourceRef>
+                        </xsl:otherwise>
+                      </xsl:choose>                                
+                    </xsl:when>
+		    <!-- Either there is no handle or it is not an MPI
+			 one; however $uri-base is available. Use it
+			 as LandingPage, because the IMDI Browser
+			 cannot show external resources.-->
+                    <xsl:otherwise>
+                      <ResourceRef><xsl:value-of 
+                                      select="MPI:URL_to_view_in_IMDI_Browser_by_path($uri-base)"/></ResourceRef> 
+                    </xsl:otherwise>
+                  </xsl:choose>      
                 </ResourceProxy>
-                
+              </xsl:if>
+
                 <xsl:apply-templates 
                     select="//Resources" 
                     mode="linking"/>
@@ -211,7 +213,7 @@ $LastChangedDate$
                 <xsl:choose>
                     <!-- MPI handle prefix? Use handle + @format=cmdi suffix -->
                     <xsl:when 
-                        test="MPI:is_MPI_handle(@ArchiveHandle)">
+                        test="@ArchiveHandle and MPI:is_MPI_handle(@ArchiveHandle)">
                         <xsl:call-template 
                             name="METATRANSCRIPT_rec">
                             <xsl:with-param 

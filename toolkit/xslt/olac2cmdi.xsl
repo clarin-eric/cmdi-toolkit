@@ -13,7 +13,6 @@
     <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
 
     <xsl:key name="iso-lookup" match="lang" use="sil"/>
-    <xsl:key name="provider-lookup" match="prov" use="identifier"/>
 
     <!--
 	This parameter can be used to specify path to the iso xml
@@ -22,8 +21,11 @@
     <xsl:param name="iso_xml_path"/>
     <xsl:variable name="lang-top" select="document(concat($iso_xml_path,'sil_to_iso6393.xml'))/languages"/>
 
-    <xsl:param name="providers_path"/>
-    <xsl:variable name="id-top" select="document(concat($providers_path,'id_to_name.xml'))/providers"/>
+    <!--
+	Name of the provider the record was harvested from (or empty
+	if name is not known).
+      -->
+    <xsl:param name="provider_name"/>
     
 
     <xsl:template match="/">
@@ -52,9 +54,7 @@
                     <xsl:value-of select="tokenize(/defns:OAI-PMH/defns:GetRecord[1]/defns:record[1]/defns:header[1]/defns:identifier[1], ':')[2]"/>
                 </xsl:variable>
                 <MdCollectionDisplayName>
-                    <xsl:apply-templates select="$id-top">
-                        <xsl:with-param name="curr-label" select="$oai_id"/>
-                    </xsl:apply-templates>
+                    <xsl:value-of select="$provider_name"/>
                 </MdCollectionDisplayName>
             </Header>
             <Resources>
@@ -203,15 +203,6 @@
         </xsl:variable>
         <xsl:value-of select="key('iso-lookup', $silcode)/iso"/>
     </xsl:template>
-    
-    <xsl:template match="providers">
-        <xsl:param name="curr-label"/>
-        <xsl:variable name="id">
-            <xsl:value-of select="$curr-label"/>
-        </xsl:variable>
-        <xsl:value-of select="key('provider-lookup', $id)/name"/>
-    </xsl:template>
-    
 
 
     <xsl:template match="dc:identifier" mode="preprocess">

@@ -4,7 +4,8 @@
     $Date$ 
 -->
 
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+    
     <xs:import namespace="http://www.w3.org/XML/1998/namespace"
         schemaLocation="http://www.w3.org/2005/08/xml.xsd"/>
 
@@ -21,7 +22,7 @@
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-                <xs:element name="CMD_Component" type="CMD_Component_type" maxOccurs="unbounded">
+                <xs:element name="CMD_Component" type="CMD_Component_type">
                     <xs:annotation>
                         <xs:documentation>At the root level there should always be a
                         Component.</xs:documentation>
@@ -34,6 +35,29 @@
 
     <!-- recursive construction: A component can contain elements and/or other components  -->
     <xs:group name="group">
+        <xs:annotation>
+            <xs:appinfo>
+                <sch:pattern id="c_sibs">
+                    <sch:title>Check siblings</sch:title>
+                    <sch:rule context="CMD_Component|CMD_Element">
+                        <sch:assert test="empty(preceding-sibling::*[@name=current()/@name])">Sibling components or elements should all have a different name. Found multiple components or elements named '<sch:value-of select="@name"/>'!</sch:assert>
+                    </sch:rule>
+                </sch:pattern>
+                <sch:pattern id="c_csibs">
+                    <sch:title>Check component siblings</sch:title>
+                    <sch:rule context="CMD_Component">
+                        <sch:assert test="empty(preceding-sibling::CMD_Component[@ComponentId=current()/@ComponentId])">Sibling components should all be different. Found multiple components with id '<sch:value-of select="@ComponentId"/>'!</sch:assert>
+                    </sch:rule>
+                </sch:pattern>
+                <!-- TODO: the names of referenced external components are not known, so we can't currently check two or more of them use the same name -->
+                <sch:pattern id="c_nest">
+                    <sch:title>Check nesting</sch:title>
+                    <sch:rule context="CMD_Component[exists(CMD_Component|CMD_Element)]" role="warning">
+                        <sch:assert test="empty((CMD_Component|CMD_Element)[@name=current()/@name])">A nested component or element has the same name ('<sch:value-of select="@name"/>') as this component! Please, consider to rename one of them.</sch:assert>
+                    </sch:rule>
+                </sch:pattern>
+            </xs:appinfo>            
+        </xs:annotation>
         <xs:sequence>
             <!-- from small (attribute) to big (component) -->
             <xs:element name="AttributeList" type="AttributeList_type" minOccurs="0" maxOccurs="1"/>
@@ -86,6 +110,28 @@
     <xs:complexType name="AttributeList_type">
         <xs:sequence>
             <xs:element name="Attribute" minOccurs="1" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <sch:pattern id="a_res">
+                            <sch:title>Check reserved attribute names</sch:title>
+                            <sch:rule context="Attribute">
+                                <sch:assert test="not(Name=('ref','ComponentId'))">Attribute name shouldn't be 'ref' or 'ComponentId', as these are used internally by CMD!</sch:assert>
+                            </sch:rule>
+                        </sch:pattern>
+                        <sch:pattern id="a_sibs">
+                            <sch:title>Check attribute siblings</sch:title>
+                            <sch:rule context="Attribute">
+                                <sch:assert test="empty(preceding-sibling::Attribute[Name=current()/Name])">All attributes in an attribute list should have a different name. Found multiple attributes named '<sch:value-of select="Name"/>'!</sch:assert>
+                            </sch:rule>
+                        </sch:pattern>
+                        <sch:pattern id="a_nest">
+                            <sch:title>Check attribute nesting</sch:title>
+                            <sch:rule context="Attribute" role="warning">
+                                <sch:assert test="empty((ancestor::CMD_Component|ancestor::CMD_Element)[1][@name=current()/Name])">An attribute has the same name ('<sch:value-of select="Name"/>') as its element or component! Please, consider to rename one of them.</sch:assert>
+                            </sch:rule>
+                        </sch:pattern>
+                    </xs:appinfo>            
+                </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
                         <xs:element name="Name" type="xs:string">
@@ -263,6 +309,16 @@
     </xs:complexType>
 
     <xs:complexType name="item_type">
+        <xs:annotation>
+            <xs:appinfo>
+                <sch:pattern id="item">
+                    <sch:title>CMD enumeration item</sch:title>
+                    <sch:rule context="item">
+                        <sch:assert test="empty(preceding-sibling::item[.=current()])">All items in an enumeration should be different. Found multiple items with value '<sch:value-of select="."/>'!</sch:assert>
+                    </sch:rule>
+                </sch:pattern>
+            </xs:appinfo>            
+        </xs:annotation>
         <xs:simpleContent>
             <xs:extension base="xs:string">
                 <xs:attribute type="xs:anyURI" name="ConceptLink">

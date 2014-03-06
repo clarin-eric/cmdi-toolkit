@@ -255,6 +255,52 @@
     <xs:simpleType name="cardinality_type">
         <xs:annotation>
             <xs:documentation>cardinality for elements and components</xs:documentation>
+            <xs:appinfo>
+                <sch:pattern id="c_card">
+                    <sch:title>Check cardinalities</sch:title>
+                    <!--
+                        case minimum   maximum   check
+                        1    UNK       UNK       OK
+                        2    UNK       number    maximum ne 0
+                        3    UNK       unbounded OK
+                        4    number    UNK       minimum le 1
+                        5    number    number    minimum le maximum
+                        6    number    unbounded OK
+                        7    unbounded UNK       NOK
+                        8    unbounded number    NOK
+                        9    unbounded unbounded OK
+                        
+                        UNK can be either a missing attribute or an empty value, both can be detected with normalize-space(@...)=''
+                        
+                        default CardinalityMin is 1 (based on the XSD minOccurs default value)
+                        default CardinalityMax is 1 (based on the XSD maxOccurs default value)
+                        
+                        If a basic XSLT 2.0 engine, like Saxon HE, is used for Schematron validation we can't cast to xs:nonNegativeInteger.
+                        So we cast to xs:integer. The XSD validator should have already validated that the values are valid cardinality_types.
+                    -->
+                    <!-- skip case 1 -->
+                    <!-- case 2 -->
+                    <sch:rule context="*[(normalize-space(@CardinalityMin)='')][@CardinalityMax castable as xs:integer]">
+                        <sch:assert test="xs:integer(@CardinalityMax) ne 0">Maximum cardinality (0) cannot be lower than the default minimum cardinality (1)!</sch:assert>
+                    </sch:rule>
+                    <!-- skip case 3 -->
+                    <!-- case 4 -->
+                    <sch:rule context="*[@CardinalityMin castable as xs:integer][normalize-space(@CardinalityMax)='']">
+                        <sch:assert test="xs:integer(@CardinalityMin) le 1">Minimum cardinality (<sch:value-of select="@CardinalityMin"/>) should be lower or equal then the default maximum cardinality (1)!</sch:assert>
+                    </sch:rule>
+                    <!-- case 5 -->
+                    <sch:rule context="*[@CardinalityMin castable as xs:integer][@CardinalityMax castable as xs:integer]">
+                        <sch:assert test="xs:integer(@CardinalityMin) le xs:integer(@CardinalityMax)">Minimum cardinality (<sch:value-of select="@CardinalityMin"/>) should be lower or equal then the maximum cardinality (<sch:value-of select="@CardinalityMax"/>)!</sch:assert>
+                    </sch:rule>
+                    <!-- skip case 6 -->
+                    <!-- case 7, 8 and 9 -->
+                    <sch:rule context="*[@CardinalityMin='unbounded']">
+                        <!-- case 7 and 8 -->
+                        <sch:assert test="@CardinalityMax='unbounded'">Minimum cardinality (unbounded) can't be higher than the (default) maximum cardinality (<sch:value-of select="if (normalize-space(@CardinalityMax)='') then ('1') else (@CardinalityMax)"/>)!</sch:assert>
+                        <!-- skip case 9 -->
+                    </sch:rule>
+                </sch:pattern>
+            </xs:appinfo>
         </xs:annotation>
         <xs:union>
             <xs:simpleType>

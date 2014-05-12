@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="../../general-component-schema.xsd" isProfile="true">
-    <Header><Description>Example of a IMDI profile that consists of included components</Description></Header>
-
-    <!-- import component defined elsewhere -->
-    <CMD_Component filename="component-session.xml" />   
-    
- </CMD_ComponentSpec>

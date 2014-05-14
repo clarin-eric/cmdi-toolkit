@@ -2,6 +2,10 @@
 <!-- 
     $Revision$ 
     $Date$ 
+    
+    CMDI 1.1 General Component Schema
+
+    http://www.clarin.eu/cmdi
 -->
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sch="http://purl.oclc.org/dsdl/schematron">

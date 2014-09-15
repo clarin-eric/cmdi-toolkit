@@ -51,13 +51,15 @@
         <xsl:attribute name="CMDVersion" select="'1.2'"/>
     </xsl:template>
     
-    <!-- Create or own xsi:schemaLocation -->
+    <!-- Create our own xsi:schemaLocation -->
     <xsl:template match="@xsi:schemaLocation"/>
     
     <xsl:template match="@xsi:noNamespaceSchemaLocation"/>
     
     <xsl:template match="cmd:CMD">
-        <xsl:copy>
+        <cmd:CMD>
+            <xsl:namespace name="cmd" select="'http://www.clarin.eu/cmd/'"/>
+            <xsl:namespace name="cmdp" select="$profile"/>
             <xsl:apply-templates select="@* except (@xsi:schemaLocation|@xsi:noNamespaceSchemaLocation)"/>
             <xsl:attribute name="xsi:schemaLocation">
                 <xsl:text>http://www.clarin.eu/cmd/ </xsl:text>
@@ -67,10 +69,77 @@
                 <xsl:text> </xsl:text>
                 <xsl:value-of select="$cmd-profile-xsd"/>
             </xsl:attribute>
-            <xsl:apply-templates/>
-        </xsl:copy>
+            <xsl:apply-templates select="cmd:Header"/>
+            <xsl:apply-templates select="cmd:Resources"/>
+            <xsl:apply-templates select="cmd:Resources/cmd:IsPartOfList"/>
+            <xsl:apply-templates select="cmd:Components"/>
+        </cmd:CMD>
     </xsl:template>
     
-    <!-- Make sure Header contains MdProfile -->
-
+    <!-- Make sure cmd:Header contains cmd:MdProfile -->
+    <xsl:template match="cmd:Header">
+        <cmd:Header>
+            <xsl:apply-templates select="cmd:MdCreator"/>
+            <xsl:apply-templates select="cmd:MdCreationDate"/>
+            <xsl:apply-templates select="cmd:MdSelfLink"/>
+            <cmd:MdProfile>
+                <xsl:value-of select="$profile"/>
+            </cmd:MdProfile>
+            <xsl:apply-templates select="cmd:MdCollectionDisplayName"/>
+        </cmd:Header>
+    </xsl:template>
+    
+    <!-- Skip cmd:Resources/cmd:IsPartOfList -->
+    <xsl:template match="cmd:Resources">
+        <cmd:Resources>
+            <xsl:apply-templates select="cmd:ResourceProxyList"/>
+            <xsl:apply-templates select="cmd:JournalFileProxyList"/>
+            <xsl:apply-templates select="cmd:ResourceRelationList"/>
+        </cmd:Resources>
+    </xsl:template>
+    
+    <!-- Reshape ResourceRelationList -->
+    <xsl:template match="cmd:ResourceRelation/cmd:RelationType">
+        <cmd:RelationType>
+            <!-- take the string value, ignore deeper structure -->
+            <xsl:value-of select="."/>
+        </cmd:RelationType>
+    </xsl:template>
+    
+    <xsl:template match="cmd:ResourceRelation/cmd:res1">
+        <cmd:Resource>
+            <xsl:apply-templates select="@*"/>
+        </cmd:Resource>
+    </xsl:template>
+    
+    <xsl:template match="cmd:ResourceRelation/cmd:res2">
+        <cmd:Resource>
+            <xsl:apply-templates select="@*"/>
+        </cmd:Resource>
+    </xsl:template>
+    
+    <!-- put envelop in the envelop namespace (it already is, but add the namespace) -->
+    <xsl:template match="/cmd:CMD//*" priority="1">
+        <xsl:element name="cmd:{local-name()}">
+            <xsl:apply-templates select="@*|node()"/>
+        </xsl:element>
+    </xsl:template>
+    
+    <!-- put payload in the profile namespace -->
+    <xsl:template match="cmd:Components//*" priority="2">
+        <xsl:element namespace="{$profile}" name="cmdp:{local-name()}">
+            <xsl:apply-templates select="@*|node()"/>
+        </xsl:element>
+    </xsl:template>
+    
+    <!-- move CMD attributes to the CMD namespace -->
+    <xsl:template match="cmd:Components//@ref">
+        <xsl:attribute name="cmd:ref" select="."/>
+    </xsl:template>
+    
+    <xsl:template match="cmd:Components//@ComponentId">
+        <xsl:attribute name="cmd:ComponentId" select="."/>
+    </xsl:template>
+    
+    
 </xsl:stylesheet>

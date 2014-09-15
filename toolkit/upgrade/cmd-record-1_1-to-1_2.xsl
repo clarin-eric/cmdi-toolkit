@@ -7,7 +7,8 @@
     version="2.0">
     
     <xsl:param name="cmd-envelop-xsd" select="'../../xsd/cmd-envelop.xsd'"/>
-    <xsl:param name="cmd-profile-xsd" select="'../components/ToolService-1_2.xsd'"/>
+    <xsl:param name="cmd-component-registry" select="'../components/'"/>
+    <xsl:param name="cmd-component-registry-xsd" select="'-1_2.xsd'"/>
     
 
     <!-- identity copy -->
@@ -67,7 +68,9 @@
                 <xsl:text> </xsl:text>
                 <xsl:value-of select="$profile"/>
                 <xsl:text> </xsl:text>
-                <xsl:value-of select="$cmd-profile-xsd"/>
+                <xsl:value-of select="$cmd-component-registry"/>
+                <xsl:value-of select="$profile"/>
+                <xsl:value-of select="$cmd-component-registry-xsd"/>
             </xsl:attribute>
             <xsl:apply-templates select="cmd:Header"/>
             <xsl:apply-templates select="cmd:Resources"/>

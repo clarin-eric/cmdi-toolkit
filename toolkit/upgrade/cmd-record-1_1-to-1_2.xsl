@@ -9,7 +9,6 @@
     <xsl:param name="cmd-envelop-xsd" select="'../../xsd/cmd-envelop.xsd'"/>
     <xsl:param name="cmd-component-registry" select="'../components/'"/>
     <xsl:param name="cmd-component-registry-xsd" select="'-1_2.xsd'"/>
-    
 
     <!-- identity copy -->
     <xsl:template match="@*|node()">
@@ -20,7 +19,7 @@
     
     <!-- try to determine the profile -->
     <xsl:variable name="profile">
-        <xsl:variable name="header" select="/cmd:CMD/cmd:Header/cmd:MdProfile/replace(.,'.*(clarin.eu:cr1:p_[0-9]).*','$1')"/>
+        <xsl:variable name="header" select="/cmd:CMD/cmd:Header/cmd:MdProfile/replace(.,'.*(clarin.eu:cr1:p_[0-9]+).*','$1')"/>
         <xsl:variable name="schema" select="/cmd:CMD/(@xsi:schemaLocation|@xsi:noNamespaceSchemaLocation)/replace(.,'.*(clarin.eu:cr1:p_[0-9]+).*','$1')"/>
         <xsl:if test="count($header) gt 1">
             <xsl:message>WRN: found more then one profile ID (<xsl:value-of select="string-join($header,',')"/>) in a cmd:MdProfile, will use the first one! </xsl:message>

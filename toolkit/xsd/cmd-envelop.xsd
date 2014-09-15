@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dcr="http://www.isocat.org/ns/dcr" xmlns:cmd="http://www.clarin.eu/cmd/" targetNamespace="http://www.clarin.eu/cmd/" elementFormDefault="qualified">
+    <!-- globally declare attributes, so they have to be qualified -->
+    <xs:attribute name="ref" type="xs:IDREF"/>
+    <xs:attribute name="ComponentId" type="xs:anyURI"/>
+    <xs:attribute name="ValueConceptLink" type="xs:anyURI"/>
+    <!-- enumeration of resource types -->
+    <xs:simpleType name="Resourcetype_simple">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Metadata">
+                <xs:annotation>
+                    <xs:documentation>The ResourceProxy refers to another component metadata instance (e.g. for grouping metadata descriptions into collections)</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="Resource">
+                <xs:annotation>
+                    <xs:documentation>The ResourceProxy refers to a file that is not a metadata instance (e.g. a text document)</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="SearchService">
+                <xs:annotation>
+                    <xs:documentation>The ResourceProxy refers to a (SRU/CQL) web service that can be used to query the resource described in this file</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="SearchPage">
+                <xs:annotation>
+                    <xs:documentation>The ResourceProxy refers to a web page that can be used to query the resource described in this file</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="LandingPage">
+                <xs:annotation>
+                    <xs:documentation>The ResourceProxy refers to a web page that contains the "original context" of the resource described in this file (e.g. repository web page displaying the metadata).</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <!-- the root of a CMD record -->
+    <xs:element name="CMD">
+        <xs:complexType>
+            <xs:sequence>
+                <!-- metadata of the CMD record -->
+                <xs:element name="Header" minOccurs="1" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="MdCreator" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element name="MdCreationDate" type="xs:date" minOccurs="0" maxOccurs="1"/>
+                            <xs:element name="MdSelfLink" type="xs:anyURI" minOccurs="0" maxOccurs="1"/>
+                            <xs:element name="MdProfile" type="xs:anyURI" minOccurs="1" maxOccurs="1"/>
+                            <xs:element name="MdCollectionDisplayName" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <!-- this CMD record is related to these resources -->
+                <xs:element name="Resources" minOccurs="1" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="ResourceProxyList" minOccurs="1" maxOccurs="1">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="ResourceProxy" minOccurs="0" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="ResourceType" minOccurs="1" maxOccurs="1">
+                                                        <xs:complexType>
+                                                            <xs:simpleContent>
+                                                                <xs:extension base="cmd:Resourcetype_simple">
+                                                                    <xs:attribute name="mimetype" type="xs:string" use="optional"/>
+                                                                </xs:extension>
+                                                            </xs:simpleContent>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="ResourceRef" minOccurs="1" maxOccurs="1" type="xs:anyURI"/>
+                                                </xs:sequence>
+                                                <xs:attribute name="id" type="xs:ID" use="required"/>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="JournalFileProxyList" minOccurs="1" maxOccurs="1">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="JournalFileProxy" minOccurs="0" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="JournalFileRef" minOccurs="1" maxOccurs="1" type="xs:anyURI"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <!-- the resouces can have relationships among them -->
+                            <xs:element name="ResourceRelationList" minOccurs="1" maxOccurs="1">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="ResourceRelation" minOccurs="0" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="RelationType" minOccurs="1" maxOccurs="1">
+                                                        <xs:complexType>
+                                                            <xs:simpleContent>
+                                                                <xs:extension base="xs:string">
+                                                                    <xs:attribute name="ConceptLink" type="xs:anyURI" use="optional"/>
+                                                                </xs:extension>
+                                                            </xs:simpleContent>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="Resource" minOccurs="2" maxOccurs="2">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="Role" minOccurs="0" maxOccurs="1">
+                                                                    <xs:complexType>
+                                                                        <xs:simpleContent>
+                                                                            <xs:extension base="xs:string">
+                                                                                <xs:attribute name="ConceptLink" type="xs:anyURI" use="optional"/>
+                                                                            </xs:extension>
+                                                                        </xs:simpleContent>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                            </xs:sequence>
+                                                            <xs:attribute name="ref" type="xs:IDREF" use="required"/>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <!-- this CMD record can be part of ... -->
+                <xs:element name="IsPartOfList" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="IsPartOf" minOccurs="0" maxOccurs="unbounded" type="xs:anyURI"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Components" minOccurs="1" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <!-- only one root node is allowed -->
+                            <xs:any namespace="##other" minOccurs="1" maxOccurs="1" processContents="strict"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="CMDVersion" fixed="1.2" use="required"/>
+        </xs:complexType>
+        <!-- Resource key and reference constraints -->
+        <xs:key name="ResourceProxy">
+            <xs:selector
+                xpath="cmd:Resources/cmd:ResourceProxyList/cmd:ResourceProxy"/>
+            <xs:field xpath="@id"/>
+        </xs:key>
+        <xs:keyref name="EnvelopResourceRef"
+            refer="cmd:ResourceProxy">
+            <xs:selector xpath=".//cmd:*"/>
+            <xs:field xpath="@ref"/>
+        </xs:keyref>
+        <xs:keyref name="PayloadResourceRef"
+            refer="cmd:ResourceProxy">
+            <xs:selector xpath=".//*"/>
+            <xs:field xpath="@cmd:ref"/>
+        </xs:keyref>
+    </xs:element>
+</xs:schema>

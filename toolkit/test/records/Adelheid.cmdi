@@ -1,0 +1,1195 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<CMD xmlns="http://www.clarin.eu/cmd/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1311927752306/xsd" CMDVersion="1.1">
+    <Header>
+        <MdCreator>Menzo Windhouwer</MdCreator>
+        <MdCreationDate>2012-04-17</MdCreationDate>
+        <MdSelfLink>http://catalog.clarin.eu/metadata/cmdi/services/Adelheid.cmdi</MdSelfLink>
+        <MdProfile>clarin.eu:cr1:p_1311927752306</MdProfile>
+        <MdCollectionDisplayName>CLARIN-NL web services</MdCollectionDisplayName>
+    </Header>
+    <Resources>
+        <ResourceProxyList>
+            <ResourceProxy id="h0">
+                <!-- Adelheid Annotation Tool -->
+                <ResourceType>Resource</ResourceType>
+                <ResourceRef>hdl:1839/00-SERV-0000-0000-0009-D</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="h1">
+                <!-- adelheidws/main.wadl -->
+                <ResourceType mimetype="application/vnd.sun.wadl+xml">Resource</ResourceType>
+                <ResourceRef>http://catalog.clarin.eu/adelheidws/wadl/main.wadl</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="h2">
+                <!-- adelheidws/lexicon.wadl -->
+                <ResourceType mimetype="application/vnd.sun.wadl+xml">Resource</ResourceType>
+                <ResourceRef>http://catalog.clarin.eu/adelheidws/wadl/lexicon.wadl</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="h3">
+                <!-- adelheidws/tokenizer.wadl -->
+                <ResourceType mimetype="application/vnd.sun.wadl+xml">Resource</ResourceType>
+                <ResourceRef>http://catalog.clarin.eu/adelheidws/wadl/tokenizer.wadl</ResourceRef>
+            </ResourceProxy>
+        </ResourceProxyList>
+        <JournalFileProxyList/>
+        <ResourceRelationList/>
+    </Resources>
+    <Components>
+        <ToolService>
+            <toolType>lemmatizer</toolType>
+            <applicationType>web application</applicationType>
+            <applicationType>web service</applicationType>
+            <website>http://adelheid.ruhosting.nl/</website>
+            <GeneralInfo>
+                <Name>Adelheid</Name>
+                <Description>
+                    <Description>A web-application with which an end user can have historical
+                        Dutch text tokenized, lemmatized and part-of-speech tagged, using the most appropriate resources
+                        (such as lexica) for the text in question. The need to consistently use appropriate resources leads to the
+                        intuitively obvious strategy of placing this service in the Clarin infrastructure. For each specific text,
+                        the user can then select the best resources from those available in Clarin, wherever they might reside,
+                        and where necessary supplemented by own lexica.</Description>
+                </Description>
+            </GeneralInfo>
+            <Creators>
+                <Creator>
+                    <Role>Technology Provider</Role>
+                    <Role>User</Role>
+                    <Contact>
+                        <Person>Dr. Hans van Halteren</Person>
+                        <Address>Centre for Language and Speech Technology, P.O. Box 9103, 6500 HD Nijmegen, Netherlands</Address>
+                        <Email>hvh@let.ru.nl</Email>
+                        <Organisation>Radboud University Nijmegen</Organisation>
+                        <Telephone>+31 - 24 361 2836</Telephone>
+                    </Contact>
+                </Creator>
+                <Creator>
+                    <Role>Data Provider</Role>
+                    <Role>User</Role>
+                    <Contact>
+                        <Person>Dr. Margit Rem</Person>
+                        <Address>Dept. of Dutch, P.O. Box 9103, 6500 HD Nijmegen, Netherlands</Address>
+                        <Email>M.Rem@let.ru.nl</Email>
+                        <Organisation>Radboud University Nijmegen</Organisation>
+                        <Telephone>+31 - 24 361 2899</Telephone>
+                    </Contact>
+                </Creator>
+                <Creator>
+                    <Role>Clarin centre representative</Role>
+                    <Contact>
+                        <Person>Drs. D. Broeder</Person>
+                        <Address>Wundtlaan 1, 6525 XD  Nijmegen, The Netherlands</Address>
+                        <Email>Daan.Broeder@mpi.nl</Email>
+                        <Organisation>Max Planck Institute for Psycholinguistics (MPI)</Organisation>
+                        <Telephone>+31 - 24 - 3521103</Telephone>
+                    </Contact>
+                </Creator>
+            </Creators>
+            <Project>
+                <Name>Adelheid</Name>
+                <Title>A Distributed Lemmatizer for Historical Dutch</Title>
+                <Funder>CLARIN-NL</Funder>
+                <Website>http://adelheid.ruhosting.nl/</Website>
+                <Description>
+                    <Description LanguageID="en">This project aims at providing a web-application with which an end user can have historical
+                        Dutch text tokenized, lemmatized and part-of-speech tagged, using the most appropriate resources
+                        (such as lexica) for the text in question. The need to consistently use appropriate resources leads to the
+                        intuitively obvious strategy of placing this service in the Clarin infrastructure. For each specific text,
+                        the user can then select the best resources from those available in Clarin, wherever they might reside,
+                        and where necessary supplemented by own lexica. During the project a demonstrator for the
+                        distributed automatic lemmatization will be created, with some 14th century charters as test texts as
+                        well as corresponding resources.</Description>
+                </Description>
+                <Contact>
+                    <Person>Dr. Hans van Halteren</Person>
+                    <Address>Centre for Language and Speech Technology, P.O. Box 9103, 6500 HD Nijmegen, Netherlands</Address>
+                    <Email>hvh@let.ru.nl</Email>
+                    <Organisation>Radboud University Nijmegen</Organisation>
+                    <Telephone>+31 - 24 361 2836</Telephone>
+                </Contact>
+                <Duration>
+                    <StartYear>2010</StartYear>
+                    <CompletionYear>2012</CompletionYear>
+                </Duration>
+            </Project>
+            <Country>
+                <Code>NL</Code>
+            </Country>
+            <Documentation>
+                <URL>http://adelheid.ruhosting.nl/</URL>
+                <DocumentationLanguages>
+                    <Language>
+                        <LanguageName>English</LanguageName>
+                        <ISO639>
+                            <iso-639-3-code>eng</iso-639-3-code>
+                        </ISO639>
+                    </Language>
+                </DocumentationLanguages>
+            </Documentation>
+            <Tool ref="h0">
+                <toolInput>
+                    <data>
+                        <MimeType>text/xml</MimeType>
+                        <characterEncoding>UTF-8</characterEncoding>
+                        <datatype>ATL XML</datatype>
+                    </data>
+                </toolInput>
+                <toolOutput>
+                    <data>
+                        <MimeType>text/xml</MimeType>
+                        <characterEncoding>UTF-8</characterEncoding>
+                        <datatype>ATL XML</datatype>
+                    </data>
+                </toolOutput>
+                <Implementation>
+                    <platforms>browser</platforms>
+                    <implementationLanguage>Java</implementationLanguage>
+                    <openSource>true</openSource>
+                    <systemrequirements/>
+                </Implementation>
+                <Access>
+                    <Availability>CLARIN community</Availability>
+                    <accessProtocol>Shibboleth</accessProtocol>
+                    <Contact>
+                        <Person>Dr. Hans van Halteren</Person>
+                        <Address>Centre for Language and Speech Technology, P.O. Box 9103, 6500 HD Nijmegen, Netherlands</Address>
+                        <Email>hvh@let.ru.nl</Email>
+                        <Organisation>Radboud University Nijmegen</Organisation>
+                        <Telephone>+31 - 24 361 2836</Telephone>
+                    </Contact>
+                    <DistributionType>
+                        <distributionType>other</distributionType>
+                    </DistributionType>
+                </Access>
+                <Documentation>
+                    <URL>http://adelheid.ruhosting.nl/</URL>
+                    <DocumentationLanguages>
+                        <Language>
+                            <LanguageName>English</LanguageName>
+                            <ISO639>
+                                <iso-639-3-code>eng</iso-639-3-code>
+                            </ISO639>
+                        </Language>
+                    </DocumentationLanguages>
+                </Documentation>
+            </Tool>
+            <Service CoreVersion="1.0" ref="h1">
+                <Name>Adelheid</Name>
+                <ServiceDescriptionLocation ref="h1"/>
+                <Operations>
+                    <Operation>
+                        <Name>createProject</Name>
+                        <Description>This is necessary before attempting to upload any files; it initialises an empty new Adelheid project.</Description>
+                        <Input>
+                            <Parameter>
+                                <Name>project</Name>
+                                <Description>The name to be used for the new Adelheid project. Do not use spaces or special characters in the project name, only underscores and alphanumeric characters are allowed</Description>
+                                <DataType>string</DataType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Input>
+                        <Output>
+                            <ParameterGroup>
+                                <Name>status</Name>
+                                <MIMEType>text/xml</MIMEType>
+                                <Parameters>
+                                    <Parameter>
+                                        <Name>project</Name>
+                                        <Description>The name of the new Adelheid project.</Description>
+                                        <DataType>string</DataType>
+                                        <SemanticType>clam.project.adelheid</SemanticType>
+                                        <TechnicalMetadata>
+                                            <ContentEncoding>
+                                                <RelativeLocation>/clam/@project</RelativeLocation>
+                                            </ContentEncoding>
+                                        </TechnicalMetadata>
+                                    </Parameter>
+                                </Parameters>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                    <ContentEncoding>
+                                        <!--<URL><!-\- TODO: URL pointing to the schema of CLAM XML -\-></URL>-->
+                                        <ResourceFormat>CLAM XML</ResourceFormat>
+                                    </ContentEncoding>
+                                </TechnicalMetadata>
+                            </ParameterGroup>
+                        </Output>
+                    </Operation>
+                    <Operation>
+                        <Name>addInputXMLContent</Name>
+                        <Description>Add an Adelheid XML document providing the text of a manuscript.</Description>
+                        <Input>
+                            <Parameter>
+                                <Name>project</Name>
+                                <Description>The name of an Adelheid project.</Description>
+                                <DataType>string</DataType>
+                                <SemanticType>clam.project.adelheid</SemanticType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                            <Parameter>
+                                <Name>contents</Name>
+                                <Description>An Adelheid XML document consists of a TEI header followed by a body element, containing a sequence of manuscript elements. Each manuscript in turn consists of a sequence of line elements. A line element contains the actual text of each manuscript line.</Description>
+                                <MIMEType>text/xml</MIMEType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                    <ContentEncoding>
+                                        <URL>http://hdl.handle.net/1839/00-SCHM-0000-0000-0010-C</URL>
+                                        <ResourceFormat>Adelheid document XML</ResourceFormat>
+                                    </ContentEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Input>
+                        <Output>
+                            <Parameter>
+                                <Name>status</Name>
+                                <MIMEType>text/xml</MIMEType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                    <ContentEncoding>
+                                        <!--<URL><!-\- TODO: URL pointing to the schema of CLAM upload XML -\-></URL>-->
+                                        <ResourceFormat>CLAM XML</ResourceFormat>
+                                    </ContentEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Output>
+                    </Operation>
+                    <Operation>
+                        <Name>addInputTextContent</Name>
+                        <Description>Add a more traditional text format. It's advised to use the Adelheid XML document instead of this more traditional text format.</Description>
+                        <Input>
+                            <Parameter>
+                                <Name>project</Name>
+                                <Description>The name of an Adelheid project.</Description>
+                                <DataType>string</DataType>
+                                <SemanticType>clam.project.adelheid</SemanticType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                            <Parameter>
+                                <Name>contents</Name>
+                                <Description>A more traditional text format where each new manuscript is indicated with a so-called Kloeke-code, prefixed with _o:  on a new line. Then follow the lines of the manuscript.</Description>
+                                <MIMEType>text/plain</MIMEType>
+                                <DataType>string</DataType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Input>
+                        <Output>
+                            <Parameter>
+                                <Name>status</Name>
+                                <MIMEType>text/xml</MIMEType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                    <ContentEncoding>
+                                        <!--<URL><!-\- TODO: URL pointing to the schema of CLAM upload XML -\-></URL>-->
+                                        <ResourceFormat>CLAM XML</ResourceFormat>
+                                    </ContentEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Output>
+                    </Operation>
+                    <Operation>
+                        <Name>addInputLexiconContent</Name>
+                        <Description>In any tagging system, the lexicon will never be complete. This is most certainly the case for Adelheid, the lexicon of which was trained on a corpus of less than one million words. Adelheid therefore allows users to extend the lexicon themselves with additional lexical entries.</Description>
+                        <Input>
+                            <Parameter>
+                                <Name>project</Name>
+                                <Description>The name of an Adelheid project.</Description>
+                                <DataType>string</DataType>
+                                <SemanticType>clam.project.adelheid</SemanticType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                            <Parameter>
+                                <Name>contents</Name>
+                                <Description>Adelheid lexicon with additional lexical entries.</Description>
+                                <MIMEType>text/xml</MIMEType>
+                                <DataType>string</DataType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                    <ContentEncoding>
+                                        <URL>http://hdl.handle.net/1839/00-SCHM-0000-0000-0011-A</URL>
+                                        <ResourceFormat>Adelheid Lexicon XML</ResourceFormat>
+                                    </ContentEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                            <Parameter>
+                                <Name>weight</Name>
+                                <Description>A weight for the lexicon. This determines how important the lexicon is deemed to be in relation to other lexicons used. The base lexicon that forms part of Adelheid is given weight 1. If you want your lexicon to practically overrule the base lexicon, you can choose a really high value, but normally weight 1 would seem a perfectly reasonable choice.</Description>
+                                <DataType>float</DataType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Input>
+                        <Output>
+                            <Parameter>
+                                <Name>status</Name>
+                                <MIMEType>text/xml</MIMEType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                    <ContentEncoding>
+                                        <!--<URL><!-\- TODO: URL pointing to the schema of CLAM upload XML -\-></URL>-->
+                                        <ResourceFormat>CLAM XML</ResourceFormat>
+                                    </ContentEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Output>
+                    </Operation>
+                    <Operation>
+                        <Name>startProject</Name>
+                        <Description>This starts the running of a project, i.e. starts the actual Adelheid program with the provided input files. T</Description>
+                        <Input>
+                            <Parameter>
+                                <Name>project</Name>
+                                <Description>The name of an Adelheid project.</Description>
+                                <DataType>string</DataType>
+                                <SemanticType>clam.project.adelheid</SemanticType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                            <Parameter>
+                                <Name>tokurl</Name>
+                                <Description>An URL pointing to an Adelheid tokenizer web service.</Description>
+                                <DataType>anyURI</DataType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                            <Parameter>
+                                <Name>lexurl</Name>
+                                <Description>An URL pointing to an Adelheid lexicon web service.</Description>
+                                <DataType>anyURI</DataType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Input>
+                        <Output>
+                            <Parameter>
+                                <Name>status</Name>
+                                <MIMEType>text/xml</MIMEType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                    <ContentEncoding>
+                                        <!--<URL><!-\- TODO: URL pointing to the schema of CLAM XML -\-></URL>-->
+                                        <ResourceFormat>CLAM XML</ResourceFormat>
+                                    </ContentEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Output>
+                    </Operation>
+                    <Operation>
+                        <Name>getProject</Name>
+                        <Description>This operation returns the current state of the project in CLAM XML format. Depending on the state this contains a specification of all accepted parameters, all input files, and all output files. Note that errors in parameter validation are encoded in the CLAM XML response; the system will still return a 200 response.</Description>
+                        <Input>
+                            <Parameter>
+                                <Name>project</Name>
+                                <Description>The name of an Adelheid project.</Description>
+                                <DataType>string</DataType>
+                                <SemanticType>clam.project.adelheid</SemanticType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Input>
+                        <Output>
+                            <Parameter>
+                                <Name>status</Name>
+                                <MIMEType>text/xml</MIMEType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                    <ContentEncoding>
+                                        <!--<URL><!-\- TODO: URL pointing to the schema of CLAM XML -\-></URL>-->
+                                        <ResourceFormat>CLAM XML</ResourceFormat>
+                                    </ContentEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Output>
+                    </Operation>
+                    <Operation>
+                        <Name>getOutput</Name>
+                        <Description>Retrieve all output files as an archive.</Description>
+                        <Input>
+                            <Parameter>
+                                <Name>project</Name>
+                                <Description>The name of an Adelheid project.</Description>
+                                <DataType>string</DataType>
+                                <SemanticType>clam.project.adelheid</SemanticType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Input>
+                        <Output>
+                            <Parameter>
+                                <Name>archive</Name>
+                                <MIMEType>application/zip</MIMEType>
+                                <TechnicalMetadata/>
+                            </Parameter>
+                        </Output>
+                    </Operation>
+                    <Operation>
+                        <Name>getATLFile</Name>
+                        <Description>Get the tokenized text with all potential tags and lemmas, in XML format. This file contains the most complete output and can be used as input for the Adelheid visualization and annotation tool.</Description>
+                        <Input>
+                            <Parameter>
+                                <Name>project</Name>
+                                <Description>The name of an Adelheid project.</Description>
+                                <DataType>string</DataType>
+                                <SemanticType>clam.project.adelheid</SemanticType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Input>
+                        <Output>
+                            <Parameter>
+                                <Name>ATL</Name>
+                                <Description>This main output XML file shows the tags and lemmas added to the tokens in the text.</Description>
+                                <MIMEType>text/xml</MIMEType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                    <ContentEncoding>
+                                        <URL>http://hdl.handle.net/00-SCHM-0000-0000-0010-C</URL>
+                                        <ResourceFormat>Adelheid document XML</ResourceFormat>
+                                    </ContentEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Output>
+                    </Operation>
+                    <Operation>
+                        <Name>getASCFile</Name>
+                        <Description>Get the individual characters in the text, in XML format. This file is projected to play a role in later generations of corpus annotation or exploration tools; it is currently not used.</Description>
+                        <Input>
+                            <Parameter>
+                                <Name>project</Name>
+                                <Description>The name of an Adelheid project.</Description>
+                                <DataType>string</DataType>
+                                <SemanticType>clam.project.adelheid</SemanticType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Input>
+                        <Output>
+                            <Parameter>
+                                <Name>ASC</Name>
+                                <Description>This output file shows information on how the total character stream for each manuscript has been split into tokens.</Description>
+                                <MIMEType>text/xml</MIMEType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                    <ContentEncoding>
+                                        <URL>http://hdl.handle.net/1839/00-SCHM-0000-0000-000F-1</URL>
+                                        <ResourceFormat>Adelheid character stream XML</ResourceFormat>
+                                    </ContentEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Output>
+                    </Operation>
+                    <Operation>
+                        <Name>getTAGFile</Name>
+                        <Description>Get the tokenized text with the most likely tag and lemma, in multi-column format. This file is meant mainly to get a first impression of whether the system worked properly. However, it can also serve as an alternative final output if you are planning no further processing and are content with the format.</Description>
+                        <Input>
+                            <Parameter>
+                                <Name>project</Name>
+                                <Description>The name of an Adelheid project.</Description>
+                                <DataType>string</DataType>
+                                <SemanticType>clam.project.adelheid</SemanticType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Input>
+                        <Output>
+                            <Parameter>
+                                <Name>TAG</Name>
+                                <Description>An alternative version of the tag and lemma information is given in a 4-column UTF-8 representation.</Description>
+                                <MIMEType>text/plain</MIMEType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Output>
+                    </Operation>
+                    <Operation>
+                        <Name>deleteOutput</Name>
+                        <Description>Deletes all output files and resets the project for another run.</Description>
+                        <Input>
+                            <Parameter>
+                                <Name>project</Name>
+                                <Description>The name of an Adelheid project.</Description>
+                                <DataType>string</DataType>
+                                <SemanticType>clam.project.adelheid</SemanticType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Input>
+                        <Output>
+                            <Parameter>
+                                <Name>status</Name>
+                                <MIMEType>text/xml</MIMEType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                    <ContentEncoding>
+                                        <!--<URL><!-\- TODO: URL pointing to the schema of CLAM XML -\-></URL>-->
+                                        <ResourceFormat>CLAM XML</ResourceFormat>
+                                    </ContentEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Output>
+                    </Operation>
+                    <Operation>
+                        <Name>deleteProject</Name>
+                        <Description>Deletes the Adelheid project.</Description>
+                        <Input>
+                            <Parameter>
+                                <Name>project</Name>
+                                <Description>The name of an Adelheid project.</Description>
+                                <DataType>string</DataType>
+                                <SemanticType>clam.project.adelheid</SemanticType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Input>
+                        <Output>
+                            <Parameter>
+                                <Name>status</Name>
+                                <MIMEType>text/xml</MIMEType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                    <ContentEncoding>
+                                        <!--<URL><!-\- TODO: URL pointing to the schema of CLAM XML -\-></URL>-->
+                                        <ResourceFormat>CLAM XML</ResourceFormat>
+                                    </ContentEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Output>
+                    </Operation>
+                </Operations>
+            </Service>
+            <Service CoreVersion="1.0" ref="h2">
+                <Name>Adelheid Lexicon</Name>
+                <ServiceDescriptionLocation ref="h2"/>
+                <Operations>
+                    <Operation>
+                        <Name>createProject</Name>
+                        <Description>This is necessary before attempting to upload any files; it initialises an empty new Adelheid Lexicon project.</Description>
+                        <Input>
+                            <Parameter>
+                                <Name>project</Name>
+                                <Description>The name to be used for the new Adelheid Lexicon project. Do not use spaces or special characters in the project name, only underscores and alphanumeric characters are allowed</Description>
+                                <DataType>string</DataType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Input>
+                        <Output>
+                            <ParameterGroup>
+                                <Name>status</Name>
+                                <MIMEType>text/xml</MIMEType>
+                                <Parameters>
+                                    <Parameter>
+                                        <Name>project</Name>
+                                        <Description>The name of the new Adelheid Lexicon project.</Description>
+                                        <DataType>string</DataType>
+                                        <SemanticType>clam.project.adelheidlexicon</SemanticType>
+                                        <TechnicalMetadata>
+                                            <ContentEncoding>
+                                                <RelativeLocation>/clam/@project</RelativeLocation>
+                                            </ContentEncoding>
+                                        </TechnicalMetadata>
+                                    </Parameter>
+                                </Parameters>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                    <ContentEncoding>
+                                        <!--<URL><!-\- TODO: URL pointing to the schema of CLAM XML -\-></URL>-->
+                                        <ResourceFormat>CLAM XML</ResourceFormat>
+                                    </ContentEncoding>
+                                </TechnicalMetadata>
+                            </ParameterGroup>
+                        </Output>
+                    </Operation>
+                    <Operation>
+                        <Name>addInputXMLContent</Name>
+                        <Description>Add an Adelheid XML document providing the text of a manuscript.</Description>
+                        <Input>
+                            <Parameter>
+                                <Name>project</Name>
+                                <Description>The name of an Adelheid Lexicon project.</Description>
+                                <DataType>string</DataType>
+                                <SemanticType>clam.project.adelheidlexicon</SemanticType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                            <Parameter>
+                                <Name>contents</Name>
+                                <Description>An Adelheid XML document consists of a TEI header followed by a body element, containing a sequence of manuscript elements. Each manuscript in turn consists of a sequence of line elements. A line element contains the actual text of each manuscript line.</Description>
+                                <MIMEType>text/xml</MIMEType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                    <ContentEncoding>
+                                        <URL>http://hdl.handle.net/1839/00-SCHM-0000-0000-0010-C</URL>
+                                        <ResourceFormat>Adelheid document XML</ResourceFormat>
+                                    </ContentEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Input>
+                        <Output>
+                            <Parameter>
+                                <Name>status</Name>
+                                <MIMEType>text/xml</MIMEType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                    <ContentEncoding>
+                                        <!--<URL><!-\- TODO: URL pointing to the schema of CLAM upload XML -\-></URL>-->
+                                        <ResourceFormat>CLAM XML</ResourceFormat>
+                                    </ContentEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Output>
+                    </Operation>
+                    <Operation>
+                        <Name>addInputLexiconContent</Name>
+                        <Description>An Adelheid lexicon with additional lexical entries.</Description>
+                        <Input>
+                            <Parameter>
+                                <Name>project</Name>
+                                <Description>The name of an Adelheid Lexicon project.</Description>
+                                <DataType>string</DataType>
+                                <SemanticType>clam.project.adelheidlexicon</SemanticType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                            <Parameter>
+                                <Name>contents</Name>
+                                <Description>Adelheid lexicon with additional lexical entries.</Description>
+                                <MIMEType>text/xml</MIMEType>
+                                <DataType>string</DataType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                    <ContentEncoding>
+                                        <URL>http://hdl.handle.net/1839/00-SCHM-0000-0000-0011-A</URL>
+                                        <ResourceFormat>Adelheid Lexicon XML</ResourceFormat>
+                                    </ContentEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                            <Parameter>
+                                <Name>weight</Name>
+                                <Description>A weight for the lexicon. This determines how important the lexicon is deemed to be in relation to other lexicons used. The base lexicon that forms part of Adelheid is given weight 1. If you want your lexicon to practically overrule the base lexicon, you can choose a really high value, but normally weight 1 would seem a perfectly reasonable choice.</Description>
+                                <DataType>float</DataType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Input>
+                        <Output>
+                            <Parameter>
+                                <Name>status</Name>
+                                <MIMEType>text/xml</MIMEType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                    <ContentEncoding>
+                                        <!--<URL><!-\- TODO: URL pointing to the schema of CLAM upload XML -\-></URL>-->
+                                        <ResourceFormat>CLAM XML</ResourceFormat>
+                                    </ContentEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Output>
+                    </Operation>
+                    <Operation>
+                        <Name>startProject</Name>
+                        <Description>This starts the running of a project, i.e. starts the actual Adelheid Lexicon program with the provided input files. T</Description>
+                        <Input>
+                            <Parameter>
+                                <Name>project</Name>
+                                <Description>The name of an Adelheid Lexicon project.</Description>
+                                <DataType>string</DataType>
+                                <SemanticType>clam.project.adelheidlexicon</SemanticType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Input>
+                        <Output>
+                            <Parameter>
+                                <Name>status</Name>
+                                <MIMEType>text/xml</MIMEType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                    <ContentEncoding>
+                                        <!--<URL><!-\- TODO: URL pointing to the schema of CLAM XML -\-></URL>-->
+                                        <ResourceFormat>CLAM XML</ResourceFormat>
+                                    </ContentEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Output>
+                    </Operation>
+                    <Operation>
+                        <Name>getProject</Name>
+                        <Description>This operation returns the current state of the project in CLAM XML format. Depending on the state this contains a specification of all accepted parameters, all input files, and all output files. Note that errors in parameter validation are encoded in the CLAM XML response; the system will still return a 200 response.</Description>
+                        <Input>
+                            <Parameter>
+                                <Name>project</Name>
+                                <Description>The name of an Adelheid Lexicon project.</Description>
+                                <DataType>string</DataType>
+                                <SemanticType>clam.project.adelheidlexicon</SemanticType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Input>
+                        <Output>
+                            <Parameter>
+                                <Name>status</Name>
+                                <MIMEType>text/xml</MIMEType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                    <ContentEncoding>
+                                        <!--<URL><!-\- TODO: URL pointing to the schema of CLAM XML -\-></URL>-->
+                                        <ResourceFormat>CLAM XML</ResourceFormat>
+                                    </ContentEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Output>
+                    </Operation>
+                    <Operation>
+                        <Name>getOutput</Name>
+                        <Description>Retrieve all output files as an archive.</Description>
+                        <Input>
+                            <Parameter>
+                                <Name>project</Name>
+                                <Description>The name of an Adelheid Lexicon project.</Description>
+                                <DataType>string</DataType>
+                                <SemanticType>clam.project.adelheidlexicon</SemanticType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Input>
+                        <Output>
+                            <Parameter>
+                                <Name>archive</Name>
+                                <MIMEType>application/zip</MIMEType>
+                                <TechnicalMetadata/>
+                            </Parameter>
+                        </Output>
+                    </Operation>
+                    <Operation>
+                        <Name>getXMLFile</Name>
+                        <Description>Get the tokenized text with all potential tags and lemmas, in XML format. This file contains the most complete output and can be used as input for the Adelheid visualization and annotation tool.</Description>
+                        <Input>
+                            <Parameter>
+                                <Name>project</Name>
+                                <Description>The name of an Adelheid Lexicon project.</Description>
+                                <DataType>string</DataType>
+                                <SemanticType>clam.project.adelheidlexicon</SemanticType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Input>
+                        <Output>
+                            <Parameter>
+                                <Name>ATL</Name>
+                                <Description>This main output XML file shows the tags and lemmas added to the tokens in the text.</Description>
+                                <MIMEType>text/xml</MIMEType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                    <ContentEncoding>
+                                        <URL>http://hdl.handle.net/00-SCHM-0000-0000-0010-C</URL>
+                                        <ResourceFormat>Adelheid document XML</ResourceFormat>
+                                    </ContentEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Output>
+                    </Operation>
+                    <Operation>
+                        <Name>deleteOutput</Name>
+                        <Description>Deletes all output files and resets the project for another run.</Description>
+                        <Input>
+                            <Parameter>
+                                <Name>project</Name>
+                                <Description>The name of an Adelheid Lexicon project.</Description>
+                                <DataType>string</DataType>
+                                <SemanticType>clam.project.adelheidlexicon</SemanticType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Input>
+                        <Output>
+                            <Parameter>
+                                <Name>status</Name>
+                                <MIMEType>text/xml</MIMEType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                    <ContentEncoding>
+                                        <!--<URL><!-\- TODO: URL pointing to the schema of CLAM XML -\-></URL>-->
+                                        <ResourceFormat>CLAM XML</ResourceFormat>
+                                    </ContentEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Output>
+                    </Operation>
+                    <Operation>
+                        <Name>deleteProject</Name>
+                        <Description>Deletes the Adelheid project.</Description>
+                        <Input>
+                            <Parameter>
+                                <Name>project</Name>
+                                <Description>The name of an Adelheid Lexicon project.</Description>
+                                <DataType>string</DataType>
+                                <SemanticType>clam.project.adelheidlexicon</SemanticType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Input>
+                        <Output>
+                            <Parameter>
+                                <Name>status</Name>
+                                <MIMEType>text/xml</MIMEType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                    <ContentEncoding>
+                                        <!--<URL><!-\- TODO: URL pointing to the schema of CLAM XML -\-></URL>-->
+                                        <ResourceFormat>CLAM XML</ResourceFormat>
+                                    </ContentEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Output>
+                    </Operation>
+                </Operations>
+            </Service>
+            <Service CoreVersion="1.0" ref="h3">
+                <Name>Adelheid Tokenizer</Name>
+                <ServiceDescriptionLocation ref="h3"/>
+                <Operations>
+                    <Operation>
+                        <Name>createProject</Name>
+                        <Description>This is necessary before attempting to upload any files; it initialises an empty new Adelheid Tokenizer project.</Description>
+                        <Input>
+                            <Parameter>
+                                <Name>project</Name>
+                                <Description>The name to be used for the new Adelheid Tokenizer project. Do not use spaces or special characters in the project name, only underscores and alphanumeric characters are allowed</Description>
+                                <DataType>string</DataType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Input>
+                        <Output>
+                            <ParameterGroup>
+                                <Name>status</Name>
+                                <MIMEType>text/xml</MIMEType>
+                                <Parameters>
+                                    <Parameter>
+                                        <Name>project</Name>
+                                        <Description>The name of the new Adelheid Tokenizer project.</Description>
+                                        <DataType>string</DataType>
+                                        <SemanticType>clam.project.adelheidlexicon</SemanticType>
+                                        <TechnicalMetadata>
+                                            <ContentEncoding>
+                                                <RelativeLocation>/clam/@project</RelativeLocation>
+                                            </ContentEncoding>
+                                        </TechnicalMetadata>
+                                    </Parameter>
+                                </Parameters>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                    <ContentEncoding>
+                                        <!--<URL><!-\- TODO: URL pointing to the schema of CLAM XML -\-></URL>-->
+                                        <ResourceFormat>CLAM XML</ResourceFormat>
+                                    </ContentEncoding>
+                                </TechnicalMetadata>
+                            </ParameterGroup>
+                        </Output>
+                    </Operation>
+                    <Operation>
+                        <Name>addInputXMLContent</Name>
+                        <Description>Add an Adelheid XML document providing the text of a manuscript.</Description>
+                        <Input>
+                            <Parameter>
+                                <Name>project</Name>
+                                <Description>The name of an Adelheid Tokenizer project.</Description>
+                                <DataType>string</DataType>
+                                <SemanticType>clam.project.adelheidtokenizer</SemanticType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                            <Parameter>
+                                <Name>contents</Name>
+                                <Description>An Adelheid XML document consists of a TEI header followed by a body element, containing a sequence of manuscript elements. Each manuscript in turn consists of a sequence of line elements. A line element contains the actual text of each manuscript line.</Description>
+                                <MIMEType>text/xml</MIMEType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                    <ContentEncoding>
+                                        <URL>http://hdl.handle.net/1839/00-SCHM-0000-0000-0010-C</URL>
+                                        <ResourceFormat>Adelheid document XML</ResourceFormat>
+                                    </ContentEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Input>
+                        <Output>
+                            <Parameter>
+                                <Name>status</Name>
+                                <MIMEType>text/xml</MIMEType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                    <ContentEncoding>
+                                        <!--<URL><!-\- TODO: URL pointing to the schema of CLAM upload XML -\-></URL>-->
+                                        <ResourceFormat>CLAM XML</ResourceFormat>
+                                    </ContentEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Output>
+                    </Operation>
+                    <Operation>
+                        <Name>addInputTextContent</Name>
+                        <Description>Add a more traditional text format. It's advised to use the Adelheid XML document instead of this more traditional text format.</Description>
+                        <Input>
+                            <Parameter>
+                                <Name>project</Name>
+                                <Description>The name of an Adelheid Tokenizer project.</Description>
+                                <DataType>string</DataType>
+                                <SemanticType>clam.project.adelheidtokenizer</SemanticType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                            <Parameter>
+                                <Name>contents</Name>
+                                <Description>A more traditional text format where each new manuscript is indicated with a so-called Kloeke-code, prefixed with _o:  on a new line. Then follow the lines of the manuscript.</Description>
+                                <MIMEType>text/plain</MIMEType>
+                                <DataType>string</DataType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Input>
+                        <Output>
+                            <Parameter>
+                                <Name>status</Name>
+                                <MIMEType>text/xml</MIMEType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                    <ContentEncoding>
+                                        <!--<URL><!-\- TODO: URL pointing to the schema of CLAM upload XML -\-></URL>-->
+                                        <ResourceFormat>CLAM XML</ResourceFormat>
+                                    </ContentEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Output>
+                    </Operation>
+                    <Operation>
+                        <Name>startProject</Name>
+                        <Description>This starts the running of a project, i.e. starts the actual Adelheid Tokenizer program with the provided input files. T</Description>
+                        <Input>
+                            <Parameter>
+                                <Name>project</Name>
+                                <Description>The name of an Adelheid Tokenizer project.</Description>
+                                <DataType>string</DataType>
+                                <SemanticType>clam.project.adelheidtokenizer</SemanticType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Input>
+                        <Output>
+                            <Parameter>
+                                <Name>status</Name>
+                                <MIMEType>text/xml</MIMEType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                    <ContentEncoding>
+                                        <!--<URL><!-\- TODO: URL pointing to the schema of CLAM XML -\-></URL>-->
+                                        <ResourceFormat>CLAM XML</ResourceFormat>
+                                    </ContentEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Output>
+                    </Operation>
+                    <Operation>
+                        <Name>getProject</Name>
+                        <Description>This operation returns the current state of the project in CLAM XML format. Depending on the state this contains a specification of all accepted parameters, all input files, and all output files. Note that errors in parameter validation are encoded in the CLAM XML response; the system will still return a 200 response.</Description>
+                        <Input>
+                            <Parameter>
+                                <Name>project</Name>
+                                <Description>The name of an Adelheid Tokenizer project.</Description>
+                                <DataType>string</DataType>
+                                <SemanticType>clam.project.adelheidtokenizer</SemanticType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Input>
+                        <Output>
+                            <Parameter>
+                                <Name>status</Name>
+                                <MIMEType>text/xml</MIMEType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                    <ContentEncoding>
+                                        <!--<URL><!-\- TODO: URL pointing to the schema of CLAM XML -\-></URL>-->
+                                        <ResourceFormat>CLAM XML</ResourceFormat>
+                                    </ContentEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Output>
+                    </Operation>
+                    <Operation>
+                        <Name>getOutput</Name>
+                        <Description>Retrieve all output files as an archive.</Description>
+                        <Input>
+                            <Parameter>
+                                <Name>project</Name>
+                                <Description>The name of an Adelheid Tokenizer project.</Description>
+                                <DataType>string</DataType>
+                                <SemanticType>clam.project.adelheidtokenizer</SemanticType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Input>
+                        <Output>
+                            <Parameter>
+                                <Name>archive</Name>
+                                <MIMEType>application/zip</MIMEType>
+                                <TechnicalMetadata/>
+                            </Parameter>
+                        </Output>
+                    </Operation>
+                    <Operation>
+                        <Name>getATTFile</Name>
+                        <Description>Get the tokenized text with all potential tags and lemmas, in XML format. This file contains the most complete output and can be used as input for the Adelheid visualization and annotation tool.</Description>
+                        <Input>
+                            <Parameter>
+                                <Name>project</Name>
+                                <Description>The name of an Adelheid Tokenizer project.</Description>
+                                <DataType>string</DataType>
+                                <SemanticType>clam.project.adelheidtokenizer</SemanticType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Input>
+                        <Output>
+                            <Parameter>
+                                <Name>ATT</Name>
+                                <Description>This main output XML file shows the tags and lemmas added to the tokens in the text.</Description>
+                                <MIMEType>text/xml</MIMEType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                    <ContentEncoding>
+                                        <URL>http://hdl.handle.net/00-SCHM-0000-0000-0010-C</URL>
+                                        <ResourceFormat>Adelheid document XML</ResourceFormat>
+                                    </ContentEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Output>
+                    </Operation>
+                    <Operation>
+                        <Name>getATCFile</Name>
+                        <Description>Get the individual characters in the text, in XML format. This file is projected to play a role in later generations of corpus annotation or exploration tools; it is currently not used.</Description>
+                        <Input>
+                            <Parameter>
+                                <Name>project</Name>
+                                <Description>The name of an Adelheid Tokenizer project.</Description>
+                                <DataType>string</DataType>
+                                <SemanticType>clam.project.adelheidtokenizer</SemanticType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Input>
+                        <Output>
+                            <Parameter>
+                                <Name>ATC</Name>
+                                <Description>This output file shows information on how the total character stream for each manuscript has been split into tokens.</Description>
+                                <MIMEType>text/xml</MIMEType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                    <ContentEncoding>
+                                        <URL>http://hdl.handle.net/1839/00-SCHM-0000-0000-000F-1</URL>
+                                        <ResourceFormat>Adelheid character stream XML</ResourceFormat>
+                                    </ContentEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Output>
+                    </Operation>
+                    <Operation>
+                        <Name>deleteOutput</Name>
+                        <Description>Deletes all output files and resets the project for another run.</Description>
+                        <Input>
+                            <Parameter>
+                                <Name>project</Name>
+                                <Description>The name of an Adelheid Tokenizer project.</Description>
+                                <DataType>string</DataType>
+                                <SemanticType>clam.project.adelheidtokenizer</SemanticType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Input>
+                        <Output>
+                            <Parameter>
+                                <Name>status</Name>
+                                <MIMEType>text/xml</MIMEType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                    <ContentEncoding>
+                                        <!--<URL><!-\- TODO: URL pointing to the schema of CLAM XML -\-></URL>-->
+                                        <ResourceFormat>CLAM XML</ResourceFormat>
+                                    </ContentEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Output>
+                    </Operation>
+                    <Operation>
+                        <Name>deleteProject</Name>
+                        <Description>Deletes the Adelheid project.</Description>
+                        <Input>
+                            <Parameter>
+                                <Name>project</Name>
+                                <Description>The name of an Adelheid Tokenizer project.</Description>
+                                <DataType>string</DataType>
+                                <SemanticType>clam.project.adelheidtokenizer</SemanticType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Input>
+                        <Output>
+                            <Parameter>
+                                <Name>status</Name>
+                                <MIMEType>text/xml</MIMEType>
+                                <TechnicalMetadata>
+                                    <CharacterEncoding>UTF-8</CharacterEncoding>
+                                    <ContentEncoding>
+                                        <!--<URL><!-\- TODO: URL pointing to the schema of CLAM XML -\-></URL>-->
+                                        <ResourceFormat>CLAM XML</ResourceFormat>
+                                    </ContentEncoding>
+                                </TechnicalMetadata>
+                            </Parameter>
+                        </Output>
+                    </Operation>
+                </Operations>
+            </Service>
+        </ToolService>
+    </Components>
+</CMD>

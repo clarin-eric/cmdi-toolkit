@@ -50,9 +50,6 @@
                     <xsl:value-of select="/defns:OAI-PMH/defns:GetRecord[1]/defns:record[1]/defns:header[1]/defns:identifier[1]"/>
                 </MdSelfLink>
                 <MdProfile>clarin.eu:cr1:p_1288172614026</MdProfile>
-                <xsl:variable name="oai_id">
-                    <xsl:value-of select="tokenize(/defns:OAI-PMH/defns:GetRecord[1]/defns:record[1]/defns:header[1]/defns:identifier[1], ':')[2]"/>
-                </xsl:variable>
                 <MdCollectionDisplayName>
                     <xsl:value-of select="$provider_name"/>
                 </MdCollectionDisplayName>
@@ -207,13 +204,13 @@
 
     <xsl:template match="dc:identifier" mode="preprocess">
   
-        <xsl:if test="contains(., 'http://') or contains(., 'urn:nbn') or contains(., 'hdl:')">
+      <xsl:if test="contains(., 'http://') or contains(., 'https://') or contains(., 'urn:nbn') or contains(., 'hdl:')">
         <ResourceProxy>
             <xsl:attribute name="id"><xsl:value-of select="generate-id()"/></xsl:attribute>
             <ResourceType>Resource</ResourceType>
             <ResourceRef><xsl:value-of select="."/></ResourceRef>
         </ResourceProxy>
-        </xsl:if>
+      </xsl:if>
      
     </xsl:template>
 

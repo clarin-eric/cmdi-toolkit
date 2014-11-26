@@ -46,97 +46,174 @@
 
     <xsl:template name="PrintHeader">
 
-        <xs:element name="Header">
-            <xs:complexType>
-                <xs:sequence>
-                    <xs:element name="MdCreator" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
-                    <xs:element name="MdCreationDate" type="xs:date" minOccurs="0"/>
-                    <xs:element name="MdSelfLink" type="xs:anyURI" minOccurs="0"/>
-                    <xs:element name="MdProfile" type="xs:anyURI" minOccurs="0"/>
-                    <xs:element name="MdCollectionDisplayName" type="xs:string" minOccurs="0"/>
-                </xs:sequence>
-            </xs:complexType>
-        </xs:element>
-        <xs:element name="Resources">
-            <xs:complexType>
-                <xs:sequence>
-                    <xs:element name="ResourceProxyList">
-                        <xs:complexType>
-                            <xs:sequence>
-                                <xs:element maxOccurs="unbounded" minOccurs="0" name="ResourceProxy">
-                                    <xs:complexType>
-                                        <xs:sequence>
-                                            <xs:element maxOccurs="1" minOccurs="1"
-                                                name="ResourceType">
-                                                <xs:complexType>
-                                                  <xs:simpleContent>
-                                                  <xs:extension base="cmd:Resourcetype_simple">
-                                                  <xs:attribute name="mimetype" type="xs:string"/>
-                                                  </xs:extension>
-                                                  </xs:simpleContent>
-                                                </xs:complexType>
-                                            </xs:element>
-                                            <xs:element maxOccurs="1" minOccurs="1"
-                                                name="ResourceRef" type="xs:anyURI"/>
-                                        </xs:sequence>
-                                        <xs:attribute name="id" type="xs:ID" use="required"/>
-                                    </xs:complexType>
-                                </xs:element>
-                            </xs:sequence>
-                        </xs:complexType>
-                    </xs:element>
-                    <xs:element name="JournalFileProxyList">
-                        <xs:complexType>
-                            <xs:sequence>
-                                <xs:element maxOccurs="unbounded" minOccurs="0"
-                                    name="JournalFileProxy">
-                                    <xs:complexType>
-                                        <xs:sequence>
-                                            <xs:element maxOccurs="1" minOccurs="1"
-                                                name="JournalFileRef" type="xs:anyURI"/>
-                                        </xs:sequence>
-                                    </xs:complexType>
-                                </xs:element>
-                            </xs:sequence>
-                        </xs:complexType>
-                    </xs:element>
-                    <xs:element name="ResourceRelationList">
-                        <xs:complexType>
-                            <xs:sequence>
-                                <xs:element maxOccurs="unbounded" minOccurs="0"
-                                    name="ResourceRelation">
-                                    <xs:complexType>
-                                        <xs:sequence>
-                                            <xs:element maxOccurs="1" minOccurs="1"
-                                                name="RelationType"/>
-                                            <xs:element maxOccurs="1" minOccurs="1" name="Res1">
-                                                <xs:complexType>
-                                                  <xs:attribute name="ref" type="xs:IDREF"/>
-                                                </xs:complexType>
-                                            </xs:element>
-                                            <xs:element maxOccurs="1" minOccurs="1" name="Res2">
-                                                <xs:complexType>
-                                                  <xs:attribute name="ref" type="xs:IDREF"/>
-                                                </xs:complexType>
-                                            </xs:element>
-                                        </xs:sequence>
-                                    </xs:complexType>
-                                </xs:element>
-                            </xs:sequence>
-                        </xs:complexType>
-                    </xs:element>
-
-                    <xs:element minOccurs="0" name="IsPartOfList">
-                        <xs:complexType>
-                            <xs:sequence>
-                                <xs:element maxOccurs="unbounded" minOccurs="0" name="IsPartOf"
-                                    type="xs:anyURI"/>
-                            </xs:sequence>
-                        </xs:complexType>
-                    </xs:element>
-
-                </xs:sequence>
-            </xs:complexType>
-        </xs:element>
+    	<xs:element name="Header">
+    		<xs:complexType>
+    			<xs:sequence>
+    				<xs:element name="MdCreator" minOccurs="0" maxOccurs="unbounded">
+    					<xs:complexType>
+    						<xs:simpleContent>
+    							<xs:extension base="xs:string">
+    								<xs:anyAttribute namespace="##other" processContents="lax"/>
+    							</xs:extension>
+    						</xs:simpleContent>
+    					</xs:complexType>
+    				</xs:element>
+    				<xs:element name="MdCreationDate" minOccurs="0">
+    					<xs:complexType>
+    						<xs:simpleContent>
+    							<xs:extension base="xs:date">
+    								<xs:anyAttribute namespace="##other" processContents="lax"/>
+    							</xs:extension>
+    						</xs:simpleContent>
+    					</xs:complexType>
+    				</xs:element>
+    				<xs:element name="MdSelfLink" minOccurs="0">
+    					<xs:complexType>
+    						<xs:simpleContent>
+    							<xs:extension base="xs:anyURI">
+    								<xs:anyAttribute namespace="##other" processContents="lax"/>
+    							</xs:extension>
+    						</xs:simpleContent>
+    					</xs:complexType>
+    				</xs:element>
+    				<xs:element name="MdProfile" minOccurs="0">
+    					<xs:complexType>
+    						<xs:simpleContent>
+    							<xs:extension base="xs:anyURI">
+    								<xs:anyAttribute namespace="##other" processContents="lax"/>
+    							</xs:extension>
+    						</xs:simpleContent>
+    					</xs:complexType>
+    				</xs:element>
+    				<xs:element name="MdCollectionDisplayName" minOccurs="0">
+    					<xs:complexType>
+    						<xs:simpleContent>
+    							<xs:extension base="xs:string">
+    								<xs:anyAttribute namespace="##other" processContents="lax"/>
+    							</xs:extension>
+    						</xs:simpleContent>
+    					</xs:complexType>
+    				</xs:element>
+    			</xs:sequence>
+    			<xs:anyAttribute namespace="##other" processContents="lax"/>
+    		</xs:complexType>
+    	</xs:element>
+    	<xs:element name="Resources">
+    		<xs:complexType>
+    			<xs:sequence>
+    				<xs:element name="ResourceProxyList">
+    					<xs:complexType>
+    						<xs:sequence>
+    							<xs:element maxOccurs="unbounded" minOccurs="0" name="ResourceProxy">
+    								<xs:complexType>
+    									<xs:sequence>
+    										<xs:element maxOccurs="1" minOccurs="1" name="ResourceType">
+    											<xs:complexType>
+    												<xs:simpleContent>
+    													<xs:extension base="cmd:Resourcetype_simple">
+    														<xs:attribute name="mimetype" type="xs:string"/>
+    														<xs:anyAttribute namespace="##other" processContents="lax"/>
+    													</xs:extension>
+    												</xs:simpleContent>
+    											</xs:complexType>
+    										</xs:element>
+    										<xs:element maxOccurs="1" minOccurs="1" name="ResourceRef">
+    											<xs:complexType>
+    												<xs:simpleContent>
+    													<xs:extension base="xs:anyURI">
+    														<xs:anyAttribute namespace="##other" processContents="lax"/>
+    													</xs:extension>
+    												</xs:simpleContent>
+    											</xs:complexType>
+    										</xs:element>
+    									</xs:sequence>
+    									<xs:attribute name="id" type="xs:ID" use="required"/>
+    									<xs:anyAttribute namespace="##other" processContents="lax"/>
+    								</xs:complexType>
+    							</xs:element>
+    						</xs:sequence>
+    						<xs:anyAttribute namespace="##other" processContents="lax"/>
+    					</xs:complexType>
+    				</xs:element>
+    				<xs:element name="JournalFileProxyList">
+    					<xs:complexType>
+    						<xs:sequence>
+    							<xs:element maxOccurs="unbounded" minOccurs="0" name="JournalFileProxy">
+    								<xs:complexType>
+    									<xs:sequence>
+    										<xs:element maxOccurs="1" minOccurs="1" name="JournalFileRef">
+    											<xs:complexType>
+    												<xs:simpleContent>
+    													<xs:extension base="xs:anyURI">
+    														<xs:anyAttribute namespace="##other" processContents="lax"/>
+    													</xs:extension>
+    												</xs:simpleContent>
+    											</xs:complexType>
+    										</xs:element>
+    									</xs:sequence>
+    									<xs:anyAttribute namespace="##other" processContents="lax"/>
+    								</xs:complexType>
+    							</xs:element>
+    						</xs:sequence>
+    						<xs:anyAttribute namespace="##other" processContents="lax"/>
+    					</xs:complexType>
+    				</xs:element>
+    				<xs:element name="ResourceRelationList">
+    					<xs:complexType>
+    						<xs:sequence>
+    							<xs:element maxOccurs="unbounded" minOccurs="0" name="ResourceRelation">
+    								<xs:complexType>
+    									<xs:sequence>
+    										<xs:element maxOccurs="1" minOccurs="1" name="RelationType">
+    											<xs:complexType>
+    												<xs:simpleContent>
+    													<xs:extension base="xs:string">
+    														<xs:anyAttribute namespace="##other" processContents="lax"/>
+    													</xs:extension>
+    												</xs:simpleContent>
+    											</xs:complexType>
+    										</xs:element>
+    										<xs:element maxOccurs="1" minOccurs="1" name="Res1">
+    											<xs:complexType>
+    												<xs:attribute name="ref" type="xs:IDREF"/>
+    												<xs:anyAttribute namespace="##other" processContents="lax"/>
+    											</xs:complexType>
+    										</xs:element>
+    										<xs:element maxOccurs="1" minOccurs="1" name="Res2">
+    											<xs:complexType>
+    												<xs:attribute name="ref" type="xs:IDREF"/>
+    												<xs:anyAttribute namespace="##other" processContents="lax"/>
+    											</xs:complexType>
+    										</xs:element>
+    									</xs:sequence>
+    									<xs:anyAttribute namespace="##other" processContents="lax"/>
+    								</xs:complexType>
+    							</xs:element>
+    						</xs:sequence>
+    						<xs:anyAttribute namespace="##other" processContents="lax"/>
+    					</xs:complexType>
+    				</xs:element>
+    				
+    				<xs:element minOccurs="0" name="IsPartOfList">
+    					<xs:complexType>
+    						<xs:sequence>
+    							<xs:element maxOccurs="unbounded" minOccurs="0" name="IsPartOf">
+    								<xs:complexType>
+    									<xs:simpleContent>
+    										<xs:extension base="xs:anyURI">
+    											<xs:anyAttribute namespace="##other" processContents="lax"/>
+    										</xs:extension>
+    									</xs:simpleContent>
+    								</xs:complexType>
+    							</xs:element>
+    						</xs:sequence>
+    						<xs:anyAttribute namespace="##other" processContents="lax"/>
+    					</xs:complexType>
+    				</xs:element>
+    				
+    			</xs:sequence>
+    			<xs:anyAttribute namespace="##other" processContents="lax"/>
+    		</xs:complexType>
+    	</xs:element>
     </xsl:template>
 </xsl:stylesheet>

@@ -96,6 +96,7 @@
                                     <!--Start with processing the root component once and then process everything else recursively-->
                                     <xsl:apply-templates select="/CMD_ComponentSpec/CMD_Component"/>
                                 </xs:sequence>
+                            	<xs:anyAttribute namespace="##other" processContents="lax"/>
                             </xs:complexType>
                         </xs:element>
 
@@ -104,6 +105,7 @@
                     
                     <!-- CMD version -->
                     <xs:attribute name="CMDVersion" fixed="{$CMDVersion}" use="required"/>
+                	<xs:anyAttribute namespace="##other" processContents="lax"/>
                     
                 </xs:complexType>
             </xs:element>

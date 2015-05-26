@@ -72,7 +72,8 @@
             <xsl:namespace name="cmdp" select="$cmd-profile-uri"/>
             <xsl:apply-templates select="@* except (@xsi:schemaLocation|@xsi:noNamespaceSchemaLocation)"/>
             <xsl:attribute name="xsi:schemaLocation">
-                <xsl:text>http://www.clarin.eu/cmd/ </xsl:text>
+                <xsl:value-of select="$cmd-uri"/>
+                <xsl:text> </xsl:text>
                 <xsl:value-of select="$cmd-envelop-xsd"/>
                 <xsl:text> </xsl:text>
                 <xsl:value-of select="$cmd-profile-uri"/>

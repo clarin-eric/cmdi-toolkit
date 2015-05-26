@@ -5,11 +5,13 @@
     $Date$ 
 -->
 
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dcr="http://www.isocat.org/ns/dcr" xmlns:ann="http://www.clarin.eu" xmlns:cmd="http://www.clarin.eu/cmd/" xmlns:cue="http://www.clarin.eu/cmdi/cues/display/1.0">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dcr="http://www.isocat.org/ns/dcr" xmlns:ann="http://www.clarin.eu" xmlns:cmd="http://www.clarin.eu/cmd/1" xmlns:cue="http://www.clarin.eu/cmdi/cues/display/1.0">
 
     <xsl:param name="cmd-envelop" select="'../../xsd/cmd-envelop.xsd'"/>
 
     <xsl:variable name="CMDVersion" select="'1.2'"/>
+    
+    <xsl:variable name="ns-uri" select="concat('http://www.clarin.eu/cmd/1/profiles/',/ComponentSpec/Header/ID)"/>
     
     <xsl:strip-space elements="*"/>
 
@@ -48,9 +50,9 @@
     <!-- generate XSD -->
     <xsl:template match="/ComponentSpec">
 
-        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dcr="http://www.isocat.org/ns/dcr" xmlns:cmd="http://www.clarin.eu/cmd/" targetNamespace="{Header/ID}" elementFormDefault="qualified">
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dcr="http://www.isocat.org/ns/dcr" xmlns:cmd="http://www.clarin.eu/cmd/1" targetNamespace="{$ns-uri}" elementFormDefault="qualified">
             
-            <xsl:namespace name="cmdp" select="Header/ID"/>
+            <xsl:namespace name="cmdp" select="$ns-uri"/>
 
             <!-- put the header information from the component specification in the schema as appinfo -->
             <xs:annotation>
@@ -62,8 +64,8 @@
             <!-- import xml.xsd for the use of the xml:lang attribute -->
             <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
 
-            <!-- import cmd-envelop for the use of the tgeneral CMD attributes -->
-            <xs:import namespace="http://www.clarin.eu/cmd/" schemaLocation="{$cmd-envelop}"/>
+            <!-- import cmd-envelop for the use of the general CMD attributes -->
+            <xs:import namespace="http://www.clarin.eu/cmd/1" schemaLocation="{$cmd-envelop}"/>
 
 
             <!--  first create complex types for valueschemes (not inline) -->

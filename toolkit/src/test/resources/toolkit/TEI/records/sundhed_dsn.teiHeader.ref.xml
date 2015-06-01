@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.clarin.eu/cmd/" xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1380106710826/xsd"
+  xmlns:tei="http://www.clarin.eu/cmd/" CMDVersion="1.1">
+  <Header>
+    <MdCreator>CLARIN-DK-UCPH</MdCreator>
+    <MdCreationDate>2013-09-12</MdCreationDate>
+    <MdProfile>clarin.eu:cr1:p_1380106710826</MdProfile>
+    <MdCollectionDisplayName>CLARIN-DK-UCPH Repository</MdCollectionDisplayName>
+  </Header>
+  <Resources>
+    <ResourceProxyList/>
+    <JournalFileProxyList/>
+    <ResourceRelationList/>
+  </Resources>
+  <Components>
+    <teiHeader>
+      <type>text</type>
+      <fileDesc>
+        <titleStmt>
+          <title lang="da">2. trimester abort eller dødfødsel</title>
+          <sponsor>DK-CLARIN</sponsor>
+          <respStmt>
+            <resp>Data capture</resp>
+            <name>
+              <name>dsn.dk </name>
+              <note type="method">file</note>
+              <date when="2011"/>
+            </name>
+          </respStmt>
+        </titleStmt>
+        <extent>
+          <num n="words">985</num>
+          <num n="paragraphs">112</num>
+        </extent>
+        <publicationStmt>
+          <distributor>DK-CLARIN-WP22</distributor>
+          <idno type="ctb">wp22_Jakob_1297353733749</idno>
+          <availability status="free">
+            <ab type="all"/>
+          </availability>
+        </publicationStmt>
+        <notesStmt>
+          <note resp="cst.ku.dk" lang="en">Automatic capture from sundhed.dk</note>
+        </notesStmt>
+        <sourceDesc>
+          <biblStruct>
+            <idno type="url">http://sundhed.dk</idno>
+            <idno type="file">sundhed_dk_1297353733749</idno>
+            <analytic>
+              <title lang="da">2. trimester abort eller dødfødsel</title>
+              <author>
+                <name ref="#P1297353733749-1">Anja Pinborg</name>
+              </author>
+              <author>
+                <name ref="#P1297353733749-2">Bjarne V. Lühr Hansen</name>
+              </author>
+              <author>
+                <name ref="#P1297353733749-3">Per Bergsjø</name>
+              </author>
+              <respStmt>
+                <resp>Translated by</resp>
+                <name>
+                  <name ref="#nil_person">empty</name>
+                </name>
+              </respStmt>
+            </analytic>
+            <monogr>
+              <title lang="da">Artikler fra sundhed.dk</title>
+              <editor>
+                <name ref="#nil_person">nil</name>
+              </editor>
+              <imprint>
+                <publisher n="9">sundhed.dk</publisher>
+                <date cert="high" when="2009-09-04"/>
+                <biblScope type="issue">empty</biblScope>
+                <biblScope type="sect">empty</biblScope>
+                <biblScope type="vol">empty</biblScope>
+                <biblScope type="chap">empty</biblScope>
+                <biblScope type="pp">empty</biblScope>
+              </imprint>
+            </monogr>
+          </biblStruct>
+        </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+        <samplingDecl>
+          <ab>CTB version of: </ab>
+        </samplingDecl>
+        <projectDesc>
+          <ab>DK-CLARIN-WP22</ab>
+        </projectDesc>
+        <appInfo>
+          <application ident="CstClarinDaTokeniser" subtype="tokenizer" type="a_annotation"
+            version="1.0" id="CstClarinDaTokeniser">
+            <desc lang="da">Samler de atomare cbf-segmenter i tokens</desc>
+          </application>
+          <application ident="CstClarinSentenceAndParagraphSegmenter" subtype="s-splitter"
+            type="a_annotation" version="2.0" id="CstClarinSentenceSegmenter">
+            <desc lang="da">Nummerere intervaller for sætninger</desc>
+            <ptr target="#CstClarinDaTokeniser"/>
+          </application>
+          <application ident="CstClarinSentenceAndParagraphSegmenter" subtype="p-splitter"
+            type="a_annotation" version="2.0" id="CstClarinParagraphSegmenter">
+            <desc lang="da">Nummerere intervaller for paragraffer</desc>
+            <ptr target="#CstClarinDaTokeniser"/>
+          </application>
+          <application ident="csttaggerXML" subtype="pos-tagger" type="a_annotation" version="3.1"
+            id="csttaggerXML">
+            <desc lang="da">CSTtags</desc>
+            <ptr target="#CstClarinDaTokeniser"/>
+            <ref target="tagger-options_10052010_da"/>
+          </application>
+          <application ident="cstlemma" subtype="lemmatizer" type="a_annotation" version="4.0"
+            id="cstlemma">
+            <desc lang="da">Tildeler hvert token et lemma</desc>
+            <ptr target="#CstClarinDaTokeniser #csttaggerXML"/>
+            <ref target="lemma-options_13012011_da"/>
+          </application>
+          <application ident="DsnClarinDaTermTaggerLogLikelihood" subtype="term-tagger"
+            type="a_annotation" version="1.0" id="DsnClarinDaTermTaggerLogLikelihood">
+            <desc>Tildeler hvert lemma en værdi for termhood</desc>
+            <ptr target="#CstClarinDaTokeniser"/>
+          </application>
+        </appInfo>
+      </encodingDesc>
+      <profileDesc>
+        <creation>
+          <date cert="high" when="2011"/>
+        </creation>
+        <langUsage>
+          <language ident="da">Danish</language>
+        </langUsage>
+        <textDesc>
+          <channel mode="w">22</channel>
+          <constitution type="single"/>
+          <domain type="special">Sundhed og medicin</domain>
+          <factuality type="fact"/>
+          <preparedness type="revised"/>
+          <purpose type="inform"/>
+          <derivation type="original">
+            <lang>da</lang>
+          </derivation>
+          <interaction active="nil" passive="world">
+            <note type="interactRole">expert-basic</note>
+            <note type="interactAge">adult-adult</note>
+          </interaction>
+        </textDesc>
+        <textClass>
+          <catRef
+            scheme="http://dkclarin.ku.dk/om/beskrivelse_af_arbejdspakker/beskrivelse_af_arbejdspakke_2/beskrivelse_af_arbejdspakke_2.2/ontology.xml"
+            target="A.0.Sundhed.og.medicin"/>
+          <keywords scheme="http://www.laegehaandbogen.dk">
+            <list>
+              <item>obstetrik</item>
+            </list>
+          </keywords>
+        </textClass>
+      </profileDesc>
+      <revisionDesc>
+        <change when="2011-02-10" who="dsn.dk"> Generation of text header </change>
+        <change when="2011-05-04" who="cst.ku.dk"> Gathering of all spanGrps adding appInfo to
+          header </change>
+      </revisionDesc>
+    </teiHeader>
+  </Components>
+</CMD>

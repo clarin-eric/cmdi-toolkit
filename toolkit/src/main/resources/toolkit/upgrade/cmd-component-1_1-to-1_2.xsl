@@ -5,8 +5,9 @@
     xmlns:cue="http://www.clarin.eu/cmdi/cues/display/1.0"
     exclude-result-prefixes="xs"
     version="2.0">
-    
-    <xsl:param name="cmd-component-xsd" select="'../../xsd/cmd-component.xsd'"/>
+
+    <xsl:param name="cmd-toolkit" select="'../../../../../main/resources/toolkit'"/>    
+    <xsl:param name="cmd-component-xsd" select="concat($cmd-toolkit,'/xsd/cmd-component.xsd')"/>
     <xsl:param name="cmd-component-status" select="'production'"/>
     
     <!-- identity copy -->

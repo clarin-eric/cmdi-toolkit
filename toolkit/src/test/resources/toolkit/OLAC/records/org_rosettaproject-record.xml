@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD xmlns="http://www.clarin.eu/cmd/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:olac11="http://www.language-archives.org/OLAC/1.1/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:olac="http://www.language-archives.org/OLAC/1.0/"
+     xmlns:defns="http://www.openarchives.org/OAI/2.0/"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     CMDVersion="1.1"
+     xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1288172614026/xsd">
+   <Header>
+      <MdCreator>olac2cmdi.xsl</MdCreator>
+      <MdCreationDate/>
+      <MdSelfLink/>
+      <MdProfile>clarin.eu:cr1:p_1288172614026</MdProfile>
+      <MdCollectionDisplayName>The Rosetta Project: A Long Now Foundation
+            Library of Human Language</MdCollectionDisplayName>
+   </Header>
+   <Resources>
+      <ResourceProxyList>
+         <ResourceProxy id="w6390aab1ac27">
+            <ResourceType>Resource</ResourceType>
+            <ResourceRef>http://www.archive.org/details/rosettaproject_abe_vocab-2</ResourceRef>
+         </ResourceProxy>
+      </ResourceProxyList>
+      <JournalFileProxyList/>
+      <ResourceRelationList/>
+   </Resources>
+   <Components>
+      <OLAC-DcmiTerms>
+         <contributor>The Long Now Foundation</contributor>
+         <creator>Carl Masthay</creator>
+         <date dcterms-type="W3CDTF">2009</date>
+         <description>[From Carl Masthay] "Since 1976 I knew of some handwritten marginalia notes in Eliot's 1666 Massachusett Indian Grammar Begun. The microfilm was copied from a book in the American Antiquarian Society in Worcester, Massachusetts. I was cleaning out old "illegible" paper copies and realized that maybe no one worked on those Algonquian numerals and a few other words. They were barely legible, and I suffered in attempting to restore the photocopy. I got into contact with the American Antiquarian Society, and [they] kindly supplied color electronic files of the handwritten-marginalia pages and said that my transcription should not involve a copyright problem. There is a slight chance that the document was already published in some obscure linguistic journal decades ago, but I stand no chance of ever finding it again, if it did exist. The language samples diverge from the usual Abenaki, and so this is the ONLY record of an Abenaki dialect never otherwise recorded. I could identify it because of the Western Abenaki that Dr. Gordon Day (a kindly man whom I knew before he died in 1993) had preserved in his 2-volume dictionary (1994).</description>
+         <format>Abbyy GZ</format>
+         <format>Animated GIF</format>
+         <format dcterms-type="IMT">image/gif</format>
+         <format>DjVu</format>
+         <format>DjVuTXT</format>
+         <format>Djvu XML</format>
+         <format>Flippy ZIP</format>
+         <format>Single Page Processed JP2 ZIP</format>
+         <format>Text PDF</format>
+         <format dcterms-type="IMT">application/pdf</format>
+         <identifier dcterms-type="URI">http://www.archive.org/details/rosettaproject_abe_vocab-2</identifier>
+         <language olac-language="eng"/>
+         <subject olac-language="abe"/>
+         <subject>Abenaki Vocabulary</subject>
+         <title>Abenaki numerals handwritten long after 1666, pp. 14-15 in AAS's copy of Eliot's grammar 1666</title>
+         <type dcterms-type="DCMIType">Text</type>
+         <type olac-linguistic-type="lexicon"/>
+      </OLAC-DcmiTerms>
+   </Components>
+</CMD>

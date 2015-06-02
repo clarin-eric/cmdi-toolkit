@@ -145,6 +145,8 @@
     </xsl:template>
     
     <!-- move CMD attributes to the CMD namespace -->
+    <!-- TODO: @ref is allowed on elements, how to know if this is a element or a component with no children? -->
+    <!--<xsl:template match="cmd0:Components//*[exists(*)]/@ref">-->
     <xsl:template match="cmd0:Components//@ref">
         <xsl:attribute name="cmd:ref" select="."/>
     </xsl:template>

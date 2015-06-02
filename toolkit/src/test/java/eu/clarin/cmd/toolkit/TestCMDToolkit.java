@@ -21,6 +21,9 @@ import javax.xml.validation.SchemaFactory;
 import javax.xml.validation.Validator;
 import net.sf.saxon.s9api.DOMDestination;
 import net.sf.saxon.s9api.QName;
+import net.sf.saxon.s9api.XPathCompiler;
+import net.sf.saxon.s9api.XPathExecutable;
+import net.sf.saxon.s9api.XPathSelector;
 import net.sf.saxon.s9api.XdmAtomicValue;
 import net.sf.saxon.s9api.XdmDestination;
 import net.sf.saxon.s9api.XdmNode;
@@ -44,6 +47,7 @@ public class TestCMDToolkit {
     XsltTransformer upgradeCMDRec = null;
     XsltTransformer transformCMDSpecInXSD = null;
     SchemAnon validateCMDSpec = null; 
+    SchemAnon validateCMDEnvelop = null; 
 
     @Before
     public void setUp() {
@@ -52,6 +56,7 @@ public class TestCMDToolkit {
             upgradeCMDRec = SaxonUtils.buildTransformer(CMDToolkit.class.getResource("/toolkit/upgrade/cmd-record-1_1-to-1_2.xsl")).load();
             transformCMDSpecInXSD = SaxonUtils.buildTransformer(CMDToolkit.class.getResource("/toolkit/xslt/comp2schema.xsl")).load();
             validateCMDSpec = new SchemAnon(CMDToolkit.class.getResource("/toolkit/xsd/cmd-component.xsd").toURI().toURL()); 
+            validateCMDEnvelop = new SchemAnon(CMDToolkit.class.getResource("/toolkit/xsd/cmd-envelop.xsd").toURI().toURL()); 
         } catch(Exception e) {
             System.err.println("!ERR: couldn't setup the testing environment!");
             System.err.println(""+e);
@@ -80,6 +85,15 @@ public class TestCMDToolkit {
             e.printStackTrace(System.out);
             throw e;
         }
+    }
+    
+    protected boolean xpath(Document doc,String xpath) throws Exception {
+        XPathCompiler xpc   = SaxonUtils.getProcessor().newXPathCompiler();
+        xpc.declareNamespace("cmd","http://www.clarin.eu/cmd/1");
+        XPathExecutable xpe = xpc.compile(xpath);
+        XPathSelector xps   = xpe.load();
+        xps.setContextItem(SaxonUtils.getProcessor().newDocumentBuilder().wrap(doc));
+        return xps.effectiveBooleanValue();
     }
     
     protected void printMessages(SchemAnon anon) throws Exception {
@@ -117,18 +131,38 @@ public class TestCMDToolkit {
     
     protected boolean validateCMDSpec(String spec,Source src) throws Exception {
         System.out.println("Validate CMD spec["+spec+"]");
-        return validateCMDSpec.validate(src);
+        boolean res = validateCMDSpec.validate(src);
+        System.out.println("CMD spec["+spec+"]: "+(res?"VALID":"INVALID"));
+        printMessages(validateCMDSpec);
+        return res;
+    }
+    
+    protected boolean validateCMDSpec(String spec) throws Exception {
+        return validateCMDSpec(spec,new StreamSource(new java.io.File(TestCMDToolkit.class.getResource(spec).toURI())));
     }
     
     protected boolean validateCMDRecord(String spec,SchemAnon anon,String rec,Source src) throws Exception {
         System.out.println("Validate CMD record["+rec+"] against spec["+spec+"]");
-        return anon.validate(src);
+        boolean res = anon.validate(src);
+        System.out.println("CMD record["+rec+"]: "+(res?"VALID":"INVALID"));
+        printMessages(anon);
+        return res;
     }
-
+    
+    protected boolean validateCMDEnvelop(String rec,Source src) throws Exception {
+        System.out.println("Validate envelop CMD rec["+rec+"]");
+        boolean res = validateCMDEnvelop.validate(src);
+        System.out.println("CMD rec["+rec+"] evelop: "+(res?"VALID":"INVALID"));
+        printMessages(validateCMDEnvelop);
+        return res;
+    }
+    
+    protected boolean validateCMDEnvelop(String rec) throws Exception {
+        return validateCMDEnvelop(rec,new StreamSource(new java.io.File(TestCMDToolkit.class.getResource(rec).toURI())));
+    }
+    
     @Test
-    public void valid_Adelheid() throws Exception {
-        System.out.println("DBG: current working directory["+Paths.get("").toAbsolutePath().toString()+"]");
-        
+    public void testAdelheid() throws Exception {
         String profile = "/toolkit/Adelheid/profiles/clarin.eu:cr1:p_1311927752306.xml";
         String record  = "/toolkit/Adelheid/records/Adelheid.cmdi";
         
@@ -137,11 +171,11 @@ public class TestCMDToolkit {
         
         // validate the 1.2 profile
         boolean validProfile = validateCMDSpec(profile+" (upgraded)",new DOMSource(upgradedProfile));
-        System.out.println("Upgraded CMD profile["+profile+"]: "+(validProfile?"VALID":"INVALID"));
-        printMessages(validateCMDSpec);
         
         // assertions
+        // the upgraded profile should be a valid CMDI 1.2 profile
         assertTrue(validProfile);
+        // so there should be no errors
         assertEquals(0, countErrors(validateCMDSpec));
         
         // transform the 1.2 profile into a XSD
@@ -153,11 +187,64 @@ public class TestCMDToolkit {
         
         // validate the 1.2 record
         boolean validRecord = validateCMDRecord(profile+" (upgraded)",profileAnon,record+" (upgraded)",new DOMSource(upgradedRecord));
-        System.out.println("Upgraded CMD record["+record+"]: "+(validRecord?"VALID":"INVALID"));
-        printMessages(profileAnon);
         
         // assertions
+        // the upgraded record should be a valid CMDI 1.2 record
         assertTrue(validRecord);
+        // so there should be no errors
         assertEquals(0, countErrors(profileAnon));
+    }
+
+    @Test
+    public void testTEI() throws Exception {
+        String record  = "/toolkit/TEI/records/sundhed_dsn.teiHeader.ref.xml";
+
+        // upgrade the record from 1.1 to 1.2
+        Document upgradedRecord = upgradeCMDRecord(record);
+        
+        // assertions
+        // the @ref attributes on the elements should stay as they are
+        assertTrue(xpath(upgradedRecord,"//*:author/*:name/@ref"));
+    }
+
+    @Test
+    public void testSuccessor() throws Exception {
+        String validRecord  = "/toolkit/successor/profiles/successor-valid.xml";
+        String invalidRecord  = "/toolkit/successor/profiles/successor-invalid.xml";
+
+        // assertions
+        assertTrue(validateCMDSpec(validRecord));
+        assertFalse(validateCMDSpec(invalidRecord));
+    }
+
+    @Test
+    public void testOLAC() throws Exception {
+        String profile = "/toolkit/OLAC/profiles/OLAC-DcmiTerms.xml";
+        String record  = "/toolkit/OLAC/records/org_rosettaproject-record.xml";
+        
+        // upgrade the profile from 1.1 to 1.2
+        Document upgradedProfile = upgradeCMDSpec(profile);
+        
+        // validate the 1.2 profile
+        boolean validProfile = validateCMDSpec(profile+" (upgraded)",new DOMSource(upgradedProfile));
+        
+        // assertions
+        // the upgraded profile should be a valid CMDI 1.2 profile
+        assertTrue(validProfile);
+        // so there should be no errors
+        assertEquals(0, countErrors(validateCMDSpec));
+        
+        // transform the 1.2 profile into a XSD
+        Document profileSchema = transformCMDSpecInXSD(profile+" (upgraded)",new DOMSource(upgradedProfile));
+        SchemAnon profileAnon = new SchemAnon(new DOMSource(profileSchema));
+        
+        // upgrade the record from 1.1 to 1.2
+        Document upgradedRecord = upgradeCMDRecord(record);
+        
+        // validate the 1.2 record
+        boolean validRecord = validateCMDRecord(profile+" (upgraded)",profileAnon,record+" (upgraded)",new DOMSource(upgradedRecord));
+
+        // assertions
+        assertFalse(validRecord);
     }
 }

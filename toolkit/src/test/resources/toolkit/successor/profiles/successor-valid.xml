@@ -7,7 +7,7 @@
         <Name>ToolService</Name>
         <Description>Description of a tool and/or service(s)
 (adapted from the AnnotationTool profile)</Description>
-        <Status>production</Status>
+        <Status>deprecated</Status>
         <Successor>hdl:123</Successor>
     </Header>
     <Component CardinalityMax="1" CardinalityMin="1" name="ToolService">

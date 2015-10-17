@@ -8,14 +8,19 @@
     <MdCollectionDisplayName>CLARIN-DK-UCPH Repository</MdCollectionDisplayName>
   </Header>
   <Resources>
-    <ResourceProxyList/>
+    <ResourceProxyList>
+      <ResourceProxy id="r0">
+        <ResourceType>Resource</ResourceType>
+        <ResourceRef>example.com</ResourceRef>
+      </ResourceProxy>
+    </ResourceProxyList>
     <JournalFileProxyList/>
     <ResourceRelationList/>
   </Resources>
   <Components>
     <teiHeader>
       <type>text</type>
-      <fileDesc>
+      <fileDesc ref="r0">
         <titleStmt>
           <title lang="da">2. trimester abort eller dødfødsel</title>
           <sponsor>DK-CLARIN</sponsor>
@@ -60,7 +65,8 @@
               <respStmt>
                 <resp>Translated by</resp>
                 <name>
-                  <name ref="#nil_person">empty</name>
+                  <!--<name ref="#nil_person">empty</name>-->
+                  <name ref="#nil_person"/>
                 </name>
               </respStmt>
             </analytic>

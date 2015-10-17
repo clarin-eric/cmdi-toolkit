@@ -153,7 +153,7 @@
                 <!-- this is an element keep the @ref -->
                 <xsl:copy/>
             </xsl:when>
-            <xsl:when test="exists(../parent::*/node()) or exists(../parent::*/@ComponentId)">
+            <xsl:when test="exists(../node()) or exists(parent::*/@ComponentId)">
                 <!-- the parent is a component add the namespace to @ref -->
                 <xsl:attribute name="cmd:ref" select="."/>
             </xsl:when>
@@ -166,12 +166,10 @@
                 <xsl:choose>
                     <xsl:when test="exists($attr/parent::AttributeList/parent::CMD_Component)">
                         <!-- the parent is a component add the namespace to @ref -->
-                        <xsl:message>!MENZO: the parent is a component add the namespace to @ref</xsl:message>
                         <xsl:attribute name="cmd:ref" select="."/>
                     </xsl:when>
                     <xsl:otherwise>
                         <!-- this is an element keep the @ref -->
-                        <xsl:message>!MENZO: the parent is an element keep the @ref</xsl:message>
                         <xsl:copy/>
                     </xsl:otherwise>
                 </xsl:choose>

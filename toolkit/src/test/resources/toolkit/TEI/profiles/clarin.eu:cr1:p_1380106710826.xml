@@ -1,0 +1,992 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<CMD_ComponentSpec isProfile="true" xsi:schemaLocation="http://www.clarin.eu/cmd http://infra.clarin.eu/cmd/general-component-schema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Header>
+        <ID>clarin.eu:cr1:p_1380106710826</ID>
+        <Name>teiHeader</Name>
+        <Description>TEI header. Supplies the descriptive and declarative information making up an electronic title page prefixed to every TEI-conformant text.
+Version 2.5.0. Last updated on 26th July 2013
+http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-teiHeader.html</Description>
+    </Header>
+    <CMD_Component name="teiHeader" ConceptLink="http://hdl.handle.net/11459/CCR_C-5423_fd858e07-5660-b0c2-998d-961fdf5256fd" CardinalityMin="1" CardinalityMax="1">
+        <CMD_Element name="type" ConceptLink="http://hdl.handle.net/11459/CCR_C-5424_3200a38b-344e-41de-e539-f71f80c38df8" ValueScheme="string" CardinalityMin="1" CardinalityMax="unbounded" DisplayPriority="1" Multilingual="false"/>
+        <CMD_Component name="fileDesc" ComponentId="clarin.eu:cr1:c_1379939315561" ConceptLink="http://hdl.handle.net/11459/CCR_C-5338_8218e241-0458-c8e0-99fe-3f9c0ed618c8" CardinalityMin="1" CardinalityMax="1">
+            <CMD_Component name="titleStmt" ComponentId="clarin.eu:cr1:c_1375880372983" ConceptLink="http://hdl.handle.net/11459/CCR_C-5428_65670fd6-3426-68ac-8f29-faef6ffd02ce" CardinalityMin="1" CardinalityMax="1">
+                <CMD_Element name="title" ConceptLink="http://hdl.handle.net/11459/CCR_C-6119_ea4226b5-8d55-e71e-730f-2a02e3adbeb4" ValueScheme="string" CardinalityMin="1" CardinalityMax="unbounded" Documentation="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-title.html" DisplayPriority="2" Multilingual="false">
+                    <AttributeList>
+                        <Attribute>
+                            <Name>type</Name>
+                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-6240_c0c67c8b-b626-d601-731f-0ea67e51d4cd</ConceptLink>
+                            <Type>string</Type>
+                        </Attribute>
+                        <Attribute>
+                            <Name>level</Name>
+                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-6185_43bcb7bc-3322-915f-63db-4f57ac853171</ConceptLink>
+                            <ValueScheme>
+                                <enumeration>
+                                    <item ConceptLink="" AppInfo="">a</item>
+                                    <item ConceptLink="" AppInfo="">m</item>
+                                    <item ConceptLink="" AppInfo="">j</item>
+                                    <item ConceptLink="" AppInfo="">s</item>
+                                    <item ConceptLink="" AppInfo="">u</item>
+                                </enumeration>
+                            </ValueScheme>
+                        </Attribute>
+                        <Attribute>
+                            <Name>lang</Name>
+                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-6181_9dc2ec32-a4c4-b9b9-1ba2-e356f0906abd</ConceptLink>
+                            <Type>string</Type>
+                        </Attribute>
+                    </AttributeList>
+                </CMD_Element>
+                <CMD_Element name="author" ConceptLink="http://hdl.handle.net/11459/CCR_C-6130_f11d590d-b9f3-6a81-9f17-22988671e59e" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Documentation="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-author.html" DisplayPriority="1" Multilingual="false">
+                    <AttributeList>
+                        <Attribute>
+                            <Name>key</Name>
+                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-6241_4fa5cd26-85f4-0cd7-3e64-198730224fea</ConceptLink>
+                            <Type>string</Type>
+                        </Attribute>
+                        <Attribute>
+                            <Name>ref</Name>
+                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-6191_4b890d83-8630-d818-7c43-994a6e8dd97c</ConceptLink>
+                            <Type>string</Type>
+                        </Attribute>
+                    </AttributeList>
+                </CMD_Element>
+                <CMD_Element name="editor" ConceptLink="http://hdl.handle.net/11459/CCR_C-6132_d287635d-07dc-e2c4-6261-5e4f9a0cf693" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Documentation="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-editor.html" Multilingual="false">
+                    <AttributeList>
+                        <Attribute>
+                            <Name>role</Name>
+                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-6242_d29eeaca-30ef-2169-ac29-89814e839818</ConceptLink>
+                            <Type>string</Type>
+                        </Attribute>
+                    </AttributeList>
+                </CMD_Element>
+                <CMD_Element name="sponsor" ConceptLink="http://hdl.handle.net/11459/CCR_C-5414_55fd7a9e-edae-d8ad-a64f-c8e1058e7a6d" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Documentation="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-sponsor.html" Multilingual="false"/>
+                <CMD_Component name="respStmt" ComponentId="clarin.eu:cr1:c_1375880372978" ConceptLink="http://hdl.handle.net/11459/CCR_C-6120_53844650-23f1-c0ea-1793-efaf7252bb83" CardinalityMin="0" CardinalityMax="unbounded">
+                    <CMD_Element name="resp" ConceptLink="http://hdl.handle.net/11459/CCR_C-6121_23c49453-1e35-dee1-6841-34ca32346343" ValueScheme="string" CardinalityMin="1" CardinalityMax="unbounded" DisplayPriority="1" Multilingual="false"/>
+                    <CMD_Component name="name" ComponentId="clarin.eu:cr1:c_1375880372979" ConceptLink="http://hdl.handle.net/11459/CCR_C-6122_bfcb3f6b-467f-f95e-91b3-d0925530d8e7" CardinalityMin="1" CardinalityMax="unbounded">
+                        <CMD_Element name="name" ConceptLink="http://hdl.handle.net/11459/CCR_C-6122_bfcb3f6b-467f-f95e-91b3-d0925530d8e7" ValueScheme="string" CardinalityMin="1" CardinalityMax="unbounded" Multilingual="false">
+                            <AttributeList>
+                                <Attribute>
+                                    <Name>ref</Name>
+                                    <ConceptLink>http://hdl.handle.net/11459/CCR_C-6191_4b890d83-8630-d818-7c43-994a6e8dd97c</ConceptLink>
+                                    <Type>string</Type>
+                                </Attribute>
+                            </AttributeList>
+                        </CMD_Element>
+                        <CMD_Element name="note" ConceptLink="http://hdl.handle.net/11459/CCR_C-6124_2e45fdf9-ced2-89c9-a09d-b4769e9fede6" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" DisplayPriority="1" Multilingual="true">
+                            <AttributeList>
+                                <Attribute>
+                                    <Name>type</Name>
+                                    <ConceptLink>http://hdl.handle.net/11459/CCR_C-6178_9d06c028-dd75-8266-a948-1ccd688761d5</ConceptLink>
+                                    <Type>string</Type>
+                                </Attribute>
+                            </AttributeList>
+                        </CMD_Element>
+                        <CMD_Element name="date" ConceptLink="http://hdl.handle.net/11459/CCR_C-6123_009f84ce-e47e-5513-f387-b3502897abae" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Multilingual="false">
+                            <AttributeList>
+                                <Attribute>
+                                    <Name>when</Name>
+                                    <ConceptLink>http://hdl.handle.net/11459/CCR_C-6176_647a4954-a958-7304-d8a6-5851f2003f7c</ConceptLink>
+                                    <ValueScheme>
+                                        <pattern>(\-?[0-9]{4})|([0-9]{4}\-[0,1][0-9]\-[0-3][0-9])</pattern>
+                                    </ValueScheme>
+                                </Attribute>
+                            </AttributeList>
+                        </CMD_Element>
+                    </CMD_Component>
+                </CMD_Component>
+            </CMD_Component>
+            <CMD_Component name="editionStmt" ComponentId="clarin.eu:cr1:c_1381926654590" ConceptLink="http://hdl.handle.net/11459/CCR_C-5334_6f64e4d6-7b42-4152-c0c6-5b014f25308c" CardinalityMin="0" CardinalityMax="1">
+                <CMD_Element name="funder" ConceptLink="http://hdl.handle.net/11459/CCR_C-5339_9632ff8d-1abc-bc9a-dd61-867598a01d8f" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Documentation=" (funding body) specifies the name of an individual, institution, or organization responsible for the funding of a project or text; http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-funder.html" DisplayPriority="1" Multilingual="false"/>
+                <CMD_Component name="edition" ConceptLink="http://hdl.handle.net/11459/CCR_C-5333_9a321546-abde-933c-64ee-2da43ba734a3" CardinalityMin="1" CardinalityMax="1">
+                    <CMD_Element name="note" ConceptLink="http://hdl.handle.net/11459/CCR_C-6124_2e45fdf9-ced2-89c9-a09d-b4769e9fede6" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" Documentation="date element is actually as mixed content in edition within TEI, but CMD not allowing mixed content, it is proposed to enclose text in note  " DisplayPriority="1" Multilingual="false"/>
+                    <CMD_Element name="date" ConceptLink="http://hdl.handle.net/11459/CCR_C-6123_009f84ce-e47e-5513-f387-b3502897abae" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" Documentation="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-date.html" Multilingual="false"/>
+                </CMD_Component>
+            </CMD_Component>
+            <CMD_Component name="extent" ComponentId="clarin.eu:cr1:c_1375880372984" ConceptLink="http://hdl.handle.net/11459/CCR_C-5337_dcc36580-999f-8d14-9d17-4d6d9ed7f342" CardinalityMin="0" CardinalityMax="1">
+                <CMD_Element name="num" ConceptLink="http://hdl.handle.net/11459/CCR_C-6125_309c37cf-eb65-9fb4-87e6-dc7ee1f9c6c8" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Documentation="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-num.html" DisplayPriority="1" Multilingual="false">
+                    <AttributeList>
+                        <Attribute>
+                            <Name>n</Name>
+                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-6177_8e40366a-172a-9f6a-cc6a-fcb982209d53</ConceptLink>
+                            <Type>string</Type>
+                        </Attribute>
+                        <Attribute>
+                            <Name>type</Name>
+                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-6254_33a0aef7-4265-b225-2b04-0b9ca3dc9fa6</ConceptLink>
+                            <Type>string</Type>
+                        </Attribute>
+                    </AttributeList>
+                </CMD_Element>
+            </CMD_Component>
+            <CMD_Component name="publicationStmt" ComponentId="clarin.eu:cr1:c_1375880372991" ConceptLink="http://hdl.handle.net/11459/CCR_C-5374_df11861a-3410-2ccd-47d5-0223107a0606" CardinalityMin="1" CardinalityMax="1">
+                <CMD_Element name="publisher" ConceptLink="http://hdl.handle.net/11459/CCR_C-6134_72c22724-2615-fd70-2eff-8cd3cb59e91d" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Documentation="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-publisher.html" Multilingual="false"/>
+                <CMD_Element name="pubPlace" ConceptLink="http://hdl.handle.net/11459/CCR_C-6158_6b459e49-c4b5-1b04-84d0-374ee1039610" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Documentation="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-pubPlace.html" Multilingual="false"/>
+                <CMD_Element name="date" ConceptLink="http://hdl.handle.net/11459/CCR_C-6123_009f84ce-e47e-5513-f387-b3502897abae" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Multilingual="false">
+                    <AttributeList>
+                        <Attribute>
+                            <Name>when</Name>
+                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-6176_647a4954-a958-7304-d8a6-5851f2003f7c</ConceptLink>
+                            <ValueScheme>
+                                <pattern>(\-?[0-9]{4})|([0-9]{4}\-[0,1][0-9]\-[0-3][0-9])</pattern>
+                            </ValueScheme>
+                        </Attribute>
+                    </AttributeList>
+                </CMD_Element>
+                <CMD_Element name="distributor" ConceptLink="http://hdl.handle.net/11459/CCR_C-5332_4ec29a98-77b9-852f-67a4-1d4d3c225067" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Documentation="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-distributor.html" Multilingual="false"/>
+                <CMD_Element name="idno" ConceptLink="http://hdl.handle.net/11459/CCR_C-5353_4d1e6d19-15c0-0959-0b13-d9a57cd6cc86" ValueScheme="string" CardinalityMin="1" CardinalityMax="unbounded" Documentation="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-idno.html" DisplayPriority="1" Multilingual="false">
+                    <AttributeList>
+                        <Attribute>
+                            <Name>type</Name>
+                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-5354_a4e41aa9-b8ba-59ea-a34e-6d7179e393be</ConceptLink>
+                            <Type>string</Type>
+                        </Attribute>
+                    </AttributeList>
+                </CMD_Element>
+                <CMD_Component name="address" ComponentId="clarin.eu:cr1:c_1381926654522" ConceptLink="http://hdl.handle.net/11459/CCR_C-6207_d31e0c5d-7955-3b75-f62d-b2877bef7ce1" CardinalityMin="0" CardinalityMax="1">
+                    <CMD_Element name="addrLine" ConceptLink="http://hdl.handle.net/11459/CCR_C-6208_efd3a128-a6b4-1343-d1f8-abb3e5bd802c" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Documentation="(address line) contains one line of a postal address; http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-addrLine.html" Multilingual="false"/>
+                    <CMD_Element name="orgName" ConceptLink="http://hdl.handle.net/11459/CCR_C-6243_bd27ac08-ec04-0db2-d95c-52f2a6b1e59d" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Documentation="(organization name) contains an organizational name; http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-orgName.html" Multilingual="false"/>
+                    <CMD_Element name="street" ConceptLink="http://hdl.handle.net/11459/CCR_C-6209_0499bf4d-d745-b1dd-cf48-4850fd4d3351" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Documentation="ntains a full street address including any name or number identifying a building as well as the name of the street or route on which it is located; http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-street.html" DisplayPriority="1" Multilingual="false"/>
+                    <CMD_Element name="postCode" ConceptLink="http://hdl.handle.net/11459/CCR_C-6210_e5d5b772-8c87-e9e1-e320-e85282752f31" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Documentation=" (postal code) contains a numerical or alphanumeric code used as part of a postal address to simplify sorting or delivery of mail; http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-postCode.html" Multilingual="false"/>
+                    <CMD_Element name="name" ConceptLink="http://hdl.handle.net/11459/CCR_C-6122_bfcb3f6b-467f-f95e-91b3-d0925530d8e7" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Documentation=" (name, proper noun) contains a proper noun or noun phrase; http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-name.html" Multilingual="false"/>
+                </CMD_Component>
+                <CMD_Component name="availability" ComponentId="clarin.eu:cr1:c_1375880372986" ConceptLink="http://hdl.handle.net/11459/CCR_C-5302_8dfad601-5387-7317-57d1-1f0e65b75af2" CardinalityMin="1" CardinalityMax="unbounded">
+                    <AttributeList>
+                        <Attribute>
+                            <Name>status</Name>
+                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-5303_9afa7d0c-f292-8e89-24f8-997a3d2971ae</ConceptLink>
+                            <ValueScheme>
+                                <enumeration>
+                                    <item ConceptLink="" AppInfo="">free</item>
+                                    <item ConceptLink="" AppInfo="">unknown</item>
+                                    <item ConceptLink="" AppInfo="">restricted</item>
+                                </enumeration>
+                            </ValueScheme>
+                        </Attribute>
+                    </AttributeList>
+                    <CMD_Element name="licence" ConceptLink="http://hdl.handle.net/11459/CCR_C-5362_8cffd964-f57e-09ed-daed-eeabbf2d22c0" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" DisplayPriority="1" Multilingual="false"/>
+                    <CMD_Component name="ab" ComponentId="clarin.eu:cr1:c_1375880372985" ConceptLink="http://hdl.handle.net/11459/CCR_C-6126_4cc19480-696d-b093-f72e-2f9ce68b20cb" CardinalityMin="1" CardinalityMax="unbounded">
+                        <AttributeList>
+                            <Attribute>
+                                <Name>type</Name>
+                                <ConceptLink>http://hdl.handle.net/11459/CCR_C-6179_dd15ee79-064c-c53d-fa3a-9bbacb7b2db4</ConceptLink>
+                                <Type>string</Type>
+                            </Attribute>
+                        </AttributeList>
+                        <CMD_Element name="seg" ConceptLink="http://hdl.handle.net/11459/CCR_C-6127_2884407e-0a2c-26ad-96c1-e9645c44e1a4" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Documentation="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-seg.html" DisplayPriority="1" Multilingual="false">
+                            <AttributeList>
+                                <Attribute>
+                                    <Name>type</Name>
+                                    <ConceptLink>http://hdl.handle.net/11459/CCR_C-6180_0a636b0c-3c1a-c31b-3a3d-3c173b8bbd41</ConceptLink>
+                                    <Type>string</Type>
+                                </Attribute>
+                            </AttributeList>
+                        </CMD_Element>
+                    </CMD_Component>
+                </CMD_Component>
+            </CMD_Component>
+            <CMD_Component name="notesStmt" ComponentId="clarin.eu:cr1:c_1375880372992" ConceptLink="http://hdl.handle.net/11459/CCR_C-5370_fc371ccd-3330-f1c2-6f87-aa363efe4b32" CardinalityMin="0" CardinalityMax="1">
+                <CMD_Element name="note" ConceptLink="http://hdl.handle.net/11459/CCR_C-6124_2e45fdf9-ced2-89c9-a09d-b4769e9fede6" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Documentation="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-note.html" DisplayPriority="1" Multilingual="false">
+                    <AttributeList>
+                        <Attribute>
+                            <Name>lang</Name>
+                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-6181_9dc2ec32-a4c4-b9b9-1ba2-e356f0906abd</ConceptLink>
+                            <Type>string</Type>
+                        </Attribute>
+                        <Attribute>
+                            <Name>resp</Name>
+                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-6184_5f26086f-2fdc-2ecd-4ef5-4bdddcccbbcf</ConceptLink>
+                            <Type>string</Type>
+                        </Attribute>
+                    </AttributeList>
+                </CMD_Element>
+            </CMD_Component>
+            <CMD_Component name="sourceDesc" ComponentId="clarin.eu:cr1:c_1375880373029" ConceptLink="http://hdl.handle.net/11459/CCR_C-5413_c864609d-6804-1515-d256-d34be2416372" CardinalityMin="1" CardinalityMax="unbounded">
+                <CMD_Element name="bibl" ConceptLink="http://hdl.handle.net/11459/CCR_C-6137_4cd6c000-df42-abd8-49b3-ecd8d9d3546a" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" DisplayPriority="1" Multilingual="false"/>
+                <CMD_Component name="biblStruct" ComponentId="clarin.eu:cr1:c_1379939315559" ConceptLink="http://hdl.handle.net/11459/CCR_C-6128_66f0c4be-2005-fdd9-8b08-d7a849c55f53" CardinalityMin="1" CardinalityMax="unbounded">
+                    <CMD_Element name="idno" ConceptLink="http://hdl.handle.net/11459/CCR_C-5353_4d1e6d19-15c0-0959-0b13-d9a57cd6cc86" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Documentation="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-idno.html" DisplayPriority="1" Multilingual="false">
+                        <AttributeList>
+                            <Attribute>
+                                <Name>type</Name>
+                                <ConceptLink>http://hdl.handle.net/11459/CCR_C-5354_a4e41aa9-b8ba-59ea-a34e-6d7179e393be</ConceptLink>
+                                <Type>string</Type>
+                            </Attribute>
+                        </AttributeList>
+                    </CMD_Element>
+                    <CMD_Component name="analytic" ComponentId="clarin.eu:cr1:c_1375880373031" ConceptLink="http://hdl.handle.net/11459/CCR_C-6129_e61e24ca-2b1b-2e82-07f7-167f201a8d67" CardinalityMin="0" CardinalityMax="unbounded">
+                        <CMD_Element name="title" ConceptLink="http://hdl.handle.net/11459/CCR_C-6119_ea4226b5-8d55-e71e-730f-2a02e3adbeb4" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Documentation="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-title.html" DisplayPriority="1" Multilingual="false">
+                            <AttributeList>
+                                <Attribute>
+                                    <Name>lang</Name>
+                                    <ConceptLink>http://hdl.handle.net/11459/CCR_C-6181_9dc2ec32-a4c4-b9b9-1ba2-e356f0906abd</ConceptLink>
+                                    <Type>string</Type>
+                                </Attribute>
+                                <Attribute>
+                                    <Name>level</Name>
+                                    <ConceptLink>http://hdl.handle.net/11459/CCR_C-6185_43bcb7bc-3322-915f-63db-4f57ac853171</ConceptLink>
+                                    <ValueScheme>
+                                        <enumeration>
+                                            <item ConceptLink="http://hdl.handle.net/11459/CCR_C-6186_ff0bdc2d-c915-50f9-1aa9-4f6bc6fcd93b" AppInfo="">a</item>
+                                            <item ConceptLink="http://hdl.handle.net/11459/CCR_C-6187_82dc565a-6836-4906-e2ef-b54ac36706a9" AppInfo="">m</item>
+                                            <item ConceptLink="http://hdl.handle.net/11459/CCR_C-6188_0760e582-8f14-1c2b-3173-f0812721ca55" AppInfo="">j</item>
+                                            <item ConceptLink="http://hdl.handle.net/11459/CCR_C-6189_b07fc83c-84fb-cf28-5553-219bea3babc2" AppInfo="">s</item>
+                                            <item ConceptLink="http://hdl.handle.net/11459/CCR_C-6190_09dc1ffc-8b0f-ff7a-95f3-3c5397c5ac32" AppInfo="">u</item>
+                                        </enumeration>
+                                    </ValueScheme>
+                                </Attribute>
+                            </AttributeList>
+                        </CMD_Element>
+                        <CMD_Component name="author" ComponentId="clarin.eu:cr1:c_1379939315551" ConceptLink="http://hdl.handle.net/11459/CCR_C-6130_f11d590d-b9f3-6a81-9f17-22988671e59e" CardinalityMin="0" CardinalityMax="unbounded">
+                            <CMD_Element name="name" ConceptLink="http://hdl.handle.net/11459/CCR_C-6122_bfcb3f6b-467f-f95e-91b3-d0925530d8e7" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" DisplayPriority="1" Multilingual="false">
+                                <AttributeList>
+                                    <Attribute>
+                                        <Name>ref</Name>
+                                        <ConceptLink>http://hdl.handle.net/11459/CCR_C-6191_4b890d83-8630-d818-7c43-994a6e8dd97c</ConceptLink>
+                                        <Type>string</Type>
+                                    </Attribute>
+                                </AttributeList>
+                            </CMD_Element>
+                        </CMD_Component>
+                        <CMD_Component name="respStmt" ComponentId="clarin.eu:cr1:c_1375880372978" ConceptLink="http://hdl.handle.net/11459/CCR_C-6120_53844650-23f1-c0ea-1793-efaf7252bb83" CardinalityMin="0" CardinalityMax="unbounded">
+                            <CMD_Element name="resp" ConceptLink="http://hdl.handle.net/11459/CCR_C-6121_23c49453-1e35-dee1-6841-34ca32346343" ValueScheme="string" CardinalityMin="1" CardinalityMax="unbounded" DisplayPriority="1" Multilingual="false"/>
+                            <CMD_Component name="name" ComponentId="clarin.eu:cr1:c_1375880372979" ConceptLink="http://hdl.handle.net/11459/CCR_C-6122_bfcb3f6b-467f-f95e-91b3-d0925530d8e7" CardinalityMin="1" CardinalityMax="unbounded">
+                                <CMD_Element name="name" ConceptLink="http://hdl.handle.net/11459/CCR_C-6122_bfcb3f6b-467f-f95e-91b3-d0925530d8e7" ValueScheme="string" CardinalityMin="1" CardinalityMax="unbounded" Multilingual="false">
+                                    <AttributeList>
+                                        <Attribute>
+                                            <Name>ref</Name>
+                                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-6191_4b890d83-8630-d818-7c43-994a6e8dd97c</ConceptLink>
+                                            <Type>string</Type>
+                                        </Attribute>
+                                    </AttributeList>
+                                </CMD_Element>
+                                <CMD_Element name="note" ConceptLink="http://hdl.handle.net/11459/CCR_C-6124_2e45fdf9-ced2-89c9-a09d-b4769e9fede6" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" DisplayPriority="1" Multilingual="true">
+                                    <AttributeList>
+                                        <Attribute>
+                                            <Name>type</Name>
+                                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-6178_9d06c028-dd75-8266-a948-1ccd688761d5</ConceptLink>
+                                            <Type>string</Type>
+                                        </Attribute>
+                                    </AttributeList>
+                                </CMD_Element>
+                                <CMD_Element name="date" ConceptLink="http://hdl.handle.net/11459/CCR_C-6123_009f84ce-e47e-5513-f387-b3502897abae" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Multilingual="false">
+                                    <AttributeList>
+                                        <Attribute>
+                                            <Name>when</Name>
+                                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-6176_647a4954-a958-7304-d8a6-5851f2003f7c</ConceptLink>
+                                            <ValueScheme>
+                                                <pattern>(\-?[0-9]{4})|([0-9]{4}\-[0,1][0-9]\-[0-3][0-9])</pattern>
+                                            </ValueScheme>
+                                        </Attribute>
+                                    </AttributeList>
+                                </CMD_Element>
+                            </CMD_Component>
+                        </CMD_Component>
+                    </CMD_Component>
+                    <CMD_Component name="monogr" ComponentId="clarin.eu:cr1:c_1379939315552" ConceptLink="http://hdl.handle.net/11459/CCR_C-6131_90eaaab4-8986-42ae-3fc6-0e72e17df0f6" CardinalityMin="1" CardinalityMax="unbounded">
+                        <CMD_Element name="title" ConceptLink="http://hdl.handle.net/11459/CCR_C-6119_ea4226b5-8d55-e71e-730f-2a02e3adbeb4" ValueScheme="string" CardinalityMin="1" CardinalityMax="unbounded" DisplayPriority="1" Multilingual="false">
+                            <AttributeList>
+                                <Attribute>
+                                    <Name>lang</Name>
+                                    <ConceptLink>http://hdl.handle.net/11459/CCR_C-6181_9dc2ec32-a4c4-b9b9-1ba2-e356f0906abd</ConceptLink>
+                                    <Type>string</Type>
+                                </Attribute>
+                            </AttributeList>
+                        </CMD_Element>
+                        <CMD_Element name="edition" ConceptLink="http://hdl.handle.net/11459/CCR_C-5333_9a321546-abde-933c-64ee-2da43ba734a3" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" Multilingual="false"/>
+                        <CMD_Component name="author" ComponentId="clarin.eu:cr1:c_1379939315551" ConceptLink="http://hdl.handle.net/11459/CCR_C-6130_f11d590d-b9f3-6a81-9f17-22988671e59e" CardinalityMin="0" CardinalityMax="unbounded">
+                            <CMD_Element name="name" ConceptLink="http://hdl.handle.net/11459/CCR_C-6122_bfcb3f6b-467f-f95e-91b3-d0925530d8e7" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" DisplayPriority="1" Multilingual="false">
+                                <AttributeList>
+                                    <Attribute>
+                                        <Name>ref</Name>
+                                        <ConceptLink>http://hdl.handle.net/11459/CCR_C-6191_4b890d83-8630-d818-7c43-994a6e8dd97c</ConceptLink>
+                                        <Type>string</Type>
+                                    </Attribute>
+                                </AttributeList>
+                            </CMD_Element>
+                        </CMD_Component>
+                        <CMD_Component name="editor" ComponentId="clarin.eu:cr1:c_1379939315553" ConceptLink="http://hdl.handle.net/11459/CCR_C-6132_d287635d-07dc-e2c4-6261-5e4f9a0cf693" CardinalityMin="0" CardinalityMax="unbounded">
+                            <CMD_Element name="name" ConceptLink="http://hdl.handle.net/11459/CCR_C-6122_bfcb3f6b-467f-f95e-91b3-d0925530d8e7" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Documentation="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-name.html" DisplayPriority="1" Multilingual="false">
+                                <AttributeList>
+                                    <Attribute>
+                                        <Name>ref</Name>
+                                        <Type>string</Type>
+                                    </Attribute>
+                                </AttributeList>
+                            </CMD_Element>
+                        </CMD_Component>
+                        <CMD_Component name="imprint" ComponentId="clarin.eu:cr1:c_1379939315555" ConceptLink="http://hdl.handle.net/11459/CCR_C-6133_69d53cc0-18ed-9a2c-4c7b-c148ef027040" CardinalityMin="0" CardinalityMax="unbounded">
+                            <CMD_Element name="pubPlace" ConceptLink="http://hdl.handle.net/11459/CCR_C-6158_6b459e49-c4b5-1b04-84d0-374ee1039610" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" Multilingual="false"/>
+                            <CMD_Element name="publisher" ConceptLink="http://hdl.handle.net/11459/CCR_C-6134_72c22724-2615-fd70-2eff-8cd3cb59e91d" ValueScheme="string" CardinalityMin="1" CardinalityMax="unbounded" Documentation="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-publisher.html" DisplayPriority="1" Multilingual="false">
+                                <AttributeList>
+                                    <Attribute>
+                                        <Name>n</Name>
+                                        <ConceptLink>http://hdl.handle.net/11459/CCR_C-6177_8e40366a-172a-9f6a-cc6a-fcb982209d53</ConceptLink>
+                                        <Type>string</Type>
+                                    </Attribute>
+                                </AttributeList>
+                            </CMD_Element>
+                            <CMD_Element name="date" ConceptLink="http://hdl.handle.net/11459/CCR_C-6123_009f84ce-e47e-5513-f387-b3502897abae" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" Documentation="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-date.html" Multilingual="false">
+                                <AttributeList>
+                                    <Attribute>
+                                        <Name>when</Name>
+                                        <ConceptLink>http://hdl.handle.net/11459/CCR_C-6176_647a4954-a958-7304-d8a6-5851f2003f7c</ConceptLink>
+                                        <ValueScheme>
+                                            <pattern>(\-?[0-9]{4})|([0-9]{4}\-[0,1][0-9]\-[0-3][0-9])</pattern>
+                                        </ValueScheme>
+                                    </Attribute>
+                                    <Attribute>
+                                        <Name>cert</Name>
+                                        <ConceptLink>http://hdl.handle.net/11459/CCR_C-6192_0bca7334-809e-62bd-6bde-82f6a441b4e6</ConceptLink>
+                                        <ValueScheme>
+                                            <enumeration>
+                                                <item ConceptLink="" AppInfo="">high</item>
+                                                <item ConceptLink="" AppInfo="">medium</item>
+                                                <item ConceptLink="" AppInfo="">low</item>
+                                                <item ConceptLink="" AppInfo="">unknown</item>
+                                            </enumeration>
+                                        </ValueScheme>
+                                    </Attribute>
+                                </AttributeList>
+                            </CMD_Element>
+                            <CMD_Element name="distributor" ConceptLink="http://hdl.handle.net/11459/CCR_C-5332_4ec29a98-77b9-852f-67a4-1d4d3c225067" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" Multilingual="false"/>
+                            <CMD_Element name="biblScope" ConceptLink="http://hdl.handle.net/11459/CCR_C-6135_0d9fe138-47b9-be78-f46c-321566bdfeb0" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Documentation="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-biblScope.html" Multilingual="false">
+                                <AttributeList>
+                                    <Attribute>
+                                        <Name>type</Name>
+                                        <ConceptLink>http://hdl.handle.net/11459/CCR_C-6194_5f0cf28d-754c-4cd4-9796-1ef937e13b5d</ConceptLink>
+                                        <Type>string</Type>
+                                    </Attribute>
+                                </AttributeList>
+                            </CMD_Element>
+                        </CMD_Component>
+                        <CMD_Component name="extent" ComponentId="clarin.eu:cr1:c_1375880372984" ConceptLink="http://hdl.handle.net/11459/CCR_C-5337_dcc36580-999f-8d14-9d17-4d6d9ed7f342" CardinalityMin="0" CardinalityMax="unbounded">
+                            <CMD_Element name="num" ConceptLink="http://hdl.handle.net/11459/CCR_C-6125_309c37cf-eb65-9fb4-87e6-dc7ee1f9c6c8" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Documentation="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-num.html" DisplayPriority="1" Multilingual="false">
+                                <AttributeList>
+                                    <Attribute>
+                                        <Name>n</Name>
+                                        <ConceptLink>http://hdl.handle.net/11459/CCR_C-6177_8e40366a-172a-9f6a-cc6a-fcb982209d53</ConceptLink>
+                                        <Type>string</Type>
+                                    </Attribute>
+                                    <Attribute>
+                                        <Name>type</Name>
+                                        <ConceptLink>http://hdl.handle.net/11459/CCR_C-6254_33a0aef7-4265-b225-2b04-0b9ca3dc9fa6</ConceptLink>
+                                        <Type>string</Type>
+                                    </Attribute>
+                                </AttributeList>
+                            </CMD_Element>
+                        </CMD_Component>
+                    </CMD_Component>
+                    <CMD_Component name="relatedItem" ComponentId="clarin.eu:cr1:c_1379939315557" ConceptLink="http://hdl.handle.net/11459/CCR_C-6136_db02810f-93df-32a9-2dff-e923348348ae" CardinalityMin="0" CardinalityMax="unbounded">
+                        <AttributeList>
+                            <Attribute>
+                                <Name>type</Name>
+                                <ConceptLink>http://hdl.handle.net/11459/CCR_C-6195_16f180c1-edf9-e423-2b17-32d567392c54</ConceptLink>
+                                <Type>string</Type>
+                            </Attribute>
+                        </AttributeList>
+                        <CMD_Component name="bibl" ComponentId="clarin.eu:cr1:c_1379939315556" ConceptLink="http://hdl.handle.net/11459/CCR_C-6137_4cd6c000-df42-abd8-49b3-ecd8d9d3546a" CardinalityMin="0" CardinalityMax="1">
+                            <CMD_Element name="title" ConceptLink="http://hdl.handle.net/11459/CCR_C-6119_ea4226b5-8d55-e71e-730f-2a02e3adbeb4" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Documentation="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-title.html" DisplayPriority="1" Multilingual="false">
+                                <AttributeList>
+                                    <Attribute>
+                                        <Name>lang</Name>
+                                        <ConceptLink>http://hdl.handle.net/11459/CCR_C-6181_9dc2ec32-a4c4-b9b9-1ba2-e356f0906abd</ConceptLink>
+                                        <Type>string</Type>
+                                    </Attribute>
+                                </AttributeList>
+                            </CMD_Element>
+                            <CMD_Element name="idno" ConceptLink="http://hdl.handle.net/11459/CCR_C-5353_4d1e6d19-15c0-0959-0b13-d9a57cd6cc86" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Documentation="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-idno.html" Multilingual="false">
+                                <AttributeList>
+                                    <Attribute>
+                                        <Name>lang</Name>
+                                        <ConceptLink>http://hdl.handle.net/11459/CCR_C-6181_9dc2ec32-a4c4-b9b9-1ba2-e356f0906abd</ConceptLink>
+                                        <Type>string</Type>
+                                    </Attribute>
+                                    <Attribute>
+                                        <Name>type</Name>
+                                        <ConceptLink>http://hdl.handle.net/11459/CCR_C-5354_a4e41aa9-b8ba-59ea-a34e-6d7179e393be</ConceptLink>
+                                        <Type>string</Type>
+                                    </Attribute>
+                                </AttributeList>
+                            </CMD_Element>
+                        </CMD_Component>
+                    </CMD_Component>
+                </CMD_Component>
+                <CMD_Component name="msDesc" ComponentId="clarin.eu:cr1:c_1407745712054" ConceptLink="http://hdl.handle.net/11459/CCR_C-6211_3bc941fa-9d6f-61fe-0d91-ee4255221368" CardinalityMin="0" CardinalityMax="unbounded">
+                    <CMD_Component name="msIdentifier" ComponentId="clarin.eu:cr1:c_1407745712039" ConceptLink="http://hdl.handle.net/11459/CCR_C-6212_c02332f1-e986-0850-3f07-7b1d97620782" CardinalityMin="1" CardinalityMax="1">
+                        <CMD_Element name="country" ConceptLink="http://hdl.handle.net/11459/CCR_C-6825_cbf94188-fd1c-6886-ee38-014f1ade0974" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Documentation="contains the name of a geo-political unit, such as a nation, country, colony, or commonwealth, larger than or administratively superior to a region and smaller than a bloc. " DisplayPriority="1" Multilingual="false">
+                            <AttributeList>
+                                <Attribute>
+                                    <Name>key</Name>
+                                    <ConceptLink>http://hdl.handle.net/11459/CCR_C-6241_4fa5cd26-85f4-0cd7-3e64-198730224fea</ConceptLink>
+                                    <Type>string</Type>
+                                </Attribute>
+                            </AttributeList>
+                        </CMD_Element>
+                        <CMD_Element name="settlement" ConceptLink="http://hdl.handle.net/11459/CCR_C-6245_2e322e13-58b2-461b-4cba-af209c7f75af" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" Documentation=" contains the name of a settlement such as a city, town, or village identified as a single geo-political or administrative unit." DisplayPriority="1" Multilingual="false"/>
+                        <CMD_Element name="institution" ConceptLink="http://hdl.handle.net/11459/CCR_C-6213_b30f2cad-2436-4aef-c73e-45053de4a1f5" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" Documentation="contains the name of an organization such as a university or library, with which a manuscript is identified, generally its holding institution." DisplayPriority="1" Multilingual="false"/>
+                        <CMD_Element name="repository" ConceptLink="http://hdl.handle.net/11459/CCR_C-6214_4460b492-b4e0-61ac-9045-43f2ed5ec4a8" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" Documentation="contains the name of a repository within which manuscripts are stored, possibly forming part of an institution." DisplayPriority="1" Multilingual="false"/>
+                        <CMD_Element name="idno" ConceptLink="http://hdl.handle.net/11459/CCR_C-5353_4d1e6d19-15c0-0959-0b13-d9a57cd6cc86" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" Documentation="(identifier) supplies any form of identifier used to identify some object, such as a bibliographic item, a person, a title, an organization, etc. in a standardized way." DisplayPriority="1" Multilingual="false">
+                            <AttributeList>
+                                <Attribute>
+                                    <Name>type</Name>
+                                    <ConceptLink>http://hdl.handle.net/11459/CCR_C-5354_a4e41aa9-b8ba-59ea-a34e-6d7179e393be</ConceptLink>
+                                    <Type>string</Type>
+                                </Attribute>
+                            </AttributeList>
+                        </CMD_Element>
+                        <CMD_Element name="msName" ConceptLink="http://hdl.handle.net/11459/CCR_C-6824_ca741307-9b86-95d8-60db-3c912d199464" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" Documentation="(alternative name) contains any form of unstructured alternative name used for a manuscript, such as an ‘ocellus nominum’, or nickname. " DisplayPriority="1" Multilingual="false"/>
+                    </CMD_Component>
+                    <CMD_Component name="msContents" ComponentId="clarin.eu:cr1:c_1407745712038" ConceptLink="http://hdl.handle.net/11459/CCR_C-6826_06ca241c-5191-f1a5-31af-1bf58d7e1874" CardinalityMin="0" CardinalityMax="1">
+                        <CMD_Component name="msItem" ComponentId="clarin.eu:cr1:c_1407745712037" ConceptLink="http://hdl.handle.net/11459/CCR_C-6827_2a329598-bf1e-abcc-f593-1aecca0195ac" CardinalityMin="1" CardinalityMax="unbounded">
+                            <AttributeList>
+                                <Attribute>
+                                    <Name>n</Name>
+                                    <ConceptLink>http://hdl.handle.net/11459/CCR_C-6177_8e40366a-172a-9f6a-cc6a-fcb982209d53</ConceptLink>
+                                    <Type>string</Type>
+                                </Attribute>
+                            </AttributeList>
+                            <CMD_Element name="locus" ConceptLink="http://hdl.handle.net/11459/CCR_C-6828_acf2ae05-bc52-4820-26c9-9b6c118f091a" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Documentation=" defines a location within a manuscript or manuscript part, usually as a (possibly discontinuous) sequence of folio references" DisplayPriority="1" Multilingual="false">
+                                <AttributeList>
+                                    <Attribute>
+                                        <Name>from</Name>
+                                        <ConceptLink>http://hdl.handle.net/11459/CCR_C-6829_7424edae-b838-b112-ae88-1d898327984b</ConceptLink>
+                                        <Type>string</Type>
+                                    </Attribute>
+                                    <Attribute>
+                                        <Name>to</Name>
+                                        <ConceptLink>http://hdl.handle.net/11459/CCR_C-6830_03ce716c-c400-5828-dd8f-ef0c6f21fbad</ConceptLink>
+                                        <Type>string</Type>
+                                    </Attribute>
+                                </AttributeList>
+                            </CMD_Element>
+                            <CMD_Element name="title" ConceptLink="http://hdl.handle.net/11459/CCR_C-6119_ea4226b5-8d55-e71e-730f-2a02e3adbeb4" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Documentation=" contains a title for any kind of work" DisplayPriority="1" Multilingual="false">
+                                <AttributeList>
+                                    <Attribute>
+                                        <Name>type</Name>
+                                        <ConceptLink>http://hdl.handle.net/11459/CCR_C-6240_c0c67c8b-b626-d601-731f-0ea67e51d4cd</ConceptLink>
+                                        <Type>string</Type>
+                                    </Attribute>
+                                </AttributeList>
+                            </CMD_Element>
+                            <CMD_Element name="docAuthor" ConceptLink="http://hdl.handle.net/11459/CCR_C-6854_b6344bc9-d957-506f-950c-228f008a2bce" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Documentation="(document author) contains the name of the author of the document, as given on the title page (often but not always contained in a byline)" DisplayPriority="1" Multilingual="false"/>
+                            <CMD_Element name="docDate" ConceptLink="http://hdl.handle.net/11459/CCR_C-6855_a77ccd9e-3ceb-f04d-4f51-309654a7fcd0" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Documentation=" (document date) contains the date of a document, as given on a title page or in a dateline." DisplayPriority="1" Multilingual="false">
+                                <AttributeList>
+                                    <Attribute>
+                                        <Name>when</Name>
+                                        <ConceptLink>http://hdl.handle.net/11459/CCR_C-6176_647a4954-a958-7304-d8a6-5851f2003f7c</ConceptLink>
+                                        <Type>string</Type>
+                                    </Attribute>
+                                </AttributeList>
+                            </CMD_Element>
+                            <CMD_Element name="docImprint" ConceptLink="http://hdl.handle.net/11459/CCR_C-6869_b5fe37f7-3990-1f15-2093-289d9fe1beaa" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Documentation="(document imprint) contains the imprint statement (place and date of publication, publisher name), as given (usually) at the foot of a title page." DisplayPriority="1" Multilingual="false"/>
+                            <CMD_Element name="textLang" ConceptLink="http://hdl.handle.net/11459/CCR_C-6852_7a13f56b-c2ba-c7da-9888-6f12531095b5" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Documentation="(text language) describes the languages and writing systems identified within the bibliographic work being described, rather than its description" DisplayPriority="1" Multilingual="false">
+                                <AttributeList>
+                                    <Attribute>
+                                        <Name>mainLang</Name>
+                                        <ConceptLink>http://hdl.handle.net/11459/CCR_C-6853_3feacdf9-5a96-948a-c688-bd644abfe88f</ConceptLink>
+                                        <Type>string</Type>
+                                    </Attribute>
+                                </AttributeList>
+                            </CMD_Element>
+                        </CMD_Component>
+                    </CMD_Component>
+                    <CMD_Component name="physDesc" ComponentId="clarin.eu:cr1:c_1407745712043" ConceptLink="http://hdl.handle.net/11459/CCR_C-6246_2090d75c-a860-a7c3-b613-9aa336272009" CardinalityMin="0" CardinalityMax="1">
+                        <CMD_Component name="objectDesc" ComponentId="clarin.eu:cr1:c_1407745712042" ConceptLink="http://hdl.handle.net/11459/CCR_C-6248_a1248ec1-67d5-6424-4c70-eb78d2b6c133" CardinalityMin="1" CardinalityMax="unbounded">
+                            <AttributeList>
+                                <Attribute>
+                                    <Name>form</Name>
+                                    <ConceptLink>http://hdl.handle.net/11459/CCR_C-6856_4256ae5c-e5df-9015-b374-5dad462f5494</ConceptLink>
+                                    <Type>string</Type>
+                                </Attribute>
+                            </AttributeList>
+                            <CMD_Component name="supportDesc" ComponentId="clarin.eu:cr1:c_1407745712041" ConceptLink="http://hdl.handle.net/11459/CCR_C-6857_3ac60a1b-136b-9a52-1bee-6b11f50ea0f5" CardinalityMin="0" CardinalityMax="1">
+                                <CMD_Element name="support" ConceptLink="http://hdl.handle.net/11459/CCR_C-6858_c915ee3f-0ade-5151-e205-b599db63f4a7" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" Documentation=" contains a description of the materials etc. which make up the physical support for the written part of a manuscript." DisplayPriority="1" Multilingual="false"/>
+                                <CMD_Element name="extent" ConceptLink="http://hdl.handle.net/11459/CCR_C-5337_dcc36580-999f-8d14-9d17-4d6d9ed7f342" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" Documentation="describes the approximate size of a text stored on some carrier medium or of some other object, digital or non-digital, specified in any convenient units." DisplayPriority="1" Multilingual="false"/>
+                                <CMD_Element name="foliation" ConceptLink="http://hdl.handle.net/11459/CCR_C-6859_70984c62-a5a9-9924-5e9f-e75f98fbcb6c" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Documentation="describes the numbering system or systems used to count the leaves or pages in a codex." DisplayPriority="1" Multilingual="false"/>
+                            </CMD_Component>
+                        </CMD_Component>
+                        <CMD_Component name="typeDesc" ComponentId="clarin.eu:cr1:c_1407745712072" ConceptLink="http://hdl.handle.net/11459/CCR_C-6247_ee75c51c-4603-1b7f-b19e-296e1a1603a3" CardinalityMin="0" CardinalityMax="1">
+                            <CMD_Element name="p" ConceptLink="http://hdl.handle.net/11459/CCR_C-6870_fc269e49-64fb-0d4c-1255-ad588cc39a57" ValueScheme="string" CardinalityMin="1" CardinalityMax="unbounded" Documentation="(paragraph) marks paragraphs in prose." DisplayPriority="1" Multilingual="false"/>
+                        </CMD_Component>
+                    </CMD_Component>
+                    <CMD_Component name="history" ComponentId="clarin.eu:cr1:c_1407745712052" ConceptLink="http://hdl.handle.net/11459/CCR_C-6860_0fe64412-7e48-2e63-2a83-69ad9d0d1934" CardinalityMin="0" CardinalityMax="1">
+                        <CMD_Component name="origin" ComponentId="clarin.eu:cr1:c_1407745712045" ConceptLink="http://hdl.handle.net/11459/CCR_C-6861_2a640049-a53e-8572-0731-332986706b7e" CardinalityMin="0" CardinalityMax="1">
+                            <AttributeList>
+                                <Attribute>
+                                    <Name>notBefore</Name>
+                                    <ConceptLink>http://hdl.handle.net/11459/CCR_C-6862_a1b61261-4c0c-6e88-0c8d-6d38406b90dd</ConceptLink>
+                                    <Type>string</Type>
+                                </Attribute>
+                                <Attribute>
+                                    <Name>notAfter</Name>
+                                    <ConceptLink>http://hdl.handle.net/11459/CCR_C-6863_93ca2432-0117-d30b-4e56-4ea8f9e886a8</ConceptLink>
+                                    <Type>string</Type>
+                                </Attribute>
+                            </AttributeList>
+                            <CMD_Element name="origDate" ConceptLink="http://hdl.handle.net/11459/CCR_C-6864_09224e93-c394-3a16-a037-41349105c44e" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Documentation="(origin date) contains any form of date, used to identify the date of origin for a manuscript or manuscript part." DisplayPriority="1" Multilingual="false">
+                                <AttributeList>
+                                    <Attribute>
+                                        <Name>when</Name>
+                                        <ConceptLink>http://hdl.handle.net/11459/CCR_C-6176_647a4954-a958-7304-d8a6-5851f2003f7c</ConceptLink>
+                                        <Type>string</Type>
+                                    </Attribute>
+                                </AttributeList>
+                            </CMD_Element>
+                            <CMD_Element name="origPlace" ConceptLink="http://hdl.handle.net/11459/CCR_C-6865_38b0a690-958b-281e-2992-9db6ef4806b9" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Documentation="(origin place) contains any form of place name, used to identify the place of origin for a manuscript or manuscript part. " DisplayPriority="1" Multilingual="false"/>
+                        </CMD_Component>
+                        <CMD_Component name="provenance" ComponentId="clarin.eu:cr1:c_1407745712048" ConceptLink="http://hdl.handle.net/11459/CCR_C-6867_f15d24c6-6506-6aa0-7731-ef01e46cad50" CardinalityMin="0" CardinalityMax="unbounded">
+                            <CMD_Element name="date" ConceptLink="http://hdl.handle.net/11459/CCR_C-6123_009f84ce-e47e-5513-f387-b3502897abae" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Documentation="contains a date in any format." DisplayPriority="1" Multilingual="false">
+                                <AttributeList>
+                                    <Attribute>
+                                        <Name>when</Name>
+                                        <ConceptLink>http://hdl.handle.net/11459/CCR_C-6176_647a4954-a958-7304-d8a6-5851f2003f7c</ConceptLink>
+                                        <Type>string</Type>
+                                    </Attribute>
+                                </AttributeList>
+                            </CMD_Element>
+                            <CMD_Element name="placeName" ConceptLink="http://hdl.handle.net/11459/CCR_C-6866_85a9e49e-e3a0-df41-601e-2aa88e4ce67c" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Documentation="contains an absolute or relative place name." DisplayPriority="1" Multilingual="false"/>
+                        </CMD_Component>
+                        <CMD_Component name="acquisition" ComponentId="clarin.eu:cr1:c_1407745712050" ConceptLink="http://hdl.handle.net/11459/CCR_C-6868_fad49b3a-bd39-5f89-c8ee-7a5f5c2bc1d9" CardinalityMin="0" CardinalityMax="1">
+                            <CMD_Element name="date" ConceptLink="http://hdl.handle.net/11459/CCR_C-6123_009f84ce-e47e-5513-f387-b3502897abae" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Documentation=" contains a date in any format" DisplayPriority="1" Multilingual="false">
+                                <AttributeList>
+                                    <Attribute>
+                                        <Name>when</Name>
+                                        <ConceptLink>http://hdl.handle.net/11459/CCR_C-6176_647a4954-a958-7304-d8a6-5851f2003f7c</ConceptLink>
+                                        <Type>string</Type>
+                                    </Attribute>
+                                </AttributeList>
+                            </CMD_Element>
+                            <CMD_Element name="placeName" ConceptLink="http://hdl.handle.net/11459/CCR_C-6866_85a9e49e-e3a0-df41-601e-2aa88e4ce67c" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Documentation="contains an absolute or relative place name." DisplayPriority="1" Multilingual="false"/>
+                        </CMD_Component>
+                    </CMD_Component>
+                </CMD_Component>
+            </CMD_Component>
+        </CMD_Component>
+        <CMD_Component name="encodingDesc" ComponentId="clarin.eu:cr1:c_1379939315562" ConceptLink="http://hdl.handle.net/11459/CCR_C-6138_f0d635ee-5d37-8013-16f5-30c34d3c3f60" CardinalityMin="0" CardinalityMax="1">
+            <CMD_Component name="samplingDecl" ComponentId="clarin.eu:cr1:c_1375880372982" ConceptLink="http://hdl.handle.net/11459/CCR_C-5409_668ed29d-cd0f-9f73-a4b4-403dd15d1924" CardinalityMin="0" CardinalityMax="unbounded">
+                <CMD_Element name="ab" ConceptLink="http://hdl.handle.net/11459/CCR_C-6126_4cc19480-696d-b093-f72e-2f9ce68b20cb" ValueScheme="string" CardinalityMin="1" CardinalityMax="unbounded" DisplayPriority="1" Multilingual="false"/>
+            </CMD_Component>
+            <CMD_Component name="projectDesc" ComponentId="clarin.eu:cr1:c_1375880372987" ConceptLink="http://hdl.handle.net/11459/CCR_C-5373_e26aa697-122d-1128-3907-0f5cfd8ab759" CardinalityMin="0" CardinalityMax="unbounded">
+                <CMD_Element name="ab" ConceptLink="http://hdl.handle.net/11459/CCR_C-6126_4cc19480-696d-b093-f72e-2f9ce68b20cb" ValueScheme="string" CardinalityMin="1" CardinalityMax="unbounded" DisplayPriority="1" Multilingual="false"/>
+            </CMD_Component>
+            <CMD_Component name="editorialDecl" ComponentId="clarin.eu:cr1:c_1381926654589" ConceptLink="http://hdl.handle.net/11459/CCR_C-5335_b8675f00-62d6-fa7d-30a0-f2a174861f60" CardinalityMin="0" CardinalityMax="1">
+                <CMD_Element name="ab" ConceptLink="http://hdl.handle.net/11459/CCR_C-6126_4cc19480-696d-b093-f72e-2f9ce68b20cb" ValueScheme="string" CardinalityMin="1" CardinalityMax="unbounded" DisplayPriority="1" Multilingual="false"/>
+                <CMD_Component name="correction" ConceptLink="http://hdl.handle.net/11459/CCR_C-5319_6081c7c2-099f-5510-f1bc-0997bc161b59" CardinalityMin="0" CardinalityMax="unbounded">
+                    <CMD_Element name="ab" ConceptLink="http://hdl.handle.net/11459/CCR_C-6126_4cc19480-696d-b093-f72e-2f9ce68b20cb" ValueScheme="string" CardinalityMin="1" CardinalityMax="unbounded" DisplayPriority="1" Multilingual="false"/>
+                </CMD_Component>
+                <CMD_Component name="normalization" ConceptLink="http://hdl.handle.net/11459/CCR_C-5365_0a0f8b50-d10d-626f-5346-350f6723f9d5" CardinalityMin="0" CardinalityMax="unbounded">
+                    <AttributeList>
+                        <Attribute>
+                            <Name>source</Name>
+                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-5366_49374777-87ea-060d-7957-de1a714e8c72</ConceptLink>
+                            <Type>string</Type>
+                        </Attribute>
+                        <Attribute>
+                            <Name>method</Name>
+                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-5367_49881946-b962-6764-24b2-569521abc59b</ConceptLink>
+                            <ValueScheme>
+                                <enumeration>
+                                    <item ConceptLink="http://hdl.handle.net/11459/CCR_C-5368_9ff4059a-4e56-d8ed-4551-e26e60e78dba" AppInfo="normalization made silently [Default]">silent</item>
+                                    <item ConceptLink="http://hdl.handle.net/11459/CCR_C-5369_b029f5ea-8ad0-a3af-c5cb-c12a7f99bf00" AppInfo="normalization represented using markup">markup</item>
+                                </enumeration>
+                            </ValueScheme>
+                        </Attribute>
+                    </AttributeList>
+                    <CMD_Element name="ab" ConceptLink="http://hdl.handle.net/11459/CCR_C-6126_4cc19480-696d-b093-f72e-2f9ce68b20cb" ValueScheme="string" CardinalityMin="1" CardinalityMax="unbounded" DisplayPriority="1" Multilingual="false"/>
+                </CMD_Component>
+                <CMD_Component name="hyphenation" ConceptLink="http://hdl.handle.net/11459/CCR_C-5347_979cbc12-e1ae-a12d-514a-345653e0b719" CardinalityMin="0" CardinalityMax="unbounded">
+                    <AttributeList>
+                        <Attribute>
+                            <Name>eol</Name>
+                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-5348_a2fd45d0-8ce4-c31b-fb97-8b75505b5fc3</ConceptLink>
+                            <ValueScheme>
+                                <enumeration>
+                                    <item ConceptLink="http://hdl.handle.net/11459/CCR_C-5349_e4156e41-a48e-4ad6-2650-49b3f76f5ff6" AppInfo="all end-of-line hyphenation has been retained, even though the lineation of the original may not have been. ">all</item>
+                                    <item ConceptLink="http://hdl.handle.net/11459/CCR_C-5350_a56cdbe1-639e-432b-e109-7399b03c6467" AppInfo="end-of-line hyphenation has been retained in some cases. [Default]">some</item>
+                                    <item ConceptLink="http://hdl.handle.net/11459/CCR_C-5351_48b45794-0d3a-5449-706f-e7928dcac6a8" AppInfo="all soft end-of-line hyphenation has been removed: any remaining end-of-line hyphenation should be retained.">hard</item>
+                                    <item ConceptLink="http://hdl.handle.net/11459/CCR_C-5352_25a42a38-99ff-deca-6fdd-e56b935a6397" AppInfo="all end-of-line hyphenation has been removed: any remaining hyphenation occurred within the line.">none</item>
+                                </enumeration>
+                            </ValueScheme>
+                        </Attribute>
+                    </AttributeList>
+                </CMD_Component>
+                <CMD_Component name="interpretation" ConceptLink="http://hdl.handle.net/11459/CCR_C-5355_c6203e72-f490-2e84-3398-3223b450d681" CardinalityMin="0" CardinalityMax="unbounded">
+                    <CMD_Element name="ab" ConceptLink="http://hdl.handle.net/11459/CCR_C-6126_4cc19480-696d-b093-f72e-2f9ce68b20cb" ValueScheme="string" CardinalityMin="1" CardinalityMax="unbounded" DisplayPriority="1" Multilingual="false"/>
+                </CMD_Component>
+                <CMD_Component name="quotation" ConceptLink="http://hdl.handle.net/11459/CCR_C-5375_40fda9ba-ff8b-b60a-2490-2b8318e4340a" CardinalityMin="0" CardinalityMax="unbounded">
+                    <AttributeList>
+                        <Attribute>
+                            <Name>marks</Name>
+                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-5376_58f29667-83ab-fac0-64be-70fa343ad2d3</ConceptLink>
+                            <ValueScheme>
+                                <enumeration>
+                                    <item ConceptLink="http://hdl.handle.net/11459/CCR_C-5377_8659d650-faeb-45e7-dff5-3518058873c7" AppInfo="no quotation marks have been retained ">none</item>
+                                    <item ConceptLink="http://hdl.handle.net/11459/CCR_C-5378_2b56f19b-7f46-dc97-d2fc-b81112fe39d2" AppInfo="some quotation marks have been retained ">some</item>
+                                    <item ConceptLink="http://hdl.handle.net/11459/CCR_C-5379_77adcbff-a64b-052d-a823-ef5a504630a8" AppInfo="all quotation marks have been retained ">all</item>
+                                </enumeration>
+                            </ValueScheme>
+                        </Attribute>
+                    </AttributeList>
+                    <CMD_Element name="ab" ConceptLink="http://hdl.handle.net/11459/CCR_C-6126_4cc19480-696d-b093-f72e-2f9ce68b20cb" ValueScheme="string" CardinalityMin="1" CardinalityMax="unbounded" DisplayPriority="1" Multilingual="false"/>
+                </CMD_Component>
+                <CMD_Component name="segmentation" ConceptLink="http://hdl.handle.net/11459/CCR_C-5411_46cafad1-c922-53c9-e801-4cca780bb4b1" CardinalityMin="0" CardinalityMax="unbounded">
+                    <CMD_Element name="ab" ConceptLink="http://hdl.handle.net/11459/CCR_C-6126_4cc19480-696d-b093-f72e-2f9ce68b20cb" ValueScheme="string" CardinalityMin="1" CardinalityMax="unbounded" DisplayPriority="1" Multilingual="false"/>
+                </CMD_Component>
+            </CMD_Component>
+            <CMD_Component name="appInfo" ComponentId="clarin.eu:cr1:c_1375880372988" ConceptLink="http://hdl.handle.net/11459/CCR_C-5297_e03bab0a-4885-ce0b-b5bf-17f7bf9e70bf" CardinalityMin="0" CardinalityMax="unbounded">
+                <CMD_Component name="application" ComponentId="clarin.eu:cr1:c_1375880372989" ConceptLink="http://hdl.handle.net/11459/CCR_C-5298_47f25896-9347-c87e-f906-5f7415a1af89" CardinalityMin="1" CardinalityMax="unbounded">
+                    <AttributeList>
+                        <Attribute>
+                            <Name>id</Name>
+                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-6196_629b1691-6464-d665-3e21-41dfe2eb51f6</ConceptLink>
+                            <Type>string</Type>
+                        </Attribute>
+                        <Attribute>
+                            <Name>type</Name>
+                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-6197_b9953852-a59a-c0a7-9736-e7a2e925d8c7</ConceptLink>
+                            <Type>string</Type>
+                        </Attribute>
+                        <Attribute>
+                            <Name>subtype</Name>
+                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-6198_2b466647-4815-34c2-7274-9386f5309cf8</ConceptLink>
+                            <Type>string</Type>
+                        </Attribute>
+                        <Attribute>
+                            <Name>ident</Name>
+                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-5299_ecc21f39-847d-c2cc-6ce9-84061b7815a7</ConceptLink>
+                            <Type>string</Type>
+                        </Attribute>
+                        <Attribute>
+                            <Name>version</Name>
+                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-5300_4109a690-6eb2-c247-22e2-63567781a20e</ConceptLink>
+                            <ValueScheme>
+                                <pattern>[\d]+[a-z]*[\d]*(\.[\d]+[a-z]*[\d]*){0,3}</pattern>
+                            </ValueScheme>
+                        </Attribute>
+                        <Attribute>
+                            <Name>n</Name>
+                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-6177_8e40366a-172a-9f6a-cc6a-fcb982209d53</ConceptLink>
+                            <Type>string</Type>
+                        </Attribute>
+                        <Attribute>
+                            <Name>when</Name>
+                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-6176_647a4954-a958-7304-d8a6-5851f2003f7c</ConceptLink>
+                            <ValueScheme>
+                                <pattern>(\-?[0-9]{4})|([0-9]{4}\-[0,1][0-9]\-[0-3][0-9])</pattern>
+                            </ValueScheme>
+                        </Attribute>
+                    </AttributeList>
+                    <CMD_Element name="desc" ConceptLink="http://hdl.handle.net/11459/CCR_C-6139_ab15a7eb-7032-d4f0-643e-bffe5ad09fc3" ValueScheme="string" CardinalityMin="1" CardinalityMax="unbounded" DisplayPriority="1" Multilingual="false">
+                        <AttributeList>
+                            <Attribute>
+                                <Name>lang</Name>
+                                <ConceptLink>http://hdl.handle.net/11459/CCR_C-6181_9dc2ec32-a4c4-b9b9-1ba2-e356f0906abd</ConceptLink>
+                                <Type>string</Type>
+                            </Attribute>
+                        </AttributeList>
+                    </CMD_Element>
+                    <CMD_Element name="ptr" ConceptLink="http://hdl.handle.net/11459/CCR_C-6140_d3765f2a-1760-3008-3288-f1b823d0a322" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Multilingual="false">
+                        <AttributeList>
+                            <Attribute>
+                                <Name>target</Name>
+                                <ConceptLink>http://hdl.handle.net/11459/CCR_C-6199_ff02e764-e9b8-9b91-0eb0-a94836f09469</ConceptLink>
+                                <Type>string</Type>
+                            </Attribute>
+                        </AttributeList>
+                    </CMD_Element>
+                    <CMD_Element name="ref" ConceptLink="http://hdl.handle.net/11459/CCR_C-6141_96f22004-72af-790e-0002-0683867a9785" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Multilingual="false">
+                        <AttributeList>
+                            <Attribute>
+                                <Name>target</Name>
+                                <ConceptLink>http://hdl.handle.net/11459/CCR_C-6199_ff02e764-e9b8-9b91-0eb0-a94836f09469</ConceptLink>
+                                <Type>string</Type>
+                            </Attribute>
+                        </AttributeList>
+                    </CMD_Element>
+                </CMD_Component>
+            </CMD_Component>
+            <CMD_Component name="charDecl" ComponentId="clarin.eu:cr1:c_1381926654523" ConceptLink="http://hdl.handle.net/11459/CCR_C-6216_ac9d28b9-e60f-9ddb-ef36-3be25ae7d1be" CardinalityMin="0" CardinalityMax="1">
+                <CMD_Component name="glyph" ConceptLink="http://hdl.handle.net/11459/CCR_C-6217_7977acf6-96c3-26ce-d788-37c57809cf01" CardinalityMin="0" CardinalityMax="unbounded">
+                    <CMD_Element name="glyphName" ConceptLink="http://hdl.handle.net/11459/CCR_C-6218_a80b71f7-e3ea-9e47-453d-6bfe2336ec87" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" Documentation="(character glyph name) contains the name of a glyph, expressed following Unicode conventions for character names; http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-glyphName" DisplayPriority="1" Multilingual="false"/>
+                    <CMD_Element name="desc" ConceptLink="http://hdl.handle.net/11459/CCR_C-6139_ab15a7eb-7032-d4f0-643e-bffe5ad09fc3" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" Documentation="(description) contains a brief description of the object documented by its parent element, including its intended usage, purpose, or application where this is appropriate; http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-desc.html" Multilingual="false"/>
+                    <CMD_Component name="charProp" ConceptLink="http://hdl.handle.net/11459/CCR_C-6215_4fee8882-2a11-f1a5-5bfc-f8fbf4d842b3" CardinalityMin="0" CardinalityMax="unbounded">
+                        <CMD_Element name="localName" ConceptLink="http://hdl.handle.net/11459/CCR_C-6219_e2004d11-796e-f765-ec8d-6156c2b66124" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" Documentation=" (locally-defined property name) contains a locally defined name for some property; http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-localName.html" DisplayPriority="1" Multilingual="false"/>
+                        <CMD_Element name="unicodeName" ConceptLink="http://hdl.handle.net/11459/CCR_C-6244_a4f46d8b-accf-c9fc-fd04-578d3a050c76" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" Documentation=" (unicode property name) contains the name of a registered Unicode normative or informative property; http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-unicodeName.html" DisplayPriority="1" Multilingual="false"/>
+                        <CMD_Element name="value" ConceptLink="http://hdl.handle.net/11459/CCR_C-6220_f30863dd-116a-05e3-e0a4-502f93dd8fb2" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" Documentation="(value) contains a single value for some property, attribute, or other analysis; http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-value.html" Multilingual="false"/>
+                    </CMD_Component>
+                </CMD_Component>
+            </CMD_Component>
+        </CMD_Component>
+        <CMD_Component name="profileDesc" ComponentId="clarin.eu:cr1:c_1379925925653" ConceptLink="http://hdl.handle.net/11459/CCR_C-5372_e6622587-1698-d74f-f120-042837d4f5f4" CardinalityMin="0" CardinalityMax="1">
+            <CMD_Component name="creation" ComponentId="clarin.eu:cr1:c_1375880372990" ConceptLink=" http://hdl.handle.net/11459/CCR_C-5328_8cb3f48a-5afb-d1cd-9535-91767077d72c" CardinalityMin="0" CardinalityMax="unbounded">
+                <CMD_Element name="date" ConceptLink="http://hdl.handle.net/11459/CCR_C-6123_009f84ce-e47e-5513-f387-b3502897abae" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" DisplayPriority="1" Multilingual="false">
+                    <AttributeList>
+                        <Attribute>
+                            <Name>when</Name>
+                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-6176_647a4954-a958-7304-d8a6-5851f2003f7c</ConceptLink>
+                            <ValueScheme>
+                                <pattern>(\-?[0-9]{4})|([0-9]{4}\-[0,1][0-9]\-[0-3][0-9])</pattern>
+                            </ValueScheme>
+                        </Attribute>
+                        <Attribute>
+                            <Name>cert</Name>
+                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-6192_0bca7334-809e-62bd-6bde-82f6a441b4e6</ConceptLink>
+                            <ValueScheme>
+                                <enumeration>
+                                    <item ConceptLink="" AppInfo="">high</item>
+                                    <item ConceptLink="" AppInfo="">medium</item>
+                                    <item ConceptLink="" AppInfo="">low</item>
+                                    <item ConceptLink="" AppInfo="">unknown</item>
+                                </enumeration>
+                            </ValueScheme>
+                        </Attribute>
+                    </AttributeList>
+                </CMD_Element>
+            </CMD_Component>
+            <CMD_Component name="langUsage" ComponentId="clarin.eu:cr1:c_1375880373021" ConceptLink="http://hdl.handle.net/11459/CCR_C-5361_ba085ec1-9746-52bf-8cc1-3c300ce16eb8" CardinalityMin="0" CardinalityMax="unbounded">
+                <CMD_Element name="language" ConceptLink="http://hdl.handle.net/11459/CCR_C-5358_3cd089fe-ad03-6181-b20c-635ea41ed818" ValueScheme="string" CardinalityMin="1" CardinalityMax="unbounded" DisplayPriority="1" Multilingual="false">
+                    <AttributeList>
+                        <Attribute>
+                            <Name>ident</Name>
+                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-6193_096cfc32-04ce-c4d1-5ed4-5e92db53aa70</ConceptLink>
+                            <Type>string</Type>
+                        </Attribute>
+                    </AttributeList>
+                </CMD_Element>
+            </CMD_Component>
+            <CMD_Component name="textDesc" ComponentId="clarin.eu:cr1:c_1375880373024" ConceptLink="http://hdl.handle.net/11459/CCR_C-6142_53042bb3-ac88-5c14-ae98-bd7601e97ec8" CardinalityMin="0" CardinalityMax="unbounded">
+                <CMD_Element name="channel" ConceptLink="http://hdl.handle.net/11459/CCR_C-6143_b06c8570-5568-8433-30c8-4eb6184b58ac" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" DisplayPriority="1" Multilingual="false">
+                    <AttributeList>
+                        <Attribute>
+                            <Name>mode</Name>
+                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-6206_370bfdc9-7b19-7851-aca6-61e84999f1de</ConceptLink>
+                            <ValueScheme>
+                                <enumeration>
+                                    <item ConceptLink="" AppInfo="">s</item>
+                                    <item ConceptLink="" AppInfo="">w</item>
+                                    <item ConceptLink="" AppInfo="">sw</item>
+                                    <item ConceptLink="" AppInfo="">ws</item>
+                                    <item ConceptLink="" AppInfo="">m</item>
+                                    <item ConceptLink="" AppInfo="">x</item>
+                                </enumeration>
+                            </ValueScheme>
+                        </Attribute>
+                    </AttributeList>
+                </CMD_Element>
+                <CMD_Element name="constitution" ConceptLink="http://hdl.handle.net/11459/CCR_C-6144_f3c1d8d5-68fd-9697-4daa-df81c34da976" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" Multilingual="false">
+                    <AttributeList>
+                        <Attribute>
+                            <Name>type</Name>
+                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-6225_10f78e96-b2cd-3b3b-3dee-ce2e528b235b</ConceptLink>
+                            <ValueScheme>
+                                <enumeration>
+                                    <item ConceptLink="http://hdl.handle.net/11459/CCR_C-6222_26f56511-39c9-0364-4726-4b2794966af3" AppInfo="">composite</item>
+                                    <item ConceptLink="http://hdl.handle.net/11459/CCR_C-6223_863b5bea-711a-5df5-876e-9c58cdeae719" AppInfo="">frags</item>
+                                    <item ConceptLink="http://hdl.handle.net/11459/CCR_C-6221_69ad34dd-f92f-e523-b75d-d6ceb55c59b9" AppInfo="">single</item>
+                                    <item ConceptLink="http://hdl.handle.net/11459/CCR_C-6224_52aa00ad-3f83-dc07-cf5b-a7207d6e794c" AppInfo="">unknown</item>
+                                </enumeration>
+                            </ValueScheme>
+                        </Attribute>
+                    </AttributeList>
+                </CMD_Element>
+                <CMD_Element name="domain" ConceptLink="http://hdl.handle.net/11459/CCR_C-6147_ebed915e-f911-f128-cddc-466aa41c9c73" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" Multilingual="false">
+                    <AttributeList>
+                        <Attribute>
+                            <Name>type</Name>
+                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-6227_a425ff44-68ac-a062-8ce0-76b67c99c7db</ConceptLink>
+                            <Type>string</Type>
+                        </Attribute>
+                    </AttributeList>
+                </CMD_Element>
+                <CMD_Element name="factuality" ConceptLink="http://hdl.handle.net/11459/CCR_C-6148_d4325742-4568-44a0-9ba2-a4f8d09f5cf9" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" Multilingual="false">
+                    <AttributeList>
+                        <Attribute>
+                            <Name>type</Name>
+                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-6228_ae974739-becc-d092-874c-24bb94f05a1b</ConceptLink>
+                            <ValueScheme>
+                                <enumeration>
+                                    <item ConceptLink="http://hdl.handle.net/11459/CCR_C-6229_263f60c9-4418-2d52-10f1-47c44e1513fc" AppInfo="">fiction</item>
+                                    <item ConceptLink="http://hdl.handle.net/11459/CCR_C-6230_6bf2868a-6495-f78d-628a-41bf7fc68632" AppInfo="">fact</item>
+                                    <item ConceptLink="http://hdl.handle.net/11459/CCR_C-6231_83e9c5c6-fe20-200d-d250-f6639795b87f" AppInfo="">mixed</item>
+                                    <item ConceptLink="http://hdl.handle.net/11459/CCR_C-6232_b5bd5239-0735-c7bd-4999-fb438eaf0f10" AppInfo="">inapplicable</item>
+                                </enumeration>
+                            </ValueScheme>
+                        </Attribute>
+                    </AttributeList>
+                </CMD_Element>
+                <CMD_Element name="preparedness" ConceptLink="http://hdl.handle.net/11459/CCR_C-6150_11654b2e-5746-144d-bba2-ef47175eff1b" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" Multilingual="false">
+                    <AttributeList>
+                        <Attribute>
+                            <Name>type</Name>
+                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-6182_442e1ec4-5644-d3e4-81e6-2e57806d9848</ConceptLink>
+                            <Type>string</Type>
+                        </Attribute>
+                    </AttributeList>
+                </CMD_Element>
+                <CMD_Element name="purpose" ConceptLink="http://hdl.handle.net/11459/CCR_C-6151_418da06f-1629-164c-9ef1-ed40674f2dff" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Multilingual="false">
+                    <AttributeList>
+                        <Attribute>
+                            <Name>type</Name>
+                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-6183_f3cffe8f-766e-3165-6f28-c011097dc762</ConceptLink>
+                            <Type>string</Type>
+                        </Attribute>
+                    </AttributeList>
+                </CMD_Element>
+                <CMD_Component name="derivation" ComponentId="clarin.eu:cr1:c_1375880373023" ConceptLink="http://hdl.handle.net/11459/CCR_C-6145_aa6fcd7a-565b-aaaa-bebe-b310307e1e9f" CardinalityMin="0" CardinalityMax="1">
+                    <AttributeList>
+                        <Attribute>
+                            <Name>type</Name>
+                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-6226_244834a5-2581-7a7e-9ccf-30670ecf9cd4</ConceptLink>
+                            <Type>string</Type>
+                        </Attribute>
+                    </AttributeList>
+                    <CMD_Element name="lang" ConceptLink="http://hdl.handle.net/11459/CCR_C-6146_2fade79f-5663-dc8f-7284-cccee88e68f9" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" DisplayPriority="1" Multilingual="false"/>
+                </CMD_Component>
+                <CMD_Component name="interaction" ComponentId="clarin.eu:cr1:c_1375880373026" ConceptLink="http://hdl.handle.net/11459/CCR_C-6149_dec742b0-0358-e443-ad90-097ce9bd7fd1" CardinalityMin="0" CardinalityMax="1">
+                    <AttributeList>
+                        <Attribute>
+                            <Name>active</Name>
+                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-6233_449e419f-8a8d-1f88-4476-c50e40a673b1</ConceptLink>
+                            <Type>string</Type>
+                        </Attribute>
+                        <Attribute>
+                            <Name>passive</Name>
+                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-6234_ee3326cf-4e27-e7bb-a934-2176f3a5835f</ConceptLink>
+                            <Type>string</Type>
+                        </Attribute>
+                    </AttributeList>
+                    <CMD_Element name="note" ConceptLink="http://hdl.handle.net/11459/CCR_C-6124_2e45fdf9-ced2-89c9-a09d-b4769e9fede6" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" DisplayPriority="1" Multilingual="false">
+                        <AttributeList>
+                            <Attribute>
+                                <Name>type</Name>
+                                <ConceptLink>http://hdl.handle.net/11459/CCR_C-6178_9d06c028-dd75-8266-a948-1ccd688761d5</ConceptLink>
+                                <Type>string</Type>
+                            </Attribute>
+                        </AttributeList>
+                    </CMD_Element>
+                </CMD_Component>
+            </CMD_Component>
+            <CMD_Component name="textClass" ComponentId="clarin.eu:cr1:c_1375880373027" ConceptLink="http://hdl.handle.net/11459/CCR_C-5427_29063663-5799-3588-bb4f-e852c37e6c97" CardinalityMin="0" CardinalityMax="unbounded">
+                <CMD_Element name="catRef" ConceptLink="http://hdl.handle.net/11459/CCR_C-5312_db0dd0e8-1bd6-547f-6456-1863681f54f9" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" DisplayPriority="1" Multilingual="false">
+                    <AttributeList>
+                        <Attribute>
+                            <Name>scheme</Name>
+                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-5317_d0b45527-e754-627f-6a80-1a3503df9973</ConceptLink>
+                            <Type>string</Type>
+                        </Attribute>
+                        <Attribute>
+                            <Name>target</Name>
+                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-6199_ff02e764-e9b8-9b91-0eb0-a94836f09469</ConceptLink>
+                            <Type>string</Type>
+                        </Attribute>
+                    </AttributeList>
+                </CMD_Element>
+                <CMD_Element name="classCode" ConceptLink="http://hdl.handle.net/11459/CCR_C-5316_2c6244b4-4f10-5e8e-49b6-26fbf7004791" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Multilingual="false">
+                    <AttributeList>
+                        <Attribute>
+                            <Name>scheme</Name>
+                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-5317_d0b45527-e754-627f-6a80-1a3503df9973</ConceptLink>
+                            <Type>string</Type>
+                        </Attribute>
+                    </AttributeList>
+                </CMD_Element>
+                <CMD_Component name="keywords" ComponentId="clarin.eu:cr1:c_1380613302381" ConceptLink="http://hdl.handle.net/11459/CCR_C-5356_d4d861f6-e302-9b13-5ab5-f8ba171cc258" CardinalityMin="0" CardinalityMax="unbounded">
+                    <AttributeList>
+                        <Attribute>
+                            <Name>scheme</Name>
+                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-5317_d0b45527-e754-627f-6a80-1a3503df9973</ConceptLink>
+                            <Type>string</Type>
+                        </Attribute>
+                    </AttributeList>
+                    <CMD_Component name="list" ComponentId="clarin.eu:cr1:c_1380613302392" ConceptLink="http://hdl.handle.net/11459/CCR_C-6160_b5da7fc8-942a-9350-9ca2-95b1212f0d2e" CardinalityMin="1" CardinalityMax="1">
+                        <AttributeList>
+                            <Attribute>
+                                <Name>type</Name>
+                                <ConceptLink>http://hdl.handle.net/11459/CCR_C-6235_cfdd7a86-67f2-1aaf-dfbd-0d30296a9a59</ConceptLink>
+                                <Type>string</Type>
+                            </Attribute>
+                        </AttributeList>
+                        <CMD_Element name="item" ConceptLink="http://hdl.handle.net/11459/CCR_C-6161_7bdf4fc4-d8ce-41ca-594f-af8d773e6bb1" ValueScheme="string" CardinalityMin="1" CardinalityMax="unbounded" DisplayPriority="1" Multilingual="false">
+                            <AttributeList>
+                                <Attribute>
+                                    <Name>n</Name>
+                                    <ConceptLink>http://hdl.handle.net/11459/CCR_C-6177_8e40366a-172a-9f6a-cc6a-fcb982209d53</ConceptLink>
+                                    <Type>string</Type>
+                                </Attribute>
+                            </AttributeList>
+                        </CMD_Element>
+                    </CMD_Component>
+                </CMD_Component>
+            </CMD_Component>
+            <CMD_Component name="particDesc" ComponentId="clarin.eu:cr1:c_1379925925654" ConceptLink="http://hdl.handle.net/11459/CCR_C-6152_ba0caa95-c669-cdde-c08d-25ce5879f109" CardinalityMin="0" CardinalityMax="unbounded">
+                <CMD_Component name="person" ComponentId="clarin.eu:cr1:c_1375880373028" ConceptLink="http://hdl.handle.net/11459/CCR_C-6153_ea7fe0c6-2052-37b6-b61d-d443e6a0c63e" CardinalityMin="1" CardinalityMax="unbounded">
+                    <AttributeList>
+                        <Attribute>
+                            <Name>id</Name>
+                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-6196_629b1691-6464-d665-3e21-41dfe2eb51f6</ConceptLink>
+                            <Type>string</Type>
+                        </Attribute>
+                        <Attribute>
+                            <Name>role</Name>
+                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-6236_e759e77d-ee70-6064-bfe0-b7adaaa71606</ConceptLink>
+                            <Type>string</Type>
+                        </Attribute>
+                        <Attribute>
+                            <Name>age</Name>
+                            <Type>string</Type>
+                        </Attribute>
+                        <Attribute>
+                            <Name>sex</Name>
+                            <ConceptLink>http://hdl.handle.net/11459/CCR_C-6238_84c78126-be2f-40b1-dae7-7a590381f485</ConceptLink>
+                            <Type>string</Type>
+                        </Attribute>
+                    </AttributeList>
+                    <CMD_Component name="birth" ComponentId="clarin.eu:cr1:c_1375880373030" ConceptLink="http://hdl.handle.net/11459/CCR_C-6154_fefc8824-2677-7719-58ac-79773318d208" CardinalityMin="0" CardinalityMax="unbounded">
+                        <CMD_Element name="date" ConceptLink="http://hdl.handle.net/11459/CCR_C-6123_009f84ce-e47e-5513-f387-b3502897abae" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" DisplayPriority="1" Multilingual="false">
+                            <AttributeList>
+                                <Attribute>
+                                    <Name>when</Name>
+                                    <ConceptLink>http://hdl.handle.net/11459/CCR_C-6176_647a4954-a958-7304-d8a6-5851f2003f7c</ConceptLink>
+                                    <ValueScheme>
+                                        <pattern>(\-?[0-9]{4})|([0-9]{4}\-[0,1][0-9]\-[0-3][0-9])</pattern>
+                                    </ValueScheme>
+                                </Attribute>
+                                <Attribute>
+                                    <Name>cert</Name>
+                                    <ConceptLink>http://hdl.handle.net/11459/CCR_C-6192_0bca7334-809e-62bd-6bde-82f6a441b4e6</ConceptLink>
+                                    <ValueScheme>
+                                        <enumeration>
+                                            <item ConceptLink="" AppInfo="">high</item>
+                                            <item ConceptLink="" AppInfo="">medium</item>
+                                            <item ConceptLink="" AppInfo="">low</item>
+                                            <item ConceptLink="" AppInfo="">unknown</item>
+                                        </enumeration>
+                                    </ValueScheme>
+                                </Attribute>
+                            </AttributeList>
+                        </CMD_Element>
+                    </CMD_Component>
+                </CMD_Component>
+            </CMD_Component>
+        </CMD_Component>
+        <CMD_Component name="revisionDesc" ComponentId="clarin.eu:cr1:c_1379925925655" ConceptLink="http://hdl.handle.net/11459/CCR_C-5408_feeacbbf-8cac-6201-44a7-c680afe3cd77" CardinalityMin="0" CardinalityMax="1">
+            <CMD_Element name="change" ConceptLink="http://hdl.handle.net/11459/CCR_C-5314_4e14064c-55a3-f609-3f0c-051f80e65599" ValueScheme="string" CardinalityMin="1" CardinalityMax="unbounded" DisplayPriority="1" Multilingual="false">
+                <AttributeList>
+                    <Attribute>
+                        <Name>when</Name>
+                        <ConceptLink>http://hdl.handle.net/11459/CCR_C-6176_647a4954-a958-7304-d8a6-5851f2003f7c</ConceptLink>
+                        <ValueScheme>
+                            <pattern>(\-?[0-9]{4})|([0-9]{4}\-[0,1][0-9]\-[0-3][0-9])</pattern>
+                        </ValueScheme>
+                    </Attribute>
+                    <Attribute>
+                        <Name>who</Name>
+                        <ConceptLink>http://hdl.handle.net/11459/CCR_C-6239_6a35bb67-ae8f-d850-415e-7031387f24e8</ConceptLink>
+                        <Type>string</Type>
+                    </Attribute>
+                </AttributeList>
+            </CMD_Element>
+        </CMD_Component>
+    </CMD_Component>
+</CMD_ComponentSpec>

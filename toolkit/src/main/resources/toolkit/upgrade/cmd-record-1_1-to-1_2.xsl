@@ -16,7 +16,8 @@
     <xsl:variable name="cmd-profiles" select="concat($cmd-uri,'/profiles')"/>
     <xsl:variable name="cr-profiles" select="concat($cr-uri,'/profiles')"/>
     <xsl:variable name="cr-extension-xsd" select="'-1_2.xsd'"/>
-
+    <xsl:variable name="cr-extension-xml" select="'.xml'"/>
+    
     <!-- identity copy -->
     <xsl:template match="@*|node()">
         <xsl:copy>
@@ -56,6 +57,7 @@
     <!-- the profile specific uris -->
     <xsl:variable name="cmd-profile-uri" select="concat($cmd-profiles,'/',$profile)"/>
     <xsl:variable name="cr-profile-xsd" select="concat($cr-profiles,'/',$profile,$cr-extension-xsd)"/>
+    <xsl:variable name="cr-profile-xml" select="concat($cr-profiles,'/',$profile,$cr-extension-xml)"/>
     
     <!-- CMD version becomes 1.2 -->
     <xsl:template match="/cmd0:CMD/@CMDVersion">
@@ -145,10 +147,36 @@
     </xsl:template>
     
     <!-- move CMD attributes to the CMD namespace -->
-    <!-- TODO: @ref is allowed on elements, how to know if this is a element or a component with no children? -->
-    <!--<xsl:template match="cmd0:Components//*[exists(*)]/@ref">-->
     <xsl:template match="cmd0:Components//@ref">
-        <xsl:attribute name="cmd:ref" select="."/>
+        <xsl:choose>
+            <xsl:when test="exists(parent::*/text()[normalize-space()!=''])">
+                <!-- this is an element keep the @ref -->
+                <xsl:copy/>
+            </xsl:when>
+            <xsl:when test="exists(../parent::*/node()) or exists(../parent::*/@ComponentId)">
+                <!-- the parent is a component add the namespace to @ref -->
+                <xsl:attribute name="cmd:ref" select="."/>
+            </xsl:when>
+            <xsl:otherwise>
+                <!-- don't know if the parent is a component without children, or an element without value
+                     have a look at the profile -->
+                <xsl:variable name="prof" select="doc(resolve-uri($cr-profile-xml,base-uri()))"/>
+                <xsl:variable name="path" select="ancestor::*[. >> /cmd0:CMD/cmd0:Components]"/>
+                <xsl:variable name="attr" select="$prof//Attribute[Name='ref'][string-join(ancestor::*[local-name()=('CMD_Component','CMD_Element')]/@name,'/')=string-join($path/local-name(),'/')]"/>
+                <xsl:choose>
+                    <xsl:when test="exists($attr/parent::AttributeList/parent::CMD_Component)">
+                        <!-- the parent is a component add the namespace to @ref -->
+                        <xsl:message>!MENZO: the parent is a component add the namespace to @ref</xsl:message>
+                        <xsl:attribute name="cmd:ref" select="."/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <!-- this is an element keep the @ref -->
+                        <xsl:message>!MENZO: the parent is an element keep the @ref</xsl:message>
+                        <xsl:copy/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     
     <xsl:template match="cmd0:Components//@ComponentId">

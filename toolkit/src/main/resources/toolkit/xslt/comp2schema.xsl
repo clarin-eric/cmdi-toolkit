@@ -5,7 +5,7 @@
     $Date$ 
 -->
 
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dcr="http://www.isocat.org/ns/dcr" xmlns:ann="http://www.clarin.eu" xmlns:cmd="http://www.clarin.eu/cmd/1" xmlns:cue="http://www.clarin.eu/cmdi/cues/display/1.0">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cmd="http://www.clarin.eu/cmd/1" xmlns:cue="http://www.clarin.eu/cmdi/cues/display/1.0">
 
     <xsl:param name="cmd-toolkit" select="'../../../../../main/resources/toolkit'"/>
     <xsl:param name="cmd-envelop" select="concat($cmd-toolkit,'/xsd/cmd-envelop.xsd')"/>
@@ -80,7 +80,7 @@
     </xsl:template>
 
     <xsl:template match="*" mode="Header">
-        <xsl:element name="ann:{name()}" namespace="http://www.clarin.eu">
+        <xsl:element name="cmd:{name()}">
             <xsl:value-of select="text()"/>
             <xsl:apply-templates select="*" mode="Header"/>
         </xsl:element>
@@ -300,9 +300,9 @@
     <xsl:template match="AttributeList/Attribute">
         <xs:attribute name="{@name}">
 
-            <!-- Add a dcr:datcat if a ConceptLink element is found -->
+            <!-- Add a cmd:ConceptLink if a ConceptLink element is found -->
             <xsl:if test="normalize-space(@ConceptLink)!=''">
-                <xsl:attribute name="dcr:datcat">
+                <xsl:attribute name="cmd:ConceptLink">
                     <xsl:value-of select="@ConceptLink"/>
                 </xsl:attribute>
             </xsl:if>
@@ -403,15 +403,15 @@
 
     <!-- end multilinguality part -->
 
-    <!-- Add a @dcr:datcat if a ConceptLink attribute is found -->
+    <!-- Add a @cmd:ConceptLink if a ConceptLink attribute is found -->
     <xsl:template match="@ConceptLink">
-        <xsl:attribute name="dcr:datcat">
+        <xsl:attribute name="cmd:ConceptLink">
             <xsl:value-of select="."/>
         </xsl:attribute>
     </xsl:template>
 
     <xsl:template match="@AppInfo">
-        <xsl:attribute name="ann:label">
+        <xsl:attribute name="cmd:label">
             <xsl:value-of select="."/>
         </xsl:attribute>
     </xsl:template>
@@ -423,13 +423,13 @@
     </xsl:template>
     
     <xsl:template match="Vocabulary/@URI">
-        <xsl:attribute name="ann:Vocabulary">
+        <xsl:attribute name="cmd:Vocabulary">
             <xsl:value-of select="."/>
         </xsl:attribute>
     </xsl:template>
 
     <xsl:template match="@ValueProperty|@ValueLanguage">
-        <xsl:attribute name="ann:{local-name()}">
+        <xsl:attribute name="cmd:{local-name()}">
             <xsl:value-of select="."/>
         </xsl:attribute>
     </xsl:template>
@@ -442,19 +442,19 @@
     </xsl:template>
 
     <xsl:template match="@AutoValue">
-        <xsl:attribute name="ann:AutoValue">
+        <xsl:attribute name="cmd:AutoValue">
             <xsl:value-of select="."/>
         </xsl:attribute>
     </xsl:template>
     
     <xsl:template match="@cue:DisplayPriority" priority="1">
-        <xsl:attribute name="ann:displaypriority">
+        <xsl:attribute name="cue:displaypriority">
             <xsl:value-of select="."/>
         </xsl:attribute>
     </xsl:template>
 
     <xsl:template match="@cue:*">
-        <xsl:attribute name="ann:{local-name()}">
+        <xsl:attribute name="cue:{local-name()}">
             <xsl:value-of select="."/>
         </xsl:attribute>
     </xsl:template>

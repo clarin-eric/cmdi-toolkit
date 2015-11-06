@@ -151,10 +151,12 @@
         <xsl:choose>
             <xsl:when test="exists(parent::*/text()[normalize-space()!=''])">
                 <!-- this is an element keep the @ref -->
+                <!--<xsl:message>INF: this is an element keep the ref</xsl:message>-->
                 <xsl:copy/>
             </xsl:when>
             <xsl:when test="exists(../node()) or exists(parent::*/@ComponentId)">
                 <!-- the parent is a component add the namespace to @ref -->
+                <!--<xsl:message>INF: this is an component add the namespace to ref</xsl:message>-->
                 <xsl:attribute name="cmd:ref" select="."/>
             </xsl:when>
             <xsl:otherwise>
@@ -164,13 +166,15 @@
                 <xsl:variable name="path" select="ancestor::*[. >> /cmd0:CMD/cmd0:Components]"/>
                 <xsl:variable name="attr" select="$prof//Attribute[Name='ref'][string-join(ancestor::*[local-name()=('CMD_Component','CMD_Element')]/@name,'/')=string-join($path/local-name(),'/')]"/>
                 <xsl:choose>
-                    <xsl:when test="exists($attr/parent::AttributeList/parent::CMD_Component)">
-                        <!-- the parent is a component add the namespace to @ref -->
-                        <xsl:attribute name="cmd:ref" select="."/>
+                    <xsl:when test="exists($attr)">
+                        <!-- in CMDI 1.1 @ref can only be an user declared attribute for an element -->
+                        <!--<xsl:message>INF: according to the profile this @ref is an user declared attribute, so keep the ref</xsl:message>-->
+                        <xsl:copy/>
                     </xsl:when>
                     <xsl:otherwise>
-                        <!-- this is an element keep the @ref -->
-                        <xsl:copy/>
+                        <!-- this is an undeclared @ref, so add the namespace -->
+                        <!--<xsl:message>INF: according to the profile this @ref is not user defined, so add the namespace</xsl:message>-->
+                        <xsl:attribute name="cmd:ref" select="."/>
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:otherwise>

@@ -134,10 +134,13 @@
     <!-- first pass: create the complex types on top of the resulting XSD -->
     <xsl:template match="Element/ValueScheme[exists(Vocabulary/enumeration)]" mode="types">
         
+        <xsl:message>DBG: create complex types</xsl:message>
+        
         <!-- only handle the ValueScheme if this is the first occurence of the Component -->
         <xsl:variable name="Component" select="ancestor::Component[exists(@ComponentId)]"/>
         <xsl:if test="empty($Component/preceding::Component[@ComponentId=$Component/@ComponentId])">
-
+            <xsl:message>DBG: first occurence</xsl:message>
+            
             <!-- create a unique suffix (the path to the element) to ensure the unicity of the types to be created -->
             <xsl:variable name="uniquePath" select="cmd:getComponentId(..)"/>
             
@@ -145,7 +148,7 @@
             <xs:simpleType name="simpletype{$uniquePath}">
                 <xs:restriction base="xs:string">
                     <xsl:apply-templates select="pattern"/>
-                    <xsl:apply-templates select="enumeration"/>
+                    <xsl:apply-templates select="Vocabulary/enumeration"/>
                 </xs:restriction>
             </xs:simpleType>
             
@@ -299,6 +302,11 @@
     <!-- Convert the AttributeList into real XSD attributes -->
     <xsl:template match="AttributeList/Attribute">
         <xs:attribute name="{@name}">
+            
+            <!-- a mandatory attribute? -->
+            <xsl:if test="@Required='true'">
+                <xsl:attribute name="use" select="'required'"/>
+            </xsl:if>
 
             <!-- Add a cmd:ConceptLink if a ConceptLink element is found -->
             <xsl:if test="normalize-space(@ConceptLink)!=''">
@@ -311,7 +319,7 @@
             <xsl:choose>
 
                 <!-- complex situation: CV or regex -->
-                <xsl:when test="exists(./ValueScheme/(Vocabulary/enumeration|pattern))">
+                <xsl:when test="exists(./ValueScheme/((Vocabulary/enumeration)|pattern))">
 
                     <xs:annotation>
                         <xsl:apply-templates select="Documentation"/>

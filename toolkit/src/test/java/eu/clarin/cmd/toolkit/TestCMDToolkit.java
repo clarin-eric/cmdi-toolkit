@@ -275,7 +275,7 @@ public class TestCMDToolkit {
 
     @Test
     public void testCMD() throws Exception {
-        String profile = "/toolkit/CMD/profiles/components.xml";
+        String profile = "/toolkit/CMD/profiles/components-invalid.xml";
 
         // validate the 1.2 profile
         boolean validProfile = validateCMDSpec(profile,new javax.xml.transform.stream.StreamSource(new java.io.File(TestCMDToolkit.class.getResource(profile).toURI())));

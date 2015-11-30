@@ -134,12 +134,9 @@
     <!-- first pass: create the complex types on top of the resulting XSD -->
     <xsl:template match="Element/ValueScheme[exists(Vocabulary/enumeration)]" mode="types">
         
-        <xsl:message>DBG: create complex types</xsl:message>
-        
         <!-- only handle the ValueScheme if this is the first occurence of the Component -->
         <xsl:variable name="Component" select="ancestor::Component[exists(@ComponentId)]"/>
         <xsl:if test="empty($Component/preceding::Component[@ComponentId=$Component/@ComponentId])">
-            <xsl:message>DBG: first occurence</xsl:message>
             
             <!-- create a unique suffix (the path to the element) to ensure the unicity of the types to be created -->
             <xsl:variable name="uniquePath" select="cmd:getComponentId(..)"/>

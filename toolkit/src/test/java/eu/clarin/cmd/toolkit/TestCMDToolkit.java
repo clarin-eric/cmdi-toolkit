@@ -196,6 +196,31 @@ public class TestCMDToolkit {
     }
 
     @Test
+    public void testAdelheid2() throws Exception {
+        String profile = "/toolkit/Adelheid/profiles/clarin.eu:cr1:p_1311927752306_1_2.xml";
+        String record  = "/toolkit/Adelheid/records/Adelheid_1_2-invalid.cmdi";
+        
+        // validate the 1.2 profile
+        boolean validProfile = validateCMDSpec(profile,new javax.xml.transform.stream.StreamSource(new java.io.File(TestCMDToolkit.class.getResource(profile).toURI())));
+        
+        // assertions
+        // the upgraded profile should be a valid CMDI 1.2 profile
+        assertTrue(validProfile);
+        // so there should be no errors
+        assertEquals(0, countErrors(validateCMDSpec));
+        
+        Document profileSchema = transformCMDSpecInXSD(profile,new javax.xml.transform.stream.StreamSource(new java.io.File(TestCMDToolkit.class.getResource(profile).toURI())));
+        SchemAnon profileAnon = new SchemAnon(new DOMSource(profileSchema));
+        
+        // validate the 1.2 record
+        boolean validRecord = validateCMDRecord(profile,profileAnon,record,new javax.xml.transform.stream.StreamSource(new java.io.File(TestCMDToolkit.class.getResource(record).toURI())));
+        
+        // assertions
+        // the record should be a invalid as it misses a the required CoreVersion attribute
+        assertFalse(validRecord);
+    }
+
+    @Test
     public void testTEI() throws Exception {
         String record  = "/toolkit/TEI/records/sundhed_dsn.teiHeader.ref.xml";
 
@@ -246,5 +271,16 @@ public class TestCMDToolkit {
 
         // assertions
         assertFalse(validRecord);
+    }
+
+    @Test
+    public void testCMD() throws Exception {
+        String profile = "/toolkit/CMD/profiles/components.xml";
+
+        // validate the 1.2 profile
+        boolean validProfile = validateCMDSpec(profile,new javax.xml.transform.stream.StreamSource(new java.io.File(TestCMDToolkit.class.getResource(profile).toURI())));
+
+        // assertions
+        assertFalse(validProfile);
     }
 }

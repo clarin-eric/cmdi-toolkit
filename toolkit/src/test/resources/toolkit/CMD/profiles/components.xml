@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:cue="http://www.clarin.eu/cmdi/cues/display/1.0" isProfile="true"
+    xsi:noNamespaceSchemaLocation="../../../../../main/resources/toolkit/xsd/cmd-component.xsd">
+    <Header>
+        <ID>clarin.eu:cr1:p_1311927752306</ID>
+        <Name>ToolService</Name>
+        <Description>Description of a tool and/or service(s)
+(adapted from the AnnotationTool profile)</Description>
+        <Status>development</Status>
+    </Header>
+    <Component CardinalityMax="1" CardinalityMin="1" name="ToolService">
+        <Element Multilingual="false" cue:DisplayPriority="1" CardinalityMax="unbounded"
+            CardinalityMin="0" ValueScheme="string"
+            ConceptLink="http://www.isocat.org/datcat/DC-3810" name="toolType"/>
+        <Component CardinalityMax="1" CardinalityMin="0" ConceptLink="http://www.isocat.org/datcat/DC-2502"/>
+    </Component>
+</ComponentSpec>

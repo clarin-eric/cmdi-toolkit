@@ -1,10 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?><cmd:CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cmd="http://www.clarin.eu/cmd/1" xmlns:cmdp="http://www.clarin.eu/cmd/1/profiles/clarin.eu:cr1:p_1311927752306" CMDVersion="1.2" xsi:schemaLocation="http://www.clarin.eu/cmd/1 ../../../../../main/resources/toolkit/xsd/cmd-envelop.xsd http://www.clarin.eu/cmd/1/profiles/clarin.eu:cr1:p_1311927752306 ../profiles/clarin.eu:cr1:p_1311927752306_1_2.xsd"><cmd:Header>
+<?xml version="1.0" encoding="UTF-8"?>
+<cmd:CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cmd="http://www.clarin.eu/cmd/1" xmlns:cmdp="http://www.clarin.eu/cmd/1/profiles/clarin.eu:cr1:p_1311927752306" CMDVersion="1.2" xsi:schemaLocation="http://www.clarin.eu/cmd/1 ../../../../../main/resources/toolkit/xsd/cmd-envelop.xsd http://www.clarin.eu/cmd/1/profiles/clarin.eu:cr1:p_1311927752306 ../profiles/clarin.eu:cr1:p_1311927752306_1_2.xsd">
+    <cmd:Header>
         <cmd:MdCreator>Menzo Windhouwer</cmd:MdCreator>
         <cmd:MdCreationDate>2012-04-17</cmd:MdCreationDate>
         <cmd:MdSelfLink>http://catalog.clarin.eu/metadata/cmdi/services/Adelheid.cmdi</cmd:MdSelfLink>
         <cmd:MdProfile>clarin.eu:cr1:p_1311927752306</cmd:MdProfile>
         <cmd:MdCollectionDisplayName>CLARIN-NL web services</cmd:MdCollectionDisplayName>
-    </cmd:Header><cmd:Resources>
+    </cmd:Header>
+    <cmd:Resources>
         <cmd:ResourceProxyList>
             <cmd:ResourceProxy id="h0">
                 <!-- Adelheid Annotation Tool -->
@@ -29,7 +32,8 @@
         </cmd:ResourceProxyList>
         <cmd:JournalFileProxyList/>
         <cmd:ResourceRelationList/>
-    </cmd:Resources><cmd:Components>
+    </cmd:Resources>
+    <cmd:Components>
         <cmdp:ToolService>
             <cmdp:toolType>lemmatizer</cmdp:toolType>
             <cmdp:applicationType>web application</cmdp:applicationType>
@@ -38,12 +42,7 @@
             <cmdp:GeneralInfo>
                 <cmdp:Name>Adelheid</cmdp:Name>
                 <cmdp:Description>
-                    <cmdp:Description>A web-application with which an end user can have historical
-                        Dutch text tokenized, lemmatized and part-of-speech tagged, using the most appropriate resources
-                        (such as lexica) for the text in question. The need to consistently use appropriate resources leads to the
-                        intuitively obvious strategy of placing this service in the Clarin infrastructure. For each specific text,
-                        the user can then select the best resources from those available in Clarin, wherever they might reside,
-                        and where necessary supplemented by own lexica.</cmdp:Description>
+                    <cmdp:Description>A web-application with which an end user can have historical Dutch text tokenized, lemmatized and part-of-speech tagged, using the most appropriate resources (such as lexica) for the text in question. The need to consistently use appropriate resources leads to the intuitively obvious strategy of placing this service in the Clarin infrastructure. For each specific text, the user can then select the best resources from those available in Clarin, wherever they might reside, and where necessary supplemented by own lexica.</cmdp:Description>
                 </cmdp:Description>
             </cmdp:GeneralInfo>
             <cmdp:Creators>
@@ -73,7 +72,7 @@
                     <cmdp:Role>Clarin centre representative</cmdp:Role>
                     <cmdp:Contact>
                         <cmdp:Person>Drs. D. Broeder</cmdp:Person>
-                        <cmdp:Address>Wundtlaan 1, 6525 XD  Nijmegen, The Netherlands</cmdp:Address>
+                        <cmdp:Address>Wundtlaan 1, 6525 XD Nijmegen, The Netherlands</cmdp:Address>
                         <cmdp:Email>Daan.Broeder@mpi.nl</cmdp:Email>
                         <cmdp:Organisation>Max Planck Institute for Psycholinguistics (MPI)</cmdp:Organisation>
                         <cmdp:Telephone>+31 - 24 - 3521103</cmdp:Telephone>
@@ -86,14 +85,7 @@
                 <cmdp:Funder>CLARIN-NL</cmdp:Funder>
                 <cmdp:Website>http://adelheid.ruhosting.nl/</cmdp:Website>
                 <cmdp:Description>
-                    <cmdp:Description LanguageID="en">This project aims at providing a web-application with which an end user can have historical
-                        Dutch text tokenized, lemmatized and part-of-speech tagged, using the most appropriate resources
-                        (such as lexica) for the text in question. The need to consistently use appropriate resources leads to the
-                        intuitively obvious strategy of placing this service in the Clarin infrastructure. For each specific text,
-                        the user can then select the best resources from those available in Clarin, wherever they might reside,
-                        and where necessary supplemented by own lexica. During the project a demonstrator for the
-                        distributed automatic lemmatization will be created, with some 14th century charters as test texts as
-                        well as corresponding resources.</cmdp:Description>
+                    <cmdp:Description LanguageID="en">This project aims at providing a web-application with which an end user can have historical Dutch text tokenized, lemmatized and part-of-speech tagged, using the most appropriate resources (such as lexica) for the text in question. The need to consistently use appropriate resources leads to the intuitively obvious strategy of placing this service in the Clarin infrastructure. For each specific text, the user can then select the best resources from those available in Clarin, wherever they might reside, and where necessary supplemented by own lexica. During the project a demonstrator for the distributed automatic lemmatization will be created, with some 14th century charters as test texts as well as corresponding resources.</cmdp:Description>
                 </cmdp:Description>
                 <cmdp:Contact>
                     <cmdp:Person>Dr. Hans van Halteren</cmdp:Person>
@@ -267,7 +259,7 @@
                             </cmdp:Parameter>
                             <cmdp:Parameter>
                                 <cmdp:Name>contents</cmdp:Name>
-                                <cmdp:Description>A more traditional text format where each new manuscript is indicated with a so-called Kloeke-code, prefixed with _o:  on a new line. Then follow the lines of the manuscript.</cmdp:Description>
+                                <cmdp:Description>A more traditional text format where each new manuscript is indicated with a so-called Kloeke-code, prefixed with _o: on a new line. Then follow the lines of the manuscript.</cmdp:Description>
                                 <cmdp:MIMEType>text/plain</cmdp:MIMEType>
                                 <cmdp:DataType>string</cmdp:DataType>
                                 <cmdp:TechnicalMetadata>
@@ -970,7 +962,7 @@
                             </cmdp:Parameter>
                             <cmdp:Parameter>
                                 <cmdp:Name>contents</cmdp:Name>
-                                <cmdp:Description>A more traditional text format where each new manuscript is indicated with a so-called Kloeke-code, prefixed with _o:  on a new line. Then follow the lines of the manuscript.</cmdp:Description>
+                                <cmdp:Description>A more traditional text format where each new manuscript is indicated with a so-called Kloeke-code, prefixed with _o: on a new line. Then follow the lines of the manuscript.</cmdp:Description>
                                 <cmdp:MIMEType>text/plain</cmdp:MIMEType>
                                 <cmdp:DataType>string</cmdp:DataType>
                                 <cmdp:TechnicalMetadata>
@@ -1187,4 +1179,5 @@
                 </cmdp:Operations>
             </cmdp:Service>
         </cmdp:ToolService>
-    </cmd:Components></cmd:CMD>
+    </cmd:Components>
+</cmd:CMD>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:cue="http://www.clarin.eu/cmdi/cues/display/1.0" isProfile="true"
+    xmlns:cue="http://www.clarin.eu/cmdi/cues/1" isProfile="true"
     xsi:noNamespaceSchemaLocation="../../../../../main/resources/toolkit/xsd/cmd-component.xsd">
     <Header>
         <ID>clarin.eu:cr1:p_1311927752306</ID>

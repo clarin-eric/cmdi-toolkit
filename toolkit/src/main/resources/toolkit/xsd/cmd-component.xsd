@@ -270,7 +270,7 @@
                 <xs:documentation>Is the attribute required or not?</xs:documentation>
             </xs:annotation>
         </xs:attribute>
-        <xs:anyAttribute namespace="http://www.clarin.eu/cmdi/cues/display/1.0" processContents="lax"/>
+        <xs:anyAttribute namespace="http://www.clarin.eu/cmdi/cues/1" processContents="lax"/>
     </xs:attributeGroup>
     
     <xs:attributeGroup name="element_attributes">
@@ -309,7 +309,7 @@
                 created.</xs:documentation>
             </xs:annotation>
         </xs:attribute>
-        <xs:anyAttribute namespace="http://www.clarin.eu/cmdi/cues/display/1.0" processContents="lax"/>
+        <xs:anyAttribute namespace="http://www.clarin.eu/cmdi/cues/1" processContents="lax"/>
     </xs:attributeGroup>
 
     <xs:attributeGroup name="component_attributes">
@@ -339,7 +339,7 @@
         <xs:attribute name="CardinalityMin" type="cardinality_type" use="optional" default="1"/>
         <xs:attribute name="CardinalityMax" type="cardinality_type" use="optional" default="1"/>
         <xs:attribute ref="xml:base" use="optional"/>
-        <xs:anyAttribute namespace="http://www.clarin.eu/cmdi/cues/display/1.0" processContents="lax"/>
+        <xs:anyAttribute namespace="http://www.clarin.eu/cmdi/cues/1" processContents="lax"/>
     </xs:attributeGroup>
 
 
@@ -471,7 +471,7 @@
                             vocabulary item.</xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
-                <xs:anyAttribute namespace="http://www.clarin.eu/cmdi/cues/display/1.0" processContents="lax"/>
+                <xs:anyAttribute namespace="http://www.clarin.eu/cmdi/cues/1" processContents="lax"/>
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>

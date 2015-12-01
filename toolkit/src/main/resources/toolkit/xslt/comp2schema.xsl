@@ -5,7 +5,7 @@
     $Date$ 
 -->
 
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cmd="http://www.clarin.eu/cmd/1" xmlns:cue="http://www.clarin.eu/cmdi/cues/display/1.0">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cmd="http://www.clarin.eu/cmd/1" xmlns:cue="http://www.clarin.eu/cmdi/cues/1">
 
     <xsl:param name="cmd-toolkit" select="'../../../../../main/resources/toolkit'"/>
     <xsl:param name="cmd-envelop" select="concat($cmd-toolkit,'/xsd/cmd-envelop.xsd')"/>
@@ -452,16 +452,8 @@
         </xsl:attribute>
     </xsl:template>
     
-    <xsl:template match="@cue:DisplayPriority" priority="1">
-        <xsl:attribute name="cue:displaypriority">
-            <xsl:value-of select="."/>
-        </xsl:attribute>
-    </xsl:template>
-
     <xsl:template match="@cue:*">
-        <xsl:attribute name="cue:{local-name()}">
-            <xsl:value-of select="."/>
-        </xsl:attribute>
+        <xsl:copy-of select="."/>
     </xsl:template>
     
     <xsl:template name="annotations">

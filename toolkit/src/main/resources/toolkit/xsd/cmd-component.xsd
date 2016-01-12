@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 
-    $Revision$ 
-    $Date$ 
+<!--
+    $Revision$
+    $Date$
 -->
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sch="http://purl.oclc.org/dsdl/schematron"
     xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.0" vc:maxVersion="1.1">
-    
+
     <xs:import namespace="http://www.w3.org/XML/1998/namespace"
         schemaLocation="http://www.w3.org/2005/08/xml.xsd"/>
 
@@ -91,7 +91,7 @@
             <xs:element name="Documentation" type="Documentation_type" minOccurs="0" maxOccurs="unbounded"/>
             <!-- from small (attribute) to big (component) -->
             <xs:element name="AttributeList" type="AttributeList_type" minOccurs="0" maxOccurs="1"/>
-            <xs:element name="Element" type="Element_type" minOccurs="0" maxOccurs="unbounded"/> 
+            <xs:element name="Element" type="Element_type" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="Component" type="Component_type" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:group>
@@ -116,7 +116,7 @@
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
-    
+
     <xs:complexType name="Element_type">
         <xs:annotation>
             <xs:appinfo>
@@ -204,12 +204,6 @@
             <xs:element name="Attribute" minOccurs="1" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:appinfo>
-                        <sch:pattern id="a_res">
-                            <sch:title>Check reserved attribute names</sch:title>
-                            <sch:rule context="Attribute">
-                                <sch:assert test="not(@name=('ref','ComponentId'))">Attribute name shouldn't be 'ref' or 'ComponentId', as these are used internally by CMD!</sch:assert>
-                            </sch:rule>
-                        </sch:pattern>
                         <sch:pattern id="a_sibs">
                             <sch:title>Check attribute siblings</sch:title>
                             <sch:rule context="Attribute">
@@ -272,7 +266,7 @@
         </xs:attribute>
         <xs:anyAttribute namespace="http://www.clarin.eu/cmdi/cues/1" processContents="lax"/>
     </xs:attributeGroup>
-    
+
     <xs:attributeGroup name="element_attributes">
         <xs:attribute name="name" type="xs:Name" use="required">
             <xs:annotation>
@@ -360,12 +354,12 @@
                         7    unbounded UNK       NOK
                         8    unbounded number    NOK
                         9    unbounded unbounded OK
-                        
+
                         UNK can be either a missing attribute or an empty value, both can be detected with normalize-space(@...)=''
-                        
+
                         default CardinalityMin is 1 (based on the XSD minOccurs default value)
                         default CardinalityMax is 1 (based on the XSD maxOccurs default value)
-                        
+
                         If a basic XSLT 2.0 engine, like Saxon HE, is used for Schematron validation we can't cast to xs:nonNegativeInteger.
                         So we cast to xs:integer. The XSD validator should have already validated that the values are valid cardinality_types.
                     -->
@@ -454,7 +448,7 @@
                         <sch:assert test="empty(preceding-sibling::item[.=current()])">All items in an enumeration should be different. Found multiple items with value '<sch:value-of select="."/>'!</sch:assert>
                     </sch:rule>
                 </sch:pattern>
-            </xs:appinfo>            
+            </xs:appinfo>
         </xs:annotation>
         <xs:simpleContent>
             <xs:extension base="xs:string">

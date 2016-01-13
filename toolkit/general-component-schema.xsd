@@ -119,7 +119,7 @@
                         <sch:pattern id="a_res">
                             <sch:title>Check reserved attribute names</sch:title>
                             <sch:rule context="Attribute">
-                                <sch:assert test="not(Name=('ref','ComponentId'))">Attribute name shouldn't be 'ref' or 'ComponentId', as these are used internally by CMD!</sch:assert>
+                                <sch:assert test="not(exists(parent::AttributeList/parent::Component) and Name=('ref','ComponentId'))">Component attribute name shouldn't be 'ref' or 'ComponentId', as these are used internally by CMD!</sch:assert>
                             </sch:rule>
                         </sch:pattern>
                         <sch:pattern id="a_sibs">

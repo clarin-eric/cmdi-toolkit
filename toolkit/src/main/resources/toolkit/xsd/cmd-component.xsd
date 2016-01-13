@@ -154,7 +154,7 @@
                 <sch:pattern id="v_uri">
                     <sch:title>Check Vocabulary URI</sch:title>
                     <sch:rule context="Vocabulary[exists(@URI)]">
-                        <sch:assert test="exists(@ValueProperty)">When an external vocabulary (identified by the @URI) a @ValueProperty has to be specified!</sch:assert>
+                        <sch:assert test="exists(@ValueProperty)">When an external vocabulary is used (identified by the @URI) a @ValueProperty has to be specified!</sch:assert>
                     </sch:rule>
                 </sch:pattern>
             </xs:appinfo>
@@ -204,6 +204,12 @@
             <xs:element name="Attribute" minOccurs="1" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:appinfo>
+                        <sch:pattern id="a_res">
+                            <sch:title>Check reserved attribute names</sch:title>
+                            <sch:rule context="Attribute" role="warning">
+                                <sch:assert test="not(exists(parent::AttributeList/parent::Component) and @name=('ref','ComponentId'))">Attributes with name 'ref' or 'ComponentId' will not be available in a downgrade to CMDI 1.1!</sch:assert>
+                            </sch:rule>
+                        </sch:pattern>
                         <sch:pattern id="a_sibs">
                             <sch:title>Check attribute siblings</sch:title>
                             <sch:rule context="Attribute">

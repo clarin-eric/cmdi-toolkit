@@ -72,29 +72,37 @@
         </xsl:choose>
     </xsl:template>
 
-    <!-- remove Vocabulary level -->
+    <!-- remove Vocabulary level, incl. attributes -->
     <xsl:template match="Vocabulary" priority="1">
         <xsl:apply-templates select="node()"/>
     </xsl:template>
     
     <!-- turn Attribute child elements into attributes -->
     <xsl:template match="Attribute" priority="1">
-        <Attribute name="{Name}">
-            <Name>
-                <xsl:value-of select="@name"/>
-            </Name>
-            <xsl:if test="normalize-space(@ValueScheme)!=''">
-                <Type>
-                    <xsl:value-of select="@ValueScheme"/>
-                </Type>
-            </xsl:if>
-            <xsl:if test="normalize-space(@ConceptLink)!=''">
-                <ConceptLink>
-                    <xsl:value-of select="@ConceptLink"/>
-                </ConceptLink>
-            </xsl:if>
-            <xsl:apply-templates select="node()"/>
-        </Attribute>
+        <xsl:choose>
+            <xsl:when test="exists(parent::AttributeList/parent::Component) and Name=('ref','ComponentId')">
+                <xsl:message>WRN: user-defined ref and ComponentId attributes for a Component are not supported by CMDI 1.1!</xsl:message>
+            </xsl:when>
+            <xsl:otherwise>
+                <Attribute>
+                    <Name>
+                        <xsl:value-of select="@name"/>
+                    </Name>
+                    <xsl:if test="normalize-space(@ConceptLink)!=''">
+                        <ConceptLink>
+                            <xsl:value-of select="@ConceptLink"/>
+                        </ConceptLink>
+                    </xsl:if>
+                    <xsl:if test="normalize-space(@ValueScheme)!=''">
+                        <Type>
+                            <xsl:value-of select="@ValueScheme"/>
+                        </Type>
+                    </xsl:if>
+                    <!-- @Required is skipped -->
+                    <xsl:apply-templates select="node()"/>
+                </Attribute>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     
     <!-- remove cue namespace for DisplayPriority -->

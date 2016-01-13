@@ -6,6 +6,7 @@ package eu.clarin.cmd.toolkit;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.List;
@@ -44,18 +45,23 @@ import org.w3c.dom.Document;
 public class TestCMDToolkit {
 
     XsltTransformer upgradeCMDSpec = null;
+    XsltTransformer downgradeCMDSpec = null;
     XsltTransformer upgradeCMDRec = null;
     XsltTransformer transformCMDSpecInXSD = null;
     SchemAnon validateCMDSpec = null;
+    SchemAnon validateCMDoldSpec = null;
     SchemAnon validateCMDEnvelop = null;
 
     @Before
     public void setUp() {
         try {
             upgradeCMDSpec = SaxonUtils.buildTransformer(CMDToolkit.class.getResource("/toolkit/upgrade/cmd-component-1_1-to-1_2.xsl")).load();
+            downgradeCMDSpec = SaxonUtils.buildTransformer(CMDToolkit.class.getResource("/toolkit/downgrade/cmd-component-1_2-to-1_1.xsl")).load();
             upgradeCMDRec = SaxonUtils.buildTransformer(CMDToolkit.class.getResource("/toolkit/upgrade/cmd-record-1_1-to-1_2.xsl")).load();
             transformCMDSpecInXSD = SaxonUtils.buildTransformer(CMDToolkit.class.getResource("/toolkit/xslt/comp2schema.xsl")).load();
-            validateCMDSpec = new SchemAnon(CMDToolkit.class.getResource("/toolkit/xsd/cmd-component.xsd").toURI().toURL());
+            validateCMDSpec = new SchemAnon(CMDToolkit.class.getResource("/toolkit/xsd/cmd-component.xsd").toURI().toURL());            
+            validateCMDoldSpec = new SchemAnon(new URL("http://infra.clarin.eu/cmd/general-component-schema.xsd"));
+//            validateCMDoldSpec = new SchemAnon(new URL("file:///Users/menzowi/Documents/Projects/CLARIN/CMDI/CMDI-1.1/src/toolkit/general-component-schema.xsd"));
             validateCMDEnvelop = new SchemAnon(CMDToolkit.class.getResource("/toolkit/xsd/cmd-envelop.xsd").toURI().toURL());
         } catch(Exception e) {
             System.err.println("!ERR: couldn't setup the testing environment!");
@@ -115,6 +121,16 @@ public class TestCMDToolkit {
         return transform(upgradeCMDSpec,new javax.xml.transform.stream.StreamSource(new java.io.File(TestCMDToolkit.class.getResource(spec).toURI())));
     }
 
+    protected Document downgradeCMDSpec(String spec) throws Exception {
+        System.out.println("Downgrade CMD spec["+spec+"]");
+        return transform(downgradeCMDSpec,new javax.xml.transform.stream.StreamSource(new java.io.File(TestCMDToolkit.class.getResource(spec).toURI())));
+    }
+
+    protected Document downgradeCMDSpec(String spec,Source src) throws Exception {
+        System.out.println("Downgrade CMD spec["+spec+"]");
+        return transform(downgradeCMDSpec,src);
+    }
+
     protected Document upgradeCMDRecord(String rec) throws Exception {
         System.out.println("Upgrade CMD spec["+rec+"]");
         return transform(upgradeCMDRec,new javax.xml.transform.stream.StreamSource(new java.io.File(TestCMDToolkit.class.getResource(rec).toURI())));
@@ -134,6 +150,14 @@ public class TestCMDToolkit {
         boolean res = validateCMDSpec.validate(src);
         System.out.println("CMD spec["+spec+"]: "+(res?"VALID":"INVALID"));
         printMessages(validateCMDSpec);
+        return res;
+    }
+
+    protected boolean validateCMDoldSpec(String spec,Source src) throws Exception {
+        System.out.println("Validate CMD 1.1 spec["+spec+"]");
+        boolean res = validateCMDoldSpec.validate(src);
+        System.out.println("CMD old spec["+spec+"]: "+(res?"VALID":"INVALID"));
+        printMessages(validateCMDoldSpec);
         return res;
     }
 
@@ -193,6 +217,18 @@ public class TestCMDToolkit {
         assertTrue(validRecord);
         // so there should be no errors
         assertEquals(0, countErrors(profileAnon));
+        
+        // downgrade the 1.2 profile to 1.1
+        Document oldProfile = downgradeCMDSpec(profile+" (upgraded)",new DOMSource(upgradedProfile));
+        
+        // validate the 1.1 profile
+        boolean validOldProfile = validateCMDoldSpec(profile+" (downgraded)",new DOMSource(oldProfile));
+
+        // assertions
+        // the downgraded profile should be a valid CMDI 1.1 profile
+        assertTrue(validOldProfile);
+        // so there should be no errors
+        assertEquals(0, countErrors(validateCMDoldSpec));        
     }
 
     @Test
@@ -218,6 +254,18 @@ public class TestCMDToolkit {
         // assertions
         // the record should be a invalid as it misses a the required CoreVersion attribute
         assertFalse(validRecord);
+
+        // downgrade the 1.2 profile to 1.1
+        Document oldProfile = downgradeCMDSpec(profile);
+        
+        // validate the 1.1 profile
+        boolean validOldProfile = validateCMDoldSpec(profile+" (downgraded)",new DOMSource(oldProfile));
+
+        // assertions
+        // the downgraded profile should be a valid CMDI 1.1 profile
+        assertTrue(validOldProfile);
+        // so there should be no errors
+        assertEquals(0, countErrors(validateCMDoldSpec));        
     }
 
     @Test
@@ -253,6 +301,18 @@ public class TestCMDToolkit {
 
         // so there should be no errors
         assertEquals(0, countErrors(profileAnon));
+        
+        // downgrade the 1.2 profile to 1.1
+        Document oldProfile = downgradeCMDSpec(profile+" (upgraded)",new DOMSource(upgradedProfile));
+        
+        // validate the 1.1 profile
+        boolean validOldProfile = validateCMDoldSpec(profile+" (downgraded)",new DOMSource(oldProfile));
+
+        // assertions
+        // the downgraded profile should be a valid CMDI 1.1 profile
+        assertTrue(validOldProfile);
+        // so there should be no errors
+        assertEquals(0, countErrors(validateCMDoldSpec));        
     }
 
     @Test
@@ -306,6 +366,18 @@ public class TestCMDToolkit {
 
         // assertions
         assertFalse(validRecord);
+
+        // downgrade the 1.2 profile to 1.1
+        Document oldProfile = downgradeCMDSpec(profile+" (upgraded)",new DOMSource(upgradedProfile));
+        
+        // validate the 1.1 profile
+        boolean validOldProfile = validateCMDoldSpec(profile+" (downgraded)",new DOMSource(oldProfile));
+
+        // assertions
+        // the downgraded profile should be a valid CMDI 1.1 profile
+        assertTrue(validOldProfile);
+        // so there should be no errors
+        assertEquals(0, countErrors(validateCMDoldSpec));        
     }
 
     @Test

@@ -122,12 +122,6 @@
                                 <sch:assert test="empty(preceding-sibling::Attribute[Name=current()/Name])">All attributes in an attribute list should have a different name. Found multiple attributes named '<sch:value-of select="Name"/>'!</sch:assert>
                             </sch:rule>
                         </sch:pattern>
-                        <sch:pattern id="a_nest">
-                            <sch:title>Check attribute nesting</sch:title>
-                            <sch:rule context="Attribute" role="warning">
-                                <sch:assert test="empty((ancestor::CMD_Component|ancestor::CMD_Element)[1][@name=current()/Name])">An attribute has the same name ('<sch:value-of select="Name"/>') as its element or component! Please, consider to rename one of them.</sch:assert>
-                            </sch:rule>
-                        </sch:pattern>
                     </xs:appinfo>            
                 </xs:annotation>
                 <xs:complexType>

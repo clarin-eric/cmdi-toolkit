@@ -54,12 +54,6 @@
                     </sch:rule>
                 </sch:pattern>
                 <!-- TODO: the names of referenced external components are not known, so we can't currently check two or more of them use the same name -->
-                <sch:pattern id="c_nest">
-                    <sch:title>Check nesting</sch:title>
-                    <sch:rule context="CMD_Component[exists(CMD_Component|CMD_Element)]" role="warning">
-                        <sch:assert test="empty((CMD_Component|CMD_Element)[@name=current()/@name])">A nested component or element has the same name ('<sch:value-of select="@name"/>') as this component! Please, consider to rename one of them.</sch:assert>
-                    </sch:rule>
-                </sch:pattern>
             </xs:appinfo>            
         </xs:annotation>
         <xs:sequence>

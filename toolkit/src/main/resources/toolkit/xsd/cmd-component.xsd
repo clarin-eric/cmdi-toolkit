@@ -79,12 +79,6 @@
                     </sch:rule>
                 </sch:pattern>
                 <!-- TODO: check: the names of referenced external components are not known, so we can't currently check if two or more of them use the same name -->
-                <sch:pattern id="c_nest">
-                    <sch:title>Check nesting</sch:title>
-                    <sch:rule context="Component[exists(Component|Element)]" role="warning">
-                        <sch:assert test="empty((Component|Element)[@name=current()/@name])">A nested component or element has the same name ('<sch:value-of select="@name"/>') as this component! Please, consider to rename one of them.</sch:assert>
-                    </sch:rule>
-                </sch:pattern>
             </xs:appinfo>
         </xs:annotation>
         <xs:sequence>

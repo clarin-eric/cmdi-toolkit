@@ -11,12 +11,14 @@
     <xsl:param name="cmd-envelop-xsd" select="concat($cmd-toolkit,'/xsd/cmd-envelop.xsd')"/>
     <xsl:param name="cmd-uri" select="'http://www.clarin.eu/cmd/1'"/>
     <xsl:param name="cr-uri" select="'..'"/>
+    <xsl:param name="cr-extension-xsd" select="'-1_2.xsd'"/>
+    <xsl:param name="cr-extension-xml" select="'.xml'"/>
+    
+    <xsl:param name="escape" select="'ccmmddii_'"/>
     
     <xsl:variable name="cmd-components" select="concat($cmd-uri,'/components')"/>
     <xsl:variable name="cmd-profiles" select="concat($cmd-uri,'/profiles')"/>
     <xsl:variable name="cr-profiles" select="concat($cr-uri,'/profiles')"/>
-    <xsl:variable name="cr-extension-xsd" select="'-1_2.xsd'"/>
-    <xsl:variable name="cr-extension-xml" select="'.xml'"/>
     
     <!-- identity copy -->
     <xsl:template match="@*|node()">
@@ -146,8 +148,13 @@
         </xsl:element>
     </xsl:template>
     
+    <!-- unescape downgraded CMDI 1.2 attributes -->
+    <xsl:template match="cmd0:Components//@*[name()=local-name()][starts-with(name(),$escape)]">
+        <xsl:attribute name="{substring-after(name(),$escape)}" select="."/>
+    </xsl:template>
+    
     <!-- move CMD attributes to the CMD namespace -->
-    <xsl:template match="cmd0:Components//@ref">
+    <xsl:template match="cmd0:Components//@ref" priority="2">
         <xsl:choose>
             <xsl:when test="exists(parent::*/text()[normalize-space()!=''])">
                 <!-- this is an element keep the @ref -->
@@ -157,7 +164,13 @@
             <xsl:when test="exists(../node()) or exists(parent::*/@ComponentId)">
                 <!-- the parent is a component add the namespace to @ref -->
                 <!--<xsl:message>INF: this is an component add the namespace to ref</xsl:message>-->
-                <xsl:attribute name="cmd:ref" select="."/>
+                <xsl:attribute name="cmd:ref">
+                    <xsl:variable name="refs" select="tokenize(.,'\s+')"/>
+                    <xsl:if test="count($refs) gt 1">
+                        <xsl:message>WRN: CMDI 1.2 doesn't support references to multiple ResourceProxies! Only the first reference is kept.</xsl:message>
+                    </xsl:if>
+                    <xsl:value-of select="$refs[1]"/>
+                </xsl:attribute>
             </xsl:when>
             <xsl:otherwise>
                 <!-- don't know if the parent is a component without children, or an element without value
@@ -174,14 +187,20 @@
                     <xsl:otherwise>
                         <!-- this is an undeclared @ref, so add the namespace -->
                         <!--<xsl:message>INF: according to the profile this @ref is not user defined, so add the namespace</xsl:message>-->
-                        <xsl:attribute name="cmd:ref" select="."/>
+                        <xsl:attribute name="cmd:ref">
+                            <xsl:variable name="refs" select="tokenize(.,'\s+')"/>
+                            <xsl:if test="count($refs) gt 1">
+                                <xsl:message>WRN: CMDI 1.2 doesn't support references to multiple ResourceProxies! Only the first reference is kept.</xsl:message>
+                            </xsl:if>
+                            <xsl:value-of select="$refs[1]"/>
+                        </xsl:attribute>
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
     
-    <xsl:template match="cmd0:Components//@ComponentId">
+    <xsl:template match="cmd0:Components//@ComponentId" priority="2">
         <xsl:attribute name="cmd:ComponentId" select="."/>
     </xsl:template>
 

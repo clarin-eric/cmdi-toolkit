@@ -61,7 +61,6 @@ public class TestCMDToolkit {
             transformCMDSpecInXSD = SaxonUtils.buildTransformer(CMDToolkit.class.getResource("/toolkit/xslt/comp2schema.xsl")).load();
             validateCMDSpec = new SchemAnon(CMDToolkit.class.getResource("/toolkit/xsd/cmd-component.xsd").toURI().toURL());            
             validateCMDoldSpec = new SchemAnon(new URL("http://infra.clarin.eu/cmd/general-component-schema.xsd"));
-//            validateCMDoldSpec = new SchemAnon(new URL("file:///Users/menzowi/Documents/Projects/CLARIN/CMDI/CMDI-1.1/src/toolkit/general-component-schema.xsd"));
             validateCMDEnvelop = new SchemAnon(CMDToolkit.class.getResource("/toolkit/xsd/cmd-envelop.xsd").toURI().toURL());
         } catch(Exception e) {
             System.err.println("!ERR: couldn't setup the testing environment!");

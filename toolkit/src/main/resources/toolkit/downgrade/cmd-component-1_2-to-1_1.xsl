@@ -8,6 +8,8 @@
 
     <xsl:param name="cmd-component-xsd" select="'http://infra.clarin.eu/cmd/general-component-schema.xsd'"/>
     
+    <xsl:param name="escape" select="'ccmmddii_'"/>
+    
     <!-- identity copy -->
     <xsl:template match="@*">
         <xsl:copy/>
@@ -79,30 +81,34 @@
     
     <!-- turn Attribute child elements into attributes -->
     <xsl:template match="Attribute" priority="1">
-        <xsl:choose>
-            <xsl:when test="exists(parent::AttributeList/parent::Component) and Name=('ref','ComponentId')">
-                <xsl:message>WRN: user-defined ref and ComponentId attributes for a Component are not supported by CMDI 1.1!</xsl:message>
-            </xsl:when>
-            <xsl:otherwise>
-                <Attribute>
-                    <Name>
-                        <xsl:value-of select="@name"/>
-                    </Name>
-                    <xsl:if test="normalize-space(@ConceptLink)!=''">
-                        <ConceptLink>
-                            <xsl:value-of select="@ConceptLink"/>
-                        </ConceptLink>
-                    </xsl:if>
-                    <xsl:if test="normalize-space(@ValueScheme)!=''">
-                        <Type>
-                            <xsl:value-of select="@ValueScheme"/>
-                        </Type>
-                    </xsl:if>
-                    <!-- @Required is skipped -->
-                    <xsl:apply-templates select="node()"/>
-                </Attribute>
-            </xsl:otherwise>
-        </xsl:choose>
+        <xsl:variable name="name">
+            <xsl:choose>
+                <xsl:when test="exists(parent::AttributeList/parent::Component) and Name=('ref','ComponentId')">
+                    <xsl:message>WRN: user-defined ref and ComponentId attributes for a Component are not supported by CMDI 1.1! Adding the <xsl:value-of select="$escape"/> prefix</xsl:message>
+                    <xsl:value-of select="concat($escape,@name)"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="@name"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <Attribute>
+            <Name>
+                <xsl:value-of select="$name"/>
+            </Name>
+            <xsl:if test="normalize-space(@ConceptLink)!=''">
+                <ConceptLink>
+                    <xsl:value-of select="@ConceptLink"/>
+                </ConceptLink>
+            </xsl:if>
+            <xsl:if test="normalize-space(@ValueScheme)!=''">
+                <Type>
+                    <xsl:value-of select="@ValueScheme"/>
+                </Type>
+            </xsl:if>
+            <!-- @Required is skipped -->
+            <xsl:apply-templates select="node()"/>
+        </Attribute>
     </xsl:template>
     
     <!-- remove cue namespace for DisplayPriority -->

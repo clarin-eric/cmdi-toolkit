@@ -10,4 +10,11 @@
         </sch:rule>
     </sch:pattern>
     
+    <sch:pattern id="a_nest">
+        <sch:title>Check attribute nesting</sch:title>
+        <sch:rule context="Attribute" role="warning">
+            <sch:assert test="empty((ancestor::Component|ancestor::Element)[1][@name=current()/@ame])">An attribute has the same name ('<sch:value-of select="@name"/>') as its element or component! Please, consider to rename one of them.</sch:assert>
+        </sch:rule>
+    </sch:pattern>
+    
 </sch:schema>

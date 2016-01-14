@@ -58,6 +58,7 @@
     
     <!-- the profile specific uris -->
     <xsl:variable name="cmd-profile-uri" select="concat($cmd-profiles,'/',$profile)"/>
+    <!-- TODO: determine if we need the 1.2' version of the profile -->
     <xsl:variable name="cr-profile-xsd" select="concat($cr-profiles,'/',$profile,$cr-extension-xsd)"/>
     <xsl:variable name="cr-profile-xml" select="concat($cr-profiles,'/',$profile,$cr-extension-xml)"/>
     

@@ -4,11 +4,17 @@
     $Date$
 -->
 
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.0" vc:maxVersion="1.1">
-
+    
     <xs:import namespace="http://www.w3.org/XML/1998/namespace"
         schemaLocation="http://www.w3.org/2005/08/xml.xsd"/>
+
+    <xs:annotation>
+        <xs:appinfo>
+            <xsl:key name="enums" match="item" use="."/>
+        </xs:appinfo>
+    </xs:annotation>
 
     <!-- root element -->
     <xs:element name="ComponentSpec">
@@ -439,7 +445,7 @@
                 <sch:pattern id="item">
                     <sch:title>CMD enumeration item</sch:title>
                     <sch:rule context="item">
-                        <sch:assert test="empty(preceding-sibling::item[.=current()])">All items in an enumeration should be different. Found multiple items with value '<sch:value-of select="."/>'!</sch:assert>
+                        <sch:assert test="count(key('enums',current(),current()/parent::enumeration)) eq 1">All items in an enumeration should be different. Found multiple items with value '<sch:value-of select="."/>'!</sch:assert>
                     </sch:rule>
                 </sch:pattern>
             </xs:appinfo>

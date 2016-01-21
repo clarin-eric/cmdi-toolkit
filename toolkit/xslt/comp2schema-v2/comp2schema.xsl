@@ -265,7 +265,7 @@
     </xsl:template>
 
     <!-- Medium complexity: attributes (or Multilingual field) but no valuescheme, can be arranged inline -->
-    <xsl:template match="CMD_Element[./AttributeList or ./@Multilingual]" priority="2">
+    <xsl:template match="CMD_Element[./AttributeList or ./@Multilingual='true']" priority="2">
         <xs:element name="{@name}">
 
             <xsl:apply-templates select="@Multilingual"/>

@@ -196,10 +196,13 @@ public class TestCMDToolkit {
     
     @Test
     public void testAdelheid() throws Exception {
+        System.out.println("* BEGIN: Adelheid tests (valid)");
+        
         String profile = "/toolkit/Adelheid/profiles/clarin.eu:cr1:p_1311927752306.xml";
         String record  = "/toolkit/Adelheid/records/Adelheid.cmdi";
 
         // upgrade the profile from 1.1 to 1.2
+        System.out.println("- upgrade profile from 1.1 to 1.2");
         Document upgradedProfile = upgradeCMDSpec(profile);
 
         // validate the 1.2 profile
@@ -216,6 +219,7 @@ public class TestCMDToolkit {
         SchemAnon profileAnon = new SchemAnon(new DOMSource(profileSchema));
 
         // upgrade the record from 1.1 to 1.2
+        System.out.println("- upgrade record from 1.1 to 1.2");
         Document upgradedRecord = upgradeCMDRecord(record,upgradedProfile);
 
         // validate the 1.2 record
@@ -228,6 +232,7 @@ public class TestCMDToolkit {
         assertEquals(0, countErrors(profileAnon));
         
         // downgrade the 1.2 profile to 1.1
+        System.out.println("- downgrade profile from 1.2 to 1.1");
         Document oldProfile = downgradeCMDSpec(profile+" (upgraded)",new DOMSource(upgradedProfile));
         
         // validate the 1.1 profile
@@ -238,10 +243,14 @@ public class TestCMDToolkit {
         assertTrue(validOldProfile);
         // so there should be no errors
         assertEquals(0, countErrors(validateCMDoldSpec));        
+
+        System.out.println("*  END : Adelheid tests");
     }
 
     @Test
     public void testAdelheid2() throws Exception {
+        System.out.println("* BEGIN: Adelheid 2 tests (invalid)");
+
         String profile = "/toolkit/Adelheid/profiles/clarin.eu:cr1:p_1311927752306_1_2.xml";
         String record  = "/toolkit/Adelheid/records/Adelheid_1_2-invalid.cmdi";
 
@@ -274,11 +283,15 @@ public class TestCMDToolkit {
         // the downgraded profile should be a valid CMDI 1.1 profile
         assertTrue(validOldProfile);
         // so there should be no errors
-        assertEquals(0, countErrors(validateCMDoldSpec));        
+        assertEquals(0, countErrors(validateCMDoldSpec));   
+        
+        System.out.println("*  END : Adelheid 2 tests");
     }
 
     @Test
     public void testSundhed() throws Exception {
+        System.out.println("* BEGIN: Sundhed tests (valid)");
+        
         String profile = "/toolkit/TEI/profiles/clarin.eu:cr1:p_1380106710826.xml";
         String record  = "/toolkit/TEI/records/sundhed_dsn.teiHeader.ref.xml";
 
@@ -322,10 +335,14 @@ public class TestCMDToolkit {
         assertTrue(validOldProfile);
         // so there should be no errors
         assertEquals(0, countErrors(validateCMDoldSpec));        
+
+        System.out.println("*  END : Sundhed tests");
     }
 
     @Test
     public void testTEI() throws Exception {
+        System.out.println("* BEGIN: TEI tests (valid)");
+
         String profile = "/toolkit/TEI/profiles/clarin.eu:cr1:p_1380106710826.xml";
         String record  = "/toolkit/TEI/records/sundhed_dsn.teiHeader.ref.xml";
 
@@ -338,20 +355,28 @@ public class TestCMDToolkit {
         // assertions
         // the @ref attributes on the elements should stay as they are
         assertTrue(xpath(upgradedRecord,"//*:author/*:name/@ref"));
+
+        System.out.println("*  END : TEI tests");
     }
 
     @Test
     public void testSuccessor() throws Exception {
+        System.out.println("* BEGIN: successor tests (valid+invalid)");
+        
         String validRecord  = "/toolkit/successor/profiles/successor-valid.xml";
         String invalidRecord  = "/toolkit/successor/profiles/successor-invalid.xml";
 
         // assertions
         assertTrue(validateCMDSpec(validRecord));
         assertFalse(validateCMDSpec(invalidRecord));
+        
+        System.out.println("*  END : successor tests");
     }
 
     @Test
     public void testOLAC() throws Exception {
+        System.out.println("* BEGIN: OLAC tests (invalid)");
+        
         String profile = "/toolkit/OLAC/profiles/OLAC-DcmiTerms.xml";
         String record  = "/toolkit/OLAC/records/org_rosettaproject-record.xml";
 
@@ -390,11 +415,15 @@ public class TestCMDToolkit {
         // the downgraded profile should be a valid CMDI 1.1 profile
         assertTrue(validOldProfile);
         // so there should be no errors
-        assertEquals(0, countErrors(validateCMDoldSpec));        
+        assertEquals(0, countErrors(validateCMDoldSpec));
+        
+        System.out.println("*  END : OLAC tests");
     }
 
     @Test
     public void testCMD() throws Exception {
+        System.out.println("* BEGIN: CMD tests (invalid)");
+        
         String profile = "/toolkit/CMD/profiles/components-invalid.xml";
 
         // validate the 1.2 profile
@@ -402,6 +431,8 @@ public class TestCMDToolkit {
 
         // assertions
         assertFalse(validProfile);
+
+        System.out.println("*  END : CMD tests");
     }
 
 

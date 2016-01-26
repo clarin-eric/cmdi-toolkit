@@ -47,6 +47,10 @@
         </CMD_Element>
     </xsl:template>
     
+    <!-- remove CDM version attributes -->
+    <xsl:template match="ComponentSpec/@CMDVersion"/>
+    <xsl:template match="ComponentSpec/@CMDOriginalVersion"/>
+    
     <!-- remove Status and friends -->
     <xsl:template match="Header/Status" priority="1"/>
     <xsl:template match="Header/StatusComment" priority="1"/>

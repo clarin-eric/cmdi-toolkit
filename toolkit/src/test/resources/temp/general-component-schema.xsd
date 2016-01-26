@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    $Revision: 6916 $ 
+    $Date: 2016-01-18 17:23:22 +0100 (Mon, 18 Jan 2016) $ 
+    
+    CMDI 1.1 General Component Schema
+
+    http://www.clarin.eu/cmdi
+-->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace"
+        schemaLocation="http://www.w3.org/2005/08/xml.xsd"/>
+    
+    <xs:annotation>
+        <xs:appinfo>
+            <xsl:key name="enums" match="item" use="."/>
+        </xs:appinfo>
+    </xs:annotation>
+
+    <!-- root element -->
+    <xs:element name="CMD_ComponentSpec">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Header">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="ID" type="xs:anyURI" minOccurs="0"/>
+                            <xs:element name="Name" type="xs:string" minOccurs="0"/>
+                            <xs:element name="Description" type="xs:string" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="CMD_Component" type="CMD_Component_type">
+                    <xs:annotation>
+                        <xs:documentation>At the root level there should always be a
+                        Component.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="isProfile" type="xs:boolean" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- recursive construction: A component can contain elements and/or other components  -->
+    <xs:group name="group">
+        <xs:annotation>
+            <xs:appinfo>
+                <sch:pattern id="c_sibs">
+                    <sch:title>Check siblings</sch:title>
+                    <sch:rule context="CMD_Component|CMD_Element">
+                        <sch:assert test="empty(preceding-sibling::*[@name=current()/@name])">Sibling components or elements should all have a different name. Found multiple components or elements named '<sch:value-of select="@name"/>'!</sch:assert>
+                    </sch:rule>
+                </sch:pattern>
+                <sch:pattern id="c_csibs">
+                    <sch:title>Check component siblings</sch:title>
+                    <sch:rule context="CMD_Component">
+                        <sch:assert test="empty(preceding-sibling::CMD_Component[@ComponentId=current()/@ComponentId])">Sibling components should all be different. Found multiple components with id '<sch:value-of select="@ComponentId"/>'!</sch:assert>
+                    </sch:rule>
+                </sch:pattern>
+                <!-- TODO: the names of referenced external components are not known, so we can't currently check two or more of them use the same name -->
+            </xs:appinfo>            
+        </xs:annotation>
+        <xs:sequence>
+            <!-- from small (attribute) to big (component) -->
+            <xs:element name="AttributeList" type="AttributeList_type" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="CMD_Element" type="CMD_Element_type" minOccurs="0"
+                maxOccurs="unbounded"> </xs:element>
+            <xs:element name="CMD_Component" type="CMD_Component_type" minOccurs="0"
+                maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:group>
+
+    <!-- type definitions -->
+    <xs:complexType name="CMD_Element_type">
+        <xs:sequence>
+            <xs:element name="AttributeList" type="AttributeList_type" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>The AttributeList child of an element contains a set of XML
+                        attributes for that element.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="0" maxOccurs="1" name="ValueScheme" type="ValueScheme_type">
+                <xs:annotation>
+                    <xs:documentation>When an element is linked to a regular expression or a
+                        controlled vocabulary, the ValueScheme sub-element contains more information
+                        about this.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+        <xs:attributeGroup ref="clarin_element_attributes"/>
+    </xs:complexType>
+
+
+    <xs:complexType name="ValueScheme_type">
+        <xs:choice>
+            <xs:element name="pattern" type="xs:string" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Specification of a regular expression the element should
+                        comply with.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="enumeration" type="enumeration_type">
+                <xs:annotation>
+                    <xs:documentation>A list of the allowed values of a controlled
+                    vocabulary.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:choice>
+    </xs:complexType>
+
+
+    <xs:complexType name="AttributeList_type">
+        <xs:sequence>
+            <xs:element name="Attribute" minOccurs="1" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <sch:pattern id="a_res">
+                            <sch:title>Check reserved attribute names</sch:title>
+                            <sch:rule context="Attribute">
+                                <sch:assert test="not(exists(parent::AttributeList/parent::CMD_Component) and Name=('ref','ComponentId'))">Component attribute name shouldn't be 'ref' or 'ComponentId', as these are used internally by CMD!</sch:assert>
+                            </sch:rule>
+                        </sch:pattern>
+                        <sch:pattern id="a_sibs">
+                            <sch:title>Check attribute siblings</sch:title>
+                            <sch:rule context="Attribute">
+                                <sch:assert test="empty(preceding-sibling::Attribute[Name=current()/Name])">All attributes in an attribute list should have a different name. Found multiple attributes named '<sch:value-of select="Name"/>'!</sch:assert>
+                            </sch:rule>
+                        </sch:pattern>
+                    </xs:appinfo>            
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Name" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>The name of the attribute.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ConceptLink" type="xs:anyURI" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>A link to the ISOcat data category registry (or any other concept registry).</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:choice>
+                            <xs:element name="Type" type="allowed_attributetypes_type">
+                                <xs:annotation>
+                                    <xs:documentation>For the use of simple XML types as the type of
+                                        the attribute.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="ValueScheme" type="ValueScheme_type">
+                                <xs:annotation>
+                                    <xs:documentation>For the use of a regular expression or a
+                                        controlled vocabulary as the type of the
+                                    attribute.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                        </xs:choice>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="CMD_Component_type">
+        <xs:group ref="group" minOccurs="0"/>
+        <xs:attributeGroup ref="clarin_component_attributes"/>
+    </xs:complexType>
+
+
+    <!-- list of all attributes that can be bound to a cl_el -->
+    <xs:attributeGroup name="clarin_element_attributes">
+        <xs:attribute name="name" type="xs:Name" use="required">
+            <xs:annotation>
+                <xs:documentation>The name of the element.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="ConceptLink" type="xs:anyURI">
+            <xs:annotation>
+                <xs:documentation>A link to the ISOcat data category registry (or any other concept
+                    registry).</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="ValueScheme" type="allowed_attributetypes_type">
+            <xs:annotation>
+                <xs:documentation>Used to specify that an element has a simple XML type (string,
+                    integer, etc)</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="CardinalityMin" type="cardinality_type">
+            <xs:annotation>
+                <xs:documentation>Minimal number of occurrences.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="CardinalityMax" type="cardinality_type">
+            <xs:annotation>
+                <xs:documentation>Maximal number of occurrences.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="Documentation" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>Some information an application (eg Arbil) can display to give
+                    guidance to the user when entering metadata.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="DisplayPriority" type="xs:integer">
+            <xs:annotation>
+                <xs:documentation>The element with the highest priority will be displayed as the
+                    label for a metadata file (eg in Arbil)</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="Multilingual" type="xs:boolean">
+            <xs:annotation>
+                <xs:documentation>Indicates that this element can have values in multiple languages
+                    (and thus is repeatable). This will result in the possibility of using the
+                    xml:lang attribute in the metadata instances that are
+                created.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:attributeGroup>
+
+    <!-- list of all attributes that can be bound to a cl_comp -->
+    <xs:attributeGroup name="clarin_component_attributes">
+        <xs:attribute name="name" type="xs:Name"/>
+        <xs:attribute name="ComponentId" type="xs:anyURI">
+            <xs:annotation>
+                <xs:documentation>Indicates that a component (using its unique ComponentId issued by
+                    the ComponentRegistry) should be included.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="ConceptLink" type="xs:anyURI">
+            <xs:annotation>
+                <xs:documentation>A link to the ISOcat data category registry (or any other concept
+                    registry). Currently not used.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="filename" type="xs:anyURI">
+            <xs:annotation>
+                <xs:documentation>Outdated way of including an external component. Here for backward
+                    compatibility with the XML-cmdi-toolkit.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+
+        <!-- (components cannot have a ValueScheme attribute) -->
+
+        <xs:attribute name="CardinalityMin" type="cardinality_type"/>
+        <xs:attribute name="CardinalityMax" type="cardinality_type"/>
+        <xs:attribute ref="xml:base"/>
+    </xs:attributeGroup>
+
+
+    <xs:simpleType name="cardinality_type">
+        <xs:annotation>
+            <xs:documentation>cardinality for elements and components</xs:documentation>
+            <xs:appinfo>
+                <sch:pattern id="c_card">
+                    <sch:title>Check cardinalities</sch:title>
+                    <!--
+                        case minimum   maximum   check
+                        1    UNK       UNK       OK
+                        2    UNK       number    maximum ne 0
+                        3    UNK       unbounded OK
+                        4    number    UNK       minimum le 1
+                        5    number    number    minimum le maximum
+                        6    number    unbounded OK
+                        7    unbounded UNK       NOK
+                        8    unbounded number    NOK
+                        9    unbounded unbounded OK
+                        
+                        UNK can be either a missing attribute or an empty value, both can be detected with normalize-space(@...)=''
+                        
+                        default CardinalityMin is 1 (based on the XSD minOccurs default value)
+                        default CardinalityMax is 1 (based on the XSD maxOccurs default value)
+                        
+                        If a basic XSLT 2.0 engine, like Saxon HE, is used for Schematron validation we can't cast to xs:nonNegativeInteger.
+                        So we cast to xs:integer. The XSD validator should have already validated that the values are valid cardinality_types.
+                    -->
+                    <!-- skip case 1 -->
+                    <!-- case 2 -->
+                    <sch:rule context="*[(normalize-space(@CardinalityMin)='')][@CardinalityMax castable as xs:integer]">
+                        <sch:assert test="xs:integer(@CardinalityMax) ne 0">Maximum cardinality (0) cannot be lower than the default minimum cardinality (1)!</sch:assert>
+                    </sch:rule>
+                    <!-- skip case 3 -->
+                    <!-- case 4 -->
+                    <sch:rule context="*[@CardinalityMin castable as xs:integer][normalize-space(@CardinalityMax)='']">
+                        <sch:assert test="xs:integer(@CardinalityMin) le 1">Minimum cardinality (<sch:value-of select="@CardinalityMin"/>) should be lower or equal then the default maximum cardinality (1)!</sch:assert>
+                    </sch:rule>
+                    <!-- case 5 -->
+                    <sch:rule context="*[@CardinalityMin castable as xs:integer][@CardinalityMax castable as xs:integer]">
+                        <sch:assert test="xs:integer(@CardinalityMin) le xs:integer(@CardinalityMax)">Minimum cardinality (<sch:value-of select="@CardinalityMin"/>) should be lower or equal then the maximum cardinality (<sch:value-of select="@CardinalityMax"/>)!</sch:assert>
+                    </sch:rule>
+                    <!-- skip case 6 -->
+                    <!-- case 7, 8 and 9 -->
+                    <sch:rule context="*[@CardinalityMin='unbounded']">
+                        <!-- case 7 and 8 -->
+                        <sch:assert test="@CardinalityMax='unbounded'">Minimum cardinality (unbounded) can't be higher than the (default) maximum cardinality (<sch:value-of select="if (normalize-space(@CardinalityMax)='') then ('1') else (@CardinalityMax)"/>)!</sch:assert>
+                        <!-- skip case 9 -->
+                    </sch:rule>
+                </sch:pattern>
+            </xs:appinfo>
+        </xs:annotation>
+        <xs:union>
+            <xs:simpleType>
+                <xs:list itemType="xs:nonNegativeInteger"/>
+            </xs:simpleType>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="unbounded"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:union>
+    </xs:simpleType>
+
+    <xs:simpleType name="allowed_attributetypes_type">
+        <xs:annotation>
+            <xs:documentation>Subset of XSD types that are allowed as CMD type</xs:documentation>
+        </xs:annotation>
+
+        <xs:restriction base="xs:token">
+            <xs:enumeration value="boolean"/>
+            <xs:enumeration value="decimal"/>
+            <xs:enumeration value="float"/>
+            <xs:enumeration value="int"/>
+            <xs:enumeration value="string"/>
+            <xs:enumeration value="anyURI"/>
+            <xs:enumeration value="date"/>
+            <xs:enumeration value="gDay"/>
+            <xs:enumeration value="gMonth"/>
+            <xs:enumeration value="gYear"/>
+            <xs:enumeration value="time"/>
+            <xs:enumeration value="dateTime"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="enumeration_type">
+        <xs:annotation>
+            <xs:documentation>controlled vocabularies</xs:documentation>
+        </xs:annotation>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="item" type="item_type">
+                <xs:annotation>
+                    <xs:documentation>An item from a controlled vocabulary.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="appinfo" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>End-user guidance about the value of the controlled vocabulary
+                        as a whole. Currently not used.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:choice>
+    </xs:complexType>
+
+    <xs:complexType name="item_type">
+        <xs:annotation>
+            <xs:appinfo>
+                <sch:pattern id="item">
+                    <sch:title>CMD enumeration item</sch:title>
+                    <sch:rule context="item">
+                        <sch:assert test="count(key('enums',current(),current()/parent::enumeration)) eq 1">All items in an enumeration should be different. Found multiple items with value '<sch:value-of select="."/>'!</sch:assert>
+                    </sch:rule>
+                </sch:pattern>
+            </xs:appinfo>            
+        </xs:annotation>
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:anyURI" name="ConceptLink">
+                    <xs:annotation>
+                        <xs:documentation>A link to the ISOcat data category registry (or any other
+                            concept registry) related to this controllec vocabulary
+                        item.</xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+                <xs:attribute type="xs:string" name="AppInfo">
+                    <xs:annotation>
+                        <xs:documentation>End-user guidance about the value of this controlled
+                            vocabulary item.</xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+</xs:schema>

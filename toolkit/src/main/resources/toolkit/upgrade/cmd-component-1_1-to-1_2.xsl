@@ -30,7 +30,7 @@
 
     <!-- get rid of CMD_ prefix -->
     <xsl:template match="CMD_ComponentSpec" priority="1">
-        <ComponentSpec>
+        <ComponentSpec CMDVersion="1.2" CMDOriginalVersion="1.1">
             <xsl:apply-templates select="@*|node()"/>
         </ComponentSpec>
     </xsl:template>

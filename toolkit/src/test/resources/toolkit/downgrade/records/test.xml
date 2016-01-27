@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<CMD xmlns="http://www.clarin.eu/cmd/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_12345/xsd" CMDVersion="1.1">
+    <Header>
+        <MdCreator>John Doe</MdCreator>
+        <MdCreationDate>2012-04-17</MdCreationDate>
+        <MdSelfLink>test.cmdi</MdSelfLink>
+        <MdProfile>clarin.eu:cr1:p_12345</MdProfile>
+    </Header>
+    <Resources>
+        <ResourceProxyList>
+        </ResourceProxyList>
+        <JournalFileProxyList/>
+        <ResourceRelationList/>
+    </Resources>
+    <Components>
+        <Test>
+            <test>hello world</test>
+        </Test>
+    </Components>
+</CMD>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ComponentSpec CMDVersion="1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:cue="http://www.clarin.eu/cmdi/cues/1" isProfile="true"
+    xsi:noNamespaceSchemaLocation="../../../../../main/resources/toolkit/xsd/cmd-component.xsd">
+    <Header>
+        <ID>clarin.eu:cr1:p_12345</ID>
+        <Name>Test</Name>
+        <Description>Testje</Description>
+        <Status>development</Status>
+    </Header>
+    <Component CardinalityMax="1" CardinalityMin="1" name="Test">
+        <Element Multilingual="false" cue:DisplayPriority="1" CardinalityMax="unbounded"
+            CardinalityMin="0" ValueScheme="string"
+            ConceptLink="" name="test">
+            <AttributeList>
+                <Attribute name="test" Required="true" ValueScheme="string"/>
+            </AttributeList>
+        </Element>
+    </Component>
+</ComponentSpec>

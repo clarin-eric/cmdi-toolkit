@@ -515,6 +515,8 @@ public class TestCMDToolkit {
         // assertions
         // the upgraded 1.1 record should be invalid against the original 1.2 profile
         assertFalse(validRecord);
+         // the upgraded 1.1 record should refer to 1.2/1.1/1.2 profile XSD
+        assertTrue(xpath(upgradedRecord,"ends-with(/*:CMD/@*:schemaLocation,'-1-1-1_2.xsd')"));
         
         // upgrade the 1.1 profile to 1.2
         Document oldNewProfile = upgradeCMDSpec(profile+" (downgraded)",new DOMSource(oldProfile));

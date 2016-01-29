@@ -149,6 +149,10 @@ public class TestCMDToolkit {
         System.out.println("Upgrade CMD spec["+rec+"]");
         Map<String,XdmValue> params = new HashMap<String,XdmValue>();
         params.put("cmd-profile", prof);
+        params.put("cr-uri", new XdmAtomicValue(".."));
+        params.put("cr-extension-xsd", new XdmAtomicValue("-1_2.xsd"));
+        params.put("cr-roundtrip-extension-xsd", new XdmAtomicValue("-1-1-1_2.xsd"));
+        params.put("cr-extension-xml", new XdmAtomicValue("-1.2.xml"));
         return transform(upgradeCMDRec,new javax.xml.transform.stream.StreamSource(new java.io.File(TestCMDToolkit.class.getResource(rec).toURI())),params);
     }
 

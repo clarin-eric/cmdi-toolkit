@@ -11,10 +11,12 @@
     <xsl:param name="cmd-envelop-xsd" select="concat($cmd-toolkit,'/xsd/cmd-envelop.xsd')"/>
     <xsl:param name="cmd-uri" select="'http://www.clarin.eu/cmd/1'"/>
     <xsl:param name="cmd-profile" select="()"/>
-    <xsl:param name="cr-uri" select="'..'"/>
-    <xsl:param name="cr-extension-xsd" select="'-1_2.xsd'"/>
-    <xsl:param name="cr-roundtrip-extension-xsd" select="'-1-1-1_2.xsd'"/>
-    <xsl:param name="cr-extension-xml" select="'-1.2.xml'"/>
+    <xsl:param name="cr-uri" select="'https://catalog.clarin.eu/ds/ComponentRegistry/rest/registry'"/>
+    <!--<xsl:param name="cr-extension-xsd" select="'/1.2/xsd'"/>-->
+    <xsl:param name="cr-extension-xsd" select="'/xsd'"/>
+    <xsl:param name="cr-roundtrip-extension-xsd" select="'/1.1/1.2/xsd'"/>
+    <!--<xsl:param name="cr-extension-xml" select="'/1.2/xml'"/>-->
+    <xsl:param name="cr-extension-xml" select="'/xml'"/>
     
     <xsl:param name="escape" select="'ccmmddii_'"/>
     
@@ -62,7 +64,7 @@
     <xsl:variable name="cmd-profile-uri" select="concat($cmd-profiles,'/',$profile)"/>
     <xsl:variable name="cr-profile-xml" select="concat($cr-profiles,'/',$profile,$cr-extension-xml)"/>
     <xsl:variable name="cr-profile-xsd">
-        <xsl:variable name="prof" select="if (exists($cmd-profile)) then ($cmd-profile) else (doc(resolve-uri($cr-profile-xml,base-uri())))"/>
+        <xsl:variable name="prof" select="if (exists($cmd-profile)) then ($cmd-profile) else (doc($cr-profile-xml))"/>
         <xsl:choose>
             <!-- '' means there was no @CMDOriginalVersion, so the original version is 1.2 (the default) -->
             <xsl:when test="$prof/ComponentSpec/normalize-space(@CMDOriginalVersion)=('','1.2')">
@@ -188,7 +190,7 @@
             <xsl:otherwise>
                 <!-- don't know if the parent is a component without children, or an element without value
                      have a look at the profile -->
-                <xsl:variable name="prof" select="if (exists($cmd-profile)) then ($cmd-profile) else (doc(resolve-uri($cr-profile-xml,base-uri())))"/>
+                <xsl:variable name="prof" select="if (exists($cmd-profile)) then ($cmd-profile) else (doc($cr-profile-xml))"/>
                 <xsl:variable name="path" select="ancestor::*[. >> /cmd0:CMD/cmd0:Components]"/>
                 <xsl:variable name="attr" select="$prof//Attribute[@name='ref' or Name='ref'][string-join(ancestor::*[local-name()=('Component','CMD_Component','Element','CMD_Element')]/@name,'/')=string-join($path/local-name(),'/')]"/>
                 <xsl:choose>

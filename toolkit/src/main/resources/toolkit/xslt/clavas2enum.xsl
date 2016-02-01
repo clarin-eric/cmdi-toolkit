@@ -9,11 +9,12 @@
     exclude-result-prefixes="xs rdf dc dcterms skos openskos">
 
     <xsl:param name="clavas-uri" select="'https://openskos.meertens.knaw.nl/clavas'"/>
-    <xsl:param name="clavas-limit" select="'10'"/>
+    <xsl:param name="clavas-limit" select="'100000'"/>
     <xsl:param name="clavas-prop" select="'skos:prefLabel'"/>
     <xsl:param name="clavas-lang" select="'en'"/>
     
-    <xsl:template match="Vocabulary[normalize-space(@URI)!='']">
+    <!-- <Vocabulary URI="..."><enumeration/></Vocabulary> pattern is seen as the hint for a closed vocabulary -->
+    <xsl:template match="Vocabulary[normalize-space(@URI)!=''][exists(enumeration)]">
         <xsl:variable name="vocab-uri" select="@URI"/>
         <xsl:variable name="vocab-prop" select="if (normalize-space(@ValueProperty)!='') then (normalize-space(@ValueProperty)) else ($clavas-prop)"/>
         <xsl:variable name="vocab-lang" select="if (normalize-space(@ValueLanguage)!='') then (normalize-space(@ValueLanguage)) else ($clavas-lang)"/>

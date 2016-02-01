@@ -4,10 +4,10 @@ This toolkit contains the schemata, stylesheets and scripts that form the
 basis of CMDI 1.2.
 
 Please be aware of the following:
-* Development of the CMDI tookit should happen in ^/metadata/trunk/toolkit
-* Changes ready for production should be merged from ^/metadata/trunk 
-  to ^/metadata/branches/cmdi-1.2
-* Eventually, the sources in the branch will be made available for use in
-  production environments.
+* Development of the CMDI tookit should happen in master
+* Changes ready for production should be merged from master
+  to cmdi-1.2 branch
+* Eventually, the sources in the branch will be made available on
+  http://www.clarin.eu/cmd for use in production environments.
 
 For more information, see <http://www.clarin.eu/cmdi>.

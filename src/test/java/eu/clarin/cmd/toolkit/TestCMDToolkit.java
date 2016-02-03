@@ -102,13 +102,25 @@ public class TestCMDToolkit {
         return transform(trans,src,null);
     }
 
+    protected boolean xPathCompiler(Document doc, String xpath, String profileId) throws Exception {
+      XPathCompiler xpc   = SaxonUtils.getProcessor().newXPathCompiler();
+
+      xpc.declareNamespace("cmd","http://www.clarin.eu/cmd/1");
+      if(profileId != null) xpc.declareNamespace("cmdp", "http://www.clarin.eu/cmd/1/profiles/" + profileId);
+
+      XPathExecutable xpe = xpc.compile(xpath);
+      XPathSelector xps   = xpe.load();
+      xps.setContextItem(SaxonUtils.getProcessor().newDocumentBuilder().wrap(doc));
+
+      return xps.effectiveBooleanValue();
+    }
+
+    protected boolean xpath(Document doc, String xpath, String profileId) throws Exception {
+      return xPathCompiler(doc, xpath, profileId);
+    }
+
     protected boolean xpath(Document doc,String xpath) throws Exception {
-        XPathCompiler xpc   = SaxonUtils.getProcessor().newXPathCompiler();
-        xpc.declareNamespace("cmd","http://www.clarin.eu/cmd/1");
-        XPathExecutable xpe = xpc.compile(xpath);
-        XPathSelector xps   = xpe.load();
-        xps.setContextItem(SaxonUtils.getProcessor().newDocumentBuilder().wrap(doc));
-        return xps.effectiveBooleanValue();
+      return xPathCompiler(doc, xpath, null);
     }
 
     protected void printMessages(SchemAnon anon) throws Exception {
@@ -200,7 +212,7 @@ public class TestCMDToolkit {
     protected boolean validateCMDEnvelop(String rec) throws Exception {
         return validateCMDEnvelop(rec,new StreamSource(new java.io.File(TestCMDToolkit.class.getResource(rec).toURI())));
     }
-    
+
     protected boolean validateCMDoldSpec(String spec,Source src) throws Exception {
         System.out.println("Validate CMD 1.1 spec["+spec+"]");
         boolean res = validateCMDoldSpec.validate(src);
@@ -229,7 +241,7 @@ public class TestCMDToolkit {
     @Test
     public void testAdelheid() throws Exception {
         System.out.println("* BEGIN: Adelheid tests (valid)");
-        
+
         String profile = "/toolkit/Adelheid/profiles/clarin.eu:cr1:p_1311927752306.xml";
         String record  = "/toolkit/Adelheid/records/Adelheid.cmdi";
 
@@ -262,11 +274,11 @@ public class TestCMDToolkit {
         assertTrue(validRecord);
         // so there should be no errors
         assertEquals(0, countErrors(profileAnon));
-        
+
         // downgrade the 1.2 profile to 1.1
         System.out.println("- downgrade profile from 1.2 to 1.1");
         Document oldProfile = downgradeCMDSpec(profile+" (upgraded)",new DOMSource(upgradedProfile));
-        
+
         // validate the 1.1 profile
         boolean validOldProfile = validateCMDoldSpec(profile+" (downgraded)",new DOMSource(oldProfile));
 
@@ -274,7 +286,7 @@ public class TestCMDToolkit {
         // the downgraded profile should be a valid CMDI 1.1 profile
         assertTrue(validOldProfile);
         // so there should be no errors
-        assertEquals(0, countErrors(validateCMDoldSpec));        
+        assertEquals(0, countErrors(validateCMDoldSpec));
 
         System.out.println("*  END : Adelheid tests");
     }
@@ -307,7 +319,7 @@ public class TestCMDToolkit {
 
         // downgrade the 1.2 profile to 1.1
         Document oldProfile = downgradeCMDSpec(profile);
-        
+
         // validate the 1.1 profile
         boolean validOldProfile = validateCMDoldSpec(profile+" (downgraded)",new DOMSource(oldProfile));
 
@@ -315,15 +327,15 @@ public class TestCMDToolkit {
         // the downgraded profile should be a valid CMDI 1.1 profile
         assertTrue(validOldProfile);
         // so there should be no errors
-        assertEquals(0, countErrors(validateCMDoldSpec));   
-        
+        assertEquals(0, countErrors(validateCMDoldSpec));
+
         System.out.println("*  END : Adelheid 2 tests");
     }
 
     @Test
     public void testSundhed() throws Exception {
         System.out.println("* BEGIN: Sundhed tests (valid)");
-        
+
         String profile = "/toolkit/TEI/profiles/clarin.eu:cr1:p_1380106710826.xml";
         String record  = "/toolkit/TEI/records/sundhed_dsn.teiHeader.ref.xml";
 
@@ -355,10 +367,10 @@ public class TestCMDToolkit {
 
         // so there should be no errors
         assertEquals(0, countErrors(profileAnon));
-        
+
         // downgrade the 1.2 profile to 1.1
         Document oldProfile = downgradeCMDSpec(profile+" (upgraded)",new DOMSource(upgradedProfile));
-        
+
         // validate the 1.1 profile
         boolean validOldProfile = validateCMDoldSpec(profile+" (downgraded)",new DOMSource(oldProfile));
 
@@ -366,7 +378,7 @@ public class TestCMDToolkit {
         // the downgraded profile should be a valid CMDI 1.1 profile
         assertTrue(validOldProfile);
         // so there should be no errors
-        assertEquals(0, countErrors(validateCMDoldSpec));        
+        assertEquals(0, countErrors(validateCMDoldSpec));
 
         System.out.println("*  END : Sundhed tests");
     }
@@ -394,21 +406,21 @@ public class TestCMDToolkit {
     @Test
     public void testSuccessor() throws Exception {
         System.out.println("* BEGIN: successor tests (valid+invalid)");
-        
+
         String validRecord  = "/toolkit/successor/profiles/successor-valid.xml";
         String invalidRecord  = "/toolkit/successor/profiles/successor-invalid.xml";
 
         // assertions
         assertTrue(validateCMDSpec(validRecord));
         assertFalse(validateCMDSpec(invalidRecord));
-        
+
         System.out.println("*  END : successor tests");
     }
 
     @Test
     public void testOLAC() throws Exception {
         System.out.println("* BEGIN: OLAC tests (invalid)");
-        
+
         String profile = "/toolkit/OLAC/profiles/OLAC-DcmiTerms.xml";
         String record  = "/toolkit/OLAC/records/org_rosettaproject-record.xml";
 
@@ -423,7 +435,7 @@ public class TestCMDToolkit {
         assertTrue(validProfile);
         // so there should be no errors
         assertEquals(0, countErrors(validateCMDSpec));
-        
+
         // transform the 1.2 profile into a XSD
         Document profileSchema = transformCMDSpecInXSD(profile+" (upgraded)",new DOMSource(upgradedProfile));
         SchemAnon profileAnon = new SchemAnon(new DOMSource(profileSchema));
@@ -439,7 +451,7 @@ public class TestCMDToolkit {
 
         // downgrade the 1.2 profile to 1.1
         Document oldProfile = downgradeCMDSpec(profile+" (upgraded)",new DOMSource(upgradedProfile));
-        
+
         // validate the 1.1 profile
         boolean validOldProfile = validateCMDoldSpec(profile+" (downgraded)",new DOMSource(oldProfile));
 
@@ -448,14 +460,14 @@ public class TestCMDToolkit {
         assertTrue(validOldProfile);
         // so there should be no errors
         assertEquals(0, countErrors(validateCMDoldSpec));
-        
+
         System.out.println("*  END : OLAC tests");
     }
 
     @Test
     public void testCMD() throws Exception {
         System.out.println("* BEGIN: CMD tests (invalid)");
-        
+
         String profile = "/toolkit/CMD/profiles/components-invalid.xml";
 
         // validate the 1.2 profile
@@ -466,49 +478,49 @@ public class TestCMDToolkit {
 
         System.out.println("*  END : CMD tests");
     }
-    
+
     @Test
     public void testDownUpgrade() throws Exception {
         System.out.println("* BEGIN: downgrade/upgrade tests");
-        
+
         String profile = "/toolkit/downgrade/profiles/test.xml";
         String record  = "/toolkit/downgrade/records/test.xml";
-        
+
         // validate the 1.2 profile
         boolean validProfile = validateCMDSpec(profile);
-        
+
         // assertions
         // the profile should be a valid CMDI 1.2 profile
         assertTrue(validProfile);
         // so there should be no errors
         assertEquals(0, countErrors(validateCMDSpec));
-        
+
         // downgrade the 1.2 profile to 1.1
         Document oldProfile = downgradeCMDSpec(profile);
-        
+
         // validate the 1.1 profile
         boolean validOldProfile = validateCMDoldSpec(profile+" (downgraded)",new DOMSource(oldProfile));
-        
+
         // assertions
         // the downgraded profile should be a valid CMDI 1.1 profile
         assertTrue(validOldProfile);
         // so there should be no errors
         assertEquals(0, countErrors(validateCMDoldSpec));
-        
+
         // transform the 1.1 profile into a XSD
         Document profileSchema = transformCMDoldSpecInXSD(profile+" (downgraded)",new DOMSource(oldProfile));
         SchemAnon profileAnon = new SchemAnon(new DOMSource(profileSchema));
-        
+
         // validate the 1.1 record
         boolean validRecord = validateOldCMDRecord(profile+" (downgraded)",profileAnon,record,new javax.xml.transform.stream.StreamSource(new java.io.File(TestCMDToolkit.class.getResource(record).toURI())));
 
         // assertions
         // the record should be valid against the downgraded profile
         assertTrue(validRecord);
-        
+
         // upgrade the 1.1 record to 1.2
         Document upgradedRecord = upgradeCMDRecord(record,SaxonUtils.buildDocument(new javax.xml.transform.stream.StreamSource(new java.io.File(TestCMDToolkit.class.getResource(profile).toURI()))));
-        
+
         // transform the 1.2 profile into a XSD
         profileSchema = transformCMDSpecInXSD(profile);
         profileAnon = new SchemAnon(new DOMSource(profileSchema));
@@ -521,16 +533,16 @@ public class TestCMDToolkit {
         assertFalse(validRecord);
          // the upgraded 1.1 record should refer to 1.2/1.1/1.2 profile XSD
         assertTrue(xpath(upgradedRecord,"ends-with(/*:CMD/@*:schemaLocation,'-1-1-1_2.xsd')"));
-        
+
         // upgrade the 1.1 profile to 1.2
         Document oldNewProfile = upgradeCMDSpec(profile+" (downgraded)",new DOMSource(oldProfile));
-        
+
         // validate the 1.2 profile
         validProfile = validateCMDSpec(profile+" (downgraded/upgraded)",new DOMSource(oldNewProfile));
 
         // assertions
         assertTrue(validProfile);
-        
+
         // transform the 1.2 profile into a XSD
         profileSchema = transformCMDSpecInXSD(profile+" (downgraded/upgraded)",new DOMSource(oldNewProfile));
         profileAnon = new SchemAnon(new DOMSource(profileSchema));
@@ -545,5 +557,38 @@ public class TestCMDToolkit {
         System.out.println("*  END : downgrade/upgrade tests");
     }
 
+    @Test
+    public void testAttributes() throws Exception {
+      System.out.println("* BEGIN: CMD Attribute tests");
 
+      String profile = "/toolkit/attributes/profiles/mand_attrs_profile.xml";
+      String valid_record  = "/toolkit/attributes/records/mand_attrs_valid.xml";
+      String missing_attr_record = "/toolkit/attributes/records/mand_attrs_missing.xml";
+      String invalid_val_record = "/toolkit/attributes/records/mand_attrs_invalid_value.xml";
+
+      // assertions
+      // the profile should be a valid CMDI 1.2 profile
+      assertTrue(validateCMDSpec(profile, new javax.xml.transform.stream.StreamSource(new java.io.File(TestCMDToolkit.class.getResource(profile).toURI()))));
+
+      Document profileSchema = transformCMDSpecInXSD(profile + " (valid attrs)", new javax.xml.transform.stream.StreamSource(new java.io.File(TestCMDToolkit.class.getResource(profile).toURI())));
+      SchemAnon profileAnon = new SchemAnon(new DOMSource(profileSchema));
+
+      // validate the 1.2 record for mandatory attrs feature
+      boolean validRecordTest = validateCMDRecord(profile + " (valid attrs)", profileAnon, valid_record, new javax.xml.transform.stream.StreamSource(new java.io.File(TestCMDToolkit.class.getResource(valid_record).toURI())));
+      boolean missingAttrRecordTest = !validateCMDRecord(profile + " (invalid attrs)", profileAnon, missing_attr_record, new javax.xml.transform.stream.StreamSource(new java.io.File(TestCMDToolkit.class.getResource(missing_attr_record).toURI())));
+      boolean invalidValRecordTest = !validateCMDRecord(profile + " (invalid attr enum value)", profileAnon, invalid_val_record, new javax.xml.transform.stream.StreamSource(new java.io.File(TestCMDToolkit.class.getResource(invalid_val_record).toURI())));
+
+      // assertions
+      assertTrue(
+        xpath(SaxonUtils.buildDOM(new java.io.File(TestCMDToolkit.class.getResource(valid_record).toURI())),
+              "//cmd:Components/cmdp:ToolService/@CoreVersion",
+              "clarin.eu:cr1:p_1311927752306")
+      );
+
+      assertTrue(validRecordTest);
+      assertTrue(missingAttrRecordTest);
+      assertTrue(invalidValRecordTest);
+
+      System.out.println("*  END : CMD Attribute tests");
+    }
 }

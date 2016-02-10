@@ -13,6 +13,12 @@
     <xsl:param name="clavas-prop" select="'skos:prefLabel'"/>
     <xsl:param name="clavas-lang" select="'en'"/>
     
+    <xsl:template match="node() | @*">
+        <xsl:copy>
+            <xsl:apply-templates select="node() | @*"/>
+        </xsl:copy>
+    </xsl:template>
+    
     <!-- <Vocabulary URI="..."><enumeration/></Vocabulary> pattern is seen as the hint for a closed vocabulary -->
     <xsl:template match="Vocabulary[normalize-space(@URI)!=''][exists(enumeration)]">
         <xsl:variable name="vocab-uri" select="@URI"/>

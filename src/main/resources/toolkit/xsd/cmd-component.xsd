@@ -44,7 +44,7 @@
                 <xs:element name="Header">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="ID" type="xs:anyURI" minOccurs="0" maxOccurs="1"/>
+                            <xs:element name="ID" type="xs:anyURI" minOccurs="1" maxOccurs="1"/>
                             <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1"/>
                             <xs:element name="Description" type="xs:string" minOccurs="0" maxOccurs="1"/>
                             <!-- status information -->
@@ -85,6 +85,12 @@
     <xs:group name="group">
         <xs:annotation>
             <xs:appinfo>
+                <sch:pattern id="c_empty">
+                    <sch:title>Check for empty components</sch:title>
+                    <sch:rule context="Component[exists(parent::ComponentSpec) or empty(@ComponentId)]" role="warning">
+                        <sch:assert test="exists(Component) or exists(Element)">Component[<sch:value-of select="@name"/>] is empty, i.e., contains no other component or element!</sch:assert>
+                    </sch:rule>
+                </sch:pattern>
                 <sch:pattern id="c_sibs">
                     <sch:title>Check siblings</sch:title>
                     <sch:rule context="Component|Element">
@@ -266,7 +272,7 @@
                     registry).</xs:documentation>
             </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="ValueScheme" type="allowed_attributetypes_type" use="optional">
+        <xs:attribute name="ValueScheme" type="allowed_attributetypes_type" use="optional" default="string">
             <xs:annotation>
                 <xs:documentation>For the use of simple XML types as the type of
                     the attribute.</xs:documentation>
@@ -292,7 +298,7 @@
                     registry).</xs:documentation>
             </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="ValueScheme" type="allowed_attributetypes_type" use="optional">
+        <xs:attribute name="ValueScheme" type="allowed_attributetypes_type" use="optional" default="string">
             <xs:annotation>
                 <xs:documentation>Used to specify that an element has a simple XML type (string,
                     integer, etc)</xs:documentation>

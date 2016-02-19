@@ -226,7 +226,7 @@
         </xs:element>
     </xsl:template>
 
-    <!-- Medium complexity: attributes (or Multilingual field) but no valuescheme, can be arranged inline -->
+    <!-- Medium complexity: attributes (or Multilingual field) but no ValueScheme, can be arranged inline -->
     <xsl:template match="Element[./AttributeList or ./@Multilingual='true']" priority="2">
         <xs:element name="{@name}">
 
@@ -244,7 +244,7 @@
             
             <xs:complexType>
                 <xs:simpleContent>
-                    <xs:extension base="{concat('xs:',@ValueScheme)}">
+                    <xs:extension base="{concat('xs:',(@ValueScheme,'string')[1])}">
                         <xsl:apply-templates select="./AttributeList/Attribute"/>
                         <xsl:if test="./@Multilingual='true'">
                             <xs:attribute ref="xml:lang"/>
@@ -259,7 +259,7 @@
         </xs:element>
     </xsl:template>
 
-    <!-- Simple case: no attributes and no value scheme, 1-to-1 transform to an xs:element, just rename element and attributes -->
+    <!-- Simple case: no attributes and no ValueScheme, 1-to-1 transform to an xs:element, just rename element and attributes -->
     <xsl:template match="Element" priority="1">
         <xsl:element name="xs:element">
 
@@ -268,7 +268,9 @@
             <xsl:apply-templates select="@ConceptLink"/>
             <xsl:apply-templates select="@CardinalityMin"/>
             <xsl:apply-templates select="@CardinalityMax"/>
-            <xsl:apply-templates select="@ValueScheme"/>
+            <xsl:attribute name="type">
+                <xsl:value-of select="concat('xs:',(@ValueScheme,'string')[1])"/>
+            </xsl:attribute>
             
             <!-- process all autovalue and cues attributes -->
             <xsl:call-template name="annotations"/>
@@ -327,7 +329,7 @@
                 <!-- simple situation: just a basic type -->
                 <xsl:otherwise>
                     <xsl:attribute name="type">
-                        <xsl:value-of select="concat('xs:',@ValueScheme)"/>
+                        <xsl:value-of select="concat('xs:',(@ValueScheme,'string')[1])"/>
                     </xsl:attribute>
                     
                     <xs:annotation>
@@ -385,8 +387,8 @@
     
     <!-- start multilinguality part -->
 
-    <!-- if the multilingual attribute is there and the field has the type string, allow multiple occurrences -->
-    <xsl:template match="@Multilingual[../@ValueScheme='string'][. = 'true'] ">
+    <!-- if the multilingual attribute is there and the field has the (default) type string, allow multiple occurrences -->
+    <xsl:template match="@Multilingual[(empty(../@ValueScheme) and empty(../ValueScheme)) or ../@ValueScheme='string'][. = 'true'] ">
         <xsl:attribute name="maxOccurs">
             <xsl:value-of>unbounded</xsl:value-of>
         </xsl:attribute>
@@ -396,7 +398,7 @@
         <!-- do nothing - only influences maxOccurs if it is true and if it is a a string element -->
     </xsl:template>
 
-    <xsl:template match="@CardinalityMax[../@Multilingual='true'][../@ValueScheme='string']">
+    <xsl:template match="@CardinalityMax[../@Multilingual='true'][(empty(../@ValueScheme) and empty(../ValueScheme)) or ../@ValueScheme='string']">
         <!-- do nothing - maxOccurs should be set by Multilingual rule for strings -->
     </xsl:template>
 
@@ -415,12 +417,6 @@
         </xsl:attribute>
     </xsl:template>
 
-    <xsl:template match="@ValueScheme">
-        <xsl:attribute name="type">
-            <xsl:value-of select="concat('xs:',.)"/>
-        </xsl:attribute>
-    </xsl:template>
-    
     <xsl:template match="Vocabulary/@URI">
         <xsl:attribute name="cmd:Vocabulary">
             <xsl:value-of select="."/>

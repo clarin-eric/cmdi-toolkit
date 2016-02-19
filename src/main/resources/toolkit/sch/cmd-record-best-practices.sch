@@ -24,7 +24,7 @@
     <pattern>
         <title>Test xsi:schemaLocation</title>
         <rule role="warning" context="/cmd:CMD">
-            <assert test="contains(@xsi:schemaLocation,'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/')">
+            <assert test="matches(@xsi:schemaLocation,'http(s)?://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/')">
                 [CMDI Best Practice] /cmd:CMD/@xsi:schemaLocation doesn't refer to a schema from the Component Registry! [Actual value was [<value-of select="@xsi:schemaLocation"/>]
             </assert>
         </rule>
@@ -44,8 +44,18 @@
     <pattern>
         <title>Test for known profile</title>
         <rule role="warning" context="/cmd:CMD">
-            <assert test="matches(@xsi:schemaLocation,'clarin.eu:cr[0-9]+:p_[0-9]+.+') or matches(cmd:Header/cmd:MdProfile,'clarin.eu:cr[0-9]+:p_[0-9]+.+')">
+            <assert test="matches(@xsi:schemaLocation,'clarin.eu:cr[0-9]+:p_[0-9]+') or matches(cmd:Header/cmd:MdProfile,'clarin.eu:cr[0-9]+:p_[0-9]+')">
                 [CMDI Best Practice] the CMD profile of this record can't be found in the /cmd:CMD/@xsi:schemaLocation or /cmd:CMD/cmd:Header/cmd:MdProfile. The profile should be known for the record to be processed properly in the CLARIN joint metadata domain!
+            </assert>
+        </rule>
+    </pattern>
+    
+    <!-- Do the MdProfile and the @xsi:schemaLocation refer to the same profile? -->
+    <pattern>
+        <title>Test if MdProfile and @xsi:schemaLocation are in sync</title>
+        <rule role="warning" context="/cmd:CMD[matches(@xsi:schemaLocation,'clarin.eu:cr[0-9]+:p_[0-9]+') and matches(cmd:Header/cmd:MdProfile,'clarin.eu:cr[0-9]+:p_[0-9]+')]">
+            <assert test="replace(@xsi:schemaLocation,'(clarin.eu:cr[0-9]+:p_[0-9]+)','$1') = replace(cmd:Header/cmd:MdProfile,'(clarin.eu:cr[0-9]+:p_[0-9]+)','$1')">
+                [CMDI Best Practice] The CMD profile referenced in the @xsi:schemaLocation is different than the one specified in /cmd:CMD/cmd:Header/cmd:MdProfile. They should be the same!
             </assert>
         </rule>
     </pattern>

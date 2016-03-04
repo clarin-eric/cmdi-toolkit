@@ -87,8 +87,11 @@
             <xs:appinfo>
                 <sch:pattern id="c_empty">
                     <sch:title>Check for empty components</sch:title>
-                    <sch:rule context="Component[exists(parent::ComponentSpec) or empty(@ComponentId)]" role="warning">
-                        <sch:assert test="exists(Component) or exists(Element)">Component[<sch:value-of select="@name"/>] is empty, i.e., contains no other component or element!</sch:assert>
+                    <sch:rule context="Component[(exists(parent::ComponentSpec) or empty(@ComponentId)) and exists(AttributeList/Attribute)]" role="warning">
+                        <sch:assert test="exists((Component,Element))">Component[<sch:value-of select="@name"/>] is empty (according to the ISO 24622-1:2015 Component Metadata model), i.e., contains no component or element!</sch:assert>
+                    </sch:rule>
+                    <sch:rule context="Component[exists(parent::ComponentSpec) or empty(@ComponentId)]" role="error">
+                        <sch:assert test="exists((Component,Element,AttributeList/Attribute))">Component[<sch:value-of select="@name"/>] is empty, i.e., contains no component, element or attribute!</sch:assert>
                     </sch:rule>
                 </sch:pattern>
                 <sch:pattern id="c_sibs">
@@ -141,7 +144,7 @@
             <xs:appinfo>
                 <sch:pattern id="e_vs">
                     <sch:title>Check Element ValueScheme</sch:title>
-                    <sch:rule context="Element">
+                    <sch:rule context="Element[exists(@ValueScheme) or exists(ValueScheme)]">
                         <sch:assert test="exists(@ValueScheme) != exists(ValueScheme)">An Element must have either a @ValueScheme or a ./ValueScheme!</sch:assert>
                     </sch:rule>
                 </sch:pattern>
@@ -213,7 +216,7 @@
             <xs:appinfo>
                 <sch:pattern id="a_vs">
                     <sch:title>Check Attribute ValueScheme</sch:title>
-                    <sch:rule context="Attribute">
+                    <sch:rule context="Attribute[exists(@ValueScheme) or exists(ValueScheme)]">
                         <sch:assert test="exists(@ValueScheme) != exists(ValueScheme)">An Attribute must have either a @ValueScheme or a ./ValueScheme!</sch:assert>
                     </sch:rule>
                 </sch:pattern>

@@ -137,6 +137,13 @@ public class TestCMDToolkit {
         return cnt;
     }
 
+    protected int countWarnings(SchemAnon anon) throws Exception {
+        int cnt = 0;
+        for (Message msg : anon.getMessages())
+            cnt += (!msg.isError()?1:0);
+        return cnt;
+    }
+
     protected Document upgradeCMDSpec(String spec) throws Exception {
         System.out.println("Upgrade CMD spec["+spec+"]");
         return transform(upgradeCMDSpec,new javax.xml.transform.stream.StreamSource(new java.io.File(TestCMDToolkit.class.getResource(spec).toURI())));
@@ -590,5 +597,26 @@ public class TestCMDToolkit {
       assertTrue(invalidValRecordTest);
 
       System.out.println("*  END : CMD Attribute tests");
+    }
+
+    @Test
+    public void testEmpty() throws Exception {
+      System.out.println("* BEGIN: CMD Empty tests");
+
+      String error_profile = "/toolkit/empty/profiles/empty-error.xml";
+      String warning_profile = "/toolkit/empty/profiles/empty-warning.xml";
+
+      // assertions
+
+      // the error profile should be an invalid CMDI 1.2 profile
+      assertFalse(validateCMDSpec(error_profile, new javax.xml.transform.stream.StreamSource(new java.io.File(TestCMDToolkit.class.getResource(error_profile).toURI()))));
+      assertEquals(1, countErrors(validateCMDSpec));
+
+      // the warning profile should be an valid CMDI 1.2 profile
+      assertTrue(validateCMDSpec(warning_profile, new javax.xml.transform.stream.StreamSource(new java.io.File(TestCMDToolkit.class.getResource(warning_profile).toURI()))));
+      // but with a warning
+      assertEquals(1, countWarnings(validateCMDSpec));
+
+      System.out.println("*  END : CMD Empty tests");
     }
 }

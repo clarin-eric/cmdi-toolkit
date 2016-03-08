@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>clarin.cmdi</groupId>
+    <artifactId>cmd-toolkit</artifactId>
+    <version>1.1</version>
+    <packaging>jar</packaging>
+    <name>CMDToolkit</name>
+    <description>Toolkit for the component metadata infrastructure</description>
+    <url>https://www.clarin.eu/cmdi</url>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <build>
+        <resources>
+            <resource>
+                <directory>toolkit</directory>
+                <targetPath>cmd-toolkit</targetPath>
+                <includes>
+                    <include>xsd/**</include>
+                    <include>xslt/**</include>
+                    <include>general-component-schema.xsd</include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
+</project>

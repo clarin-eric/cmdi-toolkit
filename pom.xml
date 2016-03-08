@@ -36,9 +36,13 @@
         </repository>                                                    
     </repositories>
     <distributionManagement>
-	<snapshotRepository>
-	    <id>MPI-Snapshots</id>
-	    <url>http://lux15.mpi.nl/nexus/content/repositories/MPI-Snapshots</url>
-	</snapshotRepository>
+        <snapshotRepository>
+            <id>CLARIN-Snapshot</id>
+            <url>https://nexus.clarin.eu/content/repositories/clarin-snapshot</url>
+        </snapshotRepository>
+        <repository>
+            <id>CLARIN</id>
+            <url>https://nexus.clarin.eu/content/repositories/Clarin</url>
+        </repository>
     </distributionManagement>
 </project>

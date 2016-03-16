@@ -15,4 +15,5 @@ public class CMDToolkit {
     //toolkit/xsd/cmd-envelop.xsd
     //toolkit/xslt/clavas2enum.xsl
     //toolkit/xslt/comp2schema.xsl
+    public static final String XSLT_PARAM_COMP2SCHEMA_TOOL_KITLOCATION = "cmd-toolkit";
 }

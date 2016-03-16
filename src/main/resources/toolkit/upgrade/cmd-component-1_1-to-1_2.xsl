@@ -41,6 +41,10 @@
         </Component>
     </xsl:template>
     
+    <xsl:template match="CMD_Component/@filename">
+        <!-- Ignore -->
+    </xsl:template>
+    
     <xsl:template match="CMD_Element" priority="1">
         <Element>
             <xsl:apply-templates select="@* except @Documentation"/>

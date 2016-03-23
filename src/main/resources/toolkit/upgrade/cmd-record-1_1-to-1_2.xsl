@@ -7,7 +7,7 @@
     exclude-result-prefixes="xs cmd0"
     version="2.0">
     
-    <xsl:param name="cmd-toolkit" select="'../../../../../main/resources/toolkit'"/>
+    <xsl:param name="cmd-toolkit" select="'https://infra.clarin.eu/CMDI/1.x'"/>
     <xsl:param name="cmd-envelop-xsd" select="concat($cmd-toolkit,'/xsd/cmd-envelop.xsd')"/>
     <xsl:param name="cmd-uri" select="'http://www.clarin.eu/cmd/1'"/>
     <xsl:param name="cmd-profile" select="()"/>

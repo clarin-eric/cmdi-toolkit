@@ -6,7 +6,7 @@
     exclude-result-prefixes="xs"
     version="2.0">
 
-    <xsl:param name="cmd-component-xsd" select="'http://infra.clarin.eu/cmd/general-component-schema.xsd'"/>
+    <xsl:param name="cmd-component-xsd" select="'https://infra.clarin.eu/CMDI/1.1/general-component-schema.xsd'"/>
     
     <xsl:param name="escape" select="'ccmmddii_'"/>
     

@@ -6,7 +6,7 @@
     exclude-result-prefixes="xs"
     version="2.0">
 
-    <xsl:param name="cmd-toolkit" select="'../../../../../main/resources/toolkit'"/>    
+    <xsl:param name="cmd-toolkit" select="'https://infra.clarin.eu/CMDI/1.x'"/>    
     <xsl:param name="cmd-component-xsd" select="concat($cmd-toolkit,'/xsd/cmd-component.xsd')"/>
     <xsl:param name="cmd-component-status" select="'production'"/>
     

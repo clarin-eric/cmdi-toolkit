@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cmd="http://www.clarin.eu/cmd/1" xmlns:cue="http://www.clarin.eu/cmdi/cues/1">
 
-    <xsl:param name="cmd-toolkit" select="'../../../../../main/resources/toolkit'"/>
+    <xsl:param name="cmd-toolkit" select="'https://infra.clarin.eu/CMDI/1.x'"/>
     <xsl:param name="cmd-envelop" select="concat($cmd-toolkit,'/xsd/cmd-envelop.xsd')"/>
 
     <xsl:variable name="CMDVersion" select="'1.2'"/>

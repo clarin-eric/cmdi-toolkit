@@ -1,13 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.0" vc:maxVersion="1.1">
-    
-    <xs:import namespace="http://www.w3.org/XML/1998/namespace"
-        schemaLocation="http://www.w3.org/2005/08/xml.xsd"/>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.0" vc:maxVersion="1.1">
+
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2005/08/xml.xsd"/>
 
     <xs:annotation>
         <xs:appinfo>
             <xsl:key name="enums" match="item" use="."/>
+            <sch:phase id="preRegistration">
+                <sch:active pattern="h_succ"/>
+                <sch:active pattern="r_card"/>
+                <sch:active pattern="c_empty"/>
+                <sch:active pattern="c_sibs"/>
+                <sch:active pattern="c_csibs"/>
+                <sch:active pattern="d_dsibs"/>
+                <sch:active pattern="e_vs"/>
+                <sch:active pattern="v_uri"/>
+                <sch:active pattern="a_vs"/>
+                <sch:active pattern="a_res"/>
+                <sch:active pattern="a_sibs"/>
+                <sch:active pattern="c_atts"/>
+                <sch:active pattern="c_card"/>
+                <sch:active pattern="item"/>
+            </sch:phase>
+            <sch:phase id="postRegistration">
+                <sch:active pattern="h_id"/>
+                <sch:active pattern="h_succ"/>
+                <sch:active pattern="r_card"/>
+                <sch:active pattern="c_empty"/>
+                <sch:active pattern="c_sibs"/>
+                <sch:active pattern="c_csibs"/>
+                <sch:active pattern="d_dsibs"/>
+                <sch:active pattern="e_vs"/>
+                <sch:active pattern="v_uri"/>
+                <sch:active pattern="a_vs"/>
+                <sch:active pattern="a_res"/>
+                <sch:active pattern="a_sibs"/>
+                <sch:active pattern="c_atts"/>
+                <sch:active pattern="c_card"/>
+                <sch:active pattern="item"/>
+            </sch:phase>
         </xs:appinfo>
     </xs:annotation>
 
@@ -17,21 +48,21 @@
             <xs:appinfo>
                 <sch:pattern id="h_id">
                     <sch:title>Check ID</sch:title>
-                    <sch:rule context="ComponentSpec" role="warning">
-                        <sch:assert test="normalize-space(Header/ID)!=''">This component has no identifier (yet)!</sch:assert>
+                    <sch:rule context="ComponentSpec">
+                        <sch:assert test="normalize-space(Header/ID) != ''">This component has no identifier (yet)!</sch:assert>
                     </sch:rule>
                 </sch:pattern>
                 <sch:pattern id="h_succ">
                     <sch:title>Check successor</sch:title>
                     <sch:rule context="Header/Successor">
-                        <sch:assert test="../Status='deprecated'">There can only be a successor component/profile if the status of this component/profile is deprecated!</sch:assert>
+                        <sch:assert test="../Status = 'deprecated'">There can only be a successor component/profile if the status of this component/profile is deprecated!</sch:assert>
                     </sch:rule>
                 </sch:pattern>
                 <sch:pattern id="r_card">
                     <sch:title>Cardinality root component</sch:title>
                     <sch:rule context="ComponentSpec/Component">
-                        <sch:assert test="empty(@CardinalityMin) or @CardinalityMin='1'">The minimum cardinality of the root component should be 1!</sch:assert>
-                        <sch:assert test="empty(@CardinalityMax) or @CardinalityMax='1'">The maximum cardinality of the root component should be 1!</sch:assert>
+                        <sch:assert test="empty(@CardinalityMin) or @CardinalityMin = '1'">The minimum cardinality of the root component should be 1!</sch:assert>
+                        <sch:assert test="empty(@CardinalityMax) or @CardinalityMax = '1'">The maximum cardinality of the root component should be 1!</sch:assert>
                     </sch:rule>
                 </sch:pattern>
             </xs:appinfo>
@@ -85,22 +116,22 @@
                 <sch:pattern id="c_empty">
                     <sch:title>Check for empty components</sch:title>
                     <sch:rule context="Component[(exists(parent::ComponentSpec) or empty(@ComponentId)) and exists(AttributeList/Attribute)]" role="warning">
-                        <sch:assert test="exists((Component,Element))">Component[<sch:value-of select="@name"/>] is empty (according to the ISO 24622-1:2015 Component Metadata model), i.e., contains no component or element!</sch:assert>
+                        <sch:assert test="exists((Component, Element))">Component[<sch:value-of select="@name"/>] is empty (according to the ISO 24622-1:2015 Component Metadata model), i.e., contains no component or element!</sch:assert>
                     </sch:rule>
                     <sch:rule context="Component[exists(parent::ComponentSpec) or empty(@ComponentId)]" role="error">
-                        <sch:assert test="exists((Component,Element,AttributeList/Attribute))">Component[<sch:value-of select="@name"/>] is empty, i.e., contains no component, element or attribute!</sch:assert>
+                        <sch:assert test="exists((Component, Element, AttributeList/Attribute))">Component[<sch:value-of select="@name"/>] is empty, i.e., contains no component, element or attribute!</sch:assert>
                     </sch:rule>
                 </sch:pattern>
                 <sch:pattern id="c_sibs">
                     <sch:title>Check siblings</sch:title>
-                    <sch:rule context="Component|Element">
-                        <sch:assert test="empty(preceding-sibling::*[@name=current()/@name])">Sibling components or elements should all have a different name. Found multiple components or elements named '<sch:value-of select="@name"/>'!</sch:assert>
+                    <sch:rule context="Component | Element">
+                        <sch:assert test="empty(preceding-sibling::*[@name = current()/@name])">Sibling components or elements should all have a different name. Found multiple components or elements named '<sch:value-of select="@name"/>'!</sch:assert>
                     </sch:rule>
                 </sch:pattern>
                 <sch:pattern id="c_csibs">
                     <sch:title>Check component siblings</sch:title>
                     <sch:rule context="Component">
-                        <sch:assert test="empty(preceding-sibling::Component[@ComponentId=current()/@ComponentId])">Sibling components should all be different. Found multiple components with id '<sch:value-of select="@ComponentId"/>'!</sch:assert>
+                        <sch:assert test="empty(preceding-sibling::Component[@ComponentId = current()/@ComponentId])">Sibling components should all be different. Found multiple components with id '<sch:value-of select="@ComponentId"/>'!</sch:assert>
                     </sch:rule>
                 </sch:pattern>
                 <!-- TODO: check: the names of referenced external components are not known, so we can't currently check if two or more of them use the same name -->
@@ -118,13 +149,12 @@
     <!-- type definitions -->
     <xs:complexType name="Documentation_type">
         <xs:annotation>
-            <xs:documentation>Some information an application (eg Arbil) can display to give
-                guidance to the user when entering metadata.</xs:documentation>
+            <xs:documentation>Some information an application (eg Arbil) can display to give guidance to the user when entering metadata.</xs:documentation>
             <xs:appinfo>
                 <sch:pattern id="d_dsibs">
                     <sch:title>Check Documentation siblings</sch:title>
                     <sch:rule context="Documentation">
-                        <sch:assert test="empty(preceding-sibling::Documentation[@xml:lang=current()/@xml:lang])">Sibling Documentation elements should all be for different languages. Found multiple Documentation elements with xml:lang '<sch:value-of select="@xml:lang"/>'!</sch:assert>
+                        <sch:assert test="empty(preceding-sibling::Documentation[@xml:lang = current()/@xml:lang])">Sibling Documentation elements should all be for different languages. Found multiple Documentation elements with xml:lang '<sch:value-of select="@xml:lang"/>'!</sch:assert>
                     </sch:rule>
                 </sch:pattern>
             </xs:appinfo>
@@ -151,15 +181,12 @@
             <xs:element name="Documentation" type="Documentation_type" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="AttributeList" type="AttributeList_type" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
-                    <xs:documentation>The AttributeList child of an element contains a set of XML
-                        attributes for that element.</xs:documentation>
+                    <xs:documentation>The AttributeList child of an element contains a set of XML attributes for that element.</xs:documentation>
                 </xs:annotation>
             </xs:element>
             <xs:element minOccurs="0" maxOccurs="1" name="ValueScheme" type="ValueScheme_type">
                 <xs:annotation>
-                    <xs:documentation>When an element is linked to a regular expression or a
-                        controlled vocabulary, the ValueScheme sub-element contains more information
-                        about this.</xs:documentation>
+                    <xs:documentation>When an element is linked to a regular expression or a controlled vocabulary, the ValueScheme sub-element contains more information about this.</xs:documentation>
                 </xs:annotation>
             </xs:element>
             <xs:element name="AutoValue" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
@@ -181,8 +208,7 @@
         <xs:choice>
             <xs:element name="pattern" type="xs:string" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
-                    <xs:documentation>Specification of a regular expression the element should
-                        comply with.</xs:documentation>
+                    <xs:documentation>Specification of a regular expression the element should comply with.</xs:documentation>
                 </xs:annotation>
             </xs:element>
             <xs:element name="Vocabulary" type="Vocabulary_type" minOccurs="1" maxOccurs="1">
@@ -226,13 +252,13 @@
                         <sch:pattern id="a_res">
                             <sch:title>Check reserved attribute names</sch:title>
                             <sch:rule context="Attribute" role="warning">
-                                <sch:assert test="not(exists(parent::AttributeList/parent::Component) and @name=('ref','ComponentId'))">Attributes with name 'ref' or 'ComponentId' will not be available in a downgrade to CMDI 1.1!</sch:assert>
+                                <sch:assert test="not(exists(parent::AttributeList/parent::Component) and @name = ('ref', 'ComponentId'))">Attributes with name 'ref' or 'ComponentId' will not be available in a downgrade to CMDI 1.1!</sch:assert>
                             </sch:rule>
                         </sch:pattern>
                         <sch:pattern id="a_sibs">
                             <sch:title>Check attribute siblings</sch:title>
                             <sch:rule context="Attribute">
-                                <sch:assert test="empty(preceding-sibling::Attribute[@name=current()/@name])">All attributes in an attribute list should have a different name. Found multiple attributes named '<sch:value-of select="Name"/>'!</sch:assert>
+                                <sch:assert test="empty(preceding-sibling::Attribute[@name = current()/@name])">All attributes in an attribute list should have a different name. Found multiple attributes named '<sch:value-of select="Name"/>'!</sch:assert>
                             </sch:rule>
                         </sch:pattern>
                     </xs:appinfo>
@@ -242,9 +268,7 @@
                         <xs:element name="Documentation" type="Documentation_type" minOccurs="0" maxOccurs="unbounded"/>
                         <xs:element name="ValueScheme" type="ValueScheme_type" minOccurs="0" maxOccurs="1">
                             <xs:annotation>
-                                <xs:documentation>For the use of a regular expression or a
-                                    controlled vocabulary as the type of the
-                                    attribute.</xs:documentation>
+                                <xs:documentation>For the use of a regular expression or a controlled vocabulary as the type of the attribute.</xs:documentation>
                             </xs:annotation>
                         </xs:element>
                         <xs:element name="AutoValue" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
@@ -268,14 +292,12 @@
         </xs:attribute>
         <xs:attribute name="ConceptLink" type="xs:anyURI" use="optional">
             <xs:annotation>
-                <xs:documentation>A link to the ISOcat data category registry (or any other concept
-                    registry).</xs:documentation>
+                <xs:documentation>A link to the ISOcat data category registry (or any other concept registry).</xs:documentation>
             </xs:annotation>
         </xs:attribute>
         <xs:attribute name="ValueScheme" type="allowed_attributetypes_type" use="optional" default="string">
             <xs:annotation>
-                <xs:documentation>For the use of simple XML types as the type of
-                    the attribute.</xs:documentation>
+                <xs:documentation>For the use of simple XML types as the type of the attribute.</xs:documentation>
             </xs:annotation>
         </xs:attribute>
         <xs:attribute name="Required" type="xs:boolean" use="optional" default="false">
@@ -294,14 +316,12 @@
         </xs:attribute>
         <xs:attribute name="ConceptLink" type="xs:anyURI" use="optional">
             <xs:annotation>
-                <xs:documentation>A link to the ISOcat data category registry (or any other concept
-                    registry).</xs:documentation>
+                <xs:documentation>A link to the ISOcat data category registry (or any other concept registry).</xs:documentation>
             </xs:annotation>
         </xs:attribute>
         <xs:attribute name="ValueScheme" type="allowed_attributetypes_type" use="optional" default="string">
             <xs:annotation>
-                <xs:documentation>Used to specify that an element has a simple XML type (string,
-                    integer, etc)</xs:documentation>
+                <xs:documentation>Used to specify that an element has a simple XML type (string, integer, etc)</xs:documentation>
             </xs:annotation>
         </xs:attribute>
         <xs:attribute name="CardinalityMin" type="cardinality_type" use="optional" default="1">
@@ -316,10 +336,7 @@
         </xs:attribute>
         <xs:attribute name="Multilingual" type="xs:boolean" use="optional" default="false">
             <xs:annotation>
-                <xs:documentation>Indicates that this element can have values in multiple languages
-                    (and thus is repeatable). This will result in the possibility of using the
-                    xml:lang attribute in the metadata instances that are
-                created.</xs:documentation>
+                <xs:documentation>Indicates that this element can have values in multiple languages (and thus is repeatable). This will result in the possibility of using the xml:lang attribute in the metadata instances that are created.</xs:documentation>
             </xs:annotation>
         </xs:attribute>
         <xs:anyAttribute namespace="http://www.clarin.eu/cmdi/cues/1" processContents="lax"/>
@@ -331,7 +348,7 @@
                 <sch:pattern id="c_atts">
                     <sch:title>Check component attributes</sch:title>
                     <sch:rule context="Component">
-                        <sch:assert test="normalize-space(@name)!='' or normalize-space(@ComponentId)!=''">A Component should have a name or a ComponentId!</sch:assert>
+                        <sch:assert test="normalize-space(@name) != '' or normalize-space(@ComponentId) != ''">A Component should have a name or a ComponentId!</sch:assert>
                     </sch:rule>
                 </sch:pattern>
             </xs:appinfo>
@@ -339,14 +356,12 @@
         <xs:attribute name="name" type="xs:Name" use="optional"/>
         <xs:attribute name="ComponentId" type="xs:anyURI" use="optional">
             <xs:annotation>
-                <xs:documentation>Indicates that a component (using its unique ComponentId issued by
-                    the ComponentRegistry) should be included.</xs:documentation>
+                <xs:documentation>Indicates that a component (using its unique ComponentId issued by the ComponentRegistry) should be included.</xs:documentation>
             </xs:annotation>
         </xs:attribute>
         <xs:attribute name="ConceptLink" type="xs:anyURI" use="optional">
             <xs:annotation>
-                <xs:documentation>A link to the ISOcat data category registry (or any other concept
-                    registry). Currently not used.</xs:documentation>
+                <xs:documentation>A link to the ISOcat data category registry (or any other concept registry). Currently not used.</xs:documentation>
             </xs:annotation>
         </xs:attribute>
         <xs:attribute name="CardinalityMin" type="cardinality_type" use="optional" default="1"/>
@@ -384,12 +399,12 @@
                     -->
                     <!-- skip case 1 -->
                     <!-- case 2 -->
-                    <sch:rule context="*[(normalize-space(@CardinalityMin)='')][@CardinalityMax castable as xs:integer]">
+                    <sch:rule context="*[(normalize-space(@CardinalityMin) = '')][@CardinalityMax castable as xs:integer]">
                         <sch:assert test="xs:integer(@CardinalityMax) ne 0">Maximum cardinality (0) cannot be lower than the default minimum cardinality (1)!</sch:assert>
                     </sch:rule>
                     <!-- skip case 3 -->
                     <!-- case 4 -->
-                    <sch:rule context="*[@CardinalityMin castable as xs:integer][normalize-space(@CardinalityMax)='']">
+                    <sch:rule context="*[@CardinalityMin castable as xs:integer][normalize-space(@CardinalityMax) = '']">
                         <sch:assert test="xs:integer(@CardinalityMin) le 1">Minimum cardinality (<sch:value-of select="@CardinalityMin"/>) should be lower or equal then the default maximum cardinality (1)!</sch:assert>
                     </sch:rule>
                     <!-- case 5 -->
@@ -398,9 +413,13 @@
                     </sch:rule>
                     <!-- skip case 6 -->
                     <!-- case 7, 8 and 9 -->
-                    <sch:rule context="*[@CardinalityMin='unbounded']">
+                    <sch:rule context="*[@CardinalityMin = 'unbounded']">
                         <!-- case 7 and 8 -->
-                        <sch:assert test="@CardinalityMax='unbounded'">Minimum cardinality (unbounded) can't be higher than the (default) maximum cardinality (<sch:value-of select="if (normalize-space(@CardinalityMax)='') then ('1') else (@CardinalityMax)"/>)!</sch:assert>
+                        <sch:assert test="@CardinalityMax = 'unbounded'">Minimum cardinality (unbounded) can't be higher than the (default) maximum cardinality (<sch:value-of select="
+                                    if (normalize-space(@CardinalityMax) = '') then
+                                        ('1')
+                                    else
+                                        (@CardinalityMax)"/>)!</sch:assert>
                         <!-- skip case 9 -->
                     </sch:rule>
                 </sch:pattern>
@@ -446,8 +465,7 @@
         <xs:sequence>
             <xs:element name="appinfo" type="xs:string" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
-                    <xs:documentation>End-user guidance about the value of the controlled vocabulary
-                        as a whole. Currently not used.</xs:documentation>
+                    <xs:documentation>End-user guidance about the value of the controlled vocabulary as a whole. Currently not used.</xs:documentation>
                 </xs:annotation>
             </xs:element>
             <xs:element name="item" type="item_type" minOccurs="0" maxOccurs="unbounded">
@@ -464,7 +482,7 @@
                 <sch:pattern id="item">
                     <sch:title>CMD enumeration item</sch:title>
                     <sch:rule context="item">
-                        <sch:assert test="count(key('enums',current(),current()/parent::enumeration)) eq 1">All items in an enumeration should be different. Found multiple items with value '<sch:value-of select="."/>'!</sch:assert>
+                        <sch:assert test="count(key('enums', current(), current()/parent::enumeration)) eq 1">All items in an enumeration should be different. Found multiple items with value '<sch:value-of select="."/>'!</sch:assert>
                     </sch:rule>
                 </sch:pattern>
             </xs:appinfo>
@@ -473,15 +491,12 @@
             <xs:extension base="xs:string">
                 <xs:attribute type="xs:anyURI" name="ConceptLink" use="optional">
                     <xs:annotation>
-                        <xs:documentation>A link to the ISOcat data category registry (or any other
-                            concept registry) related to this controllec vocabulary
-                        item.</xs:documentation>
+                        <xs:documentation>A link to the ISOcat data category registry (or any other concept registry) related to this controllec vocabulary item.</xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
                 <xs:attribute type="xs:string" name="AppInfo" use="optional">
                     <xs:annotation>
-                        <xs:documentation>End-user guidance about the value of this controlled
-                            vocabulary item.</xs:documentation>
+                        <xs:documentation>End-user guidance about the value of this controlled vocabulary item.</xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
                 <xs:anyAttribute namespace="http://www.clarin.eu/cmdi/cues/1" processContents="lax"/>

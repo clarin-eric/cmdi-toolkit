@@ -17,11 +17,8 @@
             <xs:appinfo>
                 <sch:pattern id="h_id">
                     <sch:title>Check ID</sch:title>
-                    <sch:rule context="Header/ID">
-                        <sch:assert test="empty(ancestor::ComponentSpec/Component/@ComponentId) or ancestor::ComponentSpec/Component/@ComponentId=current()">The root component has a differend identifier[<xsl:value-of select="ancestor::ComponentSpec/Component/@ComponentId"/>] than the id[<xsl:value-of select="current()"/>] specified in the header!</sch:assert>
-                    </sch:rule>
                     <sch:rule context="ComponentSpec" role="warning">
-                        <sch:assert test="exists(ancestor::ComponentSpec/Component/@ComponentId) or exists(Header/ID)">This component has no identifier (yet)!</sch:assert>
+                        <sch:assert test="normalize-space(Header/ID)!=''">This component has no identifier (yet)!</sch:assert>
                     </sch:rule>
                 </sch:pattern>
                 <sch:pattern id="h_succ">

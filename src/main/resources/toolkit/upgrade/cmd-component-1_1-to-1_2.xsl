@@ -45,6 +45,20 @@
         <!-- Ignore -->
     </xsl:template>
     
+    <xsl:template match="CMD_ComponentSpec/CMD_Component/@CardinalityMin">
+        <xsl:if test=".!='1'">
+            <xsl:message>WRN: the root component can only have a minimum cardinality of one (not <xsl:value-of select="."/>)!</xsl:message>
+        </xsl:if>
+        <xsl:attribute name="CardinalityMin" select="1"/>
+    </xsl:template>
+    
+    <xsl:template match="CMD_ComponentSpec/CMD_Component/@CardinalityMax">
+        <xsl:if test=".!='1'">
+            <xsl:message>WRN: the root component can only have a maximum cardinality of one (not <xsl:value-of select="."/>)!</xsl:message>
+        </xsl:if>
+        <xsl:attribute name="CardinalityMax" select="1"/>
+    </xsl:template>
+
     <xsl:template match="CMD_Element" priority="1">
         <Element>
             <xsl:apply-templates select="@* except @Documentation"/>
@@ -69,12 +83,48 @@
             <xsl:value-of select="."/>
         </Documentation>
     </xsl:template>
+    
+    <!-- check @ValueScheme -->
+    <xsl:template match="@ValueScheme" priority="1">
+        <xsl:choose>
+            <xsl:when test="exists(../ValueScheme) and current()='string'">
+                <!-- there is a <ValueScheme> and the @ValueScheme='string', silently ignore the @ValueScheme -->
+            </xsl:when>
+            <xsl:when test="exists(../ValueScheme) and current()!='string'">
+                <xsl:message>WRN: element with both a ValueScheme and a non-string @ValueScheme(<xsl:value-of select="."/>)! The @ValueScheme is ignored!</xsl:message>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:attribute name="ValueScheme" select="."/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
 
     <!-- add Vocabulary level -->
     <xsl:template match="enumeration" priority="1">
         <Vocabulary>
             <enumeration>
-                <xsl:apply-templates select="@*|node()"/>
+                <xsl:apply-templates select="@*"/>
+                <xsl:for-each-group select="item" group-by="string()">
+                    <xsl:choose>
+                        <xsl:when test="count(current-group()) gt 1">
+                            <xsl:for-each-group select="current-group()" group-by="string-join((normalize-space(@ConceptLink),normalize-space(@AppInfo)),'-')">
+                                <xsl:choose>
+                                    <xsl:when test="last()=1">
+                                        <xsl:message>WRN: multiple enumeration items for '<xsl:value-of select="current-group()[1]/string()"/>', but they can and are merged into one!</xsl:message>
+                                        <xsl:apply-templates select="current-group()[1]"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:message>ERR: multiple enumeration items for '<xsl:value-of select="current-group()[1]/string()"/>'!</xsl:message>
+                                        <xsl:apply-templates select="current-group()[1]"/>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </xsl:for-each-group>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:apply-templates select="current-group()[1]"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:for-each-group>
             </enumeration>
         </Vocabulary>
     </xsl:template>
@@ -83,7 +133,15 @@
     <xsl:template match="Attribute" priority="1">
         <Attribute name="{Name}">
             <xsl:if test="normalize-space(Type)!=''">
-                <xsl:attribute name="ValueScheme" select="Type"/>
+                <xsl:choose>
+                    <xsl:when test="exists(ValueScheme) and normalize-space(Type)='string'"/>
+                    <xsl:when test="exists(ValueScheme) and normalize-space(Type)!='string'">
+                        <xsl:message>WRN: attribute with both a ValueScheme and a non-string Type(<xsl:value-of select="Type"/>)! The Type is ignored!</xsl:message>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:attribute name="ValueScheme" select="Type"/>
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:if>
             <xsl:if test="normalize-space(ConceptLink)!=''">
                 <xsl:attribute name="ConceptLink" select="ConceptLink"/>

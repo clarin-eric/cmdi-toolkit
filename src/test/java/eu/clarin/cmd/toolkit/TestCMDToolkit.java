@@ -5,14 +5,22 @@
 package eu.clarin.cmd.toolkit;
 
 import eu.clarin.cmdi.toolkit.CMDToolkit;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.net.URL;
 import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Source;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 import net.sf.saxon.s9api.DOMDestination;
 import net.sf.saxon.s9api.QName;
@@ -158,13 +166,9 @@ public class TestCMDToolkit {
     }
 
     protected Document upgradeCMDRecord(String rec,XdmNode prof) throws Exception {
-        System.out.println("Upgrade CMD spec["+rec+"]");
+        System.out.println("Upgrade CMD record["+rec+"]");
         Map<String,XdmValue> params = new HashMap<String,XdmValue>();
         params.put("cmd-profile", prof);
-        params.put("cr-uri", new XdmAtomicValue(".."));
-        params.put("cr-extension-xsd", new XdmAtomicValue("-1_2.xsd"));
-        params.put("cr-roundtrip-extension-xsd", new XdmAtomicValue("-1-1-1_2.xsd"));
-        params.put("cr-extension-xml", new XdmAtomicValue("-1.2.xml"));
         return transform(upgradeCMDRec,new javax.xml.transform.stream.StreamSource(new java.io.File(TestCMDToolkit.class.getResource(rec).toURI())),params);
     }
 
@@ -236,6 +240,18 @@ public class TestCMDToolkit {
         System.out.println("CMD 1.1 record["+rec+"]: "+(res?"VALID":"INVALID"));
         printMessages(anon);
         return res;
+    }
+    
+    public static void printDocument(Document doc, OutputStream out) throws IOException, TransformerException {
+        TransformerFactory tf = TransformerFactory.newInstance();
+        Transformer transformer = tf.newTransformer();
+        transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "no");
+        transformer.setOutputProperty(OutputKeys.METHOD, "xml");
+        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+        transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
+        transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
+
+        transformer.transform(new DOMSource(doc), new StreamResult(new OutputStreamWriter(out, "UTF-8")));
     }
 
     @Test
@@ -532,7 +548,7 @@ public class TestCMDToolkit {
         // the upgraded 1.1 record should be invalid against the original 1.2 profile
         assertFalse(validRecord);
          // the upgraded 1.1 record should refer to 1.2/1.1/1.2 profile XSD
-        assertTrue(xpath(upgradedRecord,"ends-with(/*:CMD/@*:schemaLocation,'-1-1-1_2.xsd')"));
+        assertTrue(xpath(upgradedRecord,"ends-with(/*:CMD/@*:schemaLocation,'/1.2/xsd')"));
 
         // upgrade the 1.1 profile to 1.2
         Document oldNewProfile = upgradeCMDSpec(profile+" (downgraded)",new DOMSource(oldProfile));

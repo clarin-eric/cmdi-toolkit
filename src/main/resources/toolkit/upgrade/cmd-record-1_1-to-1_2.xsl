@@ -11,18 +11,21 @@
     <xsl:param name="cmd-envelop-xsd" select="concat($cmd-toolkit,'/xsd/cmd-envelop.xsd')"/>
     <xsl:param name="cmd-uri" select="'http://www.clarin.eu/cmd/1'"/>
     <xsl:param name="cmd-profile" select="()"/>
-    <xsl:param name="cr-uri" select="'https://catalog.clarin.eu/ds/ComponentRegistry/rest/registry'"/>
-    <!--<xsl:param name="cr-extension-xsd" select="'/1.2/xsd'"/>-->
+    <xsl:param name="cmd-1" select="'1.x'"/>
+    <xsl:param name="cmd-1_1" select="'1.1'"/>
+    <xsl:param name="cmd-1_2" select="'1.2'"/>
+    <xsl:param name="cr-uri" select="'http://alpha-vlo.clarin.eu/component-registry-rest/rest/registry'"/>
     <xsl:param name="cr-extension-xsd" select="'/xsd'"/>
-    <xsl:param name="cr-roundtrip-extension-xsd" select="'/1.1/1.2/xsd'"/>
-    <!--<xsl:param name="cr-extension-xml" select="'/1.2/xml'"/>-->
     <xsl:param name="cr-extension-xml" select="'/xml'"/>
     
     <xsl:param name="escape" select="'ccmmddii_'"/>
-    
+
+    <!-- namespaces (maybe unresolvable) -->
     <xsl:variable name="cmd-components" select="concat($cmd-uri,'/components')"/>
     <xsl:variable name="cmd-profiles" select="concat($cmd-uri,'/profiles')"/>
-    <xsl:variable name="cr-profiles" select="concat($cr-uri,'/profiles')"/>
+
+    <!-- CR REST API -->
+    <xsl:variable name="cr-profiles" select="concat($cr-uri,'/',$cmd-1,'/profiles')"/>
     
     <!-- identity copy -->
     <xsl:template match="@*|node()">
@@ -68,7 +71,7 @@
         <xsl:choose>
             <!-- '' means there was no @CMDOriginalVersion, so the original version is 1.2 (the default) -->
             <xsl:when test="$prof/ComponentSpec/normalize-space(@CMDOriginalVersion)=('','1.2')">
-                <xsl:value-of select="concat($cr-profiles,'/',$profile,$cr-roundtrip-extension-xsd)"/>
+                <xsl:value-of select="concat($cr-uri,'/',$cmd-1_1,'/profiles/',$profile,'/',$cmd-1_2,$cr-extension-xsd)"/>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:value-of select="concat($cr-profiles,'/',$profile,$cr-extension-xsd)"/>

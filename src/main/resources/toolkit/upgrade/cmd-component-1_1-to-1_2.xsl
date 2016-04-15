@@ -77,6 +77,11 @@
         </xsl:copy>
     </xsl:template>
     
+    <!-- turn @ComponentId into @ComponentRef -->
+    <xsl:template match="@ComponentId" priority="1">
+        <xsl:attribute name="ComponentRef" select="."/>
+    </xsl:template>
+
     <!-- turn @Documentation into <Documentation/> -->
     <xsl:template match="@Documentation" priority="1">
         <Documentation>

@@ -87,6 +87,7 @@
                             </xs:element>
                             <xs:element name="StatusComment" type="xs:string" minOccurs="0" maxOccurs="1"/>
                             <xs:element name="Successor" type="xs:anyURI" minOccurs="0" maxOccurs="1"/>
+                            <xs:element name="DerivedFrom" type="xs:anyURI" minOccurs="0" maxOccurs="1"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
@@ -115,10 +116,10 @@
             <xs:appinfo>
                 <sch:pattern id="c_empty">
                     <sch:title>Check for empty components</sch:title>
-                    <sch:rule context="Component[(exists(parent::ComponentSpec) or empty(@ComponentId)) and exists(AttributeList/Attribute)]" role="warning">
+                    <sch:rule context="Component[(exists(parent::ComponentSpec) or empty(@ComponentRef)) and exists(AttributeList/Attribute)]" role="warning">
                         <sch:assert test="exists((Component, Element))">Component[<sch:value-of select="@name"/>] is empty (according to the ISO 24622-1:2015 Component Metadata model), i.e., contains no component or element!</sch:assert>
                     </sch:rule>
-                    <sch:rule context="Component[exists(parent::ComponentSpec) or empty(@ComponentId)]" role="error">
+                    <sch:rule context="Component[exists(parent::ComponentSpec) or empty(@ComponentRef)]" role="error">
                         <sch:assert test="exists((Component, Element, AttributeList/Attribute))">Component[<sch:value-of select="@name"/>] is empty, i.e., contains no component, element or attribute!</sch:assert>
                     </sch:rule>
                 </sch:pattern>
@@ -131,7 +132,7 @@
                 <sch:pattern id="c_csibs">
                     <sch:title>Check component siblings</sch:title>
                     <sch:rule context="Component">
-                        <sch:assert test="empty(preceding-sibling::Component[@ComponentId = current()/@ComponentId])">Sibling components should all be different. Found multiple components with id '<sch:value-of select="@ComponentId"/>'!</sch:assert>
+                        <sch:assert test="empty(preceding-sibling::Component[@ComponentRef = current()/@ComponentRef])">Sibling components should all be different. Found multiple components with ID '<sch:value-of select="@ComponentRef"/>'!</sch:assert>
                     </sch:rule>
                 </sch:pattern>
                 <!-- TODO: check: the names of referenced external components are not known, so we can't currently check if two or more of them use the same name -->
@@ -285,7 +286,7 @@
     </xs:complexType>
 
     <xs:attributeGroup name="attribute_attributes">
-        <xs:attribute name="name" type="xs:Name" use="required">
+        <xs:attribute name="name" type="xs:NCName" use="required">
             <xs:annotation>
                 <xs:documentation>The name of the attribute.</xs:documentation>
             </xs:annotation>
@@ -309,7 +310,7 @@
     </xs:attributeGroup>
 
     <xs:attributeGroup name="element_attributes">
-        <xs:attribute name="name" type="xs:Name" use="required">
+        <xs:attribute name="name" type="xs:NCName" use="required">
             <xs:annotation>
                 <xs:documentation>The name of the element.</xs:documentation>
             </xs:annotation>
@@ -348,15 +349,21 @@
                 <sch:pattern id="c_atts">
                     <sch:title>Check component attributes</sch:title>
                     <sch:rule context="Component">
-                        <sch:assert test="normalize-space(@name) != '' or normalize-space(@ComponentId) != ''">A Component should have a name or a ComponentId!</sch:assert>
+                        <sch:assert test="normalize-space(@name) != '' or normalize-space(@ComponentRef) != ''">A Component should have a name or a ComponentRef!</sch:assert>
+                    </sch:rule>
+                </sch:pattern>
+                <sch:pattern id="c_ref">
+                    <sch:title>Check component reference</sch:title>
+                    <sch:rule context="ComponentSpec[@isProfile='false']/Component">
+                        <sch:assert test="normalize-space(@ComponentRef) = ''">A root Component of a non-profile specification should not have a ComponentRef!</sch:assert>
                     </sch:rule>
                 </sch:pattern>
             </xs:appinfo>
         </xs:annotation>
-        <xs:attribute name="name" type="xs:Name" use="optional"/>
-        <xs:attribute name="ComponentId" type="xs:anyURI" use="optional">
+        <xs:attribute name="name" type="xs:NCName" use="optional"/>
+        <xs:attribute name="ComponentRef" type="xs:anyURI" use="optional">
             <xs:annotation>
-                <xs:documentation>Indicates that a component (using its unique ComponentId issued by the ComponentRegistry) should be included.</xs:documentation>
+                <xs:documentation>Indicates that a component (using its unique Header/ID issued by the ComponentRegistry) should be included.</xs:documentation>
             </xs:annotation>
         </xs:attribute>
         <xs:attribute name="ConceptLink" type="xs:anyURI" use="optional">
@@ -468,7 +475,7 @@
                     <xs:documentation>End-user guidance about the value of the controlled vocabulary as a whole. Currently not used.</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="item" type="item_type" minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="item" type="item_type" minOccurs="1" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation>An item from a controlled vocabulary.</xs:documentation>
                 </xs:annotation>

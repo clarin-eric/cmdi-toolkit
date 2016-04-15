@@ -56,6 +56,11 @@
     <xsl:template match="Header/StatusComment" priority="1"/>
     <xsl:template match="Header/Successor" priority="1"/>
     
+    <!-- turn @ComponentRef into @ComponentId -->
+    <xsl:template match="@ComponentRef">
+        <xsl:attribute name="ComponentId" select="."/>
+    </xsl:template>
+    
     <!-- turn <Documentation/> into @Documentation -->
     <xsl:template match="Documentation" priority="1">
         <xsl:choose>

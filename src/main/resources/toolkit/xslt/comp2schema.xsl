@@ -45,7 +45,7 @@
     <!-- generate XSD -->
     <xsl:template match="/ComponentSpec">
 
-        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dcr="http://www.isocat.org/ns/dcr" xmlns:cmd="http://www.clarin.eu/cmd/1" targetNamespace="{$ns-uri}" elementFormDefault="qualified">
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cmd="http://www.clarin.eu/cmd/1" targetNamespace="{$ns-uri}" elementFormDefault="qualified">
             
             <xsl:namespace name="cmdp" select="$ns-uri"/>
 
@@ -93,7 +93,7 @@
         <xsl:choose>
             
             <!-- deeper recursion needed -->
-            <xsl:when test="$node[empty(@ComponentId)]">
+            <xsl:when test="$node[empty(@ComponentRef)]">
                 
                 <xsl:choose>
                     <!-- element has name, add it to the type name and recurse upwards in the tree -->
@@ -113,7 +113,7 @@
             
             <!-- end of recursion: component has ComponentId -->
             <xsl:otherwise>
-                <xsl:value-of select="replace($node/@ComponentId, ':', '.')"/>
+                <xsl:value-of select="replace($node/@ComponentRef, ':', '.')"/>
             </xsl:otherwise>
             
         </xsl:choose>
@@ -129,8 +129,8 @@
     <xsl:template match="Element/ValueScheme[exists(Vocabulary/enumeration)]" mode="types">
         
         <!-- only handle the ValueScheme if this is the first occurence of the Component -->
-        <xsl:variable name="Component" select="ancestor::Component[exists(@ComponentId)]"/>
-        <xsl:if test="empty($Component/preceding::Component[@ComponentId=$Component/@ComponentId])">
+        <xsl:variable name="Component" select="ancestor::Component[exists(@ComponentRef)]"/>
+        <xsl:if test="empty($Component/preceding::Component[@ComponentRef=$Component/@ComponentRef])">
             
             <!-- create a unique suffix (the path to the element) to ensure the unicity of the types to be created -->
             <xsl:variable name="uniquePath" select="cmd:getComponentId(..)"/>
@@ -192,9 +192,9 @@
                 <!-- @ref to the resource proxy -->
                 <xs:attribute ref="cmd:ref"/>
                 
-                <!-- allow @ComponentId referring to this Component -->
-                <xsl:if test="exists(@ComponentId)">
-                    <xs:attribute ref="cmd:ComponentId" fixed="{@ComponentId}"/>
+                <!-- allow @ComponentId referring to the Component it instantiates -->
+                <xsl:if test="exists(@ComponentRef)">
+                    <xs:attribute ref="cmd:ComponentId" fixed="{@ComponentRef}"/>
                 </xsl:if>
 
                 <xsl:apply-templates select="./AttributeList/Attribute"/>

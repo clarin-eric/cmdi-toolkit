@@ -1,8 +1,9 @@
 package eu.clarin.cmdi;
 
 import eu.clarin.cmdi.toolkit.CMDToolkit;
-import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.nio.file.Files;
@@ -10,7 +11,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.nio.file.attribute.BasicFileAttributes;
-import java.util.function.BiPredicate;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Stream;
@@ -28,10 +28,7 @@ import javax.xml.transform.stream.StreamSource;
 import joptsimple.OptionParser;
 import joptsimple.OptionSet;
 import net.sf.saxon.s9api.DOMDestination;
-import net.sf.saxon.s9api.QName;
 import net.sf.saxon.s9api.SaxonApiException;
-import net.sf.saxon.s9api.XdmAtomicValue;
-import net.sf.saxon.s9api.XdmNode;
 import net.sf.saxon.s9api.XsltTransformer;
 import nl.mpi.tla.schemanon.SaxonUtils;
 import nl.mpi.tla.schemanon.SchemAnonException;
@@ -43,17 +40,19 @@ import org.w3c.dom.Document;
  */
 public class Upgrade {
     
-    static final XsltTransformer UPGRADE_1_1_TO_1_2;
+    static final Logger LOGGER = Logger.getLogger(Upgrade.class.getName());
+    
+    static final XsltTransformer UPGRADE_11TO12;
     
     static {
         XsltTransformer transformer = null;
         try {        
             transformer = SaxonUtils.buildTransformer(CMDToolkit.class.getResource("/toolkit/upgrade/cmd-record-1_1-to-1_2.xsl")).load();
         } catch (SchemAnonException ex) {
-            Logger.getLogger(Upgrade.class.getName()).log(Level.SEVERE, "Couldn't setup CMDI 1.1 to CMDI 1.2 upgrade transformer!", ex);
+            LOGGER.log(Level.SEVERE, "Couldn't setup CMDI 1.1 to CMDI 1.2 upgrade transformer!", ex);
             System.exit(9);
         } finally {
-            UPGRADE_1_1_TO_1_2 = transformer;
+            UPGRADE_11TO12 = transformer;
         }
     }
     
@@ -68,9 +67,9 @@ public class Upgrade {
             DocumentBuilder builder = factory.newDocumentBuilder();
             Document doc = builder.newDocument();
             DOMDestination dest = new DOMDestination(doc);
-            UPGRADE_1_1_TO_1_2.setSource(input);
-            UPGRADE_1_1_TO_1_2.setDestination(dest);
-            UPGRADE_1_1_TO_1_2.transform();
+            UPGRADE_11TO12.setSource(input);
+            UPGRADE_11TO12.setDestination(dest);
+            UPGRADE_11TO12.transform();
             return doc;
     }
     
@@ -86,29 +85,39 @@ public class Upgrade {
     }
 
     public static void up(Path path,Path inputPath,Path outputPath,boolean backup,boolean validate) {
-        Logger.getLogger(Upgrade.class.getName()).log(Level.INFO, "1.1 record["+path+"]");
+        LOGGER.log(Level.INFO, "1.1 record[{0}]",path);
         if (backup) {
             Path bak = Paths.get(path.toString()+".bak");
             try {
                 Files.copy(path,bak);
             } catch (IOException ex) {
-                Logger.getLogger(Upgrade.class.getName()).log(Level.SEVERE, "Failed to upgrade record["+path+"], because backup cannot be created!", ex);
+                LOGGER.log(Level.SEVERE, "Failed to upgrade record[{0}], because backup cannot be created!",path);
+                LOGGER.log(Level.SEVERE, "Cause:",ex);
                 return;
             }
-            Logger.getLogger(Upgrade.class.getName()).log(Level.INFO, "1.1 backup["+bak+"]");
+            LOGGER.log(Level.INFO, "1.1 backup[{0}]",bak);
         }
 
         Path rel = inputPath.relativize(path);
         Path out = outputPath.resolve(rel);
-        
-        Upgrade upg = new Upgrade(new StreamSource(path.toFile()));
         try {
             Files.createDirectories(out.getParent());
-            out(upg.getOutput(),Files.newOutputStream(out,StandardOpenOption.CREATE));
-        } catch (IOException | TransformerException | ParserConfigurationException | SaxonApiException ex) {
-            Logger.getLogger(Upgrade.class.getName()).log(Level.SEVERE, "Problem upgrading Input["+path+"]!", ex);
+        } catch (IOException ex) {
+            LOGGER.log(Level.SEVERE, "Problem creating output[{0}]!", out);
+            LOGGER.log(Level.SEVERE, "Cause:",ex);
         }
-        Logger.getLogger(Upgrade.class.getName()).log(Level.INFO, "1.2 record["+out+"]");
+        
+        try (
+            InputStream input   = new FileInputStream(path.toFile());
+            OutputStream output = Files.newOutputStream(out,StandardOpenOption.CREATE);
+        ) {
+            Upgrade upg = new Upgrade(new StreamSource(input));
+            out(upg.getOutput(),output);
+        } catch (IOException | TransformerException | ParserConfigurationException | SaxonApiException ex) {
+            LOGGER.log(Level.SEVERE, "Problem upgrading Input[{0}]!", path);
+            LOGGER.log(Level.SEVERE, "Cause:", ex);
+        }
+        LOGGER.log(Level.INFO, "1.2 record[{0}]",out);
     }
     
     private static void help() {
@@ -146,13 +155,13 @@ public class Upgrade {
         
         Path inputPath = Paths.get(input);
         if (!Files.isReadable(inputPath)) {
-            Logger.getLogger(Upgrade.class.getName()).log(Level.SEVERE, "Input["+input+"] is not readable!");
+            LOGGER.log(Level.SEVERE, "Input[{0}] is not readable!",input);
             System.exit(1);
         }
         if (Files.isDirectory(inputPath)) {
             Path outputPath = Paths.get(output!=null?output:input);
             if (!Files.isWritable(outputPath)) {
-                Logger.getLogger(Upgrade.class.getName()).log(Level.SEVERE, "Output["+output+"] is not writable!");
+                LOGGER.log(Level.SEVERE, "Output[{0}] is not writable!",output);
                 System.exit(2);
             }
             try {
@@ -160,11 +169,12 @@ public class Upgrade {
                     if (backup)
                         backup = false;
             } catch (IOException ex) {
-                Logger.getLogger(Upgrade.class.getName()).log(Level.SEVERE, "Problem checking Input["+input+"] and Output["+output+"]!", ex);
+                LOGGER.log(Level.SEVERE, "Problem checking Input[{0}] and Output[{1}]!", new Object[]{input, output});
+                LOGGER.log(Level.SEVERE, "Cause:", ex);
                 System.exit(3);
             }
             if (backup && !Files.isWritable(inputPath)) {
-                Logger.getLogger(Upgrade.class.getName()).log(Level.SEVERE, "Backups cannot be created in Input["+input+"]!");
+                LOGGER.log(Level.SEVERE, "Backups cannot be created in Input[{0}]!",input);
                 System.exit(4);
             }
             final String ext = extension;
@@ -172,22 +182,19 @@ public class Upgrade {
             final Path   out = outputPath;
             final boolean b  = backup;
             final boolean v  = validate;
-            try (Stream<Path> stream = Files.find(inputPath,Integer.MAX_VALUE, new BiPredicate<Path, BasicFileAttributes>() {
-                @Override
-                public boolean test(Path path, BasicFileAttributes attr) {
-                    return String.valueOf(path).endsWith(ext);
-                }
-            })) {
+            try (Stream<Path> stream = Files.find(inputPath,Integer.MAX_VALUE, (Path path, BasicFileAttributes attr) -> String.valueOf(path).endsWith(ext))) {
                 stream.forEach((path) -> up(path,inp,out,b,v));
             } catch (IOException ex) {
-                Logger.getLogger(Upgrade.class.getName()).log(Level.SEVERE, "Upgrading Input["+inputPath+"] failed!", ex);
+                LOGGER.log(Level.SEVERE, "Upgrading Input[{0}] failed!", inputPath);
+                LOGGER.log(Level.SEVERE, "Cause:", ex);
             }
         } else {
             Upgrade upg = new Upgrade(new StreamSource(inputPath.toFile()));
             try {
                 out(upg.getOutput(),System.out);
             } catch (IOException | TransformerException | ParserConfigurationException | SaxonApiException ex) {
-                Logger.getLogger(Upgrade.class.getName()).log(Level.SEVERE, "Problem upgrading Input["+input+"]!", ex);
+                LOGGER.log(Level.SEVERE, "Problem upgrading Input[{0}]!", input);
+                LOGGER.log(Level.SEVERE, "Cause:", ex);
                 System.exit(5);
             }
         }

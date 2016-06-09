@@ -151,6 +151,7 @@ public class Upgrade {
         System.err.println("INF: -o=<DIR>      output directory (default: input directory or stdout)");
         System.err.println("INF: -x=<EXT>      extension of CMD files (default: .xml)");
         System.err.println("INF: -n            don't create a backup when input and output directory are the same, i.e., inplace update (optional)");
+        System.err.println("INF: -s            single threaded batch conversion (default: parallel)");
         //System.err.println("INF: -v            validate both input (CMDI 1.1) and output (CMDI 1.2) (optional)");
     }
 
@@ -162,7 +163,7 @@ public class Upgrade {
         boolean validate = false;
         boolean parallel = true;
 
-        OptionParser parser = new OptionParser("i:o:x:nv?*");
+        OptionParser parser = new OptionParser("i:o:x:nvs?*");
         OptionSet options = parser.parse(args);
         if (options.has("i"))
             input = (String)options.valueOf("i");

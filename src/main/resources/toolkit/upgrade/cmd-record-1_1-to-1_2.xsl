@@ -36,8 +36,57 @@
     
     <!-- try to determine the profile -->
     <xsl:variable name="profile">
-        <xsl:variable name="header" select="/cmd0:CMD/cmd0:Header/cmd0:MdProfile/replace(.,'.*(clarin.eu:cr1:p_[0-9]+).*','$1')"/>
-        <xsl:variable name="schema" select="/cmd0:CMD/(@xsi:schemaLocation|@xsi:noNamespaceSchemaLocation)/replace(.,'.*(clarin.eu:cr1:p_[0-9]+).*','$1')"/>
+        <xsl:variable name="header">
+            <xsl:choose>
+                <xsl:when test="matches(/cmd0:CMD/cmd0:Header/cmd0:MdProfile,'.*(clarin.eu:cr1:p_[0-9]+).*')">
+                    <xsl:sequence select="replace(/cmd0:CMD/cmd0:Header/cmd0:MdProfile,'.*(clarin.eu:cr1:p_[0-9]+).*','$1')"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:sequence select="()"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:variable name="schema"> 
+            <xsl:variable name="location">
+                <xsl:choose>
+                    <xsl:when test="normalize-space(/cmd0:CMD/@xsi:noNamespaceSchemaLocation)!=''">
+                        <xsl:message>WRN: CMDI 1.1 uses namespaces so @xsi:schemaLocation should be used instead of @xsi:schemaLocation!</xsl:message>
+                        <xsl:sequence select="normalize-space(/cmd0:CMD/@xsi:noNamespaceSchemaLocation)"/>
+                    </xsl:when>
+                    <xsl:when test="normalize-space(/cmd0:CMD/@xsi:schemaLocation)!=''">
+                        <xsl:variable name="pairs" select="tokenize(/cmd0:CMD/@xsi:schemaLocation,'\s+')"/>
+                        <xsl:choose>
+                            <xsl:when test="count($pairs)=1">
+                                <!-- WRN: improper use of @xsi:schemaLocation! -->
+                                <xsl:message>WRN: @xsi:schemaLocation with single value[<xsl:value-of select="$pairs[1]"/>], should consist of (namespace URI, XSD URI) pairs!</xsl:message>
+                                <xsl:sequence select="$pairs[1]"/>
+                            </xsl:when>
+                            <xsl:when test="exists(index-of($pairs,'http://www.clarin.eu/cmd/'))">
+                                <xsl:variable name="pos" select="index-of($pairs,'http://www.clarin.eu/cmd/') + 1"/>
+                                <xsl:if test="$pos le count($pairs)">
+                                    <xsl:sequence select="$pairs[$pos]"/>
+                                </xsl:if>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:message>WRN: no XSD bound to the CMDI 1.1 namespace was found!</xsl:message>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:variable>
+            <xsl:if test="not(starts-with($location,'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/'))">
+                <xsl:message>WRN: non-ComponentRegistry XSD[<xsl:value-of select="$location"/>] will be replaced by a CMDI 1.2 ComponentRegistry XSD!</xsl:message>
+            </xsl:if>
+            <xsl:choose>
+                <xsl:when test="matches($location,'.*(clarin.eu:cr1:p_[0-9]+).*')">
+                    <xsl:sequence select="replace($location,'.*(clarin.eu:cr1:p_[0-9]+).*','$1')"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:sequence select="()"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+            
         <xsl:if test="count($header) gt 1">
             <xsl:message>WRN: found more then one profile ID (<xsl:value-of select="string-join($header,',')"/>) in a cmd:MdProfile, will use the first one! </xsl:message>
         </xsl:if>
@@ -45,17 +94,17 @@
             <xsl:message>WRN: found more then one profile ID (<xsl:value-of select="string-join($schema,',')"/>) in a xsi:schemaLocation, will use the first one! </xsl:message>
         </xsl:if>
         <xsl:choose>
-            <xsl:when test="exists($header) and exists($schema)">
+            <xsl:when test="normalize-space(($header)[1])!='' and normalize-space(($schema)[1])!=''">
                 <xsl:if test="($header)[1] ne ($schema)[1]">
                     <xsl:message>WRN: the profile IDs found in cmd:MdProfile (<xsl:value-of select="($header)[1]"/>) and xsi:schemaLocation (<xsl:value-of select="($schema)[1]"/>), don't agree, will use the xsi:schemaLocation!</xsl:message>
                 </xsl:if>
-                <xsl:value-of select="($schema)[1]"/>
+                <xsl:value-of select="normalize-space(($schema)[1])"/>
             </xsl:when>
-            <xsl:when test="exists($header) and empty($schema)">
-                <xsl:value-of select="($header)[1]"/>
+            <xsl:when test="normalize-space(($header)[1])!='' and normalize-space(($schema)[1])=''">
+                <xsl:value-of select="normalize-space(($header)[1])"/>
             </xsl:when>
-            <xsl:when test="empty($header) and exists($schema)">
-                <xsl:value-of select="($schema)[1]"/>
+            <xsl:when test="normalize-space(($header)[1])='' and normalize-space(($schema)[1])!=''">
+                <xsl:value-of select="normalize-space(($schema)[1])"/>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:message terminate="yes">ERR: the profile ID can't be determined!</xsl:message>
@@ -111,7 +160,7 @@
     </xsl:template>
     
     <!-- Make sure cmd:Header contains cmd:MdProfile -->
-    <xsl:template match="cmd0:Header">
+    <xsl:template match="cmd0:Header" priority="2">
         <cmd:Header>
             <xsl:apply-templates select="cmd0:MdCreator"/>
             <xsl:apply-templates select="cmd0:MdCreationDate"/>
@@ -124,7 +173,7 @@
     </xsl:template>
     
     <!-- Skip cmd:Resources/cmd:IsPartOfList -->
-    <xsl:template match="cmd0:Resources">
+    <xsl:template match="cmd0:Resources" priority="2">
         <cmd:Resources>
             <xsl:apply-templates select="cmd0:ResourceProxyList"/>
             <xsl:apply-templates select="cmd0:JournalFileProxyList"/>
@@ -133,20 +182,20 @@
     </xsl:template>
     
     <!-- Reshape ResourceRelationList -->
-    <xsl:template match="cmd0:ResourceRelation/cmd0:RelationType">
+    <xsl:template match="cmd0:ResourceRelation/cmd0:RelationType" priority="2">
         <cmd:RelationType>
             <!-- take the string value, ignore deeper structure -->
             <xsl:value-of select="."/>
         </cmd:RelationType>
     </xsl:template>
     
-    <xsl:template match="cmd0:ResourceRelation/cmd0:res1">
+    <xsl:template match="cmd0:ResourceRelation/cmd0:res1" priority="2">
         <cmd:Resource>
             <xsl:apply-templates select="@*"/>
         </cmd:Resource>
     </xsl:template>
     
-    <xsl:template match="cmd0:ResourceRelation/cmd0:res2">
+    <xsl:template match="cmd0:ResourceRelation/cmd0:res2" priority="2">
         <cmd:Resource>
             <xsl:apply-templates select="@*"/>
         </cmd:Resource>
@@ -167,7 +216,7 @@
     </xsl:template>
     
     <!-- unescape downgraded CMDI 1.2 attributes -->
-    <xsl:template match="cmd0:Components//@*[name()=local-name()][starts-with(name(),$escape)]">
+    <xsl:template match="cmd0:Components//@*[name()=local-name()][starts-with(name(),$escape)]" priority="2">
         <xsl:attribute name="{substring-after(name(),$escape)}" select="."/>
     </xsl:template>
     

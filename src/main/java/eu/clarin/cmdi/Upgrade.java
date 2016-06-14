@@ -32,7 +32,6 @@ import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.URIResolver;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
@@ -121,9 +120,10 @@ public class Upgrade {
     }
 
     public static void up(Path path, Path inputPath, Path outputPath, Path cache, boolean backup, boolean validate, boolean schematron, CMDIValidatorConfig config) {
+        int pre = 0;
         LOGGER.info("1.1 record[{}]", path);
         if (validate)
-            validate("1.1", path, schematron, cache, config);
+            pre = validate("1.1", path, schematron, cache, config);
         if (backup) {
             Path bak = Paths.get(path.toString()+".bak");
             try {
@@ -169,29 +169,39 @@ public class Upgrade {
                 LOGGER.error("Cause:", ex);
             }
             LOGGER.info("1.2 record[{}]", out);
-            if (validate)
-                validate("1.2", out, schematron, cache, config);
+            if (validate) {
+                int post = validate("1.2", out, schematron, cache, config);
+                if (pre > post)
+                    LOGGER.error("Validation result for 1.2 is lower than for 1.1 for '{}'! :-(", path);
+                if (pre < post)
+                    LOGGER.info("Validation result for 1.2 is better than for 1.1 for '{}'! :-)", path);
+            }
         }
     }
     
-    public static void validate(String version, Path rec, boolean schematron, Path cache, CMDIValidatorConfig config) {
+    public static int validate(String version, Path rec, boolean schematron, Path cache, CMDIValidatorConfig config) {
         try {
-            CMDIValidator validator = new CMDIValidator(config, rec.toFile(), new Handler(version));
+            Handler handler = new Handler(version);
+            CMDIValidator validator = new CMDIValidator(config, rec.toFile(), handler);
             SimpleCMDIValidatorProcessor processor = new SimpleCMDIValidatorProcessor();
             processor.process(validator);
+            return handler.result;
         } catch (CMDIValidatorInitException | CMDIValidatorException ex) {
             LOGGER.error("Problem validating Record[{}]!", rec);
             LOGGER.error("Cause:", ex);
         }
+        return 0;
     }
     
     private static class Handler extends CMDIValidationHandlerAdapter {
         
         private String version;
+        protected int result;
         
         public Handler(String version) {
             super();
             this.version = version;
+            this.result = 0;
         }
         
         @Override
@@ -202,6 +212,7 @@ public class Upgrade {
             switch (report.getHighestSeverity()) {
             case INFO:
                 LOGGER.info("{} record[{}] is valid", version, file);
+                result = 2;
                 break;
             case WARNING:
                 LOGGER.warn("{} record[{}] is valid (with warnings):", version, file);
@@ -216,6 +227,7 @@ public class Upgrade {
                         LOGGER.warn(" ({}) {}", msg.getSeverity().getShortcut(), msg.getMessage());
                     }
                 }
+                result = 1;
                 break;
             case ERROR:
                 LOGGER.error("{} record[{}] is invalid:", version, file);
@@ -230,6 +242,7 @@ public class Upgrade {
                         LOGGER.error(" ({}) {}", msg.getSeverity().getShortcut(), msg.getMessage());
                     }
                 }
+                result = 0;
                 break;
             default:
                 throw new CMDIValidatorException("unexpected severity: " +

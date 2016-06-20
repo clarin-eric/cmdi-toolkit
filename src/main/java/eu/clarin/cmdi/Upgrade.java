@@ -15,9 +15,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.SimpleFileVisitor;
 import java.nio.file.StandardOpenOption;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.HashMap;
@@ -307,7 +309,20 @@ public class Upgrade {
         Path cachePath = Paths.get(cache);
         if (Files.isDirectory(cachePath) && clean) {
             try {
-                Files.delete(cachePath);
+                Files.walkFileTree(cachePath, new SimpleFileVisitor<java.nio.file.Path>(){
+                   @Override
+                   public FileVisitResult postVisitDirectory(java.nio.file.Path dir,
+                     IOException exc) throws IOException {
+                    Files.delete(dir);
+                    return FileVisitResult.CONTINUE;
+                   }
+                   @Override
+                   public FileVisitResult visitFile(java.nio.file.Path file,
+                     BasicFileAttributes attrs) throws IOException {
+                    Files.delete(file);
+                    return FileVisitResult.CONTINUE;
+                   }
+                });
             } catch (IOException ex) {
                 LOGGER.error("Problem cleaning cache[{}]!", cache);
                 LOGGER.error("Cause:", ex);
@@ -355,9 +370,8 @@ public class Upgrade {
                 System.exit(2);
             }
             try {
-                if (!Files.isSameFile(inputPath, outputPath))
-                    if (backup)
-                        backup = false;
+                if (!Files.isSameFile(inputPath, outputPath) && backup)
+                    backup = false;
             } catch (IOException ex) {
                 LOGGER.error("Problem checking Input[{}] and Output[{}]!", input, output);
                 LOGGER.error("Cause:", ex);

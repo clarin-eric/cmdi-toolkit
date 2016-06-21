@@ -96,7 +96,7 @@
                 <!-- there is a <ValueScheme> and the @ValueScheme='string', silently ignore the @ValueScheme -->
             </xsl:when>
             <xsl:when test="exists(../ValueScheme) and current()!='string'">
-                <xsl:message>WRN: element with both a ValueScheme and a non-string @ValueScheme(<xsl:value-of select="."/>)! The @ValueScheme is ignored!</xsl:message>
+                <xsl:message>WRN: <xsl:value-of select="/CMD_ComponentSpec/Header/ID"/>: element with both a ValueScheme and a non-string @ValueScheme(<xsl:value-of select="."/>)! The @ValueScheme is ignored!</xsl:message>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:attribute name="ValueScheme" select="."/>
@@ -115,11 +115,11 @@
                             <xsl:for-each-group select="current-group()" group-by="string-join((normalize-space(@ConceptLink),normalize-space(@AppInfo)),'-')">
                                 <xsl:choose>
                                     <xsl:when test="last()=1">
-                                        <xsl:message>WRN: multiple enumeration items for '<xsl:value-of select="current-group()[1]/string()"/>', but they can and are merged into one!</xsl:message>
+                                        <xsl:message>WRN: <xsl:value-of select="/CMD_ComponentSpec/Header/ID"/>: multiple enumeration items for '<xsl:value-of select="current-group()[1]/string()"/>', but they can and are merged into one!</xsl:message>
                                         <xsl:apply-templates select="current-group()[1]"/>
                                     </xsl:when>
                                     <xsl:otherwise>
-                                        <xsl:message>ERR: multiple enumeration items for '<xsl:value-of select="current-group()[1]/string()"/>'!</xsl:message>
+                                        <xsl:message>ERR: <xsl:value-of select="/CMD_ComponentSpec/Header/ID"/>: multiple enumeration items for '<xsl:value-of select="current-group()[1]/string()"/>'!</xsl:message>
                                         <xsl:apply-templates select="current-group()[1]"/>
                                     </xsl:otherwise>
                                 </xsl:choose>
@@ -141,7 +141,7 @@
                 <xsl:choose>
                     <xsl:when test="exists(ValueScheme) and normalize-space(Type)='string'"/>
                     <xsl:when test="exists(ValueScheme) and normalize-space(Type)!='string'">
-                        <xsl:message>WRN: attribute with both a ValueScheme and a non-string Type(<xsl:value-of select="Type"/>)! The Type is ignored!</xsl:message>
+                        <xsl:message>WRN: <xsl:value-of select="/CMD_ComponentSpec/Header/ID"/>: attribute with both a ValueScheme and a non-string Type(<xsl:value-of select="Type"/>)! The Type is ignored!</xsl:message>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:attribute name="ValueScheme" select="Type"/>

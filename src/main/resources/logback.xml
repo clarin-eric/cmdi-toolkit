@@ -7,7 +7,9 @@
   </appender>
   
   <logger name="eu.clarin.cmdi" level="INFO"/>
-
+  
+  <logger name="eu.clarin.cmdi.validator.CMDISchemaLoader" level="INFO"/>
+  
   <root level="OFF">
     <appender-ref ref="STDOUT" />
   </root>

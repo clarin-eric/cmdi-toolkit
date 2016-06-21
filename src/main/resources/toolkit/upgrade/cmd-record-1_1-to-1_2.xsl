@@ -27,6 +27,20 @@
     <!-- CR REST API -->
     <xsl:variable name="cr-profiles" select="concat($cr-uri,'/',$cmd-1,'/profiles')"/>
     
+    <xsl:variable name="base">
+        <xsl:choose>
+            <xsl:when test="normalize-space(base-uri(/*))!=''">
+                <xsl:sequence select="normalize-space(base-uri(/*))"/>
+            </xsl:when>
+            <xsl:when test="normalize-space(/cmd0:CMD/cmd0:Header/cmd0:MdSelfLink)!=''">
+                <xsl:sequence select="normalize-space(/cmd0:CMD/cmd0:Header/cmd0:MdSelfLink)"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:sequence select="'NULL'"/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:variable>
+    
     <!-- identity copy -->
     <xsl:template match="@*|node()">
         <xsl:copy>
@@ -50,7 +64,7 @@
             <xsl:variable name="location">
                 <xsl:choose>
                     <xsl:when test="normalize-space(/cmd0:CMD/@xsi:noNamespaceSchemaLocation)!=''">
-                        <xsl:message>WRN: CMDI 1.1 uses namespaces so @xsi:schemaLocation should be used instead of @xsi:schemaLocation!</xsl:message>
+                        <xsl:message>WRN: <xsl:value-of select="$base"/>: CMDI 1.1 uses namespaces so @xsi:schemaLocation should be used instead of @xsi:schemaLocation!</xsl:message>
                         <xsl:sequence select="normalize-space(/cmd0:CMD/@xsi:noNamespaceSchemaLocation)"/>
                     </xsl:when>
                     <xsl:when test="normalize-space(/cmd0:CMD/@xsi:schemaLocation)!=''">
@@ -58,7 +72,7 @@
                         <xsl:choose>
                             <xsl:when test="count($pairs)=1">
                                 <!-- WRN: improper use of @xsi:schemaLocation! -->
-                                <xsl:message>WRN: @xsi:schemaLocation with single value[<xsl:value-of select="$pairs[1]"/>], should consist of (namespace URI, XSD URI) pairs!</xsl:message>
+                                <xsl:message>WRN: <xsl:value-of select="$base"/>: @xsi:schemaLocation with single value[<xsl:value-of select="$pairs[1]"/>], should consist of (namespace URI, XSD URI) pairs!</xsl:message>
                                 <xsl:sequence select="$pairs[1]"/>
                             </xsl:when>
                             <xsl:when test="exists(index-of($pairs,'http://www.clarin.eu/cmd/'))">
@@ -68,14 +82,14 @@
                                 </xsl:if>
                             </xsl:when>
                             <xsl:otherwise>
-                                <xsl:message>WRN: no XSD bound to the CMDI 1.1 namespace was found!</xsl:message>
+                                <xsl:message>WRN: <xsl:value-of select="$base"/>: no XSD bound to the CMDI 1.1 namespace was found!</xsl:message>
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:when>
                 </xsl:choose>
             </xsl:variable>
             <xsl:if test="not(starts-with($location,'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/'))">
-                <xsl:message>WRN: non-ComponentRegistry XSD[<xsl:value-of select="$location"/>] will be replaced by a CMDI 1.2 ComponentRegistry XSD!</xsl:message>
+                <xsl:message>WRN: <xsl:value-of select="$base"/>: non-ComponentRegistry XSD[<xsl:value-of select="$location"/>] will be replaced by a CMDI 1.2 ComponentRegistry XSD!</xsl:message>
             </xsl:if>
             <xsl:choose>
                 <xsl:when test="matches($location,'.*(clarin.eu:cr1:p_[0-9]+).*')">
@@ -88,15 +102,15 @@
         </xsl:variable>
             
         <xsl:if test="count($header) gt 1">
-            <xsl:message>WRN: found more then one profile ID (<xsl:value-of select="string-join($header,',')"/>) in a cmd:MdProfile, will use the first one! </xsl:message>
+            <xsl:message>WRN: <xsl:value-of select="$base"/>: found more then one profile ID (<xsl:value-of select="string-join($header,',')"/>) in a cmd:MdProfile, will use the first one! </xsl:message>
         </xsl:if>
         <xsl:if test="count($schema) gt 1">
-            <xsl:message>WRN: found more then one profile ID (<xsl:value-of select="string-join($schema,',')"/>) in a xsi:schemaLocation, will use the first one! </xsl:message>
+            <xsl:message>WRN: <xsl:value-of select="$base"/>: found more then one profile ID (<xsl:value-of select="string-join($schema,',')"/>) in a xsi:schemaLocation, will use the first one! </xsl:message>
         </xsl:if>
         <xsl:choose>
             <xsl:when test="normalize-space(($header)[1])!='' and normalize-space(($schema)[1])!=''">
                 <xsl:if test="($header)[1] ne ($schema)[1]">
-                    <xsl:message>WRN: the profile IDs found in cmd:MdProfile (<xsl:value-of select="($header)[1]"/>) and xsi:schemaLocation (<xsl:value-of select="($schema)[1]"/>), don't agree, will use the xsi:schemaLocation!</xsl:message>
+                    <xsl:message>WRN: <xsl:value-of select="$base"/>: the profile IDs found in cmd:MdProfile (<xsl:value-of select="($header)[1]"/>) and xsi:schemaLocation (<xsl:value-of select="($schema)[1]"/>), don't agree, will use the xsi:schemaLocation!</xsl:message>
                 </xsl:if>
                 <xsl:value-of select="normalize-space(($schema)[1])"/>
             </xsl:when>
@@ -107,7 +121,7 @@
                 <xsl:value-of select="normalize-space(($schema)[1])"/>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:message terminate="yes">ERR: the profile ID can't be determined!</xsl:message>
+                <xsl:message terminate="yes">ERR: <xsl:value-of select="$base"/>: the profile ID can't be determined!</xsl:message>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:variable>
@@ -182,20 +196,34 @@
     </xsl:template>
     
     <!-- Reshape ResourceRelationList -->
-    <xsl:template match="/cmd0:CMD/cmd0:Resources/cmd0:ResourceRelation/cmd0:RelationType" priority="2">
+    <xsl:template match="/cmd0:CMD/cmd0:Resources/cmd0:ResourceRelationList/cmd0:ResourceRelation/cmd0:RelationType" priority="2">
         <cmd:RelationType>
             <!-- take the string value, ignore deeper structure -->
             <xsl:value-of select="."/>
         </cmd:RelationType>
     </xsl:template>
     
-    <xsl:template match="/cmd0:CMD/cmd0:Resources/cmd0:ResourceRelation/cmd0:res1" priority="2">
+    <xsl:template match="/cmd0:CMD/cmd0:Resources/cmd0:ResourceRelationList/cmd0:ResourceRelation" priority="2">
+        <xsl:choose>
+            <xsl:when test="normalize-space(cmd0:Res1/@ref)='' or normalize-space(cmd0:Res2/@ref)=''">
+                <xsl:message>WRN: <xsl:value-of select="$base"/>: incomplete ResourceRelation, which will be ignored!</xsl:message>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:copy>
+                    <xsl:apply-templates select="@*|node()"/>
+                </xsl:copy>
+            </xsl:otherwise>
+        </xsl:choose>
+            
+    </xsl:template>
+    
+    <xsl:template match="/cmd0:CMD/cmd0:Resources/cmd0:ResourceRelationList/cmd0:ResourceRelation/cmd0:Res1" priority="2">
         <cmd:Resource>
             <xsl:apply-templates select="@*"/>
         </cmd:Resource>
     </xsl:template>
     
-    <xsl:template match="/cmd0:CMD/cmd0:Resources/cmd0:ResourceRelation/cmd0:res2" priority="2">
+    <xsl:template match="/cmd0:CMD/cmd0:Resources/cmd0:ResourceRelationList/cmd0:ResourceRelation/cmd0:Res2" priority="2">
         <cmd:Resource>
             <xsl:apply-templates select="@*"/>
         </cmd:Resource>
@@ -234,7 +262,7 @@
                 <xsl:attribute name="cmd:ref">
                     <xsl:variable name="refs" select="tokenize(.,'\s+')"/>
                     <xsl:if test="count($refs) gt 1">
-                        <xsl:message>WRN: CMDI 1.2 doesn't support references to multiple ResourceProxies! Only the first reference is kept.</xsl:message>
+                        <xsl:message>WRN: <xsl:value-of select="$base"/>: CMDI 1.2 doesn't support references to multiple ResourceProxies! Only the first reference is kept.</xsl:message>
                     </xsl:if>
                     <xsl:value-of select="$refs[1]"/>
                 </xsl:attribute>
@@ -257,7 +285,7 @@
                         <xsl:attribute name="cmd:ref">
                             <xsl:variable name="refs" select="tokenize(.,'\s+')"/>
                             <xsl:if test="count($refs) gt 1">
-                                <xsl:message>WRN: CMDI 1.2 doesn't support references to multiple ResourceProxies! Only the first reference is kept.</xsl:message>
+                                <xsl:message>WRN: <xsl:value-of select="$base"/>: CMDI 1.2 doesn't support references to multiple ResourceProxies! Only the first reference is kept.</xsl:message>
                             </xsl:if>
                             <xsl:value-of select="$refs[1]"/>
                         </xsl:attribute>

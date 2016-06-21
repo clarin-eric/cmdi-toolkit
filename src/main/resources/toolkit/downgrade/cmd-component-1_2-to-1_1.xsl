@@ -93,7 +93,7 @@
         <xsl:variable name="name">
             <xsl:choose>
                 <xsl:when test="exists(parent::AttributeList/parent::Component) and Name=('ref','ComponentId')">
-                    <xsl:message>WRN: user-defined ref and ComponentId attributes for a Component are not supported by CMDI 1.1! Adding the <xsl:value-of select="$escape"/> prefix</xsl:message>
+                    <xsl:message>WRN: <xsl:value-of select="/ComponentSpec/Header/ID"/>: user-defined ref and ComponentId attributes for a Component are not supported by CMDI 1.1! Adding the <xsl:value-of select="$escape"/> prefix</xsl:message>
                     <xsl:value-of select="concat($escape,@name)"/>
                 </xsl:when>
                 <xsl:otherwise>

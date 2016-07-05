@@ -209,9 +209,9 @@
                 <xsl:message>WRN: <xsl:value-of select="$base"/>: incomplete ResourceRelation, which will be ignored!</xsl:message>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:copy>
+                <cmd:ResourceRelation>
                     <xsl:apply-templates select="@*|node()"/>
-                </xsl:copy>
+                </cmd:ResourceRelation>
             </xsl:otherwise>
         </xsl:choose>
             
@@ -220,12 +220,14 @@
     <xsl:template match="/cmd0:CMD/cmd0:Resources/cmd0:ResourceRelationList/cmd0:ResourceRelation/cmd0:Res1" priority="2">
         <cmd:Resource>
             <xsl:apply-templates select="@*"/>
+            <cmd:Role>Res1</cmd:Role>
         </cmd:Resource>
     </xsl:template>
     
     <xsl:template match="/cmd0:CMD/cmd0:Resources/cmd0:ResourceRelationList/cmd0:ResourceRelation/cmd0:Res2" priority="2">
         <cmd:Resource>
             <xsl:apply-templates select="@*"/>
+            <cmd:Role>Res2</cmd:Role>
         </cmd:Resource>
     </xsl:template>
     

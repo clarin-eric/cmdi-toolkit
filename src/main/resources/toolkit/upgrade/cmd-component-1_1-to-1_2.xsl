@@ -109,6 +109,11 @@
         <Vocabulary>
             <enumeration>
                 <xsl:apply-templates select="@*"/>
+                <xsl:if test="exists(appinfo[normalize-space()!=''])">
+                    <appinfo>
+                        <xsl:value-of select="(appinfo[normalize-space()!=''])[1]"/>
+                    </appinfo>
+                </xsl:if>
                 <xsl:for-each-group select="item" group-by="string()">
                     <xsl:choose>
                         <xsl:when test="count(current-group()) gt 1">

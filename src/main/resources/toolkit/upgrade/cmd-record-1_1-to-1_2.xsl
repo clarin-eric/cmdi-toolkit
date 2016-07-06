@@ -14,7 +14,7 @@
     <xsl:param name="cmd-1" select="'1.x'"/>
     <xsl:param name="cmd-1_1" select="'1.1'"/>
     <xsl:param name="cmd-1_2" select="'1.2'"/>
-    <xsl:param name="cr-uri" select="'http://alpha-vlo.clarin.eu/component-registry-rest/rest/registry'"/>
+    <xsl:param name="cr-uri" select="'https://catalog.clarin.eu/ds/ComponentRegistry/rest/registry'"/>
     <xsl:param name="cr-extension-xsd" select="'/xsd'"/>
     <xsl:param name="cr-extension-xml" select="'/xml'"/>
     

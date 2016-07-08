@@ -88,7 +88,7 @@
                     </xsl:when>
                 </xsl:choose>
             </xsl:variable>
-            <xsl:if test="not(starts-with($location,'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/'))">
+            <xsl:if test="not(matches($location,'http(s)?://catalog.clarin.eu/ds/ComponentRegistry/rest/'))">
                 <xsl:message>WRN: <xsl:value-of select="$base"/>: non-ComponentRegistry XSD[<xsl:value-of select="$location"/>] will be replaced by a CMDI 1.2 ComponentRegistry XSD!</xsl:message>
             </xsl:if>
             <xsl:choose>

@@ -24,7 +24,7 @@
     <pattern>
         <title>Test xsi:schemaLocation</title>
         <rule role="warning" context="/cmd:CMD">
-            <assert test="matches(@xsi:schemaLocation,'http(s)?://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/')">
+            <assert test="matches(@xsi:schemaLocation,'http(s)?://catalog.clarin.eu/ds/ComponentRegistry/rest/')">
                 [CMDI Best Practice] /cmd:CMD/@xsi:schemaLocation doesn't refer to a schema from the Component Registry! [Actual value was [<value-of select="@xsi:schemaLocation"/>]
             </assert>
         </rule>

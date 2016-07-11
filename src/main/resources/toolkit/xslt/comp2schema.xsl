@@ -207,8 +207,8 @@
 
     <!-- Process all Elements, its attributes and children -->
 
-    <!-- Highest complexity: both attributes and a ValueScheme, link to the type we created during the preprocessing of the ValueScheme -->
-    <xsl:template match="Element[./AttributeList][./ValueScheme[exists(enumeration)]]" priority="3">
+    <!-- Highest complexity: a ValueScheme and possibly attributes, link to the type we created during the preprocessing of the ValueScheme -->
+    <xsl:template match="Element[./ValueScheme[exists(Vocabulary/enumeration)]]" priority="3">
         <xs:element name="{@name}">
 
             <xsl:apply-templates select="@ConceptLink"/>
@@ -261,16 +261,18 @@
 
     <!-- Simple case: no attributes and no ValueScheme, 1-to-1 transform to an xs:element, just rename element and attributes -->
     <xsl:template match="Element" priority="1">
-        <xsl:element name="xs:element">
+        <xs:element>
 
             <xsl:apply-templates select="@name"/>
-            <xsl:apply-templates select="@Multilingual"/>
             <xsl:apply-templates select="@ConceptLink"/>
             <xsl:apply-templates select="@CardinalityMin"/>
             <xsl:apply-templates select="@CardinalityMax"/>
-            <xsl:attribute name="type">
-                <xsl:value-of select="concat('xs:',(@ValueScheme,'string')[1])"/>
-            </xsl:attribute>
+            <xsl:if test="empty(./ValueScheme/@URI)">
+                <xsl:apply-templates select="@Multilingual"/>
+                <xsl:attribute name="type">
+                    <xsl:value-of select="concat('xs:',(@ValueScheme,'string')[1])"/>
+                </xsl:attribute>
+            </xsl:if>
             
             <!-- process all autovalue and cues attributes -->
             <xsl:call-template name="annotations"/>
@@ -278,7 +280,22 @@
                 <xsl:apply-templates select="Documentation"/>
             </xs:annotation>
             
-        </xsl:element>
+            <xsl:if test="exists(./ValueScheme/@URI)">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="{concat('xs:',(@ValueScheme,'string')[1])}">
+                            <xsl:if test="./@Multilingual='true'">
+                                <xs:attribute ref="xml:lang"/>
+                            </xsl:if>
+                            <!-- an element can refer to an entry in an open external vocabulary -->
+                            <xsl:if test="exists(./ValueScheme/@URI)">
+                                <xs:attribute ref="cmd:ValueConceptLink"/>
+                            </xsl:if>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xsl:if>
+        </xs:element>
     </xsl:template>
 
     <!-- end of Element templates -->

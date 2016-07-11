@@ -126,7 +126,7 @@
     <xsl:template match="text()" mode="types"/>
 
     <!-- first pass: create the complex types on top of the resulting XSD -->
-    <xsl:template match="Element/ValueScheme[exists(Vocabulary/enumeration)]" mode="types">
+    <xsl:template match="Element/ValueScheme[exists(Vocabulary/enumeration) or exists(pattern)]" mode="types">
         
         <!-- only handle the ValueScheme if this is the first occurence of the Component -->
         <xsl:variable name="Component" select="ancestor::Component[exists(@ComponentRef)]"/>
@@ -207,8 +207,8 @@
 
     <!-- Process all Elements, its attributes and children -->
 
-    <!-- Highest complexity: a ValueScheme and possibly attributes, link to the type we created during the preprocessing of the ValueScheme -->
-    <xsl:template match="Element[./ValueScheme[exists(Vocabulary/enumeration)]]" priority="3">
+    <!-- Highest complexity: a restrictive ValueScheme and possibly attributes, link to the type we created during the preprocessing of the ValueScheme -->
+    <xsl:template match="Element[./ValueScheme[exists(Vocabulary/enumeration) or exists(pattern)]]" priority="3">
         <xs:element name="{@name}">
 
             <xsl:apply-templates select="@ConceptLink"/>
@@ -226,7 +226,7 @@
         </xs:element>
     </xsl:template>
 
-    <!-- Medium complexity: attributes (or Multilingual field) but no ValueScheme, can be arranged inline -->
+    <!-- Medium complexity: attributes (or Multilingual field) but no restrictive ValueScheme, can be arranged inline -->
     <xsl:template match="Element[./AttributeList or ./@Multilingual='true']" priority="2">
         <xs:element name="{@name}">
 
@@ -259,7 +259,7 @@
         </xs:element>
     </xsl:template>
 
-    <!-- Simple case: no attributes and no ValueScheme, 1-to-1 transform to an xs:element, just rename element and attributes -->
+    <!-- Simple case: no attributes and no restrictive ValueScheme, 1-to-1 transform to an xs:element, just rename element and attributes -->
     <xsl:template match="Element" priority="1">
         <xs:element>
 

@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>clarin.cmdi</groupId>
     <artifactId>cmd-toolkit</artifactId>
-    <version>1.2.1</version>
+    <version>1.2-SNAPSHOT</version>
     <name>CMDToolkit</name>
     <dependencies>
         <dependency>

@@ -118,7 +118,7 @@
                 </Type>
             </xsl:if>
             <!-- @Required is skipped -->
-            <xsl:apply-templates select="node()"/>
+            <xsl:apply-templates select="node() except Documentation"/>
         </Attribute>
     </xsl:template>
     

@@ -7,11 +7,14 @@
         <Name>Test</Name>
         <Description>Testje</Description>
         <Status>development</Status>
+        <DerivedFrom>clarin.eu:cr1:p_1469541567394</DerivedFrom>
     </Header>
     <Component CardinalityMax="1" CardinalityMin="1" name="Test">
+        <Documentation>Component documentation</Documentation>
         <Element Multilingual="false" cue:DisplayPriority="1" CardinalityMax="unbounded"
             CardinalityMin="0" ValueScheme="string"
             ConceptLink="" name="test">
+            <Documentation>Element documentation</Documentation>
             <AttributeList>
                 <Attribute name="test" Required="true" ValueScheme="string"/>
             </AttributeList>

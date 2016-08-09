@@ -35,7 +35,8 @@
 
     <xsl:template match="Component" priority="1">
         <CMD_Component>
-            <xsl:apply-templates select="@*|node()"/>
+            <xsl:apply-templates select="@*"/>
+            <xsl:apply-templates select="node() except Documentation"/>
         </CMD_Component>
     </xsl:template>
     

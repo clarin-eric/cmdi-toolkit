@@ -3,7 +3,7 @@ August 2016
 
 - `Component/Documentation` skipped when downgrading components (#5)
 - `Header/DerivedFrom` skipped when downgrading components (#6)
-- Separate build profile for upgrade tool, allowing for a much smaller 'core'
+- Separate build profile for upgrade tool, allowing for a much smaller 'core' JAR file
 
 # 1.2.0
 July 2016

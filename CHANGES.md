@@ -1,7 +1,7 @@
 # 1.2.1
 August 2016
 
-- `Component/Documentation` skipped when downgrading components ([#5](https://github.com/clarin-eric/cmdi-toolkit/issues/5))
+- `Component/Documentation` and `Attribute/Documentation` skipped when downgrading components ([#5](https://github.com/clarin-eric/cmdi-toolkit/issues/5))
 - `Header/DerivedFrom` skipped when downgrading components ([#6](https://github.com/clarin-eric/cmdi-toolkit/issues/6))
 - Separate build profile for upgrade tool, allowing for a much smaller 'core' JAR file
 

@@ -4,13 +4,13 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>clarin.cmdi</groupId>
     <artifactId>cmd-toolkit</artifactId>
-    <version>1.2.1-RC1</version>
+    <version>1.2.1</version>
     <name>CMDToolkit</name>
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.10</version>
+            <version>4.12</version>
         </dependency>
         <dependency>
             <groupId>nl.mpi.tla</groupId>

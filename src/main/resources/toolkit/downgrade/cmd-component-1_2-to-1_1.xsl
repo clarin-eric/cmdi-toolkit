@@ -56,6 +56,7 @@
     <xsl:template match="Header/Status" priority="1"/>
     <xsl:template match="Header/StatusComment" priority="1"/>
     <xsl:template match="Header/Successor" priority="1"/>
+    <xsl:template match="Header/DerivedFrom" priority="1"/>
     
     <!-- turn @ComponentRef into @ComponentId -->
     <xsl:template match="@ComponentRef">

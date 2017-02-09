@@ -10,3 +10,7 @@ Please be aware of the following:
 * The current release (compatible with 1.2.0 onwards) is made available at https://infra.clarin.eu/CMDI/1.x/
 
 [More information](https://www.clarin.eu/cmdi)
+
+## Referencing the CMDI toolkit
+
+Please use the following URL to reference the CMDI toolkit: http://hdl.handle.net/11372/CMDI-0001

@@ -1,4 +1,0 @@
-[submodule "toolkit/example"]
-	path = toolkit/example
-	url = https://github.com/clarin-eric/cmdi-examples.git
-	branch = cmdi-1.1

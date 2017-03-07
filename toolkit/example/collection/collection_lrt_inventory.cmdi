@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD xmlns="http://www.clarin.eu/cmd/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    CMDVersion="1.1"
+    xsi:schemaLocation="http://www.clarin.eu/cmd http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1284723009187/xsd">
+    <Header>
+        <MdCreator>dir2cmdicollection.py</MdCreator>
+        <MdCreationDate>2011-11-10</MdCreationDate>
+        <MdSelfLink>https://infra.clarin.eu/cmd/example/collection/collection_lrt_inventory.cmdi</MdSelfLink>
+        <MdProfile>clarin.eu:cr1:p_1284723009187</MdProfile>
+    </Header>
+    <Resources>
+        <ResourceProxyList>
+            <ResourceProxy id="http___www_clarin_eu_node_1001">
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef>https://infra.clarin.eu/cmd/example/collection/lrt/lrt-1001.cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="http___www_clarin_eu_node_1002">
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef>https://infra.clarin.eu/cmd/example/collection/lrt/lrt-1002.cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="http___www_clarin_eu_node_1003">
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef>https://infra.clarin.eu/cmd/example/collection/lrt/lrt-1003.cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="http___www_clarin_eu_node_1004">
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef>https://infra.clarin.eu/cmd/example/collection/lrt/lrt-1004.cmdi</ResourceRef>
+            </ResourceProxy>
+          </ResourceProxyList>
+        <JournalFileProxyList/>
+        <ResourceRelationList/>
+    </Resources>
+    <Components>
+        <collection>
+            <GeneralInfo>
+                <Name>LRT inventory sample set</Name>
+                <ID>lrt-resources</ID>
+            </GeneralInfo>
+        </collection>
+    </Components>
+</CMD>

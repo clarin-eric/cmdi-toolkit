@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<CMD xmlns="http://www.clarin.eu/cmd/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" CMDVersion="1.1" xsi:schemaLocation="http://www.clarin.eu/cmd http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1289827960126/xsd">
+    <Header>
+        <MdCreator>lrt2cmdi.py</MdCreator>
+        <MdCreationDate>2011-11-10</MdCreationDate>
+        <MdSelfLink>https://infra.clarin.eu/cmd/example/collection/lrt/lrt-1004.cmdi</MdSelfLink>
+        <MdProfile>clarin.eu:cr1:p_1289827960126</MdProfile>
+	<MdCollectionDisplayName>CLARIN LRT inventory</MdCollectionDisplayName>
+    </Header>
+    <Resources>
+        <ResourceProxyList><ResourceProxy id="reflink">
+                <ResourceType>Resource</ResourceType>
+                <ResourceRef>http://retoc.iula.upf.edu/SOLC/</ResourceRef>
+            </ResourceProxy></ResourceProxyList>
+        <JournalFileProxyList />
+        <ResourceRelationList />
+    </Resources>
+    
+    <Components>
+        <LrtInventoryResource>
+            
+            <LrtCommon>
+                <ResourceName>SOLC</ResourceName>
+                <Institute>Institut Universitari de Lingüística Aplicada, Universitat Pompeu Fabra</Institute><ResourceType>Application / Tool</ResourceType>
+                <LanguagesOther />
+                <Description>An orthologic server for Catalan. A query system for the orthologic dictionary which allows making searches using dialectal and pragmatic variables.</Description>
+                <ContactPerson />
+                <Format />
+                <MetadataLink />
+                <Publications />
+                <ReadilyAvailable>false</ReadilyAvailable>
+                <ReferenceLink>http://retoc.iula.upf.edu/SOLC/</ReferenceLink>         
+                <Languages><ISO639><iso-639-3-code>cat</iso-639-3-code></ISO639></Languages>
+                    
+              
+                <Countries><Country><Code>ES</Code></Country></Countries>
+            </LrtCommon>
+            
+            <LrtDistributionClassification>
+                <OtherDistributionRestrictions />
+            </LrtDistributionClassification>
+            
+            <LrtIPR>
+                <EthicalReference />
+                <LegalReference />
+                <LicenseType />
+                <Description />
+                <ContactPerson />
+            </LrtIPR>
+            
+               
+        </LrtInventoryResource>
+    </Components>
+</CMD>

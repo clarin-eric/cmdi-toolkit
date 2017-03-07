@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../general-component-schema.xsd" xmlns:xi="http://www.w3.org/2001/XInclude" isProfile="true">
+    
+    <Header>
+        <!-- unique ID for this component/profile, to be delivered by component registry -->
+        <ID>http://www.clarin.eu/cmd/example/example-profile-instance.xml</ID>
+        <Name>Example Profile Instance</Name>
+        <Description>Just a simple profile that combines several metadata components</Description>
+    </Header>
+
+    <!-- import component defined elsewhere -->
+    
+    <CMD_Component filename="example-component-text.xml" />
+    
+    <CMD_Component filename="example-component-photo.xml" />    
+    
+    <!-- use a list of 0 to 4 actors, overriding the default cardinality for an Actor component -->
+    <CMD_Component filename="example-component-actor.xml" CardinalityMin="0" CardinalityMax="4"/>
+    
+</CMD_ComponentSpec>

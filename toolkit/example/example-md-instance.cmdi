@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD xmlns="http://www.clarin.eu/cmd/" CMDVersion="1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1290431694484/xsd">
+   
+   <!-- General Information Header -->
+   <Header>
+      <MdCreator>Dieter Van Uytvanck</MdCreator>
+      <MdCreationDate>2009-11-18</MdCreationDate>
+      <!-- A link to this very file -->
+      <MdSelfLink>http://www.clarin.eu/cmd/example/example-md-instance.cmdi</MdSelfLink>
+      <!-- A reference to the unique identifier of the profile this metadata instance is based on -->
+      <MdProfile>clarin.eu:cr1:p_1290431694484</MdProfile>
+      <!-- An (optional but recommended) plain text indication to which collection this file belongs. Used for the Collection facet in the VLO -->
+      <MdCollectionDisplayName>CMDI test collection</MdCollectionDisplayName>
+   </Header>
+   
+   <!-- Fixed element (not dependent on the profile) for referring to external items -->
+   <Resources>
+      
+      <!-- List of external resource files and (CMDI) metadata files -->
+      <ResourceProxyList>
+         
+         <ResourceProxy id="a_photo">
+            <ResourceType mimetype="image/jpeg">Resource</ResourceType>
+            <!-- note that both a normal URL and a handle Persistent Identifier can be used for the ResourceRef -->
+            <ResourceRef>hdl:1839/00-0000-0000-0009-3C7E-F</ResourceRef>
+         </ResourceProxy>
+         
+         <ResourceProxy id="a_text">
+            <ResourceType mimetype="text/plain">Resource</ResourceType>
+            <ResourceRef>http://www.clarin.eu/sometext.txt</ResourceRef>
+         </ResourceProxy>
+         
+         <ResourceProxy id="another_md_file">
+            <!-- only use the ResourceType "Metadata" for links to other .cmdi files -->
+            <ResourceType>Metadata</ResourceType>
+            <ResourceRef>http://www.clarin.eu/cmd/example/example-phonological-corpus.cmdi</ResourceRef>
+         </ResourceProxy>
+         
+      </ResourceProxyList>
+      
+      <!-- this part could contain links to journal information as produced by some web services - currently not in use anywhere  -->
+      <JournalFileProxyList/>
+      
+      <!-- expresses relations between ResourceProxies - rarely used -->
+      <ResourceRelationList>
+         <ResourceRelation>
+            <RelationType>describes</RelationType>
+            <Res1 ref="a_text"/>
+            <Res2 ref="a_photo"/>
+         </ResourceRelation>
+      </ResourceRelationList>
+   
+   </Resources>
+   
+   <!-- start of the profile-dependent part -->
+   <Components>
+      
+      <Example_Profile_Instance>
+      
+         <!-- instantation of the first embedded component: technical metadata about a text -->
+         <!-- Instead of having a URL to the resource here we link with a ref attribute to the relevant ResourceProxy element defined above -->
+         <example-component-text ref="a_text">
+            <example-component-texttype>
+               <TextTypeDescription>print</TextTypeDescription>
+            </example-component-texttype>
+         </example-component-text>
+         
+         <!-- instantation of the second embedded component: technical metadata about a digital image -->
+         <example-component-photo ref="a_photo">
+            <description>a suitable textual description of this photo</description>
+         </example-component-photo>
+         
+         <!-- instantation of the first embedded component: metadata about a person -->
+         <example-component-actor>
+            <!-- Note the support for multilingual fields, using the xml:lang attribute -->
+            <title xml:lang="eng">mister</title>
+            <title xml:lang="fra">monsieur</title>
+            <title xml:lang="nld">mijnheer</title>
+            <firstName>Foo</firstName>
+            <lastName>Bar</lastName>
+            <sex>female</sex>
+            <age>55</age>
+            <!-- start of an embedded component within the Actor component -->
+            <ActorLanguage>
+               <!-- For the sake of the example as self-chosen language name here. In reality one would prefer an ISO-639-3 component like http://catalog.clarin.eu/ds/ComponentRegistry/?item=clarin.eu:cr1:c_1271859438110 -->
+               <ActorLanguageName>Dutch</ActorLanguageName>
+            </ActorLanguage>
+         </example-component-actor>
+      
+      </Example_Profile_Instance>
+   </Components>
+</CMD>

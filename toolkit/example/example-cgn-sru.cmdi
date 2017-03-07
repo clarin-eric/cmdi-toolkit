@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD CMDVersion="1.1" xmlns="http://www.clarin.eu/cmd/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1274880881885/xsd">
+    <Header>
+        <MdCreator>imdi2clarin.xsl</MdCreator>
+        <MdCreationDate>2012-04-14</MdCreationDate>
+        <MdSelfLink>test-hdl:1839/00-0000-0000-0001-53A5-2</MdSelfLink>
+        <MdProfile>clarin.eu:cr1:p_1274880881885</MdProfile>
+        <MdCollectionDisplayName>MPI CGN</MdCollectionDisplayName>
+    </Header>
+    <Resources>
+        <ResourceProxyList>
+            <!-- Here we specify the SRU/CQL end point, note the mimetype and the ResourceType = Resource -->
+            <ResourceProxy id="d55">
+                <ResourceType mimetype="application/sru+xml">SearchService</ResourceType>
+                <ResourceRef>http://cqlservlet.mpi.nl/</ResourceRef>
+            </ResourceProxy>
+            <!-- This contains the other ResourceProxy elements -->
+            <ResourceProxy id="d416854e19">
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef>http://corpus1.mpi.nl/CGN/COREX6/data/meta/imdi_3.0_eaf/corpora/all.imdi.cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d416854e23">
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef>http://corpus1.mpi.nl/CGN/COREX6/data/meta/imdi_3.0_eaf/corpora/dvd.imdi.cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d416854e26">
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef>http://corpus1.mpi.nl/CGN/COREX6/data/meta/imdi_3.0_eaf/corpora/annotypes.imdi.cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d416854e29">
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef>http://corpus1.mpi.nl/CGN/COREX6/data/meta/imdi_3.0_eaf/corpora/components.imdi.cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d416854e32">
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef>http://corpus1.mpi.nl/CGN/COREX6/data/meta/imdi_3.0_eaf/corpora/regions.imdi.cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d416854e35">
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef>http://corpus1.mpi.nl/CGN/COREX6/data/meta/imdi_3.0_eaf/corpora/sexes.imdi.cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d416854e38">
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef>http://corpus1.mpi.nl/CGN/COREX6/data/meta/imdi_3.0_eaf/corpora/ages.imdi.cmdi</ResourceRef>
+            </ResourceProxy>
+        </ResourceProxyList>
+        <JournalFileProxyList/>
+        <ResourceRelationList/>
+    </Resources>
+    <Components>
+        <imdi-corpus>
+            <Corpus>
+                <Name>MPI CGN</Name>
+                <Title>The CGN-Corpus (Corpus Gesproken Nederlands)</Title>
+                <descriptions>
+                    <Description LanguageId="">The CGN-Corpus (Corpus Gesproken Nederlands)
+</Description>
+                    <Description LanguageId=""/>
+                </descriptions>
+                <CorpusLink>
+                    <CorpusLinkContent Name="All">all.imdi</CorpusLinkContent>
+                </CorpusLink>
+                <CorpusLink>
+                    <CorpusLinkContent Name="DVDs">dvd.imdi</CorpusLinkContent>
+                </CorpusLink>
+                <CorpusLink>
+                    <CorpusLinkContent Name="Annotation types">annotypes.imdi</CorpusLinkContent>
+                </CorpusLink>
+                <CorpusLink>
+                    <CorpusLinkContent Name="Components">components.imdi</CorpusLinkContent>
+                </CorpusLink>
+                <CorpusLink>
+                    <CorpusLinkContent Name="Regions">regions.imdi</CorpusLinkContent>
+                </CorpusLink>
+                <CorpusLink>
+                    <CorpusLinkContent Name="Speaker Sexes">sexes.imdi</CorpusLinkContent>
+                </CorpusLink>
+                <CorpusLink>
+                    <CorpusLinkContent Name="Speaker Ages">ages.imdi</CorpusLinkContent>
+                </CorpusLink>
+            </Corpus>
+        </imdi-corpus>
+    </Components>
+</CMD>

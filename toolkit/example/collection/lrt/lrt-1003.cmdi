@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='utf-8'?>
+<CMD xmlns="http://www.clarin.eu/cmd/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" CMDVersion="1.1" xsi:schemaLocation="http://www.clarin.eu/cmd http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1289827960126/xsd">
+    <Header>
+        <MdCreator>lrt2cmdi.py</MdCreator>
+        <MdCreationDate>2011-11-10</MdCreationDate>
+        <MdSelfLink>https://infra.clarin.eu/cmd/example/collection/lrt/lrt-1003.cmdi</MdSelfLink>
+        <MdProfile>clarin.eu:cr1:p_1289827960126</MdProfile>
+	<MdCollectionDisplayName>CLARIN LRT inventory</MdCollectionDisplayName>
+    </Header>
+    <Resources>
+        <ResourceProxyList><ResourceProxy id="reflink">
+                <ResourceType>Resource</ResourceType>
+                <ResourceRef>http://www.iula.upf.edu/rec/corpus92/</ResourceRef>
+            </ResourceProxy></ResourceProxyList>
+        <JournalFileProxyList />
+        <ResourceRelationList />
+    </Resources>
+    
+    <Components>
+        <LrtInventoryResource>
+            
+            <LrtCommon>
+                <ResourceName>Corpus PAAU 92</ResourceName>
+                <Institute>Institut Universitari de Lingüística Aplicada, Universitat Pompeu Fabra</Institute><ResourceType>Written Corpus</ResourceType>
+                <LanguagesOther />
+                <Description>The electronic version of the book “Corpus PAAU 1992: Descriptive Studies, Texts and Vocabulary” includes the texts that have been object of analysis in this project as well as the vocabulary lists that make up the Corpus 92.</Description>
+                <ContactPerson>Sergi Torner &lt;sergi.torner@upf.edu&gt;</ContactPerson>
+                <Format />
+                <MetadataLink>http://gilmere.upf.edu/oai/?verb=ListRecords&amp;metadataPrefix=oai_clarin</MetadataLink>
+                <Publications />
+                <ReadilyAvailable>true</ReadilyAvailable>
+                <ReferenceLink>http://www.iula.upf.edu/rec/corpus92/</ReferenceLink>         
+                <Languages><ISO639><iso-639-3-code>spa</iso-639-3-code></ISO639></Languages>
+                    
+              
+                <Countries><Country><Code>ES</Code></Country></Countries>
+            </LrtCommon>
+            
+            <LrtDistributionClassification>
+                <NonCommercialUsageOnly>false</NonCommercialUsageOnly>
+                <UsageReportRequired>false</UsageReportRequired>
+                <ModificationsRequireRedeposition>false</ModificationsRequireRedeposition>
+                <OtherDistributionRestrictions />
+            </LrtDistributionClassification>
+            
+            <LrtIPR>
+                <EthicalReference />
+                <LegalReference />
+                <LicenseType />
+                <Description />
+                <ContactPerson />
+            </LrtIPR>
+            
+               
+        <LrtCollectionDetails>
+                <LongTermPreservationBy />
+                <Location />
+                <ContentType />
+                <FormatDetailed />
+                <Quality />
+                <Applications />
+                <Size />
+                <DistributionForm />
+                <Access />
+                <Source />
+                </LrtCollectionDetails></LrtInventoryResource>
+    </Components>
+</CMD>

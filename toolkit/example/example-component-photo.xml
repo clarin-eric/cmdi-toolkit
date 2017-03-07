@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD_ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../general-component-schema.xsd" isProfile="false">
+
+    <Header/>
+
+    <CMD_Component name="PhotoTMD" ConceptLink="http://www.isocat.org/datcat/CMD-000"
+        CardinalityMin="1" CardinalityMax="unbounded" ComponentId="ex_compid_photo">
+        <CMD_Element name="Format" ConceptLink="http://www.isocat.org/datcat/DC-1758"
+            CardinalityMin="0" CardinalityMax="1">
+            <ValueScheme>
+                <enumeration>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-000">image/jpeg</item>
+                    <item ConceptLink="http://www.isocat.org/datcat/DC-000">image/png</item>
+                </enumeration>
+            </ValueScheme>
+        </CMD_Element>
+    </CMD_Component>
+
+
+</CMD_ComponentSpec>
+

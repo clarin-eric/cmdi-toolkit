@@ -1,0 +1,1951 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD CMDVersion="1.1" xmlns="http://www.clarin.eu/cmd/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1271859438204/xsd">
+    <Header>
+        <MdCreator>imdi2clarin.xsl</MdCreator>
+        <MdCreationDate>2011-11-26</MdCreationDate>
+        <MdSelfLink>
+                        test-hdl:1839/00-0000-0000-0003-4BF4-D</MdSelfLink>
+        <MdProfile>clarin.eu:cr1:p_1271859438204</MdProfile>
+        <MdCollectionDisplayName>IFA corpus</MdCollectionDisplayName>
+    </Header>
+    <Resources>
+        <ResourceProxyList>
+            <ResourceProxy id="d15964e478">
+                <ResourceType mimetype="audio/x-aiff">Resource</ResourceType>
+                <ResourceRef>hdl:1839/00-0000-0000-0004-3A3B-3</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d15964e547">
+                <ResourceType mimetype="audio/x-aiff">Resource</ResourceType>
+                <ResourceRef>hdl:1839/00-0000-0000-0004-3A3C-E</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d15964e616">
+                <ResourceType mimetype="audio/x-aiff">Resource</ResourceType>
+                <ResourceRef>hdl:1839/00-0000-0000-0004-3A3D-B</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d15964e685">
+                <ResourceType mimetype="audio/x-aiff">Resource</ResourceType>
+                <ResourceRef>hdl:1839/00-0000-0000-0004-3A3E-9</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d15964e754">
+                <ResourceType mimetype="audio/x-aiff">Resource</ResourceType>
+                <ResourceRef>hdl:1839/00-0000-0000-0004-3A3F-C</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d15964e824">
+                <ResourceType mimetype="audio/x-aiff">Resource</ResourceType>
+                <ResourceRef>hdl:1839/00-0000-0000-0004-3A40-2</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d15964e893">
+                <ResourceType mimetype="audio/x-aiff">Resource</ResourceType>
+                <ResourceRef>hdl:1839/00-0000-0000-0004-3A41-4</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d15964e962">
+                <ResourceType mimetype="audio/x-aiff">Resource</ResourceType>
+                <ResourceRef>hdl:1839/00-0000-0000-0004-3A42-7</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d15964e1031">
+                <ResourceType mimetype="audio/x-aiff">Resource</ResourceType>
+                <ResourceRef>hdl:1839/00-0000-0000-0004-3A43-9</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d15964e1100">
+                <ResourceType mimetype="audio/x-aiff">Resource</ResourceType>
+                <ResourceRef>hdl:1839/00-0000-0000-0004-3A44-C</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d15964e1169">
+                <ResourceType mimetype="audio/x-aiff">Resource</ResourceType>
+                <ResourceRef>hdl:1839/00-0000-0000-0004-3A45-9</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d15964e1239">
+                <ResourceType mimetype="audio/x-aiff">Resource</ResourceType>
+                <ResourceRef>hdl:1839/00-0000-0000-0004-3A46-7</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d15964e1308">
+                <ResourceType mimetype="text/plain">Resource</ResourceType>
+                <ResourceRef>hdl:1839/00-0000-0000-0005-4AC6-7</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d15964e1399">
+                <ResourceType mimetype="text/plain">Resource</ResourceType>
+                <ResourceRef>hdl:1839/00-0000-0000-0005-4AC7-A</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d15964e1490">
+                <ResourceType mimetype="text/plain">Resource</ResourceType>
+                <ResourceRef>hdl:1839/00-0000-0000-0005-4AC8-8</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d15964e1581">
+                <ResourceType mimetype="text/plain">Resource</ResourceType>
+                <ResourceRef>hdl:1839/00-0000-0000-0005-4AC9-9</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d15964e1672">
+                <ResourceType mimetype="text/plain">Resource</ResourceType>
+                <ResourceRef>hdl:1839/00-0000-0000-0005-4ACA-4</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d15964e1764">
+                <ResourceType mimetype="text/plain">Resource</ResourceType>
+                <ResourceRef>hdl:1839/00-0000-0000-0005-4ACB-2</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d15964e1855">
+                <ResourceType mimetype="text/plain">Resource</ResourceType>
+                <ResourceRef>hdl:1839/00-0000-0000-0005-4ACC-F</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d15964e1946">
+                <ResourceType mimetype="text/plain">Resource</ResourceType>
+                <ResourceRef>hdl:1839/00-0000-0000-0005-4ACD-6</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d15964e2037">
+                <ResourceType mimetype="text/plain">Resource</ResourceType>
+                <ResourceRef>hdl:1839/00-0000-0000-0005-4ACE-8</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d15964e2128">
+                <ResourceType mimetype="text/plain">Resource</ResourceType>
+                <ResourceRef>hdl:1839/00-0000-0000-0005-4ACF-A</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d15964e2219">
+                <ResourceType mimetype="text/plain">Resource</ResourceType>
+                <ResourceRef>hdl:1839/00-0000-0000-0005-4AD0-3</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d15964e2311">
+                <ResourceType mimetype="text/plain">Resource</ResourceType>
+                <ResourceRef>hdl:1839/00-0000-0000-0005-4AD1-2</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d15964e2402">
+                <ResourceType mimetype="text/plain">Resource</ResourceType>
+                <ResourceRef>hdl:1839/00-0000-0000-0005-4AD2-0</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d15964e2493">
+                <ResourceType mimetype="text/plain">Resource</ResourceType>
+                <ResourceRef>hdl:1839/00-0000-0000-0005-4AD3-A</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d15964e2584">
+                <ResourceType mimetype="text/plain">Resource</ResourceType>
+                <ResourceRef>hdl:1839/00-0000-0000-0005-4AD4-5</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d15964e2675">
+                <ResourceType mimetype="text/plain">Resource</ResourceType>
+                <ResourceRef>hdl:1839/00-0000-0000-0005-4AD5-8</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d15964e2766">
+                <ResourceType mimetype="text/plain">Resource</ResourceType>
+                <ResourceRef>hdl:1839/00-0000-0000-0005-4AD6-8</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d15964e2858">
+                <ResourceType mimetype="text/plain">Resource</ResourceType>
+                <ResourceRef>hdl:1839/00-0000-0000-0005-4AD7-9</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d15964e2949">
+                <ResourceType mimetype="text/plain">Resource</ResourceType>
+                <ResourceRef>hdl:1839/00-0000-0000-0005-4AD8-4</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d15964e3040">
+                <ResourceType mimetype="text/plain">Resource</ResourceType>
+                <ResourceRef>hdl:1839/00-0000-0000-0005-4AD9-2</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d15964e3131">
+                <ResourceType mimetype="text/plain">Resource</ResourceType>
+                <ResourceRef>hdl:1839/00-0000-0000-0005-4ADA-F</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d15964e3222">
+                <ResourceType mimetype="text/plain">Resource</ResourceType>
+                <ResourceRef>hdl:1839/00-0000-0000-0005-4ADB-6</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d15964e3313">
+                <ResourceType mimetype="text/plain">Resource</ResourceType>
+                <ResourceRef>hdl:1839/00-0000-0000-0005-4ADC-5</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d15964e3405">
+                <ResourceType mimetype="text/plain">Resource</ResourceType>
+                <ResourceRef>hdl:1839/00-0000-0000-0005-4ADD-A</ResourceRef>
+            </ResourceProxy>
+        </ResourceProxyList>
+        <JournalFileProxyList/>
+        <ResourceRelationList/>
+    </Resources>
+    <Components>
+        <Session>
+            <Name>F20N1FY</Name>
+            <Title>F20N1FY</Title>
+            <Date>2002-11-01</Date>
+            <descriptions>
+                <Description LanguageId="RFC1766:en-US"/>
+            </descriptions>
+            <MDGroup>
+                <Location>
+                    <Continent>Europe</Continent>
+                    <Country>Netherlands</Country>
+                    <Address>Institute of Phonetic Sciences, University of Amsterdam, Herengracht 338, NL1016CG Amsterdam, The Netherlands</Address>
+                </Location>
+                <Project>
+                    <Name>IFAcorpus</Name>
+                    <Title>IFAcorpus</Title>
+                    <Id/>
+                    <Contact>
+                        <Name>Rob van Son</Name>
+                        <Address>Herengracht 338, NL-1016CG Amsterdam, The Netherlands</Address>
+                        <Email>Rob.van.Son@hum.uva.nl</Email>
+                        <Organisation>University of Amsterdam, Institute of Phonetic Sciences</Organisation>
+                    </Contact>
+                    <descriptions>
+                        <Description LanguageId="RFC1766:en-US"/>
+                    </descriptions>
+                </Project>
+                <Keys/>
+                <Content>
+                    <Genre>Unspecified</Genre>
+                    <SubGenre>Unspecified</SubGenre>
+                    <Task>Unspecified</Task>
+                    <Modalities>Speech</Modalities>
+                    <CommunicationContext>
+                        <Interactivity>non-interactive</Interactivity>
+                        <PlanningType>planned</PlanningType>
+                        <Involvement>elicited</Involvement>
+                        <SocialContext>Unspecified</SocialContext>
+                        <EventStructure>Unspecified</EventStructure>
+                        <Channel>Unspecified</Channel>
+                    </CommunicationContext>
+                    <Content_Languages>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                        <Content_Language>
+                            <Id>ISO639-3:nld</Id>
+                            <Name>Dutch</Name>
+                            <descriptions>
+                                <Description LanguageId=""/>
+                            </descriptions>
+                        </Content_Language>
+                    </Content_Languages>
+                    <Keys>
+                        <Key Name="IMDI__1_9.Interactional">Unspecified</Key>
+                        <Key Name="IMDI__1_9.Discursive">Unspecified</Key>
+                        <Key Name="IMDI__1_9.Interactional">Unspecified</Key>
+                    </Keys>
+                    <descriptions>
+                        <Description LanguageId="ISO639:eng">This file was generated from an IMDI 1.9 file and transformed to IMDI 3.0. The substructure of Genre is replaced by two elements named "Genre" and "SubGenre". The original content of Genre substructure was: Interactional = 'Unspecified', Discursive = 'Unspecified', Performance = 'Unspecified'. These values have been added as Keys to the Content information. </Description>
+                        <Description LanguageId="RFC1766:en-US"/>
+                    </descriptions>
+                </Content>
+                <Actors>
+                    <descriptions>
+                        <Description LanguageId=""/>
+                    </descriptions>
+                    <Actor>
+                        <Role>consultant</Role>
+                        <Name>F20N</Name>
+                        <FullName>F20N</FullName>
+                        <Code>N</Code>
+                        <FamilySocialRole>Unspecified</FamilySocialRole>
+                        <EthnicGroup>Dutch</EthnicGroup>
+                        <Age>20</Age>
+                        <BirthDate>Unspecified</BirthDate>
+                        <Sex>Female</Sex>
+                        <Education>University</Education>
+                        <Anonymized>false</Anonymized>
+                        <Contact>
+                            <Name/>
+                            <Address/>
+                            <Email/>
+                            <Organisation/>
+                        </Contact>
+                        <Keys>
+                            <Key Name="IFAcorpus.speaker">F20N</Key>
+                            <Key Name="IFAcorpus.sex">F</Key>
+                            <Key Name="IFAcorpus.age">20</Key>
+                            <Key Name="IFAcorpus.idcode">N</Key>
+                            <Key Name="IFAcorpus.height">176</Key>
+                            <Key Name="IFAcorpus.weight">72</Key>
+                            <Key Name="IFAcorpus.fl">Du </Key>
+                            <Key Name="IFAcorpus.sl">-  </Key>
+                            <Key Name="IFAcorpus.pob">Ede</Key>
+                            <Key Name="IFAcorpus.ps">Ede-Mrgstl</Key>
+                            <Key Name="IFAcorpus.ss">Tilburg</Key>
+                            <Key Name="IFAcorpus.ts">UvA</Key>
+                            <Key Name="IFAcorpus.pe">HBO</Key>
+                            <Key Name="IFAcorpus.sm">0</Key>
+                            <Key Name="IFAcorpus.al">4</Key>
+                            <Key Name="IFAcorpus.md">n</Key>
+                            <Key Name="IFAcorpus.sh">n</Key>
+                            <Key Name="IFAcorpus.pr">n</Key>
+                            <Key Name="IFAcorpus.st">n</Key>
+                            <Key Name="IFAcorpus.si">n</Key>
+                            <Key Name="IFAcorpus.ph">y</Key>
+                            <Key Name="IFAcorpus.tl">n</Key>
+                            <Key Name="IFAcorpus.speaker">F20N</Key>
+                            <Key Name="IFAcorpus.recordingnr">1</Key>
+                            <Key Name="IFAcorpus.date">240300</Key>
+                            <Key Name="IFAcorpus.code">F20N1</Key>
+                            <Key Name="IFAcorpus.lcd">5</Key>
+                            <Key Name="IFAcorpus.lvcr">3</Key>
+                            <Key Name="IFAcorpus.g">78</Key>
+                            <Key Name="IFAcorpus.speech">VI/FT</Key>
+                            <Key Name="IFAcorpus.hmmpos">5</Key>
+                            <Key Name="IFAcorpus.hmmatt">0</Key>
+                            <Key Name="IFAcorpus.att">3</Key>
+                            <Key Name="IFAcorpus.hinst">0</Key>
+                            <Key Name="IFAcorpus.remarks">G2 after recordings</Key>
+                        </Keys>
+                        <descriptions>
+                            <Description LanguageId="RFC1766:en-US">Keys Legend
+Fieldname Type    Description
+Sex      CHAR(1)  Sex (F/M)
+Age      INT2     Age (years)
+IDcode   TEXT     IDcode (XX)
+Height   INT2     Height (cm)
+Weight   INT2     Weight (kg)
+FL       CHAR(3)  First Language
+SL       CHAR(3)  Bilingual, Second Language
+PoB      TEXT     Place of Birth
+PS       TEXT     Primary school
+SS       TEXT     Secundary school
+TS       TEXT     Tertiary school
+PE       TEXT     Parental education
+Sm       INT2     smoking, cigarets/day [0 &lt;1 1-4 &gt;4] =&gt; less than 0, 1, 5, 999
+Al       INT2     alcohol, glasses/week [0 &lt;4 4-8 &gt;8] =&gt; less than 0, 4, 9, 999
+Md       CHAR(1)  medication, y/n
+SH       CHAR(1)  Speaking or Hearing problems
+Pr       CHAR(1)  presentation
+ST       CHAR(1)  Speech Training
+Si       CHAR(1)  singing lessons
+Ph       CHAR(1)  phonetics/logopedics
+Tl       CHAR(1)  telephone work
+Date     CHAR(6)  Date of recording 
+Code     TEXT     Recording ID 
+Lcd      INT2     Recording level CD-R 
+Lvcr     INT2     Recording level VCR 
+G        INT2     Gauge noise/tone level settings (dB) 
+Speech   TEXT     Speech types/styles 
+HMMpos   FLOAT4   Position Head Mounted Microphone (cm) 
+HMMatt   INT2     Specific attenuation Head Mounted Microphone (dB) 
+Att      INT2     Attenuation both microphones (dB) 
+Hinst    INT2     Instabillity of Head Mounted Microphone position (0: stable, 9: unstable) 
+Remarks  TEXT     Remarks on recordings
+                    	</Description>
+                        </descriptions>
+                        <Actor_Languages>
+                            <descriptions>
+                                <Description LanguageId=""/>
+                            </descriptions>
+                            <Actor_Language>
+                                <Id>ISO639-3:nld</Id>
+                                <Name>Dutch</Name>
+                                <descriptions>
+                                    <Description LanguageId=""/>
+                                </descriptions>
+                            </Actor_Language>
+                        </Actor_Languages>
+                    </Actor>
+                    <Actor>
+                        <Role>Interviewer</Role>
+                        <Name>Rob van Son</Name>
+                        <FullName>Rob van Son</FullName>
+                        <Code/>
+                        <FamilySocialRole>Interviewer</FamilySocialRole>
+                        <EthnicGroup>Dutch</EthnicGroup>
+                        <Age>40</Age>
+                        <BirthDate>Unspecified</BirthDate>
+                        <Sex>Male</Sex>
+                        <Education>University</Education>
+                        <Anonymized>false</Anonymized>
+                        <Contact>
+                            <Name/>
+                            <Address/>
+                            <Email/>
+                            <Organisation/>
+                        </Contact>
+                        <Keys/>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                        <Actor_Languages>
+                            <descriptions>
+                                <Description LanguageId=""/>
+                            </descriptions>
+                            <Actor_Language>
+                                <Id>ISO639-3:nld</Id>
+                                <Name>Dutch</Name>
+                                <descriptions>
+                                    <Description LanguageId="RFC1766:en-US">First Language</Description>
+                                </descriptions>
+                            </Actor_Language>
+                        </Actor_Languages>
+                    </Actor>
+                    <Actor>
+                        <Role>Collector</Role>
+                        <Name>Rob van Son</Name>
+                        <FullName>Rob van Son</FullName>
+                        <Code>Unspecified</Code>
+                        <FamilySocialRole>Unspecified</FamilySocialRole>
+                        <EthnicGroup/>
+                        <Age>Unspecified</Age>
+                        <BirthDate>Unspecified</BirthDate>
+                        <Sex>Unspecified</Sex>
+                        <Education/>
+                        <Anonymized>false</Anonymized>
+                        <Contact>
+                            <Name>Rob van Son</Name>
+                            <Address>IFA, Herengracht 338, NL-1016CG Amsterdam, The Netherlands</Address>
+                            <Email>Rob.van.Son@hum.uva.nl</Email>
+                            <Organisation>Institute of Phonetic Sciences/ACLC, Department of Linguistics, University of Amsterdam</Organisation>
+                        </Contact>
+                        <Keys/>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                        <Actor_Languages/>
+                    </Actor>
+                    <Actor>
+                        <Role>Annotator</Role>
+                        <Name>Rob van Son</Name>
+                        <FullName>Rob van Son</FullName>
+                        <Code>Unspecified</Code>
+                        <FamilySocialRole>Unspecified</FamilySocialRole>
+                        <EthnicGroup>Unspecified</EthnicGroup>
+                        <Age>Unspecified</Age>
+                        <BirthDate>Unspecified</BirthDate>
+                        <Sex>Unspecified</Sex>
+                        <Education>Unspecified</Education>
+                        <Anonymized>false</Anonymized>
+                        <Contact>
+                            <Name/>
+                            <Address/>
+                            <Email/>
+                            <Organisation/>
+                        </Contact>
+                        <Keys/>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                        <Actor_Languages/>
+                    </Actor>
+                </Actors>
+            </MDGroup>
+            <Resources>
+                <MediaFile ref="d15964e478">
+                    <ResourceLink>../SLspeech/sentences/fm/F20N/F20N1FY10A_fm.aifc</ResourceLink>
+                    <Type>audio</Type>
+                    <Format>audio/x-aiff</Format>
+                    <Size>1134212</Size>
+                    <Quality>5</Quality>
+                    <RecordingConditions>Medium= audio cd
+        			microphone= Sennheiser MKH 105 HF condenser and Shure SM10A dynamic
+        			noise= unspecified
+
+        			digitisation.recording= 44.1 kHz, 16 bit linear
+        			digitisation.processing= 
+        			digitisation.status=
+				</RecordingConditions>
+                    <TimePosition>
+                        <Start>00:00:00:5053</Start>
+                        <End>00:00:12:3805</End>
+                    </TimePosition>
+                    <Access>
+                        <Availability>GNU General Public License</Availability>
+                        <Date>2002-11-01</Date>
+                        <Owner>Dutch Language Union</Owner>
+                        <Publisher>Chair of Phonetics, Department of Linguistics, Fac. of Humanities, University of Amsterdam</Publisher>
+                        <Contact>
+                            <Name>Rob van Son</Name>
+                            <Address>Herengracht 338, NL-1016CG Amsterdam, The Netherlands</Address>
+                            <Email>Rob.van.Son@hum.uva.nl</Email>
+                            <Organisation>Institute of Phonetic Sciences/ACLC, University of amsterdam</Organisation>
+                        </Contact>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Access>
+                    <descriptions>
+                        <Description LanguageId="RFC1766:x-sil-dut">F20N, 1, F, Y   , 
+stijf rug dicht sok bak mun dwaald bak buurt smor</Description>
+                    </descriptions>
+                    <Keys/>
+                </MediaFile>
+                <MediaFile ref="d15964e547">
+                    <ResourceLink>../SLspeech/sentences/fm/F20N/F20N1FY11A_fm.aifc</ResourceLink>
+                    <Type>audio</Type>
+                    <Format>audio/x-aiff</Format>
+                    <Size>1102284</Size>
+                    <Quality>5</Quality>
+                    <RecordingConditions>Medium= audio cd
+        			microphone= Sennheiser MKH 105 HF condenser and Shure SM10A dynamic
+        			noise= unspecified
+
+        			digitisation.recording= 44.1 kHz, 16 bit linear
+        			digitisation.processing= 
+        			digitisation.status=
+				</RecordingConditions>
+                    <TimePosition>
+                        <Start>00:00:00:5108</Start>
+                        <End>00:00:11:976</End>
+                    </TimePosition>
+                    <Access>
+                        <Availability>GNU General Public License</Availability>
+                        <Date>2002-11-01</Date>
+                        <Owner>Dutch Language Union</Owner>
+                        <Publisher>Chair of Phonetics, Department of Linguistics, Fac. of Humanities, University of Amsterdam</Publisher>
+                        <Contact>
+                            <Name>Rob van Son</Name>
+                            <Address>Herengracht 338, NL-1016CG Amsterdam, The Netherlands</Address>
+                            <Email>Rob.van.Son@hum.uva.nl</Email>
+                            <Organisation>Institute of Phonetic Sciences/ACLC, University of amsterdam</Organisation>
+                        </Contact>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Access>
+                    <descriptions>
+                        <Description LanguageId="RFC1766:x-sil-dut">F20N, 1, F, Y   , 
+sjok teel waa tjuh vuh dun maan dui weg abbah</Description>
+                    </descriptions>
+                    <Keys/>
+                </MediaFile>
+                <MediaFile ref="d15964e616">
+                    <ResourceLink>../SLspeech/sentences/fm/F20N/F20N1FY12A_fm.aifc</ResourceLink>
+                    <Type>audio</Type>
+                    <Format>audio/x-aiff</Format>
+                    <Size>1068360</Size>
+                    <Quality>5</Quality>
+                    <RecordingConditions>Medium= audio cd
+        			microphone= Sennheiser MKH 105 HF condenser and Shure SM10A dynamic
+        			noise= unspecified
+
+        			digitisation.recording= 44.1 kHz, 16 bit linear
+        			digitisation.processing= 
+        			digitisation.status=
+				</RecordingConditions>
+                    <TimePosition>
+                        <Start>00:00:00:516</Start>
+                        <End>00:00:11:536</End>
+                    </TimePosition>
+                    <Access>
+                        <Availability>GNU General Public License</Availability>
+                        <Date>2002-11-01</Date>
+                        <Owner>Dutch Language Union</Owner>
+                        <Publisher>Chair of Phonetics, Department of Linguistics, Fac. of Humanities, University of Amsterdam</Publisher>
+                        <Contact>
+                            <Name>Rob van Son</Name>
+                            <Address>Herengracht 338, NL-1016CG Amsterdam, The Netherlands</Address>
+                            <Email>Rob.van.Son@hum.uva.nl</Email>
+                            <Organisation>Institute of Phonetic Sciences/ACLC, University of amsterdam</Organisation>
+                        </Contact>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Access>
+                    <descriptions>
+                        <Description LanguageId="RFC1766:x-sil-dut">F20N, 1, F, Y   , 
+aabaa bak vun drup nach wiet mid licht luh</Description>
+                    </descriptions>
+                    <Keys/>
+                </MediaFile>
+                <MediaFile ref="d15964e685">
+                    <ResourceLink>../SLspeech/sentences/fm/F20N/F20N1FY1A_fm.aifc</ResourceLink>
+                    <Type>audio</Type>
+                    <Format>audio/x-aiff</Format>
+                    <Size>1598226</Size>
+                    <Quality>5</Quality>
+                    <RecordingConditions>Medium= audio cd
+        			microphone= Sennheiser MKH 105 HF condenser and Shure SM10A dynamic
+        			noise= unspecified
+
+        			digitisation.recording= 44.1 kHz, 16 bit linear
+        			digitisation.processing= 
+        			digitisation.status=
+				</RecordingConditions>
+                    <TimePosition>
+                        <Start>00:00:00:506</Start>
+                        <End>00:00:17:6031</End>
+                    </TimePosition>
+                    <Access>
+                        <Availability>GNU General Public License</Availability>
+                        <Date>2002-11-01</Date>
+                        <Owner>Dutch Language Union</Owner>
+                        <Publisher>Chair of Phonetics, Department of Linguistics, Fac. of Humanities, University of Amsterdam</Publisher>
+                        <Contact>
+                            <Name>Rob van Son</Name>
+                            <Address>Herengracht 338, NL-1016CG Amsterdam, The Netherlands</Address>
+                            <Email>Rob.van.Son@hum.uva.nl</Email>
+                            <Organisation>Institute of Phonetic Sciences/ACLC, University of amsterdam</Organisation>
+                        </Contact>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Access>
+                    <descriptions>
+                        <Description LanguageId="RFC1766:x-sil-dut">F20N, 1, F, Y   , 
+schul dauw aadaa ruh vin zend wan noor moo zon</Description>
+                    </descriptions>
+                    <Keys/>
+                </MediaFile>
+                <MediaFile ref="d15964e754">
+                    <ResourceLink>../SLspeech/sentences/fm/F20N/F20N1FY2A_fm.aifc</ResourceLink>
+                    <Type>audio</Type>
+                    <Format>audio/x-aiff</Format>
+                    <Size>1396156</Size>
+                    <Quality>5</Quality>
+                    <RecordingConditions>Medium= audio cd
+        			microphone= Sennheiser MKH 105 HF condenser and Shure SM10A dynamic
+        			noise= unspecified
+
+        			digitisation.recording= 44.1 kHz, 16 bit linear
+        			digitisation.processing= 
+        			digitisation.status=
+				</RecordingConditions>
+                    <TimePosition>
+                        <Start>00:00:00:496</Start>
+                        <End>00:00:15:2934</End>
+                    </TimePosition>
+                    <Access>
+                        <Availability>GNU General Public License</Availability>
+                        <Date>2002-11-01</Date>
+                        <Owner>Dutch Language Union</Owner>
+                        <Publisher>Chair of Phonetics, Department of Linguistics, Fac. of Humanities, University of Amsterdam</Publisher>
+                        <Contact>
+                            <Name>Rob van Son</Name>
+                            <Address>Herengracht 338, NL-1016CG Amsterdam, The Netherlands</Address>
+                            <Email>Rob.van.Son@hum.uva.nl</Email>
+                            <Organisation>Institute of Phonetic Sciences/ACLC, University of amsterdam</Organisation>
+                        </Contact>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Access>
+                    <descriptions>
+                        <Description LanguageId="RFC1766:x-sil-dut">F20N, 1, F, Y   , 
+bin vak sterk zoo wak plaats kum pak dak kree</Description>
+                    </descriptions>
+                    <Keys/>
+                </MediaFile>
+                <MediaFile ref="d15964e824">
+                    <ResourceLink>../SLspeech/sentences/fm/F20N/F20N1FY3A_fm.aifc</ResourceLink>
+                    <Type>audio</Type>
+                    <Format>audio/x-aiff</Format>
+                    <Size>1324110</Size>
+                    <Quality>5</Quality>
+                    <RecordingConditions>Medium= audio cd
+        			microphone= Sennheiser MKH 105 HF condenser and Shure SM10A dynamic
+        			noise= unspecified
+
+        			digitisation.recording= 44.1 kHz, 16 bit linear
+        			digitisation.processing= 
+        			digitisation.status=
+				</RecordingConditions>
+                    <TimePosition>
+                        <Start>00:00:00:5094</Start>
+                        <End>00:00:14:5046</End>
+                    </TimePosition>
+                    <Access>
+                        <Availability>GNU General Public License</Availability>
+                        <Date>2002-11-01</Date>
+                        <Owner>Dutch Language Union</Owner>
+                        <Publisher>Chair of Phonetics, Department of Linguistics, Fac. of Humanities, University of Amsterdam</Publisher>
+                        <Contact>
+                            <Name>Rob van Son</Name>
+                            <Address>Herengracht 338, NL-1016CG Amsterdam, The Netherlands</Address>
+                            <Email>Rob.van.Son@hum.uva.nl</Email>
+                            <Organisation>Institute of Phonetic Sciences/ACLC, University of amsterdam</Organisation>
+                        </Contact>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Access>
+                    <descriptions>
+                        <Description LanguageId="RFC1766:x-sil-dut">F20N, 1, F, Y   , 
+zee lun neer maal braa zich dak munt stil buh</Description>
+                    </descriptions>
+                    <Keys/>
+                </MediaFile>
+                <MediaFile ref="d15964e893">
+                    <ResourceLink>../SLspeech/sentences/fm/F20N/F20N1FY4A_fm.aifc</ResourceLink>
+                    <Type>audio</Type>
+                    <Format>audio/x-aiff</Format>
+                    <Size>1298420</Size>
+                    <Quality>5</Quality>
+                    <RecordingConditions>Medium= audio cd
+        			microphone= Sennheiser MKH 105 HF condenser and Shure SM10A dynamic
+        			noise= unspecified
+
+        			digitisation.recording= 44.1 kHz, 16 bit linear
+        			digitisation.processing= 
+        			digitisation.status=
+				</RecordingConditions>
+                    <TimePosition>
+                        <Start>00:00:00:486</Start>
+                        <End>00:00:14:2222</End>
+                    </TimePosition>
+                    <Access>
+                        <Availability>GNU General Public License</Availability>
+                        <Date>2002-11-01</Date>
+                        <Owner>Dutch Language Union</Owner>
+                        <Publisher>Chair of Phonetics, Department of Linguistics, Fac. of Humanities, University of Amsterdam</Publisher>
+                        <Contact>
+                            <Name>Rob van Son</Name>
+                            <Address>Herengracht 338, NL-1016CG Amsterdam, The Netherlands</Address>
+                            <Email>Rob.van.Son@hum.uva.nl</Email>
+                            <Organisation>Institute of Phonetic Sciences/ACLC, University of amsterdam</Organisation>
+                        </Contact>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Access>
+                    <descriptions>
+                        <Description LanguageId="RFC1766:x-sil-dut">F20N, 1, F, Y   , 
+trek nun bloed tuu attah twis rug tak rop kas</Description>
+                    </descriptions>
+                    <Keys/>
+                </MediaFile>
+                <MediaFile ref="d15964e962">
+                    <ResourceLink>../SLspeech/sentences/fm/F20N/F20N1FY5A_fm.aifc</ResourceLink>
+                    <Type>audio</Type>
+                    <Format>audio/x-aiff</Format>
+                    <Size>1341552</Size>
+                    <Quality>5</Quality>
+                    <RecordingConditions>Medium= audio cd
+        			microphone= Sennheiser MKH 105 HF condenser and Shure SM10A dynamic
+        			noise= unspecified
+
+        			digitisation.recording= 44.1 kHz, 16 bit linear
+        			digitisation.processing= 
+        			digitisation.status=
+				</RecordingConditions>
+                    <TimePosition>
+                        <Start>00:00:00:5002</Start>
+                        <End>00:00:14:7166</End>
+                    </TimePosition>
+                    <Access>
+                        <Availability>GNU General Public License</Availability>
+                        <Date>2002-11-01</Date>
+                        <Owner>Dutch Language Union</Owner>
+                        <Publisher>Chair of Phonetics, Department of Linguistics, Fac. of Humanities, University of Amsterdam</Publisher>
+                        <Contact>
+                            <Name>Rob van Son</Name>
+                            <Address>Herengracht 338, NL-1016CG Amsterdam, The Netherlands</Address>
+                            <Email>Rob.van.Son@hum.uva.nl</Email>
+                            <Organisation>Institute of Phonetic Sciences/ACLC, University of amsterdam</Organisation>
+                        </Contact>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Access>
+                    <descriptions>
+                        <Description LanguageId="RFC1766:x-sil-dut">F20N, 1, F, Y   , 
+dak ree kwaa fluit doods jus addah vur voo guns</Description>
+                    </descriptions>
+                    <Keys/>
+                </MediaFile>
+                <MediaFile ref="d15964e1031">
+                    <ResourceLink>../SLspeech/sentences/fm/F20N/F20N1FY6A_fm.aifc</ResourceLink>
+                    <Type>audio</Type>
+                    <Format>audio/x-aiff</Format>
+                    <Size>1226804</Size>
+                    <Quality>5</Quality>
+                    <RecordingConditions>Medium= audio cd
+        			microphone= Sennheiser MKH 105 HF condenser and Shure SM10A dynamic
+        			noise= unspecified
+
+        			digitisation.recording= 44.1 kHz, 16 bit linear
+        			digitisation.processing= 
+        			digitisation.status=
+				</RecordingConditions>
+                    <TimePosition>
+                        <Start>00:00:00:4658</Start>
+                        <End>00:00:13:4117</End>
+                    </TimePosition>
+                    <Access>
+                        <Availability>GNU General Public License</Availability>
+                        <Date>2002-11-01</Date>
+                        <Owner>Dutch Language Union</Owner>
+                        <Publisher>Chair of Phonetics, Department of Linguistics, Fac. of Humanities, University of Amsterdam</Publisher>
+                        <Contact>
+                            <Name>Rob van Son</Name>
+                            <Address>Herengracht 338, NL-1016CG Amsterdam, The Netherlands</Address>
+                            <Email>Rob.van.Son@hum.uva.nl</Email>
+                            <Organisation>Institute of Phonetic Sciences/ACLC, University of amsterdam</Organisation>
+                        </Contact>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Access>
+                    <descriptions>
+                        <Description LanguageId="RFC1766:x-sil-dut">F20N, 1, F, Y   , 
+guh kun luk pul dig sun rekt tun hie too</Description>
+                    </descriptions>
+                    <Keys/>
+                </MediaFile>
+                <MediaFile ref="d15964e1100">
+                    <ResourceLink>../SLspeech/sentences/fm/F20N/F20N1FY7A_fm.aifc</ResourceLink>
+                    <Type>audio</Type>
+                    <Format>audio/x-aiff</Format>
+                    <Size>1282198</Size>
+                    <Quality>5</Quality>
+                    <RecordingConditions>Medium= audio cd
+        			microphone= Sennheiser MKH 105 HF condenser and Shure SM10A dynamic
+        			noise= unspecified
+
+        			digitisation.recording= 44.1 kHz, 16 bit linear
+        			digitisation.processing= 
+        			digitisation.status=
+				</RecordingConditions>
+                    <TimePosition>
+                        <Start>00:00:00:529</Start>
+                        <End>00:00:14:0067</End>
+                    </TimePosition>
+                    <Access>
+                        <Availability>GNU General Public License</Availability>
+                        <Date>2002-11-01</Date>
+                        <Owner>Dutch Language Union</Owner>
+                        <Publisher>Chair of Phonetics, Department of Linguistics, Fac. of Humanities, University of Amsterdam</Publisher>
+                        <Contact>
+                            <Name>Rob van Son</Name>
+                            <Address>Herengracht 338, NL-1016CG Amsterdam, The Netherlands</Address>
+                            <Email>Rob.van.Son@hum.uva.nl</Email>
+                            <Organisation>Institute of Phonetic Sciences/ACLC, University of amsterdam</Organisation>
+                        </Contact>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Access>
+                    <descriptions>
+                        <Description LanguageId="RFC1766:x-sil-dut">F20N, 1, F, Y   , 
+staan kuh dong gul on zou smeek lost kooj stuh</Description>
+                    </descriptions>
+                    <Keys/>
+                </MediaFile>
+                <MediaFile ref="d15964e1169">
+                    <ResourceLink>../SLspeech/sentences/fm/F20N/F20N1FY8A_fm.aifc</ResourceLink>
+                    <Type>audio</Type>
+                    <Format>audio/x-aiff</Format>
+                    <Size>1229176</Size>
+                    <Quality>5</Quality>
+                    <RecordingConditions>Medium= audio cd
+        			microphone= Sennheiser MKH 105 HF condenser and Shure SM10A dynamic
+        			noise= unspecified
+
+        			digitisation.recording= 44.1 kHz, 16 bit linear
+        			digitisation.processing= 
+        			digitisation.status=
+				</RecordingConditions>
+                    <TimePosition>
+                        <Start>00:00:00:4244</Start>
+                        <End>00:00:13:5597</End>
+                    </TimePosition>
+                    <Access>
+                        <Availability>GNU General Public License</Availability>
+                        <Date>2002-11-01</Date>
+                        <Owner>Dutch Language Union</Owner>
+                        <Publisher>Chair of Phonetics, Department of Linguistics, Fac. of Humanities, University of Amsterdam</Publisher>
+                        <Contact>
+                            <Name>Rob van Son</Name>
+                            <Address>Herengracht 338, NL-1016CG Amsterdam, The Netherlands</Address>
+                            <Email>Rob.van.Son@hum.uva.nl</Email>
+                            <Organisation>Institute of Phonetic Sciences/ACLC, University of amsterdam</Organisation>
+                        </Contact>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Access>
+                    <descriptions>
+                        <Description LanguageId="RFC1766:x-sil-dut">F20N, 1, F, Y   , 
+heen roo meis daar run oo boom gun vrijd naa</Description>
+                    </descriptions>
+                    <Keys/>
+                </MediaFile>
+                <MediaFile ref="d15964e1239">
+                    <ResourceLink>../SLspeech/sentences/fm/F20N/F20N1FY9A_fm.aifc</ResourceLink>
+                    <Type>audio</Type>
+                    <Format>audio/x-aiff</Format>
+                    <Size>1190400</Size>
+                    <Quality>5</Quality>
+                    <RecordingConditions>Medium= audio cd
+        			microphone= Sennheiser MKH 105 HF condenser and Shure SM10A dynamic
+        			noise= unspecified
+
+        			digitisation.recording= 44.1 kHz, 16 bit linear
+        			digitisation.processing= 
+        			digitisation.status=
+				</RecordingConditions>
+                    <TimePosition>
+                        <Start>00:00:00:486</Start>
+                        <End>00:00:12:9793</End>
+                    </TimePosition>
+                    <Access>
+                        <Availability>GNU General Public License</Availability>
+                        <Date>2002-11-01</Date>
+                        <Owner>Dutch Language Union</Owner>
+                        <Publisher>Chair of Phonetics, Department of Linguistics, Fac. of Humanities, University of Amsterdam</Publisher>
+                        <Contact>
+                            <Name>Rob van Son</Name>
+                            <Address>Herengracht 338, NL-1016CG Amsterdam, The Netherlands</Address>
+                            <Email>Rob.van.Son@hum.uva.nl</Email>
+                            <Organisation>Institute of Phonetic Sciences/ACLC, University of amsterdam</Organisation>
+                        </Contact>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Access>
+                    <descriptions>
+                        <Description LanguageId="RFC1766:x-sil-dut">F20N, 1, F, Y   , 
+tus bang stam wind gaa vlak stie ring hee zijn</Description>
+                    </descriptions>
+                    <Keys/>
+                </MediaFile>
+                <WrittenResource ref="d15964e1308">
+                    <ResourceLink>../SLcorpus/Labels/sentences/F20N/phoneme/F20N1FY10A_JP_phoneme.txt</ResourceLink>
+                    <MediaResourceLink>../SLspeech/sentences/fm/F20N/F20N1FY10A_fm.aifc</MediaResourceLink>
+                    <Date>2002-11-01</Date>
+                    <Type>Annotation</Type>
+                    <SubType>phonemic</SubType>
+                    <Format>text/plain</Format>
+                    <Size>Unspecified</Size>
+                    <Derivation>Annotation</Derivation>
+                    <CharacterEncoding/>
+                    <ContentEncoding/>
+                    <LanguageId>RFC1766:x-sil-dut</LanguageId>
+                    <Anonymized>false</Anonymized>
+                    <Validation>
+                        <Type>Unspecified</Type>
+                        <Methodology>Unspecified</Methodology>
+                        <Level>Unspecified</Level>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Validation>
+                    <Access>
+                        <Availability>GNU General Public License</Availability>
+                        <Date>2002-11-01</Date>
+                        <Owner>Dutch Language Union</Owner>
+                        <Publisher>Chair of Phonetics, Department of Linguistics, Fac. of Humanities, University of Amsterdam</Publisher>
+                        <Contact>
+                            <Name>Rob van Son</Name>
+                            <Address>Herengracht 338, NL-1016CG Amsterdam, The Netherlands</Address>
+                            <Email>Rob.van.Son@hum.uva.nl</Email>
+                            <Organisation>Institute of Phonetic Sciences/ACLC, University of amsterdam</Organisation>
+                        </Contact>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Access>
+                    <descriptions>
+                        <Description LanguageId="RFC1766:en-US">Praat label file, aligned on phonemes</Description>
+                    </descriptions>
+                    <Keys/>
+                </WrittenResource>
+                <WrittenResource ref="d15964e1399">
+                    <ResourceLink>../SLcorpus/Labels/sentences/F20N/translit/F20N1FY10A_translit.txt</ResourceLink>
+                    <MediaResourceLink>../SLspeech/sentences/fm/F20N/F20N1FY10A_fm.aifc</MediaResourceLink>
+                    <Date>2002-11-01</Date>
+                    <Type>Annotation</Type>
+                    <SubType>orthographic</SubType>
+                    <Format>text/plain</Format>
+                    <Size>Unspecified</Size>
+                    <Derivation>Annotation</Derivation>
+                    <CharacterEncoding/>
+                    <ContentEncoding/>
+                    <LanguageId>RFC1766:x-sil-dut</LanguageId>
+                    <Anonymized>false</Anonymized>
+                    <Validation>
+                        <Type>Unspecified</Type>
+                        <Methodology>Unspecified</Methodology>
+                        <Level>Unspecified</Level>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Validation>
+                    <Access>
+                        <Availability>GNU General Public License</Availability>
+                        <Date>2002-11-01</Date>
+                        <Owner>Dutch Language Union</Owner>
+                        <Publisher>Chair of Phonetics, Department of Linguistics, Fac. of Humanities, University of Amsterdam</Publisher>
+                        <Contact>
+                            <Name>Rob van Son</Name>
+                            <Address>Herengracht 338, NL-1016CG Amsterdam, The Netherlands</Address>
+                            <Email>Rob.van.Son@hum.uva.nl</Email>
+                            <Organisation>Institute of Phonetic Sciences/ACLC, University of amsterdam</Organisation>
+                        </Contact>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Access>
+                    <descriptions>
+                        <Description LanguageId="RFC1766:en-US">Praat label file, aligned on sentences:
+F20N, 1, F, Y   , 
+stijf rug dicht sok bak mun dwaald bak buurt smor</Description>
+                    </descriptions>
+                    <Keys/>
+                </WrittenResource>
+                <WrittenResource ref="d15964e1490">
+                    <ResourceLink>../SLcorpus/Labels/sentences/F20N/phoneme/F20N1FY11A_JB_phoneme.txt</ResourceLink>
+                    <MediaResourceLink>../SLspeech/sentences/fm/F20N/F20N1FY11A_fm.aifc</MediaResourceLink>
+                    <Date>2002-11-01</Date>
+                    <Type>Annotation</Type>
+                    <SubType>phonemic</SubType>
+                    <Format>text/plain</Format>
+                    <Size>Unspecified</Size>
+                    <Derivation>Annotation</Derivation>
+                    <CharacterEncoding/>
+                    <ContentEncoding/>
+                    <LanguageId>RFC1766:x-sil-dut</LanguageId>
+                    <Anonymized>false</Anonymized>
+                    <Validation>
+                        <Type>Unspecified</Type>
+                        <Methodology>Unspecified</Methodology>
+                        <Level>Unspecified</Level>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Validation>
+                    <Access>
+                        <Availability>GNU General Public License</Availability>
+                        <Date>2002-11-01</Date>
+                        <Owner>Dutch Language Union</Owner>
+                        <Publisher>Chair of Phonetics, Department of Linguistics, Fac. of Humanities, University of Amsterdam</Publisher>
+                        <Contact>
+                            <Name>Rob van Son</Name>
+                            <Address>Herengracht 338, NL-1016CG Amsterdam, The Netherlands</Address>
+                            <Email>Rob.van.Son@hum.uva.nl</Email>
+                            <Organisation>Institute of Phonetic Sciences/ACLC, University of amsterdam</Organisation>
+                        </Contact>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Access>
+                    <descriptions>
+                        <Description LanguageId="RFC1766:en-US">Praat label file, aligned on phonemes</Description>
+                    </descriptions>
+                    <Keys/>
+                </WrittenResource>
+                <WrittenResource ref="d15964e1581">
+                    <ResourceLink>../SLcorpus/Labels/sentences/F20N/translit/F20N1FY11A_translit.txt</ResourceLink>
+                    <MediaResourceLink>../SLspeech/sentences/fm/F20N/F20N1FY11A_fm.aifc</MediaResourceLink>
+                    <Date>2002-11-01</Date>
+                    <Type>Annotation</Type>
+                    <SubType>orthographic</SubType>
+                    <Format>text/plain</Format>
+                    <Size>Unspecified</Size>
+                    <Derivation>Annotation</Derivation>
+                    <CharacterEncoding/>
+                    <ContentEncoding/>
+                    <LanguageId>RFC1766:x-sil-dut</LanguageId>
+                    <Anonymized>false</Anonymized>
+                    <Validation>
+                        <Type>Unspecified</Type>
+                        <Methodology>Unspecified</Methodology>
+                        <Level>Unspecified</Level>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Validation>
+                    <Access>
+                        <Availability>GNU General Public License</Availability>
+                        <Date>2002-11-01</Date>
+                        <Owner>Dutch Language Union</Owner>
+                        <Publisher>Chair of Phonetics, Department of Linguistics, Fac. of Humanities, University of Amsterdam</Publisher>
+                        <Contact>
+                            <Name>Rob van Son</Name>
+                            <Address>Herengracht 338, NL-1016CG Amsterdam, The Netherlands</Address>
+                            <Email>Rob.van.Son@hum.uva.nl</Email>
+                            <Organisation>Institute of Phonetic Sciences/ACLC, University of amsterdam</Organisation>
+                        </Contact>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Access>
+                    <descriptions>
+                        <Description LanguageId="RFC1766:en-US">Praat label file, aligned on sentences:
+F20N, 1, F, Y   , 
+sjok teel waa tjuh vuh dun maan dui weg abbah</Description>
+                    </descriptions>
+                    <Keys/>
+                </WrittenResource>
+                <WrittenResource ref="d15964e1672">
+                    <ResourceLink>../SLcorpus/Labels/sentences/F20N/phoneme/F20N1FY12A_NR_phoneme.txt</ResourceLink>
+                    <MediaResourceLink>../SLspeech/sentences/fm/F20N/F20N1FY12A_fm.aifc</MediaResourceLink>
+                    <Date>2002-11-01</Date>
+                    <Type>Annotation</Type>
+                    <SubType>phonemic</SubType>
+                    <Format>text/plain</Format>
+                    <Size>Unspecified</Size>
+                    <Derivation>Annotation</Derivation>
+                    <CharacterEncoding/>
+                    <ContentEncoding/>
+                    <LanguageId>RFC1766:x-sil-dut</LanguageId>
+                    <Anonymized>false</Anonymized>
+                    <Validation>
+                        <Type>Unspecified</Type>
+                        <Methodology>Unspecified</Methodology>
+                        <Level>Unspecified</Level>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Validation>
+                    <Access>
+                        <Availability>GNU General Public License</Availability>
+                        <Date>2002-11-01</Date>
+                        <Owner>Dutch Language Union</Owner>
+                        <Publisher>Chair of Phonetics, Department of Linguistics, Fac. of Humanities, University of Amsterdam</Publisher>
+                        <Contact>
+                            <Name>Rob van Son</Name>
+                            <Address>Herengracht 338, NL-1016CG Amsterdam, The Netherlands</Address>
+                            <Email>Rob.van.Son@hum.uva.nl</Email>
+                            <Organisation>Institute of Phonetic Sciences/ACLC, University of amsterdam</Organisation>
+                        </Contact>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Access>
+                    <descriptions>
+                        <Description LanguageId="RFC1766:en-US">Praat label file, aligned on phonemes</Description>
+                    </descriptions>
+                    <Keys/>
+                </WrittenResource>
+                <WrittenResource ref="d15964e1764">
+                    <ResourceLink>../SLcorpus/Labels/sentences/F20N/translit/F20N1FY12A_translit.txt</ResourceLink>
+                    <MediaResourceLink>../SLspeech/sentences/fm/F20N/F20N1FY12A_fm.aifc</MediaResourceLink>
+                    <Date>2002-11-01</Date>
+                    <Type>Annotation</Type>
+                    <SubType>orthographic</SubType>
+                    <Format>text/plain</Format>
+                    <Size>Unspecified</Size>
+                    <Derivation>Annotation</Derivation>
+                    <CharacterEncoding/>
+                    <ContentEncoding/>
+                    <LanguageId>RFC1766:x-sil-dut</LanguageId>
+                    <Anonymized>false</Anonymized>
+                    <Validation>
+                        <Type>Unspecified</Type>
+                        <Methodology>Unspecified</Methodology>
+                        <Level>Unspecified</Level>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Validation>
+                    <Access>
+                        <Availability>GNU General Public License</Availability>
+                        <Date>2002-11-01</Date>
+                        <Owner>Dutch Language Union</Owner>
+                        <Publisher>Chair of Phonetics, Department of Linguistics, Fac. of Humanities, University of Amsterdam</Publisher>
+                        <Contact>
+                            <Name>Rob van Son</Name>
+                            <Address>Herengracht 338, NL-1016CG Amsterdam, The Netherlands</Address>
+                            <Email>Rob.van.Son@hum.uva.nl</Email>
+                            <Organisation>Institute of Phonetic Sciences/ACLC, University of amsterdam</Organisation>
+                        </Contact>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Access>
+                    <descriptions>
+                        <Description LanguageId="RFC1766:en-US">Praat label file, aligned on sentences:
+F20N, 1, F, Y   , 
+aabaa bak vun drup nach wiet mid licht luh</Description>
+                    </descriptions>
+                    <Keys/>
+                </WrittenResource>
+                <WrittenResource ref="d15964e1855">
+                    <ResourceLink>../SLcorpus/Labels/sentences/F20N/phoneme/F20N1FY1A_NR_phoneme.txt</ResourceLink>
+                    <MediaResourceLink>../SLspeech/sentences/fm/F20N/F20N1FY1A_fm.aifc</MediaResourceLink>
+                    <Date>2002-11-01</Date>
+                    <Type>Annotation</Type>
+                    <SubType>phonemic</SubType>
+                    <Format>text/plain</Format>
+                    <Size>Unspecified</Size>
+                    <Derivation>Annotation</Derivation>
+                    <CharacterEncoding/>
+                    <ContentEncoding/>
+                    <LanguageId>RFC1766:x-sil-dut</LanguageId>
+                    <Anonymized>false</Anonymized>
+                    <Validation>
+                        <Type>Unspecified</Type>
+                        <Methodology>Unspecified</Methodology>
+                        <Level>Unspecified</Level>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Validation>
+                    <Access>
+                        <Availability>GNU General Public License</Availability>
+                        <Date>2002-11-01</Date>
+                        <Owner>Dutch Language Union</Owner>
+                        <Publisher>Chair of Phonetics, Department of Linguistics, Fac. of Humanities, University of Amsterdam</Publisher>
+                        <Contact>
+                            <Name>Rob van Son</Name>
+                            <Address>Herengracht 338, NL-1016CG Amsterdam, The Netherlands</Address>
+                            <Email>Rob.van.Son@hum.uva.nl</Email>
+                            <Organisation>Institute of Phonetic Sciences/ACLC, University of amsterdam</Organisation>
+                        </Contact>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Access>
+                    <descriptions>
+                        <Description LanguageId="RFC1766:en-US">Praat label file, aligned on phonemes</Description>
+                    </descriptions>
+                    <Keys/>
+                </WrittenResource>
+                <WrittenResource ref="d15964e1946">
+                    <ResourceLink>../SLcorpus/Labels/sentences/F20N/translit/F20N1FY1A_translit.txt</ResourceLink>
+                    <MediaResourceLink>../SLspeech/sentences/fm/F20N/F20N1FY1A_fm.aifc</MediaResourceLink>
+                    <Date>2002-11-01</Date>
+                    <Type>Annotation</Type>
+                    <SubType>orthographic</SubType>
+                    <Format>text/plain</Format>
+                    <Size>Unspecified</Size>
+                    <Derivation>Annotation</Derivation>
+                    <CharacterEncoding/>
+                    <ContentEncoding/>
+                    <LanguageId>RFC1766:x-sil-dut</LanguageId>
+                    <Anonymized>false</Anonymized>
+                    <Validation>
+                        <Type>Unspecified</Type>
+                        <Methodology>Unspecified</Methodology>
+                        <Level>Unspecified</Level>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Validation>
+                    <Access>
+                        <Availability>GNU General Public License</Availability>
+                        <Date>2002-11-01</Date>
+                        <Owner>Dutch Language Union</Owner>
+                        <Publisher>Chair of Phonetics, Department of Linguistics, Fac. of Humanities, University of Amsterdam</Publisher>
+                        <Contact>
+                            <Name>Rob van Son</Name>
+                            <Address>Herengracht 338, NL-1016CG Amsterdam, The Netherlands</Address>
+                            <Email>Rob.van.Son@hum.uva.nl</Email>
+                            <Organisation>Institute of Phonetic Sciences/ACLC, University of amsterdam</Organisation>
+                        </Contact>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Access>
+                    <descriptions>
+                        <Description LanguageId="RFC1766:en-US">Praat label file, aligned on sentences:
+F20N, 1, F, Y   , 
+schul dauw aadaa ruh vin zend wan noor moo zon</Description>
+                    </descriptions>
+                    <Keys/>
+                </WrittenResource>
+                <WrittenResource ref="d15964e2037">
+                    <ResourceLink>../SLcorpus/Labels/sentences/F20N/phoneme/F20N1FY2A_NR_phoneme.txt</ResourceLink>
+                    <MediaResourceLink>../SLspeech/sentences/fm/F20N/F20N1FY2A_fm.aifc</MediaResourceLink>
+                    <Date>2002-11-01</Date>
+                    <Type>Annotation</Type>
+                    <SubType>phonemic</SubType>
+                    <Format>text/plain</Format>
+                    <Size>Unspecified</Size>
+                    <Derivation>Annotation</Derivation>
+                    <CharacterEncoding/>
+                    <ContentEncoding/>
+                    <LanguageId>RFC1766:x-sil-dut</LanguageId>
+                    <Anonymized>false</Anonymized>
+                    <Validation>
+                        <Type>Unspecified</Type>
+                        <Methodology>Unspecified</Methodology>
+                        <Level>Unspecified</Level>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Validation>
+                    <Access>
+                        <Availability>GNU General Public License</Availability>
+                        <Date>2002-11-01</Date>
+                        <Owner>Dutch Language Union</Owner>
+                        <Publisher>Chair of Phonetics, Department of Linguistics, Fac. of Humanities, University of Amsterdam</Publisher>
+                        <Contact>
+                            <Name>Rob van Son</Name>
+                            <Address>Herengracht 338, NL-1016CG Amsterdam, The Netherlands</Address>
+                            <Email>Rob.van.Son@hum.uva.nl</Email>
+                            <Organisation>Institute of Phonetic Sciences/ACLC, University of amsterdam</Organisation>
+                        </Contact>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Access>
+                    <descriptions>
+                        <Description LanguageId="RFC1766:en-US">Praat label file, aligned on phonemes</Description>
+                    </descriptions>
+                    <Keys/>
+                </WrittenResource>
+                <WrittenResource ref="d15964e2128">
+                    <ResourceLink>../SLcorpus/Labels/sentences/F20N/translit/F20N1FY2A_translit.txt</ResourceLink>
+                    <MediaResourceLink>../SLspeech/sentences/fm/F20N/F20N1FY2A_fm.aifc</MediaResourceLink>
+                    <Date>2002-11-01</Date>
+                    <Type>Annotation</Type>
+                    <SubType>orthographic</SubType>
+                    <Format>text/plain</Format>
+                    <Size>Unspecified</Size>
+                    <Derivation>Annotation</Derivation>
+                    <CharacterEncoding/>
+                    <ContentEncoding/>
+                    <LanguageId>RFC1766:x-sil-dut</LanguageId>
+                    <Anonymized>false</Anonymized>
+                    <Validation>
+                        <Type>Unspecified</Type>
+                        <Methodology>Unspecified</Methodology>
+                        <Level>Unspecified</Level>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Validation>
+                    <Access>
+                        <Availability>GNU General Public License</Availability>
+                        <Date>2002-11-01</Date>
+                        <Owner>Dutch Language Union</Owner>
+                        <Publisher>Chair of Phonetics, Department of Linguistics, Fac. of Humanities, University of Amsterdam</Publisher>
+                        <Contact>
+                            <Name>Rob van Son</Name>
+                            <Address>Herengracht 338, NL-1016CG Amsterdam, The Netherlands</Address>
+                            <Email>Rob.van.Son@hum.uva.nl</Email>
+                            <Organisation>Institute of Phonetic Sciences/ACLC, University of amsterdam</Organisation>
+                        </Contact>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Access>
+                    <descriptions>
+                        <Description LanguageId="RFC1766:en-US">Praat label file, aligned on sentences:
+F20N, 1, F, Y   , 
+bin vak sterk zoo wak plaats kum pak dak kree</Description>
+                    </descriptions>
+                    <Keys/>
+                </WrittenResource>
+                <WrittenResource ref="d15964e2219">
+                    <ResourceLink>../SLcorpus/Labels/sentences/F20N/phoneme/F20N1FY3A_JP_phoneme.txt</ResourceLink>
+                    <MediaResourceLink>../SLspeech/sentences/fm/F20N/F20N1FY3A_fm.aifc</MediaResourceLink>
+                    <Date>2002-11-01</Date>
+                    <Type>Annotation</Type>
+                    <SubType>phonemic</SubType>
+                    <Format>text/plain</Format>
+                    <Size>Unspecified</Size>
+                    <Derivation>Annotation</Derivation>
+                    <CharacterEncoding/>
+                    <ContentEncoding/>
+                    <LanguageId>RFC1766:x-sil-dut</LanguageId>
+                    <Anonymized>false</Anonymized>
+                    <Validation>
+                        <Type>Unspecified</Type>
+                        <Methodology>Unspecified</Methodology>
+                        <Level>Unspecified</Level>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Validation>
+                    <Access>
+                        <Availability>GNU General Public License</Availability>
+                        <Date>2002-11-01</Date>
+                        <Owner>Dutch Language Union</Owner>
+                        <Publisher>Chair of Phonetics, Department of Linguistics, Fac. of Humanities, University of Amsterdam</Publisher>
+                        <Contact>
+                            <Name>Rob van Son</Name>
+                            <Address>Herengracht 338, NL-1016CG Amsterdam, The Netherlands</Address>
+                            <Email>Rob.van.Son@hum.uva.nl</Email>
+                            <Organisation>Institute of Phonetic Sciences/ACLC, University of amsterdam</Organisation>
+                        </Contact>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Access>
+                    <descriptions>
+                        <Description LanguageId="RFC1766:en-US">Praat label file, aligned on phonemes</Description>
+                    </descriptions>
+                    <Keys/>
+                </WrittenResource>
+                <WrittenResource ref="d15964e2311">
+                    <ResourceLink>../SLcorpus/Labels/sentences/F20N/translit/F20N1FY3A_translit.txt</ResourceLink>
+                    <MediaResourceLink>../SLspeech/sentences/fm/F20N/F20N1FY3A_fm.aifc</MediaResourceLink>
+                    <Date>2002-11-01</Date>
+                    <Type>Annotation</Type>
+                    <SubType>orthographic</SubType>
+                    <Format>text/plain</Format>
+                    <Size>Unspecified</Size>
+                    <Derivation>Annotation</Derivation>
+                    <CharacterEncoding/>
+                    <ContentEncoding/>
+                    <LanguageId>RFC1766:x-sil-dut</LanguageId>
+                    <Anonymized>false</Anonymized>
+                    <Validation>
+                        <Type>Unspecified</Type>
+                        <Methodology>Unspecified</Methodology>
+                        <Level>Unspecified</Level>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Validation>
+                    <Access>
+                        <Availability>GNU General Public License</Availability>
+                        <Date>2002-11-01</Date>
+                        <Owner>Dutch Language Union</Owner>
+                        <Publisher>Chair of Phonetics, Department of Linguistics, Fac. of Humanities, University of Amsterdam</Publisher>
+                        <Contact>
+                            <Name>Rob van Son</Name>
+                            <Address>Herengracht 338, NL-1016CG Amsterdam, The Netherlands</Address>
+                            <Email>Rob.van.Son@hum.uva.nl</Email>
+                            <Organisation>Institute of Phonetic Sciences/ACLC, University of amsterdam</Organisation>
+                        </Contact>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Access>
+                    <descriptions>
+                        <Description LanguageId="RFC1766:en-US">Praat label file, aligned on sentences:
+F20N, 1, F, Y   , 
+zee lun neer maal braa zich dak munt stil buh</Description>
+                    </descriptions>
+                    <Keys/>
+                </WrittenResource>
+                <WrittenResource ref="d15964e2402">
+                    <ResourceLink>../SLcorpus/Labels/sentences/F20N/phoneme/F20N1FY4A_JB_phoneme.txt</ResourceLink>
+                    <MediaResourceLink>../SLspeech/sentences/fm/F20N/F20N1FY4A_fm.aifc</MediaResourceLink>
+                    <Date>2002-11-01</Date>
+                    <Type>Annotation</Type>
+                    <SubType>phonemic</SubType>
+                    <Format>text/plain</Format>
+                    <Size>Unspecified</Size>
+                    <Derivation>Annotation</Derivation>
+                    <CharacterEncoding/>
+                    <ContentEncoding/>
+                    <LanguageId>RFC1766:x-sil-dut</LanguageId>
+                    <Anonymized>false</Anonymized>
+                    <Validation>
+                        <Type>Unspecified</Type>
+                        <Methodology>Unspecified</Methodology>
+                        <Level>Unspecified</Level>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Validation>
+                    <Access>
+                        <Availability>GNU General Public License</Availability>
+                        <Date>2002-11-01</Date>
+                        <Owner>Dutch Language Union</Owner>
+                        <Publisher>Chair of Phonetics, Department of Linguistics, Fac. of Humanities, University of Amsterdam</Publisher>
+                        <Contact>
+                            <Name>Rob van Son</Name>
+                            <Address>Herengracht 338, NL-1016CG Amsterdam, The Netherlands</Address>
+                            <Email>Rob.van.Son@hum.uva.nl</Email>
+                            <Organisation>Institute of Phonetic Sciences/ACLC, University of amsterdam</Organisation>
+                        </Contact>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Access>
+                    <descriptions>
+                        <Description LanguageId="RFC1766:en-US">Praat label file, aligned on phonemes</Description>
+                    </descriptions>
+                    <Keys/>
+                </WrittenResource>
+                <WrittenResource ref="d15964e2493">
+                    <ResourceLink>../SLcorpus/Labels/sentences/F20N/translit/F20N1FY4A_translit.txt</ResourceLink>
+                    <MediaResourceLink>../SLspeech/sentences/fm/F20N/F20N1FY4A_fm.aifc</MediaResourceLink>
+                    <Date>2002-11-01</Date>
+                    <Type>Annotation</Type>
+                    <SubType>orthographic</SubType>
+                    <Format>text/plain</Format>
+                    <Size>Unspecified</Size>
+                    <Derivation>Annotation</Derivation>
+                    <CharacterEncoding/>
+                    <ContentEncoding/>
+                    <LanguageId>RFC1766:x-sil-dut</LanguageId>
+                    <Anonymized>false</Anonymized>
+                    <Validation>
+                        <Type>Unspecified</Type>
+                        <Methodology>Unspecified</Methodology>
+                        <Level>Unspecified</Level>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Validation>
+                    <Access>
+                        <Availability>GNU General Public License</Availability>
+                        <Date>2002-11-01</Date>
+                        <Owner>Dutch Language Union</Owner>
+                        <Publisher>Chair of Phonetics, Department of Linguistics, Fac. of Humanities, University of Amsterdam</Publisher>
+                        <Contact>
+                            <Name>Rob van Son</Name>
+                            <Address>Herengracht 338, NL-1016CG Amsterdam, The Netherlands</Address>
+                            <Email>Rob.van.Son@hum.uva.nl</Email>
+                            <Organisation>Institute of Phonetic Sciences/ACLC, University of amsterdam</Organisation>
+                        </Contact>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Access>
+                    <descriptions>
+                        <Description LanguageId="RFC1766:en-US">Praat label file, aligned on sentences:
+F20N, 1, F, Y   , 
+trek nun bloed tuu attah twis rug tak rop kas</Description>
+                    </descriptions>
+                    <Keys/>
+                </WrittenResource>
+                <WrittenResource ref="d15964e2584">
+                    <ResourceLink>../SLcorpus/Labels/sentences/F20N/phoneme/F20N1FY5A_NR_phoneme.txt</ResourceLink>
+                    <MediaResourceLink>../SLspeech/sentences/fm/F20N/F20N1FY5A_fm.aifc</MediaResourceLink>
+                    <Date>2002-11-01</Date>
+                    <Type>Annotation</Type>
+                    <SubType>phonemic</SubType>
+                    <Format>text/plain</Format>
+                    <Size>Unspecified</Size>
+                    <Derivation>Annotation</Derivation>
+                    <CharacterEncoding/>
+                    <ContentEncoding/>
+                    <LanguageId>RFC1766:x-sil-dut</LanguageId>
+                    <Anonymized>false</Anonymized>
+                    <Validation>
+                        <Type>Unspecified</Type>
+                        <Methodology>Unspecified</Methodology>
+                        <Level>Unspecified</Level>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Validation>
+                    <Access>
+                        <Availability>GNU General Public License</Availability>
+                        <Date>2002-11-01</Date>
+                        <Owner>Dutch Language Union</Owner>
+                        <Publisher>Chair of Phonetics, Department of Linguistics, Fac. of Humanities, University of Amsterdam</Publisher>
+                        <Contact>
+                            <Name>Rob van Son</Name>
+                            <Address>Herengracht 338, NL-1016CG Amsterdam, The Netherlands</Address>
+                            <Email>Rob.van.Son@hum.uva.nl</Email>
+                            <Organisation>Institute of Phonetic Sciences/ACLC, University of amsterdam</Organisation>
+                        </Contact>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Access>
+                    <descriptions>
+                        <Description LanguageId="RFC1766:en-US">Praat label file, aligned on phonemes</Description>
+                    </descriptions>
+                    <Keys/>
+                </WrittenResource>
+                <WrittenResource ref="d15964e2675">
+                    <ResourceLink>../SLcorpus/Labels/sentences/F20N/translit/F20N1FY5A_translit.txt</ResourceLink>
+                    <MediaResourceLink>../SLspeech/sentences/fm/F20N/F20N1FY5A_fm.aifc</MediaResourceLink>
+                    <Date>2002-11-01</Date>
+                    <Type>Annotation</Type>
+                    <SubType>orthographic</SubType>
+                    <Format>text/plain</Format>
+                    <Size>Unspecified</Size>
+                    <Derivation>Annotation</Derivation>
+                    <CharacterEncoding/>
+                    <ContentEncoding/>
+                    <LanguageId>RFC1766:x-sil-dut</LanguageId>
+                    <Anonymized>false</Anonymized>
+                    <Validation>
+                        <Type>Unspecified</Type>
+                        <Methodology>Unspecified</Methodology>
+                        <Level>Unspecified</Level>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Validation>
+                    <Access>
+                        <Availability>GNU General Public License</Availability>
+                        <Date>2002-11-01</Date>
+                        <Owner>Dutch Language Union</Owner>
+                        <Publisher>Chair of Phonetics, Department of Linguistics, Fac. of Humanities, University of Amsterdam</Publisher>
+                        <Contact>
+                            <Name>Rob van Son</Name>
+                            <Address>Herengracht 338, NL-1016CG Amsterdam, The Netherlands</Address>
+                            <Email>Rob.van.Son@hum.uva.nl</Email>
+                            <Organisation>Institute of Phonetic Sciences/ACLC, University of amsterdam</Organisation>
+                        </Contact>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Access>
+                    <descriptions>
+                        <Description LanguageId="RFC1766:en-US">Praat label file, aligned on sentences:
+F20N, 1, F, Y   , 
+dak ree kwaa fluit doods jus addah vur voo guns</Description>
+                    </descriptions>
+                    <Keys/>
+                </WrittenResource>
+                <WrittenResource ref="d15964e2766">
+                    <ResourceLink>../SLcorpus/Labels/sentences/F20N/phoneme/F20N1FY6A_NR_phoneme.txt</ResourceLink>
+                    <MediaResourceLink>../SLspeech/sentences/fm/F20N/F20N1FY6A_fm.aifc</MediaResourceLink>
+                    <Date>2002-11-01</Date>
+                    <Type>Annotation</Type>
+                    <SubType>phonemic</SubType>
+                    <Format>text/plain</Format>
+                    <Size>Unspecified</Size>
+                    <Derivation>Annotation</Derivation>
+                    <CharacterEncoding/>
+                    <ContentEncoding/>
+                    <LanguageId>RFC1766:x-sil-dut</LanguageId>
+                    <Anonymized>false</Anonymized>
+                    <Validation>
+                        <Type>Unspecified</Type>
+                        <Methodology>Unspecified</Methodology>
+                        <Level>Unspecified</Level>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Validation>
+                    <Access>
+                        <Availability>GNU General Public License</Availability>
+                        <Date>2002-11-01</Date>
+                        <Owner>Dutch Language Union</Owner>
+                        <Publisher>Chair of Phonetics, Department of Linguistics, Fac. of Humanities, University of Amsterdam</Publisher>
+                        <Contact>
+                            <Name>Rob van Son</Name>
+                            <Address>Herengracht 338, NL-1016CG Amsterdam, The Netherlands</Address>
+                            <Email>Rob.van.Son@hum.uva.nl</Email>
+                            <Organisation>Institute of Phonetic Sciences/ACLC, University of amsterdam</Organisation>
+                        </Contact>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Access>
+                    <descriptions>
+                        <Description LanguageId="RFC1766:en-US">Praat label file, aligned on phonemes</Description>
+                    </descriptions>
+                    <Keys/>
+                </WrittenResource>
+                <WrittenResource ref="d15964e2858">
+                    <ResourceLink>../SLcorpus/Labels/sentences/F20N/translit/F20N1FY6A_translit.txt</ResourceLink>
+                    <MediaResourceLink>../SLspeech/sentences/fm/F20N/F20N1FY6A_fm.aifc</MediaResourceLink>
+                    <Date>2002-11-01</Date>
+                    <Type>Annotation</Type>
+                    <SubType>orthographic</SubType>
+                    <Format>text/plain</Format>
+                    <Size>Unspecified</Size>
+                    <Derivation>Annotation</Derivation>
+                    <CharacterEncoding/>
+                    <ContentEncoding/>
+                    <LanguageId>RFC1766:x-sil-dut</LanguageId>
+                    <Anonymized>false</Anonymized>
+                    <Validation>
+                        <Type>Unspecified</Type>
+                        <Methodology>Unspecified</Methodology>
+                        <Level>Unspecified</Level>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Validation>
+                    <Access>
+                        <Availability>GNU General Public License</Availability>
+                        <Date>2002-11-01</Date>
+                        <Owner>Dutch Language Union</Owner>
+                        <Publisher>Chair of Phonetics, Department of Linguistics, Fac. of Humanities, University of Amsterdam</Publisher>
+                        <Contact>
+                            <Name>Rob van Son</Name>
+                            <Address>Herengracht 338, NL-1016CG Amsterdam, The Netherlands</Address>
+                            <Email>Rob.van.Son@hum.uva.nl</Email>
+                            <Organisation>Institute of Phonetic Sciences/ACLC, University of amsterdam</Organisation>
+                        </Contact>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Access>
+                    <descriptions>
+                        <Description LanguageId="RFC1766:en-US">Praat label file, aligned on sentences:
+F20N, 1, F, Y   , 
+guh kun luk pul dig sun rekt tun hie too</Description>
+                    </descriptions>
+                    <Keys/>
+                </WrittenResource>
+                <WrittenResource ref="d15964e2949">
+                    <ResourceLink>../SLcorpus/Labels/sentences/F20N/phoneme/F20N1FY7A_NR_phoneme.txt</ResourceLink>
+                    <MediaResourceLink>../SLspeech/sentences/fm/F20N/F20N1FY7A_fm.aifc</MediaResourceLink>
+                    <Date>2002-11-01</Date>
+                    <Type>Annotation</Type>
+                    <SubType>phonemic</SubType>
+                    <Format>text/plain</Format>
+                    <Size>Unspecified</Size>
+                    <Derivation>Annotation</Derivation>
+                    <CharacterEncoding/>
+                    <ContentEncoding/>
+                    <LanguageId>RFC1766:x-sil-dut</LanguageId>
+                    <Anonymized>false</Anonymized>
+                    <Validation>
+                        <Type>Unspecified</Type>
+                        <Methodology>Unspecified</Methodology>
+                        <Level>Unspecified</Level>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Validation>
+                    <Access>
+                        <Availability>GNU General Public License</Availability>
+                        <Date>2002-11-01</Date>
+                        <Owner>Dutch Language Union</Owner>
+                        <Publisher>Chair of Phonetics, Department of Linguistics, Fac. of Humanities, University of Amsterdam</Publisher>
+                        <Contact>
+                            <Name>Rob van Son</Name>
+                            <Address>Herengracht 338, NL-1016CG Amsterdam, The Netherlands</Address>
+                            <Email>Rob.van.Son@hum.uva.nl</Email>
+                            <Organisation>Institute of Phonetic Sciences/ACLC, University of amsterdam</Organisation>
+                        </Contact>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Access>
+                    <descriptions>
+                        <Description LanguageId="RFC1766:en-US">Praat label file, aligned on phonemes</Description>
+                    </descriptions>
+                    <Keys/>
+                </WrittenResource>
+                <WrittenResource ref="d15964e3040">
+                    <ResourceLink>../SLcorpus/Labels/sentences/F20N/translit/F20N1FY7A_translit.txt</ResourceLink>
+                    <MediaResourceLink>../SLspeech/sentences/fm/F20N/F20N1FY7A_fm.aifc</MediaResourceLink>
+                    <Date>2002-11-01</Date>
+                    <Type>Annotation</Type>
+                    <SubType>orthographic</SubType>
+                    <Format>text/plain</Format>
+                    <Size>Unspecified</Size>
+                    <Derivation>Annotation</Derivation>
+                    <CharacterEncoding/>
+                    <ContentEncoding/>
+                    <LanguageId>RFC1766:x-sil-dut</LanguageId>
+                    <Anonymized>false</Anonymized>
+                    <Validation>
+                        <Type>Unspecified</Type>
+                        <Methodology>Unspecified</Methodology>
+                        <Level>Unspecified</Level>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Validation>
+                    <Access>
+                        <Availability>GNU General Public License</Availability>
+                        <Date>2002-11-01</Date>
+                        <Owner>Dutch Language Union</Owner>
+                        <Publisher>Chair of Phonetics, Department of Linguistics, Fac. of Humanities, University of Amsterdam</Publisher>
+                        <Contact>
+                            <Name>Rob van Son</Name>
+                            <Address>Herengracht 338, NL-1016CG Amsterdam, The Netherlands</Address>
+                            <Email>Rob.van.Son@hum.uva.nl</Email>
+                            <Organisation>Institute of Phonetic Sciences/ACLC, University of amsterdam</Organisation>
+                        </Contact>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Access>
+                    <descriptions>
+                        <Description LanguageId="RFC1766:en-US">Praat label file, aligned on sentences:
+F20N, 1, F, Y   , 
+staan kuh dong gul on zou smeek lost kooj stuh</Description>
+                    </descriptions>
+                    <Keys/>
+                </WrittenResource>
+                <WrittenResource ref="d15964e3131">
+                    <ResourceLink>../SLcorpus/Labels/sentences/F20N/phoneme/F20N1FY8A_JP_phoneme.txt</ResourceLink>
+                    <MediaResourceLink>../SLspeech/sentences/fm/F20N/F20N1FY8A_fm.aifc</MediaResourceLink>
+                    <Date>2002-11-01</Date>
+                    <Type>Annotation</Type>
+                    <SubType>phonemic</SubType>
+                    <Format>text/plain</Format>
+                    <Size>Unspecified</Size>
+                    <Derivation>Annotation</Derivation>
+                    <CharacterEncoding/>
+                    <ContentEncoding/>
+                    <LanguageId>RFC1766:x-sil-dut</LanguageId>
+                    <Anonymized>false</Anonymized>
+                    <Validation>
+                        <Type>Unspecified</Type>
+                        <Methodology>Unspecified</Methodology>
+                        <Level>Unspecified</Level>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Validation>
+                    <Access>
+                        <Availability>GNU General Public License</Availability>
+                        <Date>2002-11-01</Date>
+                        <Owner>Dutch Language Union</Owner>
+                        <Publisher>Chair of Phonetics, Department of Linguistics, Fac. of Humanities, University of Amsterdam</Publisher>
+                        <Contact>
+                            <Name>Rob van Son</Name>
+                            <Address>Herengracht 338, NL-1016CG Amsterdam, The Netherlands</Address>
+                            <Email>Rob.van.Son@hum.uva.nl</Email>
+                            <Organisation>Institute of Phonetic Sciences/ACLC, University of amsterdam</Organisation>
+                        </Contact>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Access>
+                    <descriptions>
+                        <Description LanguageId="RFC1766:en-US">Praat label file, aligned on phonemes</Description>
+                    </descriptions>
+                    <Keys/>
+                </WrittenResource>
+                <WrittenResource ref="d15964e3222">
+                    <ResourceLink>../SLcorpus/Labels/sentences/F20N/translit/F20N1FY8A_translit.txt</ResourceLink>
+                    <MediaResourceLink>../SLspeech/sentences/fm/F20N/F20N1FY8A_fm.aifc</MediaResourceLink>
+                    <Date>2002-11-01</Date>
+                    <Type>Annotation</Type>
+                    <SubType>orthographic</SubType>
+                    <Format>text/plain</Format>
+                    <Size>Unspecified</Size>
+                    <Derivation>Annotation</Derivation>
+                    <CharacterEncoding/>
+                    <ContentEncoding/>
+                    <LanguageId>RFC1766:x-sil-dut</LanguageId>
+                    <Anonymized>false</Anonymized>
+                    <Validation>
+                        <Type>Unspecified</Type>
+                        <Methodology>Unspecified</Methodology>
+                        <Level>Unspecified</Level>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Validation>
+                    <Access>
+                        <Availability>GNU General Public License</Availability>
+                        <Date>2002-11-01</Date>
+                        <Owner>Dutch Language Union</Owner>
+                        <Publisher>Chair of Phonetics, Department of Linguistics, Fac. of Humanities, University of Amsterdam</Publisher>
+                        <Contact>
+                            <Name>Rob van Son</Name>
+                            <Address>Herengracht 338, NL-1016CG Amsterdam, The Netherlands</Address>
+                            <Email>Rob.van.Son@hum.uva.nl</Email>
+                            <Organisation>Institute of Phonetic Sciences/ACLC, University of amsterdam</Organisation>
+                        </Contact>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Access>
+                    <descriptions>
+                        <Description LanguageId="RFC1766:en-US">Praat label file, aligned on sentences:
+F20N, 1, F, Y   , 
+heen roo meis daar run oo boom gun vrijd naa</Description>
+                    </descriptions>
+                    <Keys/>
+                </WrittenResource>
+                <WrittenResource ref="d15964e3313">
+                    <ResourceLink>../SLcorpus/Labels/sentences/F20N/phoneme/F20N1FY9A_JB_phoneme.txt</ResourceLink>
+                    <MediaResourceLink>../SLspeech/sentences/fm/F20N/F20N1FY9A_fm.aifc</MediaResourceLink>
+                    <Date>2002-11-01</Date>
+                    <Type>Annotation</Type>
+                    <SubType>phonemic</SubType>
+                    <Format>text/plain</Format>
+                    <Size>Unspecified</Size>
+                    <Derivation>Annotation</Derivation>
+                    <CharacterEncoding/>
+                    <ContentEncoding/>
+                    <LanguageId>RFC1766:x-sil-dut</LanguageId>
+                    <Anonymized>false</Anonymized>
+                    <Validation>
+                        <Type>Unspecified</Type>
+                        <Methodology>Unspecified</Methodology>
+                        <Level>Unspecified</Level>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Validation>
+                    <Access>
+                        <Availability>GNU General Public License</Availability>
+                        <Date>2002-11-01</Date>
+                        <Owner>Dutch Language Union</Owner>
+                        <Publisher>Chair of Phonetics, Department of Linguistics, Fac. of Humanities, University of Amsterdam</Publisher>
+                        <Contact>
+                            <Name>Rob van Son</Name>
+                            <Address>Herengracht 338, NL-1016CG Amsterdam, The Netherlands</Address>
+                            <Email>Rob.van.Son@hum.uva.nl</Email>
+                            <Organisation>Institute of Phonetic Sciences/ACLC, University of amsterdam</Organisation>
+                        </Contact>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Access>
+                    <descriptions>
+                        <Description LanguageId="RFC1766:en-US">Praat label file, aligned on phonemes</Description>
+                    </descriptions>
+                    <Keys/>
+                </WrittenResource>
+                <WrittenResource ref="d15964e3405">
+                    <ResourceLink>../SLcorpus/Labels/sentences/F20N/translit/F20N1FY9A_translit.txt</ResourceLink>
+                    <MediaResourceLink>../SLspeech/sentences/fm/F20N/F20N1FY9A_fm.aifc</MediaResourceLink>
+                    <Date>2002-11-01</Date>
+                    <Type>Annotation</Type>
+                    <SubType>orthographic</SubType>
+                    <Format>text/plain</Format>
+                    <Size>Unspecified</Size>
+                    <Derivation>Annotation</Derivation>
+                    <CharacterEncoding/>
+                    <ContentEncoding/>
+                    <LanguageId>RFC1766:x-sil-dut</LanguageId>
+                    <Anonymized>false</Anonymized>
+                    <Validation>
+                        <Type>Unspecified</Type>
+                        <Methodology>Unspecified</Methodology>
+                        <Level>Unspecified</Level>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Validation>
+                    <Access>
+                        <Availability>GNU General Public License</Availability>
+                        <Date>2002-11-01</Date>
+                        <Owner>Dutch Language Union</Owner>
+                        <Publisher>Chair of Phonetics, Department of Linguistics, Fac. of Humanities, University of Amsterdam</Publisher>
+                        <Contact>
+                            <Name>Rob van Son</Name>
+                            <Address>Herengracht 338, NL-1016CG Amsterdam, The Netherlands</Address>
+                            <Email>Rob.van.Son@hum.uva.nl</Email>
+                            <Organisation>Institute of Phonetic Sciences/ACLC, University of amsterdam</Organisation>
+                        </Contact>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Access>
+                    <descriptions>
+                        <Description LanguageId="RFC1766:en-US">Praat label file, aligned on sentences:
+F20N, 1, F, Y   , 
+tus bang stam wind gaa vlak stie ring hee zijn</Description>
+                    </descriptions>
+                    <Keys/>
+                </WrittenResource>
+                <Source>
+                    <Id>F20N1FY</Id>
+                    <Format>CDROM</Format>
+                    <Quality>5</Quality>
+                    <TimePosition>
+                        <Start>Unspecified</Start>
+                        <End>Unspecified</End>
+                    </TimePosition>
+                    <Access>
+                        <Availability>GNU General Public License</Availability>
+                        <Date>2002-11-01</Date>
+                        <Owner>Dutch Language Union</Owner>
+                        <Publisher>Chair of Phonetics, Department of Linguistics, Fac. of Humanities, University of Amsterdam</Publisher>
+                        <Contact>
+                            <Name>Rob van Son</Name>
+                            <Address>Herengracht 338, NL-1016CG Amsterdam, The Netherlands</Address>
+                            <Email>Rob.van.Son@hum.uva.nl</Email>
+                            <Organisation>Institute of Phonetic Sciences/ACLC, University of amsterdam</Organisation>
+                        </Contact>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Access>
+                    <descriptions>
+                        <Description LanguageId=""/>
+                    </descriptions>
+                    <Keys/>
+                </Source>
+                <Anonyms>
+                    <ResourceLink/>
+                    <Access>
+                        <Availability>GNU General Public License</Availability>
+                        <Date>2002-11-01</Date>
+                        <Owner>Dutch Language Union</Owner>
+                        <Publisher>Chair of Phonetics, Department of Linguistics, Fac. of Humanities, University of Amsterdam</Publisher>
+                        <Contact>
+                            <Name>Rob van Son</Name>
+                            <Address>Herengracht 338, NL-1016CG Amsterdam, The Netherlands</Address>
+                            <Email>Rob.van.Son@hum.uva.nl</Email>
+                            <Organisation>Institute of Phonetic Sciences/ACLC, University of amsterdam</Organisation>
+                        </Contact>
+                        <descriptions>
+                            <Description LanguageId=""/>
+                        </descriptions>
+                    </Access>
+                </Anonyms>
+            </Resources>
+            <References>
+                <descriptions>
+                    <Description LanguageId=""/>
+                </descriptions>
+            </References>
+        </Session>
+    </Components>
+</CMD>

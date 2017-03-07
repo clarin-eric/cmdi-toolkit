@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:defns="http://www.openarchives.org/OAI/2.0/"
+     xmlns:olac="http://www.language-archives.org/OLAC/1.0/"
+     xmlns:olac11="http://www.language-archives.org/OLAC/1.1/"
+     xmlns="http://www.clarin.eu/cmd/"
+     CMDVersion="1.1"
+     xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1288172614026/xsd">
+   <Header>
+      <MdCreator>olac2cmdi.xsl</MdCreator>
+      <MdCreationDate>2010-10-06</MdCreationDate>
+      <MdSelfLink>https://infra.clarin.eu/cmd/example/collection/olac/oai_childes_psy_cmu_edu_Biling_Genesee.cmdi</MdSelfLink>
+      <MdProfile>clarin.eu:cr1:p_1288172614026</MdProfile>
+      <MdCollectionDisplayName>CHILDES Data repository</MdCollectionDisplayName>
+   </Header>
+   <Resources>
+      <ResourceProxyList>
+         <ResourceProxy id="w363ab1b2ab3b1c29">
+            <ResourceType>Resource</ResourceType>
+            <ResourceRef>http://childes.psy.cmu.edu/data-xml/Biling/Genesee.zip</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="w363ab1b2ab3b1c31">
+            <ResourceType>Resource</ResourceType>
+            <ResourceRef>http://childes.psy.cmu.edu/data/Biling/Genesee.zip</ResourceRef>
+         </ResourceProxy>
+      </ResourceProxyList>
+      <JournalFileProxyList/>
+      <ResourceRelationList/>
+   </Resources>
+   <Components>
+      <OLAC-DcmiTerms>
+         <creator>Genesee, Fred</creator>
+         <date>2004-03-30</date>
+         <description>French-English bilingual children in Montreal</description>
+         <identifier>1-59642-135-5</identifier>
+         <identifier dcterms-type="URI">http://childes.psy.cmu.edu/data-xml/Biling/Genesee.zip</identifier>
+         <identifier dcterms-type="URI">http://childes.psy.cmu.edu/data/Biling/Genesee.zip</identifier>
+         <language olac-language="fr"/>
+         <publisher>TalkBank</publisher>
+         <subject>child language development</subject>
+         <subject olac-linguistic-field="language_acquisition"/>
+         <subject olac-language="en"/>
+         <subject olac-language="fr"/>
+         <subject/>
+         <title>Bilingual Genesee Corpus</title>
+         <type dcterms-type="DCMIType">Text</type>
+         <type olac-linguistic-type="primary_text"/>
+         <type olac-discourse-type="dialogue"/>
+      </OLAC-DcmiTerms>
+   </Components>
+</CMD>

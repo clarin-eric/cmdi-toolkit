@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD xmlns="http://www.clarin.eu/cmd/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    CMDVersion="1.1"
+    xsi:schemaLocation="http://www.clarin.eu/cmd http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1284723009187/xsd">
+    <Header>
+        <MdCreator>dir2cmdicollection.py</MdCreator>
+        <MdCreationDate>2011-11-10</MdCreationDate>
+        <MdSelfLink>https://infra.clarin.eu/cmd/example/collection/collection_olac.cmdi</MdSelfLink>
+        <MdProfile>clarin.eu:cr1:p_1284723009187</MdProfile>
+    </Header>
+    <Resources>
+        <ResourceProxyList>
+            <ResourceProxy id="olac1">
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef>https://infra.clarin.eu/cmd/example/collection/olac/oai_childes_psy_cmu_edu_Biling_DeHouwer.cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="olac2">
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef>https://infra.clarin.eu/cmd/example/collection/olac/oai_childes_psy_cmu_edu_Biling_Deuchar.cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="olac3">
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef>https://infra.clarin.eu/cmd/example/collection/olac/oai_childes_psy_cmu_edu_Biling_FerFuLice.cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="olac4">
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef>https://infra.clarin.eu/cmd/example/collection/olac/oai_childes_psy_cmu_edu_Biling_Genesee.cmdi</ResourceRef>
+            </ResourceProxy>
+          </ResourceProxyList>
+        <JournalFileProxyList/>
+        <ResourceRelationList/>
+    </Resources>
+    <Components>
+        <collection>
+            <GeneralInfo>
+                <Name>OLAC sample set</Name>
+                <ID>olac</ID>
+            </GeneralInfo>
+        </collection>
+    </Components>
+</CMD>

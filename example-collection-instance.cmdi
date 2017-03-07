@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD xmlns="http://www.clarin.eu/cmd/" CMDVersion="1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.clarin.eu/cmd/ http://www.clarin.eu/cmd/example/example-md-schema.xsd">    
+    <Header>
+        <MdCreator>Dieter Van Uytvanck</MdCreator>
+        <MdCreationDate>2009-11-18</MdCreationDate>
+        <MdSelfLink>http://www.clarin.eu/cmd/example/example-md-instance.xml</MdSelfLink>
+        <MdProfile>http://www.clarin.eu/cmd/example/example-profile-instance.xml</MdProfile>
+    </Header>
+    <Resources>
+        <ResourceProxyList>
+            
+            <ResourceProxy id="a_md_file">
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef>http://www.clarin.eu/cmd/example/example-md-instance.cmdi</ResourceRef>
+            </ResourceProxy>
+            
+        </ResourceProxyList>
+        <JournalFileProxyList></JournalFileProxyList>
+        <ResourceRelationList></ResourceRelationList>
+    </Resources>
+    <Components>
+        <TextTMD ref="a_md_file">
+            <TextType></TextType>
+        </TextTMD>
+        <PhotoTMD></PhotoTMD>
+        
+    </Components>
+</CMD>

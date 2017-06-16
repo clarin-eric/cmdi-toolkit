@@ -106,6 +106,7 @@ public class TestCMDToolkit {
     protected boolean xPathCompiler(Document doc, String xpath, String profileId) throws Exception {
       XPathCompiler xpc   = SaxonUtils.getProcessor().newXPathCompiler();
 
+      xpc.declareNamespace("xs","http://www.w3.org/2001/XMLSchema");
       xpc.declareNamespace("cmd","http://www.clarin.eu/cmd/1");
       if(profileId != null) xpc.declareNamespace("cmdp", "http://www.clarin.eu/cmd/1/profiles/" + profileId);
 
@@ -627,5 +628,37 @@ public class TestCMDToolkit {
       assertEquals(1, countWarnings(validateCMDSpec));
 
       System.out.println("*  END : CMD Empty tests");
+    }
+
+    @Test
+    public void testCLAVAS() throws Exception {
+      System.out.println("* BEGIN: CMD CLAVAS tests");
+
+      String profile = "/toolkit/CLAVAS/profiles/TestCLAVAS.xml";
+      String valid_record  = "/toolkit/CLAVAS/records/valid.xml";
+      String invalid_record  = "/toolkit/CLAVAS/records/invalid.xml";
+
+      // the profile should be a valid CMDI 1.2 profile
+      assertTrue(validateCMDSpec(profile, new javax.xml.transform.stream.StreamSource(new java.io.File(TestCMDToolkit.class.getResource(profile).toURI()))));
+
+      Document profileSchema = transformCMDSpecInXSD(profile + " (valid CLAVAS)", new javax.xml.transform.stream.StreamSource(new java.io.File(TestCMDToolkit.class.getResource(profile).toURI())));
+      SchemAnon profileAnon = new SchemAnon(new DOMSource(profileSchema));
+
+      // validate the 1.2 record for allowed @cmd:ValueConceptLink attributes
+      boolean validRecordTest = validateCMDRecord(profile + " (valid CLAVAS)", profileAnon, valid_record, new javax.xml.transform.stream.StreamSource(new java.io.File(TestCMDToolkit.class.getResource(valid_record).toURI())));
+
+      // validate the 1.2 record for allowed @cmd:ValueConceptLink attributes
+      boolean invalidRecordTest = validateCMDRecord(profile + " (invalid CLAVAS)", profileAnon, invalid_record, new javax.xml.transform.stream.StreamSource(new java.io.File(TestCMDToolkit.class.getResource(invalid_record).toURI())));
+
+      // assertions
+      assertTrue(validRecordTest);
+      assertFalse(invalidRecordTest);
+      assertTrue(xpath(profileSchema,"//xs:element[@name='iso-639-3-code']/@cmd:Vocabulary"));
+      assertTrue(xpath(profileSchema,"//xs:element[@name='iso-639-3-code']/@cmd:ValueProperty"));
+      assertTrue(xpath(profileSchema,"//xs:element[@name='name']/@cmd:Vocabulary"));
+      assertTrue(xpath(profileSchema,"//xs:element[@name='name']/@cmd:ValueProperty"));
+      assertTrue(xpath(profileSchema,"//xs:element[@name='name']/@cmd:ValueLanguage"));
+
+      System.out.println("*  END : CMD CLAVAS tests");
     }
 }

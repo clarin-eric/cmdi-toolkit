@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cmd:CMD xmlns:cmd="http://www.clarin.eu/cmd/1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.clarin.eu/cmd/1 ./src/test/resources/testProfiles/clarin.eu:cr1:p_1493735943959.xsd" CMDVersion="1.2">
+    <cmd:Header>
+        <cmd:MdProfile>clarin.eu:cr1:p_1493735943959</cmd:MdProfile>
+    </cmd:Header>
+    <cmd:Resources>
+        <cmd:ResourceProxyList></cmd:ResourceProxyList>
+        <cmd:JournalFileProxyList></cmd:JournalFileProxyList>
+        <cmd:ResourceRelationList></cmd:ResourceRelationList>
+    </cmd:Resources>
+    <cmd:Components>
+        <cmdp:TestCLAVAS xmlns:cmdp="http://www.clarin.eu/cmd/1/profiles/clarin.eu:cr1:p_1493735943959">
+            <cmdp:ISO639>
+                <cmdp:iso-639-3-code cmd:ValueConceptLink="http://cdb.iso.org/lg/CDB-00132443-001">aaa</cmdp:iso-639-3-code>
+                <cmdp:name cmd:ValueConceptLink="http://cdb.iso.org/lg/CDB-00132443-001">my first language name</cmdp:name>
+                <cmdp:foo cmd:ValueConceptLink="foo:bar">bar</cmdp:foo>
+            </cmdp:ISO639>
+        </cmdp:TestCLAVAS>
+    </cmd:Components>
+</cmd:CMD>

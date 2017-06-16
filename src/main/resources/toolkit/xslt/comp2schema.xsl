@@ -215,7 +215,8 @@
             <xsl:apply-templates select="@CardinalityMin"/>
             <xsl:apply-templates select="@CardinalityMax"/>
             <xsl:apply-templates select="ValueScheme"/>
-
+            <xsl:apply-templates select="ValueScheme/Vocabulary/(@URI|@ValueProperty|@ValueLanguage)"/>
+            
             <!-- process all autovalue and cues attributes -->
             <xsl:call-template name="annotations"/>
             
@@ -234,7 +235,8 @@
             <xsl:apply-templates select="@ConceptLink"/>
             <xsl:apply-templates select="@CardinalityMin"/>
             <xsl:apply-templates select="@CardinalityMax"/>
-
+            <xsl:apply-templates select="ValueScheme/Vocabulary/(@URI|@ValueProperty|@ValueLanguage)"/>
+            
             <!-- process all autovalue and cues attributes -->
             <xsl:call-template name="annotations"/>
 
@@ -250,7 +252,7 @@
                             <xs:attribute ref="xml:lang"/>
                         </xsl:if>
                         <!-- an element can refer to an entry in an open external vocabulary -->
-                        <xsl:if test="exists(./ValueScheme/@URI)">
+                        <xsl:if test="exists(./ValueScheme/Vocabulary/@URI)">
                             <xs:attribute ref="cmd:ValueConceptLink"/>
                         </xsl:if>
                     </xs:extension>
@@ -267,7 +269,8 @@
             <xsl:apply-templates select="@ConceptLink"/>
             <xsl:apply-templates select="@CardinalityMin"/>
             <xsl:apply-templates select="@CardinalityMax"/>
-            <xsl:if test="empty(./ValueScheme/@URI)">
+            <xsl:apply-templates select="ValueScheme/Vocabulary/(@URI|@ValueProperty|@ValueLanguage)"/>
+            <xsl:if test="empty(./ValueScheme/Vocabulary/@URI)">
                 <xsl:apply-templates select="@Multilingual"/>
                 <xsl:attribute name="type">
                     <xsl:value-of select="concat('xs:',(@ValueScheme,'string')[1])"/>
@@ -280,7 +283,7 @@
                 <xsl:apply-templates select="Documentation"/>
             </xs:annotation>
             
-            <xsl:if test="exists(./ValueScheme/@URI)">
+            <xsl:if test="exists(./ValueScheme/Vocabulary/@URI)">
                 <xs:complexType>
                     <xs:simpleContent>
                         <xs:extension base="{concat('xs:',(@ValueScheme,'string')[1])}">
@@ -288,7 +291,7 @@
                                 <xs:attribute ref="xml:lang"/>
                             </xsl:if>
                             <!-- an element can refer to an entry in an open external vocabulary -->
-                            <xsl:if test="exists(./ValueScheme/@URI)">
+                            <xsl:if test="exists(./ValueScheme/Vocabulary/@URI)">
                                 <xs:attribute ref="cmd:ValueConceptLink"/>
                             </xsl:if>
                         </xs:extension>
@@ -324,6 +327,8 @@
                     <xsl:value-of select="@ConceptLink"/>
                 </xsl:attribute>
             </xsl:if>
+            
+            <xsl:apply-templates select="ValueScheme/Vocabulary/(@URI|@ValueProperty|@ValueLanguage)"/>
 
             <!-- add some extra stuff if we have a CV attribute -->
             <xsl:choose>

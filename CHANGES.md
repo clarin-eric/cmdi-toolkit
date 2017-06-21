@@ -1,6 +1,6 @@
 # 1.2.2
 June 2017
-- ...
+- Fixed some issues related to the creation of vocabulary information in the profile XSDs
 
 # 1.2.1
 August 2016

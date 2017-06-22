@@ -15,5 +15,5 @@ TOOLKIT_VERSION=1.2.2
 - Update the symlink for the minor version to the latest subminor version; e.g.
 ```sh
 TOOLKIT_MINOR=1.2; TOOLKIT_VERSION=1.2.2
-([ -h $TOOLKIT_MINOR ] && unlink $TOOLKIT_MINOR && ln -s $TOOLKIT_VERSION $TOOLKIT_MINOR) || echo "SYMLINK '${TOOLKIT_MINOR}' NOT UPDATED" > /dev/stderr
+([ -h $TOOLKIT_MINOR ] && unlink $TOOLKIT_MINOR && ln -s $TOOLKIT_VERSION $TOOLKIT_MINOR && ls -l ${TOOLKIT_MINOR}) || echo "SYMLINK '${TOOLKIT_MINOR}' NOT UPDATED" > /dev/stderr
 ```

@@ -58,7 +58,7 @@
     <sch:pattern id="C7">
         <sch:title>C7: Use an appropriate restricitive value scheme</sch:title>
         <sch:rule context="Element|Attribute" role="warning">
-            <sch:assert test="exists(@ValueScheme) or @ValueScheme!='string' or exists(ValueScheme)">[<sch:value-of select="$BPG"/>][C7] Is a string value scheme really needed, or is a more restrictive value scheme more appropriate?</sch:assert>
+            <sch:assert test="(exists(@ValueScheme) and @ValueScheme!='string') or exists(ValueScheme)">[<sch:value-of select="$BPG"/>][C7] Is a string value scheme really needed, or is a more restrictive value scheme more appropriate?</sch:assert>
         </sch:rule>
     </sch:pattern>
     

@@ -1,1 +1,13 @@
+sudo: false
 language: java
+jdk:
+- oraclejdk8
+notifications:
+  email:
+    on_success: change
+    on_failure: always
+  slack:
+    rooms:
+      secure: mmetnfwnZ/xiMcOZ6dE3RWhmNYv7e+khbs9suNUiyJHZ3GKBP983em3tmFXY5PmfXEPj7CjxHnF0z7LBTd3QnV6XPoh32IbzOpPn74/NS16fHaMaT5OOztJNyRdkiiO7rQZNUGv0P9odlT8eDnijsJAjMtGFTwe2UcGliu6Lvx1q2Lg6uNKblHnYsNUGxqjIXVZhzvW4y2w+FPlC7NZodV5eF51HQyJASHA2ycRRmR7k1kQSLXNQO7UENbX+hAdNSuwsUGm+WenUJnhgFq/vCHLxiEGXZ7x7nbVNhW8AaN+2egP2Y0bmVbxHFE/v1/++FFGM3wnvQC+LhyJWFuFkKYBLjODs/tG42Lb2wmJ8Yd7UI6o6mBrbY2SSdEblIbLBxrXEVaw97S9iKCy696tHDQOl3NGJEcq2LkAWJ8e2H5Eu1oFjs+AIsEtvXLuu9nBAaPlW10ObFXAqROizLX05g/Jm9N8xkQGYfsPEhUgh2VMEB8c5SFAvqdkVDbmiLNNfZ3hh+BvbHKOCfJm2H6k4Tiphw8P6CQMDrZ6Cd7wJVJcdV5OUkwnyR6rhT88DrR5XuNn77Ghg4PiwSg2qnRKxMjaJHpylAtNhW9hggX81QxMn+CGFjdJql0qbuWW5cs5V73KFDWPxn8NgrdsHFRX02NrWA3Zk/nm9pYNA+jqDsEo=
+    on_success: change # default: always
+    on_failure: always # default: always

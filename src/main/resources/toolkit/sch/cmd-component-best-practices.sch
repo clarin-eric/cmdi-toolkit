@@ -78,15 +78,17 @@
     
     <sch:pattern id="C11">
         <sch:title>C11: Reuse or recycle components where possible</sch:title>
-        <sch:rule context="/ComponentSpec[@isProfile='false']/Component/Component" role="warning">
+        <sch:rule context="/ComponentSpec[@isProfile='false']//Component/Component" role="warning">
             <sch:assert test="empty(@name)">[<sch:value-of select="$BPG"/>][C11] Is an inner Component really needed, or could this be an external, reusable, component more appropriate?</sch:assert>
         </sch:rule>
     </sch:pattern>
     
     <sch:pattern id="C12">
         <sch:title>C12: Prefer controlled vocabularies</sch:title>
+        <!-- CHECK: overlap with C7, C9 -->
+        <!-- NOTE: how 'free' is an non-string datatype, maybe only trigger when @ValueScheme!='string'? -->
         <sch:rule context="Element|Attribute" role="warning">
-            <sch:assert test="empty(@ValueScheme) and (exists(ValueScheme/Vocabulary/enumeration/item) or exists(ValueScheme/pattern))">[<sch:value-of select="$BPG"/>][C12] Is a free string value scheme really needed, or is a controlled vocabulary or pattern more appropriate?</sch:assert>
+            <sch:assert test="empty(@ValueScheme) and (exists(ValueScheme/Vocabulary/enumeration/item) or exists(ValueScheme/pattern))">[<sch:value-of select="$BPG"/>][C12] Is a free value scheme really needed, or is a controlled vocabulary or pattern more appropriate?</sch:assert>
         </sch:rule>
     </sch:pattern>
     

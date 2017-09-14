@@ -142,7 +142,7 @@
         <sch:title>E4: Include a matching MdProfile</sch:title>
         <sch:rule role="warning" context="/cmd:CMD">
             <sch:assert test="matches(cmd:Header/cmd:MdProfile,'^clarin.eu:cr[0-9]+:p_[0-9]+$')">[<sch:value-of select="$BPG"/>][E4] MdProfile should contain a CLARIN Component Registry profile identifier!</sch:assert>
-            <sch:assert test="replace(@xsi:schemaLocation,'(clarin.eu:cr[0-9]+:p_[0-9]+)','$1') = replace(cmd:Header/cmd:MdProfile,'(clarin.eu:cr[0-9]+:p_[0-9]+)','$1')">[<sch:value-of select="$BPG"/>][E4] MdProfile and @xsi:schemaLocation should agree on the profile used!</sch:assert>
+            <sch:assert test="replace(@xsi:schemaLocation,'^.*(clarin.eu:cr[0-9]+:p_[0-9]+).*$','$1') = replace(cmd:Header/cmd:MdProfile,'^.*(clarin.eu:cr[0-9]+:p_[0-9]+).*$','$1')">[<sch:value-of select="$BPG"/>][E4] MdProfile and @xsi:schemaLocation should agree on the profile used!</sch:assert>
         </sch:rule>
     </sch:pattern>
 
@@ -157,7 +157,7 @@
         <sch:title>E6: The URI of a resource proxy should be absolute and resolvable</sch:title>
         <sch:rule role="warning" context="cmd:ResourceProxy">
             <sch:assert test="normalize-space(cmd:ResourceRef)!=''">[<sch:value-of select="$BPG"/>][E6] A Resource Proxy should have a reference!</sch:assert>
-            <sch:assert test="resolve-uri(cmd:ResourceRef,base-uri())=cmd:ResourceRef">[<sch:value-of select="$BPG"/>][E6] The reference of a Resource Proxy should be absolute!</sch:assert>
+            <sch:assert test="resolve-uri(normalize-space(cmd:ResourceRef),base-uri())=normalize-space(cmd:ResourceRef)">[<sch:value-of select="$BPG"/>][E6] The reference of a Resource Proxy should be absolute!</sch:assert>
         </sch:rule>
         <!-- TODO: check if resolvable, also an option of the CMDI validator -->
     </sch:pattern>

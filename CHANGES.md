@@ -1,3 +1,10 @@
+# 1.2.3
+November 2019
+- Updated Java libraries:
+  - SchemAnon 1.0.0 -> 1.1.0
+  - cmdi-validator-core 1.0.0 -> 1.2.1
+  - jopt-simple 4.8 -> 4.9
+
 # 1.2.2
 June 2017
 - Fixed some issues related to the creation of vocabulary information in the profile XSDs

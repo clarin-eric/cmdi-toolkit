@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>clarin.cmdi</groupId>
     <artifactId>cmd-toolkit</artifactId>
-    <version>1.2-SNAPSHOT</version>
+    <version>1.2.3</version>
     <name>CMDToolkit</name>
     <dependencies>
         <dependency>
@@ -15,17 +15,17 @@
         <dependency>
             <groupId>nl.mpi.tla</groupId>
             <artifactId>SchemAnon</artifactId>
-            <version>1.0.0</version>
+            <version>1.1.0</version>
         </dependency>
         <dependency>
             <groupId>eu.clarin.cmdi</groupId>
             <artifactId>cmdi-validator-core</artifactId>
-            <version>1.0.0</version>
+            <version>1.2.1</version>
         </dependency>
         <dependency>
             <groupId>net.sf.jopt-simple</groupId>
             <artifactId>jopt-simple</artifactId>
-            <version>4.8</version>
+            <version>4.9</version>
         </dependency>
     </dependencies>
     <properties>

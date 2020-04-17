@@ -433,9 +433,56 @@ public class TestCMDToolkit {
 
         System.out.println("*  END : successor tests");
     }
-
+    
     @Test
     public void testOLAC() throws Exception {
+        System.out.println("* BEGIN: OLAC tests (invalid)");
+
+        String profile = "/toolkit/OLAC/profiles/OLAC-DcmiTerms.cmdi12.xml";
+        String record  = "/toolkit/OLAC/records/org_rosettaproject-record.cmdi12.xml";
+
+//        // upgrade the profile from 1.1 to 1.2
+//        Document upgradedProfile = upgradeCMDSpec(profile);
+
+        // validate the 1.2 profile
+        boolean validProfile = validateCMDSpec(profile);
+
+        // assertions
+        // the upgraded profile should be a valid CMDI 1.2 profile
+        assertTrue(validProfile);
+        // so there should be no errors
+        assertEquals(0, countErrors(validateCMDSpec));
+
+        // transform the 1.2 profile into a XSD
+        Document profileSchema = transformCMDSpecInXSD(profile);
+        SchemAnon profileAnon = new SchemAnon(new DOMSource(profileSchema));
+
+//        // upgrade the record from 1.1 to 1.2
+//        Document upgradedRecord = upgradeCMDRecord(record,upgradedProfile);
+
+        // validate the 1.2 record
+        boolean validRecord = validateCMDRecord(profile, profileAnon, record, new StreamSource(new java.io.File(TestCMDToolkit.class.getResource(record).toURI())));
+
+        // assertions
+        assertFalse(validRecord);
+
+//        // downgrade the 1.2 profile to 1.1
+//        Document oldProfile = downgradeCMDSpec(profile+" (upgraded)",new DOMSource(upgradedProfile));
+//
+//        // validate the 1.1 profile
+//        boolean validOldProfile = validateCMDoldSpec(profile+" (downgraded)",new DOMSource(oldProfile));
+//
+//        // assertions
+//        // the downgraded profile should be a valid CMDI 1.1 profile
+//        assertTrue(validOldProfile);
+//        // so there should be no errors
+//        assertEquals(0, countErrors(validateCMDoldSpec));
+
+        System.out.println("*  END : OLAC tests");
+    }
+
+    @Test
+    public void testOLACUpgraded() throws Exception {
         System.out.println("* BEGIN: OLAC tests (invalid)");
 
         String profile = "/toolkit/OLAC/profiles/OLAC-DcmiTerms.xml";

@@ -21,6 +21,28 @@
             <groupId>eu.clarin.cmdi</groupId>
             <artifactId>cmdi-validator-core</artifactId>
             <version>1.2.1</version>
+            <exclusions>
+                <!-- inherit xerces from SchemAnon -->
+                <exclusion>
+                    <groupId>xerces</groupId>
+                    <artifactId>xercesImpl-patched</artifactId>
+                </exclusion>
+                <!-- inherit Saxon from SchemAnon -->
+                <exclusion>
+                    <groupId>net.sf.saxon</groupId>
+                    <artifactId>Saxon-HE</artifactId>
+                </exclusion>
+                <!-- Use newer xml-apis -->
+                <exclusion>
+                    <groupId>xml-apis</groupId>
+                    <artifactId>xml-apis</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>xml-apis</groupId>
+            <artifactId>xml-apis</artifactId>
+            <version>1.4.01</version>
         </dependency>
         <dependency>
             <groupId>net.sf.jopt-simple</groupId>

@@ -439,7 +439,7 @@ public class TestCMDToolkit {
         System.out.println("* BEGIN: OLAC tests (invalid)");
 
         String profile = "/toolkit/OLAC/profiles/OLAC-DcmiTerms.cmdi12.xml";
-        String record  = "/toolkit/OLAC/records/org_rosettaproject-record.cmdi12.xml";
+        String record  = "/toolkit/OLAC/records/org_rosettaproject-record.12.xml";
 
 //        // upgrade the profile from 1.1 to 1.2
 //        Document upgradedProfile = upgradeCMDSpec(profile);

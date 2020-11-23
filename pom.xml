@@ -15,18 +15,12 @@
         <dependency>
             <groupId>nl.mpi.tla</groupId>
             <artifactId>SchemAnon</artifactId>
-            <version>1.1.1-SNAPSHOT</version>
+            <version>1.1.0</version>
         </dependency>
         <dependency>
             <groupId>eu.clarin.cmdi</groupId>
             <artifactId>cmdi-validator-core</artifactId>
             <version>1.2.1</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>xerces</groupId>
-                    <artifactId>xercesImpl-patched</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>net.sf.jopt-simple</groupId>

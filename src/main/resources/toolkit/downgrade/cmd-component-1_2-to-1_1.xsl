@@ -2,7 +2,8 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xmlns:cue="http://www.clarin.eu/cmdi/cues/1"
+    xmlns:cue="http://www.clarin.eu/cmd/cues/1"
+    xmlns:cue_old="http://www.clarin.eu/cmdi/cues/1"
     exclude-result-prefixes="xs"
     version="2.0">
 
@@ -123,13 +124,13 @@
     </xsl:template>
     
     <!-- remove cue namespace for DisplayPriority -->
-    <xsl:template match="@cue:DisplayPriority" priority="2">
+    <xsl:template match="@cue:DisplayPriority|@cue_old:DisplayPriority" priority="2">
         <xsl:attribute name="DisplayPriority">
             <xsl:value-of select="."/>
         </xsl:attribute>
     </xsl:template>
     
     <!-- remove other cue attributes -->
-    <xsl:template match="@cue:*" priority="1"/>
+    <xsl:template match="@cue:*|@cue_old:*" priority="1"/>
 
 </xsl:stylesheet>

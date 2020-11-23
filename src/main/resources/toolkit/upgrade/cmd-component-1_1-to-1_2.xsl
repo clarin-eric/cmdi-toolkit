@@ -2,7 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xmlns:cue="http://www.clarin.eu/cmdi/cues/1"
+    xmlns:cue="http://www.clarin.eu/cmd/cues/1"
     exclude-result-prefixes="xs"
     version="2.0">
 

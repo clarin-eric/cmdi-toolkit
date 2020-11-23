@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cue="http://www.clarin.eu/cmdi/cues/1" CMDVersion="1.2" CMDOriginalVersion="1.1" isProfile="true" xsi:noNamespaceSchemaLocation="https://infra.clarin.eu/CMDI/1.x/xsd/cmd-component.xsd">
+<ComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cue="http://www.clarin.eu/cmd/cues/1" CMDVersion="1.2" CMDOriginalVersion="1.1" isProfile="true" xsi:noNamespaceSchemaLocation="https://infra.clarin.eu/CMDI/1.x/xsd/cmd-component.xsd">
     <Header>
         <ID>clarin.eu:cr1:p_1288172614026</ID>
         <Name>OLAC-DcmiTerms</Name>

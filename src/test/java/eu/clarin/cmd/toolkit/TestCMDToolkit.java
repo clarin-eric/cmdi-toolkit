@@ -583,6 +583,40 @@ public class TestCMDToolkit {
         assertTrue(validRecord);
     }
     
+    
+    @Test
+    public void testDowngradeOldCuesNamespace() throws Exception {
+        System.out.println("* BEGIN: downgrade tests (with old cues namespace)");
+        // see https://github.com/clarin-eric/cmdi-toolkit/issues/14
+
+        String profile = "/toolkit/downgrade/profiles/test_old_cues_ns.xml";
+        String record  = "/toolkit/downgrade/records/test.xml";
+
+        // downgrade the 1.2 profile to 1.1 
+        // Note: we skip validation of the input because it will not be valid due to old cues namespace
+        Document oldProfile = downgradeCMDSpec(profile);
+
+        // validate the 1.1 profile
+        boolean validOldProfile = validateCMDoldSpec(profile+" (downgraded)",new DOMSource(oldProfile));
+
+        // assertions
+        // the downgraded profile should be a valid CMDI 1.1 profile
+        assertTrue(validOldProfile);
+        // so there should be no errors
+        assertEquals(0, countErrors(validateCMDoldSpec));
+
+        // transform the 1.1 profile into a XSD
+        Document profileSchema = transformCMDoldSpecInXSD(profile+" (downgraded)",new DOMSource(oldProfile));
+        SchemAnon profileAnon = new SchemAnon(new DOMSource(profileSchema));
+
+        // validate the 1.1 record
+        boolean validRecord = validateOldCMDRecord(profile+" (downgraded)",profileAnon,record,new javax.xml.transform.stream.StreamSource(new java.io.File(TestCMDToolkit.class.getResource(record).toURI())));
+
+        // assertions
+        // the record should be valid against the downgraded profile
+        assertTrue(validRecord);
+    }
+    
     @Test
     public void testDownUpgrade() throws Exception {
         System.out.println("* BEGIN: downgrade/upgrade tests");

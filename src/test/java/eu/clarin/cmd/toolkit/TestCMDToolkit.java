@@ -544,8 +544,8 @@ public class TestCMDToolkit {
     }
 
     @Test
-    public void testDownUpgrade() throws Exception {
-        System.out.println("* BEGIN: downgrade/upgrade tests");
+    public void testDowngrade() throws Exception {
+        System.out.println("* BEGIN: downgrade tests");
 
         String profile = "/toolkit/downgrade/profiles/test.xml";
         String record  = "/toolkit/downgrade/records/test.xml";
@@ -581,6 +581,21 @@ public class TestCMDToolkit {
         // assertions
         // the record should be valid against the downgraded profile
         assertTrue(validRecord);
+    }
+    
+    @Test
+    public void testDownUpgrade() throws Exception {
+        System.out.println("* BEGIN: downgrade/upgrade tests");
+
+        String profile = "/toolkit/downgrade/profiles/test.xml";
+        String record  = "/toolkit/downgrade/records/test.xml";
+
+        // downgrade the 1.2 profile to 1.1
+        Document oldProfile = downgradeCMDSpec(profile);
+
+        // transform the 1.1 profile into a XSD
+        Document profileSchema = transformCMDoldSpecInXSD(profile+" (downgraded)",new DOMSource(oldProfile));
+        SchemAnon profileAnon = new SchemAnon(new DOMSource(profileSchema));
 
         // upgrade the 1.1 record to 1.2
         Document upgradedRecord = upgradeCMDRecord(record,SaxonUtils.buildDocument(new javax.xml.transform.stream.StreamSource(new java.io.File(TestCMDToolkit.class.getResource(profile).toURI()))));
@@ -590,7 +605,7 @@ public class TestCMDToolkit {
         profileAnon = new SchemAnon(new DOMSource(profileSchema));
 
         // validate the 1.2 record
-        validRecord = validateCMDRecord(profile,profileAnon,record+" (upgraded)",new DOMSource(upgradedRecord));
+        boolean validRecord = validateCMDRecord(profile,profileAnon,record+" (upgraded)",new DOMSource(upgradedRecord));
 
         // assertions
         // the upgraded 1.1 record should be invalid against the original 1.2 profile
@@ -602,7 +617,7 @@ public class TestCMDToolkit {
         Document oldNewProfile = upgradeCMDSpec(profile+" (downgraded)",new DOMSource(oldProfile));
 
         // validate the 1.2 profile
-        validProfile = validateCMDSpec(profile+" (downgraded/upgraded)",new DOMSource(oldNewProfile));
+        boolean validProfile = validateCMDSpec(profile+" (downgraded/upgraded)",new DOMSource(oldNewProfile));
 
         // assertions
         assertTrue(validProfile);

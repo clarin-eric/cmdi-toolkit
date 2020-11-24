@@ -4,6 +4,7 @@
  */
 package eu.clarin.cmd.toolkit;
 
+import eu.clarin.cmdi.CmdNamespaces;
 import eu.clarin.cmdi.toolkit.CMDToolkit;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -107,8 +108,8 @@ public class TestCMDToolkit {
       XPathCompiler xpc   = SaxonUtils.getProcessor().newXPathCompiler();
 
       xpc.declareNamespace("xs","http://www.w3.org/2001/XMLSchema");
-      xpc.declareNamespace("cmd","http://www.clarin.eu/cmd/1");
-      if(profileId != null) xpc.declareNamespace("cmdp", "http://www.clarin.eu/cmd/1/profiles/" + profileId);
+      xpc.declareNamespace("cmd",CmdNamespaces.CMD_RECORD_ENVELOPE_NS);
+      if(profileId != null) xpc.declareNamespace("cmdp", CmdNamespaces.getCmdRecordPayloadNamespace(profileId));
 
       XPathExecutable xpe = xpc.compile(xpath);
       XPathSelector xps   = xpe.load();

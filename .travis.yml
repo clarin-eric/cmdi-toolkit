@@ -1,8 +1,17 @@
-sudo: false
 language: java
 jdk:
 - openjdk8
-notifications:
-  email:
-    on_success: change
-    on_failure: always
+
+script:
+- bash -c 'if [ "${TRAVIS_TAG}" ]; then mvn versions:set -DnewVersion=${TRAVIS_TAG} versions:commit; fi'
+- .ci/build.sh -B --settings .ci/.maven-settings.xml
+
+deploy:
+  provider: releases
+  prerelease: true
+  api_key: "${GITHUB_DEPLOY_TOKEN}"
+  file: "target/cmd-toolkit-${TRAVIS_TAG}.jar"
+  skip_cleanup: true
+  on:
+    tags: true
+

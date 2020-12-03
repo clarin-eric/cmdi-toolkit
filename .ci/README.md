@@ -1,0 +1,1 @@
+Files and settings for continuous integration (build/deploy jobs at Travis-CI)

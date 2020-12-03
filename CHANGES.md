@@ -1,5 +1,14 @@
+#1.2.4
+December 2020
+
+- Namespace for cues for tools changed from 
+`http://www.clarin.eu/cmdi/cues/1` to `http://www.clarin.eu/cmd/cues/1`
+(see [#14](https://github.com/clarin-eric/cmdi-toolkit/issues/14))
+- Added Schematron rules for best practices
+
 # 1.2.3
 November 2019
+
 - Updated Java libraries:
   - SchemAnon 1.0.0 -> 1.1.0
   - cmdi-validator-core 1.0.0 -> 1.2.1
@@ -7,6 +16,7 @@ November 2019
 
 # 1.2.2
 June 2017
+
 - Fixed some issues related to the creation of vocabulary information in the profile XSDs
 
 # 1.2.1

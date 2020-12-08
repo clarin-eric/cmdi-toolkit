@@ -770,7 +770,7 @@ public class TestCMDToolkit {
       Document profileSchema = transformCMDSpecInXSD(profile + " (CMD)", new javax.xml.transform.stream.StreamSource(new java.io.File(TestCMDToolkit.class.getResource(profile).toURI())));
 
       // assertions
-      assertTrue(xpath(profileSchema,"//xs:element[@name='toolType']/@cue:DisplayPriority"));
+      assertTrue(xpath(profileSchema,"//xs:element[@name='toolType' and @cue:DisplayPriority='1']"));
 
       System.out.println("*  END : CMD  test with new cues namespace");
     }
@@ -784,7 +784,7 @@ public class TestCMDToolkit {
       Document profileSchema = transformCMDSpecInXSD(profile + " (CMD with old cues namespace)", new javax.xml.transform.stream.StreamSource(new java.io.File(TestCMDToolkit.class.getResource(profile).toURI())));
 
       // assertions
-      assertTrue(xpath(profileSchema,"//xs:element[@name='toolType']/@cue:DisplayPriority"));
+      assertTrue(xpath(profileSchema,"//xs:element[@name='toolType' and @cue:DisplayPriority='1']"));
 
       System.out.println("*  END : CMD  test with old cues namespace");
     }

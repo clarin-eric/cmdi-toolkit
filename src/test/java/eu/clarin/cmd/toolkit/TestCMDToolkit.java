@@ -109,6 +109,7 @@ public class TestCMDToolkit {
 
       xpc.declareNamespace("xs","http://www.w3.org/2001/XMLSchema");
       xpc.declareNamespace("cmd",CmdNamespaces.CMD_RECORD_ENVELOPE_NS);
+      xpc.declareNamespace("cue",CmdNamespaces.CMD_SPEC_CUES_NS);
       if(profileId != null) xpc.declareNamespace("cmdp", CmdNamespaces.getCmdRecordPayloadNamespace(profileId));
 
       XPathExecutable xpe = xpc.compile(xpath);
@@ -757,5 +758,34 @@ public class TestCMDToolkit {
       assertTrue(xpath(profileSchema,"//xs:element[@name='name']/@cmd:ValueLanguage"));
 
       System.out.println("*  END : CMD CLAVAS tests");
+    }
+    
+    
+    @Test
+    public void testCMDwithNewCuesNamespace() throws Exception {
+      System.out.println("* BEGIN: CMD test with new cues namespace");
+
+      String profile = "/toolkit/CMD/profiles/components-valid.xml";
+      
+      Document profileSchema = transformCMDSpecInXSD(profile + " (CMD)", new javax.xml.transform.stream.StreamSource(new java.io.File(TestCMDToolkit.class.getResource(profile).toURI())));
+
+      // assertions
+      assertTrue(xpath(profileSchema,"//xs:element[@name='toolType']/@cue:DisplayPriority"));
+
+      System.out.println("*  END : CMD  test with new cues namespace");
+    }
+    
+    @Test
+    public void testCMDwithOldCuesNamespace() throws Exception {
+      System.out.println("* BEGIN: CMD test with old cues namespace");
+
+      String profile = "/toolkit/CMD/profiles/components-old-cues-namespace.xml";
+      
+      Document profileSchema = transformCMDSpecInXSD(profile + " (CMD with old cues namespace)", new javax.xml.transform.stream.StreamSource(new java.io.File(TestCMDToolkit.class.getResource(profile).toURI())));
+
+      // assertions
+      assertTrue(xpath(profileSchema,"//xs:element[@name='toolType']/@cue:DisplayPriority"));
+
+      System.out.println("*  END : CMD  test with old cues namespace");
     }
 }

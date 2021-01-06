@@ -1,10 +1,11 @@
 #1.2.4
-December 2020
+January 2021
 
 - Namespace for cues for tools changed from 
 `http://www.clarin.eu/cmdi/cues/1` to `http://www.clarin.eu/cmd/cues/1`
 (see [#14](https://github.com/clarin-eric/cmdi-toolkit/issues/14))
 - Added Schematron rules for best practices
+- Group ID for Maven artifact changed to `eu.clarin.cmd`
 
 # 1.2.3
 November 2019

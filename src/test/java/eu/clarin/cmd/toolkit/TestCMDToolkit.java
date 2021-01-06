@@ -4,6 +4,7 @@
  */
 package eu.clarin.cmd.toolkit;
 
+import eu.clarin.cmdi.CmdNamespaces;
 import eu.clarin.cmdi.toolkit.CMDToolkit;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -107,8 +108,9 @@ public class TestCMDToolkit {
       XPathCompiler xpc   = SaxonUtils.getProcessor().newXPathCompiler();
 
       xpc.declareNamespace("xs","http://www.w3.org/2001/XMLSchema");
-      xpc.declareNamespace("cmd","http://www.clarin.eu/cmd/1");
-      if(profileId != null) xpc.declareNamespace("cmdp", "http://www.clarin.eu/cmd/1/profiles/" + profileId);
+      xpc.declareNamespace("cmd",CmdNamespaces.CMD_RECORD_ENVELOPE_NS);
+      xpc.declareNamespace("cue",CmdNamespaces.CMD_SPEC_CUES_NS);
+      if(profileId != null) xpc.declareNamespace("cmdp", CmdNamespaces.getCmdRecordPayloadNamespace(profileId));
 
       XPathExecutable xpe = xpc.compile(xpath);
       XPathSelector xps   = xpe.load();
@@ -544,8 +546,8 @@ public class TestCMDToolkit {
     }
 
     @Test
-    public void testDownUpgrade() throws Exception {
-        System.out.println("* BEGIN: downgrade/upgrade tests");
+    public void testDowngrade() throws Exception {
+        System.out.println("* BEGIN: downgrade tests");
 
         String profile = "/toolkit/downgrade/profiles/test.xml";
         String record  = "/toolkit/downgrade/records/test.xml";
@@ -581,6 +583,55 @@ public class TestCMDToolkit {
         // assertions
         // the record should be valid against the downgraded profile
         assertTrue(validRecord);
+    }
+    
+    
+    @Test
+    public void testDowngradeOldCuesNamespace() throws Exception {
+        System.out.println("* BEGIN: downgrade tests (with old cues namespace)");
+        // see https://github.com/clarin-eric/cmdi-toolkit/issues/14
+
+        String profile = "/toolkit/downgrade/profiles/test_old_cues_ns.xml";
+        String record  = "/toolkit/downgrade/records/test.xml";
+
+        // downgrade the 1.2 profile to 1.1 
+        // Note: we skip validation of the input because it will not be valid due to old cues namespace
+        Document oldProfile = downgradeCMDSpec(profile);
+
+        // validate the 1.1 profile
+        boolean validOldProfile = validateCMDoldSpec(profile+" (downgraded)",new DOMSource(oldProfile));
+
+        // assertions
+        // the downgraded profile should be a valid CMDI 1.1 profile
+        assertTrue(validOldProfile);
+        // so there should be no errors
+        assertEquals(0, countErrors(validateCMDoldSpec));
+
+        // transform the 1.1 profile into a XSD
+        Document profileSchema = transformCMDoldSpecInXSD(profile+" (downgraded)",new DOMSource(oldProfile));
+        SchemAnon profileAnon = new SchemAnon(new DOMSource(profileSchema));
+
+        // validate the 1.1 record
+        boolean validRecord = validateOldCMDRecord(profile+" (downgraded)",profileAnon,record,new javax.xml.transform.stream.StreamSource(new java.io.File(TestCMDToolkit.class.getResource(record).toURI())));
+
+        // assertions
+        // the record should be valid against the downgraded profile
+        assertTrue(validRecord);
+    }
+    
+    @Test
+    public void testDownUpgrade() throws Exception {
+        System.out.println("* BEGIN: downgrade/upgrade tests");
+
+        String profile = "/toolkit/downgrade/profiles/test.xml";
+        String record  = "/toolkit/downgrade/records/test.xml";
+
+        // downgrade the 1.2 profile to 1.1
+        Document oldProfile = downgradeCMDSpec(profile);
+
+        // transform the 1.1 profile into a XSD
+        Document profileSchema = transformCMDoldSpecInXSD(profile+" (downgraded)",new DOMSource(oldProfile));
+        SchemAnon profileAnon = new SchemAnon(new DOMSource(profileSchema));
 
         // upgrade the 1.1 record to 1.2
         Document upgradedRecord = upgradeCMDRecord(record,SaxonUtils.buildDocument(new javax.xml.transform.stream.StreamSource(new java.io.File(TestCMDToolkit.class.getResource(profile).toURI()))));
@@ -590,7 +641,7 @@ public class TestCMDToolkit {
         profileAnon = new SchemAnon(new DOMSource(profileSchema));
 
         // validate the 1.2 record
-        validRecord = validateCMDRecord(profile,profileAnon,record+" (upgraded)",new DOMSource(upgradedRecord));
+        boolean validRecord = validateCMDRecord(profile,profileAnon,record+" (upgraded)",new DOMSource(upgradedRecord));
 
         // assertions
         // the upgraded 1.1 record should be invalid against the original 1.2 profile
@@ -602,7 +653,7 @@ public class TestCMDToolkit {
         Document oldNewProfile = upgradeCMDSpec(profile+" (downgraded)",new DOMSource(oldProfile));
 
         // validate the 1.2 profile
-        validProfile = validateCMDSpec(profile+" (downgraded/upgraded)",new DOMSource(oldNewProfile));
+        boolean validProfile = validateCMDSpec(profile+" (downgraded/upgraded)",new DOMSource(oldNewProfile));
 
         // assertions
         assertTrue(validProfile);
@@ -707,5 +758,34 @@ public class TestCMDToolkit {
       assertTrue(xpath(profileSchema,"//xs:element[@name='name']/@cmd:ValueLanguage"));
 
       System.out.println("*  END : CMD CLAVAS tests");
+    }
+    
+    
+    @Test
+    public void testCMDwithNewCuesNamespace() throws Exception {
+      System.out.println("* BEGIN: CMD test with new cues namespace");
+
+      String profile = "/toolkit/CMD/profiles/components-valid.xml";
+      
+      Document profileSchema = transformCMDSpecInXSD(profile + " (CMD)", new javax.xml.transform.stream.StreamSource(new java.io.File(TestCMDToolkit.class.getResource(profile).toURI())));
+
+      // assertions
+      assertTrue(xpath(profileSchema,"//xs:element[@name='toolType' and @cue:DisplayPriority='1']"));
+
+      System.out.println("*  END : CMD  test with new cues namespace");
+    }
+    
+    @Test
+    public void testCMDwithOldCuesNamespace() throws Exception {
+      System.out.println("* BEGIN: CMD test with old cues namespace");
+
+      String profile = "/toolkit/CMD/profiles/components-old-cues-namespace.xml";
+      
+      Document profileSchema = transformCMDSpecInXSD(profile + " (CMD with old cues namespace)", new javax.xml.transform.stream.StreamSource(new java.io.File(TestCMDToolkit.class.getResource(profile).toURI())));
+
+      // assertions
+      assertTrue(xpath(profileSchema,"//xs:element[@name='toolType' and @cue:DisplayPriority='1']"));
+
+      System.out.println("*  END : CMD  test with old cues namespace");
     }
 }

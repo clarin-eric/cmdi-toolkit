@@ -1,4 +1,8 @@
 language: java
+
+os:
+- linux
+
 jdk:
 - openjdk8
 
@@ -11,7 +15,6 @@ deploy:
   prerelease: true
   api_key: "${GITHUB_DEPLOY_TOKEN}"
   file: "target/cmd-toolkit-${TRAVIS_TAG}.jar"
-  skip_cleanup: true
+  cleanup: false
   on:
     tags: true
-

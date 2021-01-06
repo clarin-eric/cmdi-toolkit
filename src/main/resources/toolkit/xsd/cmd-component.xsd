@@ -306,7 +306,7 @@
                 <xs:documentation>Is the attribute required or not?</xs:documentation>
             </xs:annotation>
         </xs:attribute>
-        <xs:anyAttribute namespace="http://www.clarin.eu/cmdi/cues/1" processContents="lax"/>
+        <xs:anyAttribute namespace="http://www.clarin.eu/cmd/cues/1" processContents="lax"/>
     </xs:attributeGroup>
 
     <xs:attributeGroup name="element_attributes">
@@ -340,7 +340,7 @@
                 <xs:documentation>Indicates that this element can have values in multiple languages (and thus is repeatable). This will result in the possibility of using the xml:lang attribute in the metadata instances that are created.</xs:documentation>
             </xs:annotation>
         </xs:attribute>
-        <xs:anyAttribute namespace="http://www.clarin.eu/cmdi/cues/1" processContents="lax"/>
+        <xs:anyAttribute namespace="http://www.clarin.eu/cmd/cues/1" processContents="lax"/>
     </xs:attributeGroup>
 
     <xs:attributeGroup name="component_attributes">
@@ -374,7 +374,7 @@
         <xs:attribute name="CardinalityMin" type="cardinality_type" use="optional" default="1"/>
         <xs:attribute name="CardinalityMax" type="cardinality_type" use="optional" default="1"/>
         <xs:attribute ref="xml:base" use="optional"/>
-        <xs:anyAttribute namespace="http://www.clarin.eu/cmdi/cues/1" processContents="lax"/>
+        <xs:anyAttribute namespace="http://www.clarin.eu/cmd/cues/1" processContents="lax"/>
     </xs:attributeGroup>
 
 
@@ -506,7 +506,7 @@
                         <xs:documentation>End-user guidance about the value of this controlled vocabulary item.</xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
-                <xs:anyAttribute namespace="http://www.clarin.eu/cmdi/cues/1" processContents="lax"/>
+                <xs:anyAttribute namespace="http://www.clarin.eu/cmd/cues/1" processContents="lax"/>
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>

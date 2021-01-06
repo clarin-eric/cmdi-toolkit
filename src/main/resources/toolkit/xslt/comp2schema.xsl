@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cmd="http://www.clarin.eu/cmd/1" xmlns:cue="http://www.clarin.eu/cmdi/cues/1">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cmd="http://www.clarin.eu/cmd/1" xmlns:cue="http://www.clarin.eu/cmd/cues/1" xmlns:cue_old="http://www.clarin.eu/cmdi/cues/1">
 
     <xsl:param name="cmd-toolkit" select="'https://infra.clarin.eu/CMDI/1.x'"/>
     <xsl:param name="cmd-envelop" select="concat($cmd-toolkit,'/xsd/cmd-envelop.xsd')"/>
@@ -468,9 +468,13 @@
         <xsl:copy-of select="."/>
     </xsl:template>
     
+    <xsl:template match="@cue_old:*">
+        <xsl:attribute name="{local-name()}" namespace="http://www.clarin.eu/cmd/cues/1" select="." />
+    </xsl:template>
+    
     <xsl:template name="annotations">
         <xsl:apply-templates select="@AutoValue"/>
-        <xsl:apply-templates select="@cue:*"/>
+        <xsl:apply-templates select="@cue:*|@cue_old:*"/>
     </xsl:template>
 
 </xsl:stylesheet>

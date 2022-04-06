@@ -328,6 +328,9 @@
                 </xsl:attribute>
             </xsl:if>
             
+            <!-- process all autovalue and cues attributes -->
+            <xsl:call-template name="annotations"/>
+
             <xsl:apply-templates select="ValueScheme/Vocabulary/(@URI|@ValueProperty|@ValueLanguage)"/>
 
             <!-- add some extra stuff if we have a CV attribute -->

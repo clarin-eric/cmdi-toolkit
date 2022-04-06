@@ -1,3 +1,9 @@
+# 1.2.5
+April 2022
+
+- Cues defined on attributes are now properly represented in the profile XSD
+(see [#17](https://github.com/clarin-eric/cmdi-toolkit/issues/17))
+
 # 1.2.4
 January 2021
 

@@ -202,6 +202,7 @@
                     <sch:title>Check Vocabulary URI</sch:title>
                     <sch:rule context="Vocabulary[exists(@URI)]">
                         <sch:assert test="exists(@ValueProperty)">When an external vocabulary is used (identified by the @URI) a @ValueProperty has to be specified!</sch:assert>
+                        <sch:assert test="exists(@Endpoint) and exists(@EndpointType)">When an external vocabulary is used (identified by the @URI) a @Endpoint and @EndpointType has to be specified!</sch:assert>
                     </sch:rule>
                 </sch:pattern>
             </xs:appinfo>
@@ -228,7 +229,11 @@
                 </xs:annotation>
             </xs:element>
         </xs:sequence>
+        <!-- optionaly set an external vocabulary -->
         <xs:attribute name="URI" type="xs:anyURI" use="optional"/>
+        <!-- optionally set an endpoint -->
+        <xs:attribute name="Endpoint" type="xs:anyURI" use="optional"/>
+        <xs:attribute name="EndpointType" use="optional"/>
         <!-- optionally selects a label -->
         <xs:attribute name="ValueProperty" type="xs:string" use="optional"/>
         <!-- optionally selects a language -->
